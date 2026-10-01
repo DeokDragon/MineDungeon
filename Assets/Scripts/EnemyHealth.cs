@@ -5,7 +5,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int maxHealth = 30;
     [SerializeField] private int currentHealth;
 
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private float flashTimer;
     private bool isDead;
@@ -13,7 +13,6 @@ public class EnemyHealth : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
-        spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (spriteRenderer != null)
             originalColor = spriteRenderer.color;
