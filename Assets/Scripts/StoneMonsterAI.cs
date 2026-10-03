@@ -77,8 +77,15 @@ public class StoneMonsterAI : MonoBehaviour
         if (playerHealth.IsDead)
         {
             rb.linearVelocity = Vector2.zero;
+
             ResetVisuals();
             SetIgnorePlayer(false);
+
+            state = State.Chase;
+            timer = 0f;
+
+            // 부활 직후 예고 없이 공격하지 않도록 대기
+            nextAttackTime = Time.time + 1f;
             return;
         }
 

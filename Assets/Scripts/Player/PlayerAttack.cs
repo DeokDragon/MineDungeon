@@ -24,7 +24,9 @@ public class PlayerAttack : MonoBehaviour
     private float attackStartTime;
     private float nextAttackTime;
     private bool isAttacking;
+    public bool IsAttacking => isAttacking;
     private bool damageApplied;
+    private bool waitForAttackRelease;
 
     private readonly HashSet<EnemyHealth> hitEnemies =
         new HashSet<EnemyHealth>();
@@ -41,6 +43,10 @@ public class PlayerAttack : MonoBehaviour
             return;
 
         if (Time.timeScale == 0f)
+            return;
+        PlayerMovement movement = GetComponent<PlayerMovement>();
+
+        if (movement != null && movement.IsDodging)
             return;
 
         Mouse mouse = Mouse.current;
@@ -65,8 +71,14 @@ public class PlayerAttack : MonoBehaviour
                 * Mathf.Rad2Deg;
         }
 
-        bool attackInput = mouse.leftButton.wasPressedThisFrame
-            || mouse.leftButton.isPressed;
+        bool blockNewAttack = waitForAttackRelease;
+
+        if (waitForAttackRelease && !mouse.leftButton.isPressed)
+            waitForAttackRelease = false;
+
+        bool attackInput = !blockNewAttack &&
+            (mouse.leftButton.wasPressedThisFrame
+            || mouse.leftButton.isPressed);
 
         if (attackInput && !isAttacking && Time.time >= nextAttackTime)
         {
@@ -108,6 +120,10 @@ public class PlayerAttack : MonoBehaviour
         }
 
         weaponPivot.rotation = Quaternion.Euler(0f, 0f, displayAngle);
+        PlayerPotion potion = GetComponent<PlayerPotion>();
+
+        if (potion != null && potion.IsUsing)
+            return;
     }
 
     private void ApplyDamage()
@@ -174,5 +190,21 @@ public class PlayerAttack : MonoBehaviour
         // Scene 화면에 최대 공격 거리 표시
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(weaponPivot.position, attackRange);
+    }
+    public void CancelAttack()
+    {
+        isAttacking = false;
+        damageApplied = true;
+
+        if (weaponPivot != null)
+        {
+            weaponPivot.rotation = Quaternion.Euler(
+                0f, 0f, aimAngle
+            );
+        }
+    }
+    public void RequireFreshAttackInput()
+    {
+        waitForAttackRelease = true;
     }
 }
