@@ -1,12 +1,12 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class DungeonRunManager : MonoBehaviour
 {
     public static DungeonRunManager Instance { get; private set; }
 
-    [SerializeField] private int maxRevives = 3;
+    [SerializeField] private int maxRevives = 2;
     [SerializeField] private int remainingRevives;
-    [Header("¹°¾à")]
+    [Header("ë¬¼ì•½")]
     [SerializeField] private int maxPotions = 3;
     [SerializeField] private int remainingPotions;
 
@@ -19,7 +19,7 @@ public class DungeonRunManager : MonoBehaviour
 
     private void Awake()
     {
-        // ¹æ ÀÌµ¿À¸·Î °ü¸®ÀÚ°¡ Áßº¹ »ı¼ºµÇ¸é ±âÁ¸ °ÍÀ» À¯Áö
+        // ë°© ì´ë™ìœ¼ë¡œ ê´€ë¦¬ìê°€ ì¤‘ë³µ ìƒì„±ë˜ë©´ ê¸°ì¡´ ê²ƒì„ ìœ ì§€
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -29,7 +29,7 @@ public class DungeonRunManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // ÇöÀç Å×½ºÆ® ¾ÀÀÇ Ã¹ ½ÇÇàÀ» »õ µµÀüÀ¸·Î Ãë±Ş
+        // í˜„ì¬ í…ŒìŠ¤íŠ¸ ì”¬ì˜ ì²« ì‹¤í–‰ì„ ìƒˆ ë„ì „ìœ¼ë¡œ ì·¨ê¸‰
         BeginNewRun();
     }
 
@@ -48,7 +48,7 @@ public class DungeonRunManager : MonoBehaviour
         remainingRevives--;
 
         Debug.Log(
-            $"ºÎÈ° »ç¿ë / ³²Àº È½¼ö {remainingRevives}/{maxRevives}"
+            $"ë¶€í™œ ì‚¬ìš© / ë‚¨ì€ íšŸìˆ˜ {remainingRevives}/{maxRevives}"
         );
 
         return true;
@@ -60,7 +60,7 @@ public class DungeonRunManager : MonoBehaviour
             return;
 
         IsRunFailed = true;
-        Debug.Log("µµÀü ÃÖÁ¾ ½ÇÆĞ: ºÎÈ° È½¼ö¸¦ ¸ğµÎ ¼Ò¸ğÇß½À´Ï´Ù.");
+        Debug.Log("ë„ì „ ìµœì¢… ì‹¤íŒ¨: ë¶€í™œ íšŸìˆ˜ë¥¼ ëª¨ë‘ ì†Œëª¨í–ˆìŠµë‹ˆë‹¤.");
     }
 
     private void OnDestroy()

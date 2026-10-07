@@ -1,21 +1,21 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class StoneMonsterAI : MonoBehaviour
 {
     private enum State { Chase, Warning, Jump, Recovery }
 
-    [Header("¿¬°á")]
+    [Header("ì—°ê²°")]
     [SerializeField] private Transform player;
     [SerializeField] private Transform body;
     [SerializeField] private Transform attackWarning;
     [SerializeField] private LayerMask wallLayer;
 
-    [Header("ÀÌµ¿")]
+    [Header("ì´ë™")]
     [SerializeField] private float moveSpeed = 1.8f;
     [SerializeField] private float stopDistance = 1.3f;
 
-    [Header("°ø°İ")]
+    [Header("ê³µê²©")]
     [SerializeField] private float warningDuration = 0.7f;
     [SerializeField, Min(0.01f)] private float jumpDuration = 0.4f;
     [SerializeField] private float jumpHeight = 1f;
@@ -84,7 +84,7 @@ public class StoneMonsterAI : MonoBehaviour
             state = State.Chase;
             timer = 0f;
 
-            // ºÎÈ° Á÷ÈÄ ¿¹°í ¾øÀÌ °ø°İÇÏÁö ¾Êµµ·Ï ´ë±â
+            // ë¶€í™œ ì§í›„ ì˜ˆê³  ì—†ì´ ê³µê²©í•˜ì§€ ì•Šë„ë¡ ëŒ€ê¸°
             nextAttackTime = Time.time + 1f;
             return;
         }
@@ -124,7 +124,7 @@ public class StoneMonsterAI : MonoBehaviour
 
     private void LateUpdate()
     {
-        // öÑª¬ÔÑª¤ªÆªâ¡¢åøÍ±êÈöÇªÏÍ³ïÒª¹ªë
+        // è¦ªãŒå‹•ã„ã¦ã‚‚ã€äºˆå‘Šä½ç½®ã¯å›ºå®šã™ã‚‹
         if (attackWarning != null &&
             attackWarning.gameObject.activeSelf)
         {
@@ -155,14 +155,14 @@ public class StoneMonsterAI : MonoBehaviour
         if (Time.time < nextAttackTime)
             return;
 
-        // º®À¸·Î °¡·ÁÁø »ó´ë¿¡°Ô´Â Á¡ÇÁ¸¦ ½ÃÀÛÇÏÁö ¾ÊÀ½
+        // ë²½ìœ¼ë¡œ ê°€ë ¤ì§„ ìƒëŒ€ì—ê²ŒëŠ” ì í”„ë¥¼ ì‹œì‘í•˜ì§€ ì•ŠìŒ
         if (Physics2D.Linecast(
             rb.position, player.position, wallLayer).collider != null)
         {
             return;
         }
 
-        // ¿¹°í ½ÃÀÛ ½Ã ÇÃ·¹ÀÌ¾î À§Ä¡¸¦ ÀúÀå
+        // ì˜ˆê³  ì‹œì‘ ì‹œ í”Œë ˆì´ì–´ ìœ„ì¹˜ë¥¼ ì €ì¥
         landingPosition = player.position;
         nextAttackTime = Time.time + attackInterval;
         timer = 0f;
@@ -174,7 +174,7 @@ public class StoneMonsterAI : MonoBehaviour
 
     private void Jump()
     {
-        // ¸¶Áö¸· ÀÌµ¿ÀÇ ¹°¸® Ã³¸®°¡ ³¡³­ ´ÙÀ½ ÂøÁö ÆÇÁ¤
+        // ë§ˆì§€ë§‰ ì´ë™ì˜ ë¬¼ë¦¬ ì²˜ë¦¬ê°€ ëë‚œ ë‹¤ìŒ ì°©ì§€ íŒì •
         if (timer >= jumpDuration)
         {
             Land();
@@ -194,7 +194,7 @@ public class StoneMonsterAI : MonoBehaviour
         rb.linearVelocity =
             (nextPosition - rb.position) / Time.fixedDeltaTime;
 
-        // ¸öÃ¼ ÀÌ¹ÌÁö¸¸ À§·Î ¿Ã·È´Ù°¡ ³»¸²
+        // ëª¸ì²´ ì´ë¯¸ì§€ë§Œ ìœ„ë¡œ ì˜¬ë ¸ë‹¤ê°€ ë‚´ë¦¼
         float height = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
         body.localPosition =
             bodyStartPosition + Vector3.up * height;
@@ -215,7 +215,7 @@ public class StoneMonsterAI : MonoBehaviour
             center, closestPoint, wallLayer
         ).collider != null;
 
-        // ÂøÁö ÇÑ ¹ø´ç ÇÇÇØ ÆÇÁ¤ ÇÑ ¹ø
+        // ì°©ì§€ í•œ ë²ˆë‹¹ í”¼í•´ íŒì • í•œ ë²ˆ
         if (inRange && !blocked)
             playerHealth.TakeDamage(attackDamage);
 
@@ -254,4 +254,12 @@ public class StoneMonsterAI : MonoBehaviour
         ResetVisuals();
         SetIgnorePlayer(false);
     }
+    public void SetTarget(PlayerHealth target)
+    {
+        SetIgnorePlayer(false);
+        playerHealth = target;
+        player = target != null ? target.transform : null;
+        playerCollider = target != null ? target.GetComponent<Collider2D>() : null;
+    }
+
 }

@@ -1,14 +1,14 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [Header("Ã¼·Â")]
+    [Header("ì²´ë ¥")]
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int currentHealth;
     [SerializeField] private float invincibleDuration = 0.6f;
 
-    [Header("ºÎÈ° Å×½ºÆ® ¼³Á¤")]
+    [Header("ë¶€í™œ í…ŒìŠ¤íŠ¸ ì„¤ì •")]
     [SerializeField] private float reviveDelay = 1f;
     [SerializeField, Range(0.01f, 1f)]
     private float reviveHealthRatio = 1f;
@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
-        // ¹«Àû ½Ã°£ µ¿¾È ¸öÃ¼¸¦ ¹İÅõ¸íÇÏ°Ô ±ôºıÀÓ
+        // ë¬´ì  ì‹œê°„ ë™ì•ˆ ëª¸ì²´ë¥¼ ë°˜íˆ¬ëª…í•˜ê²Œ ê¹œë¹¡ì„
         Color color = originalColor;
 
         if (Time.time < invincibleUntil)
@@ -75,7 +75,7 @@ public class PlayerHealth : MonoBehaviour
         invincibleUntil = Time.time + invincibleDuration;
 
         Debug.Log(
-            $"ÇÃ·¹ÀÌ¾î: {damage} ÇÇÇØ / ³²Àº Ã¼·Â {currentHealth}",
+            $"í”Œë ˆì´ì–´: {damage} í”¼í•´ / ë‚¨ì€ ì²´ë ¥ {currentHealth}",
             this
         );
 
@@ -104,7 +104,7 @@ public class PlayerHealth : MonoBehaviour
         if (run == null)
         {
             Debug.LogError(
-                "¾À¿¡ DungeonRunManager°¡ ¾ø½À´Ï´Ù.",
+                "ì”¬ì— DungeonRunManagerê°€ ì—†ìŠµë‹ˆë‹¤.",
                 this
             );
             return;
@@ -122,7 +122,7 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator ReviveRoutine()
     {
-        Debug.Log("ºÎÈ° ´ë±â Áß", this);
+        Debug.Log("ë¶€í™œ ëŒ€ê¸° ì¤‘", this);
 
         yield return new WaitForSeconds(reviveDelay);
         if (respawnPoint != null)
@@ -139,7 +139,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Player Health¿¡ Respawn Point¸¦ ¿¬°áÇØÁÖ¼¼¿ä.", this);
+            Debug.LogError("Player Healthì— Respawn Pointë¥¼ ì—°ê²°í•´ì£¼ì„¸ìš”.", this);
         }
 
         currentHealth = Mathf.Clamp(
@@ -158,8 +158,8 @@ public class PlayerHealth : MonoBehaviour
             attack.enabled = attackWasEnabled;
 
         Debug.Log(
-            $"ºÎÈ° ¿Ï·á / Ã¼·Â {currentHealth} / " +
-            $"³²Àº ºÎÈ° {DungeonRunManager.Instance.RemainingRevives}È¸",
+            $"ë¶€í™œ ì™„ë£Œ / ì²´ë ¥ {currentHealth} / " +
+            $"ë‚¨ì€ ë¶€í™œ {DungeonRunManager.Instance.RemainingRevives}íšŒ",
             this
         );
     }
@@ -182,9 +182,31 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
 
         Debug.Log(
-            $"¹°¾à È¸º¹: {currentHealth - previousHealth} / " +
-            $"ÇöÀç Ã¼·Â {currentHealth}",
+            $"ë¬¼ì•½ íšŒë³µ: {currentHealth - previousHealth} / " +
+            $"í˜„ì¬ ì²´ë ¥ {currentHealth}",
             this
         );
     }
+    // ë°© ì „í™˜ì€ ì²´ë ¥, ë¬¼ì•½, ë¶€í™œ íšŸìˆ˜ë¥¼ ì´ˆê¸°í™”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+    public void EnterRoom(Transform entrance)
+    {
+        if (entrance == null || IsDead) return;
+        respawnPoint = entrance;
+        bool restoreMovement = movement != null && movement.enabled;
+        bool restoreAttack = attack != null && attack.enabled;
+        if (movement != null) movement.enabled = false;
+        if (attack != null) attack.enabled = false;
+        Vector3 destination = entrance.position;
+        destination.z = transform.position.z;
+        transform.position = destination;
+        if (rb != null)
+        {
+            rb.position = destination;
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+        if (movement != null) movement.enabled = restoreMovement;
+        if (attack != null) attack.enabled = restoreAttack;
+    }
+
 }

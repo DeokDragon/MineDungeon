@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
 public class CameraFollow : MonoBehaviour
@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float smoothTime = 0.15f;
 
-    [Header("¸ÊÀÇ ¿ŞÂÊ ¾Æ·¡ / ¿À¸¥ÂÊ À§ ÁÂÇ¥")]
+    [Header("ë§µì˜ ì™¼ìª½ ì•„ë˜ / ì˜¤ë¥¸ìª½ ìœ„ ì¢Œí‘œ")]
     [SerializeField] private Vector2 mapMin = new Vector2(-20f, -15f);
     [SerializeField] private Vector2 mapMax = new Vector2(20f, 15f);
 
@@ -51,7 +51,7 @@ public class CameraFollow : MonoBehaviour
         float minY = mapMin.y + halfHeight;
         float maxY = mapMax.y - halfHeight;
 
-        // È­¸éÀÌ ¸Êº¸´Ù Å©¸é ÇØ´ç ÃàÀº Áß¾Ó¿¡ °íÁ¤
+        // í™”ë©´ì´ ë§µë³´ë‹¤ í¬ë©´ í•´ë‹¹ ì¶•ì€ ì¤‘ì•™ì— ê³ ì •
         float x = minX <= maxX
             ? Mathf.Clamp(position.x, minX, maxX)
             : (mapMin.x + mapMax.x) * 0.5f;
@@ -62,4 +62,14 @@ public class CameraFollow : MonoBehaviour
 
         return new Vector3(x, y, -10f);
     }
+    public void SetRoom(Transform player, Vector2 minimum, Vector2 maximum)
+    {
+        target = player;
+        mapMin = minimum;
+        mapMax = maximum;
+        if (cam == null) cam = GetComponent<Camera>();
+        followVelocity = Vector3.zero;
+        if (target != null) transform.position = ClampPosition(target.position);
+    }
+
 }

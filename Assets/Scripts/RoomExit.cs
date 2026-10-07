@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D), typeof(SpriteRenderer))]
 public class RoomExit : MonoBehaviour
@@ -9,6 +9,14 @@ public class RoomExit : MonoBehaviour
     private BoxCollider2D exitCollider;
     private SpriteRenderer exitRenderer;
     private bool hasEntered;
+    private DungeonRoom owner;
+    private DungeonRoomManager roomManager;
+
+    public void Bind(DungeonRoom room, DungeonRoomManager manager)
+    {
+        owner = room;
+        roomManager = manager;
+    }
 
     public bool IsOpen { get; private set; }
 
@@ -62,6 +70,12 @@ public class RoomExit : MonoBehaviour
         DungeonRunManager run = DungeonRunManager.Instance;
         if (run != null && run.IsRunFailed)
             return;
+
+        if (roomManager != null)
+        {
+            roomManager.RequestNextRoom(owner, player);
+            return;
+        }
 
         hasEntered = true;
         Debug.Log("Exit reached! Room complete. Next room is not connected yet.", this);
