@@ -10,6 +10,9 @@ public class EnemyHealth : MonoBehaviour
     private float flashTimer;
     private bool isDead;
 
+    public bool IsDead => isDead;
+    public event System.Action<EnemyHealth> Died;
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -44,6 +47,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth == 0)
         {
             isDead = true;
+            Died?.Invoke(this);
             Destroy(gameObject);
             return;
         }
