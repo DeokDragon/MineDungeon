@@ -10,6 +10,7 @@ public class DungeonRoom : MonoBehaviour
     [SerializeField] private Vector2 localMax = new Vector2(12.5f, 10f);
 
     public Transform Entrance => entrance;
+    public RoomController Controller => roomController;
     public bool IsCleared => roomController != null && roomController.IsCleared;
     public Vector2 WorldMin => transform.TransformPoint(localMin);
     public Vector2 WorldMax => transform.TransformPoint(localMax);
@@ -30,5 +31,7 @@ public class DungeonRoom : MonoBehaviour
         roomExit.Bind(this, manager);
         foreach (StoneMonsterAI monster in GetComponentsInChildren<StoneMonsterAI>(true))
             monster.SetTarget(player);
+        foreach (StoneGolemBossAI boss in GetComponentsInChildren<StoneGolemBossAI>(true))
+            boss.SetTarget(player, this);
     }
 }

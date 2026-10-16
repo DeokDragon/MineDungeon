@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
     private bool attackWasEnabled;
 
     public bool IsDead { get; private set; }
+    public event System.Action<PlayerHealth> Died;
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
 
@@ -68,6 +69,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunEnded)
+            return;
         if (IsDead || damage <= 0 || Time.time < invincibleUntil)
             return;
 
@@ -86,6 +89,7 @@ public class PlayerHealth : MonoBehaviour
     private void HandleDefeat()
     {
         IsDead = true;
+        Died?.Invoke(this);
 
         movementWasEnabled = movement != null && movement.enabled;
         attackWasEnabled = attack != null && attack.enabled;

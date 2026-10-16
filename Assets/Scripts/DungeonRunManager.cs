@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DungeonRunManager : MonoBehaviour
 {
@@ -16,6 +18,10 @@ public class DungeonRunManager : MonoBehaviour
     public int RemainingRevives => remainingRevives;
     public int MaxRevives => maxRevives;
     public bool IsRunFailed { get; private set; }
+    public bool IsRunCleared { get; private set; }
+    public bool IsRunEnded => IsRunFailed || IsRunCleared;
+    public bool IsRestarting { get; private set; }
+    public event System.Action RunEnded;
 
     private void Awake()
     {
@@ -38,11 +44,12 @@ public class DungeonRunManager : MonoBehaviour
         remainingRevives = maxRevives;
         remainingPotions = maxPotions;
         IsRunFailed = false;
+        IsRunCleared = false;
     }
 
     public bool TryUseRevive()
     {
-        if (IsRunFailed || remainingRevives <= 0)
+        if (IsRunEnded || IsRestarting || remainingRevives <= 0)
             return false;
 
         remainingRevives--;
@@ -56,11 +63,43 @@ public class DungeonRunManager : MonoBehaviour
 
     public void FailRun()
     {
-        if (IsRunFailed)
+        if (IsRunEnded || IsRestarting)
             return;
 
         IsRunFailed = true;
+        RunEnded?.Invoke();
         Debug.Log("도전 최종 실패: 부활 횟수를 모두 소모했습니다.");
+    }
+
+    public void CompleteRun()
+    {
+        if (IsRunEnded || IsRestarting) return;
+        IsRunCleared = true;
+        RunEnded?.Invoke();
+    }
+
+    public bool RestartCurrentScene()
+    {
+        if (!IsRunEnded || IsRestarting) return false;
+        string path = SceneManager.GetActiveScene().path;
+        if (!Application.CanStreamedLevelBeLoaded(path))
+        {
+            Debug.LogError("The dungeon scene must be enabled in Build Settings.", this);
+            return false;
+        }
+        IsRestarting = true; // Guard survives destruction of the old Canvas.
+        StartCoroutine(ReloadRun(path));
+        return true;
+    }
+
+    private IEnumerator ReloadRun(string path)
+    {
+        // The singleton survives reload; reset before new scene Start methods.
+        BeginNewRun();
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        yield return SceneManager.LoadSceneAsync(path, LoadSceneMode.Single);
+        IsRestarting = false;
     }
 
     private void OnDestroy()
@@ -70,7 +109,7 @@ public class DungeonRunManager : MonoBehaviour
     }
     public bool TryUsePotion()
     {
-        if (IsRunFailed || remainingPotions <= 0)
+        if (IsRunEnded || IsRestarting || remainingPotions <= 0)
             return false;
 
         remainingPotions--;

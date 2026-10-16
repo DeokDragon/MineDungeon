@@ -10,6 +10,7 @@ public class RoomController : MonoBehaviour
 
     public int RemainingEnemies => livingEnemies.Count;
     public bool IsCleared { get; private set; }
+    public event System.Action<RoomController> Cleared;
 
     private void Awake()
     {
@@ -65,6 +66,7 @@ public class RoomController : MonoBehaviour
 
         IsCleared = true;
         roomExit.SetOpen(true);
+        Cleared?.Invoke(this);
         Debug.Log("Room cleared! The exit is open.", this);
     }
 

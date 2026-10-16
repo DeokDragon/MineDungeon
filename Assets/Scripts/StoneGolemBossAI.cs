@@ -1,0 +1,620 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+[DisallowMultipleComponent]
+[RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D), typeof(EnemyHealth))]
+public class StoneGolemBossAI : MonoBehaviour
+{
+    public enum BossState { Chase, Warning, Jump, Recovery, Waiting, Charge, Rockfall }
+    public enum Pattern { None, LeapSlam, GroundSmash, RockCharge, StoneFan, Rockfall }
+
+    [Header("References (player is bound by DungeonRoom)")]
+    [SerializeField] private Transform body;
+    [SerializeField] private SpriteRenderer attackWarning;
+    [SerializeField] private LayerMask wallLayer;
+
+    [Header("Movement / shared timing")]
+    [SerializeField, Min(0f)] private float moveSpeed = 1.4f;
+    [SerializeField, Min(0f)] private float stopDistance = 2f;
+    [SerializeField, Min(0f)] private float commonWait = 0.8f;
+    [SerializeField, Min(0.001f)] private float wallSkin = 0.03f;
+
+    [Header("Leap slam")]
+    [SerializeField, Min(0.01f)] private float leapRadius = 1.8f;
+    [SerializeField, Min(0.01f)] private float maxLeapDistance = 7f;
+    [SerializeField, Min(0.01f)] private float leapWarning = 1f;
+    [SerializeField, Min(0.01f)] private float leapDuration = 0.6f;
+    [SerializeField, Min(0f)] private float leapCooldown = 8f;
+    [SerializeField, Min(0f)] private float leapRecovery = 1.3f;
+    [SerializeField, Min(1)] private int leapDamage = 20;
+    [SerializeField, Min(0f)] private float jumpHeight = 1.8f;
+
+    [Header("Ground smash")]
+    [SerializeField, Min(0.01f)] private float smashRadius = 3f;
+    [SerializeField, Min(0f)] private float smashSelectionDistance = 3.5f;
+    [SerializeField, Min(0.01f)] private float smashWarning = 1.2f;
+    [SerializeField, Min(0f)] private float smashCooldown = 6f;
+    [SerializeField, Min(0f)] private float smashRecovery = 1.5f;
+    [SerializeField, Min(1)] private int smashDamage = 15;
+
+    [Header("Rock charge (width comes from the circle collider diameter: 2 units)")]
+    [SerializeField] private SpriteRenderer chargePath;
+    [SerializeField] private SpriteRenderer chargeStartCap;
+    [SerializeField] private SpriteRenderer chargeEndCap;
+    [SerializeField, Min(0.01f)] private float chargeMaxDistance = 8f;
+    [SerializeField, Min(0.01f)] private float chargeWarning = 1f;
+    [SerializeField, Min(0.01f)] private float chargeSpeed = 10f;
+    [SerializeField, Min(0.01f)] private float chargeMaxDuration = 0.8f;
+    [SerializeField, Min(0f)] private float chargeCooldown = 10f;
+    [SerializeField, Min(0f)] private float chargeRecovery = 1.2f;
+    [SerializeField, Min(0f)] private float chargeWallRecovery = 2f;
+    [SerializeField, Min(1)] private int chargeDamage = 20;
+
+    [Header("Stone fan")]
+    [SerializeField] private StoneGolemShard shardPrefab;
+    [SerializeField] private Material fanWarningMaterial;
+    [SerializeField, Range(1f, 180f)] private float fanAngle = 90f;
+    [SerializeField, Min(2)] private int shardCount = 5;
+    [SerializeField, Min(0.01f)] private float shardRange = 8f;
+    [SerializeField, Min(0.01f)] private float shardSpeed = 6f;
+    [SerializeField, Min(0.01f)] private float shardDiameter = 0.4f;
+    [SerializeField, Min(0.01f)] private float fanWarning = 0.9f;
+    [SerializeField, Min(0f)] private float fanCooldown = 7f;
+    [SerializeField, Min(0f)] private float fanRecovery = 1f;
+    [SerializeField, Min(1)] private int shardDamage = 10;
+
+    [Header("Rockfall")]
+    [SerializeField] private StoneGolemRockfall rockfallPrefab;
+    [SerializeField, Min(1)] private int rockfallCount = 3;
+    [SerializeField, Min(0.01f)] private float rockfallRadius = 1.2f;
+    [SerializeField, Min(0.01f)] private float rockfallInterval = 0.5f;
+    [SerializeField, Min(0.01f)] private float rockfallWarning = 0.9f;
+    [SerializeField, Min(0f)] private float rockfallCooldown = 12f;
+    [SerializeField, Min(0f)] private float rockfallRecovery = 1.2f;
+    [SerializeField, Min(0.01f)] private float rockfallSelectionRange = 8f;
+    [SerializeField, Min(1)] private int rockfallDamage = 20;
+
+    private Rigidbody2D rb;
+    private CircleCollider2D hitbox;
+    private EnemyHealth health;
+    private PlayerHealth player;
+    private Collider2D playerCollider;
+    private DungeonRoom room;
+    private Vector3 bodyRestPosition;
+    private Vector2 attackCenter;
+    private Vector2 jumpStart;
+    private float timer;
+    private float nextLeapTime;
+    private float nextSmashTime;
+    private float nextChargeTime;
+    private float nextFanTime, nextRockfallTime;
+    private Vector2 fanOrigin, fanDirection;
+    private int rocksSpawned;
+    private GameObject effectsRoot;
+    private StoneGolemTelegraph telegraph;
+    private readonly List<StoneGolemShard> shards = new List<StoneGolemShard>();
+    private readonly List<StoneGolemRockfall> rocks = new List<StoneGolemRockfall>();
+    private Vector2 chargeStart;
+    private Vector2 chargeDirection;
+    private float chargeDistance;
+    private bool chargeEndsAtWall;
+    private float recoveryDuration;
+    private bool ignoringPlayer;
+    private bool previousIgnorePlayer;
+    private bool targetWasDead;
+    private bool damageApplied;
+
+    public BossState State { get; private set; }
+    public Pattern ActivePattern { get; private set; }
+    public Pattern LastPattern { get; private set; }
+    public PlayerHealth Target => player;
+    public Vector2 AttackCenter => attackCenter;
+
+    private float BodyRadius => hitbox.radius * Mathf.Max(
+        Mathf.Abs(transform.lossyScale.x), Mathf.Abs(transform.lossyScale.y));
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        hitbox = GetComponent<CircleCollider2D>();
+        health = GetComponent<EnemyHealth>();
+        if (body != null) bodyRestPosition = body.localPosition;
+        HideWarning();
+        // Defensive guard against accidentally attaching both AIs in the Inspector.
+        StoneMonsterAI ordinaryAI = GetComponent<StoneMonsterAI>();
+        if (ordinaryAI != null) ordinaryAI.enabled = false;
+        if (body == null || attackWarning == null || attackWarning.sprite == null ||
+            wallLayer.value == 0 || hitbox.offset != Vector2.zero)
+        {
+            Debug.LogError("StoneGolemBossAI: assign Body, circular Warning, Wall mask and a centered circle collider.", this);
+            enabled = false;
+        }
+    }
+
+    private void OnEnable()
+    {
+        health.Died += OnBossDied;
+        if (player != null) player.Died += OnPlayerDied;
+        CancelAttack();
+    }
+
+    public void SetTarget(PlayerHealth target, DungeonRoom owner)
+    {
+        CancelAttack(); // Restore the old collision pair before replacing the target.
+        if (player != null) player.Died -= OnPlayerDied;
+        player = target;
+        room = owner;
+        playerCollider = player != null ? player.GetComponent<Collider2D>() : null;
+        targetWasDead = player != null && player.IsDead;
+        if (isActiveAndEnabled && player != null) player.Died += OnPlayerDied;
+    }
+
+    private void FixedUpdate()
+    {
+        if (Time.timeScale == 0f) return;
+        rb.linearVelocity = Vector2.zero;
+        if (health.IsDead || player == null || playerCollider == null || room == null)
+        {
+            CancelAttack();
+            return;
+        }
+        if (player.IsDead)
+        {
+            if (!targetWasDead) CancelAttack();
+            targetWasDead = true;
+            return;
+        }
+        if (targetWasDead)
+        {
+            targetWasDead = false;
+            CancelAttack(); // A full new wait/telegraph after revival; no suspended hit.
+        }
+
+        timer += Time.fixedDeltaTime;
+        switch (State)
+        {
+            case BossState.Waiting:
+                if (timer >= commonWait) SetState(BossState.Chase);
+                break;
+            case BossState.Chase:
+                if (!TrySelectPattern()) Chase();
+                break;
+            case BossState.Warning:
+                float warningDuration = ActivePattern == Pattern.StoneFan ? fanWarning :
+                    ActivePattern == Pattern.RockCharge ? chargeWarning :
+                    (ActivePattern == Pattern.LeapSlam ? leapWarning : smashWarning);
+                if (telegraph != null)
+                    telegraph.SetProgress(ActivePattern == Pattern.LeapSlam
+                        ? Mathf.Min(timer, leapWarning) / (leapWarning + leapDuration)
+                        : timer / warningDuration);
+                if (timer >= warningDuration)
+                {
+                    if (ActivePattern == Pattern.LeapSlam)
+                    {
+                        if (!PathClear(rb.position, attackCenter)) { CancelAttack(); break; }
+                        jumpStart = rb.position;
+                        IgnorePlayer();
+                        SetState(BossState.Jump);
+                    }
+                    else if (ActivePattern == Pattern.RockCharge)
+                    {
+                        CompleteWarning();
+                        HideWarning();
+                        IgnorePlayer(); // Sweeps handle contact without physically pushing the player.
+                        SetState(BossState.Charge);
+                    }
+                    else if (ActivePattern == Pattern.StoneFan) FireShards();
+                    else ResolveAttack();
+                }
+                break;
+            case BossState.Jump:
+                TickJump();
+                break;
+            case BossState.Charge:
+                TickCharge();
+                break;
+            case BossState.Recovery:
+                if (ActivePattern == Pattern.StoneFan)
+                {
+                    TickShards();
+                    if (player.IsDead || !isActiveAndEnabled) return;
+                }
+                if (timer >= recoveryDuration && shards.Count == 0)
+                {
+                    ClearOwnedEffects();
+                    ActivePattern = Pattern.None;
+                    SetState(BossState.Waiting);
+                }
+                break;
+            case BossState.Rockfall:
+                TickRockfalls();
+                break;
+        }
+    }
+
+    private bool TrySelectPattern()
+    {
+        Vector2 landing = default;
+        bool canSmash = LastPattern != Pattern.GroundSmash && Time.time >= nextSmashTime &&
+            Vector2.Distance(rb.position, player.transform.position) <= smashSelectionDistance &&
+            !Physics2D.Linecast(rb.position, playerCollider.ClosestPoint(rb.position), wallLayer);
+        bool canLeap = LastPattern != Pattern.LeapSlam && Time.time >= nextLeapTime &&
+            TryGetLanding(out landing);
+        Vector2 direction = ((Vector2)player.transform.position - rb.position).normalized;
+        bool endsAtWall = false;
+        float distance = 0f;
+        bool canCharge = LastPattern != Pattern.RockCharge && Time.time >= nextChargeTime &&
+            chargePath != null && chargeStartCap != null && chargeEndCap != null &&
+            direction.sqrMagnitude > 0.5f;
+        if (canCharge)
+        {
+            distance = ChargeWallDistance(rb.position, direction,
+                Mathf.Min(chargeMaxDistance, chargeSpeed * chargeMaxDuration), out endsAtWall);
+            canCharge = distance >= 0.05f;
+        }
+        float targetDistance = Vector2.Distance(rb.position, player.transform.position);
+        bool visible = Physics2D.Linecast(rb.position, player.transform.position, wallLayer).collider == null;
+        bool canFan = LastPattern != Pattern.StoneFan && Time.time >= nextFanTime && shardPrefab != null && fanWarningMaterial != null &&
+            targetDistance > 0.01f && targetDistance <= shardRange && visible;
+        bool canRockfall = LastPattern != Pattern.Rockfall && Time.time >= nextRockfallTime &&
+            rockfallPrefab != null && targetDistance <= rockfallSelectionRange && visible;
+        int choices = (canLeap ? 1 : 0) + (canSmash ? 1 : 0) + (canCharge ? 1 : 0) +
+            (canFan ? 1 : 0) + (canRockfall ? 1 : 0);
+        if (choices == 0) return false;
+
+        int selected = Random.Range(0, choices);
+        if (canLeap && selected-- == 0) ActivePattern = Pattern.LeapSlam;
+        else if (canSmash && selected-- == 0) ActivePattern = Pattern.GroundSmash;
+        else if (canCharge && selected-- == 0) ActivePattern = Pattern.RockCharge;
+        else if (canFan && selected-- == 0) ActivePattern = Pattern.StoneFan;
+        else ActivePattern = Pattern.Rockfall;
+        LastPattern = ActivePattern;
+        damageApplied = false;
+        if (ActivePattern == Pattern.LeapSlam)
+        {
+            attackCenter = landing;
+            nextLeapTime = Time.time + leapCooldown;
+            ShowWarning(leapRadius, new Color(1f, 0.35f, 0.05f, 0.4f));
+        }
+        else if (ActivePattern == Pattern.GroundSmash)
+        {
+            attackCenter = rb.position;
+            nextSmashTime = Time.time + smashCooldown;
+            ShowWarning(smashRadius, new Color(1f, 0.1f, 0.15f, 0.35f));
+        }
+        else if (ActivePattern == Pattern.RockCharge)
+        {
+            chargeStart = rb.position;
+            chargeDirection = direction;
+            chargeDistance = distance;
+            chargeEndsAtWall = endsAtWall;
+            attackCenter = chargeStart + direction * distance;
+            nextChargeTime = Time.time + chargeCooldown;
+            UpdateChargeWarning();
+        }
+        else if (ActivePattern == Pattern.StoneFan)
+        {
+            fanOrigin = rb.position;
+            fanDirection = direction;
+            nextFanTime = Time.time + fanCooldown;
+            CreateEffectsRoot();
+            ShowFanWarning();
+        }
+        else
+        {
+            nextRockfallTime = Time.time + rockfallCooldown;
+            CreateEffectsRoot();
+            rocksSpawned = 0;
+            SetState(BossState.Rockfall);
+            SpawnRockfall(); // First location is sampled now; the other two are sampled later.
+            return true;
+        }
+        SetState(BossState.Warning);
+        return true;
+    }
+
+    private void CreateEffectsRoot()
+    {
+        ClearOwnedEffects();
+        effectsRoot = new GameObject(name + " Attacks");
+        UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(effectsRoot, gameObject.scene);
+        // Intentionally unparented with unit scale: all dimensions are world units.
+    }
+
+    private void ShowFanWarning()
+    {
+        telegraph = StoneGolemTelegraph.Create(effectsRoot.transform, fanWarningMaterial,
+            fanOrigin, fanDirection, shardRange, fanAngle, 0f, false,
+            new Color(.7f, .45f, 1f), attackWarning.sortingLayerID, attackWarning.sortingOrder);
+    }
+
+    private void FireShards()
+    {
+        CompleteWarning();
+        HideWarning();
+        float heading = Mathf.Atan2(fanDirection.y, fanDirection.x) * Mathf.Rad2Deg;
+        for (int i = 0; i < shardCount; i++)
+        {
+            float angle = (heading + Mathf.Lerp(-fanAngle * 0.5f, fanAngle * 0.5f,
+                i / (float)Mathf.Max(1, shardCount - 1))) * Mathf.Deg2Rad;
+            StoneGolemShard shard = Instantiate(shardPrefab, effectsRoot.transform);
+            shard.Initialize(player, wallLayer, fanOrigin, new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)),
+                shardSpeed, shardRange, shardDiameter, shardDamage);
+            shards.Add(shard);
+        }
+        recoveryDuration = fanRecovery;
+        SetState(BossState.Recovery); // Recovery starts at firing, not at projectile expiry.
+    }
+
+    private void TickShards()
+    {
+        for (int i = shards.Count - 1; i >= 0; i--)
+        {
+            bool alive = shards[i] != null && shards[i].Tick(Time.fixedDeltaTime);
+            // TakeDamage can synchronously cancel this entire pattern and clear the lists.
+            if (player.IsDead || !isActiveAndEnabled) return;
+            if (!alive) shards.RemoveAt(i);
+        }
+    }
+
+    private void SpawnRockfall()
+    {
+        StoneGolemRockfall rock = Instantiate(rockfallPrefab, effectsRoot.transform);
+        rock.Initialize(player, wallLayer, player.transform.position, rockfallRadius,
+            rockfallWarning, rocksSpawned * rockfallInterval, rockfallDamage);
+        rocks.Add(rock);
+        rocksSpawned++;
+    }
+
+    private void TickRockfalls()
+    {
+        while (rocksSpawned < rockfallCount && timer + 0.00001f >= rocksSpawned * rockfallInterval)
+            SpawnRockfall();
+        for (int i = rocks.Count - 1; i >= 0; i--)
+        {
+            bool alive = rocks[i] != null && rocks[i].Tick(timer);
+            if (player.IsDead || !isActiveAndEnabled) return;
+            if (!alive) rocks.RemoveAt(i);
+        }
+        if (rocksSpawned == rockfallCount && rocks.Count == 0)
+        {
+            recoveryDuration = rockfallRecovery;
+            SetState(BossState.Recovery);
+        }
+    }
+
+    private void ClearOwnedEffects()
+    {
+        if (effectsRoot != null)
+        {
+            effectsRoot.SetActive(false);
+            Destroy(effectsRoot);
+            effectsRoot = null;
+        }
+        telegraph = null;
+        shards.Clear();
+        rocks.Clear();
+        rocksSpawned = 0;
+    }
+
+    // The telegraph and movement use the same swept circle, including rounded ends.
+    // Boundaries are intersected along the ray, never clamped onto a different direction.
+    private float ChargeWallDistance(Vector2 start, Vector2 direction, float limit, out bool blocked)
+    {
+        float available = limit;
+        Vector2 min = room.WorldMin + Vector2.one * (BodyRadius + wallSkin);
+        Vector2 max = room.WorldMax - Vector2.one * (BodyRadius + wallSkin);
+        if (start.x < min.x || start.x > max.x || start.y < min.y || start.y > max.y)
+        {
+            blocked = true;
+            return 0f;
+        }
+        if (direction.x > 0.0001f) available = Mathf.Min(available, (max.x - start.x) / direction.x);
+        else if (direction.x < -0.0001f) available = Mathf.Min(available, (min.x - start.x) / direction.x);
+        if (direction.y > 0.0001f) available = Mathf.Min(available, (max.y - start.y) / direction.y);
+        else if (direction.y < -0.0001f) available = Mathf.Min(available, (min.y - start.y) / direction.y);
+        RaycastHit2D wall = Physics2D.CircleCast(start, BodyRadius, direction, limit + wallSkin, wallLayer);
+        if (wall.collider != null) available = Mathf.Min(available, Mathf.Max(0f, wall.distance - wallSkin));
+        blocked = available < limit;
+        return Mathf.Max(0f, available);
+    }
+
+    private void TickCharge()
+    {
+        float remaining = Mathf.Max(0f, chargeDistance - Vector2.Dot(rb.position - chargeStart, chargeDirection));
+        float stepTime = Mathf.Min(Time.fixedDeltaTime, Mathf.Max(0f, chargeMaxDuration - (timer - Time.fixedDeltaTime)));
+        float step = Mathf.Min(chargeSpeed * stepTime, remaining);
+        bool wallBlocked;
+        float safeStep = ChargeWallDistance(rb.position, chargeDirection, step, out wallBlocked);
+
+        float playerDistance = float.PositiveInfinity;
+        if (Vector2.Distance(rb.position, playerCollider.ClosestPoint(rb.position)) <= BodyRadius)
+            playerDistance = 0f;
+        else
+        {
+            // Query the full interval so a fast charge cannot skip a thin player collider.
+            foreach (RaycastHit2D hit in Physics2D.CircleCastAll(rb.position, BodyRadius,
+                chargeDirection, step, 1 << playerCollider.gameObject.layer))
+                if (hit.collider == playerCollider) playerDistance = Mathf.Min(playerDistance, hit.distance);
+        }
+
+        bool hitPlayer = playerDistance <= safeStep;
+        float travel = hitPlayer ? Mathf.Max(0f, playerDistance - wallSkin) : safeStep;
+        // Swept movement is applied directly: no pending MovePosition velocity can push
+        // the player after collision or survive the transition into recovery.
+        rb.position += chargeDirection * travel;
+        rb.linearVelocity = Vector2.zero;
+        if (hitPlayer)
+        {
+            bool applyDamage = !damageApplied;
+            FinishCharge(false);
+            if (applyDamage && !player.IsDead && !health.IsDead)
+                player.TakeDamage(chargeDamage);
+        }
+        else if (wallBlocked || remaining - travel <= 0.001f || timer >= chargeMaxDuration)
+            FinishCharge(wallBlocked || (chargeEndsAtWall && remaining - travel <= 0.001f));
+    }
+
+    private void FinishCharge(bool hitWall)
+    {
+        damageApplied = true;
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        HideWarning();
+        RestorePlayerCollision();
+        recoveryDuration = hitWall ? chargeWallRecovery : chargeRecovery;
+        SetState(BossState.Recovery);
+    }
+
+    private void UpdateChargeWarning()
+    {
+        CreateEffectsRoot();
+        telegraph = StoneGolemTelegraph.Create(effectsRoot.transform, fanWarningMaterial,
+            chargeStart, chargeDirection, BodyRadius, 360f, chargeDistance, true,
+            new Color(1f, .4f, .05f), attackWarning.sortingLayerID, attackWarning.sortingOrder);
+    }
+
+    private bool TryGetLanding(out Vector2 landing)
+    {
+        Vector2 start = rb.position;
+        Vector2 delta = (Vector2)player.transform.position - start;
+        float distance = Mathf.Min(delta.magnitude, maxLeapDistance);
+        Vector2 direction = delta.normalized;
+        RaycastHit2D wall = Physics2D.CircleCast(start, BodyRadius + wallSkin,
+            direction, distance, wallLayer);
+        if (wall.collider != null) distance = Mathf.Min(distance, Mathf.Max(0f, wall.distance - wallSkin));
+        landing = ClampToRoom(start + direction * distance);
+        // A blocked/zero-length leap is not a selectable attack.
+        return Vector2.Distance(start, landing) >= 0.25f && PathClear(start, landing);
+    }
+
+    private Vector2 ClampToRoom(Vector2 point)
+    {
+        float margin = BodyRadius + wallSkin;
+        Vector2 min = room.WorldMin + Vector2.one * margin;
+        Vector2 max = room.WorldMax - Vector2.one * margin;
+        return new Vector2(Mathf.Clamp(point.x, min.x, max.x), Mathf.Clamp(point.y, min.y, max.y));
+    }
+
+    private bool PathClear(Vector2 from, Vector2 to)
+    {
+        if (room == null || Vector2.Distance(ClampToRoom(to), to) > 0.001f) return false;
+        float radius = BodyRadius + wallSkin;
+        if (Physics2D.OverlapCircle(to, radius, wallLayer) != null) return false;
+        Vector2 delta = to - from;
+        return delta.sqrMagnitude < 0.000001f ||
+            Physics2D.CircleCast(from, radius, delta.normalized, delta.magnitude, wallLayer).collider == null;
+    }
+
+    private void Chase()
+    {
+        Vector2 delta = (Vector2)player.transform.position - rb.position;
+        // ClosestPoint also protects against a larger player collider.
+        float gap = Vector2.Distance(rb.position, playerCollider.ClosestPoint(rb.position)) - BodyRadius;
+        float travel = Mathf.Min(moveSpeed * Time.fixedDeltaTime,
+            Mathf.Min(delta.magnitude - stopDistance, gap - 0.15f));
+        if (travel <= 0f) return;
+        Vector2 next = rb.position + delta.normalized * travel;
+        if (PathClear(rb.position, next)) rb.MovePosition(next);
+    }
+
+    private void TickJump()
+    {
+        // Resolve only after the preceding physics step reached the displayed center.
+        if (timer >= leapDuration && Vector2.Distance(rb.position, attackCenter) < 0.01f)
+        {
+            ResolveAttack();
+            return;
+        }
+        // MovePosition lands on the following physics step. Do not complete early
+        // while the actual landing check above is still pending.
+        if (telegraph != null) telegraph.SetProgress(Mathf.Min(.999f,
+            (leapWarning + timer) / (leapWarning + leapDuration)));
+        Vector2 next = Vector2.Lerp(jumpStart, attackCenter, Mathf.Clamp01(timer / leapDuration));
+        if (!PathClear(rb.position, next)) { CancelAttack(); return; }
+        rb.MovePosition(next);
+        body.localPosition = bodyRestPosition + Vector3.up *
+            (Mathf.Sin(Mathf.Clamp01(timer / leapDuration) * Mathf.PI) * jumpHeight);
+        if (timer > leapDuration + 0.2f) CancelAttack(); // Never hit at a different landing point.
+    }
+
+    private void ResolveAttack()
+    {
+        if (damageApplied) return;
+        damageApplied = true;
+        CompleteWarning();
+        HideWarning();
+        body.localPosition = bodyRestPosition;
+        RestorePlayerCollision();
+        recoveryDuration = ActivePattern == Pattern.LeapSlam ? leapRecovery : smashRecovery;
+        SetState(BossState.Recovery);
+        float radius = ActivePattern == Pattern.LeapSlam ? leapRadius : smashRadius;
+        int damage = ActivePattern == Pattern.LeapSlam ? leapDamage : smashDamage;
+        Vector2 point = playerCollider.ClosestPoint(attackCenter);
+        if (!health.IsDead && !player.IsDead && Vector2.Distance(attackCenter, point) <= radius &&
+            Physics2D.Linecast(attackCenter, point, wallLayer).collider == null)
+            player.TakeDamage(damage);
+    }
+
+    private void ShowWarning(float radius, Color color)
+    {
+        CreateEffectsRoot();
+        telegraph = StoneGolemTelegraph.Create(effectsRoot.transform, fanWarningMaterial,
+            attackCenter, Vector2.right, radius, 360f, 0f, false, color,
+            attackWarning.sortingLayerID, attackWarning.sortingOrder);
+    }
+
+    private void CompleteWarning()
+    {
+        if (telegraph != null) telegraph.SetProgress(1f);
+    }
+
+    private void HideWarning()
+    {
+        if (telegraph != null) telegraph.gameObject.SetActive(false);
+        if (attackWarning != null) attackWarning.gameObject.SetActive(false);
+        if (chargePath != null) chargePath.gameObject.SetActive(false);
+        if (chargeStartCap != null) chargeStartCap.gameObject.SetActive(false);
+        if (chargeEndCap != null) chargeEndCap.gameObject.SetActive(false);
+    }
+
+    private void IgnorePlayer()
+    {
+        if (ignoringPlayer || playerCollider == null) return;
+        previousIgnorePlayer = Physics2D.GetIgnoreCollision(hitbox, playerCollider);
+        Physics2D.IgnoreCollision(hitbox, playerCollider, true);
+        ignoringPlayer = true;
+    }
+
+    private void RestorePlayerCollision()
+    {
+        if (!ignoringPlayer) return;
+        if (hitbox != null && playerCollider != null)
+            Physics2D.IgnoreCollision(hitbox, playerCollider, previousIgnorePlayer);
+        ignoringPlayer = false;
+    }
+
+    private void SetState(BossState state) { State = state; timer = 0f; }
+
+    private void CancelAttack()
+    {
+        ClearOwnedEffects();
+        HideWarning();
+        RestorePlayerCollision();
+        if (rb != null) { rb.linearVelocity = Vector2.zero; rb.MovePosition(rb.position); }
+        if (body != null) body.localPosition = bodyRestPosition;
+        damageApplied = true;
+        ActivePattern = Pattern.None;
+        SetState(BossState.Waiting);
+    }
+
+    private void OnPlayerDied(PlayerHealth _) { targetWasDead = true; CancelAttack(); }
+    private void OnBossDied(EnemyHealth _) { enabled = false; }
+
+    private void OnDisable()
+    {
+        CancelAttack();
+        if (health != null) health.Died -= OnBossDied;
+        if (player != null) player.Died -= OnPlayerDied;
+    }
+}

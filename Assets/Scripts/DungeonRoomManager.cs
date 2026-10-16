@@ -14,6 +14,36 @@ public class DungeonRoomManager : MonoBehaviour
     private int previousIndex = -1;
     public int CurrentRoomNumber { get; private set; }
     public bool IsCompleted { get; private set; }
+    public int TotalRoomCount => normalRoomCount + 1;
+
+    private void OnRoomCleared(RoomController controller)
+    {
+        if (IsCompleted || currentRoom == null || controller != currentRoom.Controller ||
+            CurrentRoomNumber != TotalRoomCount || RunFailed()) return;
+        IsCompleted = true;
+        pendingExit = null;
+        DungeonRunManager.Instance.CompleteRun();
+    }
+
+    public void StopRoomCombat()
+    {
+        pendingExit = null;
+        if (currentRoom == null) return;
+        foreach (StoneGolemBossAI boss in currentRoom.GetComponentsInChildren<StoneGolemBossAI>(true))
+            boss.enabled = false; // OnDisable cancels owned effects and pending hits.
+        foreach (StoneMonsterAI monster in currentRoom.GetComponentsInChildren<StoneMonsterAI>(true))
+        {
+            monster.StopAllCoroutines();
+            monster.enabled = false;
+            var body = monster.GetComponent<Rigidbody2D>();
+            if (body != null) body.linearVelocity = Vector2.zero;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (currentRoom != null) currentRoom.Controller.Cleared -= OnRoomCleared;
+    }
 
     private void Start()
     {
@@ -62,12 +92,10 @@ public class DungeonRoomManager : MonoBehaviour
         // 물리 충돌 콜백이 끝난 뒤 전환하여 같은 프레임의 중복 진입을 막습니다.
         if (pendingExit == null) return;
         pendingExit = null;
-        if (player.IsDead || Time.timeScale == 0f || RunFailed()) return;
+        if (IsCompleted || player.IsDead || Time.timeScale == 0f || RunFailed()) return;
 
         if (CurrentRoomNumber == normalRoomCount + 1)
         {
-            IsCompleted = true;
-            Debug.Log("던전 클리어! (현재 단계: 클리어 로그까지 구현 / 로비 귀환은 추후 연결)", this);
             return;
         }
         LoadRoom(CurrentRoomNumber + 1);
@@ -106,7 +134,9 @@ public class DungeonRoomManager : MonoBehaviour
             return;
         }
 
+        if (oldRoom != null) oldRoom.Controller.Cleared -= OnRoomCleared;
         currentRoom = next;
+        currentRoom.Controller.Cleared += OnRoomCleared;
         currentRoom.Bind(player, this);
         player.EnterRoom(currentRoom.Entrance);
         cameraFollow.SetRoom(player.transform, currentRoom.WorldMin, currentRoom.WorldMax);

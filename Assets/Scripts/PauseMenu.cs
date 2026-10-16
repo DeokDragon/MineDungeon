@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
     private bool isPaused;
     private float previousTimeScale;
     private bool previousAudioPause;
+    private bool ResultLocked => DungeonRunManager.Instance != null &&
+        (DungeonRunManager.Instance.IsRunEnded || DungeonRunManager.Instance.IsRestarting);
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
+        if (ResultLocked) return;
         Keyboard keyboard = Keyboard.current;
 
         if (keyboard == null ||
@@ -45,7 +48,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        if (isPaused)
+        if (isPaused || ResultLocked)
             return;
 
         previousTimeScale = Time.timeScale;
@@ -61,7 +64,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        if (!isPaused)
+        if (!isPaused || ResultLocked)
             return;
 
         // メニュー操作後に、新しいクリックを要求する
@@ -105,12 +108,19 @@ public class PauseMenu : MonoBehaviour
 
     private void RestoreTime()
     {
-        if (!isPaused)
+        if (!isPaused || ResultLocked)
             return;
 
         Time.timeScale = previousTimeScale;
         AudioListener.pause = previousAudioPause;
         isPaused = false;
+    }
+
+    public void EnterResultState()
+    {
+        // The result screen now owns time/audio; discard stale pause values.
+        isPaused = false;
+        pausePanel.SetActive(false);
     }
 
     private void OnDisable()
