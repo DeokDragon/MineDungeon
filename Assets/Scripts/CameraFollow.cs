@@ -12,6 +12,33 @@ public class CameraFollow : MonoBehaviour
 
     private Camera cam;
     private Vector3 followVelocity;
+    private Vector3 basePosition;
+    [SerializeField, Range(0f, 2f)] private float shakeIntensity = 1f;
+    private float shakeRemaining, shakeDuration, shakeAmplitude;
+    private bool finaleShake;
+    private float finaleShakeUntil;
+
+    public void Shake(float amplitude, float duration, bool finale = false)
+    {
+        shakeAmplitude = Mathf.Max(shakeRemaining > 0f ? shakeAmplitude : 0f, amplitude);
+        shakeRemaining = Mathf.Max(shakeRemaining, duration);
+        shakeDuration = shakeRemaining;
+        finaleShake |= finale;
+        if (finale) finaleShakeUntil = Time.realtimeSinceStartup + duration;
+    }
+
+    public void ResetShake()
+    {
+        shakeRemaining = shakeAmplitude = 0f;
+        finaleShake = false;
+        if (cam != null) transform.position = ClampPosition(basePosition);
+    }
+
+    private void OnDisable()
+    {
+        ResetShake();
+        if (cam != null) transform.position = ClampPosition(basePosition);
+    }
 
     private void Awake()
     {
@@ -21,7 +48,7 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         if (target != null)
-            transform.position = ClampPosition(target.position);
+            transform.position = basePosition = ClampPosition(target.position);
     }
 
     private void LateUpdate()
@@ -31,14 +58,23 @@ public class CameraFollow : MonoBehaviour
 
         Vector3 destination = ClampPosition(target.position);
 
-        Vector3 nextPosition = Vector3.SmoothDamp(
-            transform.position,
+        Vector3 nextPosition = Time.timeScale > 0f && Time.deltaTime > 0f ? Vector3.SmoothDamp(
+            basePosition,
             destination,
             ref followVelocity,
             smoothTime
-        );
+        ) : basePosition;
 
-        transform.position = ClampPosition(nextPosition);
+        basePosition = ClampPosition(nextPosition);
+        bool finalClock = finaleShake && DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunCleared;
+        float dt = finalClock ? Time.unscaledDeltaTime : (Time.timeScale > 0f ? Time.deltaTime : 0f);
+        if (dt <= 0f) return; // Keep the existing offset fixed during pause.
+        shakeRemaining = Mathf.Max(0f, finalClock ? finaleShakeUntil - Time.realtimeSinceStartup : shakeRemaining - dt);
+        Vector2 offset = shakeRemaining > 0f
+            ? Random.insideUnitCircle * (shakeAmplitude * shakeIntensity * shakeRemaining / shakeDuration)
+            : Vector2.zero;
+        if (shakeRemaining == 0f) ResetShake();
+        transform.position = ClampPosition(basePosition + (Vector3)offset);
     }
 
     private Vector3 ClampPosition(Vector3 position)
@@ -69,7 +105,8 @@ public class CameraFollow : MonoBehaviour
         mapMax = maximum;
         if (cam == null) cam = GetComponent<Camera>();
         followVelocity = Vector3.zero;
-        if (target != null) transform.position = ClampPosition(target.position);
+        ResetShake();
+        if (target != null) transform.position = basePosition = ClampPosition(target.position);
     }
 
 }

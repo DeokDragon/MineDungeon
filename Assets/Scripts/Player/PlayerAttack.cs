@@ -172,7 +172,7 @@ public class PlayerAttack : MonoBehaviour
                 continue;
 
             hitEnemies.Add(health);
-            health.TakeDamage(attackDamage);
+            health.TryTakeDamage(attackDamage, hitPoint, forward);
         }
     }
 

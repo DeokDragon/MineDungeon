@@ -138,6 +138,8 @@ public class DungeonRoomManager : MonoBehaviour
         currentRoom = next;
         currentRoom.Controller.Cleared += OnRoomCleared;
         currentRoom.Bind(player, this);
+        var damageScreen = FindFirstObjectByType<PlayerDamageScreen>();
+        if (damageScreen != null) damageScreen.Clear();
         player.EnterRoom(currentRoom.Entrance);
         cameraFollow.SetRoom(player.transform, currentRoom.WorldMin, currentRoom.WorldMax);
         CurrentRoomNumber = number;

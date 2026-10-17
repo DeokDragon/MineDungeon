@@ -91,6 +91,38 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &811571368998844734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4967511109539456010}
+  m_Layer: 0
+  m_Name: JumpVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4967511109539456010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811571368998844734}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7222291462737772230}
+  m_Father: {fileID: 6024908439819161488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &890351511790825290
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4784396125250686416}
+  m_Father: {fileID: 1024044993269642503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7682294109666567084
 SpriteRenderer:
@@ -273,6 +305,70 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &2244426859466580651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5400498514420364704}
+  m_Layer: 0
+  m_Name: JumpVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5400498514420364704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244426859466580651}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4011313677452948778}
+  m_Father: {fileID: 7200531171347238462}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2270695989762706851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5983683266572822151}
+  m_Layer: 0
+  m_Name: JumpVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5983683266572822151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270695989762706851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7503302254710543802}
+  m_Father: {fileID: 4116989180214573471}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2506233859836002303
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +399,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1704015227567897155}
+  m_Father: {fileID: 4265927971014615156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7454182311383773959
 SpriteRenderer:
@@ -413,6 +509,7 @@ GameObject:
   - component: {fileID: 3613921857870984396}
   - component: {fileID: 6898412659961834548}
   - component: {fileID: 4967398254329298721}
+  - component: {fileID: 7354316129733428793}
   m_Layer: 6
   m_Name: StoneMonster (5)
   m_TagString: Untagged
@@ -433,9 +530,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4011313677452948778}
   - {fileID: 4699632418077293357}
   - {fileID: 4943950431742918790}
+  - {fileID: 5400498514420364704}
   m_Father: {fileID: 5308495482058238846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2054055027825525659
@@ -539,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneMonsterAI
   player: {fileID: 0}
-  body: {fileID: 4011313677452948778}
+  body: {fileID: 5400498514420364704}
   attackWarning: {fileID: 4943950431742918790}
   wallLayer:
     serializedVersion: 2
@@ -553,6 +650,57 @@ MonoBehaviour:
   attackDamage: 10
   recoveryDuration: 0.8
   attackInterval: 2.5
+--- !u!114 &7354316129733428793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642587731396588171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7b7a52fd541cf46858684980b3f884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoneHitFeedback
+  body: {fileID: 6987412297084942036}
+  burstPrefab: {fileID: 5894865716753312620, guid: f9f6f47cc8049e642b6e485370c306c0, type: 3}
+  boss: 0
+  displacement: 0.1
+  compression: 0.08
+  reactionDuration: 0.12
+  flashDuration: 0.08
+--- !u!1 &3768902329053772622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024044993269642503}
+  m_Layer: 0
+  m_Name: JumpVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1024044993269642503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768902329053772622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9142734370532826923}
+  m_Father: {fileID: 4784396125250686416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3789957912006442767
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +1041,7 @@ GameObject:
   - component: {fileID: 8424562458053225047}
   - component: {fileID: 8908590163109879746}
   - component: {fileID: 2129572918538853053}
+  - component: {fileID: 8567423102068602431}
   m_Layer: 6
   m_Name: StoneMonster
   m_TagString: Untagged
@@ -913,9 +1062,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5219870223718123214}
   - {fileID: 7046108252329985706}
   - {fileID: 7593547155350179011}
+  - {fileID: 4265927971014615156}
   m_Father: {fileID: 5308495482058238846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3758947542573892807
@@ -1019,7 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneMonsterAI
   player: {fileID: 0}
-  body: {fileID: 5219870223718123214}
+  body: {fileID: 4265927971014615156}
   attackWarning: {fileID: 7593547155350179011}
   wallLayer:
     serializedVersion: 2
@@ -1033,6 +1182,25 @@ MonoBehaviour:
   attackDamage: 10
   recoveryDuration: 0.8
   attackInterval: 2.5
+--- !u!114 &8567423102068602431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632494108523317130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7b7a52fd541cf46858684980b3f884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoneHitFeedback
+  body: {fileID: 7454182311383773959}
+  burstPrefab: {fileID: 5894865716753312620, guid: f9f6f47cc8049e642b6e485370c306c0, type: 3}
+  boss: 0
+  displacement: 0.1
+  compression: 0.08
+  reactionDuration: 0.12
+  flashDuration: 0.08
 --- !u!1 &4700225355487405143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1742,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RoomExit
   lockedColor: {r: 0.65, g: 0.2, b: 0.15, a: 1}
   openColor: {r: 0.2, g: 0.9, b: 0.4, a: 1}
+--- !u!1 &5628455382050634209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4265927971014615156}
+  m_Layer: 0
+  m_Name: JumpVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4265927971014615156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5628455382050634209}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5219870223718123214}
+  m_Father: {fileID: 1704015227567897155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5997302521937508426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,6 +1878,7 @@ GameObject:
   - component: {fileID: 4391185473313921005}
   - component: {fileID: 7020678335346900270}
   - component: {fileID: 906942789528269289}
+  - component: {fileID: 3740253523067125755}
   m_Layer: 6
   m_Name: StoneMonster (2)
   m_TagString: Untagged
@@ -1698,9 +1899,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7222291462737772230}
   - {fileID: 7479476398153495857}
   - {fileID: 1278524587454342972}
+  - {fileID: 4967511109539456010}
   m_Father: {fileID: 5308495482058238846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2250450783942970914
@@ -1804,7 +2005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneMonsterAI
   player: {fileID: 0}
-  body: {fileID: 7222291462737772230}
+  body: {fileID: 4967511109539456010}
   attackWarning: {fileID: 1278524587454342972}
   wallLayer:
     serializedVersion: 2
@@ -1818,6 +2019,25 @@ MonoBehaviour:
   attackDamage: 10
   recoveryDuration: 0.8
   attackInterval: 2.5
+--- !u!114 &3740253523067125755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027621869970470459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7b7a52fd541cf46858684980b3f884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoneHitFeedback
+  body: {fileID: 8967743742916884591}
+  burstPrefab: {fileID: 5894865716753312620, guid: f9f6f47cc8049e642b6e485370c306c0, type: 3}
+  boss: 0
+  displacement: 0.1
+  compression: 0.08
+  reactionDuration: 0.12
+  flashDuration: 0.08
 --- !u!1 &6088828709267443447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,6 +2051,7 @@ GameObject:
   - component: {fileID: 8400257861723534600}
   - component: {fileID: 2938209986513701327}
   - component: {fileID: 3525535008629185161}
+  - component: {fileID: 3194510032233865372}
   m_Layer: 6
   m_Name: StoneMonster (4)
   m_TagString: Untagged
@@ -1851,9 +2072,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7503302254710543802}
   - {fileID: 8028604058966666343}
   - {fileID: 2215985000254905898}
+  - {fileID: 5983683266572822151}
   m_Father: {fileID: 5308495482058238846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1472183892940552895
@@ -1957,7 +2178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneMonsterAI
   player: {fileID: 0}
-  body: {fileID: 7503302254710543802}
+  body: {fileID: 5983683266572822151}
   attackWarning: {fileID: 2215985000254905898}
   wallLayer:
     serializedVersion: 2
@@ -1971,6 +2192,25 @@ MonoBehaviour:
   attackDamage: 10
   recoveryDuration: 0.8
   attackInterval: 2.5
+--- !u!114 &3194510032233865372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6088828709267443447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7b7a52fd541cf46858684980b3f884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoneHitFeedback
+  body: {fileID: 4309647440454387430}
+  burstPrefab: {fileID: 5894865716753312620, guid: f9f6f47cc8049e642b6e485370c306c0, type: 3}
+  boss: 0
+  displacement: 0.1
+  compression: 0.08
+  reactionDuration: 0.12
+  flashDuration: 0.08
 --- !u!1 &6098481084401334934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,7 +2241,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4116989180214573471}
+  m_Father: {fileID: 5983683266572822151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4309647440454387430
 SpriteRenderer:
@@ -2075,6 +2315,7 @@ GameObject:
   - component: {fileID: 2092547062327545262}
   - component: {fileID: 1807127980463687773}
   - component: {fileID: 1706964092653832937}
+  - component: {fileID: 7821382345265885483}
   m_Layer: 6
   m_Name: StoneMonster (3)
   m_TagString: Untagged
@@ -2095,9 +2336,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4326649081625587904}
   - {fileID: 4992253839539238696}
   - {fileID: 8151834682530932229}
+  - {fileID: 305609248882739387}
   m_Father: {fileID: 5308495482058238846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4487923099819855200
@@ -2201,7 +2442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneMonsterAI
   player: {fileID: 0}
-  body: {fileID: 4326649081625587904}
+  body: {fileID: 305609248882739387}
   attackWarning: {fileID: 8151834682530932229}
   wallLayer:
     serializedVersion: 2
@@ -2215,6 +2456,25 @@ MonoBehaviour:
   attackDamage: 10
   recoveryDuration: 0.8
   attackInterval: 2.5
+--- !u!114 &7821382345265885483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454791049879400971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7b7a52fd541cf46858684980b3f884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoneHitFeedback
+  body: {fileID: 3762795245149145339}
+  burstPrefab: {fileID: 5894865716753312620, guid: f9f6f47cc8049e642b6e485370c306c0, type: 3}
+  boss: 0
+  displacement: 0.1
+  compression: 0.08
+  reactionDuration: 0.12
+  flashDuration: 0.08
 --- !u!1 &6520259263719801267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,7 +2505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8740513245348488942}
+  m_Father: {fileID: 305609248882739387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3762795245149145339
 SpriteRenderer:
@@ -2479,7 +2739,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6024908439819161488}
+  m_Father: {fileID: 4967511109539456010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8967743742916884591
 SpriteRenderer:
@@ -2661,7 +2921,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7200531171347238462}
+  m_Father: {fileID: 5400498514420364704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6987412297084942036
 SpriteRenderer:
@@ -2860,6 +3120,38 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &8288904271383848795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 305609248882739387}
+  m_Layer: 0
+  m_Name: JumpVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &305609248882739387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288904271383848795}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4326649081625587904}
+  m_Father: {fileID: 8740513245348488942}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8453588859694957346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,6 +3576,7 @@ GameObject:
   - component: {fileID: 5623041275859514915}
   - component: {fileID: 5275620167407873917}
   - component: {fileID: 5063499206756813174}
+  - component: {fileID: 7626956023515747507}
   m_Layer: 6
   m_Name: StoneMonster (1)
   m_TagString: Untagged
@@ -3304,9 +3597,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9142734370532826923}
   - {fileID: 7132798205198604509}
   - {fileID: 1296618644049060755}
+  - {fileID: 1024044993269642503}
   m_Father: {fileID: 5308495482058238846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3890563952030328378
@@ -3410,7 +3703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneMonsterAI
   player: {fileID: 0}
-  body: {fileID: 9142734370532826923}
+  body: {fileID: 1024044993269642503}
   attackWarning: {fileID: 1296618644049060755}
   wallLayer:
     serializedVersion: 2
@@ -3424,6 +3717,25 @@ MonoBehaviour:
   attackDamage: 10
   recoveryDuration: 0.8
   attackInterval: 2.5
+--- !u!114 &7626956023515747507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751417185392896297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7b7a52fd541cf46858684980b3f884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoneHitFeedback
+  body: {fileID: 7682294109666567084}
+  burstPrefab: {fileID: 5894865716753312620, guid: f9f6f47cc8049e642b6e485370c306c0, type: 3}
+  boss: 0
+  displacement: 0.1
+  compression: 0.08
+  reactionDuration: 0.12
+  flashDuration: 0.08
 --- !u!1 &8794266531028437171
 GameObject:
   m_ObjectHideFlags: 0

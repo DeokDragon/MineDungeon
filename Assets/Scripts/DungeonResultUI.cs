@@ -1,4 +1,5 @@
 using TMPro;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ public sealed class DungeonResultUI : MonoBehaviour
     [SerializeField] private DungeonRoomManager rooms;
     [SerializeField] private PlayerHealth player;
     [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private float clearPresentationDuration = .7f;
+    private bool resultPending;
     private DungeonRunManager run;
     public bool IsShowing { get; private set; }
 
@@ -28,10 +31,13 @@ public sealed class DungeonResultUI : MonoBehaviour
 
     private void ShowResult()
     {
-        if (IsShowing) return;
-        IsShowing = true;
+        if (resultPending || IsShowing) return;
+        resultPending = true;
         pauseMenu.EnterResultState();
         rooms.StopRoomCombat();
+        StoneCombatBurst.ClearNonFinale();
+        if (!run.IsRunCleared && Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
+            camera.ResetShake();
         player.StopAllCoroutines();
         player.GetComponent<PlayerAttack>().CancelAttack();
         player.GetComponent<PlayerAttack>().enabled = false;
@@ -41,6 +47,22 @@ public sealed class DungeonResultUI : MonoBehaviour
         title.color = run.IsRunCleared ? new Color(.95f, .78f, .35f) : new Color(1f, .45f, .4f);
         roomText.text = $"최종 도달 방: {rooms.CurrentRoomNumber} / {rooms.TotalRoomCount}";
         reviveText.text = $"사용한 부활 횟수: {run.MaxRevives - run.RemainingRevives} / {run.MaxRevives}";
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+        if (run.IsRunCleared) StartCoroutine(RevealClear());
+        else RevealPanel();
+    }
+
+    private IEnumerator RevealClear()
+    {
+        float revealAt = Time.realtimeSinceStartup + clearPresentationDuration;
+        while (Time.realtimeSinceStartup < revealAt) yield return null;
+        RevealPanel();
+    }
+
+    private void RevealPanel()
+    {
+        IsShowing = true;
         resultPanel.transform.SetAsLastSibling();
         resultPanel.SetActive(true);
         retryButton.interactable = true;
@@ -54,6 +76,8 @@ public sealed class DungeonResultUI : MonoBehaviour
         if (!IsShowing || !retryButton.interactable) return;
         if (run.RestartCurrentScene()) retryButton.interactable = false;
     }
+
+    private void OnDisable() { StopAllCoroutines(); resultPending = false; }
 
     private void OnDestroy()
     {

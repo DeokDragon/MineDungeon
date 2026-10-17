@@ -273,6 +273,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &3148199915215725620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4744940270114880574}
+  m_Layer: 0
+  m_Name: JumpVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4744940270114880574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3148199915215725620}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9030627783206446788}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5071232384061507248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -385,6 +416,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8567423102068602431, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+      propertyPath: boss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567423102068602431, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+      propertyPath: compression
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567423102068602431, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+      propertyPath: displacement
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 8705508911782662429, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -420,6 +463,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1704015227567897155, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8311766936475486639}
+    - targetCorrespondingSourceObject: {fileID: 4265927971014615156, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4744940270114880574}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4632494108523317130, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       insertIndex: -1
@@ -481,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b582c12818fa864a9053b3d668caa35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneGolemBossAI
-  body: {fileID: 1013334878024499326}
+  body: {fileID: 4744940270114880574}
   attackWarning: {fileID: 8425004033979236081}
   wallLayer:
     serializedVersion: 2
@@ -535,11 +581,6 @@ MonoBehaviour:
   rockfallRecovery: 1.2
   rockfallSelectionRange: 8
   rockfallDamage: 20
---- !u!4 &1013334878024499326 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5219870223718123214, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
-  m_PrefabInstance: {fileID: 5071232384061507248}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5892188453398641907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1704015227567897155, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
@@ -548,5 +589,10 @@ Transform:
 --- !u!212 &8425004033979236081 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3642007421399939137, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+  m_PrefabInstance: {fileID: 5071232384061507248}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9030627783206446788 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4265927971014615156, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
   m_PrefabInstance: {fileID: 5071232384061507248}
   m_PrefabAsset: {fileID: 0}

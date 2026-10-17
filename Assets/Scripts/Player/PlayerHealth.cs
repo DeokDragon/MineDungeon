@@ -22,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
 
     private Color originalColor;
     private float invincibleUntil;
+    private float hurtFlashRemaining;
+    public event System.Action Damaged;
     private bool movementWasEnabled;
     private bool attackWasEnabled;
 
@@ -55,6 +57,13 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
+        if (hurtFlashRemaining > 0f)
+        {
+            hurtFlashRemaining = Mathf.Max(0f, hurtFlashRemaining - (Time.timeScale > 0f ? Time.deltaTime : 0f));
+            bodyRenderer.color = new Color(1f, .18f, .12f, originalColor.a);
+            return;
+        }
+
         // 무적 시간 동안 몸체를 반투명하게 깜빡임
         Color color = originalColor;
 
@@ -76,6 +85,10 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth = Mathf.Max(0, currentHealth - damage);
         invincibleUntil = Time.time + invincibleDuration;
+        hurtFlashRemaining = .10f;
+        Damaged?.Invoke();
+        if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
+            camera.Shake(.07f, .12f);
 
         Debug.Log(
             $"플레이어: {damage} 피해 / 남은 체력 {currentHealth}",
@@ -154,6 +167,7 @@ public class PlayerHealth : MonoBehaviour
 
         invincibleUntil = Time.time + reviveInvincibleDuration;
         IsDead = false;
+        hurtFlashRemaining = 0f;
 
         if (movement != null)
             movement.enabled = movementWasEnabled;
