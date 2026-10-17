@@ -125,6 +125,8 @@ public class DungeonRoomManager : MonoBehaviour
         int chosenIndex = isBoss ? -1 : PickNormalRoom();
         DungeonRoom prefab = isBoss ? bossRoomPrefab : normalRoomPrefabs[chosenIndex];
         DungeonRoom oldRoom = currentRoom;
+        var skills = player.GetComponent<PlayerSkills>();
+        if (skills != null) skills.CancelAll();
         if (oldRoom != null) oldRoom.gameObject.SetActive(false);
 
         DungeonRoom next = Instantiate(prefab, Vector3.zero, Quaternion.identity);

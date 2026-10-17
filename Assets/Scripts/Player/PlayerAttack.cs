@@ -44,6 +44,8 @@ public class PlayerAttack : MonoBehaviour
 
         if (Time.timeScale == 0f)
             return;
+        var skills = GetComponent<PlayerSkills>();
+        if (skills != null && skills.IsCasting) return;
         PlayerMovement movement = GetComponent<PlayerMovement>();
 
         if (movement != null && movement.IsDodging)

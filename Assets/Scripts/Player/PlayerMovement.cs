@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerHealth health;
     private PlayerAttack attack;
+    private PlayerSkills skills;
 
     private Vector2 moveInput;
     private Vector2 dodgeDirection;
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         health = GetComponent<PlayerHealth>();
         attack = GetComponent<PlayerAttack>();
+        skills = GetComponent<PlayerSkills>();
 
         if (aimCamera == null)
             aimCamera = Camera.main;
@@ -91,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartDodge()
     {
+        if (skills != null && skills.IsCasting) return;
         PlayerPotion potion = GetComponent<PlayerPotion>();
 
         if (potion != null && potion.IsUsing)
@@ -139,7 +142,8 @@ public class PlayerMovement : MonoBehaviour
             IsDodging = false;
         }
 
-        rb.linearVelocity = moveInput * moveSpeed;
+        if (skills != null && skills.OwnsMovement) { rb.linearVelocity = Vector2.zero; return; }
+        rb.linearVelocity = moveInput * moveSpeed * (skills != null ? skills.MovementMultiplier : 1f);
     }
 
     private void OnDisable()
