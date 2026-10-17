@@ -27,6 +27,9 @@ public partial class PlayerSkills : MonoBehaviour
     public bool OwnsMovement => IsCasting && blocking.data.kind != PlayerSkillKind.TealBeam;
     public float MovementMultiplier => IsCasting ? (blocking.data.kind == PlayerSkillKind.TealBeam ? .5f : 0f) : 1f;
     public int ActiveEffectCount => visuals.Count;
+    public int EstimatedDamage(SkillData skill) => skill != null && attackPower != null ? skill.Damage(attackPower.PhysicalAttack, attackPower.MagicAttack) : 0;
+    internal void ApplyInventoryLoadout(SkillData e, SkillData r) { eSkill = e; rSkill = r; }
+    public void ResetForNewRun() { CancelAll(); readyAt[0] = readyAt[1] = 0f; }
     public SkillData Equipped(int slot) => slot == 0 ? eSkill : slot == 1 ? rSkill : null;
     public float CooldownRemaining(int slot) => slot >= 0 && slot < 2 ? Mathf.Max(0, readyAt[slot] - Time.time) : 0f;
     private sealed class Cast
@@ -44,6 +47,7 @@ public partial class PlayerSkills : MonoBehaviour
         if (attackPower == null) attackPower = GetComponent<PlayerSkillAttackPower>();
         if (aimCamera == null) aimCamera = Camera.main;
         if (Duplicate(eSkill, rSkill)) { Debug.LogWarning("Duplicate player skill: R slot disabled.", this); rSkill = null; }
+        if (SkillInventorySession.Instance != null) SkillInventorySession.Instance.Bind(this);
     }
     private static bool Duplicate(SkillData a, SkillData b) => a != null && b != null &&
         (a == b || a.kind == b.kind || (!string.IsNullOrEmpty(a.id) && a.id == b.id));
@@ -79,7 +83,7 @@ public partial class PlayerSkills : MonoBehaviour
     public bool TryCast(int slot, Vector2 mouseWorld)
     {
         SkillData data = Equipped(slot);
-        if (!isActiveAndEnabled || data == null || effectPrefab == null || Time.timeScale <= 0 || health.IsDead || IsCasting ||
+        if (InventoryUI.BlockCombatInput || !isActiveAndEnabled || data == null || effectPrefab == null || Time.timeScale <= 0 || health.IsDead || IsCasting ||
             (run != null && (run.IsRunEnded || run.IsRestarting)) || (movement != null && movement.IsDodging) ||
             (potion != null && potion.IsUsing) || (attack != null && attack.IsAttacking) || CooldownRemaining(slot) > 0) return false;
         if (data.kind == PlayerSkillKind.DrillDash && !FreePosition(rb.position)) return false;

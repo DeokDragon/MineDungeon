@@ -9,6 +9,7 @@ public sealed class SkillData : ScriptableObject
     public string id;
     public string displayName;
     public Sprite icon;
+    public ItemRarity rarity = ItemRarity.Common;
     public PlayerSkillKind kind;
     public SkillDamageType primaryType;
     [Min(0)] public float physicalCoefficient, magicCoefficient;

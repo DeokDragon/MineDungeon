@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartDodge()
     {
+        if (InventoryUI.BlockCombatInput) return;
         if (skills != null && skills.IsCasting) return;
         PlayerPotion potion = GetComponent<PlayerPotion>();
 

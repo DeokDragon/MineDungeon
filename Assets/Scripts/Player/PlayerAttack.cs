@@ -25,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
     private float nextAttackTime;
     private bool isAttacking;
     public bool IsAttacking => isAttacking;
+    public float AttackInterval => attackInterval;
     private bool damageApplied;
     private bool waitForAttackRelease;
 
@@ -42,7 +43,7 @@ public class PlayerAttack : MonoBehaviour
         if (weaponPivot == null || aimCamera == null)
             return;
 
-        if (Time.timeScale == 0f)
+        if (InventoryUI.BlockCombatInput || Time.timeScale == 0f)
             return;
         var skills = GetComponent<PlayerSkills>();
         if (skills != null && skills.IsCasting) return;

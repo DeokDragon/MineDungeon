@@ -14,6 +14,10 @@ public class DungeonRoomManager : MonoBehaviour
     private int previousIndex = -1;
     public int CurrentRoomNumber { get; private set; }
     public bool IsCompleted { get; private set; }
+    public bool IsPreparing { get; private set; } = true;
+    private bool loadingRoom;
+    public bool IsTransitioning => loadingRoom || pendingExit != null;
+    private bool configured;
     public int TotalRoomCount => normalRoomCount + 1;
     public EnemyHealth CurrentBoss { get; private set; }
     public event System.Action<EnemyHealth> BossChanged;
@@ -74,7 +78,19 @@ public class DungeonRoomManager : MonoBehaviour
             enabled = false;
             return;
         }
+        configured = true;
+    }
+
+    public bool StartDungeon()
+    {
+        if (!configured || !IsPreparing || IsTransitioning || currentRoom != null ||
+            DungeonRunManager.Instance == null || DungeonRunManager.Instance.IsRestarting) return false;
+        IsPreparing = false; // Guard before generation; double clicks cannot create another room.
+        DungeonRunManager.Instance.BeginNewRun();
+        player.GetComponent<PlayerSkills>()?.ResetForNewRun();
+        player.Heal(player.MaxHealth);
         LoadRoom(1);
+        return true;
     }
 
     private bool IsPrefab(DungeonRoom room)
@@ -85,7 +101,7 @@ public class DungeonRoomManager : MonoBehaviour
 
     public void RequestNextRoom(DungeonRoom source, PlayerHealth enteringPlayer)
     {
-        if (!enabled || IsCompleted || pendingExit != null || source == null ||
+        if (IsPreparing || !enabled || IsCompleted || pendingExit != null || source == null ||
             source != currentRoom || !source.IsCleared || enteringPlayer != player ||
             player.IsDead || Time.timeScale == 0f || RunFailed()) return;
         pendingExit = source;
@@ -121,6 +137,7 @@ public class DungeonRoomManager : MonoBehaviour
 
     private void LoadRoom(int number)
     {
+        loadingRoom = true;
         bool isBoss = number > normalRoomCount;
         int chosenIndex = isBoss ? -1 : PickNormalRoom();
         DungeonRoom prefab = isBoss ? bossRoomPrefab : normalRoomPrefabs[chosenIndex];
@@ -137,6 +154,7 @@ public class DungeonRoomManager : MonoBehaviour
             Destroy(next.gameObject);
             if (oldRoom != null) oldRoom.gameObject.SetActive(true);
             enabled = false;
+            loadingRoom = false;
             return;
         }
 
@@ -155,5 +173,6 @@ public class DungeonRoomManager : MonoBehaviour
         if (!isBoss) previousIndex = chosenIndex;
         if (oldRoom != null) Destroy(oldRoom.gameObject);
         Debug.Log($"방 {number}/{normalRoomCount + 1} 입장: {prefab.name}", this);
+        loadingRoom = false;
     }
 }

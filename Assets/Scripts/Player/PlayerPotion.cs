@@ -62,6 +62,7 @@ public class PlayerPotion : MonoBehaviour
 
     private void TryStartUse()
     {
+        if (InventoryUI.BlockCombatInput) return;
         var skills = GetComponent<PlayerSkills>();
         if (skills != null && skills.IsCasting) return;
         if (health.CurrentHealth >= health.MaxHealth)

@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private PlayerAttack playerAttack;
 
     private bool isPaused;
+    public bool IsPaused => isPaused;
     private float previousTimeScale;
     private bool previousAudioPause;
     private bool ResultLocked => DungeonRunManager.Instance != null &&
@@ -23,7 +24,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (ResultLocked) return;
+        if (ResultLocked || InventoryUI.BlockPauseInput) return;
         Keyboard keyboard = Keyboard.current;
 
         if (keyboard == null ||
@@ -48,7 +49,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        if (isPaused || ResultLocked)
+        if (isPaused || ResultLocked || InventoryUI.BlockPauseInput)
             return;
 
         previousTimeScale = Time.timeScale;
