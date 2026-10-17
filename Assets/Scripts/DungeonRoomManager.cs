@@ -15,6 +15,8 @@ public class DungeonRoomManager : MonoBehaviour
     public int CurrentRoomNumber { get; private set; }
     public bool IsCompleted { get; private set; }
     public int TotalRoomCount => normalRoomCount + 1;
+    public EnemyHealth CurrentBoss { get; private set; }
+    public event System.Action<EnemyHealth> BossChanged;
 
     private void OnRoomCleared(RoomController controller)
     {
@@ -42,6 +44,8 @@ public class DungeonRoomManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        CurrentBoss = null;
+        BossChanged?.Invoke(null);
         if (currentRoom != null) currentRoom.Controller.Cleared -= OnRoomCleared;
     }
 
@@ -138,6 +142,9 @@ public class DungeonRoomManager : MonoBehaviour
         currentRoom = next;
         currentRoom.Controller.Cleared += OnRoomCleared;
         currentRoom.Bind(player, this);
+        var roomBoss = currentRoom.GetComponentInChildren<StoneGolemBossAI>(true);
+        CurrentBoss = roomBoss != null ? roomBoss.GetComponent<EnemyHealth>() : null;
+        BossChanged?.Invoke(CurrentBoss);
         var damageScreen = FindFirstObjectByType<PlayerDamageScreen>();
         if (damageScreen != null) damageScreen.Clear();
         player.EnterRoom(currentRoom.Entrance);

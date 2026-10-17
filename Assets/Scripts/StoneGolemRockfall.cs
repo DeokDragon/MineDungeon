@@ -10,6 +10,9 @@ public class StoneGolemRockfall : MonoBehaviour
     private StoneGolemTelegraph telegraph;
     [SerializeField, Min(0f)] private float visualHeight = 3f;
     [SerializeField, Min(0.01f)] private float visualFallDuration = 0.3f;
+    [Header("Landing camera shake")]
+    [SerializeField, Min(0f)] private float impactShakeAmplitude = .025f;
+    [SerializeField, Min(0f)] private float impactShakeDuration = .08f;
     private PlayerHealth target;
     private LayerMask walls;
     private float radius, warningDuration, spawnTime;
@@ -41,7 +44,7 @@ public class StoneGolemRockfall : MonoBehaviour
 
     public bool Tick(float patternTime)
     {
-        if (finished) return false;
+        if (finished || !isActiveAndEnabled) return false;
         if (target == null || target.IsDead) { Finish(); return false; }
         float age = Mathf.Max(0f, patternTime - spawnTime);
         UpdateVisuals(age);
@@ -56,6 +59,8 @@ public class StoneGolemRockfall : MonoBehaviour
             break; // Multiple colliders still produce exactly one PlayerHealth request.
         }
         Finish();
+        if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
+            camera.ShakeAt(Center, impactShakeAmplitude, impactShakeDuration);
         if (hitPlayer) target.TakeDamage(damage);
         return false;
     }

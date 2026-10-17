@@ -10,6 +10,9 @@ public class EnemyHealth : MonoBehaviour
     private bool isDead;
 
     public bool IsDead => isDead;
+    public int MaxHealth => maxHealth;
+    public int CurrentHealth => currentHealth;
+    public event System.Action<EnemyHealth> HealthChanged;
     public event System.Action<EnemyHealth> Died;
 
     private void Awake()
@@ -28,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (isDead || damage <= 0) return false;
         currentHealth = Mathf.Max(0, currentHealth - damage);
+        HealthChanged?.Invoke(this);
         if (currentHealth > 0)
         {
             if (feedback != null) feedback.Hit(contact, direction);

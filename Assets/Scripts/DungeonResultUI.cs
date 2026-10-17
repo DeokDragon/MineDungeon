@@ -18,6 +18,7 @@ public sealed class DungeonResultUI : MonoBehaviour
     private bool resultPending;
     private DungeonRunManager run;
     public bool IsShowing { get; private set; }
+    public event System.Action Shown;
 
     private void Start()
     {
@@ -63,6 +64,7 @@ public sealed class DungeonResultUI : MonoBehaviour
     private void RevealPanel()
     {
         IsShowing = true;
+        Shown?.Invoke();
         resultPanel.transform.SetAsLastSibling();
         resultPanel.SetActive(true);
         retryButton.interactable = true;

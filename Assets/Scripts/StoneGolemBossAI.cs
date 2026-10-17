@@ -74,6 +74,14 @@ public class StoneGolemBossAI : MonoBehaviour
     [SerializeField, Min(0.01f)] private float rockfallSelectionRange = 8f;
     [SerializeField, Min(1)] private int rockfallDamage = 20;
 
+    [Header("Impact camera shake (amplitude in world units)")]
+    [SerializeField, Min(0f)] private float leapShakeAmplitude = .07f;
+    [SerializeField, Min(0f)] private float leapShakeDuration = .15f;
+    [SerializeField, Min(0f)] private float smashShakeAmplitude = .06f;
+    [SerializeField, Min(0f)] private float smashShakeDuration = .12f;
+    [SerializeField, Min(0f)] private float wallShakeAmplitude = .09f;
+    [SerializeField, Min(0f)] private float wallShakeDuration = .18f;
+
     private Rigidbody2D rb;
     private CircleCollider2D hitbox;
     private EnemyHealth health;
@@ -457,7 +465,16 @@ public class StoneGolemBossAI : MonoBehaviour
 
     private void FinishCharge(bool hitWall)
     {
+        if (damageApplied) return;
         damageApplied = true;
+        if (hitWall)
+        {
+            // Bounds can also stop a charge. Only a physical wall contact shakes.
+            RaycastHit2D contact = Physics2D.CircleCast(rb.position, BodyRadius,
+                chargeDirection, wallSkin * 2f + .01f, wallLayer);
+            if (contact.collider != null)
+                ImpactShake(contact.point, wallShakeAmplitude, wallShakeDuration);
+        }
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         HideWarning();
@@ -543,6 +560,8 @@ public class StoneGolemBossAI : MonoBehaviour
         if (damageApplied) return;
         damageApplied = true;
         CompleteWarning();
+        ImpactShake(attackCenter, ActivePattern == Pattern.LeapSlam ? leapShakeAmplitude : smashShakeAmplitude,
+            ActivePattern == Pattern.LeapSlam ? leapShakeDuration : smashShakeDuration);
         HideWarning();
         body.localPosition = bodyRestPosition;
         RestorePlayerCollision();
@@ -562,6 +581,12 @@ public class StoneGolemBossAI : MonoBehaviour
         telegraph = StoneGolemTelegraph.Create(effectsRoot.transform, fanWarningMaterial,
             attackCenter, Vector2.right, radius, 360f, 0f, false, color,
             attackWarning.sortingLayerID, attackWarning.sortingOrder);
+    }
+
+    private static void ImpactShake(Vector2 center, float amplitude, float duration)
+    {
+        if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
+            camera.ShakeAt(center, amplitude, duration);
     }
 
     private void CompleteWarning()

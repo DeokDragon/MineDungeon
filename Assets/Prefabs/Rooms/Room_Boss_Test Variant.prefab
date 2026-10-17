@@ -360,6 +360,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3380696235499052196, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+      propertyPath: displayType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3642007421399939137, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -581,6 +585,12 @@ MonoBehaviour:
   rockfallRecovery: 1.2
   rockfallSelectionRange: 8
   rockfallDamage: 20
+  leapShakeAmplitude: 0.07
+  leapShakeDuration: 0.15
+  smashShakeAmplitude: 0.06
+  smashShakeDuration: 0.12
+  wallShakeAmplitude: 0.09
+  wallShakeDuration: 0.18
 --- !u!4 &5892188453398641907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1704015227567897155, guid: 65ddda13e1442ae419111301a9326c36, type: 3}

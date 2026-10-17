@@ -235,6 +235,8 @@ MonoBehaviour:
   telegraphMaterial: {fileID: 2100000, guid: aa4b72bb29fc0d34fb2f37238918048d, type: 2}
   visualHeight: 3
   visualFallDuration: 0.3
+  impactShakeAmplitude: 0.025
+  impactShakeDuration: 0.08
 --- !u!1 &8854117181665720962
 GameObject:
   m_ObjectHideFlags: 0

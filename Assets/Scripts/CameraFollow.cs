@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using UnityEngine;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Camera))]
 public class CameraFollow : MonoBehaviour
@@ -14,23 +15,41 @@ public class CameraFollow : MonoBehaviour
     private Vector3 followVelocity;
     private Vector3 basePosition;
     [SerializeField, Range(0f, 2f)] private float shakeIntensity = 1f;
-    private float shakeRemaining, shakeDuration, shakeAmplitude;
-    private bool finaleShake;
-    private float finaleShakeUntil;
+    [Header("Impact distance falloff (player world position)")]
+    [SerializeField, Min(0f)] private float impactFullStrengthDistance = 3f;
+    [SerializeField, Min(0f)] private float impactZeroStrengthDistance = 10f;
+    private struct ShakeRequest
+    {
+        public float amplitude, duration, scaledStart, realStart;
+        public bool finale;
+    }
+    private readonly List<ShakeRequest> shakeRequests = new List<ShakeRequest>();
+    private Vector2 shakeOffset;
+    public float CurrentShakeAmplitude { get; private set; }
 
+    // Existing player / enemy feedback callers retain their API and undiminished strength.
     public void Shake(float amplitude, float duration, bool finale = false)
     {
-        shakeAmplitude = Mathf.Max(shakeRemaining > 0f ? shakeAmplitude : 0f, amplitude);
-        shakeRemaining = Mathf.Max(shakeRemaining, duration);
-        shakeDuration = shakeRemaining;
-        finaleShake |= finale;
-        if (finale) finaleShakeUntil = Time.realtimeSinceStartup + duration;
+        if (!isActiveAndEnabled || amplitude <= 0f || duration <= 0f || shakeIntensity <= 0f) return;
+        if (!finale && DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunEnded) return;
+        shakeRequests.Add(new ShakeRequest { amplitude = amplitude, duration = duration,
+            scaledStart = Time.time, realStart = Time.realtimeSinceStartup, finale = finale });
+    }
+
+    public void ShakeAt(Vector2 impactCenter, float amplitude, float duration)
+    {
+        if (target == null) return;
+        float distance = Vector2.Distance(target.position, impactCenter);
+        float outer = Mathf.Max(impactFullStrengthDistance + .001f, impactZeroStrengthDistance);
+        float attenuation = 1f - Mathf.InverseLerp(impactFullStrengthDistance, outer, distance);
+        Shake(amplitude * attenuation, duration);
     }
 
     public void ResetShake()
     {
-        shakeRemaining = shakeAmplitude = 0f;
-        finaleShake = false;
+        shakeRequests.Clear();
+        CurrentShakeAmplitude = 0f;
+        shakeOffset = Vector2.zero;
         if (cam != null) transform.position = ClampPosition(basePosition);
     }
 
@@ -66,15 +85,35 @@ public class CameraFollow : MonoBehaviour
         ) : basePosition;
 
         basePosition = ClampPosition(nextPosition);
-        bool finalClock = finaleShake && DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunCleared;
-        float dt = finalClock ? Time.unscaledDeltaTime : (Time.timeScale > 0f ? Time.deltaTime : 0f);
-        if (dt <= 0f) return; // Keep the existing offset fixed during pause.
-        shakeRemaining = Mathf.Max(0f, finalClock ? finaleShakeUntil - Time.realtimeSinceStartup : shakeRemaining - dt);
-        Vector2 offset = shakeRemaining > 0f
-            ? Random.insideUnitCircle * (shakeAmplitude * shakeIntensity * shakeRemaining / shakeDuration)
-            : Vector2.zero;
-        if (shakeRemaining == 0f) ResetShake();
-        transform.position = ClampPosition(basePosition + (Vector3)offset);
+        UpdateShake();
+        transform.position = ClampPosition(basePosition + (Vector3)shakeOffset);
+    }
+
+    private void UpdateShake()
+    {
+        bool ended = DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunEnded;
+        bool cleared = DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunCleared;
+        float strongest = 0f;
+        bool unscaled = false;
+        for (int i = shakeRequests.Count - 1; i >= 0; i--)
+        {
+            ShakeRequest request = shakeRequests[i];
+            bool finalClock = request.finale && cleared;
+            float elapsed = finalClock ? Time.realtimeSinceStartup - request.realStart : Time.time - request.scaledStart;
+            if (elapsed >= request.duration || (ended && !finalClock))
+            {
+                shakeRequests.RemoveAt(i);
+                continue;
+            }
+            float strength = request.amplitude * (1f - Mathf.Clamp01(elapsed / request.duration));
+            strongest = Mathf.Max(strongest, strength);
+            unscaled |= finalClock;
+        }
+        CurrentShakeAmplitude = strongest * shakeIntensity;
+        if (CurrentShakeAmplitude <= 0f) shakeOffset = Vector2.zero;
+        else if (Time.timeScale > 0f || unscaled)
+            shakeOffset = Random.insideUnitCircle * CurrentShakeAmplitude;
+        // Otherwise retain the current offset while ESC pauses scaled requests.
     }
 
     private Vector3 ClampPosition(Vector3 position)
