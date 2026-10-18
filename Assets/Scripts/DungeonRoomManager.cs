@@ -21,6 +21,17 @@ public class DungeonRoomManager : MonoBehaviour
     public int TotalRoomCount => normalRoomCount + 1;
     public EnemyHealth CurrentBoss { get; private set; }
     public event System.Action<EnemyHealth> BossChanged;
+    public DungeonFloorData CurrentFloor { get; private set; }
+    public int CurrentDifficulty { get; private set; }
+    public bool StartDungeon(DungeonFloorData floor,int difficulty)
+    {
+        var setting=floor!=null?floor.GetDifficulty(difficulty):null;
+        var run=DungeonRunManager.Instance;
+        var growth=run!=null?run.GetComponent<PlayerProgression>():null;
+        if(!IsPreparing||!configured||IsTransitioning||player.IsDead||setting==null||!setting.IsPlayable||growth==null||growth.Level<Mathf.Max(1,setting.requiredLevel))return false;
+        CurrentFloor=floor;CurrentDifficulty=difficulty;
+        return StartDungeon();
+    }
 
     private void OnRoomCleared(RoomController controller)
     {
@@ -83,8 +94,12 @@ public class DungeonRoomManager : MonoBehaviour
 
     public bool StartDungeon()
     {
+        var setting=CurrentFloor!=null?CurrentFloor.GetDifficulty(CurrentDifficulty):null;
+        var growth=DungeonRunManager.Instance!=null?DungeonRunManager.Instance.GetComponent<PlayerProgression>():null;
+        if(setting==null||!setting.IsPlayable||growth==null||growth.Level<Mathf.Max(1,setting.requiredLevel))return false;
         if (!configured || !IsPreparing || IsTransitioning || currentRoom != null ||
             DungeonRunManager.Instance == null || DungeonRunManager.Instance.IsRestarting) return false;
+        normalRoomPrefabs=setting.normalRooms;bossRoomPrefab=setting.bossRoom;normalRoomCount=setting.normalRoomCount;
         IsPreparing = false; // Guard before generation; double clicks cannot create another room.
         DungeonRunManager.Instance.BeginNewRun();
         DungeonRunManager.Instance.GetComponent<RewardInventorySession>()?.BeginChallenge();

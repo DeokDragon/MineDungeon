@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e038e87677f014dbdfb1b67c13fc51, type: 3}
+  m_Name: Floor1_RockMine
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonFloorData
+  id: RockMine01
+  floorNumber: 1
+  displayName: "\uC554\uC11D \uAC31\uB3C4"
+  previewImage: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  testConfiguration: 1
+  difficulties:
+  - requiredLevel: 1
+    implemented: 1
+    normalRooms:
+    - {fileID: 4456749020115303275, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+    - {fileID: 1648642708461120026, guid: e03f5e1f64d488149be0c410f82b6d7e, type: 3}
+    bossRoom: {fileID: 8915209039277424091, guid: 49e6f9a1c41923b45aff2ad996e68f6e, type: 3}
+    normalRoomCount: 3
+    chestPreview: {fileID: 11400000, guid: dc43044d8aa69294697b032fa997ab78, type: 2}
+  - requiredLevel: 2
+    implemented: 0
+    normalRooms: []
+    bossRoom: {fileID: 0}
+    normalRoomCount: 3
+    chestPreview: {fileID: 11400000, guid: 3c8b408473d96464faa3cc2978153ded, type: 2}
+  - requiredLevel: 3
+    implemented: 0
+    normalRooms: []
+    bossRoom: {fileID: 0}
+    normalRoomCount: 3
+    chestPreview: {fileID: 11400000, guid: b17eb25b604695e45be774e252d343eb, type: 2}
+  - requiredLevel: 5
+    implemented: 0
+    normalRooms: []
+    bossRoom: {fileID: 0}
+    normalRoomCount: 3
+    chestPreview: {fileID: 11400000, guid: 6c29519e7c68b564585e052f1870ff7e, type: 2}

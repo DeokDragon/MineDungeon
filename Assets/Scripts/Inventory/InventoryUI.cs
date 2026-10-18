@@ -13,8 +13,8 @@ public sealed class InventoryUI : MonoBehaviour
     [SerializeField] private PlayerSkills player;
     [SerializeField] private DungeonRoomManager rooms;
     [SerializeField] private PauseMenu pauseMenu;
-    [SerializeField] private GameObject panel, preparationPanel;
-    [SerializeField] private Button closeButton, clearSearchButton, startButton, preparationStartButton, reopenButton;
+    [SerializeField] private GameObject panel;
+    [SerializeField] private Button closeButton, clearSearchButton;
     [SerializeField] private TMP_InputField search;
     [SerializeField] private TMP_Dropdown sorting;
     [SerializeField] private TMP_Text listTitle, countText, emptyText, statsText, restrictionText, noticeText;
@@ -37,12 +37,13 @@ public sealed class InventoryUI : MonoBehaviour
     private InventoryCategory category;
     private readonly List<InventorySort> sortChoices = new List<InventorySort>();
     private readonly List<InventorySkillCard> cards = new List<InventorySkillCard>();
-    private bool pauseOwned, preparationOwned, waitingRelease, openWhenReady;
-    private float previousTime, preparationTime, previousStatsPhysical, previousStatsMagic;
-    private bool previousAudio, preparationAudio;
+    private bool waitingRelease, externalTooltip;
+    private float previousStatsPhysical, previousStatsMagic;
+    private int externalOpenFrame=-1;
     private int suppressedFrame = -1;
     private float noticeUntil;
     private int lastOwnedCount = -1;
+    private float lastGridWidth = -1;
     private RectTransform hoverTarget;
     private SkillData hoverSkill;
     private MaterialData hoverMaterial;
@@ -55,18 +56,15 @@ public sealed class InventoryUI : MonoBehaviour
     public long MaterialQuantity(string id) => rewards != null ? rewards.Quantity(id) : 0;
     public bool IsOpen { get; private set; }
     public bool CanEquip => rooms != null && rooms.IsPreparing && !rooms.IsTransitioning && run != null && !run.IsRunEnded && !run.IsRestarting;
-    public static bool BlockCombatInput => active != null && (active.IsOpen || active.rooms.IsPreparing || active.waitingRelease || active.suppressedFrame == Time.frameCount);
-    public static bool BlockPauseInput => active != null && (active.IsOpen || active.rooms.IsPreparing || active.suppressedFrame == Time.frameCount);
+    public static bool BlockCombatInput => MineEntranceUI.IsModalOpen || (active != null && (active.IsOpen || active.waitingRelease || active.suppressedFrame == Time.frameCount));
+    public static bool BlockPauseInput => MineEntranceUI.IsModalOpen || (active != null && (active.IsOpen || active.suppressedFrame == Time.frameCount));
 
     private void Awake()
     {
         active = this;
         health = player.GetComponent<PlayerHealth>(); attack = player.GetComponent<PlayerAttack>();
         movement = player.GetComponent<PlayerMovement>(); powers = player.GetComponent<PlayerSkillAttackPower>();
-        preparationTime = Time.timeScale; preparationAudio = AudioListener.pause;
-        preparationOwned = rooms.IsPreparing;
-        if (preparationOwned) { Time.timeScale = 0; AudioListener.pause = true; }
-        panel.SetActive(false); tooltip.gameObject.SetActive(false); preparationPanel.SetActive(preparationOwned);
+        panel.SetActive(false); tooltip.gameObject.SetActive(false);
     }
     private void Start()
     {
@@ -74,25 +72,24 @@ public sealed class InventoryUI : MonoBehaviour
         rewards=run.GetComponent<RewardInventorySession>();if(rewards!=null)rewards.Changed+=RewardsChanged;
         session.Changed += RefreshAll; run.RunEnded += OnResult; health.Died += OnPlayerDied;
         closeButton.onClick.AddListener(Close); clearSearchButton.onClick.AddListener(ClearSearch);
-        startButton.onClick.AddListener(StartDungeon); preparationStartButton.onClick.AddListener(StartDungeon); reopenButton.onClick.AddListener(OpenFromButton);
         search.onValueChanged.AddListener(SearchChanged); sorting.onValueChanged.AddListener(SortChanged); scroll.onValueChanged.AddListener(Scrolled);
         eSlot.button.onClick.AddListener(EquipE); rSlot.button.onClick.AddListener(EquipR);
         for (int i = 0; i < tabs.Length; i++) { int index = i; tabs[i].button.onClick.AddListener(() => SetCategory(index)); }
-        SetCategory(0); openWhenReady = rooms.IsPreparing;
+        SetCategory(0);
     }
     private void Update()
     {
         if (run == null) return;
-        if (openWhenReady && !run.IsRestarting) { openWhenReady = false; TryOpen(); }
         if (waitingRelease && !CombatKeyHeld()) waitingRelease = false;
         var keys = Keyboard.current;
         if (keys != null)
         {
             if (IsOpen && keys.escapeKey.wasPressedThisFrame) { Close(); return; }
-            if (keys.iKey.wasPressedThisFrame && !(IsOpen && search.isFocused)) { if (IsOpen) Close(); else TryOpen(); }
+            if (keys.iKey.wasPressedThisFrame && externalOpenFrame!=Time.frameCount && !(IsOpen && search.isFocused)) { if (IsOpen) Close(); else TryOpen(); }
         }
         if (noticeUntil > 0 && Time.unscaledTime >= noticeUntil) { noticeText.text = ""; noticeUntil = 0; }
-        if (!IsOpen) return;
+        if (!IsOpen) { if(externalTooltip&&hoverTarget!=null&&Time.unscaledTime>=hoverAt)ShowTooltip();return; }
+        if (!Mathf.Approximately(lastGridWidth, ((RectTransform)grid.transform).rect.width)) UpdateGrid();
         RefreshStats();
         if (!Mathf.Approximately(previousStatsPhysical, powers.PhysicalAttack) || !Mathf.Approximately(previousStatsMagic, powers.MagicAttack))
         {
@@ -111,35 +108,32 @@ public sealed class InventoryUI : MonoBehaviour
         suppressedFrame = Time.frameCount; waitingRelease = true; if (attack != null) attack.RequireFreshAttackInput();
         if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
     }
-    private void OpenFromButton() { TryOpen(); }
+    public void SuppressAfterModal() { SuppressClosingInput(); }
+    public bool OpenFromExternal() { externalOpenFrame=Time.frameCount;return TryOpen(); }
     public bool TryOpen()
     {
         if (IsOpen) return true;
-        if (run == null || run.IsRunEnded || run.IsRestarting || health.IsDead || rooms.IsTransitioning || pauseMenu.IsPaused) return false;
+        if (MineEntranceUI.IsModalOpen || run == null || run.IsRunEnded || run.IsRestarting || health.IsDead || rooms.IsTransitioning || pauseMenu.IsPaused) return false;
         if (player.IsCasting || movement.IsDodging) { Notice("스킬 시전·회피 중에는 열 수 없습니다"); return false; }
-        previousTime = Time.timeScale; previousAudio = AudioListener.pause; pauseOwned = true;
-        Time.timeScale = 0; AudioListener.pause = true; IsOpen = true;
+        IsOpen = true;
         panel.SetActive(true); panel.transform.SetAsLastSibling(); tooltip.SetAsLastSibling();
-        preparationPanel.SetActive(false); attack.RequireFreshAttackInput(); RefreshAll(); return true;
+        attack.RequireFreshAttackInput(); RefreshAll(); return true;
     }
-    public void Close() { CloseInternal(true); }
-    private void CloseInternal(bool restore)
+    public void Close() { CloseInternal(); }
+    private void CloseInternal()
     {
         if (!IsOpen) return;
         HideTooltip(); sorting.Hide(); search.DeactivateInputField(); panel.SetActive(false); IsOpen = false;
-        if (restore && pauseOwned && (run == null || (!run.IsRunEnded && !run.IsRestarting)))
-        { Time.timeScale = previousTime; AudioListener.pause = previousAudio; }
-        pauseOwned = false; preparationPanel.SetActive(rooms != null && rooms.IsPreparing && (run == null || !run.IsRunEnded)); SuppressClosingInput();
+        SuppressClosingInput();
     }
     public void StartDungeon()
     {
         if (!CanEquip || !rooms.StartDungeon()) return;
-        CloseInternal(false); preparationPanel.SetActive(false);
-        if (preparationOwned) { Time.timeScale = preparationTime; AudioListener.pause = preparationAudio; preparationOwned = false; }
+        CloseInternal();
         SuppressClosingInput();
     }
-    private void OnResult() { openWhenReady = false; CloseInternal(false); preparationPanel.SetActive(false); HideTooltip(); }
-    private void OnPlayerDied(PlayerHealth _) { CloseInternal(true); }
+    private void OnResult() { CloseInternal(); HideTooltip(); }
+    private void OnPlayerDied(PlayerHealth _) { CloseInternal(); }
     public void Select(string id) { if (session.Find(id) == null) return; SelectedId = id; SelectedMaterialId=null; RefreshSelection(); }
     public void SelectMaterial(string id){SelectedId=null;SelectedMaterialId=id;RefreshSelection();}
     public bool Equip(int slot)
@@ -196,7 +190,6 @@ public sealed class InventoryUI : MonoBehaviour
         RefreshSlot(eSlot, 0); RefreshSlot(rSlot, 1);
         restrictionText.text = CanEquip ? (SelectedId == null ? "스킬을 선택한 뒤 E/R 슬롯을 클릭하세요" : "장착할 슬롯을 선택하세요 · 반대 슬롯이면 교환") : "준비 중에만 변경할 수 있습니다";
         if(SelectedMaterialId!=null)restrictionText.text="재료는 장착할 수 없습니다";
-        startButton.gameObject.SetActive(rooms.IsPreparing);
     }
     private void RefreshSlot(Slot slot, int index)
     {
@@ -215,7 +208,8 @@ public sealed class InventoryUI : MonoBehaviour
     private void OnRectTransformDimensionsChange() { if (grid != null) UpdateGrid(); if (tooltip != null) HideTooltip(); }
     private void UpdateGrid()
     {
-        float available = ((RectTransform)grid.transform).rect.width - grid.padding.horizontal;
+        lastGridWidth = ((RectTransform)grid.transform).rect.width;
+        float available = lastGridWidth - grid.padding.horizontal;
         int columns = Mathf.Clamp(Mathf.FloorToInt((available + grid.spacing.x) / 205f), 1, 4);
         grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount; grid.constraintCount = columns;
         float width = Mathf.Max(40, (available - grid.spacing.x * (columns - 1)) / columns);
@@ -227,10 +221,11 @@ public sealed class InventoryUI : MonoBehaviour
     }
     public void HoverMaterial(RectTransform source,MaterialData material){Hover(source,null,null,-1);hoverMaterial=material;}
     public void Leave(RectTransform source) { if (hoverTarget == source) HideTooltip(); }
-    public void HideTooltip() { hoverTarget = null; if (tooltip != null) tooltip.gameObject.SetActive(false); }
+    public void ShowExternalTooltip(RectTransform source,string description){Hover(source,null,description,-1);externalTooltip=true;}
+    public void HideTooltip() { hoverTarget = null; externalTooltip=false; if (tooltip != null) tooltip.gameObject.SetActive(false); }
     private void ShowTooltip()
     {
-        if (!IsOpen || !hoverTarget.gameObject.activeInHierarchy) { HideTooltip(); return; }
+        if ((!IsOpen&&!externalTooltip) || !hoverTarget.gameObject.activeInHierarchy) { HideTooltip(); return; }
         var skill = hoverSlot >= 0 ? player.Equipped(hoverSlot) : hoverSkill;
         tooltipText.text = skill != null ? InventoryPresentation.SkillTooltip(skill, player, CanEquip) : hoverNote;
         if(hoverMaterial!=null)tooltipText.text=InventoryPresentation.MaterialTooltip(hoverMaterial,MaterialQuantity(hoverMaterial.id));
@@ -247,8 +242,7 @@ public sealed class InventoryUI : MonoBehaviour
     }
     private void OnDisable()
     {
-        CloseInternal(true);
-        if (preparationOwned && (run == null || !run.IsRunEnded)) { Time.timeScale = preparationTime; AudioListener.pause = preparationAudio; preparationOwned = false; }
+        CloseInternal();
         if (active == this) active = null;
     }
     private void OnDestroy()

@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         moveInput = Vector2.zero;
+        if (InventoryUI.BlockCombatInput) return;
 
         if (health != null && health.IsDead)
             return;
@@ -116,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (InventoryUI.BlockCombatInput) { rb.linearVelocity = Vector2.zero; return; }
         if (health != null && health.IsDead)
         {
             rb.linearVelocity = Vector2.zero;

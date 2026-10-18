@@ -64,7 +64,7 @@ public static class InventoryPresentation
         }
         return ordered.ThenBy(e => e.Skill.displayName, StringComparer.CurrentCulture).ThenBy(e => e.Skill.id, StringComparer.Ordinal).ToList();
     }
-    public static string SkillTooltip(SkillData s, PlayerSkills player, bool editable)
+    public static string SkillEffectDescription(SkillData s)
     {
         string effect;
         switch (s.kind)
@@ -74,6 +74,11 @@ public static class InventoryPresentation
             case PlayerSkillKind.TealBeam: effect = $"길이 {s.range:0.##}, 폭 {s.width:0.##}의 광선으로 적을 관통합니다. 첫 벽에서 차단되며 발사 순간 한 번 타격합니다. 효과 {s.effectDuration:0.##}초."; break;
             default: effect = $"최대 {s.range:0.##} 거리로 투척합니다. 비행 {s.flightDuration:0.##}초, 착탄 후 {s.fuseDuration:0.##}초 대기 뒤 반경 {s.radius:0.##} 폭발로 한 번 타격합니다."; break;
         }
+        return effect;
+    }
+    public static string SkillTooltip(SkillData s, PlayerSkills player, bool editable)
+    {
+        string effect=SkillEffectDescription(s);
         string equipped = player.Equipped(0)?.id == s.id ? "E 장착" : player.Equipped(1)?.id == s.id ? "R 장착" : "미장착";
         return $"<size=120%><b>{s.displayName}</b></size>\n{RarityName(s.rarity)} / 스킬 · {TypeName(s)}\n\n쿨타임  {s.cooldown:0.##}초     선딜레이  {s.windup:0.##}초\n\n{effect}\n\n물리 계수 ×{s.physicalCoefficient:0.##}\n마법 계수 ×{s.magicCoefficient:0.##}\n<color=#FFCF75>현재 예상 피해  {player.EstimatedDamage(s)}</color>\n적 한 마리 · 1회 사용 기준\n\n{equipped}\n{(editable ? "카드를 선택한 뒤 E 또는 R 슬롯을 클릭하세요.\n반대 슬롯의 스킬이면 서로 교환합니다." : "준비 중에만 변경할 수 있습니다")}";
     }

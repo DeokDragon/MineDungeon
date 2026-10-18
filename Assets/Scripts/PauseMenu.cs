@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 [DefaultExecutionOrder(-1000)]
@@ -36,10 +36,6 @@ public class PauseMenu : MonoBehaviour
         if (!isPaused)
         {
             Pause();
-        }
-        else if (controlsPage.activeSelf || quitPage.activeSelf)
-        {
-            ShowMainMenu();
         }
         else
         {
