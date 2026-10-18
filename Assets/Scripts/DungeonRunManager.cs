@@ -17,6 +17,8 @@ public class DungeonRunManager : MonoBehaviour
 
     public int RemainingRevives => remainingRevives;
     public int MaxRevives => maxRevives;
+    public int RemainingLives => IsRunFailed ? 0 : Mathf.Max(0, remainingRevives) + 1;
+    public event System.Action ResourcesChanged;
     public bool IsRunFailed { get; private set; }
     public bool IsRunCleared { get; private set; }
     public bool IsRunEnded => IsRunFailed || IsRunCleared;
@@ -45,6 +47,7 @@ public class DungeonRunManager : MonoBehaviour
         remainingPotions = maxPotions;
         IsRunFailed = false;
         IsRunCleared = false;
+        ResourcesChanged?.Invoke();
     }
 
     public bool TryUseRevive()
@@ -53,6 +56,7 @@ public class DungeonRunManager : MonoBehaviour
             return false;
 
         remainingRevives--;
+        ResourcesChanged?.Invoke();
 
         Debug.Log(
             $"부활 사용 / 남은 횟수 {remainingRevives}/{maxRevives}"
@@ -67,6 +71,7 @@ public class DungeonRunManager : MonoBehaviour
             return;
 
         IsRunFailed = true;
+        ResourcesChanged?.Invoke();
         RunEnded?.Invoke();
         Debug.Log("도전 최종 실패: 부활 횟수를 모두 소모했습니다.");
     }
@@ -113,6 +118,7 @@ public class DungeonRunManager : MonoBehaviour
             return false;
 
         remainingPotions--;
+        ResourcesChanged?.Invoke();
         return true;
     }
 }

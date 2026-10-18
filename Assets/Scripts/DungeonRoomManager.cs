@@ -87,6 +87,7 @@ public class DungeonRoomManager : MonoBehaviour
             DungeonRunManager.Instance == null || DungeonRunManager.Instance.IsRestarting) return false;
         IsPreparing = false; // Guard before generation; double clicks cannot create another room.
         DungeonRunManager.Instance.BeginNewRun();
+        DungeonRunManager.Instance.GetComponent<RewardInventorySession>()?.BeginChallenge();
         player.GetComponent<PlayerSkills>()?.ResetForNewRun();
         player.Heal(player.MaxHealth);
         LoadRoom(1);

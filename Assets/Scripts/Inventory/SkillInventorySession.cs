@@ -12,8 +12,8 @@ public sealed class SkillInventorySession : MonoBehaviour
     public sealed class Entry
     {
         public SkillData Skill { get; }
-        public int RegistrationOrder { get; }
-        internal Entry(SkillData skill, int order) { Skill = skill; RegistrationOrder = order; }
+        public long RegistrationOrder { get; }
+        internal Entry(SkillData skill, long order) { Skill = skill; RegistrationOrder = order; }
     }
     private readonly List<Entry> owned = new List<Entry>();
     public IReadOnlyList<Entry> Owned => owned;
@@ -21,6 +21,8 @@ public sealed class SkillInventorySession : MonoBehaviour
     private bool initializedLoadout;
     private PlayerSkills player;
     public event Action Changed;
+    private long registrationSequence;
+    public long NextRegistrationOrder() { long order=registrationSequence; if(registrationSequence<long.MaxValue)registrationSequence++; return order; }
     private void Awake()
     {
         if (Instance != null && Instance != this) return;
@@ -32,7 +34,7 @@ public sealed class SkillInventorySession : MonoBehaviour
     public bool Register(SkillData skill)
     {
         if (skill == null || string.IsNullOrWhiteSpace(skill.id) || Find(skill.id) != null) return false;
-        owned.Add(new Entry(skill, owned.Count)); Changed?.Invoke(); return true;
+        owned.Add(new Entry(skill, NextRegistrationOrder())); Changed?.Invoke(); return true;
     }
     public SkillData Find(string id)
     {

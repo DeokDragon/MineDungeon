@@ -28,6 +28,7 @@ public sealed class InventoryUI : MonoBehaviour
     [SerializeField, Min(0)] private float hoverDelay = .2f;
     private static InventoryUI active;
     private SkillInventorySession session;
+    private RewardInventorySession rewards;
     private DungeonRunManager run;
     private PlayerHealth health;
     private PlayerAttack attack;
@@ -44,11 +45,14 @@ public sealed class InventoryUI : MonoBehaviour
     private int lastOwnedCount = -1;
     private RectTransform hoverTarget;
     private SkillData hoverSkill;
+    private MaterialData hoverMaterial;
     private int hoverSlot = -1;
     private string hoverNote;
     private float hoverAt;
     public PlayerSkills Player => player;
     public string SelectedId { get; private set; }
+    public string SelectedMaterialId { get; private set; }
+    public long MaterialQuantity(string id) => rewards != null ? rewards.Quantity(id) : 0;
     public bool IsOpen { get; private set; }
     public bool CanEquip => rooms != null && rooms.IsPreparing && !rooms.IsTransitioning && run != null && !run.IsRunEnded && !run.IsRestarting;
     public static bool BlockCombatInput => active != null && (active.IsOpen || active.rooms.IsPreparing || active.waitingRelease || active.suppressedFrame == Time.frameCount);
@@ -67,6 +71,7 @@ public sealed class InventoryUI : MonoBehaviour
     private void Start()
     {
         session = SkillInventorySession.Instance; run = DungeonRunManager.Instance;
+        rewards=run.GetComponent<RewardInventorySession>();if(rewards!=null)rewards.Changed+=RewardsChanged;
         session.Changed += RefreshAll; run.RunEnded += OnResult; health.Died += OnPlayerDied;
         closeButton.onClick.AddListener(Close); clearSearchButton.onClick.AddListener(ClearSearch);
         startButton.onClick.AddListener(StartDungeon); preparationStartButton.onClick.AddListener(StartDungeon); reopenButton.onClick.AddListener(OpenFromButton);
@@ -135,7 +140,8 @@ public sealed class InventoryUI : MonoBehaviour
     }
     private void OnResult() { openWhenReady = false; CloseInternal(false); preparationPanel.SetActive(false); HideTooltip(); }
     private void OnPlayerDied(PlayerHealth _) { CloseInternal(true); }
-    public void Select(string id) { if (session.Find(id) == null) return; SelectedId = id; RefreshSelection(); }
+    public void Select(string id) { if (session.Find(id) == null) return; SelectedId = id; SelectedMaterialId=null; RefreshSelection(); }
+    public void SelectMaterial(string id){SelectedId=null;SelectedMaterialId=id;RefreshSelection();}
     public bool Equip(int slot)
     {
         if (!CanEquip || SelectedId == null) { Notice("준비 중에만 변경할 수 있습니다"); return false; }
@@ -156,6 +162,7 @@ public sealed class InventoryUI : MonoBehaviour
         var labels = new List<string> { "최근 획득순", "이름순", "희귀도 높은순" };
         if (category == InventoryCategory.All) { sortChoices.Add(InventorySort.Category); labels.Add("아이템 분류순"); }
         if (category == InventoryCategory.Skill) { sortChoices.AddRange(new[] { InventorySort.Type, InventorySort.Cooldown, InventorySort.Damage }); labels.AddRange(new[] { "물리/마법 타입순", "쿨타임 짧은순", "예상 피해 높은순" }); }
+        if(category==InventoryCategory.Material){sortChoices.Add(InventorySort.Quantity);labels.Add("보유 수량 많은순");}
         sorting.ClearOptions(); sorting.AddOptions(labels); sorting.SetValueWithoutNotify(0); sorting.RefreshShownValue();
         for (int i = 0; i < tabs.Length; i++)
         {
@@ -164,19 +171,23 @@ public sealed class InventoryUI : MonoBehaviour
         }
         RefreshList();
     }
-    private void RefreshAll() { if (session != null && lastOwnedCount != session.Owned.Count) RefreshList(); RefreshSelection(); RefreshStats(); }
+    private int OwnedCount => (session?.Owned.Count??0)+(rewards?.Materials.Count??0);
+    private void RewardsChanged(){if(IsOpen)RefreshList();else lastOwnedCount=-1;}
+    private void RefreshAll() { if (session != null && lastOwnedCount != OwnedCount) RefreshList(); RefreshSelection(); RefreshStats(); }
     private void RefreshList()
     {
         if (session == null) return;
-        lastOwnedCount = session.Owned.Count;
+        lastOwnedCount = OwnedCount;
         HideTooltip();
         foreach (var card in cards) { card.gameObject.SetActive(false); Destroy(card.gameObject); } cards.Clear();
-        bool implemented = category == InventoryCategory.All || category == InventoryCategory.Skill;
-        var results = InventoryPresentation.Query(session, category, search.text, CurrentSort, player);
+        bool implemented = category == InventoryCategory.All || category == InventoryCategory.Skill || category == InventoryCategory.Material;
+        var results = InventoryPresentation.QueryItems(session,rewards,category, search.text, CurrentSort, player);
         listTitle.text = category == InventoryCategory.All ? "전체 아이템" : category == InventoryCategory.Skill ? "보유 스킬" : InventoryPresentation.Categories[(int)category];
-        countText.text = $"검색 결과 {results.Count}개  /  전체 보유 {session.Owned.Count}개";
-        emptyText.text = !implemented ? "준비 중" : session.Owned.Count == 0 ? "보유 아이템이 없습니다" : results.Count == 0 ? "검색 결과가 없습니다" : "";
-        foreach (var entry in results) { var card = Instantiate(cardPrefab, grid.transform); card.Bind(this, entry.Skill); cards.Add(card); }
+        if(category==InventoryCategory.Material)listTitle.text="보유 재료";
+        countText.text = $"검색 결과 {results.Count}개  /  전체 보유 {OwnedCount}개";
+        int categoryCount=category==InventoryCategory.Material?(rewards?.Materials.Count??0):category==InventoryCategory.Skill?session.Owned.Count:OwnedCount;
+        emptyText.text = !implemented ? "준비 중" : categoryCount == 0 ? "보유 아이템이 없습니다" : results.Count == 0 ? "검색 결과가 없습니다" : "";
+        foreach (var entry in results) { var card = Instantiate(cardPrefab, grid.transform); if(entry.Skill!=null)card.Bind(this, entry.Skill);else card.Bind(this,entry.Material); cards.Add(card); }
         UpdateGrid(); scroll.verticalNormalizedPosition = 1f; RefreshSelection();
     }
     private void RefreshSelection()
@@ -184,6 +195,7 @@ public sealed class InventoryUI : MonoBehaviour
         foreach (var card in cards) card.Refresh();
         RefreshSlot(eSlot, 0); RefreshSlot(rSlot, 1);
         restrictionText.text = CanEquip ? (SelectedId == null ? "스킬을 선택한 뒤 E/R 슬롯을 클릭하세요" : "장착할 슬롯을 선택하세요 · 반대 슬롯이면 교환") : "준비 중에만 변경할 수 있습니다";
+        if(SelectedMaterialId!=null)restrictionText.text="재료는 장착할 수 없습니다";
         startButton.gameObject.SetActive(rooms.IsPreparing);
     }
     private void RefreshSlot(Slot slot, int index)
@@ -197,6 +209,8 @@ public sealed class InventoryUI : MonoBehaviour
     private void RefreshStats()
     {
         statsText.text = $"물리 공격력   {powers.PhysicalAttack:0.##}\n마법 공격력   {powers.MagicAttack:0.##}\n최대 체력      {health.MaxHealth}\n공격 간격      {attack.AttackInterval:0.00}초";
+        var growth = run != null ? run.GetComponent<PlayerProgression>() : null;
+        if (growth != null) statsText.text += $"\nLv. {growth.Level} · 미사용 스탯 포인트: {growth.UnspentStatPoints}";
     }
     private void OnRectTransformDimensionsChange() { if (grid != null) UpdateGrid(); if (tooltip != null) HideTooltip(); }
     private void UpdateGrid()
@@ -209,8 +223,9 @@ public sealed class InventoryUI : MonoBehaviour
     }
     public void Hover(RectTransform source, SkillData skill, string note, int slot)
     {
-        HideTooltip(); hoverTarget = source; hoverSkill = skill; hoverNote = note; hoverSlot = slot; hoverAt = Time.unscaledTime + hoverDelay;
+        HideTooltip(); hoverMaterial=null; hoverTarget = source; hoverSkill = skill; hoverNote = note; hoverSlot = slot; hoverAt = Time.unscaledTime + hoverDelay;
     }
+    public void HoverMaterial(RectTransform source,MaterialData material){Hover(source,null,null,-1);hoverMaterial=material;}
     public void Leave(RectTransform source) { if (hoverTarget == source) HideTooltip(); }
     public void HideTooltip() { hoverTarget = null; if (tooltip != null) tooltip.gameObject.SetActive(false); }
     private void ShowTooltip()
@@ -218,6 +233,7 @@ public sealed class InventoryUI : MonoBehaviour
         if (!IsOpen || !hoverTarget.gameObject.activeInHierarchy) { HideTooltip(); return; }
         var skill = hoverSlot >= 0 ? player.Equipped(hoverSlot) : hoverSkill;
         tooltipText.text = skill != null ? InventoryPresentation.SkillTooltip(skill, player, CanEquip) : hoverNote;
+        if(hoverMaterial!=null)tooltipText.text=InventoryPresentation.MaterialTooltip(hoverMaterial,MaterialQuantity(hoverMaterial.id));
         float width = Mathf.Min(450, canvasRect.rect.width - 32);
         float height = Mathf.Min(canvasRect.rect.height - 32, tooltipText.GetPreferredValues(tooltipText.text, width - 40, 0).y + 36);
         tooltip.sizeDelta = new Vector2(width, height);
@@ -238,6 +254,7 @@ public sealed class InventoryUI : MonoBehaviour
     private void OnDestroy()
     {
         if (session != null) session.Changed -= RefreshAll;
+        if(rewards!=null)rewards.Changed-=RewardsChanged;
         if (run != null) run.RunEnded -= OnResult;
         if (health != null) health.Died -= OnPlayerDied;
         if (active == this) active = null;

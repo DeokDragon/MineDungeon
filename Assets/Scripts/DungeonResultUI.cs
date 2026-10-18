@@ -10,6 +10,7 @@ public sealed class DungeonResultUI : MonoBehaviour
     [SerializeField] private TMP_Text title;
     [SerializeField] private TMP_Text roomText;
     [SerializeField] private TMP_Text reviveText;
+    [SerializeField] private TMP_Text rewardSummary;
     [SerializeField] private Button retryButton;
     [SerializeField] private DungeonRoomManager rooms;
     [SerializeField] private PlayerHealth player;
@@ -48,6 +49,9 @@ public sealed class DungeonResultUI : MonoBehaviour
         title.color = run.IsRunCleared ? new Color(.95f, .78f, .35f) : new Color(1f, .45f, .4f);
         roomText.text = $"최종 도달 방: {rooms.CurrentRoomNumber} / {rooms.TotalRoomCount}";
         reviveText.text = $"사용한 부활 횟수: {run.MaxRevives - run.RemainingRevives} / {run.MaxRevives}";
+        var rewards=run.GetComponent<RewardInventorySession>();
+        if(rewardSummary!=null)rewardSummary.text=rewards!=null
+            ? $"이번 도전 획득 돈: {rewards.RunMoney:N0}\n처치 보상 경험치: {rewards.RunRewardExperience:N0}\n<size=75%>이미 지급된 보상 · MAX 이후 경험치 포함</size>" : "";
         Time.timeScale = 0f;
         AudioListener.pause = true;
         if (run.IsRunCleared) StartCoroutine(RevealClear());

@@ -1400,6 +1400,7 @@ GameObject:
   - component: {fileID: 4967398254329298721}
   - component: {fileID: 7354316129733428793}
   - component: {fileID: 5461385067093809307}
+  - component: {fileID: 1498957813544386259}
   m_Layer: 6
   m_Name: StoneMonster (5)
   m_TagString: Untagged
@@ -1585,6 +1586,19 @@ MonoBehaviour:
   hideAfter: 3
   trailDelay: 0.2
   trailDuration: 0.25
+--- !u!114 &1498957813544386259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642587731396588171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7801c3395ed707c4b8761f236cb78d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyReward
+  reward: {fileID: 11400000, guid: efa21c9dc423314429e4f574421f0a51, type: 2}
 --- !u!1 &3756109085595171148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,6 +2372,7 @@ GameObject:
   - component: {fileID: 2129572918538853053}
   - component: {fileID: 8567423102068602431}
   - component: {fileID: 3380696235499052196}
+  - component: {fileID: 7597640152007058154}
   m_Layer: 6
   m_Name: StoneMonster
   m_TagString: Untagged
@@ -2543,6 +2558,19 @@ MonoBehaviour:
   hideAfter: 3
   trailDelay: 0.2
   trailDuration: 0.25
+--- !u!114 &7597640152007058154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632494108523317130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7801c3395ed707c4b8761f236cb78d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyReward
+  reward: {fileID: 11400000, guid: efa21c9dc423314429e4f574421f0a51, type: 2}
 --- !u!1 &4700225355487405143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3348,6 +3376,7 @@ GameObject:
   - component: {fileID: 906942789528269289}
   - component: {fileID: 3740253523067125755}
   - component: {fileID: 8157994108260231912}
+  - component: {fileID: 3836690249914743371}
   m_Layer: 6
   m_Name: StoneMonster (2)
   m_TagString: Untagged
@@ -3533,6 +3562,19 @@ MonoBehaviour:
   hideAfter: 3
   trailDelay: 0.2
   trailDuration: 0.25
+--- !u!114 &3836690249914743371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027621869970470459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7801c3395ed707c4b8761f236cb78d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyReward
+  reward: {fileID: 11400000, guid: efa21c9dc423314429e4f574421f0a51, type: 2}
 --- !u!1 &6039758341914225689
 GameObject:
   m_ObjectHideFlags: 0
@@ -3730,6 +3772,7 @@ GameObject:
   - component: {fileID: 3525535008629185161}
   - component: {fileID: 3194510032233865372}
   - component: {fileID: 8677523537621303136}
+  - component: {fileID: 4789188041805867521}
   m_Layer: 6
   m_Name: StoneMonster (4)
   m_TagString: Untagged
@@ -3915,6 +3958,19 @@ MonoBehaviour:
   hideAfter: 3
   trailDelay: 0.2
   trailDuration: 0.25
+--- !u!114 &4789188041805867521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6088828709267443447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7801c3395ed707c4b8761f236cb78d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyReward
+  reward: {fileID: 11400000, guid: efa21c9dc423314429e4f574421f0a51, type: 2}
 --- !u!1 &6098481084401334934
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,6 +4259,7 @@ GameObject:
   - component: {fileID: 1706964092653832937}
   - component: {fileID: 7821382345265885483}
   - component: {fileID: 4836447850514493134}
+  - component: {fileID: 3647792426204262675}
   m_Layer: 6
   m_Name: StoneMonster (3)
   m_TagString: Untagged
@@ -4388,6 +4445,19 @@ MonoBehaviour:
   hideAfter: 3
   trailDelay: 0.2
   trailDuration: 0.25
+--- !u!114 &3647792426204262675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454791049879400971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7801c3395ed707c4b8761f236cb78d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyReward
+  reward: {fileID: 11400000, guid: efa21c9dc423314429e4f574421f0a51, type: 2}
 --- !u!1 &6520259263719801267
 GameObject:
   m_ObjectHideFlags: 0
@@ -6107,6 +6177,7 @@ GameObject:
   - component: {fileID: 5063499206756813174}
   - component: {fileID: 7626956023515747507}
   - component: {fileID: 2468296418431189710}
+  - component: {fileID: 6111587186435273766}
   m_Layer: 6
   m_Name: StoneMonster (1)
   m_TagString: Untagged
@@ -6292,6 +6363,19 @@ MonoBehaviour:
   hideAfter: 3
   trailDelay: 0.2
   trailDuration: 0.25
+--- !u!114 &6111587186435273766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751417185392896297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7801c3395ed707c4b8761f236cb78d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyReward
+  reward: {fileID: 11400000, guid: efa21c9dc423314429e4f574421f0a51, type: 2}
 --- !u!1 &8794266531028437171
 GameObject:
   m_ObjectHideFlags: 0

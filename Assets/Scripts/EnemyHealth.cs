@@ -31,13 +31,18 @@ public class EnemyHealth : MonoBehaviour
     {
         if (isDead || damage <= 0) return false;
         currentHealth = Mathf.Max(0, currentHealth - damage);
+        // Lock lethal hits before callbacks; rewards precede room/result listeners.
+        if (currentHealth == 0)
+        {
+            isDead = true;
+            GetComponent<EnemyReward>()?.GrantConfirmedDeath(this);
+        }
         HealthChanged?.Invoke(this);
         if (currentHealth > 0)
         {
             if (feedback != null) feedback.Hit(contact, direction);
             return true;
         }
-        isDead = true;
         // Snapshot before AI OnDisable restores the jumping pivot.
         if (feedback != null) feedback.Break(direction);
         var boss = GetComponent<StoneGolemBossAI>();

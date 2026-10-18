@@ -420,6 +420,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7597640152007058154, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+      propertyPath: reward
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f4d4119ce3f9be45a27b477998e0b33, type: 2}
     - target: {fileID: 8567423102068602431, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       propertyPath: boss
       value: 1

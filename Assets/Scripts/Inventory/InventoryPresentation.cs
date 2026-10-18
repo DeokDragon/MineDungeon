@@ -5,10 +5,43 @@ using UnityEngine;
 
 public enum ItemRarity { Common, Uncommon, Rare, Epic }
 public enum InventoryCategory { All, Weapon, Upper, Lower, Accessory, Skill, Material }
-public enum InventorySort { Recent, Name, Rarity, Category, Type, Cooldown, Damage }
+public enum InventorySort { Recent, Name, Rarity, Category, Type, Cooldown, Damage, Quantity }
 
 public static class InventoryPresentation
 {
+    public sealed class Item
+    {
+        public SkillData Skill;
+        public MaterialData Material;
+        public long Quantity, Order;
+        public string Name => Skill != null ? Skill.displayName : Material.displayName;
+        public string Id => Skill != null ? Skill.id : Material.id;
+        public ItemRarity Rarity => Skill != null ? Skill.rarity : Material.rarity;
+        public InventoryCategory Category => Skill != null ? InventoryCategory.Skill : InventoryCategory.Material;
+    }
+    public static List<Item> QueryItems(SkillInventorySession skills,RewardInventorySession rewards,InventoryCategory category,string search,InventorySort sort,PlayerSkills player)
+    {
+        var all=new List<Item>();
+        if(skills!=null&&(category==InventoryCategory.All||category==InventoryCategory.Skill))
+            all.AddRange(skills.Owned.Select(e=>new Item{Skill=e.Skill,Order=e.RegistrationOrder}));
+        if(rewards!=null&&(category==InventoryCategory.All||category==InventoryCategory.Material))
+            all.AddRange(rewards.Materials.Select(e=>new Item{Material=e.Data,Quantity=e.Quantity,Order=e.RegistrationOrder}));
+        var list=all.Where(e=>e.Name.IndexOf(search??"",StringComparison.OrdinalIgnoreCase)>=0);
+        IOrderedEnumerable<Item> ordered;
+        switch(sort)
+        {
+            case InventorySort.Name:ordered=list.OrderBy(e=>e.Name,StringComparer.CurrentCulture);break;
+            case InventorySort.Rarity:ordered=list.OrderByDescending(e=>e.Rarity);break;
+            case InventorySort.Category:ordered=list.OrderBy(e=>e.Category);break;
+            case InventorySort.Type:ordered=list.OrderBy(e=>e.Skill!=null?(int)e.Skill.primaryType:0);break;
+            case InventorySort.Cooldown:ordered=list.OrderBy(e=>e.Skill!=null?e.Skill.cooldown:0);break;
+            case InventorySort.Damage:ordered=list.OrderByDescending(e=>e.Skill!=null?player.EstimatedDamage(e.Skill):0);break;
+            case InventorySort.Quantity:ordered=list.OrderByDescending(e=>e.Quantity);break;
+            default:ordered=list.OrderByDescending(e=>e.Order);break;
+        }
+        return ordered.ThenBy(e=>e.Name,StringComparer.CurrentCulture).ThenBy(e=>e.Id,StringComparer.Ordinal).ThenBy(e=>e.Category).ToList();
+    }
+    public static string MaterialTooltip(MaterialData data,long quantity) => $"<size=120%><b>{data.displayName}</b></size>\n{RarityName(data.rarity)} / 재료\n\n{data.description}\n\n보유 수량: {quantity:N0}";
     public static readonly string[] Categories = { "전체", "무기", "상의", "하의", "액세서리", "스킬", "재료" };
     public static string RarityName(ItemRarity r) => new[] { "일반", "고급", "희귀", "영웅" }[(int)r];
     public static Color RarityColor(ItemRarity r) => new[] { new Color(.52f,.59f,.65f), new Color(.39f,.77f,.48f), new Color(.34f,.61f,1), new Color(.76f,.43f,.92f) }[(int)r];
