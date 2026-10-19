@@ -75,6 +75,43 @@ public sealed class CharacterSaveService : MonoBehaviour
         foreach (var entry in rewards.Materials) data.materials.Add(new SavedItem { id = entry.Data.id, quantity = entry.Quantity, order = entry.RegistrationOrder });
         data.skills.AddRange(unknownSkills); data.materials.AddRange(unknownMaterials); return data;
     }
+#if UNITY_EDITOR
+    // Synchronous save service: no old worker can finish after this transaction.
+    public bool EditorResetProgress(string defaultE, string defaultR, out string error)
+    {
+        error = null;
+        var run = GetComponent<DungeonRunManager>();
+        if (!Application.isPlaying || !ready || writing || transactions != 0 || run.IsRestarting)
+        { error = "저장·보상 지급·씬 전환이 끝난 후 다시 시도해 주세요."; return false; }
+        if (!Application.CanStreamedLevelBeLoaded("Assets/Scenes/Main.unity"))
+        { error = "Main 씬을 불러올 수 없습니다."; return false; }
+        var data = new CharacterSnapshot { shakeMultiplier = ShakeMultiplier, skills = inventory.EditorStartingSkills() };
+        data.eSlot = data.skills.Exists(x => x.id == defaultE) ? defaultE : data.skills.Count > 0 ? data.skills[0].id : null;
+        data.rSlot = data.skills.Exists(x => x.id == defaultR) && defaultR != data.eSlot ? defaultR : null;
+        if (data.rSlot == null) foreach (var item in data.skills) if (item.id != data.eSlot) { data.rSlot = item.id; break; }
+        writing = true; dirty = false;
+        try
+        {
+            // Two atomic writes replace both primary and recovery backup with the new snapshot.
+            if (!CharacterSaveFile.Write(SavePath, data, invalidPrimary, out error) ||
+                !CharacterSaveFile.Write(SavePath, data, false, out error))
+            { LoadBlocked = true; Status = "저장 실패: 초기화를 완료하지 못했습니다. " + error; return false; }
+            FindFirstObjectByType<DungeonRoomManager>()?.StopRoomCombat();
+            FindFirstObjectByType<PlayerHealth>()?.FinishDungeon(false);
+            LoadBlocked = false; invalidPrimary = false; unknownSkills.Clear(); unknownMaterials.Clear();
+            growth.RestoreGrowth(data.level, data.experience, data.points);
+            inventory.RestoreSaved(data.skills, FindSkill, data.eSlot, data.rSlot);
+            rewards.RestoreSaved(0, data.materials, FindMaterial);
+            run.LastSettledPlayId = null;
+            dirty = false; Status = ""; SuccessfulWrites += 2;
+        }
+        catch (Exception ex) { error = ex.Message; LoadBlocked = true; Status = "저장 실패: " + error; return false; }
+        finally { writing = false; }
+        // ReturnToMain resets the run and removes scene-owned combat/UI objects.
+        if (!run.ReturnToMain()) { error = "초기 데이터는 저장됐지만 Main 씬 이동에 실패했습니다."; return false; }
+        return true;
+    }
+#endif
     public void RequestSave() { if (!ready || LoadBlocked) return; dirty = true; writeAt = Time.unscaledTime + writeDelay; }
     public void BeginTransaction() { transactions++; }
     public void EndTransaction() { transactions = Math.Max(0, transactions - 1); RequestSave(); }

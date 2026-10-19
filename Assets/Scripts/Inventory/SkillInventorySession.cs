@@ -39,6 +39,17 @@ public sealed class SkillInventorySession : MonoBehaviour
         if (player != null) player.ApplyInventoryLoadout(Find(eId), Find(rId));
         Changed?.Invoke();
     }
+#if UNITY_EDITOR
+    internal List<SavedItem> EditorStartingSkills()
+    {
+        var result = new List<SavedItem>();
+        var ids = new HashSet<string>(StringComparer.Ordinal);
+        if (testStartingSkills != null) foreach (var skill in testStartingSkills)
+            if (skill != null && !string.IsNullOrWhiteSpace(skill.id) && ids.Add(skill.id))
+                result.Add(new SavedItem { id = skill.id, quantity = 1, order = result.Count });
+        return result;
+    }
+#endif
     private void Awake()
     {
         if (Instance != null && Instance != this) return;
