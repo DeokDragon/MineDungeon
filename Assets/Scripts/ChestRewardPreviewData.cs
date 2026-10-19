@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using UnityEngine;
 
-// Preview only. No chest/opening/payout system exists yet.
+// Shared entry preview and automatic clear settlement table.
 [CreateAssetMenu(menuName="Mine Dungeon/Chest Reward Preview (Test)")]
 public sealed class ChestRewardPreviewData : ScriptableObject
 {
@@ -19,7 +19,7 @@ public sealed class ChestRewardPreviewData : ScriptableObject
         public ItemRarity Rarity=>skill!=null?skill.rarity:material!=null?material.rarity:ItemRarity.Common;
         public string Tooltip=> $"<b>{Name}</b>\n{InventoryPresentation.RarityName(Rarity)} / {(skill!=null?"스킬":"재료")}\n\n"+
             (skill!=null?InventoryPresentation.SkillEffectDescription(skill):material!=null?material.description:"")+
-            $"\n\n수량: {minimum}~{maximum}\n상자 1회 개봉 기준: {chancePercent:0.##}%\n테스트 미리보기 · 상자 지급 미연결";
+            $"\n\n수량: {minimum}~{maximum}\n클리어 1회 기준: {chancePercent:0.##}%\n항목별 독립 추첨 · 중복 보유 스킬은 추가 지급 없음";
     }
     public Entry[] entries=Array.Empty<Entry>();
 }

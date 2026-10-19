@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d5e61c5da67234880bbccc6647d754, type: 3}
+  m_Name: Magnetite
+  m_EditorClassIdentifier: Assembly-CSharp::MaterialData
+  id: Magnetite
+  displayName: "\uC790\uCCA0\uC11D"
+  icon: {fileID: 2383383108150006080, guid: 2422fb8e9d2c16a4482f44f759d82a13, type: 3}
+  rarity: 0
+  description: "\uC790\uC131\uC744 \uB760\uB294 \uC9D9\uC740 \uAD11\uC11D. \uACE1\uAD2D\uC774
+    \uC81C\uC791\uC5D0 \uC4F0\uC774\uB294 \uAD11\uBB3C \uC7AC\uB8CC\uC785\uB2C8\uB2E4."

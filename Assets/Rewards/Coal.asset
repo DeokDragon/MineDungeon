@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d5e61c5da67234880bbccc6647d754, type: 3}
+  m_Name: Coal
+  m_EditorClassIdentifier: Assembly-CSharp::MaterialData
+  id: Coal
+  displayName: "\uC11D\uD0C4"
+  icon: {fileID: -228819513787663229, guid: 34bd85069be0dda438136579be9b429a, type: 3}
+  rarity: 0
+  description: "\uC5F4\uC744 \uB0B4\uB294 \uAC80\uC740 \uAD11\uBB3C. \uACE1\uAD2D\uC774
+    \uC81C\uC791\uC5D0 \uC4F0\uC774\uB294 \uC7AC\uB8CC\uC785\uB2C8\uB2E4."

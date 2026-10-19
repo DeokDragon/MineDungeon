@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 // Lives on the existing persistent DungeonRunManager, not another singleton.
@@ -14,6 +14,7 @@ public sealed class PlayerProgression : MonoBehaviour
     public int MaximumLevel => configuration != null ? configuration.MaximumLevel : 1;
     public bool IsMaximumLevel => Level >= MaximumLevel;
     public int RequiredExperience => configuration != null ? configuration.RequiredExperience(Level) : 0;
+    public int RequiredAt(int level) => configuration != null ? configuration.RequiredExperience(level) : 0;
     public float Progress => IsMaximumLevel ? 1f : RequiredExperience > 0
         ? Mathf.Clamp01((float)Experience / RequiredExperience) : 0f;
     public event Action Changed;

@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -114,7 +114,7 @@ public sealed class MineEntranceUI : MonoBehaviour
         inventory.HideTooltip();notice.text="";
         foreach(Transform child in rewardContent)if(child.gameObject!=rewardCardTemplate){child.gameObject.SetActive(false);Destroy(child.gameObject);}
         var table=setting?.chestPreview;
-        previewStatus.text=table==null?"상자 시스템·보상표 준비 중":"테스트 미리보기 · 상자 1회 개봉 기준 · 실제 지급 미연결";
+        previewStatus.text=table==null?"클리어 보상표 준비 중":"테스트 보상표 · 클리어 1회 기준 · 항목별 독립 추첨";
         if(floor!=null&&floor.testConfiguration)requiredText.text+=" (테스트 설정)";
         if(table!=null)foreach(var row in table.entries.Where(e=>e!=null&&e.Valid).OrderBy(e=>e.displayOrder))
         {

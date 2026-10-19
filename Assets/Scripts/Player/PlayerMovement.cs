@@ -29,6 +29,17 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsDodging { get; private set; }
 
+    private float slowUntil, slowFraction;
+    private LineRenderer slowRing;
+    public float SlowMultiplier => Time.time < slowUntil ? 1f - slowFraction : 1f;
+    public void ApplySlow(float fraction, float seconds, Material material=null)
+    {
+        slowFraction=Mathf.Clamp01(fraction); slowUntil=Time.time+Mathf.Max(0,seconds);
+        if(!slowRing && material) { slowRing=new GameObject("Magnetic slow indicator").AddComponent<LineRenderer>(); slowRing.sharedMaterial=material; slowRing.useWorldSpace=false; slowRing.loop=true; slowRing.widthMultiplier=.025f; slowRing.positionCount=32; slowRing.sortingOrder=2; slowRing.startColor=slowRing.endColor=new Color(.5f,.3f,1,.6f); for(int i=0;i<32;i++) { float a=i*Mathf.PI*2/32;slowRing.SetPosition(i,new Vector3(Mathf.Cos(a),Mathf.Sin(a))*.55f); } }
+    }
+    public void ClearSlow() { slowUntil=0; slowFraction=0; if(slowRing) Destroy(slowRing.gameObject); slowRing=null; }
+    private void LateUpdate() { if(slowRing) { if(Time.time>=slowUntil) ClearSlow(); else slowRing.transform.position=transform.position; } }
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -94,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartDodge()
     {
-        if (InventoryUI.BlockCombatInput) return;
+        if (InventoryUI.BlockCombatInput || (DungeonRunManager.Instance!=null && DungeonRunManager.Instance.IsRunEnded)) return;
         if (skills != null && skills.IsCasting) return;
         PlayerPotion potion = GetComponent<PlayerPotion>();
 
@@ -146,11 +157,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (skills != null && skills.OwnsMovement) { rb.linearVelocity = Vector2.zero; return; }
-        rb.linearVelocity = moveInput * moveSpeed * (skills != null ? skills.MovementMultiplier : 1f);
+        rb.linearVelocity = moveInput * moveSpeed * SlowMultiplier * (skills != null ? skills.MovementMultiplier : 1f);
     }
 
     private void OnDisable()
     {
+        ClearSlow();
         moveInput = Vector2.zero;
         IsDodging = false;
         dodgeTimeRemaining = 0f;

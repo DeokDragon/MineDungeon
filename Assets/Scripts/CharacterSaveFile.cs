@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
@@ -18,6 +18,7 @@ using UnityEngine;
     public List<SavedItem> skills = new List<SavedItem>();
     public List<SavedItem> materials = new List<SavedItem>();
     public string eSlot, rSlot;
+    public string lastSettledPlayId;
     public float shakeMultiplier = 1;
 }
 

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,6 +41,7 @@ public sealed class RewardInventorySession : MonoBehaviour
         long next=SafeAdd(stack.Quantity,amount),accepted=next-stack.Quantity;
         if(accepted==0)return false;
         stack.Quantity=next;runMaterials[data.id]=SafeAdd(RunQuantity(data.id),accepted);
+        DungeonRunManager.Instance?.RecordMaterial(data,accepted);
         Changed?.Invoke();MaterialGranted?.Invoke(stack.Data,accepted);return true;
     }
     internal void RestoreSaved(long money, List<SavedItem> rows, Func<string, MaterialData> resolve)
@@ -56,7 +57,7 @@ public sealed class RewardInventorySession : MonoBehaviour
     }
     internal void GrantKillReward(MonsterRewardData reward)
     {
-        if(reward==null)return;
+        if(reward==null || (DungeonRunManager.Instance!=null && DungeonRunManager.Instance.IsRunEnded))return;
         var save=GetComponent<CharacterSaveService>();save?.BeginTransaction();
         try
         {

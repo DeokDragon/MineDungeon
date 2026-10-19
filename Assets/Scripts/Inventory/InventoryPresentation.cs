@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public enum ItemRarity { Common, Uncommon, Rare, Epic }
+public enum ItemRarity { Common, Uncommon, Rare, Epic, Legendary }
 public enum InventoryCategory { All, Weapon, Upper, Lower, Accessory, Skill, Material }
 public enum InventorySort { Recent, Name, Rarity, Category, Type, Cooldown, Damage, Quantity }
 
@@ -43,8 +43,8 @@ public static class InventoryPresentation
     }
     public static string MaterialTooltip(MaterialData data,long quantity) => $"<size=120%><b>{data.displayName}</b></size>\n{RarityName(data.rarity)} / 재료\n\n{data.description}\n\n보유 수량: {quantity:N0}";
     public static readonly string[] Categories = { "전체", "무기", "상의", "하의", "액세서리", "스킬", "재료" };
-    public static string RarityName(ItemRarity r) => new[] { "일반", "고급", "희귀", "영웅" }[(int)r];
-    public static Color RarityColor(ItemRarity r) => new[] { new Color(.52f,.59f,.65f), new Color(.39f,.77f,.48f), new Color(.34f,.61f,1), new Color(.76f,.43f,.92f) }[(int)r];
+    public static string RarityName(ItemRarity r) => new[] { "일반", "고급", "희귀", "영웅", "전설" }[(int)r];
+    public static Color RarityColor(ItemRarity r) => new[] { new Color(.52f,.59f,.65f), new Color(.39f,.77f,.48f), new Color(.34f,.61f,1), new Color(.76f,.43f,.92f), new Color(1f,.78f,.25f) }[(int)r];
     public static string TypeName(SkillData s) => s.primaryType == SkillDamageType.Physical ? "물리" : "마법";
     public static string Marker(SkillData s) => s == null ? "—" : new[] { "I", "II", "III", "IV" }[(int)s.kind];
     public static List<SkillInventorySession.Entry> Query(SkillInventorySession session, InventoryCategory category, string search, InventorySort sort, PlayerSkills player)

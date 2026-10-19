@@ -16,6 +16,6 @@ MonoBehaviour:
   experience: 10
   materials:
   - material: {fileID: 11400000, guid: b792f2c87c3048445aeb10171cd445e1, type: 2}
-    chancePercent: 100
+    chancePercent: 50
     minimum: 1
     maximum: 2

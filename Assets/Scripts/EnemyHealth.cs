@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -29,12 +29,14 @@ public class EnemyHealth : MonoBehaviour
 
     public bool TryTakeDamage(int damage, Vector2 contact, Vector2 direction)
     {
-        if (isDead || damage <= 0) return false;
+        if (isDead || damage <= 0 || (DungeonRunManager.Instance!=null && DungeonRunManager.Instance.IsRunEnded)) return false;
+        DungeonRunManager.Instance?.RecordDamageDealt(Mathf.Min(currentHealth,damage));
         currentHealth = Mathf.Max(0, currentHealth - damage);
         // Lock lethal hits before callbacks; rewards precede room/result listeners.
         if (currentHealth == 0)
         {
             isDead = true;
+            DungeonRunManager.Instance?.RecordKill();
             GetComponent<EnemyReward>()?.GrantConfirmedDeath(this);
         }
         HealthChanged?.Invoke(this);
@@ -47,8 +49,8 @@ public class EnemyHealth : MonoBehaviour
         if (feedback != null) feedback.Break(direction);
         var boss = GetComponent<StoneGolemBossAI>();
         if (boss != null) boss.enabled = false;
-        var monster = GetComponent<StoneMonsterAI>();
-        if (monster != null) { monster.StopAllCoroutines(); monster.enabled = false; }
+        foreach (MonoBehaviour component in GetComponents<MonoBehaviour>())
+            if (component is IMonsterAI monster) { monster.CancelAttacks(); component.enabled = false; }
         foreach (var collider in GetComponentsInChildren<Collider2D>()) collider.enabled = false;
         var rb = GetComponent<Rigidbody2D>();
         if (rb != null) { rb.linearVelocity = Vector2.zero; rb.simulated = false; }

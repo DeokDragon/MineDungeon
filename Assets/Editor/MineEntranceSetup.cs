@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System.Linq;
 using System.Collections.Generic;
 using TMPro;
@@ -52,7 +52,7 @@ public static class MineEntranceSetup
         var art=R("RepresentativeArea",panel,.36f,.55f,.97f,.87f);I(art,new Color(.065f,.10f,.12f));var artImage=I(R("ReplaceableImage",art,.24f,.13f,.76f,.94f),new Color(.45f,.55f,.58f));artImage.preserveAspect=true;Ref(so,"representative",artImage);T("TemporaryArt",art,"교체 가능한 임시 대표 이미지",18,.02f,.02f,.98f,.16f);
         Ref(so,"requiredText",T("RequiredLevel",panel,"",24,.37f,.50f,.97f,.55f));var diffs=so.FindProperty("difficultyButtons");diffs.arraySize=4;
         for(int i=0;i<4;i++){var b=B("Difficulty"+i,panel,DungeonFloorData.DifficultyName(i),.36f+i*.155f,.42f,.505f+i*.155f,.49f);Border(b.transform,"SelectionBorder",new Color(.15f,.85f,.76f));diffs.GetArrayElementAtIndex(i).objectReferenceValue=b;}
-        T("ChestTitle",panel,"클리어 상자 보상",25,.36f,.365f,.67f,.415f);Ref(so,"previewStatus",T("PreviewStatus",panel,"",17,.36f,.325f,.97f,.37f));
+        T("ChestTitle",panel,"클리어 보상",25,.36f,.365f,.67f,.415f);Ref(so,"previewStatus",T("PreviewStatus",panel,"",17,.36f,.325f,.97f,.37f));
         var viewport=R("RewardViewport",panel,.36f,.14f,.97f,.32f);I(viewport,new Color(.025f,.04f,.055f),true);viewport.gameObject.AddComponent<RectMask2D>();var scroll=viewport.gameObject.AddComponent<ScrollRect>();scroll.horizontal=true;scroll.vertical=false;scroll.movementType=ScrollRect.MovementType.Clamped;
         var content=R("Content",viewport,0,0,0,1);content.pivot=new Vector2(0,.5f);var layout=content.gameObject.AddComponent<HorizontalLayoutGroup>();layout.spacing=12;layout.padding=new RectOffset(6,6,4,4);layout.childForceExpandWidth=false;layout.childControlWidth=true;layout.childControlHeight=true;var fit=content.gameObject.AddComponent<ContentSizeFitter>();fit.horizontalFit=ContentSizeFitter.FitMode.PreferredSize;scroll.content=content;scroll.viewport=viewport;Ref(so,"rewardContent",content);Ref(so,"rewardScroll",scroll);
         var card=R("CardTemplate",content,0,0,0,1);I(card,new Color(.10f,.13f,.17f),true);var le=card.gameObject.AddComponent<LayoutElement>();le.preferredWidth=165;le.minWidth=165;Border(card,"Border",Color.gray);var icon=I(R("Icon",card,.3f,.32f,.7f,.82f),new Color(.7f,.8f,.8f));icon.preserveAspect=true;T("Marker",card,"",34,.3f,.32f,.7f,.82f);T("Name",card,"",19,.02f,.08f,.98f,.30f);T("Chance",card,"",20,.04f,.80f,.96f,.99f);card.gameObject.AddComponent<MineRewardHover>();Ref(so,"rewardCardTemplate",card.gameObject);card.gameObject.SetActive(false);

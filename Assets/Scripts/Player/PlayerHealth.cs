@@ -76,13 +76,16 @@ public class PlayerHealth : MonoBehaviour
         bodyRenderer.color = color;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage) { TryTakeDamage(damage); }
+
+    public bool TryTakeDamage(int damage)
     {
         if (DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunEnded)
-            return;
+            return false;
         if (IsDead || damage <= 0 || Time.time < invincibleUntil)
-            return;
+            return false;
 
+        DungeonRunManager.Instance?.RecordDamageTaken(Mathf.Min(currentHealth,damage));
         currentHealth = Mathf.Max(0, currentHealth - damage);
         invincibleUntil = Time.time + invincibleDuration;
         hurtFlashRemaining = .10f;
@@ -97,6 +100,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth == 0)
             HandleDefeat();
+        return true;
     }
 
     private void HandleDefeat()
@@ -167,6 +171,7 @@ public class PlayerHealth : MonoBehaviour
 
         invincibleUntil = Time.time + reviveInvincibleDuration;
         IsDead = false;
+        DungeonRunManager.Instance?.NotifyRevived();
         hurtFlashRemaining = 0f;
 
         if (movement != null)
@@ -180,6 +185,15 @@ public class PlayerHealth : MonoBehaviour
             $"남은 부활 {DungeonRunManager.Instance.RemainingRevives}회",
             this
         );
+    }
+    public void FinishDungeon(bool clear)
+    {
+        StopAllCoroutines(); GetComponent<PlayerSkills>()?.CancelAll();
+        attack?.CancelAttack(); if(attack)attack.enabled=false;
+        var potion=GetComponent<PlayerPotion>(); if(potion)potion.enabled=false;
+        movement?.ClearSlow(); if(movement) { movement.enabled=false; if(clear)movement.enabled=true; }
+        if(clear && IsDead) { IsDead=false;currentHealth=Mathf.Max(1,currentHealth);hurtFlashRemaining=0;invincibleUntil=0; }
+        if(rb)rb.linearVelocity=Vector2.zero;
     }
     public void GrantInvincibility(float duration)
     {
@@ -197,7 +211,8 @@ public class PlayerHealth : MonoBehaviour
             return;
 
         int previousHealth = currentHealth;
-        currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        currentHealth = (int)System.Math.Min(maxHealth, (long)currentHealth + amount);
+        DungeonRunManager.Instance?.RecordHealing(currentHealth-previousHealth);
 
         Debug.Log(
             $"물약 회복: {currentHealth - previousHealth} / " +

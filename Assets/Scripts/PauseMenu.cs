@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
     public bool IsPaused => isPaused;
     private float previousTimeScale;
     private bool previousAudioPause;
-    private bool ResultLocked => DungeonRunManager.Instance != null && (DungeonRunManager.Instance.IsRunEnded || DungeonRunManager.Instance.IsRestarting);
+    private bool ResultLocked => DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRestarting;
     private bool InDungeon => FindFirstObjectByType<DungeonRoomManager>() is DungeonRoomManager rooms && !rooms.IsPreparing;
     private void Start()
     {
@@ -28,20 +28,20 @@ public class PauseMenu : MonoBehaviour
     }
     private void Update()
     {
-        if (ResultLocked || InventoryUI.BlockPauseInput || busy) return;
+        if (ResultLocked || (InventoryUI.BlockPauseInput || DungeonResultUI.BlocksPause) || busy) return;
         if (Keyboard.current == null || !Keyboard.current.escapeKey.wasPressedThisFrame) return;
         HandleEscape();
     }
     internal void HandleEscape()
     {
-        if (ResultLocked || InventoryUI.BlockPauseInput || busy) return;
+        if (ResultLocked || (InventoryUI.BlockPauseInput || DungeonResultUI.BlocksPause) || busy) return;
         if (!isPaused) Pause();
         else if (controlsPage.activeSelf || quitPage.activeSelf) ShowMainMenu();
         else Resume();
     }
     public void Pause()
     {
-        if (isPaused || ResultLocked || InventoryUI.BlockPauseInput) return;
+        if (isPaused || ResultLocked || (InventoryUI.BlockPauseInput || DungeonResultUI.BlocksPause)) return;
         previousTimeScale = Time.timeScale; previousAudioPause = AudioListener.pause;
         isPaused = true; Time.timeScale = 0; AudioListener.pause = true;
         pausePanel.SetActive(true); pausePanel.transform.SetAsLastSibling(); ShowMainMenu();
@@ -73,7 +73,7 @@ public class PauseMenu : MonoBehaviour
     private void ShowConfirmation()
     {
         menuPage.SetActive(false); controlsPage.SetActive(false); quitPage.SetActive(true); errorText.text = "";
-        confirmationText.text = returning ? "진행 중인 던전을 끝내고 광산 밖으로 귀환할까요?\n\n이미 받은 돈·경험치·재료는 보존됩니다. 미획득 상자 보상은 지급되지 않습니다." :
+        confirmationText.text = returning && DungeonRunManager.Instance.IsRunEnded ? "광산 밖으로 귀환할까요?\n\n확정된 결과와 이미 지급된 보상을 저장하고 유지합니다." : returning ? "진행 중인 던전을 끝내고 광산 밖으로 귀환할까요?\n\n이미 받은 돈·경험치·재료는 보존됩니다. 미획득 클리어 보상은 지급되지 않습니다." :
             "게임을 종료할까요?\n\n성장과 보유 아이템을 저장합니다." + (InDungeon ? "\n던전 진행은 저장하지 않으며 다음 실행은 메인에서 시작합니다." : "");
     }
     public void ConfirmQuit()
@@ -99,6 +99,6 @@ public class PauseMenu : MonoBehaviour
         if (!isPaused || ResultLocked) return;
         Time.timeScale = previousTimeScale; AudioListener.pause = previousAudioPause; isPaused = false;
     }
-    public void EnterResultState() { isPaused = false; pausePanel.SetActive(false); }
+    public void EnterResultState() { if(isPaused)RestoreTime(); isPaused=false;busy=false;pausePanel.SetActive(false); }
     private void OnDisable() { RestoreTime(); }
 }

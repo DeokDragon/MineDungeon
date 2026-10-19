@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 // Player / Camera와 마찬가지로 방 밖의 별도 오브젝트에 붙입니다.
 public class DungeonRoomManager : MonoBehaviour
@@ -36,7 +36,7 @@ public class DungeonRoomManager : MonoBehaviour
     private void OnRoomCleared(RoomController controller)
     {
         if (IsCompleted || currentRoom == null || controller != currentRoom.Controller ||
-            CurrentRoomNumber != TotalRoomCount || RunFailed()) return;
+            CurrentRoomNumber != TotalRoomCount || RunEnded()) return;
         IsCompleted = true;
         pendingExit = null;
         DungeonRunManager.Instance.CompleteRun();
@@ -44,17 +44,14 @@ public class DungeonRoomManager : MonoBehaviour
 
     public void StopRoomCombat()
     {
+        if(player) player.GetComponent<PlayerMovement>()?.ClearSlow();
         pendingExit = null;
         if (currentRoom == null) return;
         foreach (StoneGolemBossAI boss in currentRoom.GetComponentsInChildren<StoneGolemBossAI>(true))
             boss.enabled = false; // OnDisable cancels owned effects and pending hits.
-        foreach (StoneMonsterAI monster in currentRoom.GetComponentsInChildren<StoneMonsterAI>(true))
-        {
-            monster.StopAllCoroutines();
-            monster.enabled = false;
-            var body = monster.GetComponent<Rigidbody2D>();
-            if (body != null) body.linearVelocity = Vector2.zero;
-        }
+        foreach (MonoBehaviour component in currentRoom.GetComponentsInChildren<MonoBehaviour>(true))
+            if (component is IMonsterAI monster) { monster.CancelAttacks(); component.enabled = false; }
+
     }
 
     private void OnDestroy()
@@ -90,6 +87,7 @@ public class DungeonRoomManager : MonoBehaviour
             return;
         }
         configured = true;
+        DungeonRunManager.Instance?.TryStartQueuedDungeon(this);
     }
 
     public bool StartDungeon()
@@ -106,6 +104,7 @@ public class DungeonRoomManager : MonoBehaviour
         DungeonRunManager.Instance.GetComponent<RewardInventorySession>()?.BeginChallenge();
         player.GetComponent<PlayerSkills>()?.ResetForNewRun();
         player.Heal(player.MaxHealth);
+        DungeonRunManager.Instance.BeginTracking(this);
         LoadRoom(1);
         return true;
     }
@@ -120,7 +119,7 @@ public class DungeonRoomManager : MonoBehaviour
     {
         if (IsPreparing || !enabled || IsCompleted || pendingExit != null || source == null ||
             source != currentRoom || !source.IsCleared || enteringPlayer != player ||
-            player.IsDead || Time.timeScale == 0f || RunFailed()) return;
+            player.IsDead || Time.timeScale == 0f || RunEnded()) return;
         pendingExit = source;
     }
 
@@ -129,7 +128,7 @@ public class DungeonRoomManager : MonoBehaviour
         // 물리 충돌 콜백이 끝난 뒤 전환하여 같은 프레임의 중복 진입을 막습니다.
         if (pendingExit == null) return;
         pendingExit = null;
-        if (IsCompleted || player.IsDead || Time.timeScale == 0f || RunFailed()) return;
+        if (IsCompleted || player.IsDead || Time.timeScale == 0f || RunEnded()) return;
 
         if (CurrentRoomNumber == normalRoomCount + 1)
         {
@@ -138,9 +137,9 @@ public class DungeonRoomManager : MonoBehaviour
         LoadRoom(CurrentRoomNumber + 1);
     }
 
-    private bool RunFailed()
+    private bool RunEnded()
     {
-        return DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunFailed;
+        return DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunEnded;
     }
 
     private int PickNormalRoom()
@@ -155,6 +154,7 @@ public class DungeonRoomManager : MonoBehaviour
     private void LoadRoom(int number)
     {
         loadingRoom = true;
+        player.GetComponent<PlayerMovement>()?.ClearSlow();
         bool isBoss = number > normalRoomCount;
         int chosenIndex = isBoss ? -1 : PickNormalRoom();
         DungeonRoom prefab = isBoss ? bossRoomPrefab : normalRoomPrefabs[chosenIndex];

@@ -29,8 +29,8 @@ public class DungeonRoom : MonoBehaviour
     public void Bind(PlayerHealth player, DungeonRoomManager manager)
     {
         roomExit.Bind(this, manager);
-        foreach (StoneMonsterAI monster in GetComponentsInChildren<StoneMonsterAI>(true))
-            monster.SetTarget(player);
+        foreach (MonoBehaviour component in GetComponentsInChildren<MonoBehaviour>(true))
+            if (component is IMonsterAI monster) monster.SetTarget(player);
         foreach (StoneGolemBossAI boss in GetComponentsInChildren<StoneGolemBossAI>(true))
             boss.SetTarget(player, this);
     }

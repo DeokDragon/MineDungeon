@@ -97,12 +97,11 @@ public class CameraFollow : MonoBehaviour
         bool ended = DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunEnded;
         bool cleared = DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunCleared;
         float strongest = 0f;
-        bool unscaled = false;
         for (int i = shakeRequests.Count - 1; i >= 0; i--)
         {
             ShakeRequest request = shakeRequests[i];
             bool finalClock = request.finale && cleared;
-            float elapsed = finalClock ? Time.realtimeSinceStartup - request.realStart : Time.time - request.scaledStart;
+            float elapsed = Time.time - request.scaledStart;
             if (elapsed >= request.duration || (ended && !finalClock))
             {
                 shakeRequests.RemoveAt(i);
@@ -110,11 +109,10 @@ public class CameraFollow : MonoBehaviour
             }
             float strength = request.amplitude * (1f - Mathf.Clamp01(elapsed / request.duration));
             strongest = Mathf.Max(strongest, strength);
-            unscaled |= finalClock;
         }
         CurrentShakeAmplitude = strongest * shakeIntensity;
         if (CurrentShakeAmplitude <= 0f) shakeOffset = Vector2.zero;
-        else if (Time.timeScale > 0f || unscaled)
+        else if (Time.timeScale > 0f)
             shakeOffset = Random.insideUnitCircle * CurrentShakeAmplitude;
         // Otherwise retain the current offset while ESC pauses scaled requests.
     }

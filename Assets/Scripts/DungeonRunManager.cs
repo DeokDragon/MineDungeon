@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class DungeonRunManager : MonoBehaviour
+[DefaultExecutionOrder(10000)]
+public partial class DungeonRunManager : MonoBehaviour
 {
     public static DungeonRunManager Instance { get; private set; }
 
@@ -43,6 +44,7 @@ public class DungeonRunManager : MonoBehaviour
 
     public void BeginNewRun()
     {
+        Result=null; IsTracking=false; pendingClear=pendingFailure=settling=reviveInFlight=false; completedRevives=0;
         remainingRevives = maxRevives;
         remainingPotions = maxPotions;
         IsRunFailed = false;
@@ -56,6 +58,7 @@ public class DungeonRunManager : MonoBehaviour
             return false;
 
         remainingRevives--;
+        reviveInFlight=true;
         ResourcesChanged?.Invoke();
 
         Debug.Log(
@@ -70,23 +73,19 @@ public class DungeonRunManager : MonoBehaviour
         if (IsRunEnded || IsRestarting)
             return;
 
-        IsRunFailed = true;
-        ResourcesChanged?.Invoke();
-        RunEnded?.Invoke();
-        Debug.Log("도전 최종 실패: 부활 횟수를 모두 소모했습니다.");
+        pendingFailure=true;
     }
 
     public void CompleteRun()
     {
-        if (IsRunEnded || IsRestarting) return;
-        IsRunCleared = true;
-        RunEnded?.Invoke();
+        if(IsRunEnded||IsRestarting)return;
+        pendingClear=true;
     }
 
     public bool RestartCurrentScene()
     {
         if (!IsRunEnded || IsRestarting) return false;
-        return ReturnToMain();
+        return RetryDungeon();
     }
 
     public bool ReturnToMain()

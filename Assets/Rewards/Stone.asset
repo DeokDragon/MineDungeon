@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: Assembly-CSharp::MaterialData
   id: Stone
-  displayName: "\uB3CC"
-  icon: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  displayName: "\uB3CC \uC870\uAC01"
+  icon: {fileID: 8399011212269539787, guid: 6af8d17f427b5fd49ab77ab12c57f47b, type: 3}
   rarity: 0
-  description: "\uAD11\uC0B0\uC758 \uB3CC \uBAAC\uC2A4\uD130\uC5D0\uC11C \uC5BB\uC740
-    \uB3CC \uC870\uAC01\uC785\uB2C8\uB2E4."
+  description: "\uB2E8\uB2E8\uD55C \uC554\uC11D\uC5D0\uC11C \uB5A8\uC5B4\uC9C4 \uC870\uAC01.
+    \uACE1\uAD2D\uC774 \uC81C\uC791\uC5D0 \uC4F0\uC774\uB294 \uAE30\uCD08 \uC7AC\uB8CC\uC785\uB2C8\uB2E4."

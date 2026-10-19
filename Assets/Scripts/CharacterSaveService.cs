@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -17,6 +17,8 @@ public sealed class CharacterSaveService : MonoBehaviour
     private int transactions;
     private float writeAt;
     private readonly List<SavedItem> unknownSkills = new List<SavedItem>(), unknownMaterials = new List<SavedItem>();
+    public bool IsPending => dirty || writing;
+    public bool HasSaveError => LoadBlocked || (!string.IsNullOrEmpty(Status) && Status.StartsWith("저장 실패"));
     public bool LoadBlocked { get; private set; }
     public string Status { get; private set; }
     public string SavePath { get; private set; }
@@ -53,6 +55,7 @@ public sealed class CharacterSaveService : MonoBehaviour
             }
             Status = "백업에서 성장 데이터를 복구했습니다."; dirty = true; writeAt = Time.unscaledTime + writeDelay;
         }
+        GetComponent<DungeonRunManager>().LastSettledPlayId=data.lastSettledPlayId;
         growth.RestoreGrowth(data.level, data.experience, data.points);
         var knownSkills = new List<SavedItem>();
         foreach (var row in data.skills) { if (row == null || string.IsNullOrEmpty(row.id)) continue; if (FindSkill(row.id) != null) knownSkills.Add(row); else { unknownSkills.Add(row); Debug.LogWarning("Unknown saved skill retained: " + row.id); } }
@@ -67,6 +70,7 @@ public sealed class CharacterSaveService : MonoBehaviour
     public CharacterSnapshot Capture()
     {
         var data = new CharacterSnapshot { level = growth.Level, experience = growth.Experience, points = growth.UnspentStatPoints, money = rewards.Money, eSlot = inventory.SavedSlot(0), rSlot = inventory.SavedSlot(1), shakeMultiplier = ShakeMultiplier };
+        data.lastSettledPlayId=GetComponent<DungeonRunManager>().LastSettledPlayId;
         foreach (var entry in inventory.Owned) data.skills.Add(new SavedItem { id = entry.Skill.id, order = entry.RegistrationOrder });
         foreach (var entry in rewards.Materials) data.materials.Add(new SavedItem { id = entry.Data.id, quantity = entry.Quantity, order = entry.RegistrationOrder });
         data.skills.AddRange(unknownSkills); data.materials.AddRange(unknownMaterials); return data;

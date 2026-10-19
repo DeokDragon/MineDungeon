@@ -90,10 +90,8 @@ public sealed class StoneCombatBurst : MonoBehaviour
     private void Update()
     {
         if (owner == null || !owner.gameObject.activeInHierarchy) { Clear(); return; }
-        // Only the boss's terminal burst may continue while the result state freezes combat.
-        bool result = finale && DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunCleared;
-        float nextAge = result ? Time.realtimeSinceStartup - spawnedRealtime
-            : age + (Time.timeScale > 0f ? Time.deltaTime : 0f);
+        // Results allow world time to flow; ESC pause must also freeze the terminal burst.
+        float nextAge = age + Time.deltaTime;
         float dt = nextAge - age;
         age = nextAge;
         foreach (var p in pieces)
