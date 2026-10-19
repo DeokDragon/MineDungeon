@@ -86,7 +86,14 @@ public class DungeonRunManager : MonoBehaviour
     public bool RestartCurrentScene()
     {
         if (!IsRunEnded || IsRestarting) return false;
-        string path = SceneManager.GetActiveScene().path;
+        return ReturnToMain();
+    }
+
+    public bool ReturnToMain()
+    {
+        if (IsRestarting) return false;
+        if (CharacterSaveService.Current != null && !CharacterSaveService.Current.Flush()) return false;
+        string path = "Assets/Scenes/Main.unity";
         if (!Application.CanStreamedLevelBeLoaded(path))
         {
             Debug.LogError("The dungeon scene must be enabled in Build Settings.", this);

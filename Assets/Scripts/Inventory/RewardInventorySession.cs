@@ -43,9 +43,23 @@ public sealed class RewardInventorySession : MonoBehaviour
         stack.Quantity=next;runMaterials[data.id]=SafeAdd(RunQuantity(data.id),accepted);
         Changed?.Invoke();MaterialGranted?.Invoke(stack.Data,accepted);return true;
     }
+    internal void RestoreSaved(long money, List<SavedItem> rows, Func<string, MaterialData> resolve)
+    {
+        Money = Math.Max(0, money); materials.Clear();
+        foreach (var row in rows)
+        {
+            var data = resolve(row.id); if (data == null || row.quantity <= 0 || Find(row.id) != null) continue;
+            var stack = new Stack(data, Math.Max(0, row.order)); stack.Quantity = row.quantity; materials.Add(stack);
+            SkillInventorySession.Instance?.ObserveOrder(stack.RegistrationOrder);
+        }
+        RunMoney = RunRewardExperience = 0; runMaterials.Clear(); Changed?.Invoke();
+    }
     internal void GrantKillReward(MonsterRewardData reward)
     {
         if(reward==null)return;
+        var save=GetComponent<CharacterSaveService>();save?.BeginTransaction();
+        try
+        {
         var totals=new Dictionary<string,long>(StringComparer.Ordinal);
         var definitions=new Dictionary<string,MaterialData>(StringComparer.Ordinal);
         if(reward.materials!=null)foreach(var drop in reward.materials)
@@ -59,6 +73,8 @@ public sealed class RewardInventorySession : MonoBehaviour
         GetComponent<PlayerProgression>()?.GrantExperience(xp);
         foreach(var pair in totals)GrantMaterial(definitions[pair.Key],pair.Value);
         Changed?.Invoke();
+        }
+        finally { save?.EndTransaction(); }
     }
     // Called only when preparation actually starts a challenge, not scene reload/retry.
     public void BeginChallenge()

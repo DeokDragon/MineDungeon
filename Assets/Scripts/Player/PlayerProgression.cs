@@ -19,6 +19,14 @@ public sealed class PlayerProgression : MonoBehaviour
     public event Action Changed;
     public event Action<int, int, int> LeveledUp;
 
+    internal void RestoreGrowth(int level, int experience, int points)
+    {
+        Level = Mathf.Clamp(level, 1, MaximumLevel);
+        Experience = IsMaximumLevel ? 0 : Mathf.Clamp(experience, 0, Mathf.Max(0, RequiredExperience - 1));
+        UnspentStatPoints = Math.Max(0, points);
+        Changed?.Invoke(); // Restore values, never grant rewards or fire level-up bonuses.
+    }
+
     public bool GrantExperience(int amount)
     {
         if (amount < 0 || configuration == null) return false;

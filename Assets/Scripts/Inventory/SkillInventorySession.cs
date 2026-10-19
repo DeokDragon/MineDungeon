@@ -23,6 +23,22 @@ public sealed class SkillInventorySession : MonoBehaviour
     public event Action Changed;
     private long registrationSequence;
     public long NextRegistrationOrder() { long order=registrationSequence; if(registrationSequence<long.MaxValue)registrationSequence++; return order; }
+    public string SavedSlot(int slot) => slot == 0 ? eId : rId;
+    internal void ObserveOrder(long order) { if (order >= registrationSequence) registrationSequence = order < long.MaxValue ? order + 1 : long.MaxValue; }
+    internal void RestoreSaved(List<SavedItem> rows, Func<string, SkillData> resolve, string e, string r)
+    {
+        owned.Clear(); registrationSequence = 0;
+        foreach (var row in rows)
+        {
+            var data = resolve(row.id); if (data == null || Find(row.id) != null) continue;
+            long order = Math.Max(0, row.order); owned.Add(new Entry(data, order)); ObserveOrder(order);
+        }
+        eId = Find(e) != null ? e : null;
+        rId = Find(r) != null && r != eId ? r : null;
+        initializedLoadout = true;
+        if (player != null) player.ApplyInventoryLoadout(Find(eId), Find(rId));
+        Changed?.Invoke();
+    }
     private void Awake()
     {
         if (Instance != null && Instance != this) return;

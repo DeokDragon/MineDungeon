@@ -59,6 +59,8 @@ public class CameraFollow : MonoBehaviour
         if (cam != null) transform.position = ClampPosition(basePosition);
     }
 
+    public void SetShakeSetting(float value) { shakeIntensity = Mathf.Clamp(value, 0, 2); if (shakeIntensity == 0) ResetShake(); }
+
     private void Awake()
     {
         cam = GetComponent<Camera>();
@@ -66,6 +68,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
+        if (CharacterSaveService.Current != null) shakeIntensity = CharacterSaveService.Current.ShakeMultiplier;
         if (target != null)
             transform.position = basePosition = ClampPosition(target.position);
     }
