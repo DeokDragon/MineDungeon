@@ -38,6 +38,7 @@ internal static class MonsterDataStore
                 new Field(id == "Stone" ? "stopDistance" : "attackDistance", "공격 시작 거리"),
                 new Field("warningDuration", "예고 시간"),
                 new Field("recoveryDuration", "후딜레이"),
+                new Field("aggroRadius", "인식 반경 (임시)"),
                 new Field("shakeStrength", "흔들림 강도"),
                 new Field("shakeDuration", "흔들림 시간")
             }.Concat(extra).ToArray();

@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     public int CurrentHealth => currentHealth;
     public event System.Action<EnemyHealth> HealthChanged;
     public event System.Action<EnemyHealth> Died;
+    public event System.Action<EnemyHealth> Damaged;
 
     private void Awake()
     {
@@ -42,6 +43,9 @@ public class EnemyHealth : MonoBehaviour
         HealthChanged?.Invoke(this);
         if (currentHealth > 0)
         {
+            // All current EnemyHealth damage callers are player attacks/skills. Notify only
+            // after damage was accepted; lethal targets cannot resume any behavior.
+            Damaged?.Invoke(this);
             if (feedback != null) feedback.Hit(contact, direction);
             return true;
         }

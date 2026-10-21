@@ -4306,6 +4306,7 @@ MonoBehaviour:
     m_Bits: 128
   moveSpeed: 2.6
   stopDistance: 2.6
+  aggroRadius: 6
   warningDuration: 0.65
   jumpDuration: 0.35
   jumpHeight: 1
@@ -8553,6 +8554,7 @@ MonoBehaviour:
     m_Bits: 128
   moveSpeed: 2.6
   stopDistance: 2.6
+  aggroRadius: 6
   warningDuration: 0.65
   jumpDuration: 0.35
   jumpHeight: 1
@@ -9190,6 +9192,7 @@ MonoBehaviour:
   attackColor: {r: 0.9, g: 0.25, b: 0.5, a: 1}
   shakeStrength: 0.04
   shakeDuration: 0.1
+  aggroRadius: 7
   chargeSpeed: 8.5
   chargeWidth: 1.2
   chargeDistance: 6
@@ -10494,6 +10497,7 @@ MonoBehaviour:
   attackColor: {r: 0.9, g: 0.25, b: 0.5, a: 1}
   shakeStrength: 0
   shakeDuration: 0.1
+  aggroRadius: 8
   warningRadius: 2
   damageRadius: 1.8
   slowFraction: 0.3
@@ -11260,6 +11264,7 @@ MonoBehaviour:
   attackColor: {r: 1, g: 0.3, b: 0.1, a: 1}
   shakeStrength: 0.025
   shakeDuration: 0.1
+  aggroRadius: 5
   warningRadius: 2.2
   damageRadius: 2
 --- !u!1 &5984315977339206984
@@ -11566,6 +11571,7 @@ MonoBehaviour:
   attackColor: {r: 0.9, g: 0.25, b: 0.5, a: 1}
   shakeStrength: 0
   shakeDuration: 0.1
+  aggroRadius: 10
   projectileSpeed: 7
   projectileDiameter: 0.35
   projectileRange: 7.5

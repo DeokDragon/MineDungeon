@@ -245,6 +245,7 @@ MonoBehaviour:
   attackColor: {r: 0.9, g: 0.25, b: 0.5, a: 1}
   shakeStrength: 0
   shakeDuration: 0.1
+  aggroRadius: 10
   projectileSpeed: 7
   projectileDiameter: 0.35
   projectileRange: 7.5

@@ -23,10 +23,14 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     public static void Open() => GetWindow<MonsterDataEditorWindow>("몬스터 데이터").Show();
     void OnEnable()
     {
-        minSize = new Vector2(900, 520);
+        minSize = new Vector2(1030, 520);
         Undo.undoRedoPerformed += AfterUndo;
         placement.Enable(Repaint);
-        try { draft = savedDraft.Count > 0 ? savedDraft.ToDictionary(c => c.key, c => c.value) : MonsterDataStore.Load(); }
+        try
+        {
+            draft = MonsterDataStore.Load();
+            foreach (var cell in savedDraft) if (draft.ContainsKey(cell.key)) draft[cell.key] = cell.value;
+        }
         catch (Exception e) { message = e.Message; }
     }
     void OnDisable() { Undo.undoRedoPerformed -= AfterUndo; placement.Disable(); StoreDraft(); }
@@ -80,7 +84,7 @@ public sealed class MonsterDataEditorWindow : EditorWindow
                 using (new EditorGUILayout.HorizontalScope())
                 {
                     GUILayout.Label("종류 / ID", GUILayout.Width(138));
-                    foreach (var f in MonsterDataStore.Catalog[0].Fields.Take(7)) GUILayout.Label(f.Label, GUILayout.Width(96));
+                    foreach (var f in MonsterDataStore.Catalog[0].Fields.Take(8)) GUILayout.Label(f.Label, GUILayout.Width(96));
                 }
                 for (int i = 0; i < MonsterDataStore.Catalog.Length; i++)
                 {
@@ -88,13 +92,13 @@ public sealed class MonsterDataEditorWindow : EditorWindow
                     using (new EditorGUILayout.HorizontalScope())
                     {
                         if (GUILayout.Toggle(selected == i, s.Label + " / " + s.Id, "Button", GUILayout.Width(138))) selected = i;
-                        foreach (var f in s.Fields.Take(7)) DrawCell(s, f, 96);
+                        foreach (var f in s.Fields.Take(8)) DrawCell(s, f, 96);
                     }
                 }
                 var species = MonsterDataStore.Catalog[selected];
                 EditorGUILayout.Space();
                 EditorGUILayout.LabelField(species.Label + " 추가 수치", EditorStyles.boldLabel);
-                foreach (var f in species.Fields.Skip(7))
+                foreach (var f in species.Fields.Skip(8))
                     using (new EditorGUILayout.HorizontalScope())
                     { GUILayout.Label(f.Label + " (" + f.Key + ")", GUILayout.Width(300)); DrawCell(species, f, 180); }
             }

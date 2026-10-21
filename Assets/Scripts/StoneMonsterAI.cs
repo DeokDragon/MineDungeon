@@ -14,6 +14,11 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
     [Header("이동")]
     [SerializeField] private float moveSpeed = 2.6f;
     [SerializeField] private float stopDistance = 2.6f;
+    [SerializeField, Min(0), Tooltip("임시 검증 기본값 6. 최종 밸런스 미확정. 최초 인식에만 사용합니다.")]
+    private float aggroRadius = 6f;
+    private bool hasAggro;
+    public bool HasAggro => hasAggro;
+    public float AggroRadius => aggroRadius;
 
     [Header("공격")]
     [SerializeField] private float warningDuration = 0.65f;
@@ -94,6 +99,12 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
             // 부활 직후 예고 없이 공격하지 않도록 대기
             nextAttackTime = Time.time + 1f;
             return;
+        }
+
+        if (!hasAggro)
+        {
+            hasAggro = MonsterAggro.CanRecognize(rb.position, playerHealth, aggroRadius, wallLayer);
+            if (!hasAggro) { rb.linearVelocity = Vector2.zero; return; }
         }
 
         switch (state)
@@ -302,13 +313,18 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
     private void OnTargetDied(PlayerHealth _) { CancelAttacks(); }
     private void OnDisable()
     {
+        var health = GetComponent<EnemyHealth>();
+        if (health) health.Damaged -= OnDamaged;
         CancelAttacks();
         if (playerHealth != null) playerHealth.Died -= OnTargetDied;
     }
     private void OnEnable()
     {
+        var health = GetComponent<EnemyHealth>();
+        if (health) health.Damaged += OnDamaged;
         if (playerHealth != null) { playerHealth.Died -= OnTargetDied; playerHealth.Died += OnTargetDied; }
     }
+    private void OnDamaged(EnemyHealth _) { hasAggro = true; }
     public void SetTarget(PlayerHealth target)
     {
         if (playerHealth != null) playerHealth.Died -= OnTargetDied;

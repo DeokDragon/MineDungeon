@@ -791,6 +791,7 @@ MonoBehaviour:
   attackColor: {r: 1, g: 0.3, b: 0.1, a: 1}
   shakeStrength: 0.025
   shakeDuration: 0.1
+  aggroRadius: 5
   warningRadius: 2.2
   damageRadius: 2
 --- !u!1 &7154586003487594225

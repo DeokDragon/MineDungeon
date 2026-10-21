@@ -13,6 +13,11 @@ public abstract class NormalMonsterAI : MonoBehaviour, IMonsterAI
     [SerializeField] protected int attackDamage = 15;
     [SerializeField] protected Color attackColor = new Color(1f,.35f,.15f);
     [SerializeField] protected float shakeStrength = .035f, shakeDuration = .1f;
+    [SerializeField, Min(0), Tooltip("임시 검증 기본값 6. 최종 밸런스 미확정. 최초 인식에만 사용합니다.")]
+    protected float aggroRadius = 6f;
+    bool hasAggro;
+    public bool HasAggro => hasAggro;
+    public float AggroRadius => aggroRadius;
     protected Rigidbody2D rb;
     protected Collider2D hull;
     protected PlayerHealth target;
@@ -32,8 +37,17 @@ public abstract class NormalMonsterAI : MonoBehaviour, IMonsterAI
     protected virtual void Awake() { rb=GetComponent<Rigidbody2D>(); hull=GetComponent<Collider2D>(); layout=GetComponentInParent<RoomWalkableLayout>(); if(body) bodyRest=body.localPosition; }
     public void SetTarget(PlayerHealth value) { if(target) target.Died-=TargetDied; CancelAttacks(); target=value; if(target && isActiveAndEnabled) target.Died+=TargetDied; }
     void TargetDied(PlayerHealth _) { CancelAttacks(); }
-    protected virtual void OnEnable() { if(target) { target.Died-=TargetDied; target.Died+=TargetDied; } }
-    protected virtual void OnDisable() { if(target) target.Died-=TargetDied; CancelAttacks(); }
+    void OnDamaged(EnemyHealth _) { hasAggro = true; }
+    protected virtual void OnEnable()
+    {
+        GetComponent<EnemyHealth>().Damaged += OnDamaged;
+        if(target) { target.Died-=TargetDied; target.Died+=TargetDied; }
+    }
+    protected virtual void OnDisable()
+    {
+        GetComponent<EnemyHealth>().Damaged -= OnDamaged;
+        if(target) target.Died-=TargetDied; CancelAttacks();
+    }
     public virtual void CancelAttacks()
     {
         StopAllCoroutines(); busy=false; UnlockPosition(); if(rb) rb.linearVelocity=Vector2.zero;
@@ -43,6 +57,11 @@ public abstract class NormalMonsterAI : MonoBehaviour, IMonsterAI
     protected virtual void FixedUpdate()
     {
         if(!target || target.IsDead || GetComponent<EnemyHealth>().IsDead) { rb.linearVelocity=Vector2.zero; return; }
+        if (!hasAggro)
+        {
+            hasAggro = MonsterAggro.CanRecognize(rb.position, target, aggroRadius, wallLayer);
+            if (!hasAggro) { rb.linearVelocity = Vector2.zero; return; }
+        }
         if(busy) { rb.linearVelocity=Vector2.zero; return; }
         Vector2 delta=(Vector2)target.transform.position-rb.position;
         if(Time.time>=nextAttack && delta.magnitude<=attackDistance && !Physics2D.Linecast(rb.position,target.transform.position,wallLayer))

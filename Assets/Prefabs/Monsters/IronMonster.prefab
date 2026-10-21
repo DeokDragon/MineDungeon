@@ -780,6 +780,7 @@ MonoBehaviour:
   attackColor: {r: 0.9, g: 0.25, b: 0.5, a: 1}
   shakeStrength: 0.04
   shakeDuration: 0.1
+  aggroRadius: 7
   chargeSpeed: 8.5
   chargeWidth: 1.2
   chargeDistance: 6

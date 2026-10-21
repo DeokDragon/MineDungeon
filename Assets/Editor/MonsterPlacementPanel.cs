@@ -9,6 +9,7 @@ internal sealed class MonsterPlacementPanel
 {
     [SerializeField] int mapIndex, speciesIndex;
     [SerializeField] Vector3 newPosition;
+    [SerializeField] bool showAggro = true, allAggro;
     Vector2 scroll;
     MonsterPlacementStore.Report report;
     string message, inspectedState;
@@ -67,10 +68,18 @@ internal sealed class MonsterPlacementPanel
                 });
             }
             bool editing = Editing(out var stage);
+            EditorGUI.BeginChangeCheck();
+            using (new EditorGUILayout.HorizontalScope())
+            {
+                showAggro = EditorGUILayout.ToggleLeft("Scene 인식 범위 표시", showAggro, GUILayout.Width(190));
+                using (new EditorGUI.DisabledScope(!showAggro))
+                    allAggro = GUILayout.Toolbar(allAggro ? 1 : 0, new[] { "선택한 몬스터만", "전체 몬스터" }) == 1;
+            }
+            if (EditorGUI.EndChangeCheck()) SceneView.RepaintAll();
             var root = editing ? stage.prefabContentsRoot : AssetDatabase.LoadAssetAtPath<GameObject>(Path);
             if (!root) { EditorGUILayout.HelpBox("맵 프리팹이 없습니다.", MessageType.Error); return; }
             var enemies = MonsterPlacementStore.Enemies(root);
-            string state = string.Join("|", enemies.Select(e => e.GetInstanceID() + ":" + e.transform.localPosition.ToString("R")));
+            string state = string.Join("|", enemies.Select(e => e.GetInstanceID() + ":" + e.transform.localPosition.ToString("R") + ":" + AggroRadius(e)));
             var controller = root.GetComponent<DungeonRoom>()?.Controller;
             if (controller)
                 using (var so = new SerializedObject(controller))
@@ -78,7 +87,7 @@ internal sealed class MonsterPlacementPanel
                     var refs = so.FindProperty("enemies");
                     state += ":" + string.Join(",", Enumerable.Range(0, refs.arraySize).Select(i => refs.GetArrayElementAtIndex(i).objectReferenceInstanceIDValue));
                 }
-            if (inspectedState != state) { inspectedState = state; report = null; }
+            if (inspectedState != state) { inspectedState = state; report = null; SceneView.RepaintAll(); }
             EditorGUILayout.LabelField($"총 {enemies.Length}마리 · " + string.Join(" / ", MonsterDataStore.Catalog.Select(s => s.Label + " " + enemies.Count(e => MonsterPlacementStore.Species(e) == s))));
             if (!editing) EditorGUILayout.HelpBox("현재는 저장된 맵 목록입니다. 추가·삭제·이동하려면 선택한 맵을 여세요.", MessageType.None);
             scroll = EditorGUILayout.BeginScrollView(scroll);
@@ -153,11 +162,34 @@ internal sealed class MonsterPlacementPanel
     void SceneGUI(SceneView view)
     {
         if (!Editing(out var stage) || EditorApplication.isPlayingOrWillChangePlaymode) return;
+        foreach (var enemy in AggroTargets(stage.prefabContentsRoot))
+        {
+            Handles.color = new Color(.2f, .85f, 1f, .8f);
+            Handles.DrawWireDisc(enemy.transform.position, Vector3.forward, AggroRadius(enemy));
+            Handles.Label(enemy.transform.position + Vector3.down, "인식 " + AggroRadius(enemy).ToString("0.##") + " (임시)");
+        }
         var hp = Selected(stage.prefabContentsRoot);
         if (!hp) return;
         Handles.color = Color.yellow;
         Handles.DrawWireDisc(hp.transform.position, Vector3.forward, MonsterPlacementStore.Radius(hp));
         Handles.Label(hp.transform.position + Vector3.up, (MonsterPlacementStore.Species(hp)?.Label ?? hp.name) + " · 로컬 " + hp.transform.localPosition.ToString("F2"));
         repaint?.Invoke();
+    }
+    internal EnemyHealth[] AggroTargets(GameObject root)
+    {
+        if (!showAggro) return Array.Empty<EnemyHealth>();
+        if (allAggro) return MonsterPlacementStore.Enemies(root);
+        var selected = Selected(root);
+        return selected ? new[] { selected } : Array.Empty<EnemyHealth>();
+    }
+    internal static float AggroRadius(EnemyHealth enemy)
+    {
+        var s = MonsterPlacementStore.Species(enemy);
+        if (s == null) return 0;
+        using (var so = new SerializedObject(enemy.GetComponent(s.AI)))
+        {
+            float radius = so.FindProperty("aggroRadius").floatValue;
+            return float.IsNaN(radius) || float.IsInfinity(radius) ? 0 : Mathf.Max(0, radius);
+        }
     }
 }
