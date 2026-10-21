@@ -1,0 +1,7 @@
+PASS 06: actual collider distances; six wall-free, mutually non-overlapping spawns; configured instance
+PASS 04: actual collider distances; six wall-free, mutually non-overlapping spawns; configured instance
+PASS A: actual collider distances; six wall-free, mutually non-overlapping spawns; configured instance
+PASS 01: actual collider distances; six wall-free, mutually non-overlapping spawns; configured instance
+PASS 02: actual collider distances; six wall-free, mutually non-overlapping spawns; configured instance
+PASS 03: actual collider distances; six wall-free, mutually non-overlapping spawns; configured instance
+PASS 07: actual collider distances; six wall-free, mutually non-overlapping spawns; configured instance

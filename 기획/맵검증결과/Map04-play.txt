@@ -1,0 +1,117 @@
+COMPLETE 04
+PASS StartDungeon existing API
+PASS Six enemies total
+PASS Spawn at current entrance
+PASS Spawn clearance and reachability 0
+PASS Spawn clearance and reachability 1
+PASS Spawn separation 1/0
+PASS Spawn clearance and reachability 2
+PASS Spawn separation 2/0
+PASS Spawn separation 2/1
+PASS Spawn clearance and reachability 3
+PASS Spawn separation 3/0
+PASS Spawn separation 3/1
+PASS Spawn separation 3/2
+PASS Spawn clearance and reachability 4
+PASS Spawn separation 4/0
+PASS Spawn separation 4/1
+PASS Spawn separation 4/2
+PASS Spawn separation 4/3
+PASS Spawn clearance and reachability 5
+PASS Spawn separation 5/0
+PASS Spawn separation 5/1
+PASS Spawn separation 5/2
+PASS Spawn separation 5/3
+PASS Spawn separation 5/4
+PASS Physics walk to (-8.50, 16.00)
+PASS Physics walk to (11.50, 6.00)
+PASS Physics walk to (9.00, -4.50)
+PASS Physics walk to (12.00, 14.50)
+PASS Normal movement stopped at rock
+PASS Dodge stopped at rock
+PASS Live chase reaches unobstructed attack range StoneMonster
+PASS Live chase reaches unobstructed attack range IronMonster
+PASS Live chase reaches unobstructed attack range CrystalMonster
+PASS Live chase reaches unobstructed attack range CoalMonster
+PASS Live chase reaches unobstructed attack range MagnetMonster
+PASS Live chase reaches unobstructed attack range StoneMonster (5)
+PASS Camera 1.333333/3/(-16.00, -22.00)
+PASS Camera 1.333333/3/(16.00, 22.00)
+PASS Camera 1.333333/3/(-16.00, 22.00)
+PASS Camera 1.333333/3/(16.00, -22.00)
+PASS Camera 1.333333/3/(-9.00, -17.00)
+PASS Camera 1.333333/3/(12.00, 16.00)
+PASS Camera 1.333333/4.5/(-16.00, -22.00)
+PASS Camera 1.333333/4.5/(16.00, 22.00)
+PASS Camera 1.333333/4.5/(-16.00, 22.00)
+PASS Camera 1.333333/4.5/(16.00, -22.00)
+PASS Camera 1.333333/4.5/(-9.00, -17.00)
+PASS Camera 1.333333/4.5/(12.00, 16.00)
+PASS Camera 1.333333/12/(-16.00, -22.00)
+PASS Camera 1.333333/12/(16.00, 22.00)
+PASS Camera 1.333333/12/(-16.00, 22.00)
+PASS Camera 1.333333/12/(16.00, -22.00)
+PASS Camera 1.333333/12/(-9.00, -17.00)
+PASS Camera 1.333333/12/(12.00, 16.00)
+PASS Camera 1.777778/3/(-16.00, -22.00)
+PASS Camera 1.777778/3/(16.00, 22.00)
+PASS Camera 1.777778/3/(-16.00, 22.00)
+PASS Camera 1.777778/3/(16.00, -22.00)
+PASS Camera 1.777778/3/(-9.00, -17.00)
+PASS Camera 1.777778/3/(12.00, 16.00)
+PASS Camera 1.777778/4.5/(-16.00, -22.00)
+PASS Camera 1.777778/4.5/(16.00, 22.00)
+PASS Camera 1.777778/4.5/(-16.00, 22.00)
+PASS Camera 1.777778/4.5/(16.00, -22.00)
+PASS Camera 1.777778/4.5/(-9.00, -17.00)
+PASS Camera 1.777778/4.5/(12.00, 16.00)
+PASS Camera 1.777778/12/(-16.00, -22.00)
+PASS Camera 1.777778/12/(16.00, 22.00)
+PASS Camera 1.777778/12/(-16.00, 22.00)
+PASS Camera 1.777778/12/(16.00, -22.00)
+PASS Camera 1.777778/12/(-9.00, -17.00)
+PASS Camera 1.777778/12/(12.00, 16.00)
+PASS Camera 2.333333/3/(-16.00, -22.00)
+PASS Camera 2.333333/3/(16.00, 22.00)
+PASS Camera 2.333333/3/(-16.00, 22.00)
+PASS Camera 2.333333/3/(16.00, -22.00)
+PASS Camera 2.333333/3/(-9.00, -17.00)
+PASS Camera 2.333333/3/(12.00, 16.00)
+PASS Camera 2.333333/4.5/(-16.00, -22.00)
+PASS Camera 2.333333/4.5/(16.00, 22.00)
+PASS Camera 2.333333/4.5/(-16.00, 22.00)
+PASS Camera 2.333333/4.5/(16.00, -22.00)
+PASS Camera 2.333333/4.5/(-9.00, -17.00)
+PASS Camera 2.333333/4.5/(12.00, 16.00)
+PASS Camera 2.333333/12/(-16.00, -22.00)
+PASS Camera 2.333333/12/(16.00, 22.00)
+PASS Camera 2.333333/12/(-16.00, 22.00)
+PASS Camera 2.333333/12/(16.00, -22.00)
+PASS Camera 2.333333/12/(-9.00, -17.00)
+PASS Camera 2.333333/12/(12.00, 16.00)
+PASS Camera 4/3/(-16.00, -22.00)
+PASS Camera 4/3/(16.00, 22.00)
+PASS Camera 4/3/(-16.00, 22.00)
+PASS Camera 4/3/(16.00, -22.00)
+PASS Camera 4/3/(-9.00, -17.00)
+PASS Camera 4/3/(12.00, 16.00)
+PASS Camera 4/4.5/(-16.00, -22.00)
+PASS Camera 4/4.5/(16.00, 22.00)
+PASS Camera 4/4.5/(-16.00, 22.00)
+PASS Camera 4/4.5/(16.00, -22.00)
+PASS Camera 4/4.5/(-9.00, -17.00)
+PASS Camera 4/4.5/(12.00, 16.00)
+PASS Camera 4/12/(-16.00, -22.00)
+PASS Camera 4/12/(16.00, 22.00)
+PASS Camera 4/12/(-16.00, 22.00)
+PASS Camera 4/12/(16.00, -22.00)
+PASS Camera 4/12/(-9.00, -17.00)
+PASS Camera 4/12/(12.00, 16.00)
+PASS First revive at current entrance
+PASS Revive camera already snapped
+PASS All six deaths open existing exit
+PASS Existing exit trigger advances next room
+PASS Duplicate death attempts counted once; run kills persist
+PASS HP potions revives persist across room
+PASS Second revive at new room entrance
+PASS Third defeat ends run; two revives maximum

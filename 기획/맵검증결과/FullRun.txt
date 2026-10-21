@@ -1,0 +1,6 @@
+Started persisted Floor1 easy; pool=9; normal rooms=3
+PASS room 1 Map_07(Clone) enemies=6 exit open
+PASS room 2 Map_06(Clone) enemies=6 exit open
+PASS room 3 Map_07(Clone) enemies=6 exit open
+PASS room 4 existing boss bound: StoneGolemBoss
+PASS full run cleared; 18 normal kills + 1 boss; result settled; remaining revives=2; potions=3

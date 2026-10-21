@@ -1,0 +1,8 @@
+06: references valid; missing scripts=0; enemies=6
+04: references valid; missing scripts=0; enemies=6
+A: references valid; missing scripts=0; enemies=6
+01: references valid; missing scripts=0; enemies=6
+02: references valid; missing scripts=0; enemies=6
+03: references valid; missing scripts=0; enemies=6
+07: references valid; missing scripts=0; enemies=6
+Floor1 easy pool=2 -> 9; normalRoomCount=3; boss=Room_Boss_Test Variant
