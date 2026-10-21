@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // Player / Camera와 마찬가지로 방 밖의 별도 오브젝트에 붙입니다.
-public class DungeonRoomManager : MonoBehaviour
+public partial class DungeonRoomManager : MonoBehaviour
 {
     [SerializeField] private PlayerHealth player;
     [SerializeField] private CameraFollow cameraFollow;
@@ -35,6 +35,10 @@ public class DungeonRoomManager : MonoBehaviour
 
     private void OnRoomCleared(RoomController controller)
     {
+#if UNITY_EDITOR
+        if (DungeonRunManager.Instance != null && DungeonRunManager.Instance.EditorSelectedMapTest && currentRoom != null && controller == currentRoom.Controller)
+        { DungeonRunManager.Instance.EditorFinishSelectedMapTest(true); return; }
+#endif
         if (IsCompleted || currentRoom == null || controller != currentRoom.Controller ||
             CurrentRoomNumber != TotalRoomCount || RunEnded()) return;
         IsCompleted = true;
@@ -59,6 +63,9 @@ public class DungeonRoomManager : MonoBehaviour
         CurrentBoss = null;
         BossChanged?.Invoke(null);
         if (currentRoom != null) currentRoom.Controller.Cleared -= OnRoomCleared;
+#if UNITY_EDITOR
+        EditorReleaseSelectedMap();
+#endif
     }
 
     private void Start()
@@ -95,6 +102,11 @@ public class DungeonRoomManager : MonoBehaviour
         var setting=CurrentFloor!=null?CurrentFloor.GetDifficulty(CurrentDifficulty):null;
         var growth=DungeonRunManager.Instance!=null?DungeonRunManager.Instance.GetComponent<PlayerProgression>():null;
         if(setting==null||!CurrentFloor.CanEnter(CurrentDifficulty,out _)||growth==null||growth.Level<Mathf.Max(1,setting.requiredLevel))return false;
+        return BeginConfiguredDungeon(setting);
+    }
+
+    private bool BeginConfiguredDungeon(DungeonFloorData.Difficulty setting)
+    {
         if (!configured || !IsPreparing || IsTransitioning || currentRoom != null ||
             DungeonRunManager.Instance == null || DungeonRunManager.Instance.IsRestarting) return false;
         if (CharacterSaveService.Current != null && !CharacterSaveService.Current.Flush()) return false;
@@ -117,6 +129,9 @@ public class DungeonRoomManager : MonoBehaviour
 
     public void RequestNextRoom(DungeonRoom source, PlayerHealth enteringPlayer)
     {
+#if UNITY_EDITOR
+        if (DungeonRunManager.Instance != null && DungeonRunManager.Instance.EditorSelectedMapTest) return;
+#endif
         if (IsPreparing || !enabled || IsCompleted || pendingExit != null || source == null ||
             source != currentRoom || !source.IsCleared || enteringPlayer != player ||
             player.IsDead || Time.timeScale == 0f || RunEnded()) return;

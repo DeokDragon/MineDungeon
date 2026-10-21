@@ -55,6 +55,9 @@ public partial class DungeonRunManager
         // Resolve after all normal-frame combat callbacks. A clear always wins this frame.
         if(IsRunEnded||(!pendingClear&&!pendingFailure))return;
         bool clear=pendingClear;pendingClear=pendingFailure=false;
+#if UNITY_EDITOR
+        if (EditorSelectedMapTest) { EditorFinishSelectedMapTest(clear); return; }
+#endif
         IsRunCleared=clear;IsRunFailed=!clear;IsTracking=false;
         if(clear&&reviveInFlight){remainingRevives=Mathf.Min(maxRevives,remainingRevives+1);reviveInFlight=false;}
         var player=FindFirstObjectByType<PlayerHealth>();

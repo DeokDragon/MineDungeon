@@ -19,6 +19,7 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     [SerializeField] int tab;
     [SerializeField] MonsterPlacementPanel placement = new MonsterPlacementPanel();
     [SerializeField] MonsterBalancePanel balance = new MonsterBalancePanel();
+    [SerializeField] SelectedMapTestPanel selectedMapTest = new SelectedMapTestPanel();
 
     [MenuItem("Tools/MineDungeon/데이터 편집기")]
     public static void Open() => GetWindow<MonsterDataEditorWindow>("몬스터 데이터").Show();
@@ -47,11 +48,13 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     }
     void OnGUI()
     {
-        tab = GUILayout.Toolbar(tab, new[] { "몬스터 수치", "몬스터 배치", "층·난이도 밸런스" });
+        tab = GUILayout.Toolbar(tab, new[] { "몬스터 수치", "몬스터 배치", "층·난이도 밸런스", "선택 맵 테스트" });
         if (tab == 1) { placement.Draw(); return; }
         if (tab == 2) { balance.Draw(); return; }
+        if (tab == 3) { selectedMapTest.Draw(); return; }
         DrawStats();
     }
+    void OnInspectorUpdate() { if (tab == 3) Repaint(); }
     void DrawStats()
     {
         EditorGUILayout.HelpBox("공용 몬스터 5종 + Map_01~07의 같은 종류 전체를 입력값으로 맞춥니다. 맵의 기존 차이도 적용 대상입니다.\nCSV는 편집 초안만 변경합니다. 실제 게임 데이터는 기존 프리팹을 사용합니다.", MessageType.Info);

@@ -91,8 +91,15 @@ public sealed class MineEntranceUI : MonoBehaviour
         if(!SelectedFloor.CanEnter(SelectedDifficulty,out string dataError)){Hint(dataError);return;}
         entering=true;
         if(!rooms.StartDungeon(SelectedFloor,SelectedDifficulty)){entering=false;Hint("입장 상태를 확인해 주세요.");return;}
-        Close();lobbyRoot.SetActive(false);prompt.text="";
+        CompleteEntry();
     }
+    private void CompleteEntry() { Close();lobbyRoot.SetActive(false);prompt.text=""; }
+#if UNITY_EDITOR
+    public void EditorCompleteDungeonEntry()
+    {
+        if (!rooms.IsPreparing) CompleteEntry();
+    }
+#endif
     private void Refresh()
     {
         if(growth==null)return;

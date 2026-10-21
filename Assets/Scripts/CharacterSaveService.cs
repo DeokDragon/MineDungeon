@@ -35,6 +35,9 @@ public sealed class CharacterSaveService : MonoBehaviour
         SavePath = Path.Combine(Application.persistentDataPath, "Editor", "character.json");
         string testPath = UnityEditor.SessionState.GetString("MineDungeon.SaveTestPath", "");
         if (!string.IsNullOrEmpty(testPath)) SavePath = testPath;
+        // Validate before any load or write, including Awake/quit paths.
+        if (SelectedMapTestSafety.Active && !SelectedMapTestSafety.Matches(SavePath))
+        { LoadBlocked = true; Status = "선택 맵 테스트 저장 경로 격리 실패"; enabled = false; return; }
 #endif
         LoadOnce();
         ready = true;
