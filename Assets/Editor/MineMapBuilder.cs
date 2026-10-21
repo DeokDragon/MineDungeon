@@ -25,6 +25,16 @@ public static class MineMapBuilder
         if(solid) { go.layer=LayerMask.NameToLayer("Wall"); go.AddComponent<BoxCollider2D>().size=Vector2.one; }
         return sr;
     }
+    static void CollapsedWallDecoration(Transform geometry, Sprite sprite)
+    {
+        var rubble=Group(geometry,"CollapsedWall_VisualOnly");
+        var stones=new[]{R(-13,15,3,2),R(-9,16,2,3),R(-12,10,3,3),R(-8,8,2,2),R(-13,5,3,2),R(-9,3,3,2),R(-7,0,3,1.5f),R(-5,-3,2,1)};
+        for(int i=0;i<stones.Length;i++)
+            Tile(rubble,"RubbleStone",stones[i],sprite,new Color(.27f,.23f,.18f),-3,false).transform.localRotation=Quaternion.Euler(0,0,i%2==0?12:-16);
+        var timbers=new[]{R(-12,13,5,.3f),R(-12,7,5,.3f),R(-10,4,4,.3f),R(-6,-1,3,.3f)};
+        for(int i=0;i<timbers.Length;i++)
+            Tile(rubble,"BrokenTimber",timbers[i],sprite,new Color(.38f,.29f,.18f),-2,false).transform.localRotation=Quaternion.Euler(0,0,i%2==0?28:-32);
+    }
     public static string Build(string id)
     {
         if(Application.isPlaying) throw new InvalidOperationException("Build in edit mode.");
@@ -59,11 +69,12 @@ public static class MineMapBuilder
                     break;
                 case "04":
                     floors.Add(R(-14,-20,28,40));entry=new Vector2(-9,-17);door=new Vector2(12,16);
-                    obstacles.AddRange(new[]{R(-2,-20,4,27),R(-10,10,2.5f,2.5f),R(7,10,3,3),R(7,-1,3,3),R(-10,-10,2.5f,2.5f),R(7,-11,3,3)});
-                    spawn=new[]{new Vector2(-11,16),new Vector2(-7,16),new Vector2(11,7),new Vector2(11,4),new Vector2(6,-4),new Vector2(11,-5)};
-                    zones=new[]{R(-12,14,7,4),R(10,3,3,6),R(5,-6,8,3)};
+                    // Revised reference: collapsed upper-left, split central wall and a 6-unit lower crossing.
+                    obstacles.AddRange(new[]{R(-2,-20,4,9),R(-2,-5,4,13),R(7,10,3,3),R(7,-1,3,3),R(-10,-10,2.5f,2.5f),R(7,-11,3,3),R(-14,10,9,10),R(-14,6,10,4),R(-14,2,11,4),R(-8,-2,6,4),R(-6,-4,4,2)});
+                    spawn=new[]{new Vector2(2.5f,12),new Vector2(4.5f,14.5f),new Vector2(11.5f,10),new Vector2(11.5f,7),new Vector2(11.5f,-2.5f),new Vector2(11.5f,-5.5f)};
+                    zones=new[]{R(1,10.5f,5,6),R(10.5f,5.5f,2.5f,6),R(10,-7,3,6)};
                     break;
-                case "A":
+                case "05":
                     floors.Add(R(-14,-20,28,40));obstacles.Add(R(-7,-8,14,16));
                     spawn=new[]{new Vector2(-3,15),new Vector2(3,15),new Vector2(-11,-1),new Vector2(-11,3),new Vector2(11,-1),new Vector2(11,3)};
                     zones=new[]{R(-5,13,10,4),R(-13,-3,5,8),R(8,-3,5,8)};
@@ -121,7 +132,7 @@ public static class MineMapBuilder
             var tracks=new List<Vector2[]>();
             if(id=="06")tracks.Add(new[]{new Vector2(0,-19),new Vector2(0,18)});
             if(id=="04")tracks.Add(new[]{new Vector2(-9,-18),new Vector2(-5,-13),new Vector2(-5,10),new Vector2(-4,15),new Vector2(12,15)});
-            if(id=="A")tracks.Add(new[]{new Vector2(-10,-14),new Vector2(-10,11),new Vector2(10,11),new Vector2(10,-14),new Vector2(-10,-14)});
+            if(id=="05")tracks.Add(new[]{new Vector2(-10,-14),new Vector2(-10,11),new Vector2(10,11),new Vector2(10,-14),new Vector2(-10,-14)});
             if(id=="01")tracks.Add(new[]{new Vector2(-10,-18),new Vector2(-10,-12),new Vector2(10,-12),new Vector2(10,0),new Vector2(-10,0),new Vector2(-10,15),new Vector2(10,15),new Vector2(10,18)});
             if(id=="02")foreach(float side in new[]{-8f,8f})tracks.Add(new[]{new Vector2(0,-19),new Vector2(0,-9),new Vector2(side,-4),new Vector2(side,18)});
             foreach(var track in tracks)for(int segment=1;segment<track.Length;segment++)
@@ -140,7 +151,8 @@ public static class MineMapBuilder
                     { Vector2 q=p+normal*side;Tile(decoration,"Rail",R(q.x-.035f,q.y-step*.5f,.07f,step),sprite,new Color(.45f,.43f,.38f),-4,false).transform.localRotation=Quaternion.Euler(0,0,angle); }
                 }
             }
-            if(id=="A")
+            if(id=="04") CollapsedWallDecoration(geometry,sprite);
+            if(id=="05")
             {
                 // Crane foundation is the blocked central rectangle; arm/hook are visual only.
                 var crane=Group(geometry,"CraneDecoration_NoCollision");

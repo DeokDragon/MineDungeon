@@ -150,7 +150,7 @@ public sealed class MineMapPlayProbe
         }
         foreach(var e in enemies)e.gameObject.SetActive(true);
         FreezeEnemies(true);
-        if(mapId=="A")
+        if(mapId=="05")
         {
             // The player is on the opposite side of the entire crane foundation.
             Teleport(new Vector2(-11,0));
