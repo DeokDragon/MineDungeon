@@ -169,6 +169,9 @@ public class PlayerHealth : MonoBehaviour
             maxHealth
         );
 
+        if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
+            camera.SnapToTarget();
+
         invincibleUntil = Time.time + reviveInvincibleDuration;
         IsDead = false;
         DungeonRunManager.Instance?.NotifyRevived();

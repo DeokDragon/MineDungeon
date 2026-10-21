@@ -4,7 +4,7 @@ public sealed class CrystalMonsterAI : NormalMonsterAI
 {
     [SerializeField] float projectileSpeed=7f, projectileDiameter=.35f, projectileRange=7.5f, retreatDistance=2.2f, retreatSpeed=1.8f;
     protected override void IdleMove(Vector2 delta)
-    { if(Time.time<nextAttack && delta.magnitude<=retreatDistance) Move(-delta.normalized,retreatSpeed); else if(delta.magnitude>attackDistance) base.IdleMove(delta); else rb.linearVelocity=Vector2.zero; }
+    { if(Physics2D.Linecast(rb.position,target.transform.position,wallLayer)) base.IdleMove(delta); else if(Time.time<nextAttack && delta.magnitude<=retreatDistance) Move(-delta.normalized,retreatSpeed); else if(delta.magnitude>attackDistance) base.IdleMove(delta); else rb.linearVelocity=Vector2.zero; }
     protected override IEnumerator Attack()
     {
         float radius=projectileDiameter*.5f;

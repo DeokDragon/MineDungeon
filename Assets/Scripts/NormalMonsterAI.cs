@@ -21,6 +21,7 @@ public abstract class NormalMonsterAI : MonoBehaviour, IMonsterAI
     protected Vector2 origin, direction, destination;
     protected float nextAttack;
     protected bool busy;
+    RoomWalkableLayout layout;
     protected Vector3 bodyRest;
     RigidbodyConstraints2D savedConstraints;
     bool positionLocked;
@@ -28,7 +29,7 @@ public abstract class NormalMonsterAI : MonoBehaviour, IMonsterAI
     protected void UnlockPosition() { if(!positionLocked || !rb) return; rb.constraints=savedConstraints; positionLocked=false; }
     public bool IsAttacking => busy;
     public PlayerHealth Target => target;
-    protected virtual void Awake() { rb=GetComponent<Rigidbody2D>(); hull=GetComponent<Collider2D>(); if(body) bodyRest=body.localPosition; }
+    protected virtual void Awake() { rb=GetComponent<Rigidbody2D>(); hull=GetComponent<Collider2D>(); layout=GetComponentInParent<RoomWalkableLayout>(); if(body) bodyRest=body.localPosition; }
     public void SetTarget(PlayerHealth value) { if(target) target.Died-=TargetDied; CancelAttacks(); target=value; if(target && isActiveAndEnabled) target.Died+=TargetDied; }
     void TargetDied(PlayerHealth _) { CancelAttacks(); }
     protected virtual void OnEnable() { if(target) { target.Died-=TargetDied; target.Died+=TargetDied; } }
@@ -51,7 +52,13 @@ public abstract class NormalMonsterAI : MonoBehaviour, IMonsterAI
         }
         else IdleMove(delta);
     }
-    protected virtual void IdleMove(Vector2 delta) { Move(delta.normalized, Mathf.Min(moveSpeed,Mathf.Max(0,delta.magnitude-1.2f)/Time.fixedDeltaTime)); }
+    protected virtual void IdleMove(Vector2 delta)
+    {
+        bool blocked=Physics2D.Linecast(rb.position,target.transform.position,wallLayer);
+        Vector2 dir=layout ? layout.Direction(rb.position,target.transform.position,
+            Mathf.Max(hull.bounds.extents.x,hull.bounds.extents.y)+.05f) : delta.normalized;
+        Move(dir, blocked ? moveSpeed : Mathf.Min(moveSpeed,Mathf.Max(0,delta.magnitude-1.2f)/Time.fixedDeltaTime));
+    }
     protected void Move(Vector2 dir,float speed)
     {
         float distance=speed*Time.fixedDeltaTime;

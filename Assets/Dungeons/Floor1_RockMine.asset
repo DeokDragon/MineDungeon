@@ -23,6 +23,13 @@ MonoBehaviour:
     normalRooms:
     - {fileID: 4456749020115303275, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
     - {fileID: 1648642708461120026, guid: e03f5e1f64d488149be0c410f82b6d7e, type: 3}
+    - {fileID: 6828458293176960054, guid: 6528beab51ef2d44e813946d274475dd, type: 3}
+    - {fileID: 47755435103854295, guid: 1048251acb892974886efc5af85b6988, type: 3}
+    - {fileID: 1662757022521918358, guid: 1f0d9e5a9cee2b044b68bf1bb59a8e33, type: 3}
+    - {fileID: 6053983047823825609, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    - {fileID: 7537514284441623134, guid: 7502708e62f79f34ca7731ffbe7c040b, type: 3}
+    - {fileID: 6310666438825996995, guid: 12a9527f51c5494418c4cc2f4bcce5e1, type: 3}
+    - {fileID: 6078481078359082503, guid: afa4e511180003c4eadd151ffb455315, type: 3}
     bossRoom: {fileID: 8915209039277424091, guid: 49e6f9a1c41923b45aff2ad996e68f6e, type: 3}
     normalRoomCount: 3
     chestPreview: {fileID: 11400000, guid: dc43044d8aa69294697b032fa997ab78, type: 2}

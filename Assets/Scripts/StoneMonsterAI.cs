@@ -31,6 +31,7 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
     private GameObject effectsRoot;
     private Rigidbody2D rb;
     private Collider2D ownCollider;
+    private RoomWalkableLayout layout;
     private Collider2D playerCollider;
     private PlayerHealth playerHealth;
 
@@ -47,6 +48,7 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
     {
         rb = GetComponent<Rigidbody2D>();
         ownCollider = GetComponent<Collider2D>();
+        layout = GetComponentInParent<RoomWalkableLayout>();
         if (body != null) bodyStartPosition = body.localPosition;
     }
 
@@ -146,14 +148,22 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
         Vector2 direction = (Vector2)player.position - rb.position;
         float distance = direction.magnitude;
 
-        if (distance > stopDistance)
+        bool wallBetween = Physics2D.Linecast(rb.position, player.position, wallLayer);
+        if (distance > stopDistance || wallBetween)
         {
             float speed = Mathf.Min(
                 moveSpeed,
-                (distance - stopDistance) / Time.fixedDeltaTime
+                wallBetween ? moveSpeed : (distance - stopDistance) / Time.fixedDeltaTime
             );
 
-            rb.linearVelocity = direction.normalized * speed;
+            Vector2 chase = layout ? layout.Direction(rb.position, player.position,
+                Mathf.Max(ownCollider.bounds.extents.x,ownCollider.bounds.extents.y)+.05f) : direction.normalized;
+            var moveFilter=new ContactFilter2D(); moveFilter.SetLayerMask(wallLayer); moveFilter.useTriggers=true;
+            var moveHits=new RaycastHit2D[8];
+            float travel=speed*Time.fixedDeltaTime;
+            int hitCount=rb.Cast(chase,moveFilter,moveHits,travel+.02f);
+            for(int i=0;i<hitCount;i++) travel=Mathf.Min(travel,Mathf.Max(0,moveHits[i].distance-.02f));
+            rb.linearVelocity = chase * travel / Time.fixedDeltaTime;
             return;
         }
 

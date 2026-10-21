@@ -119,6 +119,9 @@ public class CameraFollow : MonoBehaviour
 
     private Vector3 ClampPosition(Vector3 position)
     {
+        // Fit the actual viewport when aspect/zoom changes, including very wide windows.
+        float fit = Mathf.Min((mapMax.y-mapMin.y)*.5f, (mapMax.x-mapMin.x)*.5f/Mathf.Max(.01f,cam.aspect));
+        if (fit > 0f && cam.orthographicSize > fit) cam.orthographicSize = fit;
         float halfHeight = cam.orthographicSize;
         float halfWidth = halfHeight * cam.aspect;
 
@@ -137,6 +140,12 @@ public class CameraFollow : MonoBehaviour
             : (mapMin.y + mapMax.y) * 0.5f;
 
         return new Vector3(x, y, -10f);
+    }
+    public void SnapToTarget()
+    {
+        followVelocity = Vector3.zero;
+        ResetShake();
+        if (target != null) transform.position = basePosition = ClampPosition(target.position);
     }
     public void SetRoom(Transform player, Vector2 minimum, Vector2 maximum)
     {
