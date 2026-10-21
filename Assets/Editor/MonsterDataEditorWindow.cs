@@ -18,6 +18,7 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     bool showDifferences = true;
     [SerializeField] int tab;
     [SerializeField] MonsterPlacementPanel placement = new MonsterPlacementPanel();
+    [SerializeField] MonsterBalancePanel balance = new MonsterBalancePanel();
 
     [MenuItem("Tools/MineDungeon/데이터 편집기")]
     public static void Open() => GetWindow<MonsterDataEditorWindow>("몬스터 데이터").Show();
@@ -46,8 +47,9 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     }
     void OnGUI()
     {
-        tab = GUILayout.Toolbar(tab, new[] { "몬스터 수치", "몬스터 배치" });
+        tab = GUILayout.Toolbar(tab, new[] { "몬스터 수치", "몬스터 배치", "층·난이도 밸런스" });
         if (tab == 1) { placement.Draw(); return; }
+        if (tab == 2) { balance.Draw(); return; }
         DrawStats();
     }
     void DrawStats()

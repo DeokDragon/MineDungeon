@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812582854caf5c145bea236b88b050ae, type: 3}
+  m_Name: Floor1_RockMine_D0_Map_01
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterMapProfile
+  map: {fileID: 6053983047823825609, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+  configured: 1
+  entries:
+  - id: d68ff3e8d1e64c61923e04bb6c14cc98
+    template: {fileID: 5999346839256718862, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/StoneMonster
+    localPosition: {x: 8.44, y: -14.62, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 6c49bc186f17422798dafc09c7f592aa
+    template: {fileID: 2644558143223348910, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/IronMonster
+    localPosition: {x: 10.38156, y: -11.74276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 7af92820c7ad4fa8b83d8641fabfabfc
+    template: {fileID: 3540336079174149206, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/CrystalMonster
+    localPosition: {x: -9.49, y: -3.1, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: dd09a1d080d346da96db465f0b05bd35
+    template: {fileID: 5820331728657483277, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/CoalMonster
+    localPosition: {x: -5.71, y: -3.09, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: d6ccca3a422c4f6c8bdd86b9e182874d
+    template: {fileID: 1466043457990609665, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/MagnetMonster
+    localPosition: {x: -2.6184402, y: 15.25724, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 5fe02dcfad4d4f49b4ebcb01001c6751
+    template: {fileID: 6005537471352048635, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/StoneMonster (5)
+    localPosition: {x: 3.3815598, y: 15.25724, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: a75f165b1ed04ce1ad6e9baafeb676fa
+    template: {fileID: 3867230768171680178, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/CrystalMonster (1)
+    localPosition: {x: -5.1, y: 3.64, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: b9f5ac01115f4890aa869dcb99fb2bce
+    template: {fileID: 6369350130055529943, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/CrystalMonster (2)
+    localPosition: {x: 0.35, y: 11.7, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: df989d03ab334d6fb513aee37c2a651f
+    template: {fileID: 2664563457889872602, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/IronMonster (1)
+    localPosition: {x: -3.6, y: -0.56, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 9dd6a0c3b78c45fa9057119672cb3dec
+    template: {fileID: 2631423361589291454, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
+    embeddedPath: Monsters/CoalMonster (1)
+    localPosition: {x: 7.17, y: -10.28, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0

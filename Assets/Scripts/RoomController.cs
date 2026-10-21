@@ -7,6 +7,12 @@ public class RoomController : MonoBehaviour
     [SerializeField] private RoomExit roomExit;
 
     private readonly HashSet<EnemyHealth> livingEnemies = new HashSet<EnemyHealth>();
+    bool started;
+    public void ConfigureSpawnEnemies(EnemyHealth[] value)
+    {
+        if (started || !gameObject.scene.IsValid()) throw new System.InvalidOperationException("몬스터 등록은 방 Start 전에만 설정할 수 있습니다.");
+        enemies = value;
+    }
 
     public int RemainingEnemies => livingEnemies.Count;
     public bool IsCleared { get; private set; }
@@ -20,6 +26,7 @@ public class RoomController : MonoBehaviour
 
     private void Start()
     {
+        started = true;
         if (roomExit == null || enemies == null)
         {
             Debug.LogError("Assign the room's enemies and exit in the Inspector.", this);

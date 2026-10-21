@@ -88,6 +88,7 @@ public sealed class MineEntranceUI : MonoBehaviour
         var setting=SelectedFloor?.GetDifficulty(SelectedDifficulty);
         if(setting==null||!setting.IsPlayable){Hint("준비 중인 던전입니다.");return;}
         if(growth.Level<Mathf.Max(1,setting.requiredLevel)){Hint($"입장하려면 Lv.{Mathf.Max(1,setting.requiredLevel)} 이상이 필요합니다.");return;}
+        if(!SelectedFloor.CanEnter(SelectedDifficulty,out string dataError)){Hint(dataError);return;}
         entering=true;
         if(!rooms.StartDungeon(SelectedFloor,SelectedDifficulty)){entering=false;Hint("입장 상태를 확인해 주세요.");return;}
         Close();lobbyRoot.SetActive(false);prompt.text="";
@@ -100,7 +101,7 @@ public sealed class MineEntranceUI : MonoBehaviour
         int required=setting!=null?Mathf.Max(1,setting.requiredLevel):1;
         requiredText.text=$"입장 필요 레벨: Lv.{required}";
         currentLevelText.text=$"현재 Lv.{growth.Level} / 필요 Lv.{required}";
-        bool playable=setting!=null&&setting.IsPlayable;
+        bool playable=floor!=null&&floor.CanEnter(SelectedDifficulty,out _);
         entryLabel.text=!playable?"준비 중":growth.Level<required?"입장 불가":"입장하기";
         enterButton.image.color=playable&&growth.Level>=required?new Color(.14f,.48f,.43f):new Color(.24f,.27f,.29f);
         enterButton.interactable=true; // Disabled-looking buttons still explain the restriction.

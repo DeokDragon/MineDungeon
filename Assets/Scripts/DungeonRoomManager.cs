@@ -28,7 +28,7 @@ public class DungeonRoomManager : MonoBehaviour
         var setting=floor!=null?floor.GetDifficulty(difficulty):null;
         var run=DungeonRunManager.Instance;
         var growth=run!=null?run.GetComponent<PlayerProgression>():null;
-        if(!IsPreparing||!configured||IsTransitioning||player.IsDead||setting==null||!setting.IsPlayable||growth==null||growth.Level<Mathf.Max(1,setting.requiredLevel))return false;
+        if(!IsPreparing||!configured||IsTransitioning||player.IsDead||setting==null||!floor.CanEnter(difficulty,out _)||growth==null||growth.Level<Mathf.Max(1,setting.requiredLevel))return false;
         CurrentFloor=floor;CurrentDifficulty=difficulty;
         return StartDungeon();
     }
@@ -94,7 +94,7 @@ public class DungeonRoomManager : MonoBehaviour
     {
         var setting=CurrentFloor!=null?CurrentFloor.GetDifficulty(CurrentDifficulty):null;
         var growth=DungeonRunManager.Instance!=null?DungeonRunManager.Instance.GetComponent<PlayerProgression>():null;
-        if(setting==null||!setting.IsPlayable||growth==null||growth.Level<Mathf.Max(1,setting.requiredLevel))return false;
+        if(setting==null||!CurrentFloor.CanEnter(CurrentDifficulty,out _)||growth==null||growth.Level<Mathf.Max(1,setting.requiredLevel))return false;
         if (!configured || !IsPreparing || IsTransitioning || currentRoom != null ||
             DungeonRunManager.Instance == null || DungeonRunManager.Instance.IsRestarting) return false;
         if (CharacterSaveService.Current != null && !CharacterSaveService.Current.Flush()) return false;
@@ -164,6 +164,21 @@ public class DungeonRoomManager : MonoBehaviour
         if (oldRoom != null) oldRoom.gameObject.SetActive(false);
 
         DungeonRoom next = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+        if (!isBoss)
+        {
+            try
+            {
+                var balance = CurrentFloor.monsterProfile;
+                MonsterProfileRuntime.Apply(next, balance.GetDifficulty(CurrentDifficulty).Find(prefab), balance, CurrentDifficulty);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("몬스터 프로필 적용 실패: " + e.Message, this);
+                next.gameObject.SetActive(false); Destroy(next.gameObject);
+                if (oldRoom) oldRoom.gameObject.SetActive(true);
+                loadingRoom = false; enabled = false; return;
+            }
+        }
         if (!next.IsConfigured())
         {
             Debug.LogError($"{prefab.name}: DungeonRoom의 Controller, Exit, Entrance와 방 범위를 확인하세요.", this);

@@ -9,6 +9,14 @@ public sealed class DungeonFloorData : ScriptableObject
     public string displayName;
     public Sprite previewImage;
     public bool testConfiguration=true;
+    public MonsterFloorProfile monsterProfile;
+    public bool CanEnter(int difficulty, out string error)
+    {
+        var d = GetDifficulty(difficulty);
+        if (d == null || !d.IsPlayable) { error = "준비 중인 던전입니다."; return false; }
+        if (!monsterProfile) { error = "층·난이도 몬스터 데이터가 미설정입니다."; return false; }
+        return monsterProfile.CanStart(difficulty, d.normalRooms, out error);
+    }
     [Serializable] public sealed class Difficulty
     {
         [Min(1)] public int requiredLevel=1;

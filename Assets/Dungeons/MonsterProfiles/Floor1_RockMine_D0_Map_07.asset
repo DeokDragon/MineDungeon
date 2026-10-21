@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812582854caf5c145bea236b88b050ae, type: 3}
+  m_Name: Floor1_RockMine_D0_Map_07
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterMapProfile
+  map: {fileID: 6078481078359082503, guid: afa4e511180003c4eadd151ffb455315, type: 3}
+  configured: 1
+  entries:
+  - id: 67dd5cd32f1b4243b76fe1ea9aa3967d
+    template: {fileID: 2686204663972293045, guid: afa4e511180003c4eadd151ffb455315, type: 3}
+    embeddedPath: Monsters/StoneMonster
+    localPosition: {x: 9.38156, y: -13.74276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 4a18a09bde7a4a8eb864131f3b65d2a0
+    template: {fileID: 8718884121887664264, guid: afa4e511180003c4eadd151ffb455315, type: 3}
+    embeddedPath: Monsters/IronMonster
+    localPosition: {x: -12.61844, y: 1.25724, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 11b95278003746a1a1db0ee535757ac7
+    template: {fileID: 6217828728320020718, guid: afa4e511180003c4eadd151ffb455315, type: 3}
+    embeddedPath: Monsters/CrystalMonster
+    localPosition: {x: -10.61844, y: 15.25724, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: f9467a7c9b2f4127be6f3490f3125de1
+    template: {fileID: 9036876932792182712, guid: afa4e511180003c4eadd151ffb455315, type: 3}
+    embeddedPath: Monsters/CoalMonster
+    localPosition: {x: -1.61844, y: 15.25724, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: a0189c847e0047f58827231614790cea
+    template: {fileID: 4501865637065562481, guid: afa4e511180003c4eadd151ffb455315, type: 3}
+    embeddedPath: Monsters/MagnetMonster
+    localPosition: {x: 7.38156, y: 15.25724, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 11873834390244e6abc821ae1be9859e
+    template: {fileID: 2827590589247465189, guid: afa4e511180003c4eadd151ffb455315, type: 3}
+    embeddedPath: Monsters/StoneMonster (5)
+    localPosition: {x: 9.38156, y: -10.74276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0

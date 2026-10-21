@@ -15,6 +15,12 @@ public class EnemyHealth : MonoBehaviour
     public event System.Action<EnemyHealth> HealthChanged;
     public event System.Action<EnemyHealth> Died;
     public event System.Action<EnemyHealth> Damaged;
+    public void ConfigureSpawnHealth(int value)
+    {
+        if (!gameObject.scene.IsValid() || isDead || value < 1) throw new System.InvalidOperationException("생성 시 유효한 HP만 적용할 수 있습니다.");
+        maxHealth = currentHealth = value;
+        HealthChanged?.Invoke(this);
+    }
 
     private void Awake()
     {

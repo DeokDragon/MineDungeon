@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a43355ed39f7a44ba2e3249ac1f6e2, type: 3}
+  m_Name: Floor1_RockMine_Monsters
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterFloorProfile
+  configured: 1
+  hpMultiplier: 1
+  attackMultiplier: 1
+  difficulties:
+  - configured: 1
+    hpMultiplier: 1
+    attackMultiplier: 1
+    adjustments:
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    maps:
+    - {fileID: 11400000, guid: 66f9cd6e928ca084bb183328b8fbe687, type: 2}
+    - {fileID: 11400000, guid: 29d43b04585a87245819dd568fc7db71, type: 2}
+    - {fileID: 11400000, guid: 41535259d70d7744392a3a627fc963b7, type: 2}
+    - {fileID: 11400000, guid: 8649396696309d1449b734b6600af2aa, type: 2}
+    - {fileID: 11400000, guid: 6e36858bab72d93418af04c05d307881, type: 2}
+    - {fileID: 11400000, guid: c12ac9615545ed04e81946d8fdbc1edf, type: 2}
+    - {fileID: 11400000, guid: 88823b4a3c635204a845d5b663a98ede, type: 2}
+  - configured: 0
+    hpMultiplier: 1
+    attackMultiplier: 1
+    adjustments:
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    maps: []
+  - configured: 0
+    hpMultiplier: 1
+    attackMultiplier: 1
+    adjustments:
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    maps: []
+  - configured: 0
+    hpMultiplier: 1
+    attackMultiplier: 1
+    adjustments:
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    - hp: 0
+      attack: 0
+    maps: []

@@ -17,6 +17,7 @@ MonoBehaviour:
   displayName: "\uC554\uC11D \uAC31\uB3C4"
   previewImage: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   testConfiguration: 1
+  monsterProfile: {fileID: 11400000, guid: 7b2849142c283f14e97a4bd0fafd813a, type: 2}
   difficulties:
   - requiredLevel: 1
     implemented: 1

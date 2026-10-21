@@ -19,6 +19,12 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
     private bool hasAggro;
     public bool HasAggro => hasAggro;
     public float AggroRadius => aggroRadius;
+    public int AttackDamage => attackDamage;
+    public void ConfigureSpawnAttack(int value)
+    {
+        if (!gameObject.scene.IsValid() || value < 0) throw new System.InvalidOperationException("생성 시 유효한 공격력만 적용할 수 있습니다.");
+        attackDamage = value;
+    }
 
     [Header("공격")]
     [SerializeField] private float warningDuration = 0.65f;

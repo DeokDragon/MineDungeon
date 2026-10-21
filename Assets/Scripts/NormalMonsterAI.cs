@@ -18,6 +18,12 @@ public abstract class NormalMonsterAI : MonoBehaviour, IMonsterAI
     bool hasAggro;
     public bool HasAggro => hasAggro;
     public float AggroRadius => aggroRadius;
+    public int AttackDamage => attackDamage;
+    public void ConfigureSpawnAttack(int value)
+    {
+        if (!gameObject.scene.IsValid() || value < 0) throw new System.InvalidOperationException("생성 시 유효한 공격력만 적용할 수 있습니다.");
+        attackDamage = value;
+    }
     protected Rigidbody2D rb;
     protected Collider2D hull;
     protected PlayerHealth target;

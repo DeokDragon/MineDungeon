@@ -152,6 +152,7 @@ internal static class MonsterDataStore
     internal static Plan BuildPlan(Dictionary<string, string> draft, string[] paths = null)
     {
         Guard();
+        if (MonsterProfileStage.Current) throw new InvalidOperationException("독립 배치 Scene을 닫은 뒤 기본 수치를 적용하세요. 이후 배치를 다시 열면 새 기본값을 표시합니다.");
         var values = Validate(draft);
         var baseline = Load();
         var plan = new Plan();
@@ -214,6 +215,7 @@ internal static class MonsterDataStore
     internal static int Apply(Plan plan)
     {
         Guard();
+        if (MonsterProfileStage.Current) throw new InvalidOperationException("독립 배치 Scene을 닫은 뒤 기본 수치를 적용하세요.");
         var stage = PrefabStageUtility.GetCurrentPrefabStage();
         foreach (var pair in plan.Fingerprints)
         {

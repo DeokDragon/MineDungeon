@@ -56,7 +56,7 @@ internal static class MonsterPlacementStore
         catch { Undo.RevertAllDownToGroup(group); throw; }
         finally { Undo.IncrementCurrentGroup(); }
     }
-    internal static EnemyHealth Add(GameObject root, int speciesIndex, Vector3 localPosition)
+    internal static EnemyHealth Add(GameObject root, int speciesIndex, Vector3 localPosition, Action<EnemyHealth> initialize = null)
     {
         if (speciesIndex < 0 || speciesIndex >= MonsterDataStore.Catalog.Length) throw new ArgumentOutOfRangeException(nameof(speciesIndex));
         if (!Finite(localPosition)) throw new InvalidOperationException("좌표는 유한한 숫자여야 합니다.");
@@ -74,6 +74,7 @@ internal static class MonsterPlacementStore
             var instance = (GameObject)PrefabUtility.InstantiatePrefab(source, parent);
             instance.name = GameObjectUtility.GetUniqueNameForSibling(parent, source.name);
             instance.transform.localPosition = localPosition;
+            initialize?.Invoke(instance.GetComponent<EnemyHealth>());
             PrefabUtility.RecordPrefabInstancePropertyModifications(instance);
             PrefabUtility.RecordPrefabInstancePropertyModifications(instance.transform);
             Undo.RegisterCreatedObjectUndo(instance, "몬스터 추가");
