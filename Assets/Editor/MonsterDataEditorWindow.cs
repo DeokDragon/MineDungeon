@@ -16,6 +16,8 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     int selected;
     string message;
     bool showDifferences = true;
+    [SerializeField] int tab;
+    [SerializeField] MonsterPlacementPanel placement = new MonsterPlacementPanel();
 
     [MenuItem("Tools/MineDungeon/데이터 편집기")]
     public static void Open() => GetWindow<MonsterDataEditorWindow>("몬스터 데이터").Show();
@@ -23,10 +25,11 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     {
         minSize = new Vector2(900, 520);
         Undo.undoRedoPerformed += AfterUndo;
+        placement.Enable(Repaint);
         try { draft = savedDraft.Count > 0 ? savedDraft.ToDictionary(c => c.key, c => c.value) : MonsterDataStore.Load(); }
         catch (Exception e) { message = e.Message; }
     }
-    void OnDisable() { Undo.undoRedoPerformed -= AfterUndo; StoreDraft(); }
+    void OnDisable() { Undo.undoRedoPerformed -= AfterUndo; placement.Disable(); StoreDraft(); }
     void StoreDraft()
     {
         if (draft != null) savedDraft = draft.Select(p => new Cell { key = p.Key, value = p.Value }).ToList();
@@ -38,6 +41,12 @@ public sealed class MonsterDataEditorWindow : EditorWindow
         catch (Exception e) { message = e.Message; preview = null; }
     }
     void OnGUI()
+    {
+        tab = GUILayout.Toolbar(tab, new[] { "몬스터 수치", "몬스터 배치" });
+        if (tab == 1) { placement.Draw(); return; }
+        DrawStats();
+    }
+    void DrawStats()
     {
         EditorGUILayout.HelpBox("공용 몬스터 5종 + Map_01~07의 같은 종류 전체를 입력값으로 맞춥니다. 맵의 기존 차이도 적용 대상입니다.\nCSV는 편집 초안만 변경합니다. 실제 게임 데이터는 기존 프리팹을 사용합니다.", MessageType.Info);
         using (new EditorGUI.DisabledScope(EditorApplication.isPlayingOrWillChangePlaymode || EditorApplication.isCompiling))
