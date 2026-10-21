@@ -238,3 +238,35 @@
 - 별도 Temp/ResetValidation-44b59be241ec441b85bc7b29d9c3630f/character.json에서 XP260/돈999/철17/설정0.37 저장 후 던전·결과·퍼즈에서 초기화 처리 실행. 신규 기본값, 설정0.37 유지, Primary/Backup 동일, Play 종료/재진입 후 유지, 반복 초기화 스킬4/중복없음, Main/preparing/timeScale1/audiofalse/관리자1/Player1/Resultnull 확인.
 - 잘못된 테스트 저장 경로(디렉터리)로 실패 유도: false/error, 메모리 unchanged, 정상경로 복원 후 재시도 성공. 사용자 실제 Editor 저장 SHA256 전후 331DEE230156F449FCAE3DA24D0BA0505B2B0B7E47F973412CF5D98D96A8E2DF 동일.
 - 최종 Console 오류0, 테스트 override 제거, edit Main/timeScale1/audiofalse/runInBackgroundfalse. 실제 native 확인창 클릭/ESC 취소 및 물리 단축키는 자동화하지 않았으므로 사용자 직접 확인 필요. 메서드 호출은 확인 이후 동일 처리 경로로 검증.
+
+## 2026-10-21 맵 4 수정 설계도 반영
+- 범위: Assets/Prefabs/Rooms/ReferenceMaps/Map_04.prefab, Assets/Editor/MineMapBuilder.cs의 맵 4 생성 정의만 수정. 시작 Git 상태는 clean. 다른 맵/보스/런타임 시스템 변경 없음.
+- 기존 32×44 직사각형, 외곽 암벽 2, 바닥 28×40, 입구(-9,-17), 출구(12,16) 유지. 중앙 벽 x[-2,2]를 하단 y[-20,-11] 및 상단 y[-5,8]로 분리하여 높이6의 횡단 통로 확보. 기존 0.5 그리드와 검증 몸체 폭1.3 기준으로 연결 검사. 우측 전투 바닥과 기존 주요 우측/하단 기둥 유지.
+- 좌측 상단을 단계형 암벽으로 채우고 아래·오른쪽으로 좁아지는 붕괴 지형 적용. 실제 Wall 충돌체와 rockAreas 일치. 바위·부러진 목재는 기존 단색 스프라이트 기반 장식이며 별도 상호작용 없음. 암벽과 겹치는 선로는 숨김. 빨간 선·화살표 미구현.
+- 배치 영역: 상단 중앙 Rect(1,10.5,5,6), 우측 상단 Rect(10.5,5.5,2.5,6), 우측 중하단 Rect(10,-7,3,6). 각 영역2마리, 기존 돌2/철1/수정1/석탄1/자철석1 및 보상/난이도 설정 유지. 기존 고정 생성 위치6개를 재배치했으며 무작위 생성 시스템을 추가하지 않음.
+- Unity MCP로 기존 Regular 프리팹 내용을 수정·저장. GUID 및 RoomController/RoomExit/RespawnPoint의 기존 fileID 보존. 원본 일반 방·보스 Variant·다른 레퍼런스 맵(A 포함)·Floor1 목록·지정 보호 문서 등22개 파일 SHA256 전후 일치. .meta 변경 없음.
+- 실제 Play Mode 기존 MineMapPlayProbe(04) 123개 PASS: 배치 충돌 여유/상호 간격/연결성, 세 영역과 출구 앞까지 Rigidbody 이동, 일반 이동·회피 벽 정지, 6마리 실제 추적 우회, 카메라72조합(화면비·줌·모서리·입구/출구·흔들림), 전멸 출구 개방, 중복 사망 보상 방지, 실제 출구 트리거 방 이동, HP/물약/부활/돈/XP 유지, 현재 방 입구 부활 및2회 제한.
+- 추가 실제 Play 검사5개 PASS: 새 붕괴 구역으로 속도15를 준 플레이어 y1.59/몬스터 y1.49에서 정지, 맵4 출구→기존 A, A 출구→기존 보스 Variant(Missing Script0), 보스 치명타→클리어/정산 완료. 적 처치는 테스트에서 기존 TakeDamage를 호출했으며 수동 전체 전투 완료를 의미하지 않음.
+- 전체 맵 렌더로 붕괴 구역·분리된 중앙 벽·하단 횡단 통로 확인. 테스트 기록: Library/MapValidation/Map04-play.txt, Library/Map04Fix/extra-tests.txt, overview.png(로컬 검증 산출물). 테스트 저장은 실제 SavePath가 Library/Map04Fix/character.json인지 확인한 뒤 실행. 종료 후 override 제거, 편집 모드/timeScale1/runInBackground false 복원.
+- 변경 전후 컴파일/Console 오류0, 맵4 및 관련 보스 Missing Script0. 참조 확인용 임시 MCP 검사에서 잘못된 직렬화 필드명으로 한 번 실패했으나 공개 참조로 재검사하여 기존 ID 일치 확인. 게임 코드 오류 아님.
+- 미검증: 수동 키보드 전체 전투, 개별 공격·스킬 전체 회귀, 배포 빌드, 다른 모든 맵의 재주행. 해당 기능 코드 변경 없음. 미해결 기능 오류 없음. Git diff 공백 검사는 Unity 재직렬화의 빈 m_Name 뒤 공백1건을 표시하며 프리팹 텍스트는 수동 편집하지 않음. 커밋/푸시 미실행.
+
+## 2026-10-21 일반 방 랜덤 후보 7종 / 신규 A를 맵 5로 편입
+- 실제 DungeonRoom 프리팹 목록 전체를 확인: 신규 일반 맵01/02/03/04/06/07/A, 기존 테스트 일반방2종, 보스 Variant1종. 기존 맵5 구현 프리팹은 없음. 기존5→다른 번호 재배정은 해당 없음(기획상 예전 맵5 문서는 수정하지 않음).
+- Unity MCP AssetDatabase.MoveAsset 및 프리팹 저장으로 Map_A.prefab→Map_05.prefab, 루트 Map_A→Map_05. GUID 1f0d9e5a9cee2b044b68bf1bb59a8e33 및 fileID1662757022521918358 보존. .meta 내용 동일, 프리팹 내용은 루트 이름 외 동일. 삭제/덮어쓰기 없이 이름 변경이며 Git의 이전 경로 D/새 경로 ?? 표시는 미스테이징 이동 상태임.
+- 최종 후보(공통 경로 Assets/Prefabs/Rooms/ReferenceMaps/):
+  - 1 S자 광차 갱도 — Map_01.prefab
+  - 2 Y자 분기 갱도 — Map_02.prefab
+  - 3 암석 기둥 채굴장 — Map_03.prefab
+  - 4 단일 직사각형 쌍둥이 갱도(수정 검증본) — Map_04.prefab
+  - 5 중앙 채굴 크레인 광장(기존 신규 A) — Map_05.prefab
+  - 6 좌우 포켓 통합 갱도 — Map_06.prefab
+  - 7 중앙 암벽 우회 갱도 — Map_07.prefab
+- Assets/Dungeons/Floor1_RockMine.asset의 현재 구현된 쉬움 난이도 normalRooms를 위7종으로 설정. Room_Normal_01 및 Room_Normal_02 Variant는 후보에서만 제외하고 원본/상속/보스 참조는 유지. 미구현 난이도1~3의 빈 후보는 유지. 일반 방3개+기존 보스1개 및 난이도/보상 설정 변경 없음.
+- MineMapBuilder와 MineMapPlayProbe의 A 식별자를05로 변경하여 재생성/검증 도구도 새 경로 사용. 런타임 랜덤 선택 코드는 수정 없음: 첫 방7종 균등(각1/7), 이후 직전 맵을 뺀6종 균등(각1/6), 한 방 건너 재등장 가능. 가중치/중복 제한 새 규칙 없음.
+- 7종 프리팹 참조/몬스터6개 실제 위치의 충돌 여유·입구 연결성/출구 도달 검사 PASS(맵2는 두 후보 각각), Missing Script0. 맵5 실제 Play 검사124개 PASS: 몸체 이동, 6마리 추적, 크레인 반대편 우회, 카메라72조합, 출구, 방 이동, 부활2회, 런 자원/보상 유지. 이전 수정 맵4는 이번 변경 전후 SHA256 동일.
+- 실제 Floor1 데이터로 시작한 런타임 후보7종 확인. 기존 PickNormalRoom 7000회 표본에서 각 맵 선택1009/1012/1033/992/967/972/1015회, 테스트 맵/연속 동일 선택0. 표본은 통계적 균등성 증명이 아니며 균등 규칙은 기존 코드로 확인. 난수 상태와 previousIndex는 표본 후 원복.
+- 실제 설정(일반방 수나 후보 교체 없는 Floor1 원본)으로 시드21105: Map03→Map07→Map01→기존 보스 진행. 각 방 입구/몬스터6개 유효 위치/카메라 화면 경계/전멸 출구 개방/실제 출구 트리거 이동 PASS. 일반 적18 집계, 보스 처치 후 클리어 및 정산 PASS. 처치는 TakeDamage API 사용, 진행 검사에서는 플레이어 위치를 고정해 접촉 밀림을 차단했으며 수동 전투 완료 주장은 아님.
+- 테스트 첫 시작은 저장 서비스 singleton이 준비되지 않아 기존 안전 검사에서 거부됨(던전 시작/저장 변경 전). Play 재진입 후 실제 SavePath=Library/MapPoolFix/character.json 확인하고 실행. 최초 진행 검사에서는 적 접촉으로 입구 위치에서 밀려 검사 실패, 플레이어 고정한 새 런에서 입구 배치 및 전체 진행 재검증. 런타임 코드 수정으로 우회하지 않음.
+- 기록: Library/MapPoolFix/validation.txt 및 Library/MapValidation/Map05-play.txt. 보호 대상21개 파일(다른 맵/수정 맵4/테스트 원본/보스/씬/런타임 선택 코드/GDD/Systems) SHA256 전후 동일. 종료 후 편집 모드, 저장 override 제거, timeScale1/runInBackground false. 최종 컴파일/Console 오류0.
+- 미검증: 배포 빌드, 수동 전체 전투, 7종 전체의 물리 이동·모든 공격 재검증. 이번에 변경하지 않은 지형/전투는 기존 검증 기록 유지. 확인된 미해결 기능 오류 없음. 공식 GDD/Systems 수정 및 Git 커밋/푸시 없음.
