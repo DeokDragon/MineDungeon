@@ -9,7 +9,14 @@ internal sealed class SelectedMapTestPanel
     [SerializeField] DungeonFloorData floor;
     [SerializeField] int difficulty, mapIndex;
     string message;
+    [SerializeField] SelectedMapTestHistoryPanel history = new SelectedMapTestHistoryPanel();
+    Vector2 pageScroll;
     public void Draw()
+    {
+        pageScroll = EditorGUILayout.BeginScrollView(pageScroll);
+        try { DrawContents(); } finally { EditorGUILayout.EndScrollView(); }
+    }
+    void DrawContents()
     {
         bool active = SelectedMapTestSafety.Active;
         EditorGUILayout.HelpBox("Editor 전용 선택 맵 전투 테스트입니다. 저장된 밸런스·독립 배치만 사용하며 편집 중인 초안은 적용하지 않습니다.\n개발 테스트에서만 레벨·콘텐츠 조건을 우회합니다. 매번 새 격리 저장과 씬 기본 캐릭터로 시작하며, 전멸 시 성공 / 부활 2회 소진 후 사망 시 실패입니다. 일반 보스 진행·결과 정산은 호출하지 않습니다.", MessageType.Info);
@@ -49,5 +56,6 @@ internal sealed class SelectedMapTestPanel
         EditorGUILayout.LabelField("몬스터 처치", record.kills + " / " + record.total);
         EditorGUILayout.LabelField("플레이어 사망 횟수", record.deaths.ToString());
         EditorGUILayout.HelpBox("피해량은 기존 전투 기록의 실제 HP 감소량 기준입니다(초과 피해 제외). 기본 이동·평타·E/R 스킬·물약·회피는 Game 뷰에서 조작하세요. 재시작은 Play를 완전히 종료한 뒤 다시 시작하므로 초기화에 시간이 걸릴 수 있습니다.", MessageType.None);
+        history.Draw(floor, difficulty, map ? map.name : "");
     }
 }

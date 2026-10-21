@@ -61,6 +61,7 @@ internal static class SelectedMapTestRunner
         for (int i = 0; i < SceneManager.sceneCount; i++)
             if (SceneManager.GetSceneAt(i).isDirty || string.IsNullOrEmpty(SceneManager.GetSceneAt(i).path)) throw new InvalidOperationException("현재 씬의 미저장 변경을 먼저 저장하세요.");
         Validate(floor, difficulty, map);
+        SelectedMapTestHistory.Load(); // Refuse to overwrite corrupt developer history.
         var main = AssetDatabase.LoadAssetAtPath<SceneAsset>(Main); if (!main) throw new InvalidOperationException("Main 씬이 없습니다.");
         string path = Path.GetFullPath(Path.Combine("Library/SelectedMapTests", Guid.NewGuid().ToString("N"), "character.json"));
         if (!SelectedMapTestSafety.IsOwnedPath(path)) throw new IOException("테스트 경로 검증 실패");
@@ -82,6 +83,7 @@ internal static class SelectedMapTestRunner
         SessionState.SetString(P + "State", "queued"); SessionState.SetString(P + "Status", "격리 Play 준비 중");
         SessionState.SetFloat(P + "Deadline", (float)EditorApplication.timeSinceStartup + 45);
         SessionState.SetBool(P + "Active", true);
+        SelectedMapTestHistory.Begin(floor, difficulty, map);
         try
         {
             SessionState.SetString(OverrideKey, path);
@@ -97,6 +99,7 @@ internal static class SelectedMapTestRunner
     internal static void Stop(bool restart = false)
     {
         if (!SelectedMapTestSafety.Active) return;
+        Archive(Status.StartsWith("오류") ? "error" : restart ? "restarted" : "stopped");
         SessionState.SetBool(P + "Restart", restart);
         SessionState.SetString(P + "State", "stopping");
         if (restart) SessionState.SetString(P + "Status", "재시작 준비 중");
@@ -107,6 +110,7 @@ internal static class SelectedMapTestRunner
     static void Mode(PlayModeStateChange state)
     {
         if (!SelectedMapTestSafety.Active) return;
+        if (state == PlayModeStateChange.ExitingPlayMode) Archive(Status.StartsWith("오류") ? "error" : SessionState.GetBool(P + "Restart", false) ? "restarted" : "stopped");
         if (state == PlayModeStateChange.EnteredEditMode) Cleanup();
         // Do not restore the override at ExitingPlayMode: OnApplicationQuit may still flush.
     }
@@ -119,7 +123,10 @@ internal static class SelectedMapTestRunner
     static void BeforeReload()
     {
         if (SelectedMapTestSafety.Active && SessionState.GetString(P + "State", "") == "running")
+        {
+            Archive("error");
             SessionState.SetString(P + "Status", "스크립트 재로드로 테스트 종료");
+        }
         if (player) player.Died -= Died;
     }
     static void Died(PlayerHealth ignored)
@@ -183,10 +190,25 @@ internal static class SelectedMapTestRunner
                 var record = Stats; var result = run.Result;
                 record.seconds = result.seconds; record.damageTaken = result.damageTaken; record.damageDealt = result.damageDealt; record.kills = result.kills;
                 SessionState.SetString(P + "Stats", JsonUtility.ToJson(record));
-                if (run.IsRunEnded) SessionState.SetString(P + "Status", run.IsRunCleared ? "성공 · 몬스터 전멸" : "실패 · 부활 소진");
+                if (run.IsRunEnded)
+                {
+                    SessionState.SetString(P + "Status", run.IsRunCleared ? "성공 · 몬스터 전멸" : "실패 · 부활 소진");
+                    Archive(run.IsRunCleared ? "success" : "failed");
+                }
             }
         }
         catch (Exception e) { Error(e.Message); }
+    }
+    static void Archive(string status)
+    {
+        var record = Stats; var run = DungeonRunManager.Instance;
+        if (run && run.EditorSelectedMapTest && run.Result != null)
+        {
+            record.seconds = run.Result.seconds; record.damageTaken = run.Result.damageTaken; record.damageDealt = run.Result.damageDealt; record.kills = run.Result.kills;
+            if (run.IsRunEnded) status = run.IsRunCleared ? "success" : "failed";
+        }
+        SessionState.SetString(P + "Stats", JsonUtility.ToJson(record));
+        SelectedMapTestHistory.Archive(record, status);
     }
     static void VerifySpawn(MonsterFloorProfile balance, int difficulty, MonsterMapProfile layout, DungeonRoom room)
     {
@@ -208,6 +230,7 @@ internal static class SelectedMapTestRunner
     static void Cleanup()
     {
         if (!SelectedMapTestSafety.Active || EditorApplication.isPlaying) return;
+        Archive(Status.StartsWith("오류") ? "error" : SessionState.GetBool(P + "Restart", false) ? "restarted" : "stopped");
         if (player) player.Died -= Died; player = null; rooms = null;
         bool restart = SessionState.GetBool(P + "Restart", false);
         string path = SelectedMapTestSafety.Expected;

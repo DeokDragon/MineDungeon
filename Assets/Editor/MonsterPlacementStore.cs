@@ -47,7 +47,7 @@ internal static class MonsterPlacementStore
         }
         EditorSceneManager.MarkSceneDirty(root.scene);
     }
-    static void Edit(GameObject root, string label, Action action)
+    internal static void Edit(GameObject root, string label, Action action)
     {
         MonsterDataStore.Guard();
         Undo.IncrementCurrentGroup(); int group = Undo.GetCurrentGroup();
@@ -194,8 +194,8 @@ internal static class MonsterPlacementStore
                 {
                     if (!Finite(hp.transform.localPosition)) { report.Errors.Add(hp.name + ": 유효하지 않은 좌표"); continue; }
                     float radius = Radius(hp);
-                    if (!query.ContainsBody(hp.transform.position, radius)) report.Errors.Add(hp.name + ": 바닥 밖/암벽 내부 또는 몸체 여유 부족" + suffix);
-                    else if (!query.Reachable(room.Entrance.position, hp.transform.position, radius)) report.Errors.Add(hp.name + ": 입구에서 접근 불가" + suffix);
+                    if (!query.ContainsBody(hp.transform.position, radius)) report.Errors.Add(hp.name + " " + hp.transform.localPosition + ": 바닥 밖/암벽 내부 또는 몸체 여유 부족" + suffix);
+                    else if (!query.Reachable(room.Entrance.position, hp.transform.position, radius)) report.Errors.Add(hp.name + " " + hp.transform.localPosition + ": 입구에서 접근 불가" + suffix);
                 }
                 Vector2 door = layout.chooseExitOnAwake ? root.transform.TransformPoint(layout.exitCandidates[i]) : layout.roomExit.transform.position;
                 if (!query.Reachable(room.Entrance.position, door - Vector2.up * 1.5f, .65f)) report.Errors.Add("입구→출구 앞 경로 단절" + suffix);
@@ -225,7 +225,7 @@ internal static class MonsterPlacementStore
                 else report.Warnings.Add("벽 " + wall.name + ": 회전/비직사각 충돌체는 기존 영역 데이터만으로 확정할 수 없습니다.");
             }
             for (int j = i + 1; j < enemies.Length; j++)
-                if (Vector2.Distance(hp.transform.position, enemies[j].transform.position) < Radius(hp) + Radius(enemies[j])) report.Warnings.Add(hp.name + " / " + enemies[j].name + ": 몸체 겹침 가능");
+                if (Vector2.Distance(hp.transform.position, enemies[j].transform.position) < Radius(hp) + Radius(enemies[j])) report.Errors.Add(hp.name + " " + hp.transform.localPosition + " / " + enemies[j].name + " " + enemies[j].transform.localPosition + ": 몸체 여유 겹침. 위치를 조정하세요.");
         }
         report.Warnings.Add("경로 검사는 기존 0.5 그리드와 보수적 몸체 여유 기준입니다. 실제 전투·동적 충돌·출구 주변 혼잡은 Scene/Play에서 확인하세요.");
         return report;

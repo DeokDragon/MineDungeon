@@ -9,6 +9,10 @@ internal sealed class MonsterPlacementPanel
 {
     [SerializeField] int mapIndex, speciesIndex;
     [SerializeField] Vector3 newPosition;
+    [SerializeField] Vector3 groupDelta;
+    [SerializeField] int addCount = 1, addColumns = 1;
+    [SerializeField] Vector2 addSpacing = new Vector2(2, 2);
+    [SerializeField] MonsterPlacementCopyPanel profileCopy = new MonsterPlacementCopyPanel();
     [SerializeField] bool showAggro = true, allAggro;
     [SerializeField] bool profileMode = true;
     [SerializeField] DungeonFloorData floor;
@@ -30,6 +34,7 @@ internal sealed class MonsterPlacementPanel
     }
     public void Disable()
     {
+        profileCopy.Clear();
         Undo.undoRedoPerformed -= Changed;
         EditorApplication.hierarchyChanged -= SelectionChanged;
         Selection.selectionChanged -= SelectionChanged;
@@ -110,11 +115,17 @@ internal sealed class MonsterPlacementPanel
     }
     public void Draw()
     {
+        scroll = EditorGUILayout.BeginScrollView(scroll);
+        try { DrawContents(); } finally { EditorGUILayout.EndScrollView(); }
+    }
+    void DrawContents()
+    {
         profileMode = GUILayout.Toolbar(profileMode ? 0 : 1, new[] { "층·난이도 독립 배치", "기본 프리팹 편집 (기존)" }) == 0;
         EditorGUILayout.HelpBox(profileMode ? "독립 배치 초안입니다. Scene의 W 도구로 위치를 편집하고, 변경 미리보기 후 저장하세요. 원본 맵의 지형·기본 능력치는 저장하지 않습니다.\n미설정과 의도한 0마리는 ‘배치 설정 완료’로 구분합니다. 배치 설정만으로 미구현 던전이 활성화되지는 않습니다." : "기존 Map_01~07 기본 프리팹 편집입니다. Auto Save가 켜지면 즉시 파일에 저장될 수 있습니다.\n독립 배치 프로필의 좌표·구성은 별도로 저장됩니다. 추가·삭제는 이 탭의 버튼, 이동은 Scene의 W 도구를 사용하세요.", MessageType.Info);
         using (new EditorGUI.DisabledScope(EditorApplication.isPlayingOrWillChangePlaymode || EditorApplication.isCompiling))
         {
             if (profileMode) MonsterProfileEditorStore.Selectors(ref floor, ref difficulty);
+            if (profileMode) profileCopy.Draw();
             if (profileMode && GUILayout.Button("저장된 배치 다시 불러오기")) Run(() =>
             {
                 var saved = MonsterProfileEditorStore.Find(floor, difficulty, AssetDatabase.LoadAssetAtPath<DungeonRoom>(Path));
@@ -177,12 +188,19 @@ internal sealed class MonsterPlacementPanel
             if (inspectedState != state) { inspectedState = state; report = null; placementPreview = false; SceneView.RepaintAll(); }
             EditorGUILayout.LabelField($"총 {enemies.Length}마리 · " + string.Join(" / ", MonsterDataStore.Catalog.Select(s => s.Label + " " + enemies.Count(e => MonsterPlacementStore.Species(e) == s))));
             if (!editing) EditorGUILayout.HelpBox("현재는 저장된 맵 목록입니다. 추가·삭제·이동하려면 선택한 맵을 여세요.", MessageType.None);
-            scroll = EditorGUILayout.BeginScrollView(scroll);
+            EditorGUILayout.BeginVertical();
             var selected = Selected(root);
+            var multiple = MonsterPlacementBatch.Selected(root);
             foreach (var hp in enemies)
             {
                 using (new EditorGUILayout.HorizontalScope())
                 {
+                    using (new EditorGUI.DisabledScope(!editing))
+                    {
+                        bool marked = multiple.Contains(hp);
+                        bool nextMark = GUILayout.Toggle(marked, "", GUILayout.Width(20));
+                        if (nextMark != marked) Selection.objects = (nextMark ? multiple.Concat(new[] { hp }) : multiple.Where(h => h != hp)).Select(h => (UnityEngine.Object)h.gameObject).ToArray();
+                    }
                     var s = MonsterPlacementStore.Species(hp);
                     GUILayout.Label(s?.Label ?? "알 수 없는 종류", GUILayout.Width(80));
                     GUILayout.Label(hp.name, GUILayout.Width(180));
@@ -193,6 +211,16 @@ internal sealed class MonsterPlacementPanel
             }
             using (new EditorGUI.DisabledScope(!editing))
             {
+                EditorGUILayout.LabelField($"다중 선택 {multiple.Length}마리: " + string.Join(", ", multiple.Select(h => h.name)));
+                EditorGUILayout.HelpBox("목록 체크박스 또는 Scene/Hierarchy의 Ctrl·Shift 선택 후 W 도구로 그룹 이동할 수 있습니다. 아래 이동량은 Monsters 부모 로컬 기준이며 상대 위치를 유지합니다.", MessageType.None);
+                groupDelta = EditorGUILayout.Vector3Field("그룹 이동량", groupDelta);
+                using (new EditorGUI.DisabledScope(multiple.Length == 0))
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    if (GUILayout.Button("선택 그룹 이동")) Run(() => { GuardEditing(); MonsterPlacementBatch.Move(root, multiple, groupDelta); Changed(); });
+                    if (GUILayout.Button("선택 그룹 삭제")) Run(() => { GuardEditing(); if (EditorUtility.DisplayDialog("그룹 삭제", multiple.Length + "마리를 삭제할까요?", "삭제", "취소")) { MonsterPlacementBatch.Delete(root, multiple); Changed(); } });
+                    if (GUILayout.Button("선택 그룹 복사")) Run(() => { GuardEditing(); MonsterPlacementBatch.Copy(root, multiple); message = "종류·상대 위치를 복사했습니다. 붙여넣기는 아래 기준 위치를 사용합니다."; });
+                }
                 if (selected)
                 {
                     EditorGUILayout.Space();
@@ -208,10 +236,32 @@ internal sealed class MonsterPlacementPanel
                     });
                 }
                 EditorGUILayout.Space();
-                EditorGUILayout.LabelField("몬스터 한 개 추가", EditorStyles.boldLabel);
+                EditorGUILayout.LabelField("몬스터 추가 / 그룹 붙여넣기", EditorStyles.boldLabel);
                 speciesIndex = EditorGUILayout.Popup("종류", speciesIndex, MonsterDataStore.Catalog.Select(s => s.Label).ToArray());
                 newPosition = EditorGUILayout.Vector3Field("Monsters 부모 로컬 위치", newPosition);
-                if (GUILayout.Button("지정한 위치에 추가")) Run(() =>
+                addCount = EditorGUILayout.IntField("일괄 추가 수량", addCount);
+                addColumns = EditorGUILayout.IntField("배치 열 수", addColumns);
+                addSpacing = EditorGUILayout.Vector2Field("열 / 행 간격", addSpacing);
+                EditorGUILayout.HelpBox("일괄 추가는 입력한 기준 위치·열 수·간격의 고정 격자를 사용합니다. 충돌·겹침·접근성 오류가 있으면 전체 추가를 취소합니다. 임의 좌표를 생성하지 않습니다.", MessageType.None);
+                if (GUILayout.Button("검증 후 여러 마리 추가")) Run(() =>
+                {
+                    GuardEditing(); MonsterPlacementBatch.Add(root, MonsterPlacementBatch.Grid(speciesIndex, addCount, addColumns, addSpacing), newPosition,
+                        profileMode ? (Action<EnemyHealth, int>)((e, k) => MonsterProfileStage.Current.RegisterNew(e, k)) : null);
+                    Changed(); report = MonsterPlacementStore.Validate(root);
+                });
+                var clipboard = MonsterPlacementBatch.ReadClipboard();
+                if (clipboard?.entries != null && clipboard.entries.Length > 0)
+                {
+                    EditorGUILayout.LabelField($"복사된 그룹 {clipboard.entries.Length}마리 · 첫 개체가 붙여넣기 기준 위치");
+                    foreach (var e in clipboard.entries) EditorGUILayout.LabelField(MonsterDataStore.Catalog[e.kind].Label + " → " + (newPosition + e.offset));
+                    if (GUILayout.Button("기준 위치에 그룹 붙여넣기 (검증 후 추가)")) Run(() =>
+                    {
+                        GuardEditing(); MonsterPlacementBatch.Add(root, clipboard.entries, newPosition,
+                            profileMode ? (Action<EnemyHealth, int>)((e, k) => MonsterProfileStage.Current.RegisterNew(e, k)) : null);
+                        Changed(); report = MonsterPlacementStore.Validate(root);
+                    });
+                }
+                if (GUILayout.Button("지정한 위치에 한 마리 추가 (기존)")) Run(() =>
                 {
                     GuardEditing();
                     var hp = MonsterPlacementStore.Add(root, speciesIndex, newPosition, profileMode ? (Action<EnemyHealth>)(e => MonsterProfileStage.Current.RegisterNew(e, speciesIndex)) : null);
@@ -255,7 +305,7 @@ internal sealed class MonsterPlacementPanel
                 foreach (string warning in report.Warnings) EditorGUILayout.HelpBox(warning, MessageType.Warning);
             }
             else if (editing) EditorGUILayout.HelpBox("현재 배치의 검사 결과가 없습니다. 이동·추가·삭제 후 다시 검사하세요.", MessageType.None);
-            EditorGUILayout.EndScrollView();
+            EditorGUILayout.EndVertical();
         }
         if (!string.IsNullOrEmpty(message)) EditorGUILayout.HelpBox(message, MessageType.None);
     }
@@ -279,8 +329,7 @@ internal sealed class MonsterPlacementPanel
     {
         if (!showAggro) return Array.Empty<EnemyHealth>();
         if (allAggro) return MonsterPlacementStore.Enemies(root);
-        var selected = Selected(root);
-        return selected ? new[] { selected } : Array.Empty<EnemyHealth>();
+        return MonsterPlacementBatch.Selected(root);
     }
     internal static float AggroRadius(EnemyHealth enemy)
     {
