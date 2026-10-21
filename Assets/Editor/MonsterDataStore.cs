@@ -292,7 +292,7 @@ internal static class MonsterDataStore
         Validate(next);
         return next;
     }
-    static List<List<string>> CsvRows(string csv)
+    internal static List<List<string>> CsvRows(string csv)
     {
         var rows = new List<List<string>>(); var row = new List<string>(); var cell = new StringBuilder();
         bool quoted = false, closed = false;
@@ -311,9 +311,9 @@ internal static class MonsterDataStore
                 row.Add(cell.ToString()); cell.Clear(); closed = false;
                 if (c != ',') { rows.Add(row); row = new List<string>(); if (c == '\r' && i + 1 < csv.Length && csv[i + 1] == '\n') i++; }
             }
-            else { if (closed || c == '"') throw new FormatException("CSV 따옴표 형식 오류"); cell.Append(c); }
+            else { if (closed || c == '"') throw new FormatException($"CSV {rows.Count + 1}행: 따옴표 형식 오류"); cell.Append(c); }
         }
-        if (quoted) throw new FormatException("CSV 따옴표가 닫히지 않았습니다.");
+        if (quoted) throw new FormatException($"CSV {rows.Count + 1}행: 따옴표가 닫히지 않았습니다.");
         if (cell.Length > 0 || row.Count > 0 || closed) { row.Add(cell.ToString()); rows.Add(row); }
         return rows;
     }

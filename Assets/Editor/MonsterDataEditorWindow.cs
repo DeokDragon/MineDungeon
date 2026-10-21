@@ -34,7 +34,7 @@ public sealed class MonsterDataEditorWindow : EditorWindow
         }
         catch (Exception e) { message = e.Message; }
     }
-    void OnDisable() { Undo.undoRedoPerformed -= AfterUndo; placement.Disable(); StoreDraft(); }
+    void OnDisable() { Undo.undoRedoPerformed -= AfterUndo; placement.Disable(); balance.Disable(); StoreDraft(); }
     void StoreDraft()
     {
         if (draft != null) savedDraft = draft.Select(p => new Cell { key = p.Key, value = p.Value }).ToList();

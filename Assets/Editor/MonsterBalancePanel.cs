@@ -1,5 +1,7 @@
 using System;
 using System.Linq;
+using System.IO;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,6 +16,61 @@ internal sealed class MonsterBalancePanel
     Vector2 scroll;
     bool preview;
     bool showMapFinals;
+    MonsterBalanceCsv.Batch csvDraft;
+    string csvError, csvPreview;
+    bool showCsv;
+    public void Disable() { csvDraft?.Dispose(); csvDraft = null; csvPreview = null; }
+    void Csv(Action action)
+    {
+        try { action(); csvError = null; }
+        catch (Exception e) { csvError = e.Message; csvPreview = null; }
+    }
+    void DrawCsv()
+    {
+        showCsv = EditorGUILayout.Foldout(showCsv, "층·난이도 CSV 가져오기 / 내보내기", true);
+        if (!showCsv) return;
+        EditorGUILayout.HelpBox("기존 프로필이 있는 모든 층·난이도의 저장값을 두 CSV로 내보냅니다(UTF-8). 난이도 ID: 0 쉬움 / 1 보통 / 2 어려움 / 3 악몽.\n빈 숫자 셀·생략한 숫자 열·미포함 행은 유지합니다. 설정 완료 열은 상태 확인용이며 변경할 수 없습니다. 층 배율은 해당 층 전체가 공유합니다.\nCSV 초안은 창을 닫거나 스크립트를 재컴파일하면 폐기됩니다. 직접 입력 초안은 먼저 저장하거나 다시 불러오세요.", MessageType.Info);
+        for (int kind = 0; kind < 2; kind++)
+        {
+            bool corrections = kind == 1; string label = corrections ? "종류별 보정" : "층·난이도 배율";
+            using (new EditorGUILayout.HorizontalScope())
+            {
+                if (GUILayout.Button(label + " CSV 내보내기")) Csv(() =>
+                {
+                    string text = MonsterBalanceCsv.Export(corrections);
+                    string path = EditorUtility.SaveFilePanel(label + " CSV", "", corrections ? "monster-adjustments.csv" : "floor-multipliers.csv", "csv");
+                    if (path != "") File.WriteAllText(path, text, new UTF8Encoding(true));
+                });
+                if (GUILayout.Button(label + " CSV 가져오기")) Csv(() =>
+                {
+                    if (draft && MonsterProfileEditorStore.Json(draft) != baseline) throw new InvalidOperationException("직접 입력한 초안을 먼저 저장하거나 저장 수치를 다시 불러오세요.");
+                    string path = EditorUtility.OpenFilePanel(label + " CSV", "", "csv"); if (path == "") return;
+                    var next = MonsterBalanceCsv.Import(File.ReadAllText(path, new UTF8Encoding(false, true)), corrections, csvDraft, null, Path.GetFileName(path));
+                    csvDraft?.Dispose(); csvDraft = next; csvPreview = null; csvDraft.Validate();
+                });
+            }
+        }
+        if (csvError != null) EditorGUILayout.HelpBox(csvError, MessageType.Error);
+        if (csvDraft == null) return;
+        EditorGUILayout.LabelField("CSV 임시 초안: " + string.Join(", ", csvDraft.items.Select(i => i.floor.id)));
+        using (new EditorGUILayout.HorizontalScope())
+        {
+            if (GUILayout.Button("CSV 검증·변경 미리보기")) Csv(() => { csvDraft.Validate(); csvPreview = MonsterBalanceCsv.Preview(csvDraft); });
+            if (GUILayout.Button("CSV 초안 버리기")) { Disable(); csvError = null; return; }
+        }
+        if (csvPreview != null)
+        {
+            scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.MaxHeight(360));
+            EditorGUILayout.HelpBox(csvPreview, MessageType.Info); EditorGUILayout.EndScrollView();
+            if (GUILayout.Button("확인 후 CSV 변경 적용")) Csv(() =>
+            {
+                csvDraft.Validate();
+                if (csvPreview != MonsterBalanceCsv.Preview(csvDraft)) throw new InvalidOperationException("기본값 또는 참조 데이터가 변경되었습니다. CSV 변경 미리보기를 다시 확인하세요.");
+                if (!EditorUtility.DisplayDialog("CSV 밸런스 적용", "미리보기에 표시한 배율·보정 변경만 저장할까요? 설정 완료 상태와 배치는 유지됩니다.", "적용", "취소")) return;
+                csvDraft.Apply(); Disable(); if (floor) Load(); message = "CSV 적용 완료. Ctrl+Z / Ctrl+Y 지원.";
+            });
+        }
+    }
     void Load()
     {
         source = floor.monsterProfile;
@@ -26,12 +83,14 @@ internal sealed class MonsterBalancePanel
         using (new EditorGUI.DisabledScope(EditorApplication.isPlayingOrWillChangePlaymode || EditorApplication.isCompiling))
         {
             var old = floor; int oldDifficulty = difficulty;
-            MonsterProfileEditorStore.Selectors(ref floor, ref difficulty);
+            using (new EditorGUI.DisabledScope(csvDraft != null)) MonsterProfileEditorStore.Selectors(ref floor, ref difficulty);
             if (old != floor)
             {
                 if (draft && MonsterProfileEditorStore.Json(draft) != baseline && !EditorUtility.DisplayDialog("초안 변경", "현재 밸런스 초안을 버리고 층을 바꿀까요?", "변경", "취소")) floor = old;
                 else Load();
             }
+            DrawCsv();
+            if (csvDraft != null) return;
             if (!floor) return;
             if (source != floor.monsterProfile) Load();
             if (!source)
@@ -92,29 +151,19 @@ internal sealed class MonsterBalancePanel
                 {
                     try
                     {
-                        if (draft.configured && d.configured)
-                        {
-                            draft.ValidateBalance(difficulty);
-                            foreach (var s in MonsterDataStore.Catalog) draft.Calculate(difficulty, AssetDatabase.LoadAssetAtPath<GameObject>(s.Path).GetComponent<EnemyHealth>(), out _, out _);
-                            foreach (var map in d.maps.Where(m => m && m.configured)) draft.ValidateMap(difficulty, map);
-                        }
                         // Save only selected difficulty changes, plus deliberately shared floor multipliers.
                         var combined = MonsterProfileEditorStore.Draft(source);
                         combined.configured = draft.configured; combined.hpMultiplier = draft.hpMultiplier; combined.attackMultiplier = draft.attackMultiplier;
                         combined.difficulties[difficulty].configured = d.configured;
                         combined.difficulties[difficulty].hpMultiplier = d.hpMultiplier; combined.difficulties[difficulty].attackMultiplier = d.attackMultiplier;
                         combined.difficulties[difficulty].adjustments = d.adjustments.ToArray();
-                        if (combined.configured)
-                            for (int index = 0; index < combined.difficulties.Length; index++)
-                                if (combined.GetDifficulty(index).configured)
-                                {
-                                    combined.ValidateBalance(index);
-                                    foreach (var s in MonsterDataStore.Catalog) combined.Calculate(index, AssetDatabase.LoadAssetAtPath<GameObject>(s.Path).GetComponent<EnemyHealth>(), out _, out _);
-                                    foreach (var map in combined.GetDifficulty(index).maps.Where(m => m && m.configured)) combined.ValidateMap(index, map);
-                                }
-                        if (EditorUtility.DisplayDialog("밸런스 저장", "표시한 층 배율과 선택한 난이도의 보정·배율을 저장할까요?", "저장", "취소"))
-                        { MonsterProfileEditorStore.Save(combined, source, baseline); Load(); message = "저장 완료. Ctrl+Z / Ctrl+Y 지원."; }
-                        UnityEngine.Object.DestroyImmediate(combined);
+                        try
+                        {
+                            MonsterProfileEditorStore.ValidateBalanceDraft(combined);
+                            if (EditorUtility.DisplayDialog("밸런스 저장", "표시한 층 배율과 선택한 난이도의 보정·배율을 저장할까요?", "저장", "취소"))
+                            { MonsterProfileEditorStore.Save(combined, source, baseline); Load(); message = "저장 완료. Ctrl+Z / Ctrl+Y 지원."; }
+                        }
+                        finally { UnityEngine.Object.DestroyImmediate(combined); }
                     }
                     catch (Exception e) { message = e.Message; }
                 }

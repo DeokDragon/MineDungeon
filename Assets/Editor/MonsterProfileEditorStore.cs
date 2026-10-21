@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -74,22 +75,80 @@ internal static class MonsterProfileEditorStore
         }
         finally { UnityEditor.SceneManagement.EditorSceneManager.ClosePreviewScene(scene); }
     }
-    internal static void Save(ScriptableObject draft, ScriptableObject asset, string baseline)
+    internal sealed class Change
     {
-        MonsterDataStore.Guard(); string path = AssetDatabase.GetAssetPath(asset);
-        if (Json(asset) != baseline) throw new InvalidOperationException("원본 데이터가 변경되었습니다. 다시 불러온 뒤 편집하세요.");
-        if (!AssetDatabase.IsOpenForEdit(path) || (File.GetAttributes(path) & FileAttributes.ReadOnly) != 0) throw new IOException("쓰기 불가: " + path);
-        // hideFlags belong to the draft's lifetime, not the persisted game data.
-        var flags = draft.hideFlags; draft.hideFlags = asset.hideFlags;
+        internal ScriptableObject draft, asset;
+        internal string baseline;
+        internal Change(ScriptableObject draft, ScriptableObject asset, string baseline) { this.draft = draft; this.asset = asset; this.baseline = baseline; }
+    }
+    // Direct input and CSV use the same numeric validator and transactional save path.
+    // A temporary validation copy enables calculation for unset data without activating the real profile.
+    internal static void ValidateBalanceDraft(MonsterFloorProfile draft)
+    {
+        var check = Draft(draft);
         try
         {
-            if (Json(draft) == Json(asset)) return;
-            Undo.IncrementCurrentGroup(); int group = Undo.GetCurrentGroup(); Undo.SetCurrentGroupName("층·난이도 몬스터 데이터 저장");
-            SessionState.SetString("MineMonsterProfile.Undo." + group, path);
-            Undo.RegisterCompleteObjectUndo(asset, "층·난이도 몬스터 데이터 저장"); EditorUtility.CopySerialized(draft, asset);
-            EditorUtility.SetDirty(asset); AssetDatabase.SaveAssetIfDirty(asset); Undo.IncrementCurrentGroup();
+            check.configured = true;
+            if (check.difficulties == null || check.difficulties.Length != 4) throw new InvalidOperationException("기존 4개 난이도 데이터가 필요합니다.");
+            for (int d = 0; d < 4; d++)
+            {
+                try
+                {
+                    if (check.GetDifficulty(d) == null) throw new InvalidOperationException("난이도 데이터 누락");
+                    check.GetDifficulty(d).configured = true; check.ValidateBalance(d);
+                    foreach (var s in MonsterDataStore.Catalog)
+                        check.Calculate(d, AssetDatabase.LoadAssetAtPath<GameObject>(s.Path).GetComponent<EnemyHealth>(), out _, out _);
+                    foreach (var map in check.GetDifficulty(d).maps ?? Array.Empty<MonsterMapProfile>())
+                        if (map && map.configured) check.ValidateMap(d, map);
+                }
+                catch (Exception e) { throw new InvalidOperationException("난이도 " + d + ": " + e.Message); }
+            }
         }
-        finally { draft.hideFlags = flags; }
+        finally { UnityEngine.Object.DestroyImmediate(check); }
+    }
+    internal static void Save(ScriptableObject draft, ScriptableObject asset, string baseline) => SaveMany(new[] { new Change(draft, asset, baseline) });
+    internal static void SaveMany(Change[] changes)
+    {
+        MonsterDataStore.Guard();
+        var pending = new List<Change>(); var paths = new HashSet<string>();
+        foreach (var c in changes)
+        {
+            if (!c.draft || !c.asset || c.draft.GetType() != c.asset.GetType() || !EditorUtility.IsPersistent(c.asset)) throw new InvalidOperationException("저장 대상 오류");
+            string path = AssetDatabase.GetAssetPath(c.asset);
+            if (!paths.Add(path)) throw new InvalidOperationException("중복 저장 대상: " + path);
+            if (Json(c.asset) != c.baseline) throw new InvalidOperationException("원본 데이터가 변경되었습니다. 다시 불러온 뒤 편집하세요.");
+            if (c.draft is MonsterFloorProfile balance) ValidateBalanceDraft(balance);
+            if (Json(c.draft) == Json(c.asset)) continue;
+            if (EditorUtility.IsDirty(c.asset)) throw new InvalidOperationException("원본에 다른 미저장 변경이 있습니다: " + path);
+            if (!AssetDatabase.IsOpenForEdit(path) || (File.GetAttributes(path) & FileAttributes.ReadOnly) != 0) throw new IOException("쓰기 불가: " + path);
+            pending.Add(c);
+        }
+        if (pending.Count == 0) return;
+        var backups = pending.ToDictionary(c => AssetDatabase.GetAssetPath(c.asset), c => File.ReadAllBytes(AssetDatabase.GetAssetPath(c.asset)));
+        Undo.IncrementCurrentGroup(); int group = Undo.GetCurrentGroup(); Undo.SetCurrentGroupName("층·난이도 몬스터 데이터 저장");
+        try
+        {
+            foreach (var c in pending)
+            {
+                Undo.RegisterCompleteObjectUndo(c.asset, "층·난이도 몬스터 데이터 저장");
+                var flags = c.draft.hideFlags; c.draft.hideFlags = c.asset.hideFlags;
+                try { EditorUtility.CopySerialized(c.draft, c.asset); } finally { c.draft.hideFlags = flags; }
+                EditorUtility.SetDirty(c.asset); AssetDatabase.SaveAssetIfDirty(c.asset);
+                if (EditorUtility.IsDirty(c.asset)) throw new IOException("저장 완료 확인 실패: " + AssetDatabase.GetAssetPath(c.asset));
+            }
+            SessionState.SetString("MineMonsterProfile.Undo." + group, string.Join("|", backups.Keys));
+            Undo.CollapseUndoOperations(group);
+        }
+        catch (Exception error)
+        {
+            var failures = new List<string>();
+            try { Undo.RevertAllDownToGroup(group); } catch (Exception e) { failures.Add("Undo 복구: " + e.Message); }
+            foreach (var backup in backups)
+                try { File.WriteAllBytes(backup.Key, backup.Value); AssetDatabase.ImportAsset(backup.Key, ImportAssetOptions.ForceUpdate); }
+                catch (Exception e) { failures.Add(backup.Key + ": " + e.Message); }
+            throw new IOException("저장 실패: " + error.Message + (failures.Count == 0 ? " (적용 전 파일 복구 완료)" : " / 복구 실패: " + string.Join("; ", failures)), error);
+        }
+        finally { Undo.IncrementCurrentGroup(); }
     }
     [InitializeOnLoadMethod] static void Hook()
     {
@@ -100,8 +159,11 @@ internal static class MonsterProfileEditorStore
     static void PersistUndo(in UndoRedoInfo info)
     {
         if (info.undoName != "층·난이도 몬스터 데이터 저장") return;
-        var asset = AssetDatabase.LoadAssetAtPath<ScriptableObject>(SessionState.GetString("MineMonsterProfile.Undo." + info.undoGroup, ""));
-        if (asset) { EditorUtility.SetDirty(asset); AssetDatabase.SaveAssetIfDirty(asset); }
+        foreach (string path in SessionState.GetString("MineMonsterProfile.Undo." + info.undoGroup, "").Split('|'))
+        {
+            var asset = AssetDatabase.LoadAssetAtPath<ScriptableObject>(path);
+            if (asset) { EditorUtility.SetDirty(asset); AssetDatabase.SaveAssetIfDirty(asset); }
+        }
     }
     internal static void InitializeExistingEasy()
     {
