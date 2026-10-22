@@ -9,6 +9,32 @@ public enum InventorySort { Recent, Name, Rarity, Category, Type, Cooldown, Dama
 
 public static class InventoryPresentation
 {
+    public static readonly string[] PassiveTitles = {
+        "물약 회복량 +20%", "일반 전투 방 클리어 회복", "조건부 체력 재생",
+        "기본 공격 사거리 +15%", "전방 충격파", "3회 직접 적중 후 강화",
+        "마법 스킬 범위 +20%", "마법 스킬 쿨타임 -15%", "최초 유효 적중 추가 폭발"
+    };
+    public static readonly string[] PassiveDetails = {
+        "체력 20P · 자동 해금\n물약 기본 회복량 +20%. 최종 회복 요청량에서 한 번 올림합니다. 다른 회복에는 적용하지 않습니다.",
+        "체력 50P · 자동 해금\n일반 전투 방 클리어 시 최대 HP의 10% 회복. 방 인스턴스당 1회. 빈 방·보스 방은 제외합니다.",
+        "체력 100P · 자동 해금\n살아 있는 적이 있는 현재 방에서 실제 피해 후 5초 뒤 초당 최대 HP의 1% 재생. 방당 20% 한도. 최초 입장·부활 후에도 5초 대기하며 방 이동·부활 시 한도가 초기화됩니다.",
+        "물리 20P · 자동 해금\n곡괭이 기본 공격 사거리 +15%. 충격파 범위에는 적용하지 않습니다.",
+        "물리 50P · 자동 해금\n직접 유효 적중한 기본 공격당 충격파 1회. 전방 90도·사거리 2.0. 반올림 전 기본 공격 피해의 30%. 직접 대상도 생존 시 추가 피해를 받습니다.\n30%는 초기 테스트값입니다.",
+        "물리 100P · 자동 해금\n직접 적중한 기본 공격 3회 후 다음 기본 공격과 충격파 피해 +100%. 다수 적도 공격당 충전 1회. 강화 공격은 재충전하지 않으며 시작 후 빗나감·취소에도 소비됩니다. 방 이동 유지, 사망·부활 초기화.",
+        "마법 20P · 자동 해금\n청록 광선 거리·폭 +20%, 불안정 광석 발파 폭발 반경 +20%. 발파 투척 거리와 추가 폭발 범위는 유지합니다.",
+        "마법 50P · 자동 해금\n마법 스킬 쿨타임 -15%. 장비 감소율과 가산하며 합계 100% 이상은 0초. 물리 스킬에는 적용하지 않습니다.",
+        "마법 100P · 자동 해금\n마법 스킬 최초 유효 대상 중심으로 반경 1.5 추가 폭발. 반올림 전 원스킬 피해의 40%. 광선·발파가 내부 쿨타임 1.5초 공유. 쿨타임 중 첫 적중 시 해당 시전의 기회는 소멸하며 연쇄 폭발은 없습니다.\n40%는 초기 테스트값입니다."
+    };
+    public static bool PassiveUnlocked(PlayerProgression growth, int index)
+    {
+        switch (index)
+        {
+            case 0: return growth.HasHealth20Passive; case 1: return growth.HasHealth50Passive; case 2: return growth.HasHealth100Passive;
+            case 3: return growth.HasPhysical20Passive; case 4: return growth.HasPhysical50Passive; case 5: return growth.HasPhysical100Passive;
+            case 6: return growth.HasMagic20Passive; case 7: return growth.HasMagic50Passive; case 8: return growth.HasMagic100Passive;
+            default: return false;
+        }
+    }
     public sealed class Item
     {
         public SkillData Skill;

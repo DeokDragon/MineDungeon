@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 1320521267463155648}
   - component: {fileID: 5361694266290651127}
   - component: {fileID: 1270639962527848139}
+  - component: {fileID: 5433501410632715264}
   m_Layer: 6
   m_Name: CrystalMonster
   m_TagString: Untagged
@@ -674,6 +675,35 @@ MonoBehaviour:
   projectileRange: 7.5
   retreatDistance: 2.2
   retreatSpeed: 1.8
+--- !u!114 &5433501410632715264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117871400236860278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58790e262408b4941912974b69e02f07, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::CrystalMonsterSpriteAnimation
+  body: {fileID: 7386909776154831479}
+  idleFrames:
+  - {fileID: 7382651533847310517, guid: 7a2928d63c761644088818c865a22e2d, type: 3}
+  - {fileID: 982861757779835965, guid: 7a2928d63c761644088818c865a22e2d, type: 3}
+  - {fileID: -2899755318311368938, guid: 7a2928d63c761644088818c865a22e2d, type: 3}
+  - {fileID: -2401440349521426834, guid: 7a2928d63c761644088818c865a22e2d, type: 3}
+  moveFrames:
+  - {fileID: -3636327572553513278, guid: 13f2e5f494035f04dbbb5eec74aa0c99, type: 3}
+  - {fileID: -6499898084964069442, guid: 13f2e5f494035f04dbbb5eec74aa0c99, type: 3}
+  - {fileID: -3273914108465145278, guid: 13f2e5f494035f04dbbb5eec74aa0c99, type: 3}
+  - {fileID: 9149212138430643775, guid: 13f2e5f494035f04dbbb5eec74aa0c99, type: 3}
+  - {fileID: -8039644224617002170, guid: 13f2e5f494035f04dbbb5eec74aa0c99, type: 3}
+  - {fileID: -5158861432276666780, guid: 13f2e5f494035f04dbbb5eec74aa0c99, type: 3}
+  idleFramesPerSecond: 6
+  moveFramesPerSecond: 10
+  referenceMoveSpeed: 2.2
+  movementThreshold: 0.02
 --- !u!1 &118686471624756042
 GameObject:
   m_ObjectHideFlags: 0
@@ -12206,8 +12236,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.55, g: 0.35, b: 0.95, a: 1}
+  m_Sprite: {fileID: 7382651533847310517, guid: 7a2928d63c761644088818c865a22e2d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

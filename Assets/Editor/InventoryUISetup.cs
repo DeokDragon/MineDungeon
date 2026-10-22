@@ -56,6 +56,113 @@ public static class InventoryUISetup
         var check=Text("Check",item,"•",24,.02f,0,.1f,1);toggle.graphic=check;drop.itemText=Text("Item Label",item,"최근 획득순",22,.12f,0,.97f,1);
         scroll.viewport=viewport;scroll.content=content;drop.template=template;template.gameObject.SetActive(false);return drop;
     }
+    // Upgrade only the left side of the existing Main inventory; never rebuild owned items/loadout data.
+    static Image GrowthFrame(string name, Transform parent, Color color) => Frame(name,parent,color,.4f);
+    public static string ConnectGrowthTabs()
+    {
+        if (Application.isPlaying || UnityEngine.SceneManagement.SceneManager.GetActiveScene().path != "Assets/Scenes/Main.unity")
+            throw new System.Exception("Open Main in Edit mode");
+        var ui = Object.FindFirstObjectByType<InventoryUI>();
+        var so = new SerializedObject(ui);
+        var panel = (GameObject)so.FindProperty("panel").objectReferenceValue;
+        var left = (RectTransform)panel.transform.Find("InventoryLayout/Loadout");
+        if (left.Find("CharacterInformation") != null) throw new System.Exception("Growth tabs already connected");
+        var oldFont = ((TMP_Text)so.FindProperty("statsText").objectReferenceValue).font;
+        var characters = new HashSet<char>(oldFont.characterTable.Select(c => (char)c.unicode));
+        foreach (var file in new[]{"Assets/Scripts/Inventory/InventoryUI.cs", "Assets/Scripts/Inventory/InventoryPresentation.cs", "Assets/Editor/InventoryUISetup.cs"})
+            foreach (char c in System.IO.File.ReadAllText(file)) if (!char.IsControl(c)) characters.Add(c);
+        const string fontPath = "Assets/UI/Inventory Growth Korean.asset";
+        if (AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(fontPath) != null) throw new System.Exception("Growth font already exists");
+        font = TMP_FontAsset.CreateFontAsset("C:/Windows/Fonts/NotoSansKR-VF.ttf",0,64,9,UnityEngine.TextCore.LowLevel.GlyphRenderMode.SDFAA,2048,2048);
+        string missing;
+        if (!font.TryAddCharacters(new string(characters.OrderBy(c=>c).ToArray()), out missing) || !string.IsNullOrEmpty(missing))
+            throw new System.Exception("Growth font missing characters: " + missing);
+        font.name="Inventory Growth Korean"; font.atlasPopulationMode=AtlasPopulationMode.Static;
+        AssetDatabase.CreateAsset(font,fontPath);
+        foreach(var texture in font.atlasTextures) AssetDatabase.AddObjectToAsset(texture,font);
+        AssetDatabase.AddObjectToAsset(font.material,font);
+        var fs = new SerializedObject(font); fs.FindProperty("m_SourceFontFilePath").stringValue=""; fs.ApplyModifiedPropertiesWithoutUndo();
+
+        var character = Rect("CharacterInformation",left,.035f,.29f,.965f,.815f);
+        foreach (string name in new[]{"VisualOnlyPlayerPreview","무기","상의","하의","액세서리","SkillHeading","EquippedE","EquippedR","EquipInstruction","OwnedMoney"})
+        {
+            var child=(RectTransform)left.Find(name); if(child==null) continue;
+            var min=child.anchorMin; var max=child.anchorMax;
+            child.SetParent(character,false); child.anchorMin=new Vector2(min.x,(min.y-.24f)/.60f);child.anchorMax=new Vector2(max.x,(max.y-.24f)/.60f);
+        }
+        foreach(var text in character.GetComponentsInChildren<TMP_Text>(true)) text.font=font;
+        foreach (string name in new[]{"무기","상의","하의","액세서리"})
+        {
+            var state=character.Find(name+"/State").GetComponent<TMP_Text>();state.fontSize=16;
+            state.rectTransform.anchorMin=new Vector2(.01f,.10f);state.rectTransform.anchorMax=new Vector2(.99f,.34f);
+            character.Find(name+"/Marker").GetComponent<TMP_Text>().fontSize=23;
+        }
+        foreach(string name in new[]{"EquippedE","EquippedR"})
+        {
+            var text=character.Find(name+"/Name").GetComponent<TMP_Text>();text.fontSize=19;
+            text.rectTransform.anchorMin=new Vector2(.04f,.08f);text.rectTransform.anchorMax=new Vector2(.96f,.34f);
+        }
+        var title=left.Find("Title").GetComponent<TMP_Text>();title.text="캐릭터 관리";
+        title.rectTransform.anchorMin=new Vector2(.05f,.905f);title.rectTransform.anchorMax=new Vector2(.70f,.965f);
+        title.font=font;
+        var subtitle=left.Find("Subtitle").GetComponent<TMP_Text>();subtitle.text="M I N E R   P R O F I L E";subtitle.fontSize=14;subtitle.font=font;
+        subtitle.rectTransform.anchorMin=new Vector2(.05f,.965f);subtitle.rectTransform.anchorMax=new Vector2(.70f,.99f);
+        Ref(so,"levelText",Text("CharacterLevel",left,"Lv. 1",26,.72f,.92f,.95f,.98f));
+        var characterButton=Button("CharacterTab",left,"캐릭터 정보",.05f,.835f,.485f,.895f,24);
+        var statsButton=Button("StatsTab",left,"스탯",.505f,.835f,.95f,.895f,24);
+        GrowthFrame("Border",characterButton.transform,new Color(.28f,.32f,.34f));GrowthFrame("Border",statsButton.transform,gold);
+        var dot=Rect("UnspentNotification",statsButton.transform,.91f,.75f,.91f,.75f);dot.sizeDelta=new Vector2(10,10);
+        var dotImage=Image(dot,new Color(1,.80f,.34f));dotImage.sprite=AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/Knob.psd");
+        Ref(so,"statNotification",dot.gameObject);Ref(so,"characterTab",characterButton);Ref(so,"statTab",statsButton);Ref(so,"characterPage",character.gameObject);
+        var stats=(RectTransform)left.Find("CurrentStats");stats.anchorMin=new Vector2(.055f,.025f);stats.anchorMax=new Vector2(.945f,.285f);
+        var statText=(TMP_Text)so.FindProperty("statsText").objectReferenceValue;statText.font=font;statText.fontSize=20;statText.alignment=TextAlignmentOptions.TopLeft;
+        statText.rectTransform.anchorMin=new Vector2(.05f,.04f);statText.rectTransform.anchorMax=new Vector2(.95f,.84f);
+        statText.rectTransform.offsetMin=statText.rectTransform.offsetMax=Vector2.zero;
+        Text("AttributesHeading",stats,"F I N A L   A T T R I B U T E S",13,.05f,.88f,.95f,.985f,TextAlignmentOptions.MidlineLeft).color=gold;
+        GrowthFrame("Border",stats,new Color(.32f,.29f,.20f));
+
+        var statPage=Rect("StatInvestment",left,.035f,.29f,.965f,.815f);Ref(so,"statPage",statPage.gameObject);
+        Ref(so,"unspentText",Text("UnspentPoints",statPage,"미사용 3 P",24,.02f,.91f,.46f,.995f,TextAlignmentOptions.MidlineLeft));
+        Ref(so,"investmentRule",Text("InvestmentRule",statPage,"메인 준비 상태 · 투자 즉시 저장",17,.02f,.845f,.98f,.90f,TextAlignmentOptions.MidlineLeft));
+        var multipliers=so.FindProperty("multiplierButtons");multipliers.arraySize=3;
+        for(int i=0;i<3;i++) {float x=.51f+i*.16f;var button=Button("Multiplier"+(i==0?1:i==1?5:10),statPage,i==0?"×1":i==1?"×5":"×10",x,.915f,x+.145f,.99f,20);multipliers.GetArrayElementAtIndex(i).objectReferenceValue=button;GrowthFrame("Border",button.transform,new Color(.27f,.36f,.38f));}
+        var scrollRoot=Rect("GrowthScroll",statPage,0,0,1,.82f);var growthScroll=scrollRoot.gameObject.AddComponent<ScrollRect>();growthScroll.horizontal=false;growthScroll.movementType=ScrollRect.MovementType.Clamped;growthScroll.scrollSensitivity=35;Ref(so,"growthScroll",growthScroll);
+        var viewport=Rect("Viewport",scrollRoot,0,0,.975f,1);Image(viewport,new Color(.04f,.06f,.08f),true);viewport.gameObject.AddComponent<RectMask2D>();
+        var content=Rect("Content",viewport,0,1,1,1);content.pivot=new Vector2(.5f,1);content.sizeDelta=Vector2.zero;
+        var layout=content.gameObject.AddComponent<VerticalLayoutGroup>();layout.padding=new RectOffset(3,8,4,4);layout.spacing=12;layout.childControlWidth=layout.childControlHeight=true;layout.childForceExpandWidth=true;layout.childForceExpandHeight=false;
+        content.gameObject.AddComponent<ContentSizeFitter>().verticalFit=ContentSizeFitter.FitMode.PreferredSize;growthScroll.viewport=viewport;growthScroll.content=content;
+        var sb=Rect("Scrollbar",scrollRoot,.982f,0,1,1);Image(sb,new Color(.08f,.1f,.13f));var scrollbar=sb.gameObject.AddComponent<Scrollbar>();
+        var sliding=Rect("SlidingArea",sb,0,0,1,1);var handle=Image(Rect("Handle",sliding,0,0,1,1),new Color(.34f,.47f,.49f),true);scrollbar.handleRect=handle.rectTransform;scrollbar.targetGraphic=handle;scrollbar.direction=Scrollbar.Direction.BottomToTop;growthScroll.verticalScrollbar=scrollbar;
+        var statArray=so.FindProperty("statCards");statArray.arraySize=3;var passives=so.FindProperty("passiveCards");passives.arraySize=9;
+        string[] names={"체력  VITALITY","물리  PHYSICAL","마법  ARCANE"};string[] bonuses={"투자 1P당 최대 HP +3","투자 1P당 물리 공격 스탯 +0.4","투자 1P당 마법 공격 스탯 +0.4"};
+        Color[] accents={new Color(.57f,.76f,.37f),new Color(.96f,.55f,.27f),new Color(.15f,.85f,.87f)};
+        for(int stat=0;stat<3;stat++)
+        {
+            var card=Rect("StatCard"+stat,content,0,0,1,1);Image(card,tile);card.gameObject.AddComponent<LayoutElement>().preferredHeight=218;
+            Image(Rect("Accent",card,0,0,.008f,1),accents[stat]);GrowthFrame("Frame",card,new Color(.27f,.30f,.31f));
+            Text("Name",card,names[stat],24,.035f,.77f,.51f,.97f,TextAlignmentOptions.MidlineLeft).color=accents[stat];
+            Text("Bonus",card,bonuses[stat],17,.035f,.64f,.96f,.79f,TextAlignmentOptions.MidlineLeft).color=new Color(.62f,.68f,.73f);
+            var data=statArray.GetArrayElementAtIndex(stat);
+            data.FindPropertyRelative("points").objectReferenceValue=Text("Investment",card,"00 / 100P",27,.51f,.77f,.81f,.97f,TextAlignmentOptions.MidlineRight);
+            var plus=Button("Invest",card,"",.845f,.785f,.975f,.96f);data.FindPropertyRelative("invest").objectReferenceValue=plus;
+            data.FindPropertyRelative("amount").objectReferenceValue=Text("Amount",plus.transform,"+1",23,0,0,1,1);GrowthFrame("Border",plus.transform,new Color(.15f,.80f,.82f));
+            for(int stage=0;stage<3;stage++)
+            {
+                int index=stat*3+stage;float bottom=.43f-stage*.20f;var row=Rect("Passive"+(stage==0?20:stage==1?50:100),card,.025f,bottom,.975f,bottom+.185f);
+                var background=Image(row,new Color(.075f,.10f,.13f),true);var dataPassive=passives.GetArrayElementAtIndex(index);dataPassive.FindPropertyRelative("background").objectReferenceValue=background;
+                Text("Name",row,InventoryPresentation.PassiveTitles[index],18,.025f,0,.70f,1,TextAlignmentOptions.MidlineLeft);
+                dataPassive.FindPropertyRelative("state").objectReferenceValue=Text("State",row,"20P · 미해금",17,.715f,0,.98f,1,TextAlignmentOptions.MidlineRight);
+                Hover(row.gameObject,ui,InventoryPresentation.PassiveDetails[index]);
+            }
+        }
+        ((TMP_Text)so.FindProperty("tooltipText").objectReferenceValue).font=font;
+        var notice=(TMP_Text)so.FindProperty("noticeText").objectReferenceValue;notice.font=font;
+        character.gameObject.SetActive(true);statPage.gameObject.SetActive(false);so.ApplyModifiedPropertiesWithoutUndo();
+        panel.SetActive(false);EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
+        EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());AssetDatabase.SaveAssets();
+        return "Existing Main inventory left tabs/growth cards/common attributes connected; right side retained.";
+    }
+
     public static string Build()
     {
         if(Application.isPlaying)throw new System.Exception("Edit mode required");

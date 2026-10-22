@@ -10,6 +10,20 @@ public sealed class InventoryUI : MonoBehaviour
 {
     [System.Serializable] private sealed class Tab { public Button button; public Image background, border; }
     [System.Serializable] private sealed class Slot { public Button button; public TMP_Text name, marker; public Image icon, highlight; }
+    [System.Serializable] private sealed class StatCard { public TMP_Text points, amount; public Button invest; }
+    [System.Serializable] private sealed class PassiveCard { public TMP_Text state; public Image background; }
+    [SerializeField] private GameObject characterPage, statPage, statNotification;
+    [SerializeField] private Button characterTab, statTab;
+    [SerializeField] private Button[] multiplierButtons;
+    [SerializeField] private TMP_Text unspentText, investmentRule, levelText;
+    [SerializeField] private StatCard[] statCards;
+    [SerializeField] private PassiveCard[] passiveCards;
+    [SerializeField] private ScrollRect growthScroll;
+    private PlayerProgression growth;
+    private int investmentMultiplier = 1;
+    private string investmentError;
+    private string investmentSuccess;
+    private float investmentSuccessUntil;
     [SerializeField] private PlayerSkills player;
     [SerializeField] private DungeonRoomManager rooms;
     [SerializeField] private PauseMenu pauseMenu;
@@ -69,17 +83,29 @@ public sealed class InventoryUI : MonoBehaviour
     private void Start()
     {
         session = SkillInventorySession.Instance; run = DungeonRunManager.Instance;
+        growth = run.GetComponent<PlayerProgression>();
+        if (growth != null) growth.Changed += RefreshGrowth;
         rewards=run.GetComponent<RewardInventorySession>();if(rewards!=null)rewards.Changed+=RewardsChanged;
         session.Changed += RefreshAll; run.RunEnded += OnResult; health.Died += OnPlayerDied;
         closeButton.onClick.AddListener(Close); clearSearchButton.onClick.AddListener(ClearSearch);
         search.onValueChanged.AddListener(SearchChanged); sorting.onValueChanged.AddListener(SortChanged); scroll.onValueChanged.AddListener(Scrolled);
         eSlot.button.onClick.AddListener(EquipE); rSlot.button.onClick.AddListener(EquipR);
         for (int i = 0; i < tabs.Length; i++) { int index = i; tabs[i].button.onClick.AddListener(() => SetCategory(index)); }
+        if (characterTab != null)
+        {
+            characterTab.onClick.AddListener(() => SetCharacterTab(0)); statTab.onClick.AddListener(() => SetCharacterTab(1));
+            for (int i = 0; i < multiplierButtons.Length; i++) { int value = i == 0 ? 1 : i == 1 ? 5 : 10; multiplierButtons[i].onClick.AddListener(() => SetInvestmentMultiplier(value)); }
+            for (int i = 0; i < statCards.Length; i++) { int index = i; statCards[i].invest.onClick.AddListener(() => InvestStat(index)); }
+            SetCharacterTab(0);
+            growthScroll.onValueChanged.AddListener(Scrolled);
+        }
+        RefreshGrowth();
         SetCategory(0);
     }
     private void Update()
     {
         if (run == null) return;
+        if (IsOpen && (run.IsRunEnded || run.IsRestarting || health.IsDead)) CloseInternal();
         if (waitingRelease && !CombatKeyHeld()) waitingRelease = false;
         var keys = Keyboard.current;
         if (keys != null)
@@ -91,6 +117,7 @@ public sealed class InventoryUI : MonoBehaviour
         if (!IsOpen) { if(externalTooltip&&hoverTarget!=null&&Time.unscaledTime>=hoverAt)ShowTooltip();return; }
         if (!Mathf.Approximately(lastGridWidth, ((RectTransform)grid.transform).rect.width)) UpdateGrid();
         RefreshStats();
+        RefreshGrowth();
         if (!Mathf.Approximately(previousStatsPhysical, powers.PhysicalAttack) || !Mathf.Approximately(previousStatsMagic, powers.MagicAttack))
         {
             previousStatsPhysical = powers.PhysicalAttack; previousStatsMagic = powers.MagicAttack;
@@ -201,9 +228,62 @@ public sealed class InventoryUI : MonoBehaviour
     }
     private void RefreshStats()
     {
-        statsText.text = $"물리 공격력   {powers.PhysicalAttack:0.##}\n마법 공격력   {powers.MagicAttack:0.##}\n최대 체력      {health.MaxHealth}\n공격 간격      {attack.AttackInterval:0.00}초";
-        var growth = run != null ? run.GetComponent<PlayerProgression>() : null;
-        if (growth != null) statsText.text += $"\nLv. {growth.Level} · 미사용 스탯 포인트: {growth.UnspentStatPoints}";
+        statsText.text = $"최종 물리 공격 스탯  <color=#FFCF75>{powers.PhysicalAttack:0.##}</color>\n최종 마법 공격 스탯  <color=#FFCF75>{powers.MagicAttack:0.##}</color>\n최대 HP                    {health.MaxHealth}\n방어력                      <color=#9AA6B4>미구현</color>\n피해 감소율               <color=#9AA6B4>미구현</color>\n공격 간격                  {attack.AttackInterval:0.00}초\n이동 속도                  {movement.FinalMoveSpeed:0.##}";
+    }
+    public void SetCharacterTab(int index)
+    {
+        if (characterPage == null) return;
+        bool stats = index == 1;
+        characterPage.SetActive(!stats); statPage.SetActive(stats); HideTooltip();
+        characterTab.GetComponent<Image>().color = stats ? new Color(.09f,.12f,.16f) : new Color(.10f,.24f,.25f);
+        statTab.GetComponent<Image>().color = stats ? new Color(.10f,.24f,.25f) : new Color(.09f,.12f,.16f);
+        RefreshGrowth();
+    }
+    public void SetInvestmentMultiplier(int value)
+    {
+        if (value != 1 && value != 5 && value != 10) return;
+        investmentMultiplier = value; RefreshGrowth();
+    }
+    public void InvestStat(int index)
+    {
+        if (!IsOpen || growth == null || index < 0 || index > 2) return;
+        int invested; string error;
+        if (!growth.TryInvest((PlayerProgression.Stat)index, investmentMultiplier, out invested, out error))
+        {
+            investmentError = growth.CanInvest && growth.InvestablePoints((PlayerProgression.Stat)index, investmentMultiplier) > 0
+                ? "저장 실패 · 투자 미적용 · 다시 시도해 주세요" : error;
+        }
+        else { investmentError = null; investmentSuccess = $"{invested}P 투자 · 저장 완료"; investmentSuccessUntil = Time.unscaledTime + 2.5f; }
+        RefreshGrowth(); RefreshStats();
+    }
+    private void RefreshGrowth()
+    {
+        if (growth == null || characterPage == null) return;
+        statNotification.SetActive(growth.UnspentStatPoints > 0);
+        unspentText.text = $"미사용  <color=#FFCF75>{growth.UnspentStatPoints} P</color>";
+        levelText.text = $"Lv. {growth.Level}";
+        bool allowed = growth.CanInvest;
+        investmentRule.text = !string.IsNullOrEmpty(investmentError) ? investmentError : !allowed ? "던전에서는 열람만 가능합니다 · 투자 불가"
+            : Time.unscaledTime < investmentSuccessUntil ? investmentSuccess : "메인 준비 상태 · 투자 즉시 저장";
+        investmentRule.color = !string.IsNullOrEmpty(investmentError) ? new Color(1,.65f,.4f) : new Color(.58f,.66f,.72f);
+        for (int i = 0; i < statCards.Length; i++)
+        {
+            var stat = (PlayerProgression.Stat)i;
+            int amount = growth.InvestablePoints(stat, investmentMultiplier);
+            statCards[i].points.text = $"{growth.PointsIn(stat):00} <size=65%>/ 100P</size>";
+            statCards[i].amount.text = amount > 0 ? $"+{amount}" : "+";
+            statCards[i].invest.interactable = allowed && amount > 0;
+        }
+        for (int i = 0; i < multiplierButtons.Length; i++)
+            multiplierButtons[i].GetComponent<Image>().color = investmentMultiplier == (i == 0 ? 1 : i == 1 ? 5 : 10) ? new Color(.06f,.39f,.40f) : new Color(.10f,.135f,.17f);
+        for (int i = 0; i < passiveCards.Length; i++)
+        {
+            bool unlocked = InventoryPresentation.PassiveUnlocked(growth, i);
+            int required = i % 3 == 0 ? 20 : i % 3 == 1 ? 50 : 100;
+            passiveCards[i].state.text = $"{required}P · {(unlocked ? "해금" : "미해금")}";
+            passiveCards[i].state.color = unlocked ? new Color(.35f,1,.83f) : new Color(.59f,.65f,.70f);
+            passiveCards[i].background.color = unlocked ? new Color(.07f,.19f,.20f) : new Color(.075f,.10f,.13f);
+        }
     }
     private void OnRectTransformDimensionsChange() { if (grid != null) UpdateGrid(); if (tooltip != null) HideTooltip(); }
     private void UpdateGrid()
@@ -251,6 +331,7 @@ public sealed class InventoryUI : MonoBehaviour
         if(rewards!=null)rewards.Changed-=RewardsChanged;
         if (run != null) run.RunEnded -= OnResult;
         if (health != null) health.Died -= OnPlayerDied;
+        if (growth != null) growth.Changed -= RefreshGrowth;
         if (active == this) active = null;
     }
 }

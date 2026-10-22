@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private float slowUntil, slowFraction;
     private LineRenderer slowRing;
     public float SlowMultiplier => Time.time < slowUntil ? 1f - slowFraction : 1f;
+    public float FinalMoveSpeed => moveSpeed * SlowMultiplier * (skills != null ? skills.MovementMultiplier : 1f);
     public void ApplySlow(float fraction, float seconds, Material material=null)
     {
         slowFraction=Mathf.Clamp01(fraction); slowUntil=Time.time+Mathf.Max(0,seconds);
@@ -157,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (skills != null && skills.OwnsMovement) { rb.linearVelocity = Vector2.zero; return; }
-        rb.linearVelocity = moveInput * moveSpeed * SlowMultiplier * (skills != null ? skills.MovementMultiplier : 1f);
+        rb.linearVelocity = moveInput * FinalMoveSpeed;
     }
 
     private void OnDisable()
