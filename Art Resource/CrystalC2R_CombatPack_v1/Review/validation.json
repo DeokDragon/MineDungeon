@@ -1,0 +1,1127 @@
+{
+  "resources": [
+    {
+      "name": "CrystalC2R_CastWindup_6f_64x64_v1",
+      "png": "Animations\\CrystalC2R_CastWindup_6f_64x64_v1.png",
+      "sheet_size": [
+        384,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        100,
+        110,
+        120,
+        130,
+        140,
+        150
+      ],
+      "preview_total_ms": 750,
+      "bounds": [
+        [
+          2,
+          4,
+          62,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ]
+      ],
+      "notes": "750ms. Fixed core center/outline, planted feet, articulated elbows and rigid shoulders. Charge stronger than Idle pulse.",
+      "anchor": "frame-center",
+      "sha256": "d145ad8c3042fb412cbd79fd5c9753d3b95e6364768d0d67ddaa228ff4815739"
+    },
+    {
+      "name": "CrystalC2R_Fire_3f_64x64_v1",
+      "png": "Animations\\CrystalC2R_Fire_3f_64x64_v1.png",
+      "sheet_size": [
+        192,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 3,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        40,
+        70,
+        70
+      ],
+      "preview_total_ms": 180,
+      "bounds": [
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ]
+      ],
+      "notes": "180ms proposed share of existing recovery. Core flash/reaction only, no beam or physical projectile origin encoded.",
+      "anchor": "frame-center",
+      "sha256": "c6dcb1fded6edf179aa8d38df27a5111d5528d9efd2d03a4bd87829964d64105"
+    },
+    {
+      "name": "CrystalC2R_Recovery_5f_64x64_v1",
+      "png": "Animations\\CrystalC2R_Recovery_5f_64x64_v1.png",
+      "sheet_size": [
+        320,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 5,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        140,
+        130,
+        110,
+        90,
+        50
+      ],
+      "preview_total_ms": 520,
+      "bounds": [
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          2,
+          4,
+          62,
+          60
+        ],
+        [
+          2,
+          4,
+          62,
+          60
+        ]
+      ],
+      "notes": "520ms; Fire+Recovery=700ms. Final exact Idle F1.",
+      "anchor": "frame-center",
+      "sha256": "227b213fd74bb132dfd3dbde29a655218eb568257d99e5d58f366ace6ceb7907"
+    },
+    {
+      "name": "CrystalC2R_Hit_3f_64x64_v1",
+      "png": "Animations\\CrystalC2R_Hit_3f_64x64_v1.png",
+      "sheet_size": [
+        192,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 3,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        40,
+        60,
+        50
+      ],
+      "preview_total_ms": 150,
+      "bounds": [
+        [
+          2,
+          4,
+          62,
+          60
+        ],
+        [
+          3,
+          4,
+          61,
+          60
+        ],
+        [
+          2,
+          4,
+          62,
+          60
+        ]
+      ],
+      "notes": "Small visual shoulder/arm reaction only. Keep attack pose priority; no new flash, squash, stun or cancel events.",
+      "anchor": "frame-center",
+      "sha256": "df17f3961938a35756f07c2a43cd60ab4b4b86302470d20b4a342dceeb2177b3"
+    },
+    {
+      "name": "CrystalC2R_Death_7f_64x64_v1",
+      "png": "Animations\\CrystalC2R_Death_7f_64x64_v1.png",
+      "sheet_size": [
+        448,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 7,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        50,
+        50,
+        60,
+        60,
+        70,
+        80,
+        80
+      ],
+      "preview_total_ms": 450,
+      "bounds": [
+        [
+          2,
+          4,
+          62,
+          60
+        ],
+        [
+          2,
+          4,
+          62,
+          60
+        ],
+        [
+          2,
+          4,
+          62,
+          60
+        ],
+        [
+          2,
+          19,
+          62,
+          61
+        ],
+        [
+          1,
+          29,
+          62,
+          62
+        ],
+        [
+          12,
+          53,
+          47,
+          61
+        ],
+        null
+      ],
+      "notes": "450ms proposal; connection cracks, shoulder separation, core fracture, collapse and empty F7.",
+      "anchor": "frame-center",
+      "sha256": "68b97233ad6aa14580c4ac2778ee14cbb38c5daf4f65253af1b3c611e5347d3b"
+    },
+    {
+      "name": "CrystalC2R_VFX_CoreCharge",
+      "png": "VFX\\CrystalC2R_VFX_CoreCharge.png",
+      "sheet_size": [
+        288,
+        48
+      ],
+      "frame_size": [
+        48,
+        48
+      ],
+      "frames": 6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        100,
+        110,
+        120,
+        130,
+        140,
+        150
+      ],
+      "preview_total_ms": 750,
+      "bounds": [
+        [
+          5,
+          5,
+          45,
+          43
+        ],
+        [
+          7,
+          7,
+          43,
+          41
+        ],
+        [
+          8,
+          8,
+          41,
+          40
+        ],
+        [
+          10,
+          10,
+          40,
+          38
+        ],
+        [
+          11,
+          11,
+          38,
+          37
+        ],
+        [
+          12,
+          13,
+          37,
+          35
+        ]
+      ],
+      "notes": "48px cell / 6f, converging energy only, no body or core sprite. Remove/stop at actual fire event.",
+      "anchor": "chest-core-visual-only",
+      "sha256": "7e4a83ded1e984dcafe0d3de451f96d96727c484134773c37e173cf2d9de2b1c"
+    },
+    {
+      "name": "CrystalC2R_VFX_FireFlash",
+      "png": "VFX\\CrystalC2R_VFX_FireFlash.png",
+      "sheet_size": [
+        192,
+        48
+      ],
+      "frame_size": [
+        48,
+        48
+      ],
+      "frames": 4,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        30,
+        50,
+        50,
+        50
+      ],
+      "preview_total_ms": 180,
+      "bounds": [
+        [
+          18,
+          18,
+          31,
+          31
+        ],
+        [
+          12,
+          12,
+          37,
+          37
+        ],
+        [
+          8,
+          8,
+          41,
+          41
+        ],
+        null
+      ],
+      "notes": "48px cell / 4f, short non-directional flash, no long ray. Does not move projectile origin.",
+      "anchor": "chest-core-visual-only",
+      "sha256": "1b144d32cf568df6bb0ba79453d00b2fbfb9f9979fa5325da92045776541ecaf"
+    },
+    {
+      "name": "CrystalC2R_VFX_ProjectileVisual",
+      "png": "VFX\\CrystalC2R_VFX_ProjectileVisual.png",
+      "sheet_size": [
+        128,
+        32
+      ],
+      "frame_size": [
+        32,
+        32
+      ],
+      "frames": 4,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "loop",
+      "preview_ms": [
+        70,
+        70,
+        70,
+        70
+      ],
+      "preview_total_ms": 280,
+      "bounds": [
+        [
+          5,
+          5,
+          27,
+          27
+        ],
+        [
+          5,
+          5,
+          27,
+          27
+        ],
+        [
+          5,
+          5,
+          27,
+          27
+        ],
+        [
+          5,
+          5,
+          27,
+          27
+        ]
+      ],
+      "notes": "32px cell / 4f, fixed compact faceted crystal, no long trail. Opaque pixel centers remain within radius 11.2px at PPU64.",
+      "anchor": "existing-physics-projectile-position",
+      "sha256": "12524319a7b4fd3200eecaacbdec4f4dd44374221b48dc875fb53253e3a8e7da"
+    },
+    {
+      "name": "CrystalC2R_VFX_CrystalImpact",
+      "png": "VFX\\CrystalC2R_VFX_CrystalImpact.png",
+      "sheet_size": [
+        160,
+        32
+      ],
+      "frame_size": [
+        32,
+        32
+      ],
+      "frames": 5,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        30,
+        40,
+        40,
+        40,
+        50
+      ],
+      "preview_total_ms": 200,
+      "bounds": [
+        [
+          13,
+          13,
+          19,
+          20
+        ],
+        [
+          12,
+          11,
+          21,
+          21
+        ],
+        [
+          11,
+          9,
+          23,
+          23
+        ],
+        [
+          9,
+          8,
+          24,
+          25
+        ],
+        null
+      ],
+      "notes": "32px cell / 5f / .2s. Small crystal shards. Also suitable as restrained ordinary-hit fragments; no extra hit-fragments file.",
+      "anchor": "existing-impact-or-hit-point",
+      "sha256": "64827f9a8989f0786cc091c58a60a6197d695b4c46229cb2c3c26dd396a7a995"
+    },
+    {
+      "name": "CrystalC2R_VFX_CrystalDeathBurst",
+      "png": "VFX\\CrystalC2R_VFX_CrystalDeathBurst.png",
+      "sheet_size": [
+        672,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 7,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        50,
+        50,
+        60,
+        60,
+        70,
+        80,
+        80
+      ],
+      "preview_total_ms": 450,
+      "bounds": [
+        [
+          44,
+          44,
+          52,
+          52
+        ],
+        [
+          40,
+          38,
+          56,
+          57
+        ],
+        [
+          35,
+          33,
+          61,
+          61
+        ],
+        [
+          31,
+          28,
+          65,
+          66
+        ],
+        [
+          27,
+          24,
+          69,
+          70
+        ],
+        [
+          23,
+          20,
+          73,
+          75
+        ],
+        null
+      ],
+      "notes": "96px cell / 7f / .45s. Small shards and limited teal afterglow, no full shoulder/body duplicated.",
+      "anchor": "death-visual-center",
+      "sha256": "9f3d798145b77ec094665b96703af4ecdf3ffd0ce2a27d098a885964761c21e2"
+    }
+  ],
+  "pose_parameters": [
+    {
+      "tag": "Cast F2",
+      "energy_white_mix": 0.14,
+      "shoulder_highlight_mix": 0,
+      "elbow_angles": [
+        -4,
+        4
+      ],
+      "arm_offsets": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 0,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Cast F3",
+      "energy_white_mix": 0.27,
+      "shoulder_highlight_mix": 0,
+      "elbow_angles": [
+        -12,
+        12
+      ],
+      "arm_offsets": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 1,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Cast F4",
+      "energy_white_mix": 0.4,
+      "shoulder_highlight_mix": 0.08,
+      "elbow_angles": [
+        -20,
+        20
+      ],
+      "arm_offsets": [
+        [
+          2,
+          0
+        ],
+        [
+          -2,
+          0
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 1,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Cast F5",
+      "energy_white_mix": 0.58,
+      "shoulder_highlight_mix": 0.12,
+      "elbow_angles": [
+        -27,
+        27
+      ],
+      "arm_offsets": [
+        [
+          2,
+          0
+        ],
+        [
+          -2,
+          0
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 1,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Cast F6",
+      "energy_white_mix": 0.62,
+      "shoulder_highlight_mix": 0.14,
+      "elbow_angles": [
+        -30,
+        30
+      ],
+      "arm_offsets": [
+        [
+          2,
+          -1
+        ],
+        [
+          -2,
+          -1
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 1,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Fire F2 strongest release",
+      "energy_white_mix": 0.8,
+      "shoulder_highlight_mix": 0.14,
+      "elbow_angles": [
+        -14,
+        14
+      ],
+      "arm_offsets": [
+        [
+          2,
+          1
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 1,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Fire F3 fading",
+      "energy_white_mix": 0.4,
+      "shoulder_highlight_mix": 0.08,
+      "elbow_angles": [
+        -10,
+        10
+      ],
+      "arm_offsets": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 1,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Recovery F2 hold",
+      "energy_white_mix": 0.28,
+      "shoulder_highlight_mix": 0.05,
+      "elbow_angles": [
+        -9,
+        9
+      ],
+      "arm_offsets": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 1,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Recovery F3 return",
+      "energy_white_mix": 0.15,
+      "shoulder_highlight_mix": 0.02,
+      "elbow_angles": [
+        -5,
+        5
+      ],
+      "arm_offsets": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 0,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Recovery F4 near baseline",
+      "energy_white_mix": 0.06,
+      "shoulder_highlight_mix": 0,
+      "elbow_angles": [
+        0,
+        0
+      ],
+      "arm_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 0,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    },
+    {
+      "tag": "Hit F2 restrained shoulder response",
+      "energy_white_mix": 0,
+      "shoulder_highlight_mix": 0,
+      "elbow_angles": [
+        -3,
+        3
+      ],
+      "arm_offsets": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "shoulder_offsets": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "knee": 0,
+      "core_center": [
+        33.5,
+        29.0
+      ]
+    }
+  ],
+  "core_anchor_pixels": [
+    33.5,
+    29.0
+  ],
+  "core_visual_attachment_offset_world_at_ppu64": [
+    0.0234375,
+    0.046875
+  ],
+  "projectile_opaque_max_pixel_center_radius": 11.067971810589327,
+  "projectile_pixel_center_diameter_world_at_ppu64": 0.3458741190809165,
+  "checks": {
+    "png_dimensions_rgba_cells": true,
+    "frame_edges_transparent_no_clipping": true,
+    "intact_core_position_and_outline_fixed": true,
+    "intact_shoulder_shapes_original_rigid": true,
+    "cast_fire_recovery_feet_fixed": true,
+    "idle_to_cast_F1_exact": true,
+    "cast_F6_to_fire_F1_exact": true,
+    "fire_F3_to_recovery_F1_exact": true,
+    "recovery_F5_to_idle_F1_exact": true,
+    "fire_plus_recovery_ms": 700,
+    "projectile_pixel_center_extent_within_diameter_point35": true,
+    "gif_decoding_counts_and_timing": true,
+    "webp_visible_rgba_exact": true,
+    "protected_files_unchanged": true,
+    "realtime_gif_visually_observed": false,
+    "unity_import_or_playback_tested": false,
+    "static_frame_contact_sheets_reviewed": true,
+    "core_luminance_charge_increases_and_recovery_decreases": true,
+    "all_ten_requested_png_files_present": true
+  },
+  "protected_hashes": {
+    "D:\\던전 게임\\아트 리소스\\몬스터 정지 이미지\\C-2R.png": "ff15342d4a9f907b788efe0aa76c8871581e7b99a62215f3f0ab75390fee895e",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\README_KO.md": "aff8a03ff177a9dbd38e3cb02f4d6f5e7107d8214139df82d5a1df5270d4ffe9",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\source-coordinate-inspection.png": "50915d6a2b67a8283bb52a71ddb066cbd9af5ed3ef370eb7121d87effaf7431f",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\Previews\\CrystalC2R_Idle_4f_64x64_v1.gif": "71c1504adf52c88233b749c24870ed4244b2259e882c11b20ed84360c108d9c9",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\Previews\\CrystalC2R_Idle_4f_64x64_v1_6x.png": "737cd8c62cdd1dd8b6742b63378fb121328a6ffee43a16e0af01aec8bf1bc934",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\Previews\\CrystalC2R_Idle_Move_Transition.gif": "6a4e1b0f9acd8ff708ff9a420cc3155b2b23f4735ce87369800cb03b500fdfbc",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\Previews\\CrystalC2R_Move_6f_64x64_v1.gif": "891a21b38c7d7f8e2b5c0f18549f3bb7367186d0401f83513e1b2e958e29e1d9",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\Previews\\CrystalC2R_Move_6f_64x64_v1_6x.png": "35fe8b7c1d2a907198db1f487a7fbab12fa19ec62a557f32e9c014c4685e84e6",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\Review\\validation.json": "b61f202ddfddbef977cd31f214bc254b2995295b7940397d9cb463974cb5aea5",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\Sprites\\CrystalC2R_Idle_4f_64x64_v1.png": "c1e4a0487652ed5c8e9765eb978698eae4467e5ca646e346adc1de2273683a52",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_IdleMove_v1\\Sprites\\CrystalC2R_Move_6f_64x64_v1.png": "4382cd7b5d222b06424737c5202f730726e5b2678c75c6337b8357c050b60717",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\CrystalC2R_Idle_4f_64x64_v1.png": "c1e4a0487652ed5c8e9765eb978698eae4467e5ca646e346adc1de2273683a52",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\CrystalC2R_Idle_4f_64x64_v1.png.meta": "7c896e57921d39ddb7fc39c98f4ad3bb07bef9844903b9a6b1c787e4de018465",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\CrystalC2R_Move_6f_64x64_v1.png": "4382cd7b5d222b06424737c5202f730726e5b2678c75c6337b8357c050b60717",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\CrystalC2R_Move_6f_64x64_v1.png.meta": "d89d91daaa9dbd4708e061ca88305e2f662c403efa49e966c4cac7cee33505f0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Idle_4f_64x64_v2.png": "8fb203aec0e14f0c75f5e8828af3e37c6e83392bbec9a3f9853630ab03ea0a1e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Idle_4f_64x64_v2.png.meta": "f90103747ddde6dcc1e3595e9f48773218941c7b21edd2e671180a71c4a8f62b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Move_6f_64x64_v2.png": "92d82e3002d0f99abffa7f48600e1f2289eacace7771de7a71f9d5e47f99adba",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Move_6f_64x64_v2.png.meta": "497870ccd5c7caedc08a01d2d2a0b08c9df4b487397db5cb3fda0d30ef0fa83f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat.meta": "d6eabda51f3a5a31217cf9fa62cc303f2017bffc11edf7461fc661815f9c342e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations.meta": "b6ed2ba95d428bcf29df7e2d8d1d3b321a39f71691c20260656e221abc091cbe",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX.meta": "d4ba5fb1d9c46f034949cc19b43ed845fc04f35bf06ebb2abfcd089d520961e7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Death_7f_64x64.png": "e0004d4cf70a3422a72e5d3a14a2a110c947ecf77a27015fab59ca5fcb0d86ad",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Death_7f_64x64.png.meta": "709fe61908dbde6fb51c6660916aa1e723e81258710410aee8de0d994dc8517e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Hit_3f_64x64.png": "59df2e9c9027e1997777fe497dfd6ec2b5803e2486929b40d9eb33823cf9953c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Hit_3f_64x64.png.meta": "4c29947128e40c193a88982d79a5c0f531837e86263746c51b756ce665eedcf0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64.png": "0e1203c8c273ca3fa0ffcf2f281e53139f76f0012ae04c2523f22a8a0df48945",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64.png.meta": "7391a689c01868e6c3be8e6ac5b7d0aec9906df6049b3e1e2a80953f08780509",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64_v2.png": "561d1a988414074007a168463b7baf8ef961c3796670dee2c2bb6327a148f3a5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64_v2.png.meta": "2c64dd7617229a7902033aa259276a90dfa880f4aa5b27758dc80dd9073de94f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64.png": "648cc4fae1fb3f9b363e769d85b56139be23b1ae9f6a533ca10008cad223f06b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64.png.meta": "56cd1b588021b2348dc41cd59d0bb6d5c6d19c2dcf58b24d371e2d7b60d6901a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64_v2.png": "04b8c08aaf3de3d487b89572c9adb9e494b011e6db4de268647014a7b0cd6864",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64_v2.png.meta": "ae19b6b6cff08bcd6175a3bff5b90d496e03cda8f9ca97d766cd8d8d58f74d34",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64.png": "c336b0fde5c195ebb408562495be90fdcfb940c0b671c1e8051dc48fcf020df8",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64.png.meta": "b892bdc01401398e66f00f441a443688a638fa821293d031f35ee12acaaee7d5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64_v2.png": "5de67924025a49532a4ebd409a6458e8d77afcb1054e0e4c77c79d7616ee7cab",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64_v2.png.meta": "e60752d474497f68e4f541fe17222378eae5396064ec5f7c1488218313427ae7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Windup_6f_64x64.png": "ae0548a4757758fb60c15afcbe48a5220eb4c2ced1df18685b8d40aa668f6172",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Windup_6f_64x64.png.meta": "1c2e188d5f0132240dc8793667451a9c909ff896e248c4337c120bb3cf5df88f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_DeathBurst.png": "ebda2c6677a0b3c602899a9ee41d21bec48f2aaea8d529c5d6db050b3c29aae3",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_DeathBurst.png.meta": "0b21e70446de57c756e0df646f5754e93f98f18c1debc71cd324b11db8783699",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_HitFragments.png": "ad88cc38b7cac13be178d2a829f651d87a35759897775e8d161c395ba3a4efe5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_HitFragments.png.meta": "7ac9864ab5f068c11490c911b38a8dfcf714e12877768d9679fa69af3cc1c1d4",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_JumpDust.png": "33d02ab43085c0c57cdfb107c7329752fa13e369a27ff7530166b0dabe3b625e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_JumpDust.png.meta": "a083ce66ab4bc346029f53d9e6dfc4072d2f9bfab42a5a7fac400d898b917f1d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingDust.png": "82684f0f8f44a3f81ccd45c81cda6777ed184523ddc17f2be4dd1497c583eb32",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingDust.png.meta": "5bcd7f981f0faa84a283d0936474e4e1e531794611c3b94d8e0a27fbaf1ea9ca",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingShockwave.png": "9c7ea37b2892b61781a428eed71e7bbc28638e15f6450d90da5b9f0892a0ee21",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingShockwave.png.meta": "8b8a8fe9d0fbbce9bb3e9a6821ffa84472e45fd553b44da9bb4213e902bb1496",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_StoneFragments.png": "0ba84f660e9a961e3f44fe2a21b4068f4dd94e77852181edd142f3744d2c20dc",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_StoneFragments.png.meta": "51d9eb6d85bc45efd8e97e840d1e71ea931582514616f33307a03ec8c6e977b5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat.meta": "442de89796e038f8db749cb3ef802b35bc48a1c1c0c991ea84f03ea89bfe0a6d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Idle_4f_64x64_v1.png": "0a40e4c49e6d421fb9d0e0401bd14fbd56a3bc86a4c60e12c99df8437412faad",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Idle_4f_64x64_v1.png.meta": "0da46db4791a91c737b9fbbc7b47a3ac65f2538a110a1f6ad84a17e422bdeb2d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Move_6f_64x64_v1.png": "c153835ca7cb39d25de00971fc1f31965aa531d5c953856ebf32e698b36f966d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Move_6f_64x64_v1.png.meta": "af11af8e3ff411b44fbf4f3b6e69c5fc6baeef913ddfc3b727d5e13aba846438",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations.meta": "cad12a667202d05533582084df0dc9fe7bcb8fd591189c5f5097053a19f32790",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX.meta": "f85bf4459070f145b9a88def6d8396736a2f434a3e4a36e22cd7d3cfbedca22f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_ChargeWindup_6f_64x64_v1.png": "1fe6b77a2c4d7c085e6c6e77590a922861053ebbc39b0a4115dce0f4584537a0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_ChargeWindup_6f_64x64_v1.png.meta": "73cef41657fcaf8a75dbe02476772d72356eb50563c02c3f884150c6fa76a695",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Charge_4f_64x64_v1.png": "a27c9a658b50c1858a29da3ece28c598e946d8281f92936e730ebee30bb69d12",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Charge_4f_64x64_v1.png.meta": "584ae1869e99e8b8a3ee085f1c44bbb1eea8b417e6981646c2821bdc6aefba15",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Death_7f_64x64_v1.png": "3526f1e78e0763dfc7b6487fcaeb5e84d8848370a7ba1c773d2a647b41d9a61d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Death_7f_64x64_v1.png.meta": "edeb52c9ad2d178bd51b9810a1c2154d072fc675a87fa6a766331eb9074716bf",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Hit_3f_64x64_v1.png": "bab74cf9af717b0c5bd9eaaa922677e1ac2f2f4320d2c5fe640d9874aa564533",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Hit_3f_64x64_v1.png.meta": "4719f1dbfaf41809bc1342f5fed03b16dc7a1d3769cedd3556f148d034c18154",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Recovery_5f_64x64_v1.png": "d9bf257b59d07d8c2a8f935298b9f109b3b27bdc5022ea5079c8a86a63a2ebf9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Recovery_5f_64x64_v1.png.meta": "68d4510e43b6fb9e64f11aec563405b4a03877e61f67d7bd0e633f9ed9c8a55a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_WallImpact_4f_64x64_v1.png": "6479f4f91b4323a56adad20b7512111f253caa15956ad5d76283cc879e9ada96",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_WallImpact_4f_64x64_v1.png.meta": "e3bda24474c98aaa1d41c582861965519b463cc4358f067bbe306f8723c81b3c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_ChargeDust.png": "83380f854e6be9370998931255ae0f20f06ff39fc57f28f56489923e1623a60d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_ChargeDust.png.meta": "827d9cb29d47390efd953edd91387c7b8c52fe10a625a8f61659c6616ea08973",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_ChargeTrail.png": "da2bbf9957a5d9ace13e443e774b080bf3303625bc8aa0ebeddd544057197cc5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_ChargeTrail.png.meta": "723c7a40b084994d9c0f12c7e0897bb4e647b3c8a27705ea94ef05db95877389",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_DeathFragments.png": "e030b267a05cc5f98d488a00a8e427742a6afb473c20be4dd06fd8de7b716ab3",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_DeathFragments.png.meta": "13610929990311328ec8c7fefa125b463afddbabbb4a9986f515b1453f82606e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_HitSparks.png": "b031190f6005bdc31ad4dc9db4dfb2493733562ef1d1898ac32d1503f6e3e5d2",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_HitSparks.png.meta": "95cd5f980b70ec751265ea51fa4b7ca623af580a62108b30aceae99490d742eb",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_WallImpact.png": "70cc26618ad938c2c4bd57f525a6a65b7cf31dee57c1ed31f22fdecca53c78f5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_WallImpact.png.meta": "9527bb5b49a215ff256cdf1a5d99bdc31285b96edad130844efda81a69015df0",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\CrystalMonsterAI.cs": "7b8048c7a56c36d2b651f5b316def8eea19a443c7ca8a88f121b272ef3accf48"
+  },
+  "limitations": [
+    "Browser file:// playback previously blocked; no workaround. Temporal visual naturalness not certified.",
+    "Character is 2D original-pixel rigging; unseen fracture surfaces not independently hand-painted.",
+    "VFX preview GIF uses binary-alpha coverage, exact RGBA is preserved in WebP/PNG.",
+    "Only visuals were produced. CrystalMonsterAI still owns projectile origin/direction/movement/damage and recovery timing."
+  ],
+  "core_mean_luminance_by_frame": {
+    "CastWindup_6f": [
+      218.22026583850928,
+      223.32699999999997,
+      228.1267304347826,
+      232.78210062111802,
+      239.73490559006208,
+      241.1502906832298
+    ],
+    "Fire_3f": [
+      241.1502906832298,
+      247.58321863354035,
+      232.78210062111802
+    ],
+    "Recovery_5f": [
+      232.78210062111802,
+      228.49816770186337,
+      223.56072795031054,
+      220.47622111801243,
+      218.22026583850928
+    ]
+  },
+  "preview_counts": {
+    "gif": 12,
+    "webp": 11
+  }
+}

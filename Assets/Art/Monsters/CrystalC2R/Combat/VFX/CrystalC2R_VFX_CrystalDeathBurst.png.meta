@@ -1,0 +1,344 @@
+fileFormatVersion: 2
+guid: 0d1178a96a87de74aa23fa8a2b4495c4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3297906970976430579
+    second: CrystalC2R_VFX_CrystalDeathBurst_0
+  - first:
+      213: -2880770848592102961
+    second: CrystalC2R_VFX_CrystalDeathBurst_1
+  - first:
+      213: 8014268386427548469
+    second: CrystalC2R_VFX_CrystalDeathBurst_2
+  - first:
+      213: -8798214868851400692
+    second: CrystalC2R_VFX_CrystalDeathBurst_3
+  - first:
+      213: 3509181194319135381
+    second: CrystalC2R_VFX_CrystalDeathBurst_4
+  - first:
+      213: -6966670014587200397
+    second: CrystalC2R_VFX_CrystalDeathBurst_5
+  - first:
+      213: -947301257784125752
+    second: CrystalC2R_VFX_CrystalDeathBurst_6
+  - first:
+      213: 5320595674319439840
+    second: CrystalC2R_VFX_CrystalDeathBurst_7
+  - first:
+      213: -1039908678305322471
+    second: CrystalC2R_VFX_CrystalDeathBurst_8
+  - first:
+      213: -8495485025638969948
+    second: CrystalC2R_VFX_CrystalDeathBurst_9
+  - first:
+      213: 5919252785853478079
+    second: CrystalC2R_VFX_CrystalDeathBurst_10
+  - first:
+      213: 8594059124788431623
+    second: CrystalC2R_VFX_CrystalDeathBurst_11
+  - first:
+      213: 336414285125807533
+    second: CrystalC2R_VFX_CrystalDeathBurst_12
+  - first:
+      213: 5964048252014048164
+    second: CrystalC2R_VFX_CrystalDeathBurst_13
+  - first:
+      213: 1029097649393648894
+    second: CrystalC2R_VFX_CrystalDeathBurst_14
+  - first:
+      213: -1310811207797097658
+    second: CrystalC2R_VFX_CrystalDeathBurst_15
+  - first:
+      213: 3346711923378438092
+    second: CrystalC2R_VFX_CrystalDeathBurst_16
+  - first:
+      213: -6013535674162814295
+    second: CrystalC2R_VFX_CrystalDeathBurst_17
+  - first:
+      213: 5458372638970609970
+    second: CrystalC2R_VFX_CrystalDeathBurst_18
+  - first:
+      213: -3954777417671468941
+    second: CrystalC2R_VFX_CrystalDeathBurst_19
+  - first:
+      213: -6242566362666943967
+    second: CrystalC2R_VFX_CrystalDeathBurst_20
+  - first:
+      213: 2569011678696159593
+    second: CrystalC2R_VFX_CrystalDeathBurst_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CrystalDeathBurst_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978ea0f88d1ae4247a622f7ce7ad771d
+      internalID: -3297906970976430579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CrystalDeathBurst_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563485f2496d17948a663dc9b7de58b5
+      internalID: -2880770848592102961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CrystalDeathBurst_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87f020a726df4348a5d669c57ebd278
+      internalID: 8014268386427548469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CrystalDeathBurst_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22d88b9826a95b47a7249680fb72c8c
+      internalID: -8798214868851400692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CrystalDeathBurst_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89484d8be6880aa48b7bab05904b9c4f
+      internalID: 3509181194319135381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CrystalDeathBurst_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a4aa48477472645a9b5ebbfed4096a
+      internalID: -6966670014587200397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CrystalDeathBurst_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 097a608676e94964aad5122f80d8d9cf
+      internalID: -947301257784125752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 53268c341dd33824aae28ad3e56402fe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CrystalC2R_VFX_CrystalDeathBurst_0: -3297906970976430579
+      CrystalC2R_VFX_CrystalDeathBurst_1: -2880770848592102961
+      CrystalC2R_VFX_CrystalDeathBurst_2: 8014268386427548469
+      CrystalC2R_VFX_CrystalDeathBurst_3: -8798214868851400692
+      CrystalC2R_VFX_CrystalDeathBurst_4: 3509181194319135381
+      CrystalC2R_VFX_CrystalDeathBurst_5: -6966670014587200397
+      CrystalC2R_VFX_CrystalDeathBurst_6: -947301257784125752
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

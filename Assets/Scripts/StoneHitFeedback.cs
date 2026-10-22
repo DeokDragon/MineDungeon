@@ -16,12 +16,14 @@ public sealed class StoneHitFeedback : MonoBehaviour
     private float age = float.PositiveInfinity;
     private StoneMonsterSpriteAnimation spriteAnimation;
     private IronMonsterSpriteAnimation ironAnimation;
+    private CrystalMonsterSpriteAnimation crystalAnimation;
     public bool IsBoss => boss;
 
     private void Awake()
     {
         spriteAnimation = GetComponent<StoneMonsterSpriteAnimation>();
         ironAnimation = GetComponent<IronMonsterSpriteAnimation>();
+        crystalAnimation = GetComponent<CrystalMonsterSpriteAnimation>();
         restPosition = body.transform.localPosition;
         restScale = body.transform.localScale;
         restColor = body.color;
@@ -32,7 +34,8 @@ public sealed class StoneHitFeedback : MonoBehaviour
         age = 0f;
         direction = incoming.sqrMagnitude > .001f ? incoming.normalized : Vector2.right;
         if (!(spriteAnimation && spriteAnimation.PlayHit(point)) &&
-            !(ironAnimation && ironAnimation.PlayHit(point))) Spawn(point, direction, false);
+            !(ironAnimation && ironAnimation.PlayHit(point)) &&
+            !(crystalAnimation && crystalAnimation.PlayHit(point))) Spawn(point, direction, false);
         ApplyReaction();
     }
 
@@ -40,7 +43,8 @@ public sealed class StoneHitFeedback : MonoBehaviour
     {
         Restore();
         if (!(spriteAnimation && spriteAnimation.PlayDeath()) &&
-            !(ironAnimation && ironAnimation.PlayDeath())) Spawn(body.transform.position, incoming, true);
+            !(ironAnimation && ironAnimation.PlayDeath()) &&
+            !(crystalAnimation && crystalAnimation.PlayDeath())) Spawn(body.transform.position, incoming, true);
         if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
             camera.Shake(boss ? .10f : .04f, boss ? .20f : .10f, boss);
     }

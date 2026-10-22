@@ -1,0 +1,309 @@
+fileFormatVersion: 2
+guid: 392c9140ecc14ca4b90d775bce2f09ec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1382767113562883570
+    second: CrystalC2R_VFX_CoreCharge_0
+  - first:
+      213: 7833310821740282515
+    second: CrystalC2R_VFX_CoreCharge_1
+  - first:
+      213: 150335661980058964
+    second: CrystalC2R_VFX_CoreCharge_2
+  - first:
+      213: -6661255435810834723
+    second: CrystalC2R_VFX_CoreCharge_3
+  - first:
+      213: -7368461398103316579
+    second: CrystalC2R_VFX_CoreCharge_4
+  - first:
+      213: -5338752114206791030
+    second: CrystalC2R_VFX_CoreCharge_5
+  - first:
+      213: -4156417103787451048
+    second: CrystalC2R_VFX_CoreCharge_6
+  - first:
+      213: 6758306484724738498
+    second: CrystalC2R_VFX_CoreCharge_7
+  - first:
+      213: 6783482456423668715
+    second: CrystalC2R_VFX_CoreCharge_8
+  - first:
+      213: 7648834482498889764
+    second: CrystalC2R_VFX_CoreCharge_9
+  - first:
+      213: 671765594944483642
+    second: CrystalC2R_VFX_CoreCharge_10
+  - first:
+      213: -3050197515771107969
+    second: CrystalC2R_VFX_CoreCharge_11
+  - first:
+      213: 179871651777086609
+    second: CrystalC2R_VFX_CoreCharge_12
+  - first:
+      213: -5556839568831916872
+    second: CrystalC2R_VFX_CoreCharge_13
+  - first:
+      213: -7005186670885317956
+    second: CrystalC2R_VFX_CoreCharge_14
+  - first:
+      213: -3723077064959818062
+    second: CrystalC2R_VFX_CoreCharge_15
+  - first:
+      213: 8224200472258061655
+    second: CrystalC2R_VFX_CoreCharge_16
+  - first:
+      213: -7803065054658834136
+    second: CrystalC2R_VFX_CoreCharge_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CoreCharge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65e081fa04fa34409ef537a6707d793
+      internalID: 1382767113562883570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CoreCharge_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5266d56ebf2b14f8a3b6242885dd77
+      internalID: 7833310821740282515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CoreCharge_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8369ca4cb34601a47b2d56d44f4c7498
+      internalID: 150335661980058964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CoreCharge_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e8dc33d4fd53d4c9a3ba278736fb06
+      internalID: -6661255435810834723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CoreCharge_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7eee2b31c891004ba4bba12c63abc76
+      internalID: -7368461398103316579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrystalC2R_VFX_CoreCharge_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81fbc9d785dd0e46ac65b2ec8d633e3
+      internalID: -5338752114206791030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a3ff76b4e2586804ba3d7dbebac70d48
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CrystalC2R_VFX_CoreCharge_0: 1382767113562883570
+      CrystalC2R_VFX_CoreCharge_1: 7833310821740282515
+      CrystalC2R_VFX_CoreCharge_2: 150335661980058964
+      CrystalC2R_VFX_CoreCharge_3: -6661255435810834723
+      CrystalC2R_VFX_CoreCharge_4: -7368461398103316579
+      CrystalC2R_VFX_CoreCharge_5: -5338752114206791030
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
