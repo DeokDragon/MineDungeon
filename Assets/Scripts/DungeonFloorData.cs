@@ -15,7 +15,9 @@ public sealed class DungeonFloorData : ScriptableObject
         var d = GetDifficulty(difficulty);
         if (d == null || !d.IsPlayable) { error = "준비 중인 던전입니다."; return false; }
         if (!monsterProfile) { error = "층·난이도 몬스터 데이터가 미설정입니다."; return false; }
-        return monsterProfile.CanStart(difficulty, d.normalRooms, out error);
+        if (!monsterProfile.CanStart(difficulty, d.normalRooms, out error)) return false;
+        try { monsterProfile.ValidateExperience(difficulty); error = null; return true; }
+        catch (Exception e) { error = floorNumber + "층 " + DifficultyName(difficulty) + ": " + e.Message; return false; }
     }
     [Serializable] public sealed class Difficulty
     {

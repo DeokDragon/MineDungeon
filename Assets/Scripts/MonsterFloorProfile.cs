@@ -16,10 +16,42 @@ public sealed class MonsterFloorProfile : ScriptableObject
         public float hpMultiplier = 1, attackMultiplier = 1;
         public Adjustment[] adjustments = new Adjustment[5];
         public MonsterMapProfile[] maps = Array.Empty<MonsterMapProfile>();
+        public bool experienceConfigured;
+        public int[] experience = new int[5];
+        public int bossExperience;
         public MonsterMapProfile Find(DungeonRoom map) => maps?.SingleOrDefault(p => p && p.map == map);
     }
     public Difficulty[] difficulties = { new Difficulty(), new Difficulty(), new Difficulty(), new Difficulty() };
     public Difficulty GetDifficulty(int index) => difficulties != null && index >= 0 && index < difficulties.Length ? difficulties[index] : null;
+    public static void ValidateExperienceValues(Difficulty d)
+    {
+        if (d == null || d.experience == null || d.experience.Length != 5 || d.experience.Any(n => n < 0) || d.bossExperience < 0)
+            throw new InvalidOperationException("5종 및 보스 EXP는 0~int.MaxValue 정수여야 합니다.");
+    }
+    public void ValidateExperience(int index)
+    {
+        var d = GetDifficulty(index);
+        if (d == null || !d.experienceConfigured) throw new InvalidOperationException("층·난이도 EXP 미설정");
+        ValidateExperienceValues(d);
+    }
+    public long ExpectedExperience(int index, MonsterMapProfile map)
+    {
+        ValidateExperience(index); ValidateMap(index, map);
+        long sum = 0;
+        foreach (var entry in map.entries) sum = checked(sum + GetDifficulty(index).experience[(int)MonsterProfileRuntime.Kind(entry.template)]);
+        return sum;
+    }
+    public void ApplyExperience(int index, DungeonRoom room, bool boss)
+    {
+        ValidateExperience(index);
+        foreach (var hp in room.GetComponentsInChildren<EnemyHealth>())
+        {
+            var reward = hp.GetComponent<EnemyReward>();
+            if (!reward || !reward.Reward) throw new InvalidOperationException("몬스터 보상 참조 누락: " + hp.name);
+            if (boss && !hp.GetComponent<StoneGolemBossAI>()) throw new InvalidOperationException("보스 EXP 대상이 돌골렘이 아닙니다.");
+            reward.ConfigureSpawnExperience(boss ? GetDifficulty(index).bossExperience : GetDifficulty(index).experience[(int)MonsterProfileRuntime.Kind(hp)]);
+        }
+    }
     public bool CanStart(int index, DungeonRoom[] maps, out string error)
     {
         try

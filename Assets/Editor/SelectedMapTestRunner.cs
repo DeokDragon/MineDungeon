@@ -20,6 +20,8 @@ internal static class SelectedMapTestRunner
         public float seconds;
         public long damageTaken, damageDealt, kills;
         public int deaths, total;
+        public bool experienceMeasured, expectedExperienceKnown;
+        public long experience, expectedExperience;
     }
     internal static Record Stats => JsonUtility.FromJson<Record>(SessionState.GetString(P + "Stats", "{}"));
     static SelectedMapTestRunner()
@@ -50,6 +52,7 @@ internal static class SelectedMapTestRunner
         p.ValidateMap(difficulty, layout);
         foreach (var species in MonsterDataStore.Catalog)
             p.Calculate(difficulty, AssetDatabase.LoadAssetAtPath<GameObject>(species.Path).GetComponent<EnemyHealth>(), out _, out _);
+        p.ValidateExperience(difficulty);
         if (EditorUtility.IsDirty(floor) || EditorUtility.IsDirty(p) || EditorUtility.IsDirty(layout))
             throw new InvalidOperationException("선택한 데이터의 미저장 변경을 먼저 저장하세요. 편집기 초안은 테스트에 적용되지 않습니다.");
     }
@@ -178,7 +181,9 @@ internal static class SelectedMapTestRunner
                 if (!rooms.EditorStartSelectedMap(floor, difficulty, map)) throw new InvalidOperationException("선택 맵 생성 실패");
                 entrance.EditorCompleteDungeonEntry();
                 VerifySpawn(floor.monsterProfile, difficulty, floor.monsterProfile.GetDifficulty(difficulty).Find(map), rooms.EditorTestRoom);
-                var record = new Record { total = floor.monsterProfile.GetDifficulty(difficulty).Find(map).entries.Length };
+                var record = new Record { total = floor.monsterProfile.GetDifficulty(difficulty).Find(map).entries.Length,
+                    experienceMeasured = true, expectedExperienceKnown = true,
+                    expectedExperience = floor.monsterProfile.ExpectedExperience(difficulty, floor.monsterProfile.GetDifficulty(difficulty).Find(map)) };
                 SessionState.SetString(P + "Stats", JsonUtility.ToJson(record));
                 SessionState.SetString(P + "State", "running"); SessionState.SetString(P + "Status", "전투 중");
             }
@@ -189,6 +194,7 @@ internal static class SelectedMapTestRunner
                     throw new InvalidOperationException("테스트 씬/플레이어/실행 상태가 변경되었습니다.");
                 var record = Stats; var result = run.Result;
                 record.seconds = result.seconds; record.damageTaken = result.damageTaken; record.damageDealt = result.damageDealt; record.kills = result.kills;
+                record.experience = run.GetComponent<RewardInventorySession>().RunRewardExperience;
                 SessionState.SetString(P + "Stats", JsonUtility.ToJson(record));
                 if (run.IsRunEnded)
                 {
@@ -205,6 +211,7 @@ internal static class SelectedMapTestRunner
         if (run && run.EditorSelectedMapTest && run.Result != null)
         {
             record.seconds = run.Result.seconds; record.damageTaken = run.Result.damageTaken; record.damageDealt = run.Result.damageDealt; record.kills = run.Result.kills;
+            record.experience = run.GetComponent<RewardInventorySession>().RunRewardExperience;
             if (run.IsRunEnded) status = run.IsRunCleared ? "success" : "failed";
         }
         SessionState.SetString(P + "Stats", JsonUtility.ToJson(record));
@@ -221,7 +228,8 @@ internal static class SelectedMapTestRunner
                 var hp = enemies.GetArrayElementAtIndex(i).objectReferenceValue as EnemyHealth; var entry = layout.entries[i];
                 balance.Calculate(difficulty, entry.template, out int expectedHp, out int expectedAttack);
                 if (!hp || MonsterProfileRuntime.Kind(hp) != MonsterProfileRuntime.Kind(entry.template) ||
-                    Vector3.Distance(hp.transform.localPosition, entry.localPosition) > .0001f || hp.MaxHealth != expectedHp || hp.CurrentHealth != expectedHp || MonsterProfileRuntime.Attack(hp) != expectedAttack)
+                    Vector3.Distance(hp.transform.localPosition, entry.localPosition) > .0001f || hp.MaxHealth != expectedHp || hp.CurrentHealth != expectedHp || MonsterProfileRuntime.Attack(hp) != expectedAttack ||
+                    !hp.GetComponent<EnemyReward>() || hp.GetComponent<EnemyReward>().EffectiveExperience != balance.GetDifficulty(difficulty).experience[(int)MonsterProfileRuntime.Kind(hp)])
                     throw new InvalidOperationException("생성된 몬스터 수치/배치 불일치: " + entry.id);
             }
         }

@@ -55,7 +55,7 @@ public sealed class RewardInventorySession : MonoBehaviour
         }
         RunMoney = RunRewardExperience = 0; runMaterials.Clear(); Changed?.Invoke();
     }
-    internal void GrantKillReward(MonsterRewardData reward)
+    internal void GrantKillReward(MonsterRewardData reward, int? experienceOverride = null)
     {
         if(reward==null || (DungeonRunManager.Instance!=null && DungeonRunManager.Instance.IsRunEnded))return;
         var save=GetComponent<CharacterSaveService>();save?.BeginTransaction();
@@ -69,7 +69,7 @@ public sealed class RewardInventorySession : MonoBehaviour
             string id=drop.material.id;totals[id]=SafeAdd(totals.TryGetValue(id,out var old)?old:0,amount);definitions[id]=drop.material;
         }
         GrantMoney(Math.Max(0,reward.money));
-        int xp=Math.Max(0,reward.experience);
+        int xp=experienceOverride ?? Math.Max(0,reward.experience);
         RunRewardExperience=SafeAdd(RunRewardExperience,xp);
         GetComponent<PlayerProgression>()?.GrantExperience(xp);
         foreach(var pair in totals)GrantMaterial(definitions[pair.Key],pair.Value);

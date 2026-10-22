@@ -55,6 +55,8 @@ internal sealed class SelectedMapTestPanel
         EditorGUILayout.LabelField("몬스터에게 가한 총 피해", record.damageDealt.ToString());
         EditorGUILayout.LabelField("몬스터 처치", record.kills + " / " + record.total);
         EditorGUILayout.LabelField("플레이어 사망 횟수", record.deaths.ToString());
+        if (validation == null) EditorGUILayout.LabelField("선택 맵 예상 EXP (저장 데이터)", floor.monsterProfile.ExpectedExperience(difficulty, floor.monsterProfile.GetDifficulty(difficulty).Find(map)).ToString());
+        EditorGUILayout.LabelField("이번 테스트 예상 / 실제 획득 EXP", (record.expectedExperienceKnown ? record.expectedExperience.ToString() : "미측정") + " / " + (record.experienceMeasured ? record.experience.ToString() : "미측정"));
         EditorGUILayout.HelpBox("피해량은 기존 전투 기록의 실제 HP 감소량 기준입니다(초과 피해 제외). 기본 이동·평타·E/R 스킬·물약·회피는 Game 뷰에서 조작하세요. 재시작은 Play를 완전히 종료한 뒤 다시 시작하므로 초기화에 시간이 걸릴 수 있습니다.", MessageType.None);
         history.Draw(floor, difficulty, map ? map.name : "");
     }

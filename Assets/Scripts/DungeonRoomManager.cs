@@ -179,20 +179,19 @@ public partial class DungeonRoomManager : MonoBehaviour
         if (oldRoom != null) oldRoom.gameObject.SetActive(false);
 
         DungeonRoom next = Instantiate(prefab, Vector3.zero, Quaternion.identity);
-        if (!isBoss)
+        try
         {
-            try
-            {
-                var balance = CurrentFloor.monsterProfile;
+            var balance = CurrentFloor.monsterProfile;
+            if (!isBoss)
                 MonsterProfileRuntime.Apply(next, balance.GetDifficulty(CurrentDifficulty).Find(prefab), balance, CurrentDifficulty);
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError("몬스터 프로필 적용 실패: " + e.Message, this);
-                next.gameObject.SetActive(false); Destroy(next.gameObject);
-                if (oldRoom) oldRoom.gameObject.SetActive(true);
-                loadingRoom = false; enabled = false; return;
-            }
+            balance.ApplyExperience(CurrentDifficulty, next, isBoss);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("몬스터 프로필 적용 실패: " + e.Message, this);
+            next.gameObject.SetActive(false); Destroy(next.gameObject);
+            if (oldRoom) oldRoom.gameObject.SetActive(true);
+            loadingRoom = false; enabled = false; return;
         }
         if (!next.IsConfigured())
         {

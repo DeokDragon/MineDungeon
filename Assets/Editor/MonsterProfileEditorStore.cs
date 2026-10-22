@@ -96,6 +96,7 @@ internal static class MonsterProfileEditorStore
                 {
                     if (check.GetDifficulty(d) == null) throw new InvalidOperationException("난이도 데이터 누락");
                     check.GetDifficulty(d).configured = true; check.ValidateBalance(d);
+                    MonsterFloorProfile.ValidateExperienceValues(check.GetDifficulty(d));
                     foreach (var s in MonsterDataStore.Catalog)
                         check.Calculate(d, AssetDatabase.LoadAssetAtPath<GameObject>(s.Path).GetComponent<EnemyHealth>(), out _, out _);
                     foreach (var map in check.GetDifficulty(d).maps ?? Array.Empty<MonsterMapProfile>())

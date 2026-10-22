@@ -17,6 +17,8 @@ internal static class SelectedMapTestHistory
         public int difficulty, deaths, total;
         public float seconds;
         public long damageTaken, damageDealt, kills;
+        public bool experienceMeasured, expectedExperienceKnown;
+        public long experience, expectedExperience;
     }
     [Serializable] sealed class FileData { public int version = 1; public List<Row> rows = new List<Row>(); }
     internal static string Error { get; private set; }
@@ -58,6 +60,8 @@ internal static class SelectedMapTestHistory
             if (SessionState.GetString(MetaKey + "Final", "") == row.runId) return;
             row.status = status; row.seconds = stats.seconds; row.damageTaken = stats.damageTaken; row.damageDealt = stats.damageDealt;
             row.kills = stats.kills; row.deaths = stats.deaths; row.total = stats.total;
+            row.experienceMeasured = stats.experienceMeasured; row.experience = stats.experience;
+            row.expectedExperienceKnown = stats.expectedExperienceKnown; row.expectedExperience = stats.expectedExperience;
             Upsert(row); Error = null;
             if (status == "success" || status == "failed") SessionState.SetString(MetaKey + "Final", row.runId);
         }
@@ -75,6 +79,19 @@ internal static class SelectedMapTestHistory
         foreach (var r in rows)
             b.Append(string.Join(",", new[] { Text(r.runId), Text(r.startedAtUtc), Text(r.floorId), Text(r.floorName), r.difficulty.ToString(CultureInfo.InvariantCulture), Text(r.mapId), Text(r.status),
                 r.seconds.ToString("R", CultureInfo.InvariantCulture), r.damageTaken.ToString(CultureInfo.InvariantCulture), r.damageDealt.ToString(CultureInfo.InvariantCulture), r.kills.ToString(CultureInfo.InvariantCulture), r.total.ToString(CultureInfo.InvariantCulture), r.deaths.ToString(CultureInfo.InvariantCulture) })).Append("\r\n");
+        return b.ToString();
+    }
+    // The original 13-column CSV is unchanged. EXP export explicitly appends two columns.
+    internal static string CsvWithExperience(Row[] rows)
+    {
+        string header = Csv(Array.Empty<Row>()).TrimEnd('\r', '\n') + ",expectedExperience,experience\r\n";
+        var b = new StringBuilder(header);
+        foreach (var r in rows)
+        {
+            string legacy = Csv(new[] { r }); legacy = legacy.Substring(legacy.IndexOf('\n') + 1).TrimEnd('\r', '\n');
+            b.Append(legacy).Append(',').Append(r.expectedExperienceKnown ? r.expectedExperience.ToString(CultureInfo.InvariantCulture) : "")
+                .Append(',').Append(r.experienceMeasured ? r.experience.ToString(CultureInfo.InvariantCulture) : "").Append("\r\n");
+        }
         return b.ToString();
     }
 }

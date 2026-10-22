@@ -23,11 +23,17 @@ using UnityEngine;
                 string path = EditorUtility.SaveFilePanel("전투 결과 CSV", "", "selected-map-results.csv", "csv");
                 if (path != "") { File.WriteAllText(path, SelectedMapTestHistory.Csv(rows), new UTF8Encoding(true)); message = "CSV를 내보냈습니다. 밸런스·배치·캐릭터 데이터는 변경하지 않습니다."; }
             }
+            if (GUILayout.Button("표시 기록 EXP 확장 CSV 내보내기 (기존 열 + 예상/실제 EXP)"))
+            {
+                string path = EditorUtility.SaveFilePanel("EXP 포함 전투 결과 CSV", "", "selected-map-results-exp.csv", "csv");
+                if (path != "") File.WriteAllText(path, SelectedMapTestHistory.CsvWithExperience(rows), new UTF8Encoding(true));
+            }
             scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.Height(260));
-            Header("실행 ID", "시작 시각 (UTC)", "층 / 난이도 / 맵", "상태", "초", "받은 피해", "가한 피해", "처치/전체", "사망");
+            Header("실행 ID", "시작 시각 (UTC)", "층 / 난이도 / 맵", "상태", "초", "받은 피해", "가한 피해", "처치/전체", "사망", "예상 EXP", "획득 EXP");
             foreach (var r in rows) Header(r.runId.Substring(0, Math.Min(8, r.runId.Length)), r.startedAtUtc,
                 r.floorId + " / " + DungeonFloorData.DifficultyName(r.difficulty) + " / " + r.mapId,
-                Label(r.status), r.seconds.ToString("F1"), r.damageTaken.ToString(), r.damageDealt.ToString(), r.kills + "/" + r.total, r.deaths.ToString());
+                Label(r.status), r.seconds.ToString("F1"), r.damageTaken.ToString(), r.damageDealt.ToString(), r.kills + "/" + r.total, r.deaths.ToString(),
+                r.expectedExperienceKnown ? r.expectedExperience.ToString() : "미측정", r.experienceMeasured ? r.experience.ToString() : "미측정");
             EditorGUILayout.EndScrollView();
         }
         catch (Exception e) { message = e.Message; }
@@ -36,7 +42,7 @@ using UnityEngine;
     }
     static void Header(params string[] cells)
     {
-        float[] widths = { 80, 245, 260, 90, 65, 90, 90, 90, 50 };
+        float[] widths = { 80, 245, 260, 90, 65, 90, 90, 90, 50, 90, 90 };
         using (new EditorGUILayout.HorizontalScope())
             for (int i = 0; i < cells.Length; i++) GUILayout.Label(cells[i], GUILayout.Width(widths[i]));
     }

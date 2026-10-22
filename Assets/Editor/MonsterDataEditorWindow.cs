@@ -20,6 +20,7 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     [SerializeField] MonsterPlacementPanel placement = new MonsterPlacementPanel();
     [SerializeField] MonsterBalancePanel balance = new MonsterBalancePanel();
     [SerializeField] SelectedMapTestPanel selectedMapTest = new SelectedMapTestPanel();
+    [SerializeField] MonsterExperiencePanel experience = new MonsterExperiencePanel();
 
     [MenuItem("Tools/MineDungeon/데이터 편집기")]
     public static void Open() => GetWindow<MonsterDataEditorWindow>("몬스터 데이터").Show();
@@ -48,10 +49,11 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     }
     void OnGUI()
     {
-        tab = GUILayout.Toolbar(tab, new[] { "몬스터 수치", "몬스터 배치", "층·난이도 밸런스", "선택 맵 테스트" });
+        tab = GUILayout.Toolbar(tab, new[] { "몬스터 수치", "몬스터 배치", "층·난이도 밸런스", "선택 맵 테스트", "경험치" });
         if (tab == 1) { placement.Draw(); return; }
         if (tab == 2) { balance.Draw(); return; }
         if (tab == 3) { selectedMapTest.Draw(); return; }
+        if (tab == 4) { experience.Draw(); return; }
         DrawStats();
     }
     void OnInspectorUpdate() { if (tab == 3) Repaint(); }
