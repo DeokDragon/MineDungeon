@@ -63,3 +63,35 @@ MonoBehaviour:
     localScale: {x: 1, y: 1, z: 1}
     reservedHpAdjustment: 0
     reservedAttackAdjustment: 0
+  - id: 332da1a4824547f5b1e411536d8ff65c
+    template: {fileID: 1939751819936256716, guid: fca63f807ff20c54e8b83301983d09c7, type: 3}
+    embeddedPath: 
+    localPosition: {x: -10.61844, y: 13.25724, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 06d3dc0e54524fa28bc098f112876a9f
+    template: {fileID: 2553930121460554645, guid: 3f797d1391208e342adaf86752bb96cf, type: 3}
+    embeddedPath: 
+    localPosition: {x: -1.61844, y: 13.25724, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 421666d8b37544cdacf49aa0532ebcc1
+    template: {fileID: 3142899006696005507, guid: a95cad705feced64fa5c841a6a0ea996, type: 3}
+    embeddedPath: 
+    localPosition: {x: 7.38156, y: 13.25724, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 4f7c33c5ea21436b8272b0a6b043b0d5
+    template: {fileID: 1666796862346513108, guid: 1bf2b6d78e04d3f4582dc6444b041553, type: 3}
+    embeddedPath: 
+    localPosition: {x: 10.38156, y: -12.24276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0

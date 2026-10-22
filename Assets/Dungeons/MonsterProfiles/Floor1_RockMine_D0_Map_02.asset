@@ -63,3 +63,51 @@ MonoBehaviour:
     localScale: {x: 1, y: 1, z: 1}
     reservedHpAdjustment: 0
     reservedAttackAdjustment: 0
+  - id: da585c16806d492eb20df976d15ce257
+    template: {fileID: 1939751819936256716, guid: fca63f807ff20c54e8b83301983d09c7, type: 3}
+    embeddedPath: 
+    localPosition: {x: -11.86844, y: -14.99276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 9694bb6308314f8794c78e17b1e51545
+    template: {fileID: 2553930121460554645, guid: 3f797d1391208e342adaf86752bb96cf, type: 3}
+    embeddedPath: 
+    localPosition: {x: -11.86844, y: -10.49276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 9b96a33b46754cf2b5f87956758b8e23
+    template: {fileID: 3142899006696005507, guid: a95cad705feced64fa5c841a6a0ea996, type: 3}
+    embeddedPath: 
+    localPosition: {x: 4.13156, y: -14.99276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: c8eacbb9ae234c13b917ca70d96d318f
+    template: {fileID: 1666796862346513108, guid: 1bf2b6d78e04d3f4582dc6444b041553, type: 3}
+    embeddedPath: 
+    localPosition: {x: 8.63156, y: -14.99276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 4f15fef75a0a4ce795045f66dcdef9c3
+    template: {fileID: 9116301093896859827, guid: 929d2143ab0681c47a2733b3fd98eddf, type: 3}
+    embeddedPath: 
+    localPosition: {x: 4.13156, y: -10.49276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 6e66ae5c41e34202b3aa3206e8c11cb9
+    template: {fileID: 1939751819936256716, guid: fca63f807ff20c54e8b83301983d09c7, type: 3}
+    embeddedPath: 
+    localPosition: {x: 8.63156, y: -10.49276, z: 0}
+    localEuler: {x: -0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
