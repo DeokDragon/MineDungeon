@@ -26,16 +26,24 @@ public class PlayerHealth : MonoBehaviour
     public event System.Action Damaged;
     private bool movementWasEnabled;
     private bool attackWasEnabled;
+    private PlayerProgression growth;
+    private int effectiveMaxHealth;
+    private bool initialized;
 
     public bool IsDead { get; private set; }
     public event System.Action<PlayerHealth> Died;
     public int CurrentHealth => currentHealth;
-    public int MaxHealth => maxHealth;
+    public int MaxHealth => initialized ? effectiveMaxHealth : maxHealth;
+    public int MaxHealthWithStatBonus => MaxHealth;
 
     private void Awake()
     {
+        if (maxHealth <= 0)
+        { Debug.LogWarning("Invalid base maximum HP; player health initialization blocked.", this); enabled = false; return; }
+        effectiveMaxHealth = maxHealth;
         currentHealth = maxHealth;
         IsDead = false;
+        initialized = true;
 
         movement = GetComponent<PlayerMovement>();
         attack = GetComponent<PlayerAttack>();
@@ -44,6 +52,51 @@ public class PlayerHealth : MonoBehaviour
 
         if (bodyRenderer != null)
             originalColor = bodyRenderer.color;
+    }
+
+    private void OnEnable() { RefreshGrowthHealth(); }
+    // The persistent run manager's Awake can run after this component's Awake/OnEnable.
+    private void Start() { RefreshGrowthHealth(); }
+    private void OnDisable()
+    {
+        if (growth != null) growth.Changed -= OnGrowthChanged;
+        growth = null;
+    }
+    private void OnGrowthChanged() { RefreshGrowthHealth(); }
+
+    public bool RefreshGrowthHealth()
+    {
+        if (!initialized) return false;
+        var run = DungeonRunManager.Instance;
+        var source = run != null ? run.GetComponent<PlayerProgression>() : null;
+        if (growth != source)
+        {
+            if (growth != null) growth.Changed -= OnGrowthChanged;
+            growth = source;
+            if (growth != null) growth.Changed += OnGrowthChanged;
+        }
+        if (growth == null) return false;
+        long nextMaximum = (long)maxHealth + growth.MaximumHealthBonus;
+        int adjusted;
+        if (maxHealth <= 0 || growth.HealthPoints < 0 || growth.HealthPoints > 100 ||
+            nextMaximum <= 0 || nextMaximum > int.MaxValue ||
+            !TryScaleHealth(currentHealth, effectiveMaxHealth, (int)nextMaximum, IsDead, out adjusted))
+        { Debug.LogWarning("Invalid HP state; growth HP update blocked without changing health.", this); return false; }
+        effectiveMaxHealth = (int)nextMaximum;
+        currentHealth = adjusted;
+        // This is a stat update, never Heal(), damage, potion use or resurrection.
+        return true;
+    }
+
+    internal static bool TryScaleHealth(int current, int previousMaximum, int nextMaximum, bool dead, out int adjusted)
+    {
+        adjusted = current;
+        if (previousMaximum <= 0 || nextMaximum <= 0 || current < 0 || current > previousMaximum) return false;
+        if (dead) { adjusted = 0; return true; }
+        if (previousMaximum == nextMaximum) return true;
+        // Exact integer ceil(current / previousMaximum * nextMaximum), without float drift.
+        adjusted = (int)System.Math.Min(nextMaximum, ((long)current * nextMaximum + previousMaximum - 1) / previousMaximum);
+        return true;
     }
 
     private void Update()
@@ -164,9 +217,9 @@ public class PlayerHealth : MonoBehaviour
         }
 
         currentHealth = Mathf.Clamp(
-            Mathf.CeilToInt(maxHealth * reviveHealthRatio),
+            Mathf.CeilToInt(MaxHealth * reviveHealthRatio),
             1,
-            maxHealth
+            MaxHealth
         );
 
         if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
@@ -214,7 +267,7 @@ public class PlayerHealth : MonoBehaviour
             return;
 
         int previousHealth = currentHealth;
-        currentHealth = (int)System.Math.Min(maxHealth, (long)currentHealth + amount);
+        currentHealth = (int)System.Math.Min(MaxHealth, (long)currentHealth + amount);
         DungeonRunManager.Instance?.RecordHealing(currentHealth-previousHealth);
 
         Debug.Log(

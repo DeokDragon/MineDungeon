@@ -15,8 +15,10 @@ MonoBehaviour:
   id: EarthSmash
   displayName: "\uB300\uC9C0 \uBD84\uC1C4"
   icon: {fileID: 0}
+  rarity: 0
   kind: 0
   primaryType: 0
+  baseDamage: 18
   physicalCoefficient: 2.5
   magicCoefficient: 0.2
   cooldown: 6

@@ -109,6 +109,7 @@ public partial class DungeonRoomManager : MonoBehaviour
     {
         if (!configured || !IsPreparing || IsTransitioning || currentRoom != null ||
             DungeonRunManager.Instance == null || DungeonRunManager.Instance.IsRestarting) return false;
+        if (!player.RefreshGrowthHealth()) return false;
         if (CharacterSaveService.Current != null && !CharacterSaveService.Current.Flush()) return false;
         normalRoomPrefabs=setting.normalRooms;bossRoomPrefab=setting.bossRoom;normalRoomCount=setting.normalRoomCount;
         IsPreparing = false; // Guard before generation; double clicks cannot create another room.

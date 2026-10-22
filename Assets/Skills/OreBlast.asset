@@ -15,8 +15,10 @@ MonoBehaviour:
   id: OreBlast
   displayName: "\uBD88\uC548\uC815 \uAD11\uC11D \uBC1C\uD30C"
   icon: {fileID: 0}
+  rarity: 0
   kind: 3
   primaryType: 1
+  baseDamage: 18
   physicalCoefficient: 0.2
   magicCoefficient: 3
   cooldown: 9.5

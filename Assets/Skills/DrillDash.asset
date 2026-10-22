@@ -15,8 +15,10 @@ MonoBehaviour:
   id: DrillDash
   displayName: "\uCC29\uC554 \uB3CC\uACA9"
   icon: {fileID: 0}
+  rarity: 0
   kind: 1
   primaryType: 0
+  baseDamage: 13
   physicalCoefficient: 1.8
   magicCoefficient: 0.2
   cooldown: 8

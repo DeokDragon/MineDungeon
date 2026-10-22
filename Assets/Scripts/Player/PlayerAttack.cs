@@ -28,12 +28,16 @@ public class PlayerAttack : MonoBehaviour
     public float AttackInterval => attackInterval;
     private bool damageApplied;
     private bool waitForAttackRelease;
+    private PlayerSkillAttackPower attackPower;
+    public int EstimatedDamage => PlayerSkillAttackPower.CalculateDamage(attackDamage,
+        attackPower != null ? attackPower.PhysicalAttack : 0f);
 
     private readonly HashSet<EnemyHealth> hitEnemies =
         new HashSet<EnemyHealth>();
 
     private void Awake()
     {
+        attackPower = GetComponent<PlayerSkillAttackPower>();
         if (aimCamera == null)
             aimCamera = Camera.main;
     }
@@ -146,6 +150,7 @@ public class PlayerAttack : MonoBehaviour
         );
 
         hitEnemies.Clear();
+        int damage = EstimatedDamage;
 
         foreach (Collider2D target in targets)
         {
@@ -175,7 +180,7 @@ public class PlayerAttack : MonoBehaviour
                 continue;
 
             hitEnemies.Add(health);
-            health.TryTakeDamage(attackDamage, hitPoint, forward);
+            health.TryTakeDamage(damage, hitPoint, forward);
         }
     }
 

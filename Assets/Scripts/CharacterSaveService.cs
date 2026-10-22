@@ -13,7 +13,7 @@ public sealed class CharacterSaveService : MonoBehaviour
     private PlayerProgression growth;
     private RewardInventorySession rewards;
     private SkillInventorySession inventory;
-    private bool ready, dirty, writing, invalidPrimary;
+    private bool ready, dirty, writing, invalidPrimary, stopping;
     private int transactions, lastSavedLevel = 1;
     private float writeAt;
     private readonly List<SavedItem> unknownSkills = new List<SavedItem>(), unknownMaterials = new List<SavedItem>();
@@ -24,6 +24,7 @@ public sealed class CharacterSaveService : MonoBehaviour
     public string SavePath { get; private set; }
     public float ShakeMultiplier { get; private set; } = 1;
     public int SuccessfulWrites { get; private set; }
+    internal bool CanCommitInvestment => ready && isActiveAndEnabled && !LoadBlocked && !writing && !stopping && transactions == 0;
     public static CharacterSaveService Current => DungeonRunManager.Instance != null ? DungeonRunManager.Instance.GetComponent<CharacterSaveService>() : null;
     private void Awake()
     {
@@ -62,17 +63,17 @@ public sealed class CharacterSaveService : MonoBehaviour
         }
         CharacterSnapshot prepared;
         if (!CharacterSaveFile.TryPrepareGrowth(data, growth, out prepared, out error)) { BlockGrowthLoad(error); return; }
-        if (data.version == 1)
+        if (data.version < 3)
         {
             // Commit the complete snapshot before applying anything to the live sessions.
             if (!CharacterSaveFile.Write(SavePath, prepared, invalidPrimary, out error))
             { BlockGrowthLoad("이전 저장 실패: " + error); return; }
             invalidPrimary = false; dirty = false; SuccessfulWrites++;
-            Status = "성장 데이터를 v2로 이전했습니다.";
+            Status = "성장 데이터를 v3로 이전했습니다.";
         }
         data = prepared;
         GetComponent<DungeonRunManager>().LastSettledPlayId=data.lastSettledPlayId;
-        growth.RestoreGrowth(data.level, data.experience, data.points);
+        growth.RestoreGrowth(data.level, data.experience, data.points, data.healthPoints, data.physicalPoints, data.magicPoints);
         var knownSkills = new List<SavedItem>();
         foreach (var row in data.skills) { if (row == null || string.IsNullOrEmpty(row.id)) continue; if (FindSkill(row.id) != null) knownSkills.Add(row); else { unknownSkills.Add(row); Debug.LogWarning("Unknown saved skill retained: " + row.id); } }
         inventory.RestoreSaved(knownSkills, FindSkill, data.eSlot, data.rSlot);
@@ -90,11 +91,39 @@ public sealed class CharacterSaveService : MonoBehaviour
     private MaterialData FindMaterial(string id) => Array.Find(materialCatalog ?? Array.Empty<MaterialData>(), s => s != null && s.id == id);
     public CharacterSnapshot Capture()
     {
-        var data = new CharacterSnapshot { level = growth.Level, experience = growth.Experience, points = growth.UnspentStatPoints, money = rewards.Money, eSlot = inventory.SavedSlot(0), rSlot = inventory.SavedSlot(1), shakeMultiplier = ShakeMultiplier };
+        var data = new CharacterSnapshot { level = growth.Level, experience = growth.Experience, points = growth.UnspentStatPoints,
+            healthPoints = growth.HealthPoints, physicalPoints = growth.PhysicalPoints, magicPoints = growth.MagicPoints,
+            money = rewards.Money, eSlot = inventory.SavedSlot(0), rSlot = inventory.SavedSlot(1), shakeMultiplier = ShakeMultiplier };
         data.lastSettledPlayId=GetComponent<DungeonRunManager>().LastSettledPlayId;
         foreach (var entry in inventory.Owned) data.skills.Add(new SavedItem { id = entry.Skill.id, order = entry.RegistrationOrder });
         foreach (var entry in rewards.Materials) data.materials.Add(new SavedItem { id = entry.Data.id, quantity = entry.Quantity, order = entry.RegistrationOrder });
         data.skills.AddRange(unknownSkills); data.materials.AddRange(unknownMaterials); return data;
+    }
+
+    internal bool TryCommitInvestment(PlayerProgression source, PlayerProgression.Stat stat, int amount, out string error)
+    {
+        error = null;
+        if (!CanCommitInvestment || source != growth || !growth.CanInvest || amount <= 0 ||
+            amount > growth.UnspentStatPoints || growth.PointsIn(stat) < 0 || amount > 100 - growth.PointsIn(stat))
+        { error = "현재 상태에서는 투자할 수 없습니다."; return false; }
+        var candidate = Capture();
+        candidate.points -= amount;
+        if (stat == PlayerProgression.Stat.Health) candidate.healthPoints += amount;
+        else if (stat == PlayerProgression.Stat.Physical) candidate.physicalPoints += amount;
+        else candidate.magicPoints += amount;
+        writing = true;
+        try
+        {
+            // No live mutation or Changed event until the entire candidate is on disk.
+            if (!CharacterSaveFile.Write(SavePath, candidate, invalidPrimary, out error))
+            { Status = "저장 실패: 스탯 투자가 적용되지 않았습니다. 다시 시도해 주세요."; return false; }
+            invalidPrimary = false; dirty = false; lastSavedLevel = growth.Level; SuccessfulWrites++; Status = "";
+            // Existing Changed subscribers may request an ordinary follow-up save; any such
+            // changes remain dirty, rather than being cleared after notification.
+            growth.ApplySavedInvestment(candidate.points, candidate.healthPoints, candidate.physicalPoints, candidate.magicPoints);
+            return true;
+        }
+        finally { writing = false; }
     }
 #if UNITY_EDITOR
     // Synchronous save service: no old worker can finish after this transaction.
@@ -160,9 +189,10 @@ public sealed class CharacterSaveService : MonoBehaviour
         finally { writing = false; }
     }
     private void Update() { if (dirty && transactions == 0 && Time.unscaledTime >= writeAt) Flush(); }
-    private void OnApplicationQuit() { if (ready && !LoadBlocked) Flush(); }
+    private void OnApplicationQuit() { stopping = true; if (ready && !LoadBlocked) Flush(); }
     private void OnDestroy()
     {
+        stopping = true;
         if (!ready) return;
         growth.Changed -= RequestSave; rewards.Changed -= RequestSave; inventory.Changed -= RequestSave;
     }

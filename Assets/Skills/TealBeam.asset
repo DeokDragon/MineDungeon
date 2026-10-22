@@ -15,8 +15,10 @@ MonoBehaviour:
   id: TealBeam
   displayName: "\uCCAD\uB85D \uAD11\uC120"
   icon: {fileID: 0}
+  rarity: 0
   kind: 2
   primaryType: 1
+  baseDamage: 15
   physicalCoefficient: 0.2
   magicCoefficient: 2.4
   cooldown: 7

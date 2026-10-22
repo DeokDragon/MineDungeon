@@ -13,9 +13,10 @@ using UnityEngine;
 }
 [Serializable] public sealed class CharacterSnapshot
 {
-    public int version = 2;
+    public int version = 3;
     public bool progressionV2Applied = true;
     public int level = 1, experience, points = 3;
+    public int healthPoints, physicalPoints, magicPoints;
     public long money;
     public List<SavedItem> skills = new List<SavedItem>();
     public List<SavedItem> materials = new List<SavedItem>();
@@ -43,7 +44,7 @@ public static class CharacterSaveFile
             if (envelope == null || string.IsNullOrEmpty(envelope.payload) || envelope.checksum != Hash(envelope.payload)) throw new InvalidDataException("Checksum mismatch");
             data = JsonUtility.FromJson<CharacterSnapshot>(envelope.payload);
             if (data == null) throw new InvalidDataException("Invalid character save");
-            if (data.version != 1 && data.version != 2) throw new InvalidDataException(GrowthConflict + "unsupported save version " + data.version);
+            if (data.version < 1 || data.version > 3) throw new InvalidDataException(GrowthConflict + "unsupported save version " + data.version);
             // v1 has no investment feature. Unknown fields could encode investment data;
             // stop instead of discarding them through JsonUtility's unknown-field handling.
             const string known = "|version|level|experience|points|money|skills|materials|id|quantity|order|eSlot|rSlot|lastSettledPlayId|shakeMultiplier|";
@@ -56,14 +57,22 @@ public static class CharacterSaveFile
                 if (next >= envelope.payload.Length || envelope.payload[next] != ':') continue;
                 string field = token.Value.Substring(1, token.Length - 2);
                 fields.Add(field);
-                if (!known.Contains("|" + field + "|") && !(data.version == 2 && field == "progressionV2Applied"))
+                if (!known.Contains("|" + field + "|") && !(data.version >= 2 && field == "progressionV2Applied") &&
+                    !(data.version == 3 && (field == "healthPoints" || field == "physicalPoints" || field == "magicPoints")))
                     throw new InvalidDataException(GrowthConflict + "unknown v" + data.version + " field " + field);
             }
             foreach (string field in new[] { "version", "level", "experience", "points" })
                 if (!fields.Contains(field))
                     throw new InvalidDataException(GrowthConflict + "missing " + field);
-            if (data.version == 2 && (!fields.Contains("progressionV2Applied") || !data.progressionV2Applied))
+            if (data.version >= 2 && (!fields.Contains("progressionV2Applied") || !data.progressionV2Applied))
                 throw new InvalidDataException(GrowthConflict + "incomplete v2 migration");
+            if (data.version == 3)
+            {
+                foreach (string field in new[] { "healthPoints", "physicalPoints", "magicPoints" })
+                    if (!fields.Contains(field)) throw new InvalidDataException(GrowthConflict + "missing " + field);
+                if (!PlayerProgression.ValidPointTotal(data.level, data.points, data.healthPoints, data.physicalPoints, data.magicPoints))
+                    throw new InvalidDataException(GrowthConflict + "invalid investment ranges or point total");
+            }
             if (data.level < 1 || data.experience < 0 || data.points < 0)
                 throw new InvalidDataException(GrowthConflict + "negative growth or invalid level");
             if (data.money < 0 || float.IsNaN(data.shakeMultiplier) || float.IsInfinity(data.shakeMultiplier)) throw new InvalidDataException("Invalid character save");
@@ -77,25 +86,29 @@ public static class CharacterSaveFile
     {
         prepared = null; error = null;
         bool legacy = source.version == 1;
-        if ((!legacy && source.version != 2) || source.level < 1 || source.level > (legacy ? 5 : 50) ||
+        bool investmentsValid = source.version == 3
+            ? PlayerProgression.ValidPointTotal(source.level, source.points, source.healthPoints, source.physicalPoints, source.magicPoints)
+            : source.healthPoints == 0 && source.physicalPoints == 0 && source.magicPoints == 0 &&
+                source.points == (legacy ? source.level - 1 : source.level * 3L);
+        if ((!legacy && source.version != 2 && source.version != 3) || source.level < 1 || source.level > (legacy ? 5 : 50) ||
             source.level > growth.MaximumLevel || source.experience < 0 ||
             (source.level == (legacy ? 5 : growth.MaximumLevel) ? source.experience != 0 :
                 source.experience >= growth.RequiredAt(source.level)) ||
             (legacy && source.level < 5 && source.experience >= 100 + 50 * (source.level - 1)) ||
-            source.points != (legacy ? source.level - 1 : source.level * 3) ||
+            !investmentsValid ||
             (!legacy && !source.progressionV2Applied))
         { error = GrowthConflict + "v" + source.version + " Lv" + source.level + " EXP=" + source.experience +
             " points=" + source.points + "; invalid growth or migration state, no values were corrected"; return false; }
         prepared = JsonUtility.FromJson<CharacterSnapshot>(JsonUtility.ToJson(source));
-        prepared.version = 2; prepared.progressionV2Applied = true;
+        prepared.version = 3; prepared.progressionV2Applied = true;
         if (legacy) prepared.points = source.level * 3; // Known v1 investment is zero, never add to old points.
         return true;
     }
 
-    private static void ProtectBeforeMigration(string path)
+    private static void ProtectBeforeMigration(string path, int targetVersion)
     {
         // Immutable, content-addressed copies survive all later .bak rotations and retries.
-        string folder = path + ".pre-v2";
+        string folder = path + ".pre-v" + targetVersion;
         foreach (string original in new[] { path, path + ".bak" })
         {
             if (!File.Exists(original)) continue;
@@ -121,13 +134,17 @@ public static class CharacterSaveFile
         error = null;
         try
         {
-            if (data == null || data.version != 2 || !data.progressionV2Applied)
-                throw new InvalidDataException("Only completed v2 snapshots can be written");
+            if (data == null || data.version != 3 || !data.progressionV2Applied ||
+                !PlayerProgression.ValidPointTotal(data.level, data.points, data.healthPoints, data.physicalPoints, data.magicPoints))
+                throw new InvalidDataException("Only completed v3 snapshots with valid investment totals can be written");
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             CharacterSnapshot existing; string readError;
-            bool legacy = (TryRead(path, out existing, out readError) && existing.version == 1) |
-                (TryRead(path + ".bak", out existing, out readError) && existing.version == 1);
-            if (data.version == 2 && legacy) ProtectBeforeMigration(path);
+            bool primaryRead = TryRead(path, out existing, out readError);
+            int primaryVersion = primaryRead ? existing.version : 0;
+            bool backupRead = TryRead(path + ".bak", out existing, out readError);
+            int backupVersion = backupRead ? existing.version : 0;
+            if (primaryVersion == 1 || backupVersion == 1) ProtectBeforeMigration(path, 2);
+            if ((primaryVersion > 0 && primaryVersion < 3) || (backupVersion > 0 && backupVersion < 3)) ProtectBeforeMigration(path, 3);
             var payload = JsonUtility.ToJson(data);
             var bytes = Encoding.UTF8.GetBytes(JsonUtility.ToJson(new Envelope { payload = payload, checksum = Hash(payload) }, true));
             string temp = path + ".tmp";
