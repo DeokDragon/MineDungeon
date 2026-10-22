@@ -26,6 +26,15 @@ public class PlayerAttack : MonoBehaviour
     private bool isAttacking;
     public bool IsAttacking => isAttacking;
     public float AttackInterval => attackInterval;
+    public float EffectiveAttackRange
+    {
+        get
+        {
+            var run = DungeonRunManager.Instance;
+            var growth = run != null ? run.GetComponent<PlayerProgression>() : null;
+            return attackRange * (growth != null && growth.HasPhysical20Passive ? 1.15f : 1f);
+        }
+    }
     private bool damageApplied;
     private bool waitForAttackRelease;
     private PlayerSkillAttackPower attackPower;
@@ -145,7 +154,7 @@ public class PlayerAttack : MonoBehaviour
 
         Collider2D[] targets = Physics2D.OverlapCircleAll(
             origin,
-            attackRange,
+            EffectiveAttackRange,
             enemyLayer
         );
 
@@ -197,7 +206,7 @@ public class PlayerAttack : MonoBehaviour
 
         // Scene 화면에 최대 공격 거리 표시
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(weaponPivot.position, attackRange);
+        Gizmos.DrawWireSphere(weaponPivot.position, EffectiveAttackRange);
     }
     public void CancelAttack()
     {

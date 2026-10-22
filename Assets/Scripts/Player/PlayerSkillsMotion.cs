@@ -18,7 +18,7 @@ public partial class PlayerSkills
     private IEnumerator Drill(Cast c)
     {
         var v = Visual(c);
-        v.Configure(c.origin, c.direction, StripLength(c.origin, c.direction, c.data.range, c.data.width), c.data.width, false, ColorFor(c));
+        v.Configure(c.origin, c.direction, StripLength(c.origin, c.direction, c.range, c.width), c.width, false, ColorFor(c));
         float start = Time.time;
         while (Time.time < start + c.data.windup) { v.SetProgress(Mathf.InverseLerp(start, start + c.data.windup, Time.time)); yield return null; }
         if (c.cancelled) yield break;
@@ -36,7 +36,7 @@ public partial class PlayerSkills
         var state = dash; var c = state.cast;
         float duration = Mathf.Max(.001f, c.data.dashDuration);
         float dt = Mathf.Min(Time.fixedDeltaTime, duration - state.elapsed);
-        float wanted = Mathf.Min(c.data.range - state.travelled, c.data.range / duration * dt);
+        float wanted = Mathf.Min(c.range - state.travelled, c.range / duration * dt);
         Vector2 from = rb.position;
         float distance = BodyTravel(from, c.direction, wanted);
         Vector2 to = from + c.direction * distance;
@@ -46,9 +46,9 @@ public partial class PlayerSkills
         rb.position = to; transform.position = new Vector3(to.x, to.y, transform.position.z);
         Physics2D.SyncTransforms();
         state.path.Add(to); state.elapsed += dt; state.travelled += distance;
-        HitStrip(c, from, to, c.data.width);
+        HitStrip(c, from, to, c.width);
         if (c.cancelled || dash != state) return;
-        if (distance < wanted - .0001f || state.elapsed >= duration - .0001f || state.travelled >= c.data.range - .0001f)
+        if (distance < wanted - .0001f || state.elapsed >= duration - .0001f || state.travelled >= c.range - .0001f)
         {
             RestoreDash(); Unlock(c);
         }
@@ -81,7 +81,7 @@ public partial class PlayerSkills
     {
         float length = Vector2.Distance(from, to);
         // Include the player's whole physical body even if an Inspector attack width is narrower.
-        float bodyWidth = state.cast.data.width;
+        float bodyWidth = state.cast.width;
         foreach (var body in BodyColliders) bodyWidth = Mathf.Max(bodyWidth, body.bounds.size.magnitude + .05f);
         foreach (var enemy in Physics2D.OverlapBoxAll((from + to) * .5f,
             new Vector2(length + bodyWidth, bodyWidth), Vector2.SignedAngle(Vector2.right, state.cast.direction), enemyLayer))
@@ -139,7 +139,7 @@ public partial class PlayerSkills
             v.Configure(position, c.direction, 0, .28f, true, ColorFor(c)); v.SetAlpha(.5f); yield return null;
         }
         if (c.cancelled) yield break;
-        v.Configure(c.target, c.direction, 0, c.data.radius * 2, true, ColorFor(c));
+        v.Configure(c.target, c.direction, 0, c.radius * 2, true, ColorFor(c));
         float explodeAt = landedAt + c.data.fuseDuration;
         while (Time.time < explodeAt)
         {

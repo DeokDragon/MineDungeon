@@ -19,6 +19,9 @@ public sealed class PlayerProgression : MonoBehaviour
     public int MaximumHealthBonus => HealthPoints * 3;
     public float PhysicalAttackBonus => PhysicalPoints * .4f;
     public float MagicAttackBonus => MagicPoints * .4f;
+    public bool HasHealth20Passive => HealthPoints >= 20;
+    public bool HasPhysical20Passive => PhysicalPoints >= 20;
+    public bool HasMagic20Passive => MagicPoints >= 20;
     public int MaximumLevel => configuration != null ? configuration.MaximumLevel : 1;
     public bool IsMaximumLevel => Level >= MaximumLevel;
     public int RequiredExperience => configuration != null ? configuration.RequiredExperience(Level) : 0;

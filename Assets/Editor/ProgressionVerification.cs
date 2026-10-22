@@ -40,6 +40,21 @@ public static class ProgressionVerification
             typeof(PlayerProgression).GetField("configuration", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(growth, table);
             var restore = typeof(PlayerProgression).GetMethod("RestoreGrowth", BindingFlags.Instance | BindingFlags.NonPublic);
             Action<int, int, int> set = (l, e, p) => restore.Invoke(growth, new object[] { l, e, p, 0, 0, 0 });
+            foreach (int points in new[] { 19, 20, 21 })
+                for (int stat = 0; stat < 3; stat++)
+                {
+                    restore.Invoke(growth, new object[] { 50, 0, 150-points, stat == 0 ? points : 0, stat == 1 ? points : 0, stat == 2 ? points : 0 });
+                    check(growth.HasHealth20Passive == (stat == 0 && points >= 20) &&
+                        growth.HasPhysical20Passive == (stat == 1 && points >= 20) &&
+                        growth.HasMagic20Passive == (stat == 2 && points >= 20), "independent passive boundary stat" + stat + " points" + points);
+                }
+            set(1, 0, 3);
+            var potionHeal = typeof(PlayerPotion).GetMethod("CalculateHealAmount", BindingFlags.Static | BindingFlags.NonPublic);
+            check((int)potionHeal.Invoke(null, new object[] {163, .35f, true}) == 69, "potion163 final single ceil ->69, not intermediate ceil70");
+            check((int)potionHeal.Invoke(null, new object[] {163, .35f, false}) == 58, "inactive potion original ceil ->58");
+            check((int)potionHeal.Invoke(null, new object[] {157, .35f, false}) == 55, "Health19 max157 original potion55");
+            check((int)potionHeal.Invoke(null, new object[] {160, .35f, true}) == 68, "Health20 max160 boosted potion68");
+            check((int)potionHeal.Invoke(null, new object[] {100, .35f, true}) == 42, "potion integer result no extra ceil");
             check(growth.Level == 1 && growth.UnspentStatPoints == 3 && table.MaximumLevel == 50, "new Lv1 / 3P / max50");
             check(table.experienceToNextLevel.Length == 49 && Enumerable.Range(1, 49).All(l => table.RequiredExperience(l) == 100 + 50 * (l - 1)) && table.experienceToNextLevel.Sum() == 63700, "49 table entries / 2500 final / 63700 total");
             check(PlayerSkillAttackPower.CalculateDamage(10, 7) == 11, "pickaxe base10 physical7 ->11");

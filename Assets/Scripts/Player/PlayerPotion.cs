@@ -25,6 +25,13 @@ public class PlayerPotion : MonoBehaviour
         attack = GetComponent<PlayerAttack>();
     }
 
+    internal static int CalculateHealAmount(int maximumHealth, float ratio, bool health20)
+    {
+        // Preserve the original inactive path; the bonus path rounds only once.
+        return health20 ? (int)System.Math.Ceiling((double)maximumHealth * ratio * 1.2d)
+            : Mathf.CeilToInt(maximumHealth * ratio);
+    }
+
     private void Update()
     {
         if (health.IsDead)
@@ -44,9 +51,10 @@ public class PlayerPotion : MonoBehaviour
             {
                 IsUsing = false;
 
-                int healAmount = Mathf.CeilToInt(
-                    health.MaxHealth * healRatio
-                );
+                var run = DungeonRunManager.Instance;
+                var growth = run != null ? run.GetComponent<PlayerProgression>() : null;
+                int healAmount = CalculateHealAmount(health.MaxHealth, healRatio,
+                    growth != null && growth.HasHealth20Passive);
 
                 health.Heal(healAmount);
             }

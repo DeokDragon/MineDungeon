@@ -28,6 +28,15 @@ public partial class PlayerSkills : MonoBehaviour
     public float MovementMultiplier => IsCasting ? (blocking.data.kind == PlayerSkillKind.TealBeam ? .5f : 0f) : 1f;
     public int ActiveEffectCount => visuals.Count;
     public int EstimatedDamage(SkillData skill) => skill != null && attackPower != null ? skill.Damage(attackPower.PhysicalAttack, attackPower.MagicAttack) : 0;
+    private float MagicAreaScale(SkillData skill)
+    {
+        var session = DungeonRunManager.Instance;
+        var growth = session != null ? session.GetComponent<PlayerProgression>() : null;
+        return skill.primaryType == SkillDamageType.Magic && growth != null && growth.HasMagic20Passive ? 1.2f : 1f;
+    }
+    public float EffectiveRange(SkillData skill) => skill.range * (skill.kind == PlayerSkillKind.TealBeam ? MagicAreaScale(skill) : 1f);
+    public float EffectiveWidth(SkillData skill) => skill.width * (skill.kind == PlayerSkillKind.TealBeam ? MagicAreaScale(skill) : 1f);
+    public float EffectiveRadius(SkillData skill) => skill.radius * (skill.kind == PlayerSkillKind.OreBlast ? MagicAreaScale(skill) : 1f);
     internal void ApplyInventoryLoadout(SkillData e, SkillData r) { eSkill = e; rSkill = r; }
     public void ResetForNewRun() { CancelAll(); readyAt[0] = readyAt[1] = 0f; }
     public SkillData Equipped(int slot) => slot == 0 ? eSkill : slot == 1 ? rSkill : null;
@@ -36,6 +45,7 @@ public partial class PlayerSkills : MonoBehaviour
     {
         public SkillData data;
         public int damage;
+        public float range, width, radius;
         public Vector2 origin, direction, target;
         public bool cancelled;
         public readonly HashSet<EnemyHealth> hit = new HashSet<EnemyHealth>();
@@ -87,12 +97,13 @@ public partial class PlayerSkills : MonoBehaviour
             (run != null && (run.IsRunEnded || run.IsRestarting)) || (movement != null && movement.IsDodging) ||
             (potion != null && potion.IsUsing) || (attack != null && attack.IsAttacking) || CooldownRemaining(slot) > 0) return false;
         if (data.kind == PlayerSkillKind.DrillDash && !FreePosition(rb.position)) return false;
-        var c = new Cast { data = data, damage = data.Damage(attackPower.PhysicalAttack, attackPower.MagicAttack), origin = rb.position };
+        var c = new Cast { data = data, damage = data.Damage(attackPower.PhysicalAttack, attackPower.MagicAttack), origin = rb.position,
+            range = EffectiveRange(data), width = EffectiveWidth(data), radius = EffectiveRadius(data) };
         Vector2 offset = mouseWorld - c.origin;
         c.direction = offset.sqrMagnitude > .00001f ? offset.normalized : Vector2.right;
         c.target = SafePoint(c.origin, c.direction, data.centerOffset, .05f);
         if (data.kind == PlayerSkillKind.OreBlast)
-            c.target = SafePoint(c.origin, c.direction, Mathf.Min(offset.magnitude, data.range), .12f);
+            c.target = SafePoint(c.origin, c.direction, Mathf.Min(offset.magnitude, c.range), .12f);
         readyAt[slot] = Time.time + data.cooldown;
         live.Add(c); blocking = c;
         if (OwnsMovement) rb.linearVelocity = Vector2.zero;
@@ -118,7 +129,7 @@ public partial class PlayerSkills : MonoBehaviour
     private void Unlock(Cast c) { if (blocking == c) blocking = null; }
     private IEnumerator Smash(Cast c)
     {
-        var v = Visual(c); v.Configure(c.target, c.direction, 0, c.data.radius * 2, true, ColorFor(c));
+        var v = Visual(c); v.Configure(c.target, c.direction, 0, c.radius * 2, true, ColorFor(c));
         float start = Time.time;
         while (Time.time < start + c.data.windup) { v.SetProgress(Mathf.InverseLerp(start, start + c.data.windup, Time.time)); yield return null; }
         if (c.cancelled) yield break;
@@ -132,14 +143,14 @@ public partial class PlayerSkills : MonoBehaviour
         var v = Visual(c); float start = Time.time;
         while (Time.time < start + c.data.windup)
         {
-            v.Configure(rb.position, c.direction, StripLength(rb.position, c.direction, c.data.range, c.data.width), c.data.width, false, ColorFor(c));
+            v.Configure(rb.position, c.direction, StripLength(rb.position, c.direction, c.range, c.width), c.width, false, ColorFor(c));
             v.SetAlpha(.12f); yield return null;
         }
         if (c.cancelled) yield break;
         Vector2 origin = rb.position;
-        float length = StripLength(origin, c.direction, c.data.range, c.data.width);
-        v.Configure(origin, c.direction, length, c.data.width, false, ColorFor(c));
-        HitStrip(c, origin, origin + c.direction * length, c.data.width);
+        float length = StripLength(origin, c.direction, c.range, c.width);
+        v.Configure(origin, c.direction, length, c.width, false, ColorFor(c));
+        HitStrip(c, origin, origin + c.direction * length, c.width);
         if (c.cancelled) yield break;
         Unlock(c); yield return Fade(v, c.data.effectDuration); live.Remove(c);
     }
@@ -162,7 +173,7 @@ public partial class PlayerSkills : MonoBehaviour
     }
     private void HitCircle(Cast c, Vector2 center)
     {
-        foreach (var collider in Physics2D.OverlapCircleAll(center, c.data.radius, enemyLayer))
+        foreach (var collider in Physics2D.OverlapCircleAll(center, c.radius, enemyLayer))
             Hit(c, collider, center, c.direction);
     }
     private void HitStrip(Cast c, Vector2 from, Vector2 to, float width)
