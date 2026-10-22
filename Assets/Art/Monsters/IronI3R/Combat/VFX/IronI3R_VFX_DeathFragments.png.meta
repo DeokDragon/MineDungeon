@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: 7a3603fcd9a9bc44690162a49a748d0d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7388879615936964762
+    second: IronI3R_VFX_DeathFragments_0
+  - first:
+      213: -4729850670579197411
+    second: IronI3R_VFX_DeathFragments_1
+  - first:
+      213: -5789987159863321469
+    second: IronI3R_VFX_DeathFragments_2
+  - first:
+      213: 3722326849556474293
+    second: IronI3R_VFX_DeathFragments_3
+  - first:
+      213: -2969551160377627984
+    second: IronI3R_VFX_DeathFragments_4
+  - first:
+      213: -1225240955947550686
+    second: IronI3R_VFX_DeathFragments_5
+  - first:
+      213: 8465397219203864855
+    second: IronI3R_VFX_DeathFragments_6
+  - first:
+      213: -236662355005247901
+    second: IronI3R_VFX_DeathFragments_7
+  - first:
+      213: -5873697809151047041
+    second: IronI3R_VFX_DeathFragments_8
+  - first:
+      213: 1454423867846952849
+    second: IronI3R_VFX_DeathFragments_9
+  - first:
+      213: 6023568475383378525
+    second: IronI3R_VFX_DeathFragments_10
+  - first:
+      213: -7470567241696451095
+    second: IronI3R_VFX_DeathFragments_11
+  - first:
+      213: 5942183984245405714
+    second: IronI3R_VFX_DeathFragments_12
+  - first:
+      213: -8087955787068075085
+    second: IronI3R_VFX_DeathFragments_13
+  - first:
+      213: -7943627870675012367
+    second: IronI3R_VFX_DeathFragments_14
+  - first:
+      213: 6681355187664452356
+    second: IronI3R_VFX_DeathFragments_15
+  - first:
+      213: 963777355303293338
+    second: IronI3R_VFX_DeathFragments_16
+  - first:
+      213: 3965373576146635895
+    second: IronI3R_VFX_DeathFragments_17
+  - first:
+      213: 793612092624637079
+    second: IronI3R_VFX_DeathFragments_18
+  - first:
+      213: -1245721141042431480
+    second: IronI3R_VFX_DeathFragments_19
+  - first:
+      213: 5470422653284313528
+    second: IronI3R_VFX_DeathFragments_20
+  - first:
+      213: 7162329502039565565
+    second: IronI3R_VFX_DeathFragments_21
+  - first:
+      213: -6516938313491836501
+    second: IronI3R_VFX_DeathFragments_22
+  - first:
+      213: -6343547381454710654
+    second: IronI3R_VFX_DeathFragments_23
+  - first:
+      213: 2509608062158843239
+    second: IronI3R_VFX_DeathFragments_24
+  - first:
+      213: 6659970623306851356
+    second: IronI3R_VFX_DeathFragments_25
+  - first:
+      213: -1032215626198188087
+    second: IronI3R_VFX_DeathFragments_26
+  - first:
+      213: 7786712058628445066
+    second: IronI3R_VFX_DeathFragments_27
+  - first:
+      213: 3821890270693593046
+    second: IronI3R_VFX_DeathFragments_28
+  - first:
+      213: -1694770863623657934
+    second: IronI3R_VFX_DeathFragments_29
+  - first:
+      213: -7612845185601047039
+    second: IronI3R_VFX_DeathFragments_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IronI3R_VFX_DeathFragments_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a982c0cdcd29a8660800000000000000
+      internalID: 7388879615936964762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IronI3R_VFX_DeathFragments_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1adb7bffd13c5eb0800000000000000
+      internalID: -4729850670579197411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IronI3R_VFX_DeathFragments_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c1642da55d5afa0800000000000000
+      internalID: -5789987159863321469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IronI3R_VFX_DeathFragments_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b966b54c8c58a330800000000000000
+      internalID: 3722326849556474293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IronI3R_VFX_DeathFragments_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0baa757f3f80ac6d0800000000000000
+      internalID: -2969551160377627984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IronI3R_VFX_DeathFragments_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2287c7897d11ffee0800000000000000
+      internalID: -1225240955947550686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IronI3R_VFX_DeathFragments_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719d9355be12b7570800000000000000
+      internalID: 8465397219203864855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f0240e38a0c91644aaa57eea5ccf3485
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      IronI3R_VFX_DeathFragments_0: 7388879615936964762
+      IronI3R_VFX_DeathFragments_1: -4729850670579197411
+      IronI3R_VFX_DeathFragments_2: -5789987159863321469
+      IronI3R_VFX_DeathFragments_3: 3722326849556474293
+      IronI3R_VFX_DeathFragments_4: -2969551160377627984
+      IronI3R_VFX_DeathFragments_5: -1225240955947550686
+      IronI3R_VFX_DeathFragments_6: 8465397219203864855
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

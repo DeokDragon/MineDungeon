@@ -35,6 +35,36 @@ public class PlayerAttack : MonoBehaviour
             return attackRange * (growth != null && growth.HasPhysical20Passive ? 1.15f : 1f);
         }
     }
+    private int empoweredCharge;
+    private bool empoweredReady, empoweredSwing;
+    public void ResetEmpoweredAttack() { empoweredCharge = 0; empoweredReady = empoweredSwing = false; }
+    private bool HasPhysical100
+    {
+        get
+        {
+            var run = DungeonRunManager.Instance;
+            var growth = run != null ? run.GetComponent<PlayerProgression>() : null;
+            return growth != null && growth.HasPhysical100Passive;
+        }
+    }
+    // Called only after the existing input/action/interval checks succeed.
+    private bool BeginAttack()
+    {
+        var health = GetComponent<PlayerHealth>();
+        var run = DungeonRunManager.Instance;
+        var skills = GetComponent<PlayerSkills>();
+        var movement = GetComponent<PlayerMovement>();
+        var potion = GetComponent<PlayerPotion>();
+        if (!isActiveAndEnabled || weaponPivot == null || InventoryUI.BlockCombatInput || Time.timeScale <= 0f ||
+            (health != null && health.IsDead) || (run != null && (run.IsRunEnded || run.IsRestarting)) ||
+            (skills != null && skills.IsCasting) || (movement != null && movement.IsDodging) ||
+            (potion != null && potion.IsUsing) || isAttacking || Time.time < nextAttackTime) return false;
+        empoweredSwing = HasPhysical100 && empoweredReady;
+        if (empoweredSwing) { empoweredReady = false; empoweredCharge = 0; }
+        isAttacking = true; damageApplied = false;
+        attackStartTime = Time.time; nextAttackTime = Time.time + attackInterval; attackAngle = aimAngle;
+        return true;
+    }
     private bool damageApplied;
     private bool waitForAttackRelease;
     private PlayerSkillAttackPower attackPower;
@@ -101,11 +131,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (attackInput && !isAttacking && Time.time >= nextAttackTime)
         {
-            isAttacking = true;
-            damageApplied = false;
-            attackStartTime = Time.time;
-            nextAttackTime = Time.time + attackInterval;
-            attackAngle = aimAngle;
+            BeginAttack();
         }
 
         float displayAngle = aimAngle;
@@ -164,7 +190,9 @@ public class PlayerAttack : MonoBehaviour
         hitEnemies.Clear();
         double rawDamage = PlayerSkillAttackPower.UnroundedDamage(attackDamage,
             attackPower != null ? attackPower.PhysicalAttack : 0f);
-        int damage = PlayerSkillAttackPower.RoundDamage(rawDamage);
+        bool enhanced = empoweredSwing;
+        double multiplier = enhanced ? 2d : 1d;
+        int damage = PlayerSkillAttackPower.RoundDamage(rawDamage * multiplier);
         var run = DungeonRunManager.Instance;
         var growth = run != null ? run.GetComponent<PlayerProgression>() : null;
         bool shockwave = growth != null && growth.HasPhysical50Passive;
@@ -201,8 +229,13 @@ public class PlayerAttack : MonoBehaviour
             hitEnemies.Add(health);
             if (health.TryTakeDamage(damage, hitPoint, forward)) accepted = true;
         }
+        if (accepted && !enhanced && HasPhysical100 && (GetComponent<PlayerHealth>() == null || !GetComponent<PlayerHealth>().IsDead))
+        {
+            empoweredCharge = Mathf.Min(3, empoweredCharge + 1);
+            if (empoweredCharge == 3) empoweredReady = true;
+        }
         if (accepted && shockwave)
-            ApplyShockwave(shockwaveOrigin, forward, PlayerSkillAttackPower.RoundDamage(rawDamage * .30d));
+            ApplyShockwave(shockwaveOrigin, forward, PlayerSkillAttackPower.RoundDamage(rawDamage * .30d * multiplier));
     }
 
     private void ApplyShockwave(Vector2 origin, Vector2 forward, int damage)

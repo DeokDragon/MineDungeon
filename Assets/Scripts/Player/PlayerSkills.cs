@@ -21,6 +21,8 @@ public partial class PlayerSkills : MonoBehaviour
     private DungeonRunManager run;
     private readonly float[] readyAt = new float[2];
     private readonly float[] appliedCooldowns = new float[2];
+    private float explosionReadyAt;
+    public const float ExtraExplosionRadius = 1.5f, ExtraExplosionCooldown = 1.5f;
     private readonly List<Cast> live = new List<Cast>();
     private readonly List<PlayerSkillVisual> visuals = new List<PlayerSkillVisual>();
     private Cast blocking;
@@ -48,7 +50,7 @@ public partial class PlayerSkills : MonoBehaviour
         return CalculateCooldown(skill.cooldown, skill.primaryType == SkillDamageType.Magic && growth != null && growth.HasMagic50Passive);
     }
     internal void ApplyInventoryLoadout(SkillData e, SkillData r) { eSkill = e; rSkill = r; }
-    public void ResetForNewRun() { CancelAll(); readyAt[0] = readyAt[1] = 0f; appliedCooldowns[0] = appliedCooldowns[1] = 0f; }
+    public void ResetForNewRun() { CancelAll(); readyAt[0] = readyAt[1] = 0f; appliedCooldowns[0] = appliedCooldowns[1] = 0f; explosionReadyAt = 0f; }
     public SkillData Equipped(int slot) => slot == 0 ? eSkill : slot == 1 ? rSkill : null;
     public float CooldownRemaining(int slot) => slot >= 0 && slot < 2 ? Mathf.Max(0, readyAt[slot] - Time.time) : 0f;
     public float AppliedCooldown(int slot) => slot >= 0 && slot < 2 ? appliedCooldowns[slot] : 0f;
@@ -56,10 +58,16 @@ public partial class PlayerSkills : MonoBehaviour
     {
         public SkillData data;
         public int damage;
+        public double rawDamage;
+        public bool magic100, firstHitChecked, explosionPending;
+        public Vector2 explosionCenter;
+        public DungeonRoomManager rooms;
+        public DungeonRoom room;
         public float range, width, radius;
         public Vector2 origin, direction, target;
         public bool cancelled;
         public readonly HashSet<EnemyHealth> hit = new HashSet<EnemyHealth>();
+        public readonly HashSet<EnemyHealth> explosionHits = new HashSet<EnemyHealth>();
     }
     private void Awake()
     {
@@ -110,6 +118,13 @@ public partial class PlayerSkills : MonoBehaviour
         if (data.kind == PlayerSkillKind.DrillDash && !FreePosition(rb.position)) return false;
         var c = new Cast { data = data, damage = data.Damage(attackPower.PhysicalAttack, attackPower.MagicAttack), origin = rb.position,
             range = EffectiveRange(data), width = EffectiveWidth(data), radius = EffectiveRadius(data) };
+        c.rawDamage = PlayerSkillAttackPower.UnroundedDamage(data.baseDamage,
+            data.primaryType == SkillDamageType.Physical ? attackPower.PhysicalAttack : attackPower.MagicAttack);
+        var growth = DungeonRunManager.Instance != null ? DungeonRunManager.Instance.GetComponent<PlayerProgression>() : null;
+        c.magic100 = data.primaryType == SkillDamageType.Magic && growth != null && growth.HasMagic100Passive &&
+            (data.kind == PlayerSkillKind.TealBeam || data.kind == PlayerSkillKind.OreBlast);
+        c.rooms = FindFirstObjectByType<DungeonRoomManager>();
+        c.room = c.rooms != null ? c.rooms.CurrentRoom : null;
         Vector2 offset = mouseWorld - c.origin;
         c.direction = offset.sqrMagnitude > .00001f ? offset.normalized : Vector2.right;
         c.target = SafePoint(c.origin, c.direction, data.centerOffset, .05f);
@@ -185,28 +200,90 @@ public partial class PlayerSkills : MonoBehaviour
     }
     private void HitCircle(Cast c, Vector2 center)
     {
-        foreach (var collider in Physics2D.OverlapCircleAll(center, c.radius, enemyLayer))
+        var targets = Physics2D.OverlapCircleAll(center, c.radius, enemyLayer);
+        OrderMagicTargets(c, targets, center, false);
+        foreach (var collider in targets)
             Hit(c, collider, center, c.direction);
+        ResolveExplosion(c);
     }
     private void HitStrip(Cast c, Vector2 from, Vector2 to, float width)
     {
         float length = Vector2.Distance(from, to);
         if (length < .001f) return;
-        foreach (var collider in Physics2D.OverlapBoxAll((from + to) * .5f, new Vector2(length, width), Vector2.SignedAngle(Vector2.right, c.direction), enemyLayer))
+        var targets = Physics2D.OverlapBoxAll((from + to) * .5f, new Vector2(length, width), Vector2.SignedAngle(Vector2.right, c.direction), enemyLayer);
+        OrderMagicTargets(c, targets, from, true);
+        foreach (var collider in targets)
         {
+            if (!CanApplyDamage(c)) break;
+            if (collider == null) continue;
             Vector2 point = collider.ClosestPoint(from);
             Vector2 axis = from + c.direction * Mathf.Clamp(Vector2.Dot(point - from, c.direction), 0, length);
             if (ClearLine(axis, point)) Hit(c, collider, from, c.direction);
         }
+        ResolveExplosion(c);
+    }
+    // Hierarchy sibling paths are stable for the same room layout, unlike query ordering.
+    private static string StableTargetKey(Transform target)
+    {
+        string key = "";
+        for (var t = target; t != null; t = t.parent) key = t.GetSiblingIndex().ToString("D8") + "/" + key;
+        return key;
+    }
+    private static void OrderMagicTargets(Cast c, Collider2D[] targets, Vector2 origin, bool beam)
+    {
+        if (!c.magic100) return;
+        System.Array.Sort(targets, (a, b) =>
+        {
+            var ea = a != null ? a.GetComponentInParent<EnemyHealth>() : null;
+            var eb = b != null ? b.GetComponentInParent<EnemyHealth>() : null;
+            if (ea == null || eb == null) return ea == eb ? 0 : ea == null ? 1 : -1;
+            Vector2 da = (Vector2)ea.transform.position - origin, db = (Vector2)eb.transform.position - origin;
+            float sa = beam ? Vector2.Dot(da, c.direction) : da.sqrMagnitude;
+            float sb = beam ? Vector2.Dot(db, c.direction) : db.sqrMagnitude;
+            int distance = sa.CompareTo(sb);
+            return distance != 0 ? distance : string.CompareOrdinal(StableTargetKey(ea.transform), StableTargetKey(eb.transform));
+        });
+    }
+    private bool CanApplyDamage(Cast c)
+    {
+        return !c.cancelled && health != null && !health.IsDead &&
+            (run == null || (!run.IsRunEnded && !run.IsEnding && !run.IsRestarting)) &&
+            (c.rooms == null ? c.room == null : c.rooms.CurrentRoom == c.room);
     }
     private void Hit(Cast c, Collider2D collider, Vector2 from, Vector2 direction)
     {
-        if (c.cancelled) return;
+        if (!CanApplyDamage(c) || collider == null) return;
         var enemy = collider.GetComponentInParent<EnemyHealth>();
-        if (enemy == null || enemy.IsDead || c.hit.Contains(enemy)) return;
+        if (enemy == null || enemy.IsDead || c.hit.Contains(enemy) ||
+            (c.room != null && enemy.GetComponentInParent<DungeonRoom>() != c.room)) return;
         Vector2 point = collider.ClosestPoint(from);
         if (!ClearLine(from, point)) return;
-        c.hit.Add(enemy); enemy.TryTakeDamage(c.damage, point, direction);
+        Vector2 center = enemy.transform.position; // Before damage/death callbacks move or destroy the target.
+        c.hit.Add(enemy);
+        if (!enemy.TryTakeDamage(c.damage, point, direction) || !c.magic100 || c.firstHitChecked) return;
+        c.firstHitChecked = true;
+        if (Time.time < explosionReadyAt) return; // This cast has permanently spent its opportunity.
+        explosionReadyAt = Time.time + ExtraExplosionCooldown;
+        c.explosionCenter = center;
+        c.explosionPending = true;
+    }
+    private void ResolveExplosion(Cast c)
+    {
+        if (!c.explosionPending) return;
+        c.explosionPending = false;
+        if (!CanApplyDamage(c)) return;
+        int damage = PlayerSkillAttackPower.RoundDamage(c.rawDamage * .40d);
+        foreach (var collider in Physics2D.OverlapCircleAll(c.explosionCenter, ExtraExplosionRadius, enemyLayer))
+        {
+            if (!CanApplyDamage(c)) break;
+            var enemy = collider.GetComponentInParent<EnemyHealth>();
+            if (enemy == null || enemy.IsDead || c.explosionHits.Contains(enemy) ||
+                (c.room != null && enemy.GetComponentInParent<DungeonRoom>() != c.room)) continue;
+            Vector2 point = collider.ClosestPoint(c.explosionCenter);
+            if (!ClearLine(c.explosionCenter, point)) continue;
+            c.explosionHits.Add(enemy);
+            enemy.TryTakeDamage(damage, point, c.direction);
+        }
     }
     public void CancelAll()
     {

@@ -29,6 +29,49 @@ public class PlayerHealth : MonoBehaviour
     private PlayerProgression growth;
     private int effectiveMaxHealth;
     private bool initialized;
+    private DungeonRoomManager regenerationRooms;
+    private RoomController regenerationRoom;
+    private float lastHealthDamageAt;
+    private double regenerationFraction, regenerationUsed;
+
+    internal static int RegenerationLimit(int maximum) => maximum > 0 ? (int)((long)maximum / 5) : 0;
+    internal static double ScaleRegenerationUsed(double used, int previousMaximum, int nextMaximum)
+    {
+        int previous = RegenerationLimit(previousMaximum), next = RegenerationLimit(nextMaximum);
+        return previous > 0 ? System.Math.Min(next, used / previous * next) : 0d;
+    }
+    private void ResetRegeneration()
+    {
+        regenerationFraction = regenerationUsed = 0d;
+        lastHealthDamageAt = Time.time;
+    }
+    public void ResetForNewRun()
+    {
+        regenerationRoom = null; regenerationRooms = null;
+        ResetRegeneration(); attack?.ResetEmpoweredAttack();
+    }
+    private void AdvanceRegeneration(float now, float deltaTime)
+    {
+        var run = DungeonRunManager.Instance;
+        if (Time.timeScale <= 0f || deltaTime <= 0f) return;
+        if (IsDead || growth == null || !growth.HasHealth100Passive || run == null || !run.IsTracking ||
+            run.IsEnding || run.IsRunEnded || run.IsRestarting || regenerationRooms == null ||
+            regenerationRooms.IsTransitioning || regenerationRooms.CurrentRoom == null ||
+            regenerationRooms.CurrentRoom.Controller != regenerationRoom || regenerationRoom == null ||
+            regenerationRoom.IsCleared || regenerationRoom.RemainingEnemies <= 0 || CurrentHealth >= MaxHealth)
+        { regenerationFraction = 0d; return; }
+        double elapsed = System.Math.Min(deltaTime, System.Math.Max(0d, (double)now - lastHealthDamageAt - 5d));
+        double remaining = System.Math.Max(0d, RegenerationLimit(MaxHealth) - regenerationUsed);
+        regenerationFraction = System.Math.Min(remaining, regenerationFraction + MaxHealth * .01d * elapsed);
+        int request = (int)System.Math.Min(MaxHealth - CurrentHealth, System.Math.Floor(regenerationFraction));
+        if (request <= 0) return;
+        int before = CurrentHealth;
+        Heal(request);
+        int actual = CurrentHealth - before;
+        regenerationUsed += actual;
+        regenerationFraction -= actual;
+        if (CurrentHealth >= MaxHealth) regenerationFraction = 0d;
+    }
 
     public bool IsDead { get; private set; }
     public event System.Action<PlayerHealth> Died;
@@ -82,6 +125,12 @@ public class PlayerHealth : MonoBehaviour
             nextMaximum <= 0 || nextMaximum > int.MaxValue ||
             !TryScaleHealth(currentHealth, effectiveMaxHealth, (int)nextMaximum, IsDead, out adjusted))
         { Debug.LogWarning("Invalid HP state; growth HP update blocked without changing health.", this); return false; }
+        if (effectiveMaxHealth != (int)nextMaximum)
+        {
+            regenerationUsed = ScaleRegenerationUsed(regenerationUsed, effectiveMaxHealth, (int)nextMaximum);
+            regenerationFraction = System.Math.Min(regenerationFraction,
+                System.Math.Max(0d, RegenerationLimit((int)nextMaximum) - regenerationUsed));
+        }
         effectiveMaxHealth = (int)nextMaximum;
         currentHealth = adjusted;
         // This is a stat update, never Heal(), damage, potion use or resurrection.
@@ -101,6 +150,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        AdvanceRegeneration(Time.time, Time.deltaTime);
         if (bodyRenderer == null)
             return;
 
@@ -139,7 +189,10 @@ public class PlayerHealth : MonoBehaviour
             return false;
 
         DungeonRunManager.Instance?.RecordDamageTaken(Mathf.Min(currentHealth,damage));
+        int previousHealth = currentHealth;
         currentHealth = Mathf.Max(0, currentHealth - damage);
+        if (currentHealth < previousHealth)
+        { lastHealthDamageAt = Time.time; regenerationFraction = 0d; }
         invincibleUntil = Time.time + invincibleDuration;
         hurtFlashRemaining = .10f;
         Damaged?.Invoke();
@@ -159,6 +212,7 @@ public class PlayerHealth : MonoBehaviour
     private void HandleDefeat()
     {
         IsDead = true;
+        attack?.ResetEmpoweredAttack();
         Died?.Invoke(this);
 
         movementWasEnabled = movement != null && movement.enabled;
@@ -227,6 +281,8 @@ public class PlayerHealth : MonoBehaviour
 
         invincibleUntil = Time.time + reviveInvincibleDuration;
         IsDead = false;
+        ResetRegeneration();
+        attack?.ResetEmpoweredAttack();
         DungeonRunManager.Instance?.NotifyRevived();
         hurtFlashRemaining = 0f;
 
@@ -244,6 +300,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void FinishDungeon(bool clear)
     {
+        regenerationRoom = null; regenerationRooms = null; ResetRegeneration();
         StopAllCoroutines(); GetComponent<PlayerSkills>()?.CancelAll();
         attack?.CancelAttack(); if(attack)attack.enabled=false;
         var potion=GetComponent<PlayerPotion>(); if(potion)potion.enabled=false;
@@ -280,6 +337,10 @@ public class PlayerHealth : MonoBehaviour
     public void EnterRoom(Transform entrance)
     {
         if (entrance == null || IsDead) return;
+        regenerationRooms = FindFirstObjectByType<DungeonRoomManager>();
+        var entered = entrance.GetComponentInParent<DungeonRoom>();
+        regenerationRoom = entered != null ? entered.Controller : null;
+        ResetRegeneration();
         respawnPoint = entrance;
         bool restoreMovement = movement != null && movement.enabled;
         bool restoreAttack = attack != null && attack.enabled;

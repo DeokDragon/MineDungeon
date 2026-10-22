@@ -1,0 +1,1505 @@
+{
+  "resources": [
+    {
+      "name": "IronI3R_ChargeWindup_6f_64x64_v1",
+      "png": "Animations\\IronI3R_ChargeWindup_6f_64x64_v1.png",
+      "size": [
+        384,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        100,
+        110,
+        120,
+        130,
+        140,
+        150
+      ],
+      "preview_total_ms": 750,
+      "unique_frames": 6,
+      "bounds": [
+        [
+          3,
+          4,
+          61,
+          59
+        ],
+        [
+          4,
+          5,
+          59,
+          59
+        ],
+        [
+          4,
+          6,
+          57,
+          59
+        ],
+        [
+          5,
+          6,
+          56,
+          59
+        ],
+        [
+          5,
+          7,
+          56,
+          59
+        ],
+        [
+          5,
+          8,
+          56,
+          59
+        ]
+      ],
+      "notes": "750ms preview based on source default only; existing AI clock remains authoritative. Feet planted, visible yellow eyes, articulated guard.",
+      "sha256": "1fe6b77a2c4d7c085e6c6e77590a922861053ebbc39b0a4115dce0f4584537a0"
+    },
+    {
+      "name": "IronI3R_Charge_4f_64x64_v1",
+      "png": "Animations\\IronI3R_Charge_4f_64x64_v1.png",
+      "size": [
+        256,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 4,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "loop",
+      "preview_ms": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "preview_total_ms": 320,
+      "unique_frames": 4,
+      "bounds": [
+        [
+          5,
+          7,
+          56,
+          61
+        ],
+        [
+          5,
+          7,
+          56,
+          60
+        ],
+        [
+          5,
+          7,
+          56,
+          58
+        ],
+        [
+          5,
+          7,
+          56,
+          59
+        ]
+      ],
+      "notes": "Constant lowered torso, shoulder forward, bent defensive arms, short driving leg cycle. No world trajectory baked into sprite.",
+      "sha256": "a27c9a658b50c1858a29da3ece28c598e946d8281f92936e730ebee30bb69d12"
+    },
+    {
+      "name": "IronI3R_WallImpact_4f_64x64_v1",
+      "png": "Animations\\IronI3R_WallImpact_4f_64x64_v1.png",
+      "size": [
+        256,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 4,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        50,
+        80,
+        80,
+        90
+      ],
+      "preview_total_ms": 300,
+      "unique_frames": 4,
+      "bounds": [
+        [
+          5,
+          7,
+          56,
+          61
+        ],
+        [
+          5,
+          9,
+          55,
+          59
+        ],
+        [
+          4,
+          7,
+          56,
+          59
+        ],
+        [
+          5,
+          7,
+          56,
+          59
+        ]
+      ],
+      "notes": "Only for actual wall collision. Compression, recoil and low lost-balance pose; no wall, sparks or structural damage baked into body.",
+      "sha256": "6479f4f91b4323a56adad20b7512111f253caa15956ad5d76283cc879e9ada96"
+    },
+    {
+      "name": "IronI3R_Recovery_5f_64x64_v1",
+      "png": "Animations\\IronI3R_Recovery_5f_64x64_v1.png",
+      "size": [
+        320,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 5,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        210,
+        190,
+        170,
+        140,
+        90
+      ],
+      "preview_total_ms": 800,
+      "unique_frames": 5,
+      "bounds": [
+        [
+          5,
+          7,
+          56,
+          59
+        ],
+        [
+          5,
+          7,
+          56,
+          59
+        ],
+        [
+          4,
+          6,
+          57,
+          59
+        ],
+        [
+          4,
+          5,
+          59,
+          59
+        ],
+        [
+          3,
+          4,
+          61,
+          59
+        ]
+      ],
+      "notes": "Same normalized sequence for .8s ordinary or 1.5s wall recovery. First 2 frames remain low. Final equals Idle F1.",
+      "sha256": "d9bf257b59d07d8c2a8f935298b9f109b3b27bdc5022ea5079c8a86a63a2ebf9"
+    },
+    {
+      "name": "IronI3R_Hit_3f_64x64_v1",
+      "png": "Animations\\IronI3R_Hit_3f_64x64_v1.png",
+      "size": [
+        192,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 3,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        40,
+        60,
+        50
+      ],
+      "preview_total_ms": 150,
+      "unique_frames": 2,
+      "bounds": [
+        [
+          3,
+          4,
+          61,
+          59
+        ],
+        [
+          3,
+          5,
+          61,
+          59
+        ],
+        [
+          3,
+          4,
+          61,
+          59
+        ]
+      ],
+      "notes": "Restrained shoulder/torso reaction; no tint flash, transform scaling, hit-stop or attack cancellation. F1/F3 intentionally identical.",
+      "sha256": "bab74cf9af717b0c5bd9eaaa922677e1ac2f2f4320d2c5fe640d9874aa564533"
+    },
+    {
+      "name": "IronI3R_Death_7f_64x64_v1",
+      "png": "Animations\\IronI3R_Death_7f_64x64_v1.png",
+      "size": [
+        448,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 7,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        50,
+        50,
+        60,
+        60,
+        70,
+        80,
+        80
+      ],
+      "preview_total_ms": 450,
+      "unique_frames": 7,
+      "bounds": [
+        [
+          3,
+          5,
+          60,
+          59
+        ],
+        [
+          2,
+          8,
+          61,
+          59
+        ],
+        [
+          3,
+          14,
+          61,
+          59
+        ],
+        [
+          3,
+          24,
+          63,
+          60
+        ],
+        [
+          3,
+          36,
+          63,
+          61
+        ],
+        [
+          14,
+          53,
+          47,
+          59
+        ],
+        null
+      ],
+      "notes": "Source armor groups separate and collapse; small remaining plates then transparent F7. No explosive fire or reward-event delay.",
+      "sha256": "3526f1e78e0763dfc7b6487fcaeb5e84d8848370a7ba1c773d2a647b41d9a61d"
+    },
+    {
+      "name": "IronI3R_VFX_ChargeDust",
+      "png": "VFX\\IronI3R_VFX_ChargeDust.png",
+      "size": [
+        320,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 5,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        40,
+        40,
+        40,
+        40,
+        40
+      ],
+      "preview_total_ms": 200,
+      "unique_frames": 5,
+      "bounds": [
+        [
+          28,
+          28,
+          36,
+          36
+        ],
+        [
+          23,
+          23,
+          42,
+          42
+        ],
+        [
+          18,
+          18,
+          47,
+          48
+        ],
+        [
+          13,
+          13,
+          52,
+          53
+        ],
+        null
+      ],
+      "notes": "64x64 / 5f / .20s, small ground dust, no body or afterimage.",
+      "sha256": "83380f854e6be9370998931255ae0f20f06ff39fc57f28f56489923e1623a60d"
+    },
+    {
+      "name": "IronI3R_VFX_ChargeTrail",
+      "png": "VFX\\IronI3R_VFX_ChargeTrail.png",
+      "size": [
+        576,
+        48
+      ],
+      "frame_size": [
+        96,
+        48
+      ],
+      "frames": 6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "loop",
+      "preview_ms": [
+        70,
+        70,
+        70,
+        70,
+        70,
+        70
+      ],
+      "preview_total_ms": 420,
+      "unique_frames": 6,
+      "bounds": [
+        [
+          10,
+          11,
+          47,
+          36
+        ],
+        [
+          8,
+          12,
+          48,
+          37
+        ],
+        [
+          9,
+          11,
+          49,
+          36
+        ],
+        [
+          10,
+          12,
+          47,
+          36
+        ],
+        [
+          8,
+          11,
+          48,
+          37
+        ],
+        [
+          9,
+          11,
+          49,
+          34
+        ]
+      ],
+      "notes": "96x48 / 6f / .42s looping emitter. Default trail flows towards screen-left from center. Orient with attack direction in future integration; independent of body afterimages.",
+      "sha256": "da2bbf9957a5d9ace13e443e774b080bf3303625bc8aa0ebeddd544057197cc5"
+    },
+    {
+      "name": "IronI3R_VFX_WallImpact",
+      "png": "VFX\\IronI3R_VFX_WallImpact.png",
+      "size": [
+        576,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        40,
+        40,
+        50,
+        50,
+        60,
+        60
+      ],
+      "preview_total_ms": 300,
+      "unique_frames": 6,
+      "bounds": [
+        [
+          43,
+          42,
+          52,
+          54
+        ],
+        [
+          37,
+          34,
+          59,
+          59
+        ],
+        [
+          31,
+          28,
+          65,
+          65
+        ],
+        [
+          26,
+          23,
+          70,
+          70
+        ],
+        [
+          20,
+          21,
+          76,
+          76
+        ],
+        null
+      ],
+      "notes": "96x96 / 6f / .30s, dust and source-textured metal chips. Optional replacement for existing generic Impact fragments/pulse; avoid stacking duplicate effects.",
+      "sha256": "70cc26618ad938c2c4bd57f525a6a65b7cf31dee57c1ed31f22fdecca53c78f5"
+    },
+    {
+      "name": "IronI3R_VFX_HitSparks",
+      "png": "VFX\\IronI3R_VFX_HitSparks.png",
+      "size": [
+        128,
+        32
+      ],
+      "frame_size": [
+        32,
+        32
+      ],
+      "frames": 4,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        30,
+        40,
+        50,
+        60
+      ],
+      "preview_total_ms": 180,
+      "unique_frames": 4,
+      "bounds": [
+        [
+          11,
+          12,
+          22,
+          22
+        ],
+        [
+          8,
+          9,
+          25,
+          24
+        ],
+        [
+          6,
+          7,
+          28,
+          27
+        ],
+        null
+      ],
+      "notes": "32x32 / 4f / .18s, small pale-yellow/cool-metal sparks, no large flash.",
+      "sha256": "b031190f6005bdc31ad4dc9db4dfb2493733562ef1d1898ac32d1503f6e3e5d2"
+    },
+    {
+      "name": "IronI3R_VFX_DeathFragments",
+      "png": "VFX\\IronI3R_VFX_DeathFragments.png",
+      "size": [
+        672,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 7,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        50,
+        50,
+        60,
+        60,
+        70,
+        80,
+        80
+      ],
+      "preview_total_ms": 450,
+      "unique_frames": 7,
+      "bounds": [
+        [
+          42,
+          42,
+          53,
+          54
+        ],
+        [
+          38,
+          36,
+          57,
+          57
+        ],
+        [
+          34,
+          30,
+          61,
+          60
+        ],
+        [
+          29,
+          26,
+          65,
+          64
+        ],
+        [
+          26,
+          23,
+          69,
+          69
+        ],
+        [
+          22,
+          20,
+          73,
+          72
+        ],
+        null
+      ],
+      "notes": "96x96 / 7f / .45s, only small metal fragments and limited dust; no full shoulder/body plates duplicated from the Death sprite.",
+      "sha256": "e030b267a05cc5f98d488a00a8e427742a6afb473c20be4dd06fd8de7b716ab3"
+    }
+  ],
+  "pose_parameters": [
+    {
+      "tag": "Windup F2",
+      "down": 1,
+      "front": 0,
+      "waist": 0,
+      "shoulders": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elbows": [
+        -5,
+        8
+      ],
+      "arms": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "depth": 1,
+      "knee": 0,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Windup F3",
+      "down": 2,
+      "front": 1,
+      "waist": 1,
+      "shoulders": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elbows": [
+        -14,
+        20
+      ],
+      "arms": [
+        [
+          1,
+          1
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "depth": 2,
+      "knee": 1,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Windup F4",
+      "down": 3,
+      "front": 1,
+      "waist": 1,
+      "shoulders": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elbows": [
+        -24,
+        32
+      ],
+      "arms": [
+        [
+          2,
+          1
+        ],
+        [
+          -2,
+          2
+        ]
+      ],
+      "depth": 3,
+      "knee": 1,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Windup F5",
+      "down": 4,
+      "front": 1,
+      "waist": 1,
+      "shoulders": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "elbows": [
+        -32,
+        43
+      ],
+      "arms": [
+        [
+          2,
+          2
+        ],
+        [
+          -3,
+          2
+        ]
+      ],
+      "depth": 4,
+      "knee": 2,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Windup F6",
+      "down": 5,
+      "front": 1,
+      "waist": 2,
+      "shoulders": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "elbows": [
+        -36,
+        48
+      ],
+      "arms": [
+        [
+          2,
+          2
+        ],
+        [
+          -3,
+          2
+        ]
+      ],
+      "depth": 5,
+      "knee": 2,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Charge F1",
+      "down": 4,
+      "front": 1,
+      "waist": 2,
+      "shoulders": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "elbows": [
+        -36,
+        48
+      ],
+      "arms": [
+        [
+          2,
+          2
+        ],
+        [
+          -3,
+          2
+        ]
+      ],
+      "depth": 2,
+      "knee": 1,
+      "legxy": [
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "planted": false
+    },
+    {
+      "tag": "Charge F2",
+      "down": 4,
+      "front": 1,
+      "waist": 2,
+      "shoulders": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "elbows": [
+        -36,
+        48
+      ],
+      "arms": [
+        [
+          2,
+          2
+        ],
+        [
+          -3,
+          2
+        ]
+      ],
+      "depth": 2,
+      "knee": 1,
+      "legxy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": false
+    },
+    {
+      "tag": "Charge F3",
+      "down": 4,
+      "front": 1,
+      "waist": 2,
+      "shoulders": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "elbows": [
+        -36,
+        48
+      ],
+      "arms": [
+        [
+          2,
+          2
+        ],
+        [
+          -3,
+          2
+        ]
+      ],
+      "depth": 2,
+      "knee": 1,
+      "legxy": [
+        [
+          0,
+          -2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "planted": false
+    },
+    {
+      "tag": "Charge F4",
+      "down": 4,
+      "front": 1,
+      "waist": 2,
+      "shoulders": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "elbows": [
+        -36,
+        48
+      ],
+      "arms": [
+        [
+          2,
+          2
+        ],
+        [
+          -3,
+          2
+        ]
+      ],
+      "depth": 2,
+      "knee": 1,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "planted": false
+    },
+    {
+      "tag": "Wall F2 compressed",
+      "down": 7,
+      "front": 0,
+      "waist": 3,
+      "shoulders": [
+        [
+          0,
+          5
+        ],
+        [
+          -1,
+          5
+        ]
+      ],
+      "elbows": [
+        -48,
+        60
+      ],
+      "arms": [
+        [
+          3,
+          4
+        ],
+        [
+          -3,
+          4
+        ]
+      ],
+      "depth": 7,
+      "knee": 3,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Wall F3 recoil",
+      "down": 5,
+      "front": -1,
+      "waist": 1,
+      "shoulders": [
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "elbows": [
+        -16,
+        24
+      ],
+      "arms": [
+        [
+          2,
+          3
+        ],
+        [
+          -2,
+          3
+        ]
+      ],
+      "depth": 5,
+      "knee": 2,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Wall F4 low",
+      "down": 5,
+      "front": 0,
+      "waist": 1,
+      "shoulders": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "elbows": [
+        -25,
+        35
+      ],
+      "arms": [
+        [
+          2,
+          3
+        ],
+        [
+          -2,
+          3
+        ]
+      ],
+      "depth": 5,
+      "knee": 2,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Recovery F2 support",
+      "down": 5,
+      "front": 0,
+      "waist": 1,
+      "shoulders": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "elbows": [
+        -22,
+        30
+      ],
+      "arms": [
+        [
+          2,
+          3
+        ],
+        [
+          -2,
+          3
+        ]
+      ],
+      "depth": 5,
+      "knee": 2,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Recovery F3 raise",
+      "down": 3,
+      "front": 0,
+      "waist": 1,
+      "shoulders": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "elbows": [
+        -16,
+        24
+      ],
+      "arms": [
+        [
+          1,
+          2
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "depth": 3,
+      "knee": 1,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Recovery F4 settle",
+      "down": 1,
+      "front": 0,
+      "waist": 0,
+      "shoulders": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elbows": [
+        -6,
+        8
+      ],
+      "arms": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "depth": 1,
+      "knee": 0,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Hit F2 small shoulder kick",
+      "down": 0,
+      "front": -1,
+      "waist": 0,
+      "shoulders": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elbows": [
+        -3,
+        4
+      ],
+      "arms": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "depth": 0,
+      "knee": 0,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    },
+    {
+      "tag": "Death F1 imbalance",
+      "down": 1,
+      "front": -1,
+      "waist": 0,
+      "shoulders": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elbows": [
+        -4,
+        9
+      ],
+      "arms": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "depth": 1,
+      "knee": 0,
+      "legxy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "planted": true
+    }
+  ],
+  "checks": {
+    "all_png_dimensions_rgba_cells": true,
+    "transparent_frame_edges_no_clipping": true,
+    "intact_character_head_eyes_source_exact_after_offset": true,
+    "windup_feet_fixed": true,
+    "charge_distinct_from_move_guard_and_depth": true,
+    "charge_to_wall_F1_exact": true,
+    "wall_F4_to_recovery_F1_exact": true,
+    "recovery_F5_to_installed_idle_F1_exact": true,
+    "gif_frame_counts_timing_decoded": true,
+    "animated_webp_visible_rgba_matches_png": true,
+    "original_and_project_files_unchanged": true,
+    "unity_import_playback_tested": false,
+    "real_time_gif_visual_observation": false,
+    "charge_loop_face_and_torso_core_fixed": true,
+    "static_contacts_visually_inspected": true
+  },
+  "protected_hashes": {
+    "C:\\Users\\User\\Downloads\\IronMonster_I-3R_Base_64x64.png": "1ce45feadeb3d6cc6ea195c8c9c2e92c8d82692e52dbe135be45718ba8d04923",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Idle_4f_64x64_v1.png": "0a40e4c49e6d421fb9d0e0401bd14fbd56a3bc86a4c60e12c99df8437412faad",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Idle_4f_64x64_v1.png.meta": "0da46db4791a91c737b9fbbc7b47a3ac65f2538a110a1f6ad84a17e422bdeb2d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Move_6f_64x64_v1.png": "c153835ca7cb39d25de00971fc1f31965aa531d5c953856ebf32e698b36f966d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Move_6f_64x64_v1.png.meta": "af11af8e3ff411b44fbf4f3b6e69c5fc6baeef913ddfc3b727d5e13aba846438",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Idle_4f_64x64_v2.png": "8fb203aec0e14f0c75f5e8828af3e37c6e83392bbec9a3f9853630ab03ea0a1e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Idle_4f_64x64_v2.png.meta": "f90103747ddde6dcc1e3595e9f48773218941c7b21edd2e671180a71c4a8f62b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Move_6f_64x64_v2.png": "92d82e3002d0f99abffa7f48600e1f2289eacace7771de7a71f9d5e47f99adba",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Move_6f_64x64_v2.png.meta": "497870ccd5c7caedc08a01d2d2a0b08c9df4b487397db5cb3fda0d30ef0fa83f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat.meta": "d6eabda51f3a5a31217cf9fa62cc303f2017bffc11edf7461fc661815f9c342e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations.meta": "b6ed2ba95d428bcf29df7e2d8d1d3b321a39f71691c20260656e221abc091cbe",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX.meta": "d4ba5fb1d9c46f034949cc19b43ed845fc04f35bf06ebb2abfcd089d520961e7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Death_7f_64x64.png": "e0004d4cf70a3422a72e5d3a14a2a110c947ecf77a27015fab59ca5fcb0d86ad",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Death_7f_64x64.png.meta": "709fe61908dbde6fb51c6660916aa1e723e81258710410aee8de0d994dc8517e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Hit_3f_64x64.png": "59df2e9c9027e1997777fe497dfd6ec2b5803e2486929b40d9eb33823cf9953c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Hit_3f_64x64.png.meta": "4c29947128e40c193a88982d79a5c0f531837e86263746c51b756ce665eedcf0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64.png": "0e1203c8c273ca3fa0ffcf2f281e53139f76f0012ae04c2523f22a8a0df48945",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64.png.meta": "7391a689c01868e6c3be8e6ac5b7d0aec9906df6049b3e1e2a80953f08780509",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64_v2.png": "561d1a988414074007a168463b7baf8ef961c3796670dee2c2bb6327a148f3a5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64_v2.png.meta": "2c64dd7617229a7902033aa259276a90dfa880f4aa5b27758dc80dd9073de94f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64.png": "648cc4fae1fb3f9b363e769d85b56139be23b1ae9f6a533ca10008cad223f06b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64.png.meta": "56cd1b588021b2348dc41cd59d0bb6d5c6d19c2dcf58b24d371e2d7b60d6901a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64_v2.png": "04b8c08aaf3de3d487b89572c9adb9e494b011e6db4de268647014a7b0cd6864",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64_v2.png.meta": "ae19b6b6cff08bcd6175a3bff5b90d496e03cda8f9ca97d766cd8d8d58f74d34",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64.png": "c336b0fde5c195ebb408562495be90fdcfb940c0b671c1e8051dc48fcf020df8",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64.png.meta": "b892bdc01401398e66f00f441a443688a638fa821293d031f35ee12acaaee7d5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64_v2.png": "5de67924025a49532a4ebd409a6458e8d77afcb1054e0e4c77c79d7616ee7cab",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64_v2.png.meta": "e60752d474497f68e4f541fe17222378eae5396064ec5f7c1488218313427ae7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Windup_6f_64x64.png": "ae0548a4757758fb60c15afcbe48a5220eb4c2ced1df18685b8d40aa668f6172",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Windup_6f_64x64.png.meta": "1c2e188d5f0132240dc8793667451a9c909ff896e248c4337c120bb3cf5df88f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_DeathBurst.png": "ebda2c6677a0b3c602899a9ee41d21bec48f2aaea8d529c5d6db050b3c29aae3",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_DeathBurst.png.meta": "0b21e70446de57c756e0df646f5754e93f98f18c1debc71cd324b11db8783699",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_HitFragments.png": "ad88cc38b7cac13be178d2a829f651d87a35759897775e8d161c395ba3a4efe5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_HitFragments.png.meta": "7ac9864ab5f068c11490c911b38a8dfcf714e12877768d9679fa69af3cc1c1d4",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_JumpDust.png": "33d02ab43085c0c57cdfb107c7329752fa13e369a27ff7530166b0dabe3b625e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_JumpDust.png.meta": "a083ce66ab4bc346029f53d9e6dfc4072d2f9bfab42a5a7fac400d898b917f1d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingDust.png": "82684f0f8f44a3f81ccd45c81cda6777ed184523ddc17f2be4dd1497c583eb32",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingDust.png.meta": "5bcd7f981f0faa84a283d0936474e4e1e531794611c3b94d8e0a27fbaf1ea9ca",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingShockwave.png": "9c7ea37b2892b61781a428eed71e7bbc28638e15f6450d90da5b9f0892a0ee21",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingShockwave.png.meta": "8b8a8fe9d0fbbce9bb3e9a6821ffa84472e45fd553b44da9bb4213e902bb1496",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_StoneFragments.png": "0ba84f660e9a961e3f44fe2a21b4068f4dd94e77852181edd142f3744d2c20dc",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_StoneFragments.png.meta": "51d9eb6d85bc45efd8e97e840d1e71ea931582514616f33307a03ec8c6e977b5",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\coordinate-inspection.png": "5134d68476321f10f368f2b1531eb1f21a1ddb1984ff9c852f8cc8115f722c70",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\README_KO.md": "196ac34483cc59b3d5a7e53b3ba9335732ca92dbf342f8f0d16e1dadd30c63e4",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\source-inspection.png": "ef668b342fcc3fe90b5688c1efe4494574eb99fe29c0825f2a55d5258b245349",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\Previews\\IronMonster_I-3R_Idle_4f_64x64_v1.gif": "4d91482a2bb7380029fc2345cee1d4790df211613968bed326cb2c825344aaad",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\Previews\\IronMonster_I-3R_Idle_4f_64x64_v1_6x.png": "0a71d854697605f76f7b2f2bfac30f9dbf127bce5c32c495ded27eab88cea78b",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\Previews\\IronMonster_I-3R_Move_6f_64x64_v1.gif": "4d1f94a6a5ff5ed49228cd5cf794dd0dd020a9258846b3982ade7d2dd14739e1",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\Previews\\IronMonster_I-3R_Move_6f_64x64_v1_6x.png": "b3554e971ea900e655f9f7583724437dc4f8de58345c8575c4d6c891479f19cb",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\Review\\validation.json": "d8e6d93460d908ec09d1266339ed333a2572835df7a44ec7778ab39597782ef2",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\Sprites\\IronMonster_I-3R_Idle_4f_64x64_v1.png": "0a40e4c49e6d421fb9d0e0401bd14fbd56a3bc86a4c60e12c99df8437412faad",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\I-3R_IdleMove_v1\\Sprites\\IronMonster_I-3R_Move_6f_64x64_v1.png": "c153835ca7cb39d25de00971fc1f31965aa531d5c953856ebf32e698b36f966d",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\IronMonsterAI.cs": "a84e94477c3f240d6982fdb00b0b15236803cf9cf456e6287399755d96d0e9a7",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\IronMonsterSpriteAnimation.cs": "1eed78cf6da33595d9dafc4b4f76b9f05c67da67d39169ec98999dc525b4f4b2",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\NormalMonsterAI.cs": "b7b3c29500b8cbce6f5e77d5f1f3eac935ad342c365e954e0a450d881fdffad8"
+  },
+  "notes": [
+    "GIFs repeat for review, independent of gameplay playback mode.",
+    "Browser file:// playback was blocked in this session; no bypass attempted. Real-time motion naturalness is not certified.",
+    "Hidden joints use adjacent original material colors. Armor separation is 2D source-pixel rigging, not newly rendered hidden plate surfaces.",
+    "NormalMonsterAI source defaults are .75 warning/.8 recovery; IronMonsterAI wallRecovery is 1.5. Serialized runtime overrides were not verified."
+  ],
+  "loop_metrics": {
+    "charge_mean_abs_rgba_changes_including_seam": [
+      1.95587158203125,
+      3.100830078125,
+      2.365966796875,
+      2.77947998046875
+    ],
+    "trail_mean_abs_rgba_changes_including_seam": [
+      8.78342013888889,
+      8.398600260416666,
+      8.029839409722221,
+      8.66796875,
+      8.673285590277779,
+      8.278483072916666
+    ],
+    "note": "Numerical continuity metrics only, not visual smoothness approval."
+  }
+}

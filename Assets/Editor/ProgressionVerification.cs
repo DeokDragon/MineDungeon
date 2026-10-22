@@ -60,6 +60,25 @@ public static class ProgressionVerification
                         "independent 50P boundary/coexisting20 stat" + stat + " points" + points);
                 }
             set(1, 0, 3);
+            foreach (int points in new[] { 99, 100 })
+                for (int stat = 0; stat < 3; stat++)
+                {
+                    restore.Invoke(growth, new object[] {50, 0, 150-points, stat == 0 ? points : 0, stat == 1 ? points : 0, stat == 2 ? points : 0});
+                    check(growth.HasHealth100Passive == (stat == 0 && points == 100) &&
+                        growth.HasPhysical100Passive == (stat == 1 && points == 100) &&
+                        growth.HasMagic100Passive == (stat == 2 && points == 100) &&
+                        growth.HasHealth50Passive == (stat == 0) && growth.HasPhysical50Passive == (stat == 1) &&
+                        growth.HasMagic50Passive == (stat == 2), "independent100 boundary/coexisting50 stat" + stat + " points" + points);
+                }
+            set(1, 0, 3);
+            var limit = typeof(PlayerHealth).GetMethod("RegenerationLimit", BindingFlags.Static | BindingFlags.NonPublic);
+            var scaleUsed = typeof(PlayerHealth).GetMethod("ScaleRegenerationUsed", BindingFlags.Static | BindingFlags.NonPublic);
+            check((int)limit.Invoke(null, new object[]{400}) == 80 && (int)limit.Invoke(null, new object[]{163}) == 32, "regen floor20percent limit");
+            check(Math.Abs((double)scaleUsed.Invoke(null, new object[]{20d,400,200}) - 10d) < 1e-9, "regen consumed fraction scales25percent");
+            check(Math.Abs((double)scaleUsed.Invoke(null, new object[]{1d,400,163}) - .4d) < 1e-9, "regen rescale preserves fractional budget without rounding loss");
+            check(PlayerSkillAttackPower.RoundDamage(14.7d*2) == 29 && PlayerSkillAttackPower.RoundDamage(14.7d*.3d*2) == 9, "enhanced raw14.7 direct29/shock9, no intermediate rounding");
+            check(PlayerSkillAttackPower.RoundDamage(18.625d*.4d) == 7 && PlayerSkillAttackPower.RoundDamage(18.75d*.4d) == 8, "explosion raw snapshot7.45->7/exact7.5->8");
+            check(PlayerSkills.ExtraExplosionRadius == 1.5f && PlayerSkills.ExtraExplosionCooldown == 1.5f, "explosion1.5 radius/shared cooldown independent20P");
             var cooldown = typeof(PlayerSkills).GetMethod("CalculateCooldown", BindingFlags.Static | BindingFlags.NonPublic);
             Func<float, bool, float, float> cd = (basis, passive, equipment) => (float)cooldown.Invoke(null, new object[] {basis, passive, equipment});
             check(Mathf.Abs(cd(7, true, 0) - 5.95f) < .00001f, "TealBeam magic50 cooldown5.95");

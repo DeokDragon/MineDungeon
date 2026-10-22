@@ -10,6 +10,7 @@ public partial class DungeonRoomManager : MonoBehaviour
     [SerializeField, Min(1)] private int normalRoomCount = 3;
 
     private DungeonRoom currentRoom;
+    public DungeonRoom CurrentRoom => currentRoom;
     private DungeonRoom pendingExit;
     private int previousIndex = -1;
     public int CurrentRoomNumber { get; private set; }
@@ -126,6 +127,7 @@ public partial class DungeonRoomManager : MonoBehaviour
         DungeonRunManager.Instance.BeginNewRun();
         DungeonRunManager.Instance.GetComponent<RewardInventorySession>()?.BeginChallenge();
         player.GetComponent<PlayerSkills>()?.ResetForNewRun();
+        player.ResetForNewRun();
         player.Heal(player.MaxHealth);
         DungeonRunManager.Instance.BeginTracking(this);
         LoadRoom(1);
