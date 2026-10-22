@@ -19,6 +19,15 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
     private bool hasAggro;
     public bool HasAggro => hasAggro;
     public float AggroRadius => aggroRadius;
+    // Visual playback only; combat timing remains owned by FixedUpdate.
+    public bool CanPlayLocomotion => isActiveAndEnabled && state == State.Chase;
+    public bool IsWindingUp => state == State.Warning;
+    public bool IsJumping => state == State.Jump;
+    public bool IsRecovering => state == State.Recovery;
+    public float VisualPhaseTime => timer;
+    public float WarningDuration => warningDuration;
+    public float JumpDuration => jumpDuration;
+    public float RecoveryDuration => recoveryDuration;
     public int AttackDamage => attackDamage;
     public void ConfigureSpawnAttack(int value)
     {
@@ -41,6 +50,7 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
     private StoneGolemTelegraph telegraph;
     private GameObject effectsRoot;
     private Rigidbody2D rb;
+    private StoneMonsterSpriteAnimation spriteAnimation;
     private Collider2D ownCollider;
     private RoomWalkableLayout layout;
     private Collider2D playerCollider;
@@ -58,6 +68,7 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteAnimation = GetComponent<StoneMonsterSpriteAnimation>();
         ownCollider = GetComponent<Collider2D>();
         layout = GetComponentInParent<RoomWalkableLayout>();
         if (body != null) bodyStartPosition = body.localPosition;
@@ -131,6 +142,7 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
                     jumpStartPosition = rb.position;
                     SetIgnorePlayer(true);
                     passage.Begin(this,playerHealth);
+                    if (spriteAnimation) spriteAnimation.PlayJumpDust(rb.position);
                 }
                 break;
 
@@ -181,6 +193,8 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
             int hitCount=rb.Cast(chase,moveFilter,moveHits,travel+.02f);
             for(int i=0;i<hitCount;i++) travel=Mathf.Min(travel,Mathf.Max(0,moveHits[i].distance-.02f));
             rb.linearVelocity = chase * travel / Time.fixedDeltaTime;
+            if (spriteAnimation && rb.linearVelocity.sqrMagnitude > .0004f)
+                spriteAnimation.FaceTarget(player.position.x - rb.position.x);
             return;
         }
 
@@ -211,6 +225,7 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
         nextAttackTime = Time.time + attackInterval;
         timer = 0f;
         state = State.Warning;
+        if (spriteAnimation) spriteAnimation.FaceTarget(delta.x);
 
 
     }
@@ -264,9 +279,10 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
 
         // 착지 한 번당 피해 판정 한 번
         if(Camera.main && Camera.main.TryGetComponent<CameraFollow>(out var camera)) camera.ShakeAt(center,shakeStrength,shakeDuration);
+        bool hasLandingEffect = spriteAnimation && spriteAnimation.PlayLanding(center);
         if (inRange && !blocked) playerHealth.TakeDamage(attackDamage);
         if(playerHealth.IsDead) return;
-        StartCoroutine(LandingEffect(center));
+        if (!hasLandingEffect) StartCoroutine(LandingEffect(center));
 
         SetIgnorePlayer(false);
         passage.Restore();
@@ -314,6 +330,7 @@ public class StoneMonsterAI : MonoBehaviour, IMonsterAI
         ResetVisuals(); SetIgnorePlayer(false);
         passage.Restore();
         state = State.Chase; timer = 0f;
+        if (spriteAnimation) spriteAnimation.CancelCombatVisuals();
 
     }
     private void OnTargetDied(PlayerHealth _) { CancelAttacks(); }

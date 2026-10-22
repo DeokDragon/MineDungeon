@@ -1,0 +1,1506 @@
+{
+  "resources": [
+    {
+      "name": "B-1R_Windup_6f_64x64",
+      "png": "Animations/B-1R_Windup_6f_64x64.png",
+      "gif": "Previews/B-1R_Windup_6f_64x64.gif",
+      "category": "Animations",
+      "sheet_size": [
+        384,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 6,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        32.0,
+        32.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        80,
+        90,
+        100,
+        110,
+        140,
+        130
+      ],
+      "total_ms": 650,
+      "rgba": true,
+      "transparent_pixels": 12049,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 6,
+      "bounds_per_frame": [
+        [
+          2,
+          4,
+          62,
+          62
+        ],
+        [
+          4,
+          5,
+          60,
+          62
+        ],
+        [
+          4,
+          6,
+          59,
+          62
+        ],
+        [
+          4,
+          7,
+          58,
+          62
+        ],
+        [
+          4,
+          9,
+          56,
+          62
+        ],
+        [
+          4,
+          8,
+          57,
+          62
+        ]
+      ],
+      "png_sha256": "ae0548a4757758fb60c15afcbe48a5220eb4c2ced1df18685b8d40aa668f6172",
+      "notes": "Grounded soles fixed; torso lowers 1/2/3/5/4px; thighs bend and forearms draw inward; total 650ms.",
+      "webp": "Previews/B-1R_Windup_6f_64x64.webp"
+    },
+    {
+      "name": "B-1R_Jump_4f_64x64",
+      "png": "Animations/B-1R_Jump_4f_64x64.png",
+      "gif": "Previews/B-1R_Jump_4f_64x64.gif",
+      "category": "Animations",
+      "sheet_size": [
+        256,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 4,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        32.0,
+        32.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        70,
+        90,
+        100,
+        90
+      ],
+      "total_ms": 350,
+      "rgba": true,
+      "transparent_pixels": 8547,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 4,
+      "bounds_per_frame": [
+        [
+          4,
+          6,
+          57,
+          62
+        ],
+        [
+          4,
+          4,
+          54,
+          60
+        ],
+        [
+          4,
+          4,
+          55,
+          59
+        ],
+        [
+          3,
+          5,
+          60,
+          61
+        ]
+      ],
+      "png_sha256": "0e1203c8c273ca3fa0ffcf2f281e53139f76f0012ae04c2523f22a8a0df48945",
+      "notes": "350ms; tucked arms/legs; no sprite-encoded trajectory. Unity JumpVisual retains movement/height ownership.",
+      "webp": "Previews/B-1R_Jump_4f_64x64.webp"
+    },
+    {
+      "name": "B-1R_Landing_3f_64x64",
+      "png": "Animations/B-1R_Landing_3f_64x64.png",
+      "gif": "Previews/B-1R_Landing_3f_64x64.gif",
+      "category": "Animations",
+      "sheet_size": [
+        192,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 3,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        32.0,
+        32.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        40,
+        60,
+        80
+      ],
+      "total_ms": 180,
+      "rgba": true,
+      "transparent_pixels": 5853,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 3,
+      "bounds_per_frame": [
+        [
+          4,
+          6,
+          60,
+          62
+        ],
+        [
+          2,
+          9,
+          62,
+          62
+        ],
+        [
+          3,
+          8,
+          60,
+          62
+        ]
+      ],
+      "png_sha256": "648cc4fae1fb3f9b363e769d85b56139be23b1ae9f6a533ca10008cad223f06b",
+      "notes": "180ms visual contact/squash/absorb. No hit events. Show within existing recovery window, never extend combat timers.",
+      "webp": "Previews/B-1R_Landing_3f_64x64.webp"
+    },
+    {
+      "name": "B-1R_Recovery_5f_64x64",
+      "png": "Animations/B-1R_Recovery_5f_64x64.png",
+      "gif": "Previews/B-1R_Recovery_5f_64x64.gif",
+      "category": "Animations",
+      "sheet_size": [
+        320,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 5,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        32.0,
+        32.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        180,
+        200,
+        220,
+        220,
+        180
+      ],
+      "total_ms": 1000,
+      "rgba": true,
+      "transparent_pixels": 9442,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 5,
+      "bounds_per_frame": [
+        [
+          3,
+          8,
+          60,
+          62
+        ],
+        [
+          4,
+          7,
+          60,
+          62
+        ],
+        [
+          3,
+          6,
+          60,
+          62
+        ],
+        [
+          2,
+          5,
+          62,
+          62
+        ],
+        [
+          2,
+          4,
+          62,
+          62
+        ]
+      ],
+      "png_sha256": "c336b0fde5c195ebb408562495be90fdcfb940c0b671c1e8051dc48fcf020df8",
+      "notes": "1000ms proposed preview; final frame exactly matches supplied Idle v2 F1. Landing must overlap/use existing recovery window, not add a new 180ms delay.",
+      "webp": "Previews/B-1R_Recovery_5f_64x64.webp"
+    },
+    {
+      "name": "B-1R_Hit_3f_64x64",
+      "png": "Animations/B-1R_Hit_3f_64x64.png",
+      "gif": "Previews/B-1R_Hit_3f_64x64.gif",
+      "category": "Animations",
+      "sheet_size": [
+        192,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 3,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        32.0,
+        32.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        40,
+        60,
+        50
+      ],
+      "total_ms": 150,
+      "rgba": true,
+      "transparent_pixels": 5396,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 2,
+      "bounds_per_frame": [
+        [
+          2,
+          4,
+          62,
+          62
+        ],
+        [
+          1,
+          4,
+          62,
+          62
+        ],
+        [
+          2,
+          4,
+          62,
+          62
+        ]
+      ],
+      "png_sha256": "59df2e9c9027e1997777fe497dfd6ec2b5803e2486929b40d9eb33823cf9953c",
+      "notes": "Restrained 1px torso/shoulder response; no flash, tint, squash, hit-stop or logic changes. F1/F3 intentionally identical.",
+      "webp": "Previews/B-1R_Hit_3f_64x64.webp"
+    },
+    {
+      "name": "B-1R_Death_7f_64x64",
+      "png": "Animations/B-1R_Death_7f_64x64.png",
+      "gif": "Previews/B-1R_Death_7f_64x64.gif",
+      "category": "Animations",
+      "sheet_size": [
+        448,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 7,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        32.0,
+        32.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        50,
+        50,
+        60,
+        60,
+        70,
+        80,
+        80
+      ],
+      "total_ms": 450,
+      "rgba": true,
+      "transparent_pixels": 19962,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 7,
+      "bounds_per_frame": [
+        [
+          2,
+          4,
+          62,
+          62
+        ],
+        [
+          2,
+          9,
+          62,
+          62
+        ],
+        [
+          1,
+          17,
+          62,
+          62
+        ],
+        [
+          1,
+          28,
+          62,
+          62
+        ],
+        [
+          1,
+          40,
+          62,
+          63
+        ],
+        [
+          16,
+          55,
+          46,
+          62
+        ],
+        null
+      ],
+      "png_sha256": "e0004d4cf70a3422a72e5d3a14a2a110c947ecf77a27015fab59ca5fcb0d86ad",
+      "notes": "450ms; source rocks separate, collapse into rubble and disappear. F7 transparent. No rewards/death-event ownership.",
+      "webp": "Previews/B-1R_Death_7f_64x64.webp"
+    },
+    {
+      "name": "B-1R_VFX_JumpDust",
+      "png": "VFX/B-1R_VFX_JumpDust.png",
+      "gif": "Previews/B-1R_VFX_JumpDust.gif",
+      "category": "VFX",
+      "sheet_size": [
+        320,
+        64
+      ],
+      "frame_size": [
+        64,
+        64
+      ],
+      "frames": 5,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        32.0,
+        32.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        40,
+        40,
+        40,
+        40,
+        40
+      ],
+      "total_ms": 200,
+      "rgba": true,
+      "transparent_pixels": 19073,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 5,
+      "bounds_per_frame": [
+        [
+          27,
+          27,
+          38,
+          37
+        ],
+        [
+          22,
+          19,
+          42,
+          43
+        ],
+        [
+          17,
+          14,
+          47,
+          49
+        ],
+        [
+          13,
+          11,
+          51,
+          53
+        ],
+        null
+      ],
+      "png_sha256": "33d02ab43085c0c57cdfb107c7329752fa13e369a27ff7530166b0dabe3b625e",
+      "notes": "64px frame / 5f; small foot-origin dust with a few source-textured chips; no body/shadow.",
+      "webp": "Previews/B-1R_VFX_JumpDust.webp"
+    },
+    {
+      "name": "B-1R_VFX_LandingShockwave",
+      "png": "VFX/B-1R_VFX_LandingShockwave.png",
+      "gif": "Previews/B-1R_VFX_LandingShockwave.gif",
+      "category": "VFX",
+      "sheet_size": [
+        768,
+        128
+      ],
+      "frame_size": [
+        128,
+        128
+      ],
+      "frames": 6,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        64.0,
+        64.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        30,
+        40,
+        40,
+        40,
+        40,
+        60
+      ],
+      "total_ms": 250,
+      "rgba": true,
+      "transparent_pixels": 96167,
+      "alpha_min_max": [
+        0,
+        210
+      ],
+      "unique_frames": 6,
+      "bounds_per_frame": [
+        [
+          52,
+          52,
+          76,
+          76
+        ],
+        [
+          38,
+          38,
+          90,
+          90
+        ],
+        [
+          24,
+          24,
+          104,
+          104
+        ],
+        [
+          13,
+          13,
+          115,
+          115
+        ],
+        [
+          7,
+          6,
+          122,
+          122
+        ],
+        null
+      ],
+      "png_sha256": "9c7ea37b2892b61781a428eed71e7bbc28638e15f6450d90da5b9f0892a0ee21",
+      "notes": "128px frame / 6f; centered circular ring, max radius 57.6px at PPU64 ~0.9 world units. Suggested scale 1; confirm against actual world transform/collider. Decorative only, not a warning texture or damage mask.",
+      "webp": "Previews/B-1R_VFX_LandingShockwave.webp"
+    },
+    {
+      "name": "B-1R_VFX_LandingDust",
+      "png": "VFX/B-1R_VFX_LandingDust.png",
+      "gif": "Previews/B-1R_VFX_LandingDust.gif",
+      "category": "VFX",
+      "sheet_size": [
+        768,
+        128
+      ],
+      "frame_size": [
+        128,
+        128
+      ],
+      "frames": 6,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        64.0,
+        64.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        40,
+        40,
+        40,
+        40,
+        40,
+        50
+      ],
+      "total_ms": 250,
+      "rgba": true,
+      "transparent_pixels": 92378,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 6,
+      "bounds_per_frame": [
+        [
+          59,
+          59,
+          69,
+          69
+        ],
+        [
+          50,
+          50,
+          78,
+          78
+        ],
+        [
+          41,
+          42,
+          86,
+          86
+        ],
+        [
+          32,
+          34,
+          94,
+          94
+        ],
+        [
+          23,
+          26,
+          103,
+          102
+        ],
+        null
+      ],
+      "png_sha256": "82684f0f8f44a3f81ccd45c81cda6777ed184523ddc17f2be4dd1497c583eb32",
+      "notes": "128px frame / 6f; dust-only outward burst, separate from shockwave and chips; no filled attack disk.",
+      "webp": "Previews/B-1R_VFX_LandingDust.webp"
+    },
+    {
+      "name": "B-1R_VFX_StoneFragments",
+      "png": "VFX/B-1R_VFX_StoneFragments.png",
+      "gif": "Previews/B-1R_VFX_StoneFragments.gif",
+      "category": "VFX",
+      "sheet_size": [
+        576,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 6,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        48.0,
+        48.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "total_ms": 300,
+      "rgba": true,
+      "transparent_pixels": 54758,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 6,
+      "bounds_per_frame": [
+        [
+          42,
+          42,
+          53,
+          54
+        ],
+        [
+          37,
+          32,
+          58,
+          55
+        ],
+        [
+          32,
+          25,
+          63,
+          57
+        ],
+        [
+          28,
+          19,
+          68,
+          61
+        ],
+        [
+          23,
+          16,
+          73,
+          68
+        ],
+        null
+      ],
+      "png_sha256": "0ba84f660e9a961e3f44fe2a21b4068f4dd94e77852181edd142f3744d2c20dc",
+      "notes": "96px frame / 6f; source-textured small stone fragments for landing; separate from dust/ring.",
+      "webp": "Previews/B-1R_VFX_StoneFragments.webp"
+    },
+    {
+      "name": "B-1R_VFX_HitFragments",
+      "png": "VFX/B-1R_VFX_HitFragments.png",
+      "gif": "Previews/B-1R_VFX_HitFragments.gif",
+      "category": "VFX",
+      "sheet_size": [
+        128,
+        32
+      ],
+      "frame_size": [
+        32,
+        32
+      ],
+      "frames": 4,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        16.0,
+        16.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        40,
+        40,
+        50,
+        50
+      ],
+      "total_ms": 180,
+      "rgba": true,
+      "transparent_pixels": 3969,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 4,
+      "bounds_per_frame": [
+        [
+          12,
+          12,
+          21,
+          21
+        ],
+        [
+          9,
+          8,
+          23,
+          23
+        ],
+        [
+          7,
+          5,
+          26,
+          26
+        ],
+        null
+      ],
+      "png_sha256": "ad88cc38b7cac13be178d2a829f651d87a35759897775e8d161c395ba3a4efe5",
+      "notes": "32px frame / 4f; only four small stone chips, no bright flash; single-impact origin centered.",
+      "webp": "Previews/B-1R_VFX_HitFragments.webp"
+    },
+    {
+      "name": "B-1R_VFX_DeathBurst",
+      "png": "VFX/B-1R_VFX_DeathBurst.png",
+      "gif": "Previews/B-1R_VFX_DeathBurst.gif",
+      "category": "VFX",
+      "sheet_size": [
+        672,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 7,
+      "pivot_normalized": [
+        0.5,
+        0.5
+      ],
+      "pivot_frame_pixels": [
+        48.0,
+        48.0
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot; preview GIF repeats only for review",
+      "duration_ms": [
+        50,
+        50,
+        60,
+        60,
+        70,
+        80,
+        80
+      ],
+      "total_ms": 450,
+      "rgba": true,
+      "transparent_pixels": 59227,
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "unique_frames": 7,
+      "bounds_per_frame": [
+        [
+          43,
+          42,
+          54,
+          54
+        ],
+        [
+          37,
+          36,
+          59,
+          58
+        ],
+        [
+          32,
+          30,
+          65,
+          63
+        ],
+        [
+          28,
+          25,
+          70,
+          67
+        ],
+        [
+          22,
+          23,
+          76,
+          72
+        ],
+        [
+          17,
+          20,
+          82,
+          77
+        ],
+        null
+      ],
+      "png_sha256": "ebda2c6677a0b3c602899a9ee41d21bec48f2aaea8d529c5d6db050b3c29aae3",
+      "notes": "96px frame / 7f; source-colored stone chips and transient dust, independent of the death body sprite.",
+      "webp": "Previews/B-1R_VFX_DeathBurst.webp"
+    }
+  ],
+  "pose_parameters": [
+    {
+      "pose": "Windup F2",
+      "body_offset": [
+        0,
+        1
+      ],
+      "arm_angles": [
+        3,
+        -3
+      ],
+      "arm_shift": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "crouch": 1,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Windup F3",
+      "body_offset": [
+        0,
+        2
+      ],
+      "arm_angles": [
+        8,
+        -8
+      ],
+      "arm_shift": [
+        [
+          1,
+          2
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "crouch": 2,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Windup F4",
+      "body_offset": [
+        0,
+        3
+      ],
+      "arm_angles": [
+        12,
+        -12
+      ],
+      "arm_shift": [
+        [
+          1,
+          3
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "crouch": 3,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Windup F5",
+      "body_offset": [
+        0,
+        5
+      ],
+      "arm_angles": [
+        18,
+        -18
+      ],
+      "arm_shift": [
+        [
+          1,
+          4
+        ],
+        [
+          -1,
+          4
+        ]
+      ],
+      "crouch": 5,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Windup F6",
+      "body_offset": [
+        0,
+        4
+      ],
+      "arm_angles": [
+        16,
+        -16
+      ],
+      "arm_shift": [
+        [
+          1,
+          3
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "crouch": 4,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Jump F1 push-off",
+      "body_offset": [
+        0,
+        2
+      ],
+      "arm_angles": [
+        14,
+        -14
+      ],
+      "arm_shift": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "crouch": 2,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Jump F2",
+      "body_offset": [
+        0,
+        0
+      ],
+      "arm_angles": [
+        23,
+        -23
+      ],
+      "arm_shift": [
+        [
+          2,
+          -1
+        ],
+        [
+          -2,
+          -1
+        ]
+      ],
+      "crouch": 0,
+      "air": true,
+      "leg_shift": [
+        [
+          1,
+          -2
+        ],
+        [
+          -1,
+          -2
+        ]
+      ],
+      "leg_angles": [
+        5,
+        -5
+      ]
+    },
+    {
+      "pose": "Jump F3 tuck",
+      "body_offset": [
+        0,
+        0
+      ],
+      "arm_angles": [
+        30,
+        -30
+      ],
+      "arm_shift": [
+        [
+          2,
+          0
+        ],
+        [
+          -2,
+          0
+        ]
+      ],
+      "crouch": 0,
+      "air": true,
+      "leg_shift": [
+        [
+          2,
+          -4
+        ],
+        [
+          -2,
+          -4
+        ]
+      ],
+      "leg_angles": [
+        9,
+        -9
+      ]
+    },
+    {
+      "pose": "Jump F4 descent",
+      "body_offset": [
+        0,
+        1
+      ],
+      "arm_angles": [
+        6,
+        -6
+      ],
+      "arm_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "crouch": 0,
+      "air": true,
+      "leg_shift": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Landing F1 contact",
+      "body_offset": [
+        0,
+        2
+      ],
+      "arm_angles": [
+        4,
+        -4
+      ],
+      "arm_shift": [
+        [
+          1,
+          2
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "crouch": 2,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Landing F2 squash",
+      "body_offset": [
+        0,
+        5
+      ],
+      "arm_angles": [
+        -2,
+        2
+      ],
+      "arm_shift": [
+        [
+          1,
+          3
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "crouch": 5,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Landing F3 absorb",
+      "body_offset": [
+        0,
+        4
+      ],
+      "arm_angles": [
+        2,
+        -2
+      ],
+      "arm_shift": [
+        [
+          1,
+          3
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "crouch": 4,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Recovery F2",
+      "body_offset": [
+        0,
+        3
+      ],
+      "arm_angles": [
+        3,
+        -3
+      ],
+      "arm_shift": [
+        [
+          1,
+          3
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "crouch": 3,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Recovery F3",
+      "body_offset": [
+        0,
+        2
+      ],
+      "arm_angles": [
+        2,
+        -2
+      ],
+      "arm_shift": [
+        [
+          1,
+          2
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "crouch": 2,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Recovery F4",
+      "body_offset": [
+        0,
+        1
+      ],
+      "arm_angles": [
+        0,
+        0
+      ],
+      "arm_shift": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "crouch": 1,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    },
+    {
+      "pose": "Hit F2 restrained recoil",
+      "body_offset": [
+        1,
+        0
+      ],
+      "arm_angles": [
+        0,
+        0
+      ],
+      "arm_shift": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "crouch": 0,
+      "air": false,
+      "leg_shift": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "leg_angles": [
+        0,
+        0
+      ]
+    }
+  ],
+  "source_hashes": {
+    "C:\\Users\\User\\Downloads\\B-1R_Idle_4f_64x64_v2.png": "8fb203aec0e14f0c75f5e8828af3e37c6e83392bbec9a3f9853630ab03ea0a1e",
+    "C:\\Users\\User\\Downloads\\B-1R_Move_6f_64x64_v2.png": "92d82e3002d0f99abffa7f48600e1f2289eacace7771de7a71f9d5e47f99adba",
+    "C:\\Users\\User\\Downloads\\109d98af-5a3d-495d-8f80-4399de6f0594.jpg": "b6ee25aa7cab6ca1cc2846a0a1951e8dfdf53aa9dc1903fecf6222495d328c8a"
+  },
+  "pivot_note": "All resources center pivot (0.5,0.5), unlike previous informal foot reference notes.",
+  "telegraph": "Reuse verified StoneGolemTelegraph Mesh/LineRenderer; no duplicate warning PNG.",
+  "checks": {
+    "png_structure_and_frames": true,
+    "fixed_ground_contact_for_windup_landing_recovery": true,
+    "recovery_to_idle_exact": true,
+    "landing_to_recovery_exact": true,
+    "all_read_source_files_unchanged": true,
+    "unity_import_or_playback_executed": false,
+    "visual_naturalness_certified": false,
+    "shockwave_max_pixel_center_radius": 57.554322166106694,
+    "shockwave_world_radius_at_ppu64_scale1": 0.8992862838454171,
+    "all_gifs_decoded_frame_count_and_duration_verified": true,
+    "all_animated_webp_visible_rgba_matches_png_frames": true,
+    "all_frame_outer_edges_transparent_no_edge_cut": true,
+    "static_contact_sheets_visually_inspected": true
+  },
+  "limitations": [
+    "New combat clips are not wired into current StoneMonsterSpriteAnimation; it currently shows Idle F1 during combat.",
+    "LandingEffect currently spawns character sprites as dust; new dust is an alternative visual asset and is not automatically connected.",
+    "New shockwave duplicates the existing landing pulse if both are enabled; select/replace in a later integration task.",
+    "A single-shot source cannot supply hidden surfaces; newly exposed joints reuse adjacent original stone colors.",
+    "Death partitions follow the visible rock groups approximately; no independent hand-drawn concealed fracture faces."
+  ]
+}

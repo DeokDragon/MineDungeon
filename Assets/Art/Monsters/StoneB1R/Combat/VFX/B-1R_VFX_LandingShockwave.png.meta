@@ -1,0 +1,393 @@
+fileFormatVersion: 2
+guid: be8f120df4b954a42b2a5e42615c34b0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2993942935498063292
+    second: B-1R_VFX_LandingShockwave_0
+  - first:
+      213: -4796138644602981157
+    second: B-1R_VFX_LandingShockwave_1
+  - first:
+      213: -6288560558753893706
+    second: B-1R_VFX_LandingShockwave_2
+  - first:
+      213: -1740888452113705016
+    second: B-1R_VFX_LandingShockwave_3
+  - first:
+      213: 1729737905159706384
+    second: B-1R_VFX_LandingShockwave_4
+  - first:
+      213: 2311084427854476613
+    second: B-1R_VFX_LandingShockwave_5
+  - first:
+      213: -4767173466475025745
+    second: B-1R_VFX_LandingShockwave_6
+  - first:
+      213: 8287601847751443153
+    second: B-1R_VFX_LandingShockwave_7
+  - first:
+      213: 6112680404220600811
+    second: B-1R_VFX_LandingShockwave_8
+  - first:
+      213: 2396859491884905484
+    second: B-1R_VFX_LandingShockwave_9
+  - first:
+      213: -7464153882226391642
+    second: B-1R_VFX_LandingShockwave_10
+  - first:
+      213: -1471964698646939629
+    second: B-1R_VFX_LandingShockwave_11
+  - first:
+      213: 4058110647957169701
+    second: B-1R_VFX_LandingShockwave_12
+  - first:
+      213: -2114403351576424338
+    second: B-1R_VFX_LandingShockwave_13
+  - first:
+      213: 5151126296047850510
+    second: B-1R_VFX_LandingShockwave_14
+  - first:
+      213: -7568390458958914660
+    second: B-1R_VFX_LandingShockwave_15
+  - first:
+      213: -1225962288665261765
+    second: B-1R_VFX_LandingShockwave_16
+  - first:
+      213: 4622672372675326748
+    second: B-1R_VFX_LandingShockwave_17
+  - first:
+      213: -6803332271798448254
+    second: B-1R_VFX_LandingShockwave_18
+  - first:
+      213: -7232496572348325986
+    second: B-1R_VFX_LandingShockwave_19
+  - first:
+      213: -538285828821368556
+    second: B-1R_VFX_LandingShockwave_20
+  - first:
+      213: 4563075424393213127
+    second: B-1R_VFX_LandingShockwave_21
+  - first:
+      213: 8412198008210913442
+    second: B-1R_VFX_LandingShockwave_22
+  - first:
+      213: -917526503828753140
+    second: B-1R_VFX_LandingShockwave_23
+  - first:
+      213: -8318578464722061243
+    second: B-1R_VFX_LandingShockwave_24
+  - first:
+      213: 8845608069143673261
+    second: B-1R_VFX_LandingShockwave_25
+  - first:
+      213: 8613265880531598134
+    second: B-1R_VFX_LandingShockwave_26
+  - first:
+      213: 3288024818563176785
+    second: B-1R_VFX_LandingShockwave_27
+  - first:
+      213: 4607903520147382457
+    second: B-1R_VFX_LandingShockwave_28
+  - first:
+      213: -818449422375263321
+    second: B-1R_VFX_LandingShockwave_29
+  - first:
+      213: 3552509404842649827
+    second: B-1R_VFX_LandingShockwave_30
+  - first:
+      213: -8158081914138965060
+    second: B-1R_VFX_LandingShockwave_31
+  - first:
+      213: -5665271283083865213
+    second: B-1R_VFX_LandingShockwave_32
+  - first:
+      213: -3629081577543763497
+    second: B-1R_VFX_LandingShockwave_33
+  - first:
+      213: 794067186071962208
+    second: B-1R_VFX_LandingShockwave_34
+  - first:
+      213: -7027347331862717389
+    second: B-1R_VFX_LandingShockwave_35
+  - first:
+      213: -6729881610215099423
+    second: B-1R_VFX_LandingShockwave_36
+  - first:
+      213: -2380794526429988708
+    second: B-1R_VFX_LandingShockwave_37
+  - first:
+      213: -666065706011465639
+    second: B-1R_VFX_LandingShockwave_38
+  - first:
+      213: 4627650536451891175
+    second: B-1R_VFX_LandingShockwave_39
+  - first:
+      213: 8592783603250046388
+    second: B-1R_VFX_LandingShockwave_40
+  - first:
+      213: -8646408024474925543
+    second: B-1R_VFX_LandingShockwave_41
+  - first:
+      213: 8508492505696051334
+    second: B-1R_VFX_LandingShockwave_42
+  - first:
+      213: -1441207016661030341
+    second: B-1R_VFX_LandingShockwave_43
+  - first:
+      213: -3517854417674071316
+    second: B-1R_VFX_LandingShockwave_44
+  - first:
+      213: 2893425426425494336
+    second: B-1R_VFX_LandingShockwave_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: B-1R_VFX_LandingShockwave_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbdf62cbc3f9c8920800000000000000
+      internalID: 2993942935498063292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B-1R_VFX_LandingShockwave_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd47ae25051b07db0800000000000000
+      internalID: -4796138644602981157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B-1R_VFX_LandingShockwave_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b231f27d7b8ab8a0800000000000000
+      internalID: -6288560558753893706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B-1R_VFX_LandingShockwave_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7de2a2d2f17d7e0800000000000000
+      internalID: -1740888452113705016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B-1R_VFX_LandingShockwave_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017929fc573410810800000000000000
+      internalID: 1729737905159706384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B-1R_VFX_LandingShockwave_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 545f330ea0f921020800000000000000
+      internalID: 2311084427854476613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7461a815a18554b41aec41d56d7c9719
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      B-1R_VFX_LandingShockwave_0: 2993942935498063292
+      B-1R_VFX_LandingShockwave_1: -4796138644602981157
+      B-1R_VFX_LandingShockwave_2: -6288560558753893706
+      B-1R_VFX_LandingShockwave_3: -1740888452113705016
+      B-1R_VFX_LandingShockwave_4: 1729737905159706384
+      B-1R_VFX_LandingShockwave_5: 2311084427854476613
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
