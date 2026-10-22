@@ -10,16 +10,27 @@ public sealed class InventoryUI : MonoBehaviour
 {
     [System.Serializable] private sealed class Tab { public Button button; public Image background, border; }
     [System.Serializable] private sealed class Slot { public Button button; public TMP_Text name, marker; public Image icon, highlight; }
-    [System.Serializable] private sealed class StatCard { public TMP_Text points, amount; public Button invest; }
+    [System.Serializable] private sealed class StatCard
+    {
+        public TMP_Text points, amount, arrow;
+        public Button invest, header;
+        public GameObject details;
+        public LayoutElement layout;
+        public Image border;
+        public Color accent;
+    }
     [System.Serializable] private sealed class PassiveCard { public TMP_Text state; public Image background; }
     [SerializeField] private GameObject characterPage, statPage, statNotification;
     [SerializeField] private Button characterTab, statTab;
+    [SerializeField] private Image characterTabBorder, statTabBorder;
     [SerializeField] private Button[] multiplierButtons;
     [SerializeField] private TMP_Text unspentText, investmentRule, levelText;
     [SerializeField] private StatCard[] statCards;
     [SerializeField] private PassiveCard[] passiveCards;
     [SerializeField] private ScrollRect growthScroll;
     private PlayerProgression growth;
+    public const float CollapsedStatCardHeight = 54f, ExpandedStatCardHeight = 212f;
+    private int expandedStat = -1, hoveredStat = -1;
     private int investmentMultiplier = 1;
     private string investmentError;
     private string investmentSuccess;
@@ -95,7 +106,13 @@ public sealed class InventoryUI : MonoBehaviour
         {
             characterTab.onClick.AddListener(() => SetCharacterTab(0)); statTab.onClick.AddListener(() => SetCharacterTab(1));
             for (int i = 0; i < multiplierButtons.Length; i++) { int value = i == 0 ? 1 : i == 1 ? 5 : 10; multiplierButtons[i].onClick.AddListener(() => SetInvestmentMultiplier(value)); }
-            for (int i = 0; i < statCards.Length; i++) { int index = i; statCards[i].invest.onClick.AddListener(() => InvestStat(index)); }
+            for (int i = 0; i < statCards.Length; i++)
+            {
+                int index = i;
+                statCards[i].invest.onClick.AddListener(() => InvestStat(index));
+                if (statCards[i].header != null) statCards[i].header.onClick.AddListener(() => ToggleStatCard(index));
+            }
+            ApplyAccordion();
             SetCharacterTab(0);
             growthScroll.onValueChanged.AddListener(Scrolled);
         }
@@ -237,7 +254,54 @@ public sealed class InventoryUI : MonoBehaviour
         characterPage.SetActive(!stats); statPage.SetActive(stats); HideTooltip();
         characterTab.GetComponent<Image>().color = stats ? new Color(.09f,.12f,.16f) : new Color(.10f,.24f,.25f);
         statTab.GetComponent<Image>().color = stats ? new Color(.10f,.24f,.25f) : new Color(.09f,.12f,.16f);
+        if (characterTabBorder != null) characterTabBorder.color = stats ? new Color(.28f,.32f,.34f) : new Color(.84f,.66f,.32f);
+        if (statTabBorder != null) statTabBorder.color = stats ? new Color(.84f,.66f,.32f) : new Color(.28f,.32f,.34f);
+        hoveredStat = -1; RefreshStatBorders();
         RefreshGrowth();
+    }
+    public void ToggleStatCard(int index)
+    {
+        if (index < 0 || index >= statCards.Length || statCards[index].header == null) return;
+        expandedStat = expandedStat == index ? -1 : index;
+        HideTooltip(); ApplyAccordion();
+    }
+    public void SetStatCardHover(int index, bool hovered)
+    {
+        if (hovered) hoveredStat = index;
+        else if (hoveredStat == index) hoveredStat = -1;
+        RefreshStatBorders();
+    }
+    private void RefreshStatBorders()
+    {
+        for (int i = 0; i < statCards.Length; i++)
+        {
+            var card = statCards[i];
+            if (card.border == null) continue;
+            card.border.color = expandedStat == i
+                ? (hoveredStat == i ? Color.Lerp(card.accent, Color.white, .2f) : card.accent)
+                : (hoveredStat == i ? new Color(.65f,.72f,.77f) : new Color(.27f,.30f,.31f));
+        }
+    }
+    private void ApplyAccordion()
+    {
+        for (int i = 0; i < statCards.Length; i++)
+        {
+            var card = statCards[i];
+            if (card.details == null) continue;
+            bool open = i == expandedStat;
+            card.details.SetActive(open); card.layout.preferredHeight = open ? ExpandedStatCardHeight : CollapsedStatCardHeight;
+            // Rotate the existing '>' glyph into a downward chevron, avoiding a new font/art asset.
+            card.arrow.rectTransform.localRotation = Quaternion.Euler(0, 0, open ? -90f : 0f);
+        }
+        RefreshStatBorders();
+        if (growthScroll == null) return;
+        growthScroll.StopMovement();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(growthScroll.content);
+        if (expandedStat < 0) { growthScroll.verticalNormalizedPosition = 1f; return; }
+        var bounds = RectTransformUtility.CalculateRelativeRectTransformBounds(growthScroll.viewport, statCards[expandedStat].layout.transform);
+        float shift = bounds.min.y < growthScroll.viewport.rect.yMin ? growthScroll.viewport.rect.yMin - bounds.min.y
+            : bounds.max.y > growthScroll.viewport.rect.yMax ? growthScroll.viewport.rect.yMax - bounds.max.y : 0f;
+        growthScroll.content.anchoredPosition += Vector2.up * shift;
     }
     public void SetInvestmentMultiplier(int value)
     {

@@ -58,6 +58,58 @@ public static class InventoryUISetup
     }
     // Upgrade only the left side of the existing Main inventory; never rebuild owned items/loadout data.
     static Image GrowthFrame(string name, Transform parent, Color color) => Frame(name,parent,color,.4f);
+    public static string ConnectStatAccordion()
+    {
+        if(Application.isPlaying || UnityEngine.SceneManagement.SceneManager.GetActiveScene().path != "Assets/Scenes/Main.unity")
+            throw new System.Exception("Open Main in Edit mode");
+        var ui=Object.FindFirstObjectByType<InventoryUI>();var so=new SerializedObject(ui);
+        var cards=so.FindProperty("statCards");
+        if(cards.GetArrayElementAtIndex(0).FindPropertyRelative("header").objectReferenceValue!=null)
+            throw new System.Exception("Stat accordion already connected");
+        var scroll=(ScrollRect)so.FindProperty("growthScroll").objectReferenceValue;
+        scroll.content.GetComponent<VerticalLayoutGroup>().spacing=10;
+        font=((TMP_Text)cards.GetArrayElementAtIndex(0).FindPropertyRelative("points").objectReferenceValue).font;
+        for(int i=0;i<cards.arraySize;i++)
+        {
+            var data=cards.GetArrayElementAtIndex(i);
+            var points=(TMP_Text)data.FindPropertyRelative("points").objectReferenceValue;
+            var card=(RectTransform)points.transform.parent;
+            var header=Rect("Header",card,0,1,1,1);header.pivot=new Vector2(.5f,1);
+            header.sizeDelta=new Vector2(0,InventoryUI.CollapsedStatCardHeight);
+            var toggle=Button("Toggle",header,"",.015f,0,.825f,1);
+            toggle.GetComponent<Image>().color=Color.clear;toggle.transition=Selectable.Transition.None;
+            var name=card.Find("Name").GetComponent<TMP_Text>();name.transform.SetParent(toggle.transform,false);
+            name.rectTransform.anchorMin=new Vector2(.105f,0);name.rectTransform.anchorMax=new Vector2(.61f,1);name.fontSize=22;
+            points.transform.SetParent(toggle.transform,false);points.rectTransform.anchorMin=new Vector2(.62f,0);points.rectTransform.anchorMax=new Vector2(.99f,1);
+            var arrow=Text("Arrow",toggle.transform,">",25,.05f,.5f,.05f,.5f);arrow.rectTransform.sizeDelta=new Vector2(28,28);
+            var invest=(Button)data.FindPropertyRelative("invest").objectReferenceValue;invest.transform.SetParent(header,false);
+            var investRect=(RectTransform)invest.transform;investRect.anchorMin=new Vector2(.845f,.15f);investRect.anchorMax=new Vector2(.975f,.85f);
+            var details=Rect("Details",card,0,1,1,1);details.pivot=new Vector2(.5f,1);
+            details.anchoredPosition=new Vector2(0,-InventoryUI.CollapsedStatCardHeight);
+            details.sizeDelta=new Vector2(0,InventoryUI.ExpandedStatCardHeight-InventoryUI.CollapsedStatCardHeight);
+            var bonus=(RectTransform)card.Find("Bonus");bonus.SetParent(details,false);bonus.anchorMin=new Vector2(.035f,.84f);bonus.anchorMax=new Vector2(.96f,.99f);
+            for(int stage=0;stage<3;stage++)
+            {
+                var row=(RectTransform)card.Find("Passive"+(stage==0?20:stage==1?50:100));row.SetParent(details,false);
+                float bottom=.57f-stage*.26f;row.anchorMin=new Vector2(.025f,bottom);row.anchorMax=new Vector2(.975f,bottom+.23f);
+            }
+            var hover=card.gameObject.AddComponent<InventoryHover>();var hs=new SerializedObject(hover);Ref(hs,"owner",ui);hs.FindProperty("statCardIndex").intValue=i;hs.ApplyModifiedPropertiesWithoutUndo();
+            var layout=card.GetComponent<LayoutElement>();layout.preferredHeight=InventoryUI.CollapsedStatCardHeight;
+            data.FindPropertyRelative("header").objectReferenceValue=toggle;data.FindPropertyRelative("arrow").objectReferenceValue=arrow;
+            data.FindPropertyRelative("details").objectReferenceValue=details.gameObject;data.FindPropertyRelative("layout").objectReferenceValue=layout;
+            var border=card.Find("Frame").GetComponent<Image>();border.color=new Color(.27f,.30f,.31f);data.FindPropertyRelative("border").objectReferenceValue=border;
+            data.FindPropertyRelative("accent").colorValue=card.Find("Accent").GetComponent<Image>().color;
+            details.gameObject.SetActive(false);
+        }
+        var character=((Button)so.FindProperty("characterTab").objectReferenceValue).transform.Find("Border").GetComponent<Image>();
+        var stats=((Button)so.FindProperty("statTab").objectReferenceValue).transform.Find("Border").GetComponent<Image>();
+        character.color=gold;stats.color=new Color(.28f,.32f,.34f);Ref(so,"characterTabBorder",character);Ref(so,"statTabBorder",stats);
+        so.ApplyModifiedPropertiesWithoutUndo();
+        var page=(GameObject)so.FindProperty("statPage").objectReferenceValue;
+        page.SetActive(true);Canvas.ForceUpdateCanvases();LayoutRebuilder.ForceRebuildLayoutImmediate(scroll.content);scroll.verticalNormalizedPosition=1f;page.SetActive(false);
+        EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
+        return "Existing stat cards folded; isolated header toggles, hover borders and selected-tab borders connected.";
+    }
     public static string ConnectGrowthTabs()
     {
         if (Application.isPlaying || UnityEngine.SceneManagement.SceneManager.GetActiveScene().path != "Assets/Scenes/Main.unity")
@@ -160,6 +212,7 @@ public static class InventoryUISetup
         character.gameObject.SetActive(true);statPage.gameObject.SetActive(false);so.ApplyModifiedPropertiesWithoutUndo();
         panel.SetActive(false);EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
         EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());AssetDatabase.SaveAssets();
+        ConnectStatAccordion();
         return "Existing Main inventory left tabs/growth cards/common attributes connected; right side retained.";
     }
 
