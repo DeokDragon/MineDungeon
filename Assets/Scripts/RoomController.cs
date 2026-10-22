@@ -16,6 +16,14 @@ public class RoomController : MonoBehaviour
 
     public int RemainingEnemies => livingEnemies.Count;
     public bool IsCleared { get; private set; }
+    public bool HadCombatTargets { get; private set; }
+    private bool clearRecoveryConsumed;
+    internal bool TryConsumeClearRecovery()
+    {
+        if (!IsCleared || !HadCombatTargets || clearRecoveryConsumed) return false;
+        clearRecoveryConsumed = true;
+        return true;
+    }
     public event System.Action<RoomController> Cleared;
 
     private void Awake()
@@ -43,7 +51,10 @@ public class RoomController : MonoBehaviour
             }
 
             if (!enemy.IsDead && livingEnemies.Add(enemy))
+            {
+                HadCombatTargets = true;
                 enemy.Died += OnEnemyDied;
+            }
         }
 
         if (hasMissingEnemy)

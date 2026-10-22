@@ -20,6 +20,7 @@ public partial class PlayerSkills : MonoBehaviour
     private Rigidbody2D rb;
     private DungeonRunManager run;
     private readonly float[] readyAt = new float[2];
+    private readonly float[] appliedCooldowns = new float[2];
     private readonly List<Cast> live = new List<Cast>();
     private readonly List<PlayerSkillVisual> visuals = new List<PlayerSkillVisual>();
     private Cast blocking;
@@ -37,10 +38,20 @@ public partial class PlayerSkills : MonoBehaviour
     public float EffectiveRange(SkillData skill) => skill.range * (skill.kind == PlayerSkillKind.TealBeam ? MagicAreaScale(skill) : 1f);
     public float EffectiveWidth(SkillData skill) => skill.width * (skill.kind == PlayerSkillKind.TealBeam ? MagicAreaScale(skill) : 1f);
     public float EffectiveRadius(SkillData skill) => skill.radius * (skill.kind == PlayerSkillKind.OreBlast ? MagicAreaScale(skill) : 1f);
+    internal static float CalculateCooldown(float baseline, bool magic50, float equipmentReduction = 0f)
+        => (float)(baseline * System.Math.Max(0d, 1d - (magic50 ? .15d : 0d) - equipmentReduction));
+    public float EffectiveCooldown(SkillData skill)
+    {
+        var session = DungeonRunManager.Instance;
+        var growth = session != null ? session.GetComponent<PlayerProgression>() : null;
+        // No equipment cooldown provider is implemented; do not invent equipment bonuses.
+        return CalculateCooldown(skill.cooldown, skill.primaryType == SkillDamageType.Magic && growth != null && growth.HasMagic50Passive);
+    }
     internal void ApplyInventoryLoadout(SkillData e, SkillData r) { eSkill = e; rSkill = r; }
-    public void ResetForNewRun() { CancelAll(); readyAt[0] = readyAt[1] = 0f; }
+    public void ResetForNewRun() { CancelAll(); readyAt[0] = readyAt[1] = 0f; appliedCooldowns[0] = appliedCooldowns[1] = 0f; }
     public SkillData Equipped(int slot) => slot == 0 ? eSkill : slot == 1 ? rSkill : null;
     public float CooldownRemaining(int slot) => slot >= 0 && slot < 2 ? Mathf.Max(0, readyAt[slot] - Time.time) : 0f;
+    public float AppliedCooldown(int slot) => slot >= 0 && slot < 2 ? appliedCooldowns[slot] : 0f;
     private sealed class Cast
     {
         public SkillData data;
@@ -104,7 +115,8 @@ public partial class PlayerSkills : MonoBehaviour
         c.target = SafePoint(c.origin, c.direction, data.centerOffset, .05f);
         if (data.kind == PlayerSkillKind.OreBlast)
             c.target = SafePoint(c.origin, c.direction, Mathf.Min(offset.magnitude, c.range), .12f);
-        readyAt[slot] = Time.time + data.cooldown;
+        appliedCooldowns[slot] = EffectiveCooldown(data);
+        readyAt[slot] = Time.time + appliedCooldowns[slot];
         live.Add(c); blocking = c;
         if (OwnsMovement) rb.linearVelocity = Vector2.zero;
         switch (data.kind)

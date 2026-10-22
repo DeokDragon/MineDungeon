@@ -44,6 +44,9 @@ public class PlayerAttack : MonoBehaviour
     private readonly HashSet<EnemyHealth> hitEnemies =
         new HashSet<EnemyHealth>();
 
+    private readonly HashSet<EnemyHealth> shockwaveHits = new HashSet<EnemyHealth>();
+    public const float ShockwaveRange = 2f, ShockwaveAngle = 90f;
+
     private void Awake()
     {
         attackPower = GetComponent<PlayerSkillAttackPower>();
@@ -159,7 +162,14 @@ public class PlayerAttack : MonoBehaviour
         );
 
         hitEnemies.Clear();
-        int damage = EstimatedDamage;
+        double rawDamage = PlayerSkillAttackPower.UnroundedDamage(attackDamage,
+            attackPower != null ? attackPower.PhysicalAttack : 0f);
+        int damage = PlayerSkillAttackPower.RoundDamage(rawDamage);
+        var run = DungeonRunManager.Instance;
+        var growth = run != null ? run.GetComponent<PlayerProgression>() : null;
+        bool shockwave = growth != null && growth.HasPhysical50Passive;
+        Vector2 shockwaveOrigin = transform.position;
+        bool accepted = false;
 
         foreach (Collider2D target in targets)
         {
@@ -189,7 +199,25 @@ public class PlayerAttack : MonoBehaviour
                 continue;
 
             hitEnemies.Add(health);
-            health.TryTakeDamage(damage, hitPoint, forward);
+            if (health.TryTakeDamage(damage, hitPoint, forward)) accepted = true;
+        }
+        if (accepted && shockwave)
+            ApplyShockwave(shockwaveOrigin, forward, PlayerSkillAttackPower.RoundDamage(rawDamage * .30d));
+    }
+
+    private void ApplyShockwave(Vector2 origin, Vector2 forward, int damage)
+    {
+        shockwaveHits.Clear();
+        foreach (var target in Physics2D.OverlapCircleAll(origin, ShockwaveRange, enemyLayer))
+        {
+            var enemy = target.GetComponentInParent<EnemyHealth>();
+            if (enemy == null || enemy.IsDead || shockwaveHits.Contains(enemy)) continue;
+            Vector2 point = target.ClosestPoint(origin);
+            Vector2 direction = point - origin;
+            if (direction.sqrMagnitude > .0001f && Vector2.Angle(forward, direction) > ShockwaveAngle * .5f) continue;
+            if (Physics2D.Linecast(origin, point, wallLayer).collider != null) continue;
+            shockwaveHits.Add(enemy);
+            enemy.TryTakeDamage(damage, point, forward);
         }
     }
 

@@ -28,8 +28,9 @@ public sealed class PlayerSkillHUD : MonoBehaviour
         view.marker.color = data != null && data.primaryType == SkillDamageType.Magic
             ? new Color(.25f, 1f, .85f) : new Color(1f, .8f, .4f);
         float remaining = player.CooldownRemaining(slot);
+        float applied = player.AppliedCooldown(slot);
         view.cooldownOverlay.gameObject.SetActive(remaining > 0f);
-        view.cooldownOverlay.rectTransform.anchorMax = new Vector2(1, data != null && data.cooldown > 0 ? Mathf.Clamp01(remaining / data.cooldown) : 0);
+        view.cooldownOverlay.rectTransform.anchorMax = new Vector2(1, data != null && applied > 0 ? Mathf.Clamp01(remaining / applied) : 0);
         view.remainingText.text = remaining > 0f ? remaining.ToString("0.0") : "";
     }
 }

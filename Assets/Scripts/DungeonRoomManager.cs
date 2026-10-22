@@ -39,8 +39,18 @@ public partial class DungeonRoomManager : MonoBehaviour
         if (DungeonRunManager.Instance != null && DungeonRunManager.Instance.EditorSelectedMapTest && currentRoom != null && controller == currentRoom.Controller)
         { DungeonRunManager.Instance.EditorFinishSelectedMapTest(true); return; }
 #endif
-        if (IsCompleted || currentRoom == null || controller != currentRoom.Controller ||
-            CurrentRoomNumber != TotalRoomCount || RunEnded()) return;
+        if (IsCompleted || currentRoom == null || controller != currentRoom.Controller || RunEnded()) return;
+        if (CurrentRoomNumber >= 1 && CurrentRoomNumber <= normalRoomCount)
+        {
+            var run = DungeonRunManager.Instance;
+            if (IsPreparing || IsTransitioning || run == null || !run.IsTracking || run.IsEnding || run.IsRestarting ||
+                !controller.TryConsumeClearRecovery()) return;
+            var growth = run.GetComponent<PlayerProgression>();
+            if (player != null && !player.IsDead && growth != null && growth.HasHealth50Passive)
+                player.Heal(Mathf.CeilToInt(player.MaxHealth * .10f));
+            return;
+        }
+        if (CurrentRoomNumber != TotalRoomCount) return;
         IsCompleted = true;
         pendingExit = null;
         DungeonRunManager.Instance.CompleteRun();

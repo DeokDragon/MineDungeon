@@ -49,6 +49,29 @@ public static class ProgressionVerification
                         growth.HasMagic20Passive == (stat == 2 && points >= 20), "independent passive boundary stat" + stat + " points" + points);
                 }
             set(1, 0, 3);
+            foreach (int points in new[] { 49, 50, 51 })
+                for (int stat = 0; stat < 3; stat++)
+                {
+                    restore.Invoke(growth, new object[] { 50, 0, 150-points, stat == 0 ? points : 0, stat == 1 ? points : 0, stat == 2 ? points : 0 });
+                    check(growth.HasHealth50Passive == (stat == 0 && points >= 50) &&
+                        growth.HasPhysical50Passive == (stat == 1 && points >= 50) &&
+                        growth.HasMagic50Passive == (stat == 2 && points >= 50) &&
+                        growth.HasHealth20Passive == (stat == 0) && growth.HasPhysical20Passive == (stat == 1) && growth.HasMagic20Passive == (stat == 2),
+                        "independent 50P boundary/coexisting20 stat" + stat + " points" + points);
+                }
+            set(1, 0, 3);
+            var cooldown = typeof(PlayerSkills).GetMethod("CalculateCooldown", BindingFlags.Static | BindingFlags.NonPublic);
+            Func<float, bool, float, float> cd = (basis, passive, equipment) => (float)cooldown.Invoke(null, new object[] {basis, passive, equipment});
+            check(Mathf.Abs(cd(7, true, 0) - 5.95f) < .00001f, "TealBeam magic50 cooldown5.95");
+            check(Mathf.Abs(cd(9.5f, true, 0) - 8.075f) < .00001f, "OreBlast magic50 cooldown8.075");
+            check(cd(6, false, 0) == 6 && cd(8, false, 0) == 8, "physical cooldown6/8 unchanged");
+            check(Mathf.Abs(cd(7, true, .2f) - 4.55f) < .00001f, "passive/equipment reductions add, not multiply");
+            check(cd(7, true, .85f) == 0 && cd(7, true, 1f) == 0, "100percent or more cooldown reduction ->0");
+            double raw = PlayerSkillAttackPower.UnroundedDamage(10, 49);
+            check(PlayerSkillAttackPower.RoundDamage(raw) == 15 && PlayerSkillAttackPower.RoundDamage(raw * .3d) == 4 &&
+                PlayerSkillAttackPower.RoundDamage(PlayerSkillAttackPower.RoundDamage(raw) * .3d) == 5, "shockwave uses raw14.9x30percent ->4, not rounded15 ->5");
+            check(PlayerSkillAttackPower.RoundDamage(PlayerSkillAttackPower.UnroundedDamage(10, 50) * .3d) == 5, "shockwave exact4.5 ->5");
+            check(PlayerAttack.ShockwaveRange == 2 && PlayerAttack.ShockwaveAngle == 90, "shockwave fixed2/90 independent of20P");
             var potionHeal = typeof(PlayerPotion).GetMethod("CalculateHealAmount", BindingFlags.Static | BindingFlags.NonPublic);
             check((int)potionHeal.Invoke(null, new object[] {163, .35f, true}) == 69, "potion163 final single ceil ->69, not intermediate ceil70");
             check((int)potionHeal.Invoke(null, new object[] {163, .35f, false}) == 58, "inactive potion original ceil ->58");

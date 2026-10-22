@@ -34,7 +34,7 @@ public static class InventoryPresentation
             case InventorySort.Rarity:ordered=list.OrderByDescending(e=>e.Rarity);break;
             case InventorySort.Category:ordered=list.OrderBy(e=>e.Category);break;
             case InventorySort.Type:ordered=list.OrderBy(e=>e.Skill!=null?(int)e.Skill.primaryType:0);break;
-            case InventorySort.Cooldown:ordered=list.OrderBy(e=>e.Skill!=null?e.Skill.cooldown:0);break;
+            case InventorySort.Cooldown:ordered=list.OrderBy(e=>e.Skill!=null?(player!=null?player.EffectiveCooldown(e.Skill):e.Skill.cooldown):0);break;
             case InventorySort.Damage:ordered=list.OrderByDescending(e=>e.Skill!=null?player.EstimatedDamage(e.Skill):0);break;
             case InventorySort.Quantity:ordered=list.OrderByDescending(e=>e.Quantity);break;
             default:ordered=list.OrderByDescending(e=>e.Order);break;
@@ -57,7 +57,7 @@ public static class InventoryPresentation
             case InventorySort.Name: ordered = list.OrderBy(e => e.Skill.displayName, StringComparer.CurrentCulture); break;
             case InventorySort.Rarity: ordered = list.OrderByDescending(e => e.Skill.rarity); break;
             case InventorySort.Type: ordered = list.OrderBy(e => e.Skill.primaryType); break;
-            case InventorySort.Cooldown: ordered = list.OrderBy(e => e.Skill.cooldown); break;
+            case InventorySort.Cooldown: ordered = list.OrderBy(e => player != null ? player.EffectiveCooldown(e.Skill) : e.Skill.cooldown); break;
             case InventorySort.Damage: ordered = list.OrderByDescending(e => player.EstimatedDamage(e.Skill)); break;
             case InventorySort.Category: ordered = list.OrderBy(e => 0); break; // Only owned skills exist in this scope.
             default: ordered = list.OrderByDescending(e => e.RegistrationOrder); break;
@@ -83,6 +83,6 @@ public static class InventoryPresentation
     {
         string effect=SkillEffectDescription(s, player);
         string equipped = player.Equipped(0)?.id == s.id ? "E 장착" : player.Equipped(1)?.id == s.id ? "R 장착" : "미장착";
-        return $"<size=120%><b>{s.displayName}</b></size>\n{RarityName(s.rarity)} / 스킬 · {TypeName(s)}\n\n쿨타임  {s.cooldown:0.##}초     선딜레이  {s.windup:0.##}초\n\n{effect}\n\n기본 피해  {s.baseDamage:0.##}\n<color=#FFCF75>현재 예상 피해  {player.EstimatedDamage(s)}</color>\n적 한 마리 · 1회 사용 기준\n\n{equipped}\n{(editable ? "카드를 선택한 뒤 E 또는 R 슬롯을 클릭하세요.\n반대 슬롯의 스킬이면 서로 교환합니다." : "준비 중에만 변경할 수 있습니다")}";
+        return $"<size=120%><b>{s.displayName}</b></size>\n{RarityName(s.rarity)} / 스킬 · {TypeName(s)}\n\n쿨타임  {player.EffectiveCooldown(s):0.###}초     선딜레이  {s.windup:0.##}초\n\n{effect}\n\n기본 피해  {s.baseDamage:0.##}\n<color=#FFCF75>현재 예상 피해  {player.EstimatedDamage(s)}</color>\n적 한 마리 · 1회 사용 기준\n\n{equipped}\n{(editable ? "카드를 선택한 뒤 E 또는 R 슬롯을 클릭하세요.\n반대 슬롯의 스킬이면 서로 교환합니다." : "준비 중에만 변경할 수 있습니다")}";
     }
 }

@@ -20,6 +20,7 @@ public partial class DungeonRunManager
     public DungeonResultRecord Result { get; private set; }
     public string LastSettledPlayId { get; internal set; }
     public bool IsTracking { get; private set; }
+    public bool IsEnding => pendingClear || pendingFailure || settling;
     private bool pendingClear, pendingFailure, settling, reviveInFlight;
     private int completedRevives;
     private DungeonRoomManager trackedRooms;
