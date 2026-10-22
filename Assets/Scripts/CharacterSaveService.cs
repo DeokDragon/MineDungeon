@@ -14,7 +14,7 @@ public sealed class CharacterSaveService : MonoBehaviour
     private RewardInventorySession rewards;
     private SkillInventorySession inventory;
     private bool ready, dirty, writing, invalidPrimary;
-    private int transactions;
+    private int transactions, lastSavedLevel = 1;
     private float writeAt;
     private readonly List<SavedItem> unknownSkills = new List<SavedItem>(), unknownMaterials = new List<SavedItem>();
     public bool IsPending => dirty || writing;
@@ -40,6 +40,7 @@ public sealed class CharacterSaveService : MonoBehaviour
         { LoadBlocked = true; Status = "선택 맵 테스트 저장 경로 격리 실패"; enabled = false; return; }
 #endif
         LoadOnce();
+        lastSavedLevel = growth.Level;
         ready = true;
         growth.Changed += RequestSave; rewards.Changed += RequestSave; inventory.Changed += RequestSave;
     }
@@ -49,6 +50,7 @@ public sealed class CharacterSaveService : MonoBehaviour
         CharacterSnapshot data; string error;
         if (!CharacterSaveFile.TryRead(SavePath, out data, out error))
         {
+            if (error != null && error.StartsWith(CharacterSaveFile.GrowthConflict)) { BlockGrowthLoad(error); return; }
             invalidPrimary = File.Exists(SavePath);
             Debug.LogWarning("Character save primary unreadable: " + error);
             if (!CharacterSaveFile.TryRead(SavePath + ".bak", out data, out error))
@@ -58,6 +60,17 @@ public sealed class CharacterSaveService : MonoBehaviour
             }
             Status = "백업에서 성장 데이터를 복구했습니다."; dirty = true; writeAt = Time.unscaledTime + writeDelay;
         }
+        CharacterSnapshot prepared;
+        if (!CharacterSaveFile.TryPrepareGrowth(data, growth, out prepared, out error)) { BlockGrowthLoad(error); return; }
+        if (data.version == 1)
+        {
+            // Commit the complete snapshot before applying anything to the live sessions.
+            if (!CharacterSaveFile.Write(SavePath, prepared, invalidPrimary, out error))
+            { BlockGrowthLoad("이전 저장 실패: " + error); return; }
+            invalidPrimary = false; dirty = false; SuccessfulWrites++;
+            Status = "성장 데이터를 v2로 이전했습니다.";
+        }
+        data = prepared;
         GetComponent<DungeonRunManager>().LastSettledPlayId=data.lastSettledPlayId;
         growth.RestoreGrowth(data.level, data.experience, data.points);
         var knownSkills = new List<SavedItem>();
@@ -67,6 +80,11 @@ public sealed class CharacterSaveService : MonoBehaviour
         foreach (var row in data.materials) { if (row == null || string.IsNullOrEmpty(row.id) || row.quantity <= 0) continue; if (FindMaterial(row.id) != null) knownMaterials.Add(row); else { unknownMaterials.Add(row); Debug.LogWarning("Unknown saved material retained: " + row.id); } }
         rewards.RestoreSaved(data.money, knownMaterials, FindMaterial);
         ShakeMultiplier = Mathf.Clamp(data.shakeMultiplier, 0, 2);
+    }
+    private void BlockGrowthLoad(string error)
+    {
+        LoadBlocked = true; Status = "성장 저장을 확인해야 합니다. 원본 보호를 위해 저장을 차단했습니다. " + error;
+        Debug.LogWarning(Status);
     }
     private SkillData FindSkill(string id) => Array.Find(skillCatalog ?? Array.Empty<SkillData>(), s => s != null && s.id == id);
     private MaterialData FindMaterial(string id) => Array.Find(materialCatalog ?? Array.Empty<MaterialData>(), s => s != null && s.id == id);
@@ -115,7 +133,12 @@ public sealed class CharacterSaveService : MonoBehaviour
         return true;
     }
 #endif
-    public void RequestSave() { if (!ready || LoadBlocked) return; dirty = true; writeAt = Time.unscaledTime + writeDelay; }
+    public void RequestSave()
+    {
+        if (!ready || LoadBlocked) return;
+        dirty = true; writeAt = Time.unscaledTime + writeDelay;
+        if (growth.Level != lastSavedLevel && transactions == 0) Flush();
+    }
     public void BeginTransaction() { transactions++; }
     public void EndTransaction() { transactions = Math.Max(0, transactions - 1); RequestSave(); }
     public void SetShakeMultiplier(float value)
@@ -132,7 +155,7 @@ public sealed class CharacterSaveService : MonoBehaviour
         {
             string error;
             if (!CharacterSaveFile.Write(SavePath, Capture(), invalidPrimary, out error)) { Status = "저장 실패: 재시도하거나 취소해 주세요."; Debug.LogWarning("Character save failed: " + error); writeAt = Time.unscaledTime + 5; return false; }
-            invalidPrimary = false; dirty = false; SuccessfulWrites++; Status = ""; return true;
+            invalidPrimary = false; dirty = false; lastSavedLevel = growth.Level; SuccessfulWrites++; Status = ""; return true;
         }
         finally { writing = false; }
     }

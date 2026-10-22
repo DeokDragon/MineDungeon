@@ -10,7 +10,7 @@ public sealed class PlayerProgression : MonoBehaviour
     [SerializeField, Min(0)] private int debugExperience = 260;
     public int Level { get; private set; } = 1;
     public int Experience { get; private set; }
-    public int UnspentStatPoints { get; private set; }
+    public int UnspentStatPoints { get; private set; } = 3;
     public int MaximumLevel => configuration != null ? configuration.MaximumLevel : 1;
     public bool IsMaximumLevel => Level >= MaximumLevel;
     public int RequiredExperience => configuration != null ? configuration.RequiredExperience(Level) : 0;
@@ -22,9 +22,12 @@ public sealed class PlayerProgression : MonoBehaviour
 
     internal void RestoreGrowth(int level, int experience, int points)
     {
-        Level = Mathf.Clamp(level, 1, MaximumLevel);
-        Experience = IsMaximumLevel ? 0 : Mathf.Clamp(experience, 0, Mathf.Max(0, RequiredExperience - 1));
-        UnspentStatPoints = Math.Max(0, points);
+        if (level < 1 || level > MaximumLevel || experience < 0 || points < 0 ||
+            (level == MaximumLevel ? experience != 0 : experience >= RequiredAt(level)))
+            throw new ArgumentException("Invalid growth state; refusing to alter saved progression.");
+        Level = level;
+        Experience = experience;
+        UnspentStatPoints = points;
         Changed?.Invoke(); // Restore values, never grant rewards or fire level-up bonuses.
     }
 
@@ -43,7 +46,7 @@ public sealed class PlayerProgression : MonoBehaviour
         }
         Experience = IsMaximumLevel ? 0 : (int)Math.Min(int.MaxValue, remaining);
         int gained = Level - before;
-        int awarded = (int)Math.Min(gained, (long)int.MaxValue - UnspentStatPoints);
+        int awarded = (int)Math.Min((long)gained * 3, (long)int.MaxValue - UnspentStatPoints);
         UnspentStatPoints += awarded;
         Changed?.Invoke();
         if (gained > 0) LeveledUp?.Invoke(before, Level, awarded);
