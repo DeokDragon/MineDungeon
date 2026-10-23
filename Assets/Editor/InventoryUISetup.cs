@@ -58,6 +58,27 @@ public static class InventoryUISetup
     }
     // Upgrade only the left side of the existing Main inventory; never rebuild owned items/loadout data.
     static Image GrowthFrame(string name, Transform parent, Color color) => Frame(name,parent,color,.4f);
+    public static string ConnectGrowthButtonFeedback()
+    {
+        if(Application.isPlaying || UnityEngine.SceneManagement.SceneManager.GetActiveScene().path!="Assets/Scenes/Main.unity") throw new System.Exception("Open Main in Edit mode");
+        var ui=Object.FindFirstObjectByType<InventoryUI>();var so=new SerializedObject(ui);var cards=so.FindProperty("statCards");
+        var buttons=new[]{(Button)so.FindProperty("resetStatsButton").objectReferenceValue,
+            (Button)cards.GetArrayElementAtIndex(0).FindPropertyRelative("invest").objectReferenceValue,
+            (Button)cards.GetArrayElementAtIndex(1).FindPropertyRelative("invest").objectReferenceValue,
+            (Button)cards.GetArrayElementAtIndex(2).FindPropertyRelative("invest").objectReferenceValue,
+            (Button)so.FindProperty("characterTab").objectReferenceValue,(Button)so.FindProperty("statTab").objectReferenceValue,
+            (Button)so.FindProperty("resetCancelButton").objectReferenceValue,(Button)so.FindProperty("resetConfirmButton").objectReferenceValue};
+        for(int i=0;i<buttons.Length;i++)
+        {
+            var button=buttons[i];button.transition=Selectable.Transition.None;
+            var hover=button.GetComponent<InventoryHover>();if(hover==null)hover=button.gameObject.AddComponent<InventoryHover>();
+            var hs=new SerializedObject(hover);Ref(hs,"owner",ui);hs.FindProperty("feedbackIndex").intValue=i;hs.ApplyModifiedPropertiesWithoutUndo();
+        }
+        buttons[0].transform.Find("Border").GetComponent<Image>().color=new Color(.28f,.32f,.34f);
+        EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
+        return "Eight existing growth controls use independent hover/pressed feedback; reset default border neutral";
+    }
+
     public static string ConnectStatReset()
     {
         if (Application.isPlaying || UnityEngine.SceneManagement.SceneManager.GetActiveScene().path != "Assets/Scenes/Main.unity")
@@ -239,6 +260,7 @@ public static class InventoryUISetup
         EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());AssetDatabase.SaveAssets();
         ConnectStatAccordion();
         ConnectStatReset();
+        ConnectGrowthButtonFeedback();
         return "Existing Main inventory left tabs/growth cards/common attributes connected; right side retained.";
     }
 

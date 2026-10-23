@@ -33,6 +33,10 @@ public sealed class InventoryUI : MonoBehaviour
     [SerializeField] private TMP_Text resetGoldText, resetSummary;
     private bool resetConfirming, resetBusy;
     private string resetReviewedSnapshot;
+    private Button[] feedbackButtons;
+    private Image[] feedbackBorders;
+    private TMP_Text[] feedbackLabels;
+    private int hoveredButton = -1, pressedButton = -1;
     private PlayerProgression growth;
     public const float CollapsedStatCardHeight = 54f, ExpandedStatCardHeight = 212f;
     private int expandedStat = -1, hoveredStat = -1;
@@ -123,6 +127,7 @@ public sealed class InventoryUI : MonoBehaviour
                 resetCancelButton.onClick.AddListener(CancelStatReset);
                 resetConfirmButton.onClick.AddListener(ConfirmStatReset);
             }
+            InitializeGrowthButtonFeedback();
             ApplyAccordion();
             SetCharacterTab(0);
             growthScroll.onValueChanged.AddListener(Scrolled);
@@ -264,10 +269,6 @@ public sealed class InventoryUI : MonoBehaviour
         CancelStatReset();
         bool stats = index == 1;
         characterPage.SetActive(!stats); statPage.SetActive(stats); HideTooltip();
-        characterTab.GetComponent<Image>().color = stats ? new Color(.09f,.12f,.16f) : new Color(.10f,.24f,.25f);
-        statTab.GetComponent<Image>().color = stats ? new Color(.10f,.24f,.25f) : new Color(.09f,.12f,.16f);
-        if (characterTabBorder != null) characterTabBorder.color = stats ? new Color(.28f,.32f,.34f) : new Color(.84f,.66f,.32f);
-        if (statTabBorder != null) statTabBorder.color = stats ? new Color(.84f,.66f,.32f) : new Color(.28f,.32f,.34f);
         hoveredStat = -1; RefreshStatBorders();
         RefreshGrowth();
     }
@@ -340,9 +341,10 @@ public sealed class InventoryUI : MonoBehaviour
         levelText.text = $"Lv. {growth.Level}";
         RefreshStatReset();
         bool allowed = growth.CanInvest;
-        investmentRule.text = !string.IsNullOrEmpty(investmentError) ? investmentError : !allowed ? "던전에서는 열람만 가능합니다 · 투자 불가"
+        string hint = GrowthButtonHint();
+        investmentRule.text = !string.IsNullOrEmpty(hint) ? hint : !string.IsNullOrEmpty(investmentError) ? investmentError : !allowed ? "던전에서는 열람만 가능합니다 · 투자 불가"
             : Time.unscaledTime < investmentSuccessUntil ? investmentSuccess : "메인 준비 상태 · 투자 즉시 저장";
-        investmentRule.color = !string.IsNullOrEmpty(investmentError) ? new Color(1,.65f,.4f) : new Color(.58f,.66f,.72f);
+        investmentRule.color = !string.IsNullOrEmpty(hint) || !string.IsNullOrEmpty(investmentError) ? new Color(1,.65f,.4f) : new Color(.58f,.66f,.72f);
         for (int i = 0; i < statCards.Length; i++)
         {
             var stat = (PlayerProgression.Stat)i;
@@ -361,7 +363,90 @@ public sealed class InventoryUI : MonoBehaviour
             passiveCards[i].state.color = unlocked ? new Color(.35f,1,.83f) : new Color(.59f,.65f,.70f);
             passiveCards[i].background.color = unlocked ? new Color(.07f,.19f,.20f) : new Color(.075f,.10f,.13f);
         }
+        RefreshGrowthButtonFeedback();
     }
+    private void InitializeGrowthButtonFeedback()
+    {
+        feedbackButtons = new[] { resetStatsButton, statCards[0].invest, statCards[1].invest, statCards[2].invest,
+            characterTab, statTab, resetCancelButton, resetConfirmButton };
+        feedbackBorders = new Image[feedbackButtons.Length]; feedbackLabels = new TMP_Text[feedbackButtons.Length];
+        for (int i=0; i<feedbackButtons.Length; i++)
+        {
+            var button=feedbackButtons[i]; if(button==null) continue;
+            button.transition=Selectable.Transition.None;
+            button.targetGraphic.CrossFadeColor(Color.white,0,true,true);
+            feedbackBorders[i]=button.transform.Find("Border")?.GetComponent<Image>();
+            feedbackLabels[i]=button.GetComponentInChildren<TMP_Text>(true);
+        }
+    }
+    public void SetGrowthButtonPointer(int index, bool over, bool pressed)
+    {
+        if(over) hoveredButton=index; else if(hoveredButton==index) hoveredButton=-1;
+        if(pressed) pressedButton=index; else if(pressedButton==index) pressedButton=-1;
+        RefreshGrowth();
+    }
+    public void ClearGrowthButtonPointer(int index)
+    {
+        // OnDisable can run inside SetActive; defer repaint until the next normal refresh.
+        if(hoveredButton==index) hoveredButton=-1;
+        if(pressedButton==index) pressedButton=-1;
+    }
+    public void ReleaseGrowthButton(int index)
+    {
+        if(pressedButton==index) pressedButton=-1;
+        RefreshGrowth();
+    }
+    private string GrowthButtonHint()
+    {
+        if(feedbackButtons==null || hoveredButton<0 || hoveredButton>=feedbackButtons.Length) return null;
+        var button=feedbackButtons[hoveredButton]; if(button==null || button.IsInteractable()) return null;
+        if(hoveredButton==0)
+        {
+            long missing=CharacterSaveService.StatResetCost-rewards.Money;
+            if(missing>0) return $"골드가 {missing:N0}G 부족합니다.";
+            string reason;
+            return CharacterSaveService.Current!=null && !CharacterSaveService.Current.CanResetStats(out reason) ? reason : null;
+        }
+        if(hoveredButton>=1 && hoveredButton<=3)
+        {
+            if(resetConfirming) return "초기화 확인 중에는 투자할 수 없습니다.";
+            if(!growth.CanInvest) return "현재는 스탯을 투자할 수 없습니다.";
+            if(growth.PointsIn((PlayerProgression.Stat)(hoveredButton-1))>=100) return "이 스탯은 100P 상한에 도달했습니다.";
+            return "미사용 스탯 포인트가 없습니다.";
+        }
+        return null;
+    }
+    private void RefreshGrowthButtonFeedback()
+    {
+        if(feedbackButtons==null) return;
+        for(int i=0;i<feedbackButtons.Length;i++)
+        {
+            var button=feedbackButtons[i]; if(button==null) continue;
+            bool enabled=button.IsInteractable(), hover=hoveredButton==i, pressed=enabled&&pressedButton==i&&hover;
+            bool plus=i>=1&&i<=3, selected=i==4&&!statPage.activeSelf || i==5&&statPage.activeSelf, confirmation=i==7;
+            Color background=new Color(.09f,.12f,.16f), border=new Color(.28f,.32f,.34f), label=new Color(.82f,.87f,.90f);
+            if(plus) border=new Color(.15f,.80f,.82f);
+            if(selected) { background=new Color(.10f,.24f,.25f); border=new Color(.84f,.66f,.32f); }
+            if(confirmation) { background=new Color(.24f,.19f,.10f);border=new Color(.84f,.66f,.32f); }
+            if(!enabled)
+            {
+                background=hover?new Color(.14f,.17f,.20f):new Color(.065f,.08f,.10f);
+                border=hover?new Color(.48f,.55f,.59f):new Color(.20f,.25f,.28f);
+                label=hover?new Color(.66f,.73f,.77f):new Color(.38f,.44f,.47f);
+            }
+            else if(hover)
+            {
+                background=plus?new Color(.04f,.37f,.39f):selected?new Color(.16f,.34f,.36f):confirmation?new Color(.36f,.28f,.12f):new Color(.18f,.24f,.29f);
+                border=plus?new Color(.30f,1f,.95f):selected||confirmation?new Color(1,.83f,.46f):new Color(.65f,.75f,.80f);
+                label=Color.white;
+            }
+            if(pressed) { background=plus?new Color(.02f,.21f,.24f):new Color(.07f,.14f,.17f); label=new Color(.75f,.90f,.92f); }
+            button.GetComponent<Image>().color=background;
+            if(feedbackBorders[i]!=null) feedbackBorders[i].color=border;
+            if(feedbackLabels[i]!=null) feedbackLabels[i].color=label;
+        }
+    }
+
     private void BeginStatReset()
     {
         var save = CharacterSaveService.Current; string error;

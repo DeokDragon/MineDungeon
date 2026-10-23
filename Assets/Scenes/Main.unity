@@ -31081,6 +31081,7 @@ GameObject:
   - component: {fileID: 340161353}
   - component: {fileID: 340161352}
   - component: {fileID: 340161351}
+  - component: {fileID: 340161354}
   m_Layer: 0
   m_Name: StatsTab
   m_TagString: Untagged
@@ -31129,7 +31130,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.85, g: 0.9, b: 1, a: 1}
@@ -31765,6 +31766,7 @@ GameObject:
   - component: {fileID: 526847571}
   - component: {fileID: 526847570}
   - component: {fileID: 526847569}
+  - component: {fileID: 526847572}
   m_Layer: 0
   m_Name: CharacterTab
   m_TagString: Untagged
@@ -31812,7 +31814,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.85, g: 0.9, b: 1, a: 1}
@@ -32024,6 +32026,7 @@ GameObject:
   - component: {fileID: 558302456}
   - component: {fileID: 558302455}
   - component: {fileID: 558302454}
+  - component: {fileID: 558302457}
   m_Layer: 0
   m_Name: Invest
   m_TagString: Untagged
@@ -32071,7 +32074,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.85, g: 0.9, b: 1, a: 1}
@@ -33425,6 +33428,7 @@ GameObject:
   - component: {fileID: 833736171}
   - component: {fileID: 833736170}
   - component: {fileID: 833736169}
+  - component: {fileID: 833736172}
   m_Layer: 0
   m_Name: Invest
   m_TagString: Untagged
@@ -33472,7 +33476,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.85, g: 0.9, b: 1, a: 1}
@@ -34992,6 +34996,7 @@ GameObject:
   - component: {fileID: 1185533990}
   - component: {fileID: 1185533989}
   - component: {fileID: 1185533988}
+  - component: {fileID: 1185533991}
   m_Layer: 0
   m_Name: Invest
   m_TagString: Untagged
@@ -35039,7 +35044,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.85, g: 0.9, b: 1, a: 1}
@@ -40533,6 +40538,7 @@ GameObject:
   - component: {fileID: 605305248}
   - component: {fileID: 605305247}
   - component: {fileID: 605305246}
+  - component: {fileID: 605305249}
   m_Layer: 0
   m_Name: Cancel
   m_TagString: Untagged
@@ -40580,7 +40586,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.85, g: 0.9, b: 1, a: 1}
@@ -40655,6 +40661,7 @@ GameObject:
   - component: {fileID: 613394810}
   - component: {fileID: 613394809}
   - component: {fileID: 613394808}
+  - component: {fileID: 613394811}
   m_Layer: 0
   m_Name: Confirm
   m_TagString: Untagged
@@ -40702,7 +40709,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.85, g: 0.9, b: 1, a: 1}
@@ -41278,7 +41285,7 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.84, g: 0.66, b: 0.32, a: 1}
+  m_Color: {r: 0.28, g: 0.32, b: 0.34, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -41352,6 +41359,7 @@ GameObject:
   - component: {fileID: 2065490133}
   - component: {fileID: 2065490132}
   - component: {fileID: 2065490131}
+  - component: {fileID: 2065490134}
   m_Layer: 0
   m_Name: ResetStats
   m_TagString: Untagged
@@ -41399,7 +41407,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.85, g: 0.9, b: 1, a: 1}
@@ -41599,3 +41607,131 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097799281}
   m_CullTransparentMesh: 1
+--- !u!114 &340161354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340161349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e06bfce81a2442b7244a5771e8bc6, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryHover
+  owner: {fileID: 1093173861}
+  note:
+  equippedSlot: -1
+  feedbackIndex: 5
+--- !u!114 &526847572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526847567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e06bfce81a2442b7244a5771e8bc6, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryHover
+  owner: {fileID: 1093173861}
+  note:
+  equippedSlot: -1
+  feedbackIndex: 4
+--- !u!114 &558302457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558302452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e06bfce81a2442b7244a5771e8bc6, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryHover
+  owner: {fileID: 1093173861}
+  note:
+  equippedSlot: -1
+  feedbackIndex: 3
+--- !u!114 &605305249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605305244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e06bfce81a2442b7244a5771e8bc6, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryHover
+  owner: {fileID: 1093173861}
+  note:
+  equippedSlot: -1
+  feedbackIndex: 6
+--- !u!114 &613394811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613394806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e06bfce81a2442b7244a5771e8bc6, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryHover
+  owner: {fileID: 1093173861}
+  note:
+  equippedSlot: -1
+  feedbackIndex: 7
+--- !u!114 &833736172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833736167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e06bfce81a2442b7244a5771e8bc6, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryHover
+  owner: {fileID: 1093173861}
+  note:
+  equippedSlot: -1
+  feedbackIndex: 2
+--- !u!114 &1185533991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185533986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e06bfce81a2442b7244a5771e8bc6, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryHover
+  owner: {fileID: 1093173861}
+  note:
+  equippedSlot: -1
+  feedbackIndex: 1
+--- !u!114 &2065490134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065490129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755e06bfce81a2442b7244a5771e8bc6, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryHover
+  owner: {fileID: 1093173861}
+  note:
+  equippedSlot: -1
+  feedbackIndex: 0

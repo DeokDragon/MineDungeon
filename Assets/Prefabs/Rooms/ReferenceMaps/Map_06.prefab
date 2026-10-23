@@ -5945,8 +5945,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.25, g: 0.19, b: 0.16, a: 1}
+  m_Sprite: {fileID: -5641346850467712070, guid: 31ffd052042b1e94d827eea6aa8913a2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12783,6 +12783,7 @@ GameObject:
   - component: {fileID: 1778431251291667671}
   - component: {fileID: 6936668317898566290}
   - component: {fileID: 3442548771562779957}
+  - component: {fileID: 6027831838160974068}
   m_Layer: 6
   m_Name: CoalMonster
   m_TagString: Untagged
@@ -12983,6 +12984,35 @@ MonoBehaviour:
   aggroRadius: 5
   warningRadius: 2.2
   damageRadius: 2
+--- !u!114 &6027831838160974068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3975287959112328359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8d687744a44964e8aa8d26e9f9b96b, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::CoalMonsterSpriteAnimation
+  body: {fileID: 4874250164402195935}
+  idleFrames:
+  - {fileID: -5641346850467712070, guid: 31ffd052042b1e94d827eea6aa8913a2, type: 3}
+  - {fileID: -2013321985513197411, guid: 31ffd052042b1e94d827eea6aa8913a2, type: 3}
+  - {fileID: -5758369052901006694, guid: 31ffd052042b1e94d827eea6aa8913a2, type: 3}
+  - {fileID: 5767639446401990401, guid: 31ffd052042b1e94d827eea6aa8913a2, type: 3}
+  moveFrames:
+  - {fileID: 7001855338985188133, guid: b5c7a511fde50a34dab519ece3e7498d, type: 3}
+  - {fileID: -7481357377755796749, guid: b5c7a511fde50a34dab519ece3e7498d, type: 3}
+  - {fileID: -2225637752200015697, guid: b5c7a511fde50a34dab519ece3e7498d, type: 3}
+  - {fileID: -4628638608449844589, guid: b5c7a511fde50a34dab519ece3e7498d, type: 3}
+  - {fileID: 8678840215462074852, guid: b5c7a511fde50a34dab519ece3e7498d, type: 3}
+  - {fileID: -6460853653956872073, guid: b5c7a511fde50a34dab519ece3e7498d, type: 3}
+  idleFramesPerSecond: 6
+  moveFramesPerSecond: 10
+  referenceMoveSpeed: 3
+  movementThreshold: 0.02
 --- !u!1 &3986882007561741297
 GameObject:
   m_ObjectHideFlags: 0
