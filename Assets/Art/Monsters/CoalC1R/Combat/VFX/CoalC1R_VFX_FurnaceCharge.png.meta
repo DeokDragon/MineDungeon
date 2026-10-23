@@ -1,0 +1,309 @@
+fileFormatVersion: 2
+guid: 779ebcc9f0ce6134caa4bf973631ba52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3462871741440350475
+    second: CoalC1R_VFX_FurnaceCharge_0
+  - first:
+      213: 2435679057170290605
+    second: CoalC1R_VFX_FurnaceCharge_1
+  - first:
+      213: 8908048285092629492
+    second: CoalC1R_VFX_FurnaceCharge_2
+  - first:
+      213: 3796570858125523544
+    second: CoalC1R_VFX_FurnaceCharge_3
+  - first:
+      213: -2211425671794427917
+    second: CoalC1R_VFX_FurnaceCharge_4
+  - first:
+      213: -5281687663111845162
+    second: CoalC1R_VFX_FurnaceCharge_5
+  - first:
+      213: 8806451834768224127
+    second: CoalC1R_VFX_FurnaceCharge_6
+  - first:
+      213: 2003420369980011511
+    second: CoalC1R_VFX_FurnaceCharge_7
+  - first:
+      213: -5086285476116399182
+    second: CoalC1R_VFX_FurnaceCharge_8
+  - first:
+      213: 612559336754230548
+    second: CoalC1R_VFX_FurnaceCharge_9
+  - first:
+      213: -7113905208439976025
+    second: CoalC1R_VFX_FurnaceCharge_10
+  - first:
+      213: 522505104012784740
+    second: CoalC1R_VFX_FurnaceCharge_11
+  - first:
+      213: 4889081639063390146
+    second: CoalC1R_VFX_FurnaceCharge_12
+  - first:
+      213: 8136084690194940160
+    second: CoalC1R_VFX_FurnaceCharge_13
+  - first:
+      213: -1436925646784066862
+    second: CoalC1R_VFX_FurnaceCharge_14
+  - first:
+      213: 7333388617253941158
+    second: CoalC1R_VFX_FurnaceCharge_15
+  - first:
+      213: 1915084469780092793
+    second: CoalC1R_VFX_FurnaceCharge_16
+  - first:
+      213: -7652001538248949683
+    second: CoalC1R_VFX_FurnaceCharge_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CoalC1R_VFX_FurnaceCharge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59328e8aa4410a47831db0797c76033
+      internalID: -3462871741440350475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoalC1R_VFX_FurnaceCharge_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b749ea0699ef6fc4eb7cf60db63ccecf
+      internalID: 2435679057170290605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoalC1R_VFX_FurnaceCharge_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a4de7481a9a9d4fbde113e19b79e4a
+      internalID: 8908048285092629492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoalC1R_VFX_FurnaceCharge_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed97fe1bd48ba54438353fd6d4b86caa
+      internalID: 3796570858125523544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoalC1R_VFX_FurnaceCharge_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572809f492481aa4399add9bdbbf5830
+      internalID: -2211425671794427917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoalC1R_VFX_FurnaceCharge_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1f314f49b24ea40beb382dd995f7d2
+      internalID: -5281687663111845162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 33af4228aac469a4bb17704d7bd41cc4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CoalC1R_VFX_FurnaceCharge_0: -3462871741440350475
+      CoalC1R_VFX_FurnaceCharge_1: 2435679057170290605
+      CoalC1R_VFX_FurnaceCharge_2: 8908048285092629492
+      CoalC1R_VFX_FurnaceCharge_3: 3796570858125523544
+      CoalC1R_VFX_FurnaceCharge_4: -2211425671794427917
+      CoalC1R_VFX_FurnaceCharge_5: -5281687663111845162
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

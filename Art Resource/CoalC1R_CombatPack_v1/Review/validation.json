@@ -1,0 +1,1107 @@
+{
+  "source": "D:\\던전 게임\\아트 리소스\\몬스터 정지 이미지\\C-1R.jpg",
+  "source_actual_format": "PNG",
+  "resources": [
+    {
+      "name": "CoalC1R_HeatWindup_6f_64x64_v1",
+      "png": "Animations\\CoalC1R_HeatWindup_6f_64x64_v1.png",
+      "size": [
+        384,
+        64
+      ],
+      "cell": [
+        64,
+        64
+      ],
+      "frames": 6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        100,
+        120,
+        140,
+        150,
+        160,
+        180
+      ],
+      "preview_total_ms": 850,
+      "bounds": [
+        [
+          4,
+          8,
+          60,
+          55
+        ],
+        [
+          5,
+          8,
+          59,
+          55
+        ],
+        [
+          6,
+          8,
+          58,
+          55
+        ],
+        [
+          6,
+          8,
+          58,
+          55
+        ],
+        [
+          7,
+          8,
+          57,
+          55
+        ],
+        [
+          7,
+          8,
+          57,
+          55
+        ]
+      ],
+      "notes": "850ms, planted feet, rigid grille, original warm palette heating inside the furnace and existing cracks.",
+      "sha256": "ae3abf4608464d74405b2e5d617f79a816c29a91dddeaafb14aa8597895de607"
+    },
+    {
+      "name": "CoalC1R_Explosion_4f_64x64_v1",
+      "png": "Animations\\CoalC1R_Explosion_4f_64x64_v1.png",
+      "size": [
+        256,
+        64
+      ],
+      "cell": [
+        64,
+        64
+      ],
+      "frames": 4,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        60,
+        60,
+        60,
+        60
+      ],
+      "preview_total_ms": 240,
+      "bounds": [
+        [
+          7,
+          8,
+          57,
+          55
+        ],
+        [
+          3,
+          8,
+          61,
+          55
+        ],
+        [
+          2,
+          8,
+          62,
+          55
+        ],
+        [
+          4,
+          8,
+          60,
+          55
+        ]
+      ],
+      "notes": "240ms, intact living monster. Limb release/brief wider stance only; no breakup/disappearance or self-damage.",
+      "sha256": "2f26aca06cdc3d1ddaec4f698b76ac7ad693a66e320b99470ed4bb0b885365da"
+    },
+    {
+      "name": "CoalC1R_CoolingRecovery_5f_64x64_v1",
+      "png": "Animations\\CoalC1R_CoolingRecovery_5f_64x64_v1.png",
+      "size": [
+        320,
+        64
+      ],
+      "cell": [
+        64,
+        64
+      ],
+      "frames": 5,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        180,
+        190,
+        200,
+        210,
+        180
+      ],
+      "preview_total_ms": 960,
+      "bounds": [
+        [
+          4,
+          8,
+          60,
+          55
+        ],
+        [
+          4,
+          8,
+          60,
+          55
+        ],
+        [
+          4,
+          8,
+          60,
+          55
+        ],
+        [
+          4,
+          8,
+          60,
+          55
+        ],
+        [
+          4,
+          8,
+          60,
+          55
+        ]
+      ],
+      "notes": "960ms; Explosion+Cooling=1200ms; final matches installed Idle F1.",
+      "sha256": "f96bf9eba096101c5f4b986c9afcee11c39273fb825c4ebfd371c7fb783f8198"
+    },
+    {
+      "name": "CoalC1R_Hit_3f_64x64_v1",
+      "png": "Animations\\CoalC1R_Hit_3f_64x64_v1.png",
+      "size": [
+        192,
+        64
+      ],
+      "cell": [
+        64,
+        64
+      ],
+      "frames": 3,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        40,
+        60,
+        50
+      ],
+      "preview_total_ms": 150,
+      "bounds": [
+        [
+          4,
+          8,
+          60,
+          55
+        ],
+        [
+          5,
+          8,
+          59,
+          55
+        ],
+        [
+          4,
+          8,
+          60,
+          55
+        ]
+      ],
+      "notes": "Short visual response with base furnace intact; no new stun/interrupt/flash. F1/F3 intentionally identical.",
+      "sha256": "5876941458491ffb9a40b174d03727a9327b8c6c55f954bb7a7523b25fa7c7ee"
+    },
+    {
+      "name": "CoalC1R_Death_7f_64x64_v1",
+      "png": "Animations\\CoalC1R_Death_7f_64x64_v1.png",
+      "size": [
+        448,
+        64
+      ],
+      "cell": [
+        64,
+        64
+      ],
+      "frames": 7,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        50,
+        50,
+        60,
+        60,
+        70,
+        80,
+        80
+      ],
+      "preview_total_ms": 450,
+      "bounds": [
+        [
+          4,
+          8,
+          60,
+          55
+        ],
+        [
+          4,
+          8,
+          60,
+          55
+        ],
+        [
+          3,
+          8,
+          60,
+          55
+        ],
+        [
+          2,
+          16,
+          62,
+          54
+        ],
+        [
+          3,
+          25,
+          61,
+          54
+        ],
+        [
+          15,
+          51,
+          45,
+          55
+        ],
+        [
+          22,
+          53,
+          42,
+          54
+        ]
+      ],
+      "notes": "450ms proposal, separate death-only furnace breakage and collapse. Final faint ash/ember remnants; visual object lifetime clears the remainder without delaying gameplay events.",
+      "sha256": "c75da4fdee8b7a1337e66da105159234cca3610d7a4b36b2d6c2f76d32dcb0c0"
+    },
+    {
+      "name": "CoalC1R_VFX_FurnaceCharge",
+      "png": "VFX\\CoalC1R_VFX_FurnaceCharge.png",
+      "size": [
+        384,
+        64
+      ],
+      "cell": [
+        64,
+        64
+      ],
+      "frames": 6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        100,
+        120,
+        140,
+        150,
+        160,
+        180
+      ],
+      "preview_total_ms": 850,
+      "bounds": [
+        [
+          18,
+          14,
+          47,
+          41
+        ],
+        [
+          18,
+          14,
+          47,
+          41
+        ],
+        [
+          18,
+          14,
+          47,
+          41
+        ],
+        [
+          18,
+          14,
+          47,
+          41
+        ],
+        [
+          18,
+          14,
+          47,
+          41
+        ],
+        [
+          18,
+          14,
+          47,
+          41
+        ]
+      ],
+      "notes": "64px cell / 6f, heat-only mask around furnace/cracks, no complete body. Center pivot aligns directly with the 64px character frame.",
+      "sha256": "529ce91d0527a4dcb71e6a796f6175d8c635cca518931908130434a0701fb4e5"
+    },
+    {
+      "name": "CoalC1R_VFX_HeatExplosion",
+      "png": "VFX\\CoalC1R_VFX_HeatExplosion.png",
+      "size": [
+        576,
+        96
+      ],
+      "cell": [
+        96,
+        96
+      ],
+      "frames": 6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        30,
+        30,
+        40,
+        40,
+        50,
+        50
+      ],
+      "preview_total_ms": 240,
+      "bounds": [
+        [
+          40,
+          40,
+          56,
+          56
+        ],
+        [
+          30,
+          30,
+          66,
+          66
+        ],
+        [
+          19,
+          19,
+          77,
+          77
+        ],
+        [
+          9,
+          9,
+          87,
+          87
+        ],
+        [
+          5,
+          5,
+          91,
+          91
+        ],
+        null
+      ],
+      "notes": "96px cell / 6f / .24s, radial heat wave, measured effective radius for future scale-to-radius2 alignment; not a damage mask.",
+      "sha256": "e9371c6403437b1a500442b5682db3a93ea3d54ed7af6e23c34697cba1d02ef8"
+    },
+    {
+      "name": "CoalC1R_VFX_CoalEmbers",
+      "png": "VFX\\CoalC1R_VFX_CoalEmbers.png",
+      "size": [
+        320,
+        64
+      ],
+      "cell": [
+        64,
+        64
+      ],
+      "frames": 5,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        40,
+        40,
+        50,
+        50,
+        60
+      ],
+      "preview_total_ms": 240,
+      "bounds": [
+        [
+          28,
+          29,
+          35,
+          36
+        ],
+        [
+          24,
+          23,
+          40,
+          39
+        ],
+        [
+          20,
+          18,
+          44,
+          43
+        ],
+        [
+          17,
+          15,
+          48,
+          47
+        ],
+        null
+      ],
+      "notes": "64px cell / 5f / .24s, small coal chips and a few embers, no large smoke/fire.",
+      "sha256": "8e4b17c3217d3d7839a90467a5f94adebb5d96ff4885d784ff125e0cc04ec5e2"
+    },
+    {
+      "name": "CoalC1R_VFX_CoalHitFragments",
+      "png": "VFX\\CoalC1R_VFX_CoalHitFragments.png",
+      "size": [
+        128,
+        32
+      ],
+      "cell": [
+        32,
+        32
+      ],
+      "frames": 4,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        30,
+        40,
+        50,
+        60
+      ],
+      "preview_total_ms": 180,
+      "bounds": [
+        [
+          13,
+          12,
+          19,
+          20
+        ],
+        [
+          11,
+          9,
+          22,
+          21
+        ],
+        [
+          9,
+          7,
+          24,
+          24
+        ],
+        null
+      ],
+      "notes": "32px cell / 4f / .18s, independent small decorative coal fragments; candidate replacement for common hit fragments.",
+      "sha256": "99b3a97461fd3612e0bc5ccc40404ca0d065a937ffaf59d9f3732d9423208add"
+    },
+    {
+      "name": "CoalC1R_VFX_CoalDeathBurst",
+      "png": "VFX\\CoalC1R_VFX_CoalDeathBurst.png",
+      "size": [
+        672,
+        96
+      ],
+      "cell": [
+        96,
+        96
+      ],
+      "frames": 7,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "ppu_proposal": 64,
+      "playback": "one-shot",
+      "preview_ms": [
+        50,
+        50,
+        60,
+        60,
+        70,
+        80,
+        80
+      ],
+      "preview_total_ms": 450,
+      "bounds": [
+        [
+          44,
+          44,
+          52,
+          52
+        ],
+        [
+          40,
+          37,
+          56,
+          55
+        ],
+        [
+          35,
+          30,
+          60,
+          60
+        ],
+        [
+          31,
+          24,
+          64,
+          65
+        ],
+        [
+          26,
+          20,
+          68,
+          70
+        ],
+        [
+          21,
+          16,
+          72,
+          75
+        ],
+        null
+      ],
+      "notes": "96px cell / 7f / .45s, coal fragments emphasized, scattered embers only. No circular explosion ring or full body duplicate.",
+      "sha256": "41d4897c1c52cfe21b1ec8cce0efa13799eb173fd87236101a2f0ef2f66e85da"
+    }
+  ],
+  "pose_parameters": [
+    {
+      "tag": "Heat F2",
+      "heat": 0.12,
+      "crack": 0,
+      "arm_offsets": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "elbow_angles": [
+        -4,
+        4
+      ],
+      "knee": 0,
+      "pelvis": 0
+    },
+    {
+      "tag": "Heat F3",
+      "heat": 0.24,
+      "crack": 0.16,
+      "arm_offsets": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "elbow_angles": [
+        -10,
+        10
+      ],
+      "knee": 1,
+      "pelvis": 0
+    },
+    {
+      "tag": "Heat F4",
+      "heat": 0.36,
+      "crack": 0.28,
+      "arm_offsets": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "elbow_angles": [
+        -16,
+        16
+      ],
+      "knee": 1,
+      "pelvis": 1
+    },
+    {
+      "tag": "Heat F5",
+      "heat": 0.5,
+      "crack": 0.4,
+      "arm_offsets": [
+        [
+          2,
+          0
+        ],
+        [
+          -2,
+          0
+        ]
+      ],
+      "elbow_angles": [
+        -21,
+        21
+      ],
+      "knee": 1,
+      "pelvis": 1
+    },
+    {
+      "tag": "Heat F6",
+      "heat": 0.64,
+      "crack": 0.5,
+      "arm_offsets": [
+        [
+          2,
+          -1
+        ],
+        [
+          -2,
+          -1
+        ]
+      ],
+      "elbow_angles": [
+        -24,
+        24
+      ],
+      "knee": 1,
+      "pelvis": 1
+    },
+    {
+      "tag": "Explosion F2 release intact",
+      "heat": 0.78,
+      "crack": 0.62,
+      "arm_offsets": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "elbow_angles": [
+        0,
+        0
+      ],
+      "knee": 1,
+      "pelvis": 1
+    },
+    {
+      "tag": "Explosion F3 peak intact",
+      "heat": 0.86,
+      "crack": 0.7,
+      "arm_offsets": [
+        [
+          -2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elbow_angles": [
+        0,
+        0
+      ],
+      "knee": 1,
+      "pelvis": 1
+    },
+    {
+      "tag": "Explosion F4 stable alive",
+      "heat": 0.42,
+      "crack": 0.3,
+      "arm_offsets": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elbow_angles": [
+        -4,
+        4
+      ],
+      "knee": 1,
+      "pelvis": 1
+    },
+    {
+      "tag": "Cooling F2",
+      "heat": 0.3,
+      "crack": 0.2,
+      "arm_offsets": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elbow_angles": [
+        -3,
+        3
+      ],
+      "knee": 1,
+      "pelvis": 1
+    },
+    {
+      "tag": "Cooling F3",
+      "heat": 0.17,
+      "crack": 0.1,
+      "arm_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elbow_angles": [
+        -2,
+        2
+      ],
+      "knee": 0,
+      "pelvis": 0
+    },
+    {
+      "tag": "Cooling F4",
+      "heat": 0.06,
+      "crack": 0.02,
+      "arm_offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elbow_angles": [
+        0,
+        0
+      ],
+      "knee": 0,
+      "pelvis": 0
+    },
+    {
+      "tag": "Hit F2 small recoil",
+      "heat": 0,
+      "crack": 0,
+      "arm_offsets": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "elbow_angles": [
+        -3,
+        3
+      ],
+      "knee": 0,
+      "pelvis": 0
+    }
+  ],
+  "furnace_reference_rect": [
+    26,
+    29,
+    48,
+    44
+  ],
+  "effective_heat_explosion": {
+    "cell": [
+      96,
+      96
+    ],
+    "center": [
+      48,
+      48
+    ],
+    "union_opaque_bbox": [
+      5,
+      5,
+      91,
+      91
+    ],
+    "max_pixel_center_radius_px": 43.41082814229648,
+    "max_axis_halfextent_px": 42.5,
+    "effective_radius_at_ppu64_scale1": 0.6782941897233825,
+    "proposed_scale_for_effective_radius2": 2.9485730974868396,
+    "full_canvas_world_size_at_this_scale": 4.422859646230259,
+    "note": "Pixel-center measurement; raster corners/parent scale/world composition require later review. Never change attack damageRadius from this image."
+  },
+  "checks": {
+    "png_sizes_rgba_frame_cells": true,
+    "frame_outer_edges_transparent_no_clipping": true,
+    "alive_furnace_grille_original_geometry_exact": true,
+    "crack_positions_and_alpha_original": true,
+    "eyes_and_feet_fixed": true,
+    "windup_F1_matches_installed_idle_F1": true,
+    "windup_F6_matches_explosion_F1": true,
+    "explosion_F4_matches_cooling_F1": true,
+    "cooling_F5_matches_installed_idle_F1": true,
+    "explosion_intact_living_body_not_death": true,
+    "explosion_plus_cooling_ms": 1200,
+    "gif_frames_and_timing_decoded": true,
+    "webp_visible_rgba_matches_png": true,
+    "all_protected_files_unchanged": true,
+    "real_time_gif_visually_observed": false,
+    "unity_import_or_playback_tested": false,
+    "windup_brightness_monotonically_increases": true,
+    "cooling_brightness_monotonically_decreases": true,
+    "intact_character_palette_colors_subset_of_source": true,
+    "static_frame_contact_sheets_reviewed": true
+  },
+  "protected_hashes": {
+    "D:\\던전 게임\\아트 리소스\\몬스터 정지 이미지\\C-1R.jpg": "8d6437356ae59dd9e9d517df152c62af555f7e665c14a2052b2c95c01aac1141",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\CoalMonsterAI.cs": "b35d843524014ce8c17fc0e866d72f55b6d7d572e9b419f00584bbc0a9ad999e",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CoalC1R_IdleMove_v1\\coordinate-inspection.png": "5bf1aed90b2a22282b91e39f49924c785fa7e790049cd535fa5419d19e75fe5a",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CoalC1R_IdleMove_v1\\README_KO.md": "1d11783c492b20de94e7aae3b7644ae39cbfed6df3a88aa45ecbdfc7023e1a36",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CoalC1R_IdleMove_v1\\Previews\\CoalC1R_Idle_4f_64x64_v1.gif": "885bc6226c3e446abc56f4eb5b67a8ed1ef2b0fb03b5a388b58d6d2c8e354286",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CoalC1R_IdleMove_v1\\Previews\\CoalC1R_Idle_4f_64x64_v1_6x.png": "618e783f16e4a0c5c89e867540d897510f8c7583e605e640c244d0b32b06647b",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CoalC1R_IdleMove_v1\\Previews\\CoalC1R_Idle_Move_Transition.gif": "3674db3b7e35db0e6a53333c72c5fba35469a2ab7dd2f5ddc09f2d5de3609f48",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CoalC1R_IdleMove_v1\\Previews\\CoalC1R_Move_6f_64x64_v1.gif": "61b68e260734ce37e4f8bab5469f730607802fe99c419310e6e2f6a3168463d4",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CoalC1R_IdleMove_v1\\Previews\\CoalC1R_Move_6f_64x64_v1_6x.png": "a4770f9edb381d79e7cfa798100edca30b98c5b56cbfe7681ea8f1f302dc2fed",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CoalC1R_IdleMove_v1\\Review\\validation.json": "a32b81fe561a147dbeabb862fcae202df81349db2160edcde36a4d5690eb9cda",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\README_KO.md": "bfadda4d578a162b6108e45b56c386ae1a501d3bd284cf51651d2ef30b990c9f",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Animations\\CrystalC2R_CastWindup_6f_64x64_v1.png": "d145ad8c3042fb412cbd79fd5c9753d3b95e6364768d0d67ddaa228ff4815739",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Animations\\CrystalC2R_Death_7f_64x64_v1.png": "68b97233ad6aa14580c4ac2778ee14cbb38c5daf4f65253af1b3c611e5347d3b",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Animations\\CrystalC2R_Fire_3f_64x64_v1.png": "c6dcb1fded6edf179aa8d38df27a5111d5528d9efd2d03a4bd87829964d64105",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Animations\\CrystalC2R_Hit_3f_64x64_v1.png": "df17f3961938a35756f07c2a43cd60ab4b4b86302470d20b4a342dceeb2177b3",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Animations\\CrystalC2R_Recovery_5f_64x64_v1.png": "227b213fd74bb132dfd3dbde29a655218eb568257d99e5d58f366ace6ceb7907",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_CastWindup_6f_64x64_v1.gif": "72f9d78231f4d8b42c0234ce2295489ee0edbde4b7bdabe2913237b1d4f57131",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_CastWindup_6f_64x64_v1.webp": "8247def7e29930dad8358d195e801a8a1138fe8e295765f7a6954159d625edc6",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Cast_Fire_Recovery_Connection.gif": "81cdc8aeee808af85a44d044f1a40c9f83f5206fd1752f915bfd37e101b2802f",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Death_7f_64x64_v1.gif": "ca4e3800ea55a9f206ac932dda18b9a305438d284453a7a1a70c18326bdc665e",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Death_7f_64x64_v1.webp": "d867a75d949883b7b97a211a9ff9eaef98aab36e224cb72e35e87ffb43bf45e3",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Death_Burst_Composite.gif": "90948d879ea7a238508b1c522ae90901e223241fad4d4eed4979815ce8405764",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Death_Burst_Composite.webp": "382b625bdb75405b90f7d16f24d5c51db297a2dfe72eb44a8aa99f7c0afc848f",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Fire_3f_64x64_v1.gif": "1048c24fdbf13bac78d67a0a72a83b6830096edab17711a59686b1385ebe9dfc",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Fire_3f_64x64_v1.webp": "6e05f5e4f84b9328b322e8711fd3018cb0fe5723b71c23fd137cb6d8e43bb8c8",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Hit_3f_64x64_v1.gif": "5dadda1d1c168a2a8237873089b97ca444ad9750c9837d2195f09ab821f5c06b",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Hit_3f_64x64_v1.webp": "865ee86eb527ca69c4708841b4923d4bb92fdb0b48a7099bb1eabea5d03d7afd",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Recovery_5f_64x64_v1.gif": "43c5f5ed2c0cf0313dc4c5cafce5af98bfba421bc011449defaba82395dd0104",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_Recovery_5f_64x64_v1.webp": "1f1471593ee5410a27806ea33ddab36af5409a60592d7feb181caa52e6021c98",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_CoreCharge.gif": "a45dca4a0d04a659d619fab7cbc562923e36944668e12513644c157a00a10f6f",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_CoreCharge.webp": "cbed25a65f1a104c304b5a1335489a2baddac677eb964f16679fa46e3744c8b7",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_CrystalDeathBurst.gif": "ab993074e4414120c3c9bc137c87aa8931cb38cf5bb801a31e8fd2d633c9033a",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_CrystalDeathBurst.webp": "ec358289f5d11f30139c591aa62ecbbe58ae886f623723d8a526d9f50a71303e",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_CrystalImpact.gif": "e3d5bbdf2dfa0da2417109201c277a29221568d6df29c80d3e477f858a2561b1",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_CrystalImpact.webp": "127b16e72fe7709ff9c8e4844b39ecabbf845fa9fb1f7be1b527a653f49b590a",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_FireFlash.gif": "d4b7276fb1bd0249cec09aabc9d8c8a4a645742ae453ce9440501c721a10692e",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_FireFlash.webp": "634ba65c47c24376c253e288f5491699ac65bdbe005ac62ebe5f73fba792a3e7",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_ProjectileVisual.gif": "ce192c0151b84e0af5ba26c3d1634b93328560ebaad9c99c12ac39a453fa50ff",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Previews\\CrystalC2R_VFX_ProjectileVisual.webp": "708b33f241c4d498e24d34857308b1657809836afab2c31d71414ae01068028c",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Review\\Animations_contact.png": "d35ed3009cd4521809ce900117542e31dedc843f9a96d1d658aea4ecd9bfbd2a",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Review\\validation.json": "e6d456d0299b574027c20a98901719086d3adbca37b2f7706a0f177d94757423",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\Review\\VFX_contact.png": "4fbe941be7715e1b9141bd4aba8127d9483542c91d4fde137b2fed1e16bad38f",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\VFX\\CrystalC2R_VFX_CoreCharge.png": "7e4a83ded1e984dcafe0d3de451f96d96727c484134773c37e173cf2d9de2b1c",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\VFX\\CrystalC2R_VFX_CrystalDeathBurst.png": "9f3d798145b77ec094665b96703af4ecdf3ffd0ce2a27d098a885964761c21e2",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\VFX\\CrystalC2R_VFX_CrystalImpact.png": "64827f9a8989f0786cc091c58a60a6197d695b4c46229cb2c3c26dd396a7a995",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\VFX\\CrystalC2R_VFX_FireFlash.png": "1b144d32cf568df6bb0ba79453d00b2fbfb9f9979fa5325da92045776541ecaf",
+    "C:\\Users\\User\\.codex\\visualizations\\2026\\10\\22\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\CrystalC2R_CombatPack_v1\\VFX\\CrystalC2R_VFX_ProjectileVisual.png": "12524319a7b4fd3200eecaacbdec4f4dd44374221b48dc875fb53253e3a8e7da",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Idle_4f_64x64_v2.png": "8fb203aec0e14f0c75f5e8828af3e37c6e83392bbec9a3f9853630ab03ea0a1e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Idle_4f_64x64_v2.png.meta": "f90103747ddde6dcc1e3595e9f48773218941c7b21edd2e671180a71c4a8f62b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Move_6f_64x64_v2.png": "92d82e3002d0f99abffa7f48600e1f2289eacace7771de7a71f9d5e47f99adba",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Move_6f_64x64_v2.png.meta": "497870ccd5c7caedc08a01d2d2a0b08c9df4b487397db5cb3fda0d30ef0fa83f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat.meta": "d6eabda51f3a5a31217cf9fa62cc303f2017bffc11edf7461fc661815f9c342e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations.meta": "b6ed2ba95d428bcf29df7e2d8d1d3b321a39f71691c20260656e221abc091cbe",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX.meta": "d4ba5fb1d9c46f034949cc19b43ed845fc04f35bf06ebb2abfcd089d520961e7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Death_7f_64x64.png": "e0004d4cf70a3422a72e5d3a14a2a110c947ecf77a27015fab59ca5fcb0d86ad",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Death_7f_64x64.png.meta": "709fe61908dbde6fb51c6660916aa1e723e81258710410aee8de0d994dc8517e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Hit_3f_64x64.png": "59df2e9c9027e1997777fe497dfd6ec2b5803e2486929b40d9eb33823cf9953c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Hit_3f_64x64.png.meta": "4c29947128e40c193a88982d79a5c0f531837e86263746c51b756ce665eedcf0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64.png": "0e1203c8c273ca3fa0ffcf2f281e53139f76f0012ae04c2523f22a8a0df48945",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64.png.meta": "7391a689c01868e6c3be8e6ac5b7d0aec9906df6049b3e1e2a80953f08780509",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64_v2.png": "561d1a988414074007a168463b7baf8ef961c3796670dee2c2bb6327a148f3a5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Jump_4f_64x64_v2.png.meta": "2c64dd7617229a7902033aa259276a90dfa880f4aa5b27758dc80dd9073de94f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64.png": "648cc4fae1fb3f9b363e769d85b56139be23b1ae9f6a533ca10008cad223f06b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64.png.meta": "56cd1b588021b2348dc41cd59d0bb6d5c6d19c2dcf58b24d371e2d7b60d6901a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64_v2.png": "04b8c08aaf3de3d487b89572c9adb9e494b011e6db4de268647014a7b0cd6864",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Landing_3f_64x64_v2.png.meta": "ae19b6b6cff08bcd6175a3bff5b90d496e03cda8f9ca97d766cd8d8d58f74d34",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64.png": "c336b0fde5c195ebb408562495be90fdcfb940c0b671c1e8051dc48fcf020df8",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64.png.meta": "b892bdc01401398e66f00f441a443688a638fa821293d031f35ee12acaaee7d5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64_v2.png": "5de67924025a49532a4ebd409a6458e8d77afcb1054e0e4c77c79d7616ee7cab",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Recovery_5f_64x64_v2.png.meta": "e60752d474497f68e4f541fe17222378eae5396064ec5f7c1488218313427ae7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Windup_6f_64x64.png": "ae0548a4757758fb60c15afcbe48a5220eb4c2ced1df18685b8d40aa668f6172",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\Animations\\B-1R_Windup_6f_64x64.png.meta": "1c2e188d5f0132240dc8793667451a9c909ff896e248c4337c120bb3cf5df88f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_DeathBurst.png": "ebda2c6677a0b3c602899a9ee41d21bec48f2aaea8d529c5d6db050b3c29aae3",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_DeathBurst.png.meta": "0b21e70446de57c756e0df646f5754e93f98f18c1debc71cd324b11db8783699",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_HitFragments.png": "ad88cc38b7cac13be178d2a829f651d87a35759897775e8d161c395ba3a4efe5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_HitFragments.png.meta": "7ac9864ab5f068c11490c911b38a8dfcf714e12877768d9679fa69af3cc1c1d4",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_JumpDust.png": "33d02ab43085c0c57cdfb107c7329752fa13e369a27ff7530166b0dabe3b625e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_JumpDust.png.meta": "a083ce66ab4bc346029f53d9e6dfc4072d2f9bfab42a5a7fac400d898b917f1d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingDust.png": "82684f0f8f44a3f81ccd45c81cda6777ed184523ddc17f2be4dd1497c583eb32",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingDust.png.meta": "5bcd7f981f0faa84a283d0936474e4e1e531794611c3b94d8e0a27fbaf1ea9ca",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingShockwave.png": "9c7ea37b2892b61781a428eed71e7bbc28638e15f6450d90da5b9f0892a0ee21",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_LandingShockwave.png.meta": "8b8a8fe9d0fbbce9bb3e9a6821ffa84472e45fd553b44da9bb4213e902bb1496",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_StoneFragments.png": "0ba84f660e9a961e3f44fe2a21b4068f4dd94e77852181edd142f3744d2c20dc",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_StoneFragments.png.meta": "51d9eb6d85bc45efd8e97e840d1e71ea931582514616f33307a03ec8c6e977b5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat.meta": "442de89796e038f8db749cb3ef802b35bc48a1c1c0c991ea84f03ea89bfe0a6d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Idle_4f_64x64_v1.png": "0a40e4c49e6d421fb9d0e0401bd14fbd56a3bc86a4c60e12c99df8437412faad",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Idle_4f_64x64_v1.png.meta": "0da46db4791a91c737b9fbbc7b47a3ac65f2538a110a1f6ad84a17e422bdeb2d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Move_6f_64x64_v1.png": "c153835ca7cb39d25de00971fc1f31965aa531d5c953856ebf32e698b36f966d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Move_6f_64x64_v1.png.meta": "af11af8e3ff411b44fbf4f3b6e69c5fc6baeef913ddfc3b727d5e13aba846438",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations.meta": "cad12a667202d05533582084df0dc9fe7bcb8fd591189c5f5097053a19f32790",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX.meta": "f85bf4459070f145b9a88def6d8396736a2f434a3e4a36e22cd7d3cfbedca22f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_ChargeWindup_6f_64x64_v1.png": "1fe6b77a2c4d7c085e6c6e77590a922861053ebbc39b0a4115dce0f4584537a0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_ChargeWindup_6f_64x64_v1.png.meta": "73cef41657fcaf8a75dbe02476772d72356eb50563c02c3f884150c6fa76a695",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Charge_4f_64x64_v1.png": "a27c9a658b50c1858a29da3ece28c598e946d8281f92936e730ebee30bb69d12",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Charge_4f_64x64_v1.png.meta": "584ae1869e99e8b8a3ee085f1c44bbb1eea8b417e6981646c2821bdc6aefba15",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Death_7f_64x64_v1.png": "3526f1e78e0763dfc7b6487fcaeb5e84d8848370a7ba1c773d2a647b41d9a61d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Death_7f_64x64_v1.png.meta": "edeb52c9ad2d178bd51b9810a1c2154d072fc675a87fa6a766331eb9074716bf",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Hit_3f_64x64_v1.png": "bab74cf9af717b0c5bd9eaaa922677e1ac2f2f4320d2c5fe640d9874aa564533",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Hit_3f_64x64_v1.png.meta": "4719f1dbfaf41809bc1342f5fed03b16dc7a1d3769cedd3556f148d034c18154",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Recovery_5f_64x64_v1.png": "d9bf257b59d07d8c2a8f935298b9f109b3b27bdc5022ea5079c8a86a63a2ebf9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_Recovery_5f_64x64_v1.png.meta": "68d4510e43b6fb9e64f11aec563405b4a03877e61f67d7bd0e633f9ed9c8a55a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_WallImpact_4f_64x64_v1.png": "6479f4f91b4323a56adad20b7512111f253caa15956ad5d76283cc879e9ada96",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\Animations\\IronI3R_WallImpact_4f_64x64_v1.png.meta": "e3bda24474c98aaa1d41c582861965519b463cc4358f067bbe306f8723c81b3c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_ChargeDust.png": "83380f854e6be9370998931255ae0f20f06ff39fc57f28f56489923e1623a60d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_ChargeDust.png.meta": "827d9cb29d47390efd953edd91387c7b8c52fe10a625a8f61659c6616ea08973",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_ChargeTrail.png": "da2bbf9957a5d9ace13e443e774b080bf3303625bc8aa0ebeddd544057197cc5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_ChargeTrail.png.meta": "723c7a40b084994d9c0f12c7e0897bb4e647b3c8a27705ea94ef05db95877389",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_DeathFragments.png": "e030b267a05cc5f98d488a00a8e427742a6afb473c20be4dd06fd8de7b716ab3",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_DeathFragments.png.meta": "13610929990311328ec8c7fefa125b463afddbabbb4a9986f515b1453f82606e",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_HitSparks.png": "b031190f6005bdc31ad4dc9db4dfb2493733562ef1d1898ac32d1503f6e3e5d2",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_HitSparks.png.meta": "95cd5f980b70ec751265ea51fa4b7ca623af580a62108b30aceae99490d742eb",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_WallImpact.png": "70cc26618ad938c2c4bd57f525a6a65b7cf31dee57c1ed31f22fdecca53c78f5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\Combat\\VFX\\IronI3R_VFX_WallImpact.png.meta": "9527bb5b49a215ff256cdf1a5d99bdc31285b96edad130844efda81a69015df0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat.meta": "bbc9f7d7649db5b8f5cf2fea4974a01c02a5796c19e336beb582406dcc3823b9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\CrystalC2R_Idle_4f_64x64_v1.png": "c1e4a0487652ed5c8e9765eb978698eae4467e5ca646e346adc1de2273683a52",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\CrystalC2R_Idle_4f_64x64_v1.png.meta": "7c896e57921d39ddb7fc39c98f4ad3bb07bef9844903b9a6b1c787e4de018465",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\CrystalC2R_Move_6f_64x64_v1.png": "4382cd7b5d222b06424737c5202f730726e5b2678c75c6337b8357c050b60717",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\CrystalC2R_Move_6f_64x64_v1.png.meta": "d89d91daaa9dbd4708e061ca88305e2f662c403efa49e966c4cac7cee33505f0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations.meta": "8d9066a5ea4b11f157ad3a6142182e1c2a8bda9804697f9caccb2cda3b85c7a0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX.meta": "ca464ab553f24afd8f3c64f563a52dbed860b69948a8e2b7237ad566ec2d945a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_CastWindup_6f_64x64_v1.png": "d145ad8c3042fb412cbd79fd5c9753d3b95e6364768d0d67ddaa228ff4815739",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_CastWindup_6f_64x64_v1.png.meta": "ecd873b8d4ff350427e0ac5509737f5a739b5f88ae4b11e4e2373cf1fddb09db",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_Death_7f_64x64_v1.png": "68b97233ad6aa14580c4ac2778ee14cbb38c5daf4f65253af1b3c611e5347d3b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_Death_7f_64x64_v1.png.meta": "f3544058dca841979e957e7acff8a3262d55c8ee2604ed40f16dc4b33f989bf4",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_Fire_3f_64x64_v1.png": "c6dcb1fded6edf179aa8d38df27a5111d5528d9efd2d03a4bd87829964d64105",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_Fire_3f_64x64_v1.png.meta": "2d3b625725624befe5bda7b6a9c05924a5e27809d15b0a103b68c09a4630a38f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_Hit_3f_64x64_v1.png": "df17f3961938a35756f07c2a43cd60ab4b4b86302470d20b4a342dceeb2177b3",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_Hit_3f_64x64_v1.png.meta": "455f2d82bbd43fdae8d4e56bd513835557013f78d6db639a0389bf1adbcd8726",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_Recovery_5f_64x64_v1.png": "227b213fd74bb132dfd3dbde29a655218eb568257d99e5d58f366ace6ceb7907",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\Animations\\CrystalC2R_Recovery_5f_64x64_v1.png.meta": "8021b304e4baf6df094ab97e2a842538c73b5c2f17fa5d7ef633888789cc7b5d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_CoreCharge.png": "7e4a83ded1e984dcafe0d3de451f96d96727c484134773c37e173cf2d9de2b1c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_CoreCharge.png.meta": "f97ee9d10bb5c317e1d8f0dc191501058bc96dd4024c16401b7cc88033938eb0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_CrystalDeathBurst.png": "9f3d798145b77ec094665b96703af4ecdf3ffd0ce2a27d098a885964761c21e2",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_CrystalDeathBurst.png.meta": "01be50e2ebcb9981f89e14be2f502d4160af7bf6a473b074db3f8b4b8d60c0bb",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_CrystalImpact.png": "64827f9a8989f0786cc091c58a60a6197d695b4c46229cb2c3c26dd396a7a995",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_CrystalImpact.png.meta": "790530ab10ceb056237df5836d020255e9784a07c88795f72da9be733ffba1ec",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_FireFlash.png": "1b144d32cf568df6bb0ba79453d00b2fbfb9f9979fa5325da92045776541ecaf",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_FireFlash.png.meta": "04d4632c6a2fe7e32624d7587fd63919de498200a9a3ae419b085ba415734024",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_ProjectileVisual.png": "12524319a7b4fd3200eecaacbdec4f4dd44374221b48dc875fb53253e3a8e7da",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\Combat\\VFX\\CrystalC2R_VFX_ProjectileVisual.png.meta": "a63f7864a86fb559e76c7384d15f3ca4f2b46093429c0ccdc25c339c41e56144",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CoalC1R\\CoalC1R_Idle_4f_64x64_v1.png": "5ee609eb12f11ec38b082050bd59a68e0a87ebfbf36d038165682969b98b53ce",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CoalC1R\\CoalC1R_Idle_4f_64x64_v1.png.meta": "97be91d0ce32037aa3cf3053f7dec122f49c393f1f0ab1e2bd063be1f9174987",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CoalC1R\\CoalC1R_Move_6f_64x64_v1.png": "ae7e12d4a5dc3a2c3a463672a9596d95756d24e1dd19a91c8719d72846c2512b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CoalC1R\\CoalC1R_Move_6f_64x64_v1.png.meta": "9c5374ecde2303a8f03d920ac060d3c4efd77d01167eb82d7a64a776641b6bf3"
+  },
+  "limitations": [
+    "Real-time GIF observation not performed because file:// browser access was blocked earlier; no bypass attempted.",
+    "Death fracture surfaces are 2D source-pixel partitions rather than newly drawn concealed coal/furnace surfaces.",
+    "VFX GIF uses binary-alpha coverage; full alpha is preserved by PNG/WebP.",
+    "No Unity code, damage, HP, colliders, effect wiring, attack timing or reward/death events were modified."
+  ],
+  "heat_mean_luminance_per_frame": {
+    "HeatWindup": [
+      52.76267792207792,
+      64.8904,
+      75.65252467532466,
+      85.46409610389608,
+      99.73653506493508,
+      119.01662337662339
+    ],
+    "Explosion": [
+      119.01662337662339,
+      144.48211428571426,
+      146.9737636363636,
+      89.24300779220779
+    ],
+    "CoolingRecovery": [
+      89.24300779220779,
+      82.20131688311687,
+      68.48276103896103,
+      57.52292207792207,
+      52.76267792207792
+    ],
+    "Hit": [
+      52.76267792207792,
+      52.76267792207792,
+      52.76267792207792
+    ]
+  },
+  "previews": {
+    "gif_count": 12,
+    "webp_count": 11,
+    "attack_connection_gif_frames": 16,
+    "death_composite_gif_frames": 7
+  }
+}

@@ -4812,6 +4812,73 @@ MonoBehaviour:
   moveFramesPerSecond: 10
   referenceMoveSpeed: 3
   movementThreshold: 0.02
+  windupFrames:
+  - {fileID: -1517767568119067549, guid: 584ac04c21fb10e449e438953fd607d2, type: 3}
+  - {fileID: -8746898561746520071, guid: 584ac04c21fb10e449e438953fd607d2, type: 3}
+  - {fileID: -1450499625947423654, guid: 584ac04c21fb10e449e438953fd607d2, type: 3}
+  - {fileID: -5508476790450684402, guid: 584ac04c21fb10e449e438953fd607d2, type: 3}
+  - {fileID: 8612920835478731548, guid: 584ac04c21fb10e449e438953fd607d2, type: 3}
+  - {fileID: -6058826635367739915, guid: 584ac04c21fb10e449e438953fd607d2, type: 3}
+  explosionFrames:
+  - {fileID: 6843486341113507162, guid: 35aa9da3b611a83428960d1fa2c4b0d5, type: 3}
+  - {fileID: 6893431847349169008, guid: 35aa9da3b611a83428960d1fa2c4b0d5, type: 3}
+  - {fileID: -6890465476551798728, guid: 35aa9da3b611a83428960d1fa2c4b0d5, type: 3}
+  - {fileID: -3511029227981978962, guid: 35aa9da3b611a83428960d1fa2c4b0d5, type: 3}
+  coolingFrames:
+  - {fileID: 9154589141298043885, guid: 25f012a0949ea6541b2a34c0a1352fa2, type: 3}
+  - {fileID: 541805038391312973, guid: 25f012a0949ea6541b2a34c0a1352fa2, type: 3}
+  - {fileID: -2654195861047711437, guid: 25f012a0949ea6541b2a34c0a1352fa2, type: 3}
+  - {fileID: 1571499491823193004, guid: 25f012a0949ea6541b2a34c0a1352fa2, type: 3}
+  - {fileID: 4378665015469662525, guid: 25f012a0949ea6541b2a34c0a1352fa2, type: 3}
+  hitFrames:
+  - {fileID: -8993230701444450440, guid: 33a7f8cd024071a4a86e3155854f51a7, type: 3}
+  - {fileID: -7710329816726968980, guid: 33a7f8cd024071a4a86e3155854f51a7, type: 3}
+  - {fileID: 7493525270504492340, guid: 33a7f8cd024071a4a86e3155854f51a7, type: 3}
+  deathFrames:
+  - {fileID: 6400113350720035165, guid: a69d2427ecb28704ca6ac3716a456c32, type: 3}
+  - {fileID: -1071290137937299204, guid: a69d2427ecb28704ca6ac3716a456c32, type: 3}
+  - {fileID: -1189730776202715861, guid: a69d2427ecb28704ca6ac3716a456c32, type: 3}
+  - {fileID: 1028171933930689867, guid: a69d2427ecb28704ca6ac3716a456c32, type: 3}
+  - {fileID: -6826441568675705273, guid: a69d2427ecb28704ca6ac3716a456c32, type: 3}
+  - {fileID: -7233161408181715555, guid: a69d2427ecb28704ca6ac3716a456c32, type: 3}
+  - {fileID: -607379250831424590, guid: a69d2427ecb28704ca6ac3716a456c32, type: 3}
+  explosionDuration: 0.24
+  hitDuration: 0.15
+  deathDuration: 0.45
+  furnaceChargeFrames:
+  - {fileID: -3462871741440350475, guid: 779ebcc9f0ce6134caa4bf973631ba52, type: 3}
+  - {fileID: 2435679057170290605, guid: 779ebcc9f0ce6134caa4bf973631ba52, type: 3}
+  - {fileID: 8908048285092629492, guid: 779ebcc9f0ce6134caa4bf973631ba52, type: 3}
+  - {fileID: 3796570858125523544, guid: 779ebcc9f0ce6134caa4bf973631ba52, type: 3}
+  - {fileID: -2211425671794427917, guid: 779ebcc9f0ce6134caa4bf973631ba52, type: 3}
+  - {fileID: -5281687663111845162, guid: 779ebcc9f0ce6134caa4bf973631ba52, type: 3}
+  heatExplosionFrames:
+  - {fileID: 4590385783321445894, guid: 4bb7b5221a0ad3f478a2d4ba54e0f5b7, type: 3}
+  - {fileID: 8114973949744837416, guid: 4bb7b5221a0ad3f478a2d4ba54e0f5b7, type: 3}
+  - {fileID: 3426480264688953233, guid: 4bb7b5221a0ad3f478a2d4ba54e0f5b7, type: 3}
+  - {fileID: -1423028481527156047, guid: 4bb7b5221a0ad3f478a2d4ba54e0f5b7, type: 3}
+  - {fileID: -300727719305610817, guid: 4bb7b5221a0ad3f478a2d4ba54e0f5b7, type: 3}
+  - {fileID: 1033647277, guid: 4bb7b5221a0ad3f478a2d4ba54e0f5b7, type: 3}
+  embersFrames:
+  - {fileID: -7830896217532644836, guid: 9dbaeee2c28d5e344b2dc34b488394e4, type: 3}
+  - {fileID: -733760873989118473, guid: 9dbaeee2c28d5e344b2dc34b488394e4, type: 3}
+  - {fileID: 2675185497968063531, guid: 9dbaeee2c28d5e344b2dc34b488394e4, type: 3}
+  - {fileID: -4877430667176653646, guid: 9dbaeee2c28d5e344b2dc34b488394e4, type: 3}
+  - {fileID: 5955476819944635068, guid: 9dbaeee2c28d5e344b2dc34b488394e4, type: 3}
+  hitFragmentsFrames:
+  - {fileID: 8266376292115597676, guid: 144bf17e2758d5543822aa502b4dbd38, type: 3}
+  - {fileID: -8606102449099869906, guid: 144bf17e2758d5543822aa502b4dbd38, type: 3}
+  - {fileID: -8726580223889648015, guid: 144bf17e2758d5543822aa502b4dbd38, type: 3}
+  - {fileID: 1105652178, guid: 144bf17e2758d5543822aa502b4dbd38, type: 3}
+  deathBurstFrames:
+  - {fileID: 1115688547774510669, guid: 8aa2ffd59261ad24781ec56ccef146c4, type: 3}
+  - {fileID: -3643160544570824864, guid: 8aa2ffd59261ad24781ec56ccef146c4, type: 3}
+  - {fileID: -8373283964634476344, guid: 8aa2ffd59261ad24781ec56ccef146c4, type: 3}
+  - {fileID: -6005025138596311364, guid: 8aa2ffd59261ad24781ec56ccef146c4, type: 3}
+  - {fileID: -1477600013283223387, guid: 8aa2ffd59261ad24781ec56ccef146c4, type: 3}
+  - {fileID: -9095930397951467945, guid: 8aa2ffd59261ad24781ec56ccef146c4, type: 3}
+  - {fileID: -6892033522634778445, guid: 8aa2ffd59261ad24781ec56ccef146c4, type: 3}
+  heatExplosionScale: 0.980893
 --- !u!1 &6520259263719801267
 GameObject:
   m_ObjectHideFlags: 0
