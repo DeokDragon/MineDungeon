@@ -105,6 +105,19 @@ public sealed class PlayerProgression : MonoBehaviour
         Changed?.Invoke();
     }
 
+    // Reset commits install every session's state before any observer runs.
+    internal void ApplyResetSnapshot(CharacterSnapshot data)
+    {
+        Level = data.level; Experience = data.experience; UnspentStatPoints = data.points;
+        HealthPoints = data.healthPoints; PhysicalPoints = data.physicalPoints; MagicPoints = data.magicPoints;
+    }
+    internal void NotifyStatReset(Action recover = null)
+    {
+        if (Changed == null) return;
+        foreach (Action observer in Changed.GetInvocationList())
+            try { observer(); } catch (Exception ex) { recover?.Invoke(); Debug.LogWarning("Committed stat reset observer failed: " + ex.Message); }
+    }
+
     public bool GrantExperience(int amount)
     {
         if (amount < 0 || configuration == null) return false;

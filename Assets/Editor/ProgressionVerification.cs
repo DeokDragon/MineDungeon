@@ -24,6 +24,72 @@ public static class ProgressionVerification
         File.WriteAllText(path, JsonUtility.ToJson(new Envelope { payload = payload, checksum = checksum }));
     }
 
+    // Explicit Play-mode checks against the existing live Main scene, only with a unique Library save override.
+    public static string RunStatResetPlay()
+    {
+        string root = SessionState.GetString("StatReset.Root", "");
+        var save = CharacterSaveService.Current; var run = DungeonRunManager.Instance;
+        if (!Application.isPlaying || string.IsNullOrEmpty(root) || save == null || save.SavePath != root + "/character.json")
+            throw new Exception("Unique isolated reset fixture required");
+        var growth = run.GetComponent<PlayerProgression>(); var rewards = run.GetComponent<RewardInventorySession>();
+        var health = UnityEngine.Object.FindFirstObjectByType<PlayerHealth>(); var skills = health.GetComponent<PlayerSkills>();
+        var attack = health.GetComponent<PlayerAttack>(); var power = health.GetComponent<PlayerSkillAttackPower>();
+        var restore = typeof(PlayerProgression).GetMethod("RestoreGrowth", BindingFlags.Instance | BindingFlags.NonPublic);
+        var money = typeof(RewardInventorySession).GetMethod("ApplyCommittedMoney", BindingFlags.Instance | BindingFlags.NonPublic);
+        Action<object,string,object> field = (o,n,v) => o.GetType().GetField(n,BindingFlags.Instance|BindingFlags.NonPublic).SetValue(o,v);
+        Func<object,string,object> read = (o,n) => o.GetType().GetField(n,BindingFlags.Instance|BindingFlags.NonPublic).GetValue(o);
+        var log = new List<string>(); Action<bool,string> check=(ok,label)=>{if(!ok)throw new Exception("FAIL "+label);log.Add("PASS "+label);};
+        Action<int,int,int,int,long> fixture=(l,h,p,m,g)=>{
+            restore.Invoke(growth,new object[]{l,l==50?0:42,l*3-h-p-m,h,p,m}); money.Invoke(rewards,new object[]{g});
+            health.RefreshGrowthHealth();field(health,"currentHealth",Math.Max(1,health.MaxHealth/2));save.RequestSave();
+            check(save.Flush(),"fixture flush");
+        };
+        string error;
+        fixture(1,0,0,0,1000); check(!save.TryResetStats(out error)&&rewards.Money==1000,"zero investment refused");
+        fixture(1,1,0,0,499);check(!save.TryResetStats(out error)&&growth.HealthPoints==1&&rewards.Money==499,"499G refused");
+        foreach(long gold in new[]{500L,501L})
+        {
+            fixture(1,1,0,0,gold);int writes=save.SuccessfulWrites;
+            check(save.TryResetStats(out error)&&rewards.Money==gold-500&&growth.UnspentStatPoints==3,"exact gold boundary "+gold);
+            check(save.SuccessfulWrites==writes+1,"one atomic write "+gold);
+            check(!save.TryResetStats(out error)&&rewards.Money==gold-500,"repeat no charge "+gold);
+        }
+        fixture(10,7,9,11,900);string original=JsonUtility.ToJson(save.Capture());string primary=File.ReadAllText(save.SavePath),backup=File.ReadAllText(save.SavePath+".bak");
+        using(var locked=new FileStream(save.SavePath+".tmp",FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.None))
+        {check(!save.TryResetStats(out error),"locked temp refuses reset");check(JsonUtility.ToJson(save.Capture())==original,"failure memory unchanged");check(File.ReadAllText(save.SavePath)==primary&&File.ReadAllText(save.SavePath+".bak")==backup,"failure files unchanged");}
+        check(save.TryResetStats(out error)&&rewards.Money==400&&growth.UnspentStatPoints==30,"retry succeeds distributed return");
+        foreach(var sample in new[]{new[]{100,30,20},new[]{20,100,30},new[]{30,20,100}})
+        {
+            fixture(50,sample[0],sample[1],sample[2],1500);
+            field(health,"regenerationUsed",12d);field(health,"regenerationFraction",.75d);
+            field(attack,"empoweredCharge",3);field(attack,"empoweredReady",true);field(skills,"explosionReadyAt",Time.time+60);
+            var ready=(float[])read(skills,"readyAt");var applied=(float[])read(skills,"appliedCooldowns");ready[0]=Time.time+20;ready[1]=Time.time+30;applied[0]=6;applied[1]=9.5f;
+            var readyBefore=(float[])ready.Clone();int hp=health.CurrentHealth,max=health.MaxHealth,potions=run.RemainingPotions,revives=run.RemainingRevives;long runGold=rewards.RunMoney,runEXP=rewards.RunRewardExperience;
+            var candidate=save.Capture();candidate.money-=500;candidate.points=150;candidate.healthPoints=candidate.physicalPoints=candidate.magicPoints=0;
+            check(save.TryResetStats(out error),"100P fixture reset "+sample[0]);
+            check(JsonUtility.ToJson(save.Capture())==JsonUtility.ToJson(candidate),"all permanent fields match candidate");
+            check(health.MaxHealth==100&&health.CurrentHealth==(hp*100+max-1)/max,"HP ratio ceil");
+            check(power.PhysicalAttack==power.BasePhysicalAttack&&power.MagicAttack==power.BaseMagicAttack,"base attack stats restored");
+            check(Enumerable.Range(0,9).All(i=>!InventoryPresentation.PassiveUnlocked(growth,i)),"nine passives locked");
+            check((double)read(health,"regenerationUsed")==0&&(double)read(health,"regenerationFraction")==0&&!(bool)read(attack,"empoweredReady")&&(int)read(attack,"empoweredCharge")==0&&(float)read(skills,"explosionReadyAt")==0,"100P transient states cleared");
+            check(ready.SequenceEqual(readyBefore)&&applied[0]==6&&applied[1]==9.5f,"ordinary cooldown unchanged");
+            check(run.RemainingPotions==potions&&run.RemainingRevives==revives&&rewards.RunMoney==runGold&&rewards.RunRewardExperience==runEXP,"resources and run rewards unchanged");
+            CharacterSnapshot disk;check(CharacterSaveFile.TryRead(save.SavePath,out disk,out error)&&JsonUtility.ToJson(disk)==JsonUtility.ToJson(candidate),"v3 disk candidate");
+        }
+        fixture(10,7,9,11,900);
+        var casts=(System.Collections.IList)read(skills,"live");var cast=Activator.CreateInstance(typeof(PlayerSkills).GetNestedType("Cast",BindingFlags.NonPublic));casts.Add(cast);
+        try{check(!save.TryResetStats(out error)&&rewards.Money==900,"reserved skill refuses reset");}finally{casts.Clear();}
+        save.BeginTransaction();try{check(!save.TryResetStats(out error),"active transaction refuses reset");}finally{save.EndTransaction();}
+        bool later=false,rewardsLater=false,consistent=true,reentrantBlocked=true;
+        Action bad=()=>{consistent&=rewards.Money==400&&growth.UnspentStatPoints==30;string e;reentrantBlocked&=!save.TryResetStats(out e); money.Invoke(rewards,new object[]{901L}); throw new Exception("Injected reset observer with money mutation");};
+        Action good=()=>{later=true;consistent&=rewards.Money==400&&growth.UnspentStatPoints==30;};Action rewardGood=()=>{rewardsLater=true;consistent&=growth.SpentStatPoints==0;};
+        growth.Changed+=bad;growth.Changed+=good;rewards.Changed+=rewardGood;
+        try{check(save.TryResetStats(out error),"observer exception remains committed success");check(later&&rewardsLater&&consistent&&reentrantBlocked,"all observers see coherent state and reentry blocked");}
+        finally{growth.Changed-=bad;growth.Changed-=good;rewards.Changed-=rewardGood;}
+        check(!save.IsPending&&rewards.Money==400&&growth.UnspentStatPoints==30,"notification alone no duplicate save");
+        File.WriteAllLines(root+"/service-checks.txt",log);return log.Count+" reset service checks passed; "+root;
+    }
+
     public static string Run()
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Edit mode required");

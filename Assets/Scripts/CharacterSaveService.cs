@@ -125,6 +125,63 @@ public sealed class CharacterSaveService : MonoBehaviour
         }
         finally { writing = false; }
     }
+    public const long StatResetCost = 500; // Approved initial test cost, not final economy balance.
+    public bool CanResetStats(out string error)
+    {
+        error = null;
+        if (!CanCommitInvestment || growth == null || !growth.CanInvest || GetComponent<DungeonRunManager>().IsEnding)
+        { error = "메인 로비의 정상 준비 상태에서만 초기화할 수 있습니다."; return false; }
+        if (growth.SpentStatPoints <= 0) { error = "반환할 투자 포인트가 없습니다."; return false; }
+        if (rewards == null || rewards.Money < StatResetCost) { error = "초기화에는 500G가 필요합니다."; return false; }
+        var health = FindFirstObjectByType<PlayerHealth>();
+        var skills = health != null ? health.GetComponent<PlayerSkills>() : null;
+        var attack = health != null ? health.GetComponent<PlayerAttack>() : null;
+        var potion = health != null ? health.GetComponent<PlayerPotion>() : null;
+        var movement = health != null ? health.GetComponent<PlayerMovement>() : null;
+        if (health == null || !health.CanResetStatPassives || skills == null || !skills.CanResetStatPassives ||
+            (attack != null && attack.IsAttacking) || (potion != null && potion.IsUsing) || (movement != null && movement.IsDodging))
+        { error = "공격·물약·예약 스킬 효과가 끝난 후 다시 시도해 주세요."; return false; }
+        return true;
+    }
+    public bool TryResetStats(out string error)
+    {
+        if (!CanResetStats(out error)) return false;
+        var candidate = Capture();
+        candidate.money -= StatResetCost;
+        candidate.points += candidate.healthPoints + candidate.physicalPoints + candidate.magicPoints;
+        candidate.healthPoints = candidate.physicalPoints = candidate.magicPoints = 0;
+        var health = FindFirstObjectByType<PlayerHealth>();
+        var skills = health.GetComponent<PlayerSkills>();
+        writing = true;
+        try
+        {
+            if (!CharacterSaveFile.Write(SavePath, candidate, invalidPrimary, out error))
+            { Status = "저장 실패 · 초기화 미적용 · 재시도하거나 취소해 주세요"; return false; }
+            invalidPrimary = false; dirty = false; lastSavedLevel = candidate.level; SuccessfulWrites++; Status = "";
+            // From here the operation is committed. Never return a retryable failure or charge again.
+            Action installCommitted = () =>
+            {
+                // Reinstall the saved snapshot before notifying anyone; also used after a faulty observer.
+                growth.ApplyResetSnapshot(candidate); rewards.ApplyCommittedMoney(candidate.money);
+                try { health.ResetStatPassives(); skills.ResetStatPassives(); }
+                catch (Exception ex)
+                {
+                    growth.ApplyResetSnapshot(candidate); rewards.ApplyCommittedMoney(candidate.money);
+                    try { health.ResetStatPassives(); skills.ResetStatPassives(); }
+                    catch (Exception recovery)
+                    { LoadBlocked = true; Status = "초기화 저장 완료 · 상태 갱신 오류로 재실행이 필요합니다."; Debug.LogWarning(recovery.Message); }
+                    Debug.LogWarning("Committed stat reset refresh recovered from: " + ex.Message);
+                }
+            };
+            installCommitted();
+            // Each observer failure reinstalls the committed state before the next observer runs.
+            growth.NotifyStatReset(installCommitted); rewards.NotifyStatReset(installCommitted);
+            // Notifications alone do not need another disk write. Preserve genuine observer changes.
+            if (JsonUtility.ToJson(Capture()) == JsonUtility.ToJson(candidate)) dirty = false;
+            return true;
+        }
+        finally { writing = false; }
+    }
 #if UNITY_EDITOR
     // Synchronous save service: no old worker can finish after this transaction.
     public bool EditorResetProgress(string defaultE, string defaultR, out string error)

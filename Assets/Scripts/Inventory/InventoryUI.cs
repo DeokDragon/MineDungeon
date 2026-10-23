@@ -28,6 +28,11 @@ public sealed class InventoryUI : MonoBehaviour
     [SerializeField] private StatCard[] statCards;
     [SerializeField] private PassiveCard[] passiveCards;
     [SerializeField] private ScrollRect growthScroll;
+    [SerializeField] private Button resetStatsButton, resetCancelButton, resetConfirmButton;
+    [SerializeField] private GameObject resetDefault, resetConfirmation;
+    [SerializeField] private TMP_Text resetGoldText, resetSummary;
+    private bool resetConfirming, resetBusy;
+    private string resetReviewedSnapshot;
     private PlayerProgression growth;
     public const float CollapsedStatCardHeight = 54f, ExpandedStatCardHeight = 212f;
     private int expandedStat = -1, hoveredStat = -1;
@@ -112,6 +117,12 @@ public sealed class InventoryUI : MonoBehaviour
                 statCards[i].invest.onClick.AddListener(() => InvestStat(index));
                 if (statCards[i].header != null) statCards[i].header.onClick.AddListener(() => ToggleStatCard(index));
             }
+            if (resetStatsButton != null)
+            {
+                resetStatsButton.onClick.AddListener(BeginStatReset);
+                resetCancelButton.onClick.AddListener(CancelStatReset);
+                resetConfirmButton.onClick.AddListener(ConfirmStatReset);
+            }
             ApplyAccordion();
             SetCharacterTab(0);
             growthScroll.onValueChanged.AddListener(Scrolled);
@@ -167,7 +178,7 @@ public sealed class InventoryUI : MonoBehaviour
     private void CloseInternal()
     {
         if (!IsOpen) return;
-        HideTooltip(); sorting.Hide(); search.DeactivateInputField(); panel.SetActive(false); IsOpen = false;
+        CancelStatReset(); HideTooltip(); sorting.Hide(); search.DeactivateInputField(); panel.SetActive(false); IsOpen = false;
         SuppressClosingInput();
     }
     public void StartDungeon()
@@ -250,6 +261,7 @@ public sealed class InventoryUI : MonoBehaviour
     public void SetCharacterTab(int index)
     {
         if (characterPage == null) return;
+        CancelStatReset();
         bool stats = index == 1;
         characterPage.SetActive(!stats); statPage.SetActive(stats); HideTooltip();
         characterTab.GetComponent<Image>().color = stats ? new Color(.09f,.12f,.16f) : new Color(.10f,.24f,.25f);
@@ -310,7 +322,7 @@ public sealed class InventoryUI : MonoBehaviour
     }
     public void InvestStat(int index)
     {
-        if (!IsOpen || growth == null || index < 0 || index > 2) return;
+        if (!IsOpen || resetConfirming || resetBusy || growth == null || index < 0 || index > 2) return;
         int invested; string error;
         if (!growth.TryInvest((PlayerProgression.Stat)index, investmentMultiplier, out invested, out error))
         {
@@ -326,6 +338,7 @@ public sealed class InventoryUI : MonoBehaviour
         statNotification.SetActive(growth.UnspentStatPoints > 0);
         unspentText.text = $"미사용  <color=#FFCF75>{growth.UnspentStatPoints} P</color>";
         levelText.text = $"Lv. {growth.Level}";
+        RefreshStatReset();
         bool allowed = growth.CanInvest;
         investmentRule.text = !string.IsNullOrEmpty(investmentError) ? investmentError : !allowed ? "던전에서는 열람만 가능합니다 · 투자 불가"
             : Time.unscaledTime < investmentSuccessUntil ? investmentSuccess : "메인 준비 상태 · 투자 즉시 저장";
@@ -336,7 +349,7 @@ public sealed class InventoryUI : MonoBehaviour
             int amount = growth.InvestablePoints(stat, investmentMultiplier);
             statCards[i].points.text = $"{growth.PointsIn(stat):00} <size=65%>/ 100P</size>";
             statCards[i].amount.text = amount > 0 ? $"+{amount}" : "+";
-            statCards[i].invest.interactable = allowed && amount > 0;
+            statCards[i].invest.interactable = allowed && !resetConfirming && !resetBusy && amount > 0;
         }
         for (int i = 0; i < multiplierButtons.Length; i++)
             multiplierButtons[i].GetComponent<Image>().color = investmentMultiplier == (i == 0 ? 1 : i == 1 ? 5 : 10) ? new Color(.06f,.39f,.40f) : new Color(.10f,.135f,.17f);
@@ -348,6 +361,57 @@ public sealed class InventoryUI : MonoBehaviour
             passiveCards[i].state.color = unlocked ? new Color(.35f,1,.83f) : new Color(.59f,.65f,.70f);
             passiveCards[i].background.color = unlocked ? new Color(.07f,.19f,.20f) : new Color(.075f,.10f,.13f);
         }
+    }
+    private void BeginStatReset()
+    {
+        var save = CharacterSaveService.Current; string error;
+        if (!IsOpen || resetConfirming || resetBusy || save == null || !save.CanResetStats(out error)) return;
+        resetConfirming = true; resetReviewedSnapshot = JsonUtility.ToJson(save.Capture());
+        investmentError = null; HideTooltip(); RefreshGrowth();
+    }
+    private void CancelStatReset()
+    {
+        if (resetConfirming) investmentError = null;
+        resetConfirming = false; resetReviewedSnapshot = null;
+        if (resetDefault != null) { resetDefault.SetActive(true); resetConfirmation.SetActive(false); }
+    }
+    private void ConfirmStatReset()
+    {
+        if (!IsOpen || !resetConfirming || resetBusy) return;
+        var save = CharacterSaveService.Current; string error;
+        if (save == null) return;
+        string latest = JsonUtility.ToJson(save.Capture());
+        if (latest != resetReviewedSnapshot)
+        {
+            resetReviewedSnapshot = latest;
+            investmentError = "상태가 변경되었습니다 · 내용을 확인한 뒤 다시 확인해 주세요";
+            RefreshGrowth(); return;
+        }
+        if (!save.CanResetStats(out error)) { investmentError = error; RefreshGrowth(); return; }
+        resetBusy = true;
+        try
+        {
+            RefreshGrowth();
+            if (!save.TryResetStats(out error)) investmentError = "저장 실패 · 초기화 미적용 · 재시도하거나 취소해 주세요";
+            else
+            {
+                CancelStatReset(); investmentError = null;
+                investmentSuccess = string.IsNullOrEmpty(save.Status) ? "스탯 초기화 · 저장 완료" : save.Status;
+                investmentSuccessUntil = Time.unscaledTime + 4f;
+            }
+        }
+        finally { resetBusy = false; RefreshGrowth(); RefreshStats(); }
+    }
+    private void RefreshStatReset()
+    {
+        if (resetStatsButton == null) return;
+        var save = CharacterSaveService.Current; string error;
+        bool allowed = save != null && save.CanResetStats(out error);
+        resetDefault.SetActive(!resetConfirming); resetConfirmation.SetActive(resetConfirming);
+        resetStatsButton.interactable = allowed && !resetBusy;
+        resetConfirmButton.interactable = allowed && !resetBusy; resetCancelButton.interactable = !resetBusy;
+        resetGoldText.text = $"보유 {rewards.Money:N0}G";
+        resetSummary.text = $"투자 포인트 전부 반환 ({growth.SpentStatPoints}P) · 500G 소비";
     }
     private void OnRectTransformDimensionsChange() { if (grid != null) UpdateGrid(); if (tooltip != null) HideTooltip(); }
     private void UpdateGrid()

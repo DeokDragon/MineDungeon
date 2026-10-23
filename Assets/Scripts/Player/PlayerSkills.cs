@@ -30,6 +30,8 @@ public partial class PlayerSkills : MonoBehaviour
     public bool OwnsMovement => IsCasting && blocking.data.kind != PlayerSkillKind.TealBeam;
     public float MovementMultiplier => IsCasting ? (blocking.data.kind == PlayerSkillKind.TealBeam ? .5f : 0f) : 1f;
     public int ActiveEffectCount => visuals.Count;
+    internal bool CanResetStatPassives => blocking == null && live.Count == 0 && visuals.Count == 0;
+    internal void ResetStatPassives() { explosionReadyAt = 0f; }
     public int EstimatedDamage(SkillData skill) => skill != null && attackPower != null ? skill.Damage(attackPower.PhysicalAttack, attackPower.MagicAttack) : 0;
     private float MagicAreaScale(SkillData skill)
     {

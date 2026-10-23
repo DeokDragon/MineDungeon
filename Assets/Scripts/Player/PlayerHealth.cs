@@ -137,6 +137,17 @@ public class PlayerHealth : MonoBehaviour
         return true;
     }
 
+    internal bool CanResetStatPassives
+    {
+        get { int adjusted; return initialized && !IsDead && maxHealth > 0 &&
+            TryScaleHealth(currentHealth, effectiveMaxHealth, maxHealth, false, out adjusted); }
+    }
+    internal void ResetStatPassives()
+    {
+        ResetRegeneration(); attack?.ResetEmpoweredAttack();
+        if (!RefreshGrowthHealth()) throw new System.InvalidOperationException("Committed reset HP refresh failed");
+    }
+
     internal static bool TryScaleHealth(int current, int previousMaximum, int nextMaximum, bool dead, out int adjusted)
     {
         adjusted = current;

@@ -58,6 +58,31 @@ public static class InventoryUISetup
     }
     // Upgrade only the left side of the existing Main inventory; never rebuild owned items/loadout data.
     static Image GrowthFrame(string name, Transform parent, Color color) => Frame(name,parent,color,.4f);
+    public static string ConnectStatReset()
+    {
+        if (Application.isPlaying || UnityEngine.SceneManagement.SceneManager.GetActiveScene().path != "Assets/Scenes/Main.unity")
+            throw new System.Exception("Open Main in Edit mode");
+        var ui=Object.FindFirstObjectByType<InventoryUI>();var so=new SerializedObject(ui);
+        var page=(GameObject)so.FindProperty("statPage").objectReferenceValue;
+        if(page.transform.Find("StatReset")!=null)throw new System.Exception("Stat reset already connected");
+        font=((TMP_Text)so.FindProperty("unspentText").objectReferenceValue).font;
+        var area=Rect("StatReset",page.transform,0,.65f,1,.835f);
+        var normal=Rect("Default",area,0,0,1,1);Ref(so,"resetDefault",normal.gameObject);
+        Ref(so,"resetGoldText",Text("Gold",normal,"보유 0G",18,.02f,.20f,.39f,.80f,TextAlignmentOptions.MidlineLeft));
+        var reset=Button("ResetStats",normal,"스탯 초기화 · 500G",21f/50f,.20f,.98f,.80f,20);GrowthFrame("Border",reset.transform,gold);Ref(so,"resetStatsButton",reset);
+        var confirm=Rect("Confirmation",area,0,0,1,1);Ref(so,"resetConfirmation",confirm.gameObject);
+        Text("Question",confirm,"정말 모든 스탯을 초기화하시겠습니까?",18,.02f,.64f,.98f,1,TextAlignmentOptions.MidlineLeft);
+        Ref(so,"resetSummary",Text("Summary",confirm,"투자 포인트 전부 반환 · 500G 소비",15,.02f,.35f,.98f,.64f,TextAlignmentOptions.MidlineLeft));
+        var cancel=Button("Cancel",confirm,"취소",.48f,0,.69f,.33f,17);GrowthFrame("Border",cancel.transform,new Color(.28f,.32f,.34f));Ref(so,"resetCancelButton",cancel);
+        var accept=Button("Confirm",confirm,"초기화 확인",.71f,0,.98f,.33f,17);GrowthFrame("Border",accept.transform,gold);Ref(so,"resetConfirmButton",accept);
+        confirm.gameObject.SetActive(false);
+        var scroll=(ScrollRect)so.FindProperty("growthScroll").objectReferenceValue;var rect=(RectTransform)scroll.transform;
+        rect.anchorMax=new Vector2(rect.anchorMax.x,.63f);
+        so.ApplyModifiedPropertiesWithoutUndo();EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
+        EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
+        return "Inline stat reset connected; existing cards, right list and fixed attributes retained";
+    }
+
     public static string ConnectStatAccordion()
     {
         if(Application.isPlaying || UnityEngine.SceneManagement.SceneManager.GetActiveScene().path != "Assets/Scenes/Main.unity")
@@ -213,6 +238,7 @@ public static class InventoryUISetup
         panel.SetActive(false);EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
         EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());AssetDatabase.SaveAssets();
         ConnectStatAccordion();
+        ConnectStatReset();
         return "Existing Main inventory left tabs/growth cards/common attributes connected; right side retained.";
     }
 

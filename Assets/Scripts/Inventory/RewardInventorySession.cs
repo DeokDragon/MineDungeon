@@ -44,6 +44,14 @@ public sealed class RewardInventorySession : MonoBehaviour
         DungeonRunManager.Instance?.RecordMaterial(data,accepted);
         Changed?.Invoke();MaterialGranted?.Invoke(stack.Data,accepted);return true;
     }
+    // A committed purchase changes permanent money only, never run rewards/materials.
+    internal void ApplyCommittedMoney(long money) { Money = money; }
+    internal void NotifyStatReset(Action recover = null)
+    {
+        if (Changed == null) return;
+        foreach (Action observer in Changed.GetInvocationList())
+            try { observer(); } catch (Exception ex) { recover?.Invoke(); Debug.LogWarning("Committed gold observer failed: " + ex.Message); }
+    }
     internal void RestoreSaved(long money, List<SavedItem> rows, Func<string, MaterialData> resolve)
     {
         Money = Math.Max(0, money); materials.Clear();
