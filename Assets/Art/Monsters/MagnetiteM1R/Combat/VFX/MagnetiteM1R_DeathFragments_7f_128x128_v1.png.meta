@@ -1,0 +1,362 @@
+fileFormatVersion: 2
+guid: a0e3b4087927e294ebe13d3df568a24b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5504643471803655001
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_0
+  - first:
+      213: -2689928969150228335
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_1
+  - first:
+      213: -1533370749208133697
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_2
+  - first:
+      213: -5095122594230223438
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_3
+  - first:
+      213: 650603079132295226
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_4
+  - first:
+      213: -5037264087901276901
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_5
+  - first:
+      213: 5711253976216647809
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_6
+  - first:
+      213: -2393593976309054081
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_7
+  - first:
+      213: -2828488388094096213
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_8
+  - first:
+      213: -8749448553428352425
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_9
+  - first:
+      213: -3518462178986848846
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_10
+  - first:
+      213: -1803388166037114622
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_11
+  - first:
+      213: -2421741983815452981
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_12
+  - first:
+      213: 5251581637505189920
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_13
+  - first:
+      213: -4525984461699538672
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_14
+  - first:
+      213: -4960108695332943592
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_15
+  - first:
+      213: 5166154227707728528
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_16
+  - first:
+      213: 332874435765989511
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_17
+  - first:
+      213: -433070945900272376
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_18
+  - first:
+      213: -8331951896250846
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_19
+  - first:
+      213: 4443123215617687822
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_20
+  - first:
+      213: -1572187663930078575
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_21
+  - first:
+      213: -5018415265961171954
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_22
+  - first:
+      213: -5988922834935600868
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_23
+  - first:
+      213: 8888327038926973419
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_24
+  - first:
+      213: 6105059631693647146
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_25
+  - first:
+      213: -1923862046389896193
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_26
+  - first:
+      213: 696982122622435625
+    second: MagnetiteM1R_DeathFragments_7f_128x128_v1_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MagnetiteM1R_DeathFragments_7f_128x128_v1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9c66e766634e742a8a9653a7fdd5a9
+      internalID: 5504643471803655001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_DeathFragments_7f_128x128_v1_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a145c5816a6d84a9233759666aeb3a
+      internalID: -2689928969150228335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_DeathFragments_7f_128x128_v1_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039a3136c915e5b4ba66ac80a548a9db
+      internalID: -1533370749208133697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_DeathFragments_7f_128x128_v1_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe44f6d482b567249859d2a1f32b5b32
+      internalID: -5095122594230223438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_DeathFragments_7f_128x128_v1_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b462332efb4a51c48b09073c391aca7b
+      internalID: 650603079132295226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_DeathFragments_7f_128x128_v1_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38668076a36db44ebee5f11a12956a3
+      internalID: -5037264087901276901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_DeathFragments_7f_128x128_v1_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e695f56126a81438e7ce4588316486
+      internalID: 5711253976216647809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0e1a35ff137a62d4c9332980400927d0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MagnetiteM1R_DeathFragments_7f_128x128_v1_0: 5504643471803655001
+      MagnetiteM1R_DeathFragments_7f_128x128_v1_1: -2689928969150228335
+      MagnetiteM1R_DeathFragments_7f_128x128_v1_2: -1533370749208133697
+      MagnetiteM1R_DeathFragments_7f_128x128_v1_3: -5095122594230223438
+      MagnetiteM1R_DeathFragments_7f_128x128_v1_4: 650603079132295226
+      MagnetiteM1R_DeathFragments_7f_128x128_v1_5: -5037264087901276901
+      MagnetiteM1R_DeathFragments_7f_128x128_v1_6: 5711253976216647809
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

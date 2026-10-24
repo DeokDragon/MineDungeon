@@ -18,6 +18,7 @@ public sealed class StoneHitFeedback : MonoBehaviour
     private IronMonsterSpriteAnimation ironAnimation;
     private CrystalMonsterSpriteAnimation crystalAnimation;
     private CoalMonsterSpriteAnimation coalAnimation;
+    private MagnetMonsterSpriteAnimation magnetAnimation;
     public bool IsBoss => boss;
 
     private void Awake()
@@ -26,6 +27,7 @@ public sealed class StoneHitFeedback : MonoBehaviour
         ironAnimation = GetComponent<IronMonsterSpriteAnimation>();
         crystalAnimation = GetComponent<CrystalMonsterSpriteAnimation>();
         coalAnimation = GetComponent<CoalMonsterSpriteAnimation>();
+        magnetAnimation = GetComponent<MagnetMonsterSpriteAnimation>();
         restPosition = body.transform.localPosition;
         restScale = body.transform.localScale;
         restColor = body.color;
@@ -38,7 +40,8 @@ public sealed class StoneHitFeedback : MonoBehaviour
         if (!(spriteAnimation && spriteAnimation.PlayHit(point)) &&
             !(ironAnimation && ironAnimation.PlayHit(point)) &&
             !(crystalAnimation && crystalAnimation.PlayHit(point)) &&
-            !(coalAnimation && coalAnimation.PlayHit(point))) Spawn(point, direction, false);
+            !(coalAnimation && coalAnimation.PlayHit(point)) &&
+            !(magnetAnimation && magnetAnimation.PlayHit(point))) Spawn(point, direction, false);
         ApplyReaction();
     }
 
@@ -48,7 +51,8 @@ public sealed class StoneHitFeedback : MonoBehaviour
         if (!(spriteAnimation && spriteAnimation.PlayDeath()) &&
             !(ironAnimation && ironAnimation.PlayDeath()) &&
             !(crystalAnimation && crystalAnimation.PlayDeath()) &&
-            !(coalAnimation && coalAnimation.PlayDeath())) Spawn(body.transform.position, incoming, true);
+            !(coalAnimation && coalAnimation.PlayDeath()) &&
+            !(magnetAnimation && magnetAnimation.PlayDeath())) Spawn(body.transform.position, incoming, true);
         if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
             camera.Shake(boss ? .10f : .04f, boss ? .20f : .10f, boss);
     }

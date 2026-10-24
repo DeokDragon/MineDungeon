@@ -1,0 +1,378 @@
+fileFormatVersion: 2
+guid: b8ff2a63418be294198af27add3d9f5f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6504962300476339632
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_0
+  - first:
+      213: -5303239509152464516
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_1
+  - first:
+      213: 5664457823244044286
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_2
+  - first:
+      213: -8062378072808242473
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_3
+  - first:
+      213: -9083669421655606283
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_4
+  - first:
+      213: 82547788688693496
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_5
+  - first:
+      213: -4582481005197694865
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_6
+  - first:
+      213: -702991324955745878
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_7
+  - first:
+      213: -5234278168778872852
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_8
+  - first:
+      213: -4794860352089653442
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_9
+  - first:
+      213: -3996542853006040346
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_10
+  - first:
+      213: -2986694419612477650
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_11
+  - first:
+      213: -5578383688356803906
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_12
+  - first:
+      213: 8490451743662267998
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_13
+  - first:
+      213: -1688616989123787127
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_14
+  - first:
+      213: -5359864604777869752
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_15
+  - first:
+      213: -3107107666276716238
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_16
+  - first:
+      213: -7718865307453577391
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_17
+  - first:
+      213: -1578846533716400175
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_18
+  - first:
+      213: 1832412747270867502
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_19
+  - first:
+      213: 730615745521736379
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_20
+  - first:
+      213: 3217110719563819039
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_21
+  - first:
+      213: -4380045121702671517
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_22
+  - first:
+      213: 3713684437428298279
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_23
+  - first:
+      213: -6710768352925515071
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_24
+  - first:
+      213: 1695815480239762227
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_25
+  - first:
+      213: 6681208415492323560
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_26
+  - first:
+      213: -7931257905782123758
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_27
+  - first:
+      213: -4953826395856276627
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_28
+  - first:
+      213: 5558321305734422341
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_29
+  - first:
+      213: 8457628396803404323
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_30
+  - first:
+      213: -1661515699312167928
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_31
+  - first:
+      213: -3338136737105589208
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_32
+  - first:
+      213: -352044903607094118
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_33
+  - first:
+      213: -1595215691557255678
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_34
+  - first:
+      213: 4564593548657618798
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_35
+  - first:
+      213: 7165980851645736923
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_36
+  - first:
+      213: 2023408721378106692
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_37
+  - first:
+      213: 7402506213551747071
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_38
+  - first:
+      213: 5163814108900912505
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_39
+  - first:
+      213: 2913515185044293806
+    second: MagnetiteM1R_FieldImpact_6f_256x256_v1_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MagnetiteM1R_FieldImpact_6f_256x256_v1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cce8cfc0001e74c9575d3fd31791a0
+      internalID: -6504962300476339632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_FieldImpact_6f_256x256_v1_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8a4c239241af34089f0d75460e6693
+      internalID: -5303239509152464516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_FieldImpact_6f_256x256_v1_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7adb7e4c4dfd80542aa5da7aa947a621
+      internalID: 5664457823244044286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_FieldImpact_6f_256x256_v1_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449aeaecccfef82459b84da3e18d3d8e
+      internalID: -8062378072808242473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_FieldImpact_6f_256x256_v1_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5987f01d446f94e93e0de63cddc03c
+      internalID: -9083669421655606283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_FieldImpact_6f_256x256_v1_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d3f19a01ce8d649b7b155cac46edfd
+      internalID: 82547788688693496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bc6e064c3458c534d9f561b72a69999d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MagnetiteM1R_FieldImpact_6f_256x256_v1_0: -6504962300476339632
+      MagnetiteM1R_FieldImpact_6f_256x256_v1_1: -5303239509152464516
+      MagnetiteM1R_FieldImpact_6f_256x256_v1_2: 5664457823244044286
+      MagnetiteM1R_FieldImpact_6f_256x256_v1_3: -8062378072808242473
+      MagnetiteM1R_FieldImpact_6f_256x256_v1_4: -9083669421655606283
+      MagnetiteM1R_FieldImpact_6f_256x256_v1_5: 82547788688693496
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

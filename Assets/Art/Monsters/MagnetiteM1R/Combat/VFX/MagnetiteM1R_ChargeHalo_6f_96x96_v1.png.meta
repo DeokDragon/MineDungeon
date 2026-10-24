@@ -1,0 +1,312 @@
+fileFormatVersion: 2
+guid: 063db207f387e6241893fb1f1b5538a6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1564779245529462808
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_0
+  - first:
+      213: 7039875100202109889
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_1
+  - first:
+      213: 5024481174678100242
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_2
+  - first:
+      213: -8997746190212989829
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_3
+  - first:
+      213: -6566827081135047526
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_4
+  - first:
+      213: -2028997704102422681
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_5
+  - first:
+      213: -420972465795240745
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_6
+  - first:
+      213: -5710015989850777734
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_7
+  - first:
+      213: 3799989452502924417
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_8
+  - first:
+      213: -2606748091982528499
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_9
+  - first:
+      213: -7184607319702927073
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_10
+  - first:
+      213: -5545816888982149710
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_11
+  - first:
+      213: 4316580922674853869
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_12
+  - first:
+      213: 4627932559619375978
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_13
+  - first:
+      213: 6408379950186132575
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_14
+  - first:
+      213: -2237574058185844973
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_15
+  - first:
+      213: -8912532534967987401
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_16
+  - first:
+      213: -47396993358955653
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_17
+  - first:
+      213: 3663394035912086168
+    second: MagnetiteM1R_ChargeHalo_6f_96x96_v1_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MagnetiteM1R_ChargeHalo_6f_96x96_v1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d703387b04919f64dbeb87cd72b3639c
+      internalID: -1564779245529462808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_ChargeHalo_6f_96x96_v1_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956b060a2ec5fd245a4d5cbc9a55be42
+      internalID: 7039875100202109889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_ChargeHalo_6f_96x96_v1_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3b96fb5697e9548b61d83272b81823
+      internalID: 5024481174678100242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_ChargeHalo_6f_96x96_v1_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fc3ce98f8634241bb770409451ffac
+      internalID: -8997746190212989829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_ChargeHalo_6f_96x96_v1_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711e6202b9311884194aa9241916be53
+      internalID: -6566827081135047526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagnetiteM1R_ChargeHalo_6f_96x96_v1_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91a2b5e4be44174d8348d84f0f0ac1b
+      internalID: -2028997704102422681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f6e4c21274316a249acfc0fbf4ef6c1a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MagnetiteM1R_ChargeHalo_6f_96x96_v1_0: -1564779245529462808
+      MagnetiteM1R_ChargeHalo_6f_96x96_v1_1: 7039875100202109889
+      MagnetiteM1R_ChargeHalo_6f_96x96_v1_2: 5024481174678100242
+      MagnetiteM1R_ChargeHalo_6f_96x96_v1_3: -8997746190212989829
+      MagnetiteM1R_ChargeHalo_6f_96x96_v1_4: -6566827081135047526
+      MagnetiteM1R_ChargeHalo_6f_96x96_v1_5: -2028997704102422681
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

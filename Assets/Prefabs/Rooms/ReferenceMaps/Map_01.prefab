@@ -9903,7 +9903,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a2f5086f7be754479f5e1ece0b2031b, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagnetMonsterSpriteAnimation
   body: {fileID: 2685108130616931053}
   idleFrames:
@@ -9922,6 +9922,67 @@ MonoBehaviour:
   moveFramesPerSecond: 10
   referenceMoveSpeed: 2.3
   movementThreshold: 0.02
+  windupFrames:
+  - {fileID: 1167527523100875589, guid: 53d7f9f7f0172014db953fa016f206bf, type: 3}
+  - {fileID: 4151206125270060075, guid: 53d7f9f7f0172014db953fa016f206bf, type: 3}
+  - {fileID: -7375370080748990310, guid: 53d7f9f7f0172014db953fa016f206bf, type: 3}
+  - {fileID: 5427535358419137720, guid: 53d7f9f7f0172014db953fa016f206bf, type: 3}
+  - {fileID: -2460040651907012541, guid: 53d7f9f7f0172014db953fa016f206bf, type: 3}
+  - {fileID: -6031076399710578739, guid: 53d7f9f7f0172014db953fa016f206bf, type: 3}
+  impactFrames:
+  - {fileID: 917791249582403933, guid: c5fe8085de477ca47acfc316a736ec4b, type: 3}
+  - {fileID: 2826474397209538588, guid: c5fe8085de477ca47acfc316a736ec4b, type: 3}
+  - {fileID: -6924877025719768968, guid: c5fe8085de477ca47acfc316a736ec4b, type: 3}
+  - {fileID: -235939249069207381, guid: c5fe8085de477ca47acfc316a736ec4b, type: 3}
+  recoveryFrames:
+  - {fileID: -5168944077066674771, guid: 8b9dab33ac03a9147b2cdc049b46fc15, type: 3}
+  - {fileID: 8755111910072087419, guid: 8b9dab33ac03a9147b2cdc049b46fc15, type: 3}
+  - {fileID: -352756789483422511, guid: 8b9dab33ac03a9147b2cdc049b46fc15, type: 3}
+  - {fileID: 577507517766102630, guid: 8b9dab33ac03a9147b2cdc049b46fc15, type: 3}
+  - {fileID: -5863126693352834088, guid: 8b9dab33ac03a9147b2cdc049b46fc15, type: 3}
+  hitFrames:
+  - {fileID: 8238304235749145967, guid: 7852ee5aa726e42419a8624dd31934f6, type: 3}
+  - {fileID: 496986620778130829, guid: 7852ee5aa726e42419a8624dd31934f6, type: 3}
+  - {fileID: -7338329475851109621, guid: 7852ee5aa726e42419a8624dd31934f6, type: 3}
+  deathFrames:
+  - {fileID: 5445695503064223029, guid: 551bd750733a9f84e89038e8b63c10ff, type: 3}
+  - {fileID: 8956801904695280007, guid: 551bd750733a9f84e89038e8b63c10ff, type: 3}
+  - {fileID: -7271758223798299128, guid: 551bd750733a9f84e89038e8b63c10ff, type: 3}
+  - {fileID: 1353097283164756926, guid: 551bd750733a9f84e89038e8b63c10ff, type: 3}
+  - {fileID: 82829213626462150, guid: 551bd750733a9f84e89038e8b63c10ff, type: 3}
+  - {fileID: 9087136269405372592, guid: 551bd750733a9f84e89038e8b63c10ff, type: 3}
+  - {fileID: 3823567251374841425, guid: 551bd750733a9f84e89038e8b63c10ff, type: 3}
+  impactDuration: 0.24
+  hitDuration: 0.15
+  deathDuration: 0.56
+  chargeHaloFrames:
+  - {fileID: -1564779245529462808, guid: 063db207f387e6241893fb1f1b5538a6, type: 3}
+  - {fileID: 7039875100202109889, guid: 063db207f387e6241893fb1f1b5538a6, type: 3}
+  - {fileID: 5024481174678100242, guid: 063db207f387e6241893fb1f1b5538a6, type: 3}
+  - {fileID: -8997746190212989829, guid: 063db207f387e6241893fb1f1b5538a6, type: 3}
+  - {fileID: -6566827081135047526, guid: 063db207f387e6241893fb1f1b5538a6, type: 3}
+  - {fileID: -2028997704102422681, guid: 063db207f387e6241893fb1f1b5538a6, type: 3}
+  fieldImpactFrames:
+  - {fileID: -6504962300476339632, guid: b8ff2a63418be294198af27add3d9f5f, type: 3}
+  - {fileID: -5303239509152464516, guid: b8ff2a63418be294198af27add3d9f5f, type: 3}
+  - {fileID: 5664457823244044286, guid: b8ff2a63418be294198af27add3d9f5f, type: 3}
+  - {fileID: -8062378072808242473, guid: b8ff2a63418be294198af27add3d9f5f, type: 3}
+  - {fileID: -9083669421655606283, guid: b8ff2a63418be294198af27add3d9f5f, type: 3}
+  - {fileID: 82547788688693496, guid: b8ff2a63418be294198af27add3d9f5f, type: 3}
+  hitFragmentsFrames:
+  - {fileID: -6526561629665398070, guid: a3f270912a3b7fe4bbdd0a5b6dc84c03, type: 3}
+  - {fileID: 8915301262686345752, guid: a3f270912a3b7fe4bbdd0a5b6dc84c03, type: 3}
+  - {fileID: -237769888580347200, guid: a3f270912a3b7fe4bbdd0a5b6dc84c03, type: 3}
+  - {fileID: -8113022675226531747, guid: a3f270912a3b7fe4bbdd0a5b6dc84c03, type: 3}
+  deathFragmentsFrames:
+  - {fileID: 5504643471803655001, guid: a0e3b4087927e294ebe13d3df568a24b, type: 3}
+  - {fileID: -2689928969150228335, guid: a0e3b4087927e294ebe13d3df568a24b, type: 3}
+  - {fileID: -1533370749208133697, guid: a0e3b4087927e294ebe13d3df568a24b, type: 3}
+  - {fileID: -5095122594230223438, guid: a0e3b4087927e294ebe13d3df568a24b, type: 3}
+  - {fileID: 650603079132295226, guid: a0e3b4087927e294ebe13d3df568a24b, type: 3}
+  - {fileID: -5037264087901276901, guid: a0e3b4087927e294ebe13d3df568a24b, type: 3}
+  - {fileID: 5711253976216647809, guid: a0e3b4087927e294ebe13d3df568a24b, type: 3}
+  fieldImpactScale: 1.028633
 --- !u!1 &2021949904664473748
 GameObject:
   m_ObjectHideFlags: 0
@@ -24204,7 +24265,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58790e262408b4941912974b69e02f07, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrystalMonsterSpriteAnimation
   body: {fileID: 2348110385999379500}
   idleFrames:
@@ -28850,7 +28911,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9585688465e90f48bd0a40e25b90fcf, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneMonsterSpriteAnimation
   body: {fileID: 48357592743241360}
   idleFrames:
@@ -36393,6 +36454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DungeonRoom
   roomController: {fileID: 8001423900641133026}
   roomExit: {fileID: 722013976309150558}
+  clearWithoutExit: 0
   entrance: {fileID: 5520795010005752769}
   localMin: {x: -16, y: -22}
   localMax: {x: 16, y: 22}
@@ -37151,7 +37213,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9585688465e90f48bd0a40e25b90fcf, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneMonsterSpriteAnimation
   body: {fileID: 3698101586581337757}
   idleFrames:
@@ -40117,7 +40179,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef8d687744a44964e8aa8d26e9f9b96b, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoalMonsterSpriteAnimation
   body: {fileID: 4501374323212376390}
   idleFrames:
@@ -43748,7 +43810,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a59f45181fc26464cb5937106528ba03, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IronMonsterSpriteAnimation
   body: {fileID: 4518608891182181744}
   idleFrames:
