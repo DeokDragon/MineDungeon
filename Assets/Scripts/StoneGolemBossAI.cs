@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D), typeof(EnemyHealth))]
 public partial class StoneGolemBossAI : MonoBehaviour
 {
-    public enum BossState { Chase, Warning, Jump, Recovery, Waiting, Charge, Rockfall, Presentation, SecondaryWarning }
+    public enum BossState { Chase, Warning, Jump, Recovery, Waiting, Charge, Rockfall, Presentation, SecondaryWarning, FanFollowup, RockfallGap, ComboAInterval }
     public enum Pattern { None, LeapSlam, GroundSmash, RockCharge, StoneFan, Rockfall }
 
     [Header("References (player is bound by DungeonRoom)")]
@@ -16,59 +16,60 @@ public partial class StoneGolemBossAI : MonoBehaviour
     [Header("Movement / shared timing")]
     [SerializeField, Min(0f)] private float moveSpeed = 1.4f;
     [SerializeField, Min(0f)] private float stopDistance = 2f;
-    [SerializeField, Min(0f)] private float commonWait = 0.8f;
+    [SerializeField, Min(0f)] private float commonWait = 0.4f;
     [SerializeField, Min(0.001f)] private float wallSkin = 0.03f;
 
     [Header("Leap slam")]
-    [SerializeField, Min(0.01f)] private float leapRadius = 1.8f;
+    [SerializeField, Min(0.01f)] private float leapRadius = 2.2f;
     [SerializeField, Min(0.01f)] private float maxLeapDistance = 7f;
     [SerializeField, Min(0.01f)] private float leapWarning = 1f;
     [SerializeField, Min(0.01f)] private float leapDuration = 0.6f;
     [SerializeField, Min(0f)] private float leapCooldown = 8f;
-    [SerializeField, Min(0f)] private float leapRecovery = 1.3f;
+    [SerializeField, Min(0f)] private float leapRecovery = 0.7f;
     [SerializeField, Min(1)] private int leapDamage = 20;
     [SerializeField, Min(0f)] private float jumpHeight = 1.8f;
 
     [Header("Ground smash")]
-    [SerializeField, Min(0.01f)] private float smashRadius = 3f;
+    [SerializeField, Min(0.01f)] private float smashRadius = 3.5f;
     [SerializeField, Min(0f)] private float smashSelectionDistance = 3.5f;
     [SerializeField, Min(0.01f)] private float smashWarning = 1.2f;
     [SerializeField, Min(0f)] private float smashCooldown = 6f;
-    [SerializeField, Min(0f)] private float smashRecovery = 1.5f;
+    [SerializeField, Min(0f)] private float smashRecovery = 0.8f;
     [SerializeField, Min(1)] private int smashDamage = 15;
 
-    [Header("Rock charge (width comes from the circle collider diameter: 2 units)")]
+    [Header("Rock charge / second-pass test values")]
+    [SerializeField, Min(.01f)] private float chargeWidth = 2.4f;
     [SerializeField] private SpriteRenderer chargePath;
     [SerializeField] private SpriteRenderer chargeStartCap;
     [SerializeField] private SpriteRenderer chargeEndCap;
-    [SerializeField, Min(0.01f)] private float chargeMaxDistance = 8f;
+    [SerializeField, Min(0.01f)] private float chargeMaxDistance = 9f;
     [SerializeField, Min(0.01f)] private float chargeWarning = 1f;
     [SerializeField, Min(0.01f)] private float chargeSpeed = 10f;
-    [SerializeField, Min(0.01f)] private float chargeMaxDuration = 0.8f;
+    [SerializeField, Min(0.01f)] private float chargeMaxDuration = 0.9f;
     [SerializeField, Min(0f)] private float chargeCooldown = 10f;
-    [SerializeField, Min(0f)] private float chargeRecovery = 1.2f;
-    [SerializeField, Min(0f)] private float chargeWallRecovery = 2f;
+    [SerializeField, Min(0f)] private float chargeRecovery = 0.7f;
+    [SerializeField, Min(0f)] private float chargeWallRecovery = 1.2f;
     [SerializeField, Min(1)] private int chargeDamage = 20;
 
     [Header("Stone fan")]
     [SerializeField] private StoneGolemShard shardPrefab;
     [SerializeField] private Material fanWarningMaterial;
-    [SerializeField, Range(1f, 180f)] private float fanAngle = 90f;
+    [SerializeField, Range(1f, 180f)] private float fanAngle = 105f;
     [SerializeField, Min(2)] private int shardCount = 5;
-    [SerializeField, Min(0.01f)] private float shardRange = 8f;
+    [SerializeField, Min(0.01f)] private float shardRange = 9f;
     [SerializeField, Min(0.01f)] private float shardSpeed = 6f;
     [SerializeField, Min(0.01f)] private float shardDiameter = 0.4f;
     [SerializeField, Min(0.01f)] private float fanWarning = 0.9f;
     [SerializeField, Min(0f)] private float fanCooldown = 7f;
-    [SerializeField, Min(0f)] private float fanRecovery = 1f;
+    [SerializeField, Min(0f)] private float fanRecovery = 0.6f;
     [SerializeField, Min(1)] private int shardDamage = 10;
 
     [Header("Rockfall")]
     [SerializeField] private StoneGolemRockfall rockfallPrefab;
-    [SerializeField, Min(0.01f)] private float rockfallRadius = 1.2f;
+    [SerializeField, Min(0.01f)] private float rockfallRadius = 1.8f;
     [SerializeField, Min(0.01f)] private float rockfallWarning = 0.9f;
     [SerializeField, Min(0f)] private float rockfallCooldown = 12f;
-    [SerializeField, Min(0f)] private float rockfallRecovery = 1.2f;
+    [SerializeField, Min(0f)] private float rockfallRecovery = 0.7f;
     [SerializeField, Min(1)] private int rockfallDamage = 20;
 
     [Header("Impact camera shake (amplitude in world units)")]
@@ -185,20 +186,21 @@ public partial class StoneGolemBossAI : MonoBehaviour
         switch (State)
         {
             case BossState.Waiting:
-                if (timer >= commonWait) SetState(BossState.Chase);
+                if (timer + .00001f >= commonWait) SetState(BossState.Chase);
                 break;
             case BossState.Chase:
                 if (!TrySelectPattern()) Chase();
                 break;
             case BossState.Warning:
-                float warningDuration = ActivePattern == Pattern.StoneFan ? fanWarning :
+                TickAim();
+                float warningDuration = comboFollowup ? comboFollowupDelay : ActivePattern == Pattern.StoneFan ? fanWarning :
                     ActivePattern == Pattern.RockCharge ? chargeWarning :
                     (ActivePattern == Pattern.LeapSlam ? leapWarning : smashWarning);
                 if (telegraph != null)
                     telegraph.SetProgress(ActivePattern == Pattern.LeapSlam
                         ? Mathf.Min(timer, leapWarning) / (leapWarning + leapDuration)
                         : timer / warningDuration);
-                if (timer >= warningDuration)
+                if (timer + .00001f >= warningDuration)
                 {
                     if (ActivePattern == Pattern.LeapSlam)
                     {
@@ -230,10 +232,33 @@ public partial class StoneGolemBossAI : MonoBehaviour
                     TickShards();
                     if (player.IsDead || !isActiveAndEnabled) return;
                 }
-                if (timer >= recoveryDuration && shards.Count == 0)
+                if (timer + .00001f >= recoveryDuration && shards.Count == 0)
                 {
                     FinishPattern();
                 }
+                break;
+            case BossState.FanFollowup:
+                TickShards();
+                if (player.IsDead || !isActiveAndEnabled) return;
+                fanOrigin = rb.position;
+                fanDirection = ((Vector2)player.transform.position - fanOrigin).normalized;
+                if (telegraph != null)
+                {
+                    telegraph.transform.SetPositionAndRotation(fanOrigin,
+                        Quaternion.Euler(0, 0, Mathf.Atan2(fanDirection.y, fanDirection.x) * Mathf.Rad2Deg));
+                    telegraph.SetProgress(timer / fanWarning);
+                }
+                if (timer + .00001f >= fanWarning) FireShards();
+                break;
+            case BossState.ComboAInterval:
+                if (timer + .00001f >= comboFollowupDelay)
+                {
+                    comboNext = Pattern.None;
+                    StartPattern(Pattern.GroundSmash, false); // Full normal warning and cooldown start now.
+                }
+                break;
+            case BossState.RockfallGap:
+                if (timer + .00001f >= rockfallRoundGap) BeginRockfallRound();
                 break;
             case BossState.SecondaryWarning:
                 TickSecondaryWarning();
@@ -274,7 +299,16 @@ public partial class StoneGolemBossAI : MonoBehaviour
             shards.Add(shard);
         }
         recoveryDuration = fanRecovery;
-        SetState(BossState.Recovery); // Recovery starts at firing, not at projectile expiry.
+        if (enhanced && !secondaryStarted)
+        {
+            secondaryStarted = true;
+            // Start the second full warning immediately; keep the first volley alive.
+            fanOrigin = rb.position;
+            fanDirection = ((Vector2)player.transform.position - fanOrigin).normalized;
+            ShowFanWarning();
+            SetState(BossState.FanFollowup);
+        }
+        else SetState(BossState.Recovery); // Both volleys remain owned and tick together.
     }
 
     private void TickShards()
@@ -306,8 +340,8 @@ public partial class StoneGolemBossAI : MonoBehaviour
     private float ChargeWallDistance(Vector2 start, Vector2 direction, float limit, out bool blocked)
     {
         float available = limit;
-        Vector2 min = room.WorldMin + Vector2.one * (BodyRadius + wallSkin);
-        Vector2 max = room.WorldMax - Vector2.one * (BodyRadius + wallSkin);
+        Vector2 min = room.WorldMin + Vector2.one * (ChargeRadius + wallSkin);
+        Vector2 max = room.WorldMax - Vector2.one * (ChargeRadius + wallSkin);
         if (start.x < min.x || start.x > max.x || start.y < min.y || start.y > max.y)
         {
             blocked = true;
@@ -317,7 +351,7 @@ public partial class StoneGolemBossAI : MonoBehaviour
         else if (direction.x < -0.0001f) available = Mathf.Min(available, (min.x - start.x) / direction.x);
         if (direction.y > 0.0001f) available = Mathf.Min(available, (max.y - start.y) / direction.y);
         else if (direction.y < -0.0001f) available = Mathf.Min(available, (min.y - start.y) / direction.y);
-        RaycastHit2D wall = Physics2D.CircleCast(start, BodyRadius, direction, limit + wallSkin, wallLayer);
+        RaycastHit2D wall = Physics2D.CircleCast(start, ChargeRadius, direction, limit + wallSkin, wallLayer);
         if (wall.collider != null) available = Mathf.Min(available, Mathf.Max(0f, wall.distance - wallSkin));
         blocked = available < limit;
         return Mathf.Max(0f, available);
@@ -332,12 +366,12 @@ public partial class StoneGolemBossAI : MonoBehaviour
         float safeStep = ChargeWallDistance(rb.position, chargeDirection, step, out wallBlocked);
 
         float playerDistance = float.PositiveInfinity;
-        if (Vector2.Distance(rb.position, playerCollider.ClosestPoint(rb.position)) <= BodyRadius)
+        if (Vector2.Distance(rb.position, playerCollider.ClosestPoint(rb.position)) <= ChargeRadius)
             playerDistance = 0f;
         else
         {
             // Query the full interval so a fast charge cannot skip a thin player collider.
-            foreach (RaycastHit2D hit in Physics2D.CircleCastAll(rb.position, BodyRadius,
+            foreach (RaycastHit2D hit in Physics2D.CircleCastAll(rb.position, ChargeRadius,
                 chargeDirection, step, 1 << playerCollider.gameObject.layer))
                 if (hit.collider == playerCollider) playerDistance = Mathf.Min(playerDistance, hit.distance);
         }
@@ -357,6 +391,7 @@ public partial class StoneGolemBossAI : MonoBehaviour
         }
         else if (wallBlocked || remaining - travel <= 0.001f || timer >= chargeMaxDuration)
             FinishCharge(wallBlocked || (chargeEndsAtWall && remaining - travel <= 0.001f));
+        TryBeginComboFollowup();
     }
 
     private void FinishCharge(bool hitWall)
@@ -367,7 +402,7 @@ public partial class StoneGolemBossAI : MonoBehaviour
         {
             comboNext = Pattern.None;
             // Bounds can also stop a charge. Only a physical wall contact shakes.
-            RaycastHit2D contact = Physics2D.CircleCast(rb.position, BodyRadius,
+            RaycastHit2D contact = Physics2D.CircleCast(rb.position, ChargeRadius,
                 chargeDirection, wallSkin * 2f + .01f, wallLayer);
             if (contact.collider != null)
                 ImpactShake(contact.point, wallShakeAmplitude, wallShakeDuration);
@@ -384,7 +419,7 @@ public partial class StoneGolemBossAI : MonoBehaviour
     {
         CreateEffectsRoot();
         telegraph = StoneGolemTelegraph.Create(effectsRoot.transform, fanWarningMaterial,
-            chargeStart, chargeDirection, BodyRadius, 360f, chargeDistance, true,
+            chargeStart, chargeDirection, ChargeRadius, 360f, chargeDistance, true,
             new Color(1f, .4f, .05f), attackWarning.sortingLayerID, attackWarning.sortingOrder);
     }
 
@@ -462,7 +497,9 @@ public partial class StoneGolemBossAI : MonoBehaviour
         HideWarning();
         body.localPosition = bodyRestPosition;
         RestorePlayerCollision();
-        recoveryDuration = ActivePattern == Pattern.LeapSlam ? leapRecovery : smashRecovery;
+        recoveryDuration = ActivePattern == Pattern.LeapSlam
+            ? (enhanced && !secondaryStarted ? leapShockwaveWait : leapRecovery)
+            : smashRecovery;
         SetState(BossState.Recovery);
         float radius = ActivePattern == Pattern.LeapSlam ? leapRadius : smashRadius;
         int damage = ActivePattern == Pattern.LeapSlam ? leapDamage : smashDamage;
@@ -470,6 +507,14 @@ public partial class StoneGolemBossAI : MonoBehaviour
         if (!health.IsDead && !player.IsDead && Vector2.Distance(attackCenter, point) <= radius &&
             Physics2D.Linecast(attackCenter, point, wallLayer).collider == null)
             player.TakeDamage(damage);
+        if (player.IsDead || !isActiveAndEnabled) return;
+        if (TryBeginComboFollowup()) return;
+        if (enhanced && ActivePattern == Pattern.GroundSmash && !secondaryStarted)
+        {
+            secondaryStarted = true;
+            ShowWarning(SecondaryRadius, new Color(1f, .2f, .05f, .4f));
+            SetState(BossState.SecondaryWarning);
+        }
     }
 
     private void ShowWarning(float radius, Color color)
@@ -522,7 +567,7 @@ public partial class StoneGolemBossAI : MonoBehaviour
     {
         AbortPresentation();
         comboNext = Pattern.None;
-        enhanced = secondaryStarted = false;
+        enhanced = secondaryStarted = comboFollowup = aimLocked = false;
         ClearOwnedEffects();
         HideWarning();
         RestorePlayerCollision();

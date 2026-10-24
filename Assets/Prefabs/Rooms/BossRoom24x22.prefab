@@ -25847,52 +25847,50 @@ MonoBehaviour:
     m_Bits: 128
   moveSpeed: 1.4
   stopDistance: 2
-  commonWait: 0.8
+  commonWait: 0.4
   wallSkin: 0.03
-  leapRadius: 1.8
+  leapRadius: 2.2
   maxLeapDistance: 7
   leapWarning: 1
   leapDuration: 0.6
   leapCooldown: 8
-  leapRecovery: 1.3
+  leapRecovery: 0.7
   leapDamage: 20
   jumpHeight: 1.8
-  smashRadius: 3
+  smashRadius: 3.5
   smashSelectionDistance: 3.5
   smashWarning: 1.2
   smashCooldown: 6
-  smashRecovery: 1.5
+  smashRecovery: 0.8
   smashDamage: 15
+  chargeWidth: 2.4
   chargePath: {fileID: 8421424044847778959}
   chargeStartCap: {fileID: 1114769271085653682}
   chargeEndCap: {fileID: 3042638335760568807}
-  chargeMaxDistance: 8
+  chargeMaxDistance: 9
   chargeWarning: 1
   chargeSpeed: 10
-  chargeMaxDuration: 0.8
+  chargeMaxDuration: 0.9
   chargeCooldown: 10
-  chargeRecovery: 1.2
-  chargeWallRecovery: 2
+  chargeRecovery: 0.7
+  chargeWallRecovery: 1.2
   chargeDamage: 20
   shardPrefab: {fileID: 5140662875456635287, guid: 2e8e51d21b87f454484c04ae104b4615, type: 3}
   fanWarningMaterial: {fileID: 2100000, guid: aa4b72bb29fc0d34fb2f37238918048d, type: 2}
-  fanAngle: 90
+  fanAngle: 105
   shardCount: 5
-  shardRange: 8
+  shardRange: 9
   shardSpeed: 6
   shardDiameter: 0.4
   fanWarning: 0.9
   fanCooldown: 7
-  fanRecovery: 1
+  fanRecovery: 0.6
   shardDamage: 10
   rockfallPrefab: {fileID: 4875385796358786811, guid: 0756c39bbfe52e5459df86d122b26ce3, type: 3}
-  rockfallCount: 3
-  rockfallRadius: 1.2
-  rockfallInterval: 0.5
+  rockfallRadius: 1.8
   rockfallWarning: 0.9
   rockfallCooldown: 12
-  rockfallRecovery: 1.2
-  rockfallSelectionRange: 8
+  rockfallRecovery: 0.7
   rockfallDamage: 20
   leapShakeAmplitude: 0.07
   leapShakeDuration: 0.15
@@ -25900,6 +25898,14 @@ MonoBehaviour:
   smashShakeDuration: 0.12
   wallShakeAmplitude: 0.09
   wallShakeDuration: 0.18
+  comboChance: 0.3
+  secondaryWarning: 0.8
+  leapShockwaveWait: 1.3
+  secondaryRadiusMultiplier: 1.5
+  rockfallPlayerWeight: 0.75
+  aimLockLead: 0.2
+  comboFollowupDelay: 0.2
+  rockfallRoundGap: 0.3
 --- !u!212 &5064089095129895855 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3642007421399939137, guid: 65ddda13e1442ae419111301a9326c36, type: 3}

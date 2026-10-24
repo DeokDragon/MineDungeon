@@ -10,7 +10,7 @@ public class StoneGolemRockfall : MonoBehaviour
     [SerializeField] private Material telegraphMaterial;
     private StoneGolemTelegraph telegraph;
     [SerializeField, Min(0f)] private float visualHeight = 3f;
-    [SerializeField, Min(0.01f)] private float visualFallDuration = 0.3f;
+    [SerializeField, Min(0.01f)] private float visualFallDuration = 0.55f;
     [Header("Landing camera shake")]
     [SerializeField, Min(0f)] private float impactShakeAmplitude = .025f;
     [SerializeField, Min(0f)] private float impactShakeDuration = .08f;
@@ -41,7 +41,7 @@ public class StoneGolemRockfall : MonoBehaviour
         telegraph = StoneGolemTelegraph.Create(transform, telegraphMaterial, Center,
             Vector2.right, radius, 360f, 0f, false, new Color(1f, .45f, .05f),
             warning.sortingLayerID, warning.sortingOrder);
-        Size(stone, radius * 1.1f);
+        Size(stone, radius * 2f);
         UpdateVisuals(0f);
     }
 
@@ -51,7 +51,7 @@ public class StoneGolemRockfall : MonoBehaviour
         if (target == null || target.IsDead) { Finish(); return false; }
         float age = Mathf.Max(0f, patternTime - spawnTime);
         UpdateVisuals(age);
-        if (age + 0.00001f < warningDuration) return true;
+        if (age + 0.00001f < warningDuration + visualFallDuration) return true;
         telegraph.SetProgress(1f);
         bool hitPlayer = false;
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(Center, radius))
@@ -72,8 +72,8 @@ public class StoneGolemRockfall : MonoBehaviour
     {
         float fraction = Mathf.Clamp01(age / warningDuration);
         telegraph.SetProgress(fraction);
-        float falling = Mathf.Clamp01((age - warningDuration + visualFallDuration) / visualFallDuration);
-        stone.gameObject.SetActive(age >= warningDuration - visualFallDuration);
+        float falling = Mathf.Clamp01((age - warningDuration) / visualFallDuration);
+        stone.gameObject.SetActive(age >= warningDuration);
         stone.transform.localPosition = Vector3.up * (visualHeight * (1f - falling));
     }
 

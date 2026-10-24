@@ -7,9 +7,18 @@ public partial class StoneGolemBossAI
     [Header("Phase 2 / initial test values (not final balance)")]
     [SerializeField, Range(0f, 1f)] private float comboChance = .30f;
     [SerializeField, Min(.01f)] private float secondaryWarning = .8f;
+    [SerializeField, Min(0f)] private float leapShockwaveWait = 1.3f;
     [SerializeField, Min(1f)] private float secondaryRadiusMultiplier = 1.5f;
-    [SerializeField, Range(0f, 1f)] private float rockfallPlayerWeight = .35f;
-    [SerializeField, Min(.01f)] private float rockfallPlayerSpread = 3f;
+    [Tooltip("Third-pass test: per-round chance to aim exactly one circle at the player.")]
+    [SerializeField, Range(0f, 1f)] private float rockfallPlayerWeight = .75f;
+
+    [Header("Second-pass timing tests (not final balance)")]
+    [SerializeField, Min(0f)] private float aimLockLead = .2f;
+    [SerializeField, Min(.01f)] private float comboFollowupDelay = .2f;
+    [SerializeField, Min(0f)] private float rockfallRoundGap = .3f;
+    private bool comboFollowup, aimLocked;
+    private int weightedRockIndex;
+    private float ChargeRadius => chargeWidth * .5f;
 
     private bool introCompleted, transitionPending, enhanced, secondaryStarted;
     private bool transforming, presentationDriven;
@@ -130,7 +139,7 @@ public partial class StoneGolemBossAI
     {
         ActivePattern = LastPattern = pattern;
         enhanced = useEnhanced;
-        secondaryStarted = damageApplied = false;
+        secondaryStarted = damageApplied = comboFollowup = aimLocked = false;
         Vector2 direction = ((Vector2)player.transform.position - rb.position).normalized;
         switch (pattern)
         {
@@ -171,38 +180,62 @@ public partial class StoneGolemBossAI
         SetState(BossState.Warning);
     }
 
+    private bool TryBeginComboFollowup()
+    {
+        if (State != BossState.Recovery || comboNext == Pattern.None || player.IsDead || health.IsDead || !isActiveAndEnabled)
+            return false;
+        if (ActivePattern == Pattern.LeapSlam && comboNext == Pattern.GroundSmash)
+        {
+            // A waits before preparation; B retains its existing short warning below.
+            SetState(BossState.ComboAInterval);
+            return true;
+        }
+        Pattern queued = comboNext;
+        comboNext = Pattern.None;
+        // The short preparation is the actual start procedure: consume only this cooldown now.
+        StartPattern(queued, false);
+        comboFollowup = true;
+        return true;
+    }
+
+    private void TickAim()
+    {
+        if (aimLocked || (ActivePattern != Pattern.LeapSlam && ActivePattern != Pattern.RockCharge)) return;
+        float duration = ActivePattern == Pattern.LeapSlam ? leapWarning : chargeWarning;
+        if (ActivePattern == Pattern.LeapSlam)
+        {
+            // Keep the last valid landing if the current target position is not reachable.
+            if (TryGetLanding(out var landing)) attackCenter = landing;
+            if (telegraph != null) telegraph.transform.position = attackCenter;
+        }
+        else
+        {
+            Vector2 direction = ((Vector2)player.transform.position - rb.position).normalized;
+            if (direction.sqrMagnitude > .5f)
+            {
+                chargeStart = rb.position;
+                chargeDirection = direction;
+                chargeDistance = ChargeWallDistance(chargeStart, direction,
+                    Mathf.Min(chargeMaxDistance, chargeSpeed * chargeMaxDuration), out chargeEndsAtWall);
+                attackCenter = chargeStart + direction * chargeDistance;
+                UpdateChargeWarning();
+            }
+        }
+        if (timer + .00001f >= Mathf.Max(0f, duration - aimLockLead)) aimLocked = true;
+    }
+
     private void FinishPattern()
     {
-        if (enhanced && !secondaryStarted && (ActivePattern == Pattern.LeapSlam ||
-            ActivePattern == Pattern.GroundSmash || ActivePattern == Pattern.StoneFan))
+        // Preserve the existing shockwave interval independently of the final leap recovery.
+        if (enhanced && !secondaryStarted && ActivePattern == Pattern.LeapSlam)
         {
             secondaryStarted = true;
-            if (ActivePattern == Pattern.StoneFan)
-            {
-                fanOrigin = rb.position;
-                fanDirection = ((Vector2)player.transform.position - fanOrigin).normalized;
-                // Re-aim once at the second telegraph; never track during its warning.
-                CreateEffectsRoot();
-                ShowFanWarning();
-            }
-            else
-            {
-                attackCenter = rb.position;
-                ShowWarning(SecondaryRadius, new Color(1f, .2f, .05f, .4f));
-            }
+            attackCenter = rb.position;
+            ShowWarning(SecondaryRadius, new Color(1f, .2f, .05f, .4f));
             SetState(BossState.SecondaryWarning);
             return;
         }
         ClearOwnedEffects();
-        Pattern queued = comboNext;
-        comboNext = Pattern.None;
-        // The reservation was checked at combo start. Do not add a new distance gate
-        // between its steps or consume the second cooldown before its telegraph.
-        if (queued != Pattern.None && !player.IsDead && !health.IsDead)
-        {
-            StartPattern(queued, false);
-            return;
-        }
         ActivePattern = Pattern.None;
         SetState(BossState.Waiting);
     }
@@ -210,9 +243,9 @@ public partial class StoneGolemBossAI
     private float SecondaryRadius => (ActivePattern == Pattern.LeapSlam ? leapRadius : smashRadius) * secondaryRadiusMultiplier;
     private void TickSecondaryWarning()
     {
-        if (telegraph != null) telegraph.SetProgress(timer / secondaryWarning);
-        if (timer < secondaryWarning) return;
-        if (ActivePattern == Pattern.StoneFan) { FireShards(); return; }
+        float duration = ActivePattern == Pattern.GroundSmash ? smashWarning : secondaryWarning;
+        if (telegraph != null) telegraph.SetProgress(timer / duration);
+        if (timer + .00001f < duration) return;
         CompleteWarning();
         HideWarning();
         recoveryDuration = ActivePattern == Pattern.LeapSlam ? leapRecovery : smashRecovery;
@@ -242,17 +275,17 @@ public partial class StoneGolemBossAI
         return false;
     }
 
-    private Vector2 SampleRockfallCenter()
+    private Vector2 SampleRockfallCenter(bool aimAtPlayer = false)
     {
         CacheFloor();
-        // Rejection sampling over the union gives uniform world area, including
-        // overlapping Floor sprites, rather than weighting by renderer count.
+        Vector2 playerPosition = player.transform.position;
+        if (aimAtPlayer && OnFloor(playerPosition)) return playerPosition;
+        // An invalid player position uses the existing valid-floor fallback below.
+        // All other circles sample the entire floor union without a player bias.
         for (int i = 0; i < 256; i++)
         {
-            Vector2 point = i < 32 && UnityEngine.Random.value < rockfallPlayerWeight
-                ? (Vector2)player.transform.position + UnityEngine.Random.insideUnitCircle * rockfallPlayerSpread
-                : new Vector2(UnityEngine.Random.Range(room.WorldMin.x, room.WorldMax.x),
-                    UnityEngine.Random.Range(room.WorldMin.y, room.WorldMax.y));
+            Vector2 point = new Vector2(UnityEngine.Random.Range(room.WorldMin.x, room.WorldMax.x),
+                UnityEngine.Random.Range(room.WorldMin.y, room.WorldMax.y));
             if (OnFloor(point)) return point;
         }
         // Existing valid floor centers are a bounded fallback, never an inside-wall point.
@@ -266,10 +299,11 @@ public partial class StoneGolemBossAI
         roundHits.Clear();
         SetState(BossState.Rockfall);
         int count = UnityEngine.Random.Range(7, 9);
+        weightedRockIndex = UnityEngine.Random.value < rockfallPlayerWeight ? UnityEngine.Random.Range(0, count) : -1;
         for (int i = 0; i < count; i++)
         {
             var rock = Instantiate(rockfallPrefab, effectsRoot.transform);
-            rock.Initialize(player, wallLayer, SampleRockfallCenter(), rockfallRadius,
+            rock.Initialize(player, wallLayer, SampleRockfallCenter(i == weightedRockIndex), rockfallRadius,
                 rockfallWarning, 0f, rockfallDamage, roundHits);
             rocks.Add(rock);
         }
@@ -284,7 +318,7 @@ public partial class StoneGolemBossAI
             if (!alive) rocks.RemoveAt(i);
         }
         if (rocks.Count != 0) return;
-        if (remainingRockfallRounds > 0) { BeginRockfallRound(); return; }
+        if (remainingRockfallRounds > 0) { SetState(BossState.RockfallGap); return; }
         recoveryDuration = rockfallRecovery;
         SetState(BossState.Recovery);
     }
