@@ -6,18 +6,18 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-// Only the seven reference maps are offered by the UI. No runtime spawning or terrain writes.
+// Only the ten regular cave maps are offered by the UI. No runtime spawning or terrain writes.
 internal static class MonsterPlacementStore
 {
-    internal static string[] Paths => Enumerable.Range(1, 7)
-        .Select(i => $"Assets/Prefabs/Rooms/ReferenceMaps/Map_{i:00}.prefab").ToArray();
+    internal static string[] Paths => Enumerable.Range(1, 10)
+        .Select(i => $"Assets/Prefabs/Rooms/RegularCaves/Map_{i:00}.prefab").ToArray();
     internal static MonsterDataStore.Species Species(EnemyHealth hp) => !hp ? null :
         MonsterDataStore.Catalog.SingleOrDefault(s => hp.GetComponent(s.AI));
     internal static EnemyHealth[] Enemies(GameObject root) => root.GetComponentsInChildren<EnemyHealth>(true);
     internal static PrefabStage Stage(string path)
     {
         MonsterDataStore.Guard();
-        if (!Paths.Contains(path)) throw new InvalidOperationException("편집 대상은 Map_01~07뿐입니다.");
+        if (!Paths.Contains(path)) throw new InvalidOperationException("편집 대상은 Map_01~10뿐입니다.");
         var stage = PrefabStageUtility.GetCurrentPrefabStage();
         if (stage == null || stage.assetPath != path) throw new InvalidOperationException("선택한 맵을 먼저 Prefab Mode에서 여세요.");
         if (!AssetDatabase.IsOpenForEdit(path) || (File.GetAttributes(path) & FileAttributes.ReadOnly) != 0)

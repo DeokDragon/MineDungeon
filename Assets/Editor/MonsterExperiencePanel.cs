@@ -94,9 +94,9 @@ internal sealed class MonsterExperiencePanel
     {
         EditorGUILayout.Space(); EditorGUILayout.LabelField("현재 EXP 초안 기준 예상 경험치", EditorStyles.boldLabel);
         bool ready = draft.GetDifficulty(difficulty).experienceConfigured;
-        for (int i = 1; i <= 7; i++)
+        for (int i = 1; i <= 10; i++)
         {
-            var map = AssetDatabase.LoadAssetAtPath<DungeonRoom>($"Assets/Prefabs/Rooms/ReferenceMaps/Map_{i:00}.prefab");
+            var map = AssetDatabase.LoadAssetAtPath<DungeonRoom>($"Assets/Prefabs/Rooms/RegularCaves/Map_{i:00}.prefab");
             var layout = draft.GetDifficulty(difficulty).Find(map);
             if (!layout || !layout.configured) { EditorGUILayout.LabelField(map.name + ": 배치 미설정"); continue; }
             try

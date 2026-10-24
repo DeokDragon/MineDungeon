@@ -38,12 +38,12 @@ internal static class SelectedMapTestRunner
         if (!floor || difficulty < 0 || difficulty > 3 || !map) throw new InvalidOperationException("층·난이도·맵을 선택하세요.");
         string path = AssetDatabase.GetAssetPath(map);
         bool allowed = false;
-        for (int i = 1; i <= 7; i++) if (path == $"Assets/Prefabs/Rooms/ReferenceMaps/Map_{i:00}.prefab") allowed = true;
+        for (int i = 1; i <= 10; i++) if (path == $"Assets/Prefabs/Rooms/RegularCaves/Map_{i:00}.prefab") allowed = true;
         // Prefab assets have activeInHierarchy=false; IsConfigured is the runtime instance check.
         using (var serialized = new SerializedObject(map))
             if (!allowed || !map.gameObject.activeSelf || !map.Controller || !map.Controller.enabled || !map.Entrance ||
                 !serialized.FindProperty("roomExit").objectReferenceValue || map.WorldMin.x >= map.WorldMax.x || map.WorldMin.y >= map.WorldMax.y)
-                throw new InvalidOperationException("Map_01~07의 유효한 일반 맵만 테스트할 수 있습니다.");
+                throw new InvalidOperationException("Map_01~10의 유효한 일반 맵만 테스트할 수 있습니다.");
         var p = floor.monsterProfile;
         if (!p) throw new InvalidOperationException("층 밸런스 프로필 미설정");
         p.ValidateBalance(difficulty);

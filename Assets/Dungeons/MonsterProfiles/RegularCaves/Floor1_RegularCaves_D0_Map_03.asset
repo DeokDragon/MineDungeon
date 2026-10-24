@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812582854caf5c145bea236b88b050ae, type: 3}
+  m_Name: Floor1_RegularCaves_D0_Map_03
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterMapProfile
+  map: {fileID: 5237579830641464503, guid: da6403b30ec01054d8b4e7092b3a51ee, type: 3}
+  configured: 1
+  entries:
+  - id: 76babf721f0144ab89433bbd44ce4dc5
+    template: {fileID: 9116301093896859827, guid: 929d2143ab0681c47a2733b3fd98eddf, type: 3}
+    embeddedPath: 
+    localPosition: {x: 9.5, y: 17, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: f04c05823d454123a95a360c8798769d
+    template: {fileID: 1939751819936256716, guid: fca63f807ff20c54e8b83301983d09c7, type: 3}
+    embeddedPath: 
+    localPosition: {x: 9.5, y: 19, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: ef01244793254cc6b9db33a4e31d04c1
+    template: {fileID: 2553930121460554645, guid: 3f797d1391208e342adaf86752bb96cf, type: 3}
+    embeddedPath: 
+    localPosition: {x: 9.5, y: 21, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 47c5e0d0bfee4043bc2ef878efd510ae
+    template: {fileID: 3142899006696005507, guid: a95cad705feced64fa5c841a6a0ea996, type: 3}
+    embeddedPath: 
+    localPosition: {x: 18.5, y: 17, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 2a8af51bf730465388f54d14d965bdad
+    template: {fileID: 1666796862346513108, guid: 1bf2b6d78e04d3f4582dc6444b041553, type: 3}
+    embeddedPath: 
+    localPosition: {x: 18.5, y: 19, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: a6c0499b41cf4408836ad9cb28e36d92
+    template: {fileID: 9116301093896859827, guid: 929d2143ab0681c47a2733b3fd98eddf, type: 3}
+    embeddedPath: 
+    localPosition: {x: 18.5, y: 21, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: f97ddf70485444a0b5cef352d5f86955
+    template: {fileID: 1939751819936256716, guid: fca63f807ff20c54e8b83301983d09c7, type: 3}
+    embeddedPath: 
+    localPosition: {x: 11, y: 26, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 4f91cc29337143a9a26e947dac2aa71e
+    template: {fileID: 2553930121460554645, guid: 3f797d1391208e342adaf86752bb96cf, type: 3}
+    embeddedPath: 
+    localPosition: {x: 17, y: 26, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: 4bddec1f4ed24746a0644d01b2e132ad
+    template: {fileID: 3142899006696005507, guid: a95cad705feced64fa5c841a6a0ea996, type: 3}
+    embeddedPath: 
+    localPosition: {x: 11, y: 28.5, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0
+  - id: ecd7672231ef4db2b3c8d896c54f1f79
+    template: {fileID: 1666796862346513108, guid: 1bf2b6d78e04d3f4582dc6444b041553, type: 3}
+    embeddedPath: 
+    localPosition: {x: 17, y: 28.5, z: 0}
+    localEuler: {x: 0, y: 0, z: 0}
+    localScale: {x: 1, y: 1, z: 1}
+    reservedHpAdjustment: 0
+    reservedAttackAdjustment: 0

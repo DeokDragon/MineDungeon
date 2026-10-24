@@ -57,8 +57,8 @@ internal static class MonsterDataStore
         new Species("Magnet", "자철석", typeof(MagnetMonsterAI), new Field("warningRadius", "예고 반경"), new Field("damageRadius", "피해 반경"),
             new Field("slowFraction", "감속 비율 (0~1)") { Max = 1 }, new Field("slowDuration", "감속 시간"))
     };
-    internal static string[] Paths => Catalog.Select(s => s.Path).Concat(Enumerable.Range(1, 7)
-        .Select(i => $"Assets/Prefabs/Rooms/ReferenceMaps/Map_{i:00}.prefab")).ToArray();
+    internal static string[] Paths => Catalog.Select(s => s.Path).Concat(Enumerable.Range(1, 10)
+        .Select(i => $"Assets/Prefabs/Rooms/RegularCaves/Map_{i:00}.prefab")).ToArray();
     internal static string Key(Species s, Field f) => s.Id + "." + f.Key;
     internal static string Number(double value) => value == Math.Truncate(value) ? value.ToString("R", CultureInfo.InvariantCulture) : ((float)value).ToString("R", CultureInfo.InvariantCulture);
 

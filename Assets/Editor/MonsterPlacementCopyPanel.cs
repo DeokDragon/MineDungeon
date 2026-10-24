@@ -30,9 +30,9 @@ using UnityEngine;
         scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.Height(280));
         EditorGUILayout.HelpBox("저장된 원본의 종류·좌표·회전·배율만 대상 독립 배치에 복사합니다. 기본 능력치는 공용 프리팹을 사용하며 밸런스와 대상 설정 완료 상태는 유지합니다. 대상이 없으면 기존 기능으로 빈 프로필을 먼저 만드세요.", MessageType.Info);
         EditorGUILayout.LabelField("원본", EditorStyles.boldLabel); MonsterProfileEditorStore.Selectors(ref sourceFloor, ref sourceDifficulty);
-        sourceMap = EditorGUILayout.Popup("원본 맵", sourceMap, Enumerable.Range(1, 7).Select(i => $"Map_{i:00}").ToArray());
+        sourceMap = EditorGUILayout.Popup("원본 맵", sourceMap, Enumerable.Range(1, 10).Select(i => $"Map_{i:00}").ToArray());
         EditorGUILayout.LabelField("대상", EditorStyles.boldLabel); MonsterProfileEditorStore.Selectors(ref targetFloor, ref targetDifficulty);
-        targetMap = EditorGUILayout.Popup("대상 맵", targetMap, Enumerable.Range(1, 7).Select(i => $"Map_{i:00}").ToArray());
+        targetMap = EditorGUILayout.Popup("대상 맵", targetMap, Enumerable.Range(1, 10).Select(i => $"Map_{i:00}").ToArray());
         string key = (sourceFloor ? sourceFloor.GetInstanceID() : 0) + ":" + sourceDifficulty + ":" + sourceMap + ":" + (targetFloor ? targetFloor.GetInstanceID() : 0) + ":" + targetDifficulty + ":" + targetMap;
         if (selectionKey != key) { Clear(); selectionKey = key; error = null; }
         if (GUILayout.Button("원본 / 대상 비교·검증"))

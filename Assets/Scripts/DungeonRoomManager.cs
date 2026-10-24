@@ -19,7 +19,26 @@ public partial class DungeonRoomManager : MonoBehaviour
     private bool loadingRoom;
     public bool IsTransitioning => loadingRoom || pendingExit != null;
     private bool configured;
-    public int TotalRoomCount => normalRoomCount + 1;
+    public int TotalRoomCount => normalRoomCount +
+#if UNITY_EDITOR
+        (EditorPrototypeSequence ? 0 : 1);
+#else
+        1;
+#endif
+#if UNITY_EDITOR
+    private DungeonFloorData editorPrototypeSequenceFloor;
+    private bool EditorPrototypeSequence => editorPrototypeSequenceFloor != null && CurrentFloor == editorPrototypeSequenceFloor;
+    public bool EditorStartPrototypeSequence(DungeonFloorData floor, int difficulty)
+    {
+        var setting = floor != null ? floor.GetDifficulty(difficulty) : null;
+        if (!IsPreparing || floor == null || !floor.testConfiguration || setting == null ||
+            setting.normalRoomCount != 2 || setting.normalRooms == null || setting.normalRooms.Length != 2) return false;
+        editorPrototypeSequenceFloor = floor;
+        if (StartDungeon(floor, difficulty)) return true;
+        editorPrototypeSequenceFloor = null;
+        return false;
+    }
+#endif
     public EnemyHealth CurrentBoss { get; private set; }
     public event System.Action<EnemyHealth> BossChanged;
     public DungeonFloorData CurrentFloor { get; private set; }
@@ -158,6 +177,15 @@ public partial class DungeonRoomManager : MonoBehaviour
         pendingExit = null;
         if (IsCompleted || player.IsDead || Time.timeScale == 0f || RunEnded()) return;
 
+#if UNITY_EDITOR
+        if (EditorPrototypeSequence && CurrentRoomNumber == normalRoomCount)
+        {
+            IsCompleted = true;
+            DungeonRunManager.Instance.CompleteRun();
+            return;
+        }
+#endif
+
         if (CurrentRoomNumber == normalRoomCount + 1)
         {
             return;
@@ -184,7 +212,11 @@ public partial class DungeonRoomManager : MonoBehaviour
         loadingRoom = true;
         player.GetComponent<PlayerMovement>()?.ClearSlow();
         bool isBoss = number > normalRoomCount;
-        int chosenIndex = isBoss ? -1 : PickNormalRoom();
+        int chosenIndex =
+#if UNITY_EDITOR
+            EditorPrototypeSequence ? number - 1 :
+#endif
+            isBoss ? -1 : PickNormalRoom();
         DungeonRoom prefab = isBoss ? bossRoomPrefab : normalRoomPrefabs[chosenIndex];
         DungeonRoom oldRoom = currentRoom;
         var skills = player.GetComponent<PlayerSkills>();

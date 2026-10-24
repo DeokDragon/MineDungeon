@@ -1656,8 +1656,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3, g: 0.65, b: 0.65, a: 1}
+  m_Sprite: {fileID: 8470857186557712591, guid: f5bc9809df9c7f04b894169cecfcd89c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7785,6 +7785,7 @@ GameObject:
   - component: {fileID: 8782153735584915389}
   - component: {fileID: 4532305994376331392}
   - component: {fileID: 1325401778670876003}
+  - component: {fileID: 7117434366744607197}
   m_Layer: 6
   m_Name: MagnetMonster
   m_TagString: Untagged
@@ -7987,6 +7988,35 @@ MonoBehaviour:
   damageRadius: 1.8
   slowFraction: 0.3
   slowDuration: 1.5
+--- !u!114 &7117434366744607197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420602737611491455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2f5086f7be754479f5e1ece0b2031b, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::MagnetMonsterSpriteAnimation
+  body: {fileID: 975993457154686288}
+  idleFrames:
+  - {fileID: 8470857186557712591, guid: f5bc9809df9c7f04b894169cecfcd89c, type: 3}
+  - {fileID: 1954954200867712753, guid: f5bc9809df9c7f04b894169cecfcd89c, type: 3}
+  - {fileID: 3663677589713106552, guid: f5bc9809df9c7f04b894169cecfcd89c, type: 3}
+  - {fileID: -1161853280402639356, guid: f5bc9809df9c7f04b894169cecfcd89c, type: 3}
+  moveFrames:
+  - {fileID: -4434209328395063670, guid: 33260f14ffd8f2149b2601a8042b00de, type: 3}
+  - {fileID: 4382317377448920359, guid: 33260f14ffd8f2149b2601a8042b00de, type: 3}
+  - {fileID: 1223923242757924851, guid: 33260f14ffd8f2149b2601a8042b00de, type: 3}
+  - {fileID: -2189728206946461869, guid: 33260f14ffd8f2149b2601a8042b00de, type: 3}
+  - {fileID: 496989846215273866, guid: 33260f14ffd8f2149b2601a8042b00de, type: 3}
+  - {fileID: -4139448540171241580, guid: 33260f14ffd8f2149b2601a8042b00de, type: 3}
+  idleFramesPerSecond: 6
+  moveFramesPerSecond: 10
+  referenceMoveSpeed: 2.3
+  movementThreshold: 0.02
 --- !u!1 &6559072077444613848
 GameObject:
   m_ObjectHideFlags: 0

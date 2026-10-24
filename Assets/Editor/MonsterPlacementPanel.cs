@@ -53,7 +53,7 @@ internal sealed class MonsterPlacementPanel
         try { action(); }
         catch (Exception e) { message = e.Message; }
     }
-    string Path => MonsterPlacementStore.Paths[Mathf.Clamp(mapIndex, 0, 6)];
+    string Path => MonsterPlacementStore.Paths[Mathf.Clamp(mapIndex, 0, MonsterPlacementStore.Paths.Length - 1)];
     bool Editing(out GameObject root)
     {
         root = null;
@@ -76,17 +76,41 @@ internal sealed class MonsterPlacementPanel
         if (!Editing(out _)) throw new InvalidOperationException("선택한 조합의 Scene 편집을 먼저 여세요.");
         if (!profileMode) MonsterPlacementStore.Stage(Path);
     }
-    void OpenProfile(MonsterMapProfile source)
+    bool OpenProfile(MonsterMapProfile source)
     {
         if (MonsterProfileStage.Current) MonsterProfileStage.Current.Capture();
         if (profileDraft && profileSource != source && MonsterProfileEditorStore.Json(profileDraft) != profileBaseline &&
-            !EditorUtility.DisplayDialog("미저장 배치 초안", "현재 초안을 버리고 다른 조합을 열까요?", "변경", "취소")) return;
+            !EditorUtility.DisplayDialog("미저장 배치 초안", "현재 초안을 버리고 다른 조합을 열까요?", "변경", "취소")) return false;
         if (!profileDraft || profileSource != source)
         {
+            // Close the old stage while its draft is still alive; OnCloseStage captures it.
+            if (MonsterProfileStage.Current) StageUtility.GoToMainStage();
             if (profileDraft) UnityEngine.Object.DestroyImmediate(profileDraft);
             profileSource = source; profileDraft = MonsterProfileEditorStore.Draft(source); profileBaseline = MonsterProfileEditorStore.Json(source);
         }
         if (!MonsterProfileStage.Current || MonsterProfileStage.Current.source != source) MonsterProfileStage.Open(source, profileDraft);
+        return true;
+    }
+    void SelectCombination(DungeonFloorData nextFloor, int nextDifficulty, int nextMap)
+    {
+        var oldFloor = floor; int oldDifficulty = difficulty, oldMap = mapIndex;
+        floor = nextFloor; difficulty = nextDifficulty; mapIndex = nextMap;
+        try
+        {
+            if (profileMode && MonsterProfileStage.Current)
+            {
+                var source = MonsterProfileEditorStore.Find(floor, difficulty, AssetDatabase.LoadAssetAtPath<DungeonRoom>(Path));
+                if (source)
+                {
+                    if (!OpenProfile(source)) { floor = oldFloor; difficulty = oldDifficulty; mapIndex = oldMap; return; }
+                }
+                else { MonsterProfileStage.Current.Capture(); StageUtility.GoToMainStage(); }
+            }
+            else if (!profileMode && PrefabStageUtility.GetCurrentPrefabStage() != null)
+                PrefabStageUtility.OpenPrefab(Path);
+            report = null; message = null; placementPreview = false;
+        }
+        catch { floor = oldFloor; difficulty = oldDifficulty; mapIndex = oldMap; throw; }
     }
     void SaveProfile()
     {
@@ -121,10 +145,15 @@ internal sealed class MonsterPlacementPanel
     void DrawContents()
     {
         profileMode = GUILayout.Toolbar(profileMode ? 0 : 1, new[] { "층·난이도 독립 배치", "기본 프리팹 편집 (기존)" }) == 0;
-        EditorGUILayout.HelpBox(profileMode ? "독립 배치 초안입니다. Scene의 W 도구로 위치를 편집하고, 변경 미리보기 후 저장하세요. 원본 맵의 지형·기본 능력치는 저장하지 않습니다.\n미설정과 의도한 0마리는 ‘배치 설정 완료’로 구분합니다. 배치 설정만으로 미구현 던전이 활성화되지는 않습니다." : "기존 Map_01~07 기본 프리팹 편집입니다. Auto Save가 켜지면 즉시 파일에 저장될 수 있습니다.\n독립 배치 프로필의 좌표·구성은 별도로 저장됩니다. 추가·삭제는 이 탭의 버튼, 이동은 Scene의 W 도구를 사용하세요.", MessageType.Info);
+        EditorGUILayout.HelpBox(profileMode ? "독립 배치 초안입니다. Scene의 W 도구로 위치를 편집하고, 변경 미리보기 후 저장하세요. 원본 맵의 지형·기본 능력치는 저장하지 않습니다.\n미설정과 의도한 0마리는 ‘배치 설정 완료’로 구분합니다. 배치 설정만으로 미구현 던전이 활성화되지는 않습니다." : "기존 Map_01~10 기본 프리팹 편집입니다. Auto Save가 켜지면 즉시 파일에 저장될 수 있습니다.\n독립 배치 프로필의 좌표·구성은 별도로 저장됩니다. 추가·삭제는 이 탭의 버튼, 이동은 Scene의 W 도구를 사용하세요.", MessageType.Info);
         using (new EditorGUI.DisabledScope(EditorApplication.isPlayingOrWillChangePlaymode || EditorApplication.isCompiling))
         {
-            if (profileMode) MonsterProfileEditorStore.Selectors(ref floor, ref difficulty);
+            if (profileMode)
+            {
+                var nextFloor = floor; int nextDifficulty = difficulty;
+                MonsterProfileEditorStore.Selectors(ref nextFloor, ref nextDifficulty);
+                if (nextFloor != floor || nextDifficulty != difficulty) Run(() => SelectCombination(nextFloor, nextDifficulty, mapIndex));
+            }
             if (profileMode) profileCopy.Draw();
             if (profileMode && GUILayout.Button("저장된 배치 다시 불러오기")) Run(() =>
             {
@@ -137,8 +166,8 @@ internal sealed class MonsterPlacementPanel
             });
             using (new EditorGUILayout.HorizontalScope())
             {
-                int next = EditorGUILayout.Popup("일반 맵", mapIndex, Enumerable.Range(1, 7).Select(i => $"Map_{i:00}").ToArray());
-                if (next != mapIndex) { mapIndex = next; report = null; message = null; }
+                int next = EditorGUILayout.Popup("일반 맵", mapIndex, Enumerable.Range(1, 10).Select(i => $"Map_{i:00}").ToArray());
+                if (next != mapIndex) Run(() => SelectCombination(floor, difficulty, next));
                 if (GUILayout.Button(profileMode ? "독립 배치 Scene 열기" : "Scene / Prefab Mode에서 열기", GUILayout.Width(220))) Run(() =>
                 {
                     MonsterDataStore.Guard();
@@ -166,7 +195,7 @@ internal sealed class MonsterPlacementPanel
             {
                 var map = AssetDatabase.LoadAssetAtPath<DungeonRoom>(Path);
                 var profile = MonsterProfileEditorStore.Find(floor, difficulty, map);
-                EditorGUILayout.HelpBox(!profile || !profile.configured ? "선택한 조합: 배치 미설정" : $"선택한 조합: 설정 완료 / {profile.entries.Length}마리", MessageType.Info);
+                EditorGUILayout.HelpBox(!profile ? "선택한 조합: 배치 프로필 없음" : !profile.configured ? "선택한 조합: 프로필 있음 / 배치 미설정" : profile.entries.Length == 0 ? "선택한 조합: 설정 완료된 0마리 배치" : $"선택한 조합: 설정 완료 / {profile.entries.Length}마리", MessageType.Info);
                 if (!profile && GUILayout.Button("이 조합의 빈 배치 프로필 만들기")) Run(() => { var p = MonsterProfileEditorStore.CreateMap(floor, difficulty, map); OpenProfile(p); });
                 if (profile)
                     foreach (var e in profile.entries) EditorGUILayout.LabelField((e.template ? MonsterProfileRuntime.Kind(e.template).ToString() : "참조 누락") + " · " + e.localPosition);

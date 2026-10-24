@@ -59,7 +59,7 @@ public sealed class MonsterDataEditorWindow : EditorWindow
     void OnInspectorUpdate() { if (tab == 3) Repaint(); }
     void DrawStats()
     {
-        EditorGUILayout.HelpBox("공용 몬스터 5종 + Map_01~07의 같은 종류 전체를 입력값으로 맞춥니다. 맵의 기존 차이도 적용 대상입니다.\nCSV는 편집 초안만 변경합니다. 실제 게임 데이터는 기존 프리팹을 사용합니다.", MessageType.Info);
+        EditorGUILayout.HelpBox("공용 몬스터 5종 + Map_01~10의 같은 종류 전체를 입력값으로 맞춥니다. 맵의 기존 차이도 적용 대상입니다.\nCSV는 편집 초안만 변경합니다. 실제 게임 데이터는 기존 프리팹을 사용합니다.", MessageType.Info);
         using (new EditorGUI.DisabledScope(EditorApplication.isPlayingOrWillChangePlaymode || EditorApplication.isCompiling))
         {
             using (new EditorGUILayout.HorizontalScope(EditorStyles.toolbar))

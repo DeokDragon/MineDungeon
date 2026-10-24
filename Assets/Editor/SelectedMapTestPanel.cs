@@ -23,9 +23,9 @@ internal sealed class SelectedMapTestPanel
         using (new EditorGUI.DisabledScope(active || EditorApplication.isPlayingOrWillChangePlaymode))
         {
             MonsterProfileEditorStore.Selectors(ref floor, ref difficulty);
-            mapIndex = EditorGUILayout.Popup("일반 맵", mapIndex, Enumerable.Range(1, 7).Select(i => $"Map_{i:00}").ToArray());
+            mapIndex = EditorGUILayout.Popup("일반 맵", mapIndex, Enumerable.Range(1, 10).Select(i => $"Map_{i:00}").ToArray());
         }
-        var map = AssetDatabase.LoadAssetAtPath<DungeonRoom>($"Assets/Prefabs/Rooms/ReferenceMaps/Map_{mapIndex + 1:00}.prefab");
+        var map = AssetDatabase.LoadAssetAtPath<DungeonRoom>($"Assets/Prefabs/Rooms/RegularCaves/Map_{mapIndex + 1:00}.prefab");
         string validation = null;
         try { SelectedMapTestRunner.Validate(floor, difficulty, map); }
         catch (Exception e) { validation = e.Message; }

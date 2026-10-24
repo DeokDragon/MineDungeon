@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e038e87677f014dbdfb1b67c13fc51, type: 3}
+  m_Name: Cave04_Floor
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonFloorData
+  id: CavePrototype04
+  floorNumber: 1
+  displayName: Map04 Prototype
+  previewImage: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  testConfiguration: 1
+  monsterProfile: {fileID: 11400000, guid: c15ede75ebf02cb4694e202269b351df, type: 2}
+  difficulties:
+  - requiredLevel: 1
+    implemented: 1
+    normalRooms:
+    - {fileID: 2160639914551868877, guid: 2c291142cec37b941a86e183905eba9a, type: 3}
+    bossRoom: {fileID: 8915209039277424091, guid: 49e6f9a1c41923b45aff2ad996e68f6e, type: 3}
+    normalRoomCount: 3
+    chestPreview: {fileID: 11400000, guid: dc43044d8aa69294697b032fa997ab78, type: 2}
+  - requiredLevel: 1
+    implemented: 0
+    normalRooms: []
+    bossRoom: {fileID: 0}
+    normalRoomCount: 3
+    chestPreview: {fileID: 0}
+  - requiredLevel: 1
+    implemented: 0
+    normalRooms: []
+    bossRoom: {fileID: 0}
+    normalRoomCount: 3
+    chestPreview: {fileID: 0}
+  - requiredLevel: 1
+    implemented: 0
+    normalRooms: []
+    bossRoom: {fileID: 0}
+    normalRoomCount: 3
+    chestPreview: {fileID: 0}

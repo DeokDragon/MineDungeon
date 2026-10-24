@@ -17,18 +17,21 @@ MonoBehaviour:
   displayName: "\uC554\uC11D \uAC31\uB3C4"
   previewImage: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   testConfiguration: 1
-  monsterProfile: {fileID: 11400000, guid: 7b2849142c283f14e97a4bd0fafd813a, type: 2}
+  monsterProfile: {fileID: 11400000, guid: 14e9ecbaca41f3649a0de3e806da7298, type: 2}
   difficulties:
   - requiredLevel: 1
     implemented: 1
     normalRooms:
-    - {fileID: 6053983047823825609, guid: 99dee7d2b11c77049a14b4d4474d336d, type: 3}
-    - {fileID: 7537514284441623134, guid: 7502708e62f79f34ca7731ffbe7c040b, type: 3}
-    - {fileID: 6310666438825996995, guid: 12a9527f51c5494418c4cc2f4bcce5e1, type: 3}
-    - {fileID: 47755435103854295, guid: 1048251acb892974886efc5af85b6988, type: 3}
-    - {fileID: 1662757022521918358, guid: 1f0d9e5a9cee2b044b68bf1bb59a8e33, type: 3}
-    - {fileID: 6828458293176960054, guid: 6528beab51ef2d44e813946d274475dd, type: 3}
-    - {fileID: 6078481078359082503, guid: afa4e511180003c4eadd151ffb455315, type: 3}
+    - {fileID: 8989194250874065725, guid: c77636b5b00f7fb438dd238fccba6324, type: 3}
+    - {fileID: 5285294239656969636, guid: 9c54a1d87efb5154baa6efd9fd894a51, type: 3}
+    - {fileID: 5237579830641464503, guid: da6403b30ec01054d8b4e7092b3a51ee, type: 3}
+    - {fileID: 922540765831675765, guid: 7d89eaaee3c952d45825c03443ad23a3, type: 3}
+    - {fileID: 2597884934586592861, guid: fa0c055e372b9404080553cc245b89e7, type: 3}
+    - {fileID: 9124593470328129029, guid: 9c6a910f36b32044f8cb90d3d26bea1f, type: 3}
+    - {fileID: 8816930163735348605, guid: ab2f1ef01a9416f4996646665777154a, type: 3}
+    - {fileID: 6506805637660437000, guid: e6839025d281eb242a4af635bd7ecd4b, type: 3}
+    - {fileID: 500707136937944548, guid: 78c7cc2c2e4b66a4da0b855660463e90, type: 3}
+    - {fileID: 2038355111097689384, guid: f3486919b2837c94bbc39f1fab5f7f85, type: 3}
     bossRoom: {fileID: 8915209039277424091, guid: 49e6f9a1c41923b45aff2ad996e68f6e, type: 3}
     normalRoomCount: 3
     chestPreview: {fileID: 11400000, guid: dc43044d8aa69294697b032fa997ab78, type: 2}
