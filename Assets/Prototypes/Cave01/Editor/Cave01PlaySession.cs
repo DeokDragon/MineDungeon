@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public static class Cave01PlaySession
 {
     public const string ScenePath = "Assets/Prototypes/Cave01/Cave01_Test.unity";
+    public const string BossScenePath = "Assets/Prototypes/BossRoom24x22/BossRoom24x22_Test.unity";
     public const string ScenePathV2 = "Assets/Prototypes/Cave01V2/Cave01V2_Test.unity";
     public const string ScenePath02 = "Assets/Prototypes/Cave02/Cave02_Test.unity";
     public const string ScenePath03 = "Assets/Prototypes/Cave03/Cave03_Test.unity";
@@ -31,6 +32,11 @@ public static class Cave01PlaySession
     static void Open()
     {
         OpenScene(ScenePath);
+    }
+    [MenuItem("Tools/MineDungeon/Prototypes/Open Boss Room 24x22")]
+    static void OpenBossRoom()
+    {
+        OpenScene(BossScenePath);
     }
     [MenuItem("Tools/MineDungeon/Prototypes/Open Cave 01 V2")]
     static void OpenV2()
@@ -98,7 +104,7 @@ public static class Cave01PlaySession
         // The selected-map runner owns its Main start scene and isolated save override.
         if (state == PlayModeStateChange.ExitingEditMode && SelectedMapTestSafety.Active) return;
         string scenePath = SceneManager.GetActiveScene().path;
-        if (state == PlayModeStateChange.ExitingEditMode && (scenePath == ScenePath || scenePath == ScenePathV2 || scenePath == ScenePath02 || scenePath == ScenePath03 || scenePath == ScenePath05 || scenePath == ScenePath06 || scenePath == ScenePath04 || scenePath == ScenePath07 || scenePath == ScenePath08 || scenePath == ScenePath09 || scenePath == ScenePath10 || scenePath == SequenceScenePath))
+        if (state == PlayModeStateChange.ExitingEditMode && (scenePath == BossScenePath || scenePath == ScenePath || scenePath == ScenePathV2 || scenePath == ScenePath02 || scenePath == ScenePath03 || scenePath == ScenePath05 || scenePath == ScenePath06 || scenePath == ScenePath04 || scenePath == ScenePath07 || scenePath == ScenePath08 || scenePath == ScenePath09 || scenePath == ScenePath10 || scenePath == SequenceScenePath))
         {
             if (EditorSceneManager.playModeStartScene != null && AssetDatabase.GetAssetPath(EditorSceneManager.playModeStartScene) != scenePath)
             {
@@ -137,7 +143,9 @@ public static class Cave01PlaySession
             EditorApplication.isPlaying = false;
             return;
         }
-        string floorPath = scenePath == ScenePath04
+        string floorPath = scenePath == BossScenePath
+            ? "Assets/Prototypes/BossRoom24x22/BossRoom24x22_Floor.asset"
+            : scenePath == ScenePath04
             ? "Assets/Prototypes/Cave04/Cave04_Floor.asset"
             : scenePath == ScenePath07
             ? "Assets/Prototypes/Cave07/Cave07_Floor.asset"

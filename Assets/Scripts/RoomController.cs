@@ -35,7 +35,8 @@ public class RoomController : MonoBehaviour
     private void Start()
     {
         started = true;
-        if (roomExit == null || enemies == null)
+        var room = GetComponentInParent<DungeonRoom>();
+        if ((roomExit == null && (room == null || !room.ClearWithoutExit)) || enemies == null)
         {
             Debug.LogError("Assign the room's enemies and exit in the Inspector.", this);
             return;
@@ -83,9 +84,9 @@ public class RoomController : MonoBehaviour
             return;
 
         IsCleared = true;
-        roomExit.SetOpen(true);
+        if (roomExit != null) roomExit.SetOpen(true);
         Cleared?.Invoke(this);
-        Debug.Log("Room cleared! The exit is open.", this);
+        Debug.Log(roomExit != null ? "Room cleared! The exit is open." : "Room cleared!", this);
     }
 
     private void OnDestroy()

@@ -32,7 +32,7 @@ MonoBehaviour:
     - {fileID: 6506805637660437000, guid: e6839025d281eb242a4af635bd7ecd4b, type: 3}
     - {fileID: 500707136937944548, guid: 78c7cc2c2e4b66a4da0b855660463e90, type: 3}
     - {fileID: 2038355111097689384, guid: f3486919b2837c94bbc39f1fab5f7f85, type: 3}
-    bossRoom: {fileID: 8915209039277424091, guid: 49e6f9a1c41923b45aff2ad996e68f6e, type: 3}
+    bossRoom: {fileID: 5266341672828948613, guid: 134ac989ddd85bb41925d5bec3f9aefd, type: 3}
     normalRoomCount: 3
     chestPreview: {fileID: 11400000, guid: dc43044d8aa69294697b032fa997ab78, type: 2}
   - requiredLevel: 2

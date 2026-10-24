@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e038e87677f014dbdfb1b67c13fc51, type: 3}
+  m_Name: BossRoom24x22_Floor
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonFloorData
+  id: prototype_boss_24x22
+  floorNumber: 1
+  displayName: "24x22 \uBCF4\uC2A4\uB8F8 \uC2DC\uD5D8"
+  previewImage: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  testConfiguration: 1
+  monsterProfile: {fileID: 11400000, guid: 14e9ecbaca41f3649a0de3e806da7298, type: 2}
+  difficulties:
+  - requiredLevel: 1
+    implemented: 1
+    normalRooms:
+    - {fileID: 8989194250874065725, guid: c77636b5b00f7fb438dd238fccba6324, type: 3}
+    - {fileID: 5285294239656969636, guid: 9c54a1d87efb5154baa6efd9fd894a51, type: 3}
+    - {fileID: 5237579830641464503, guid: da6403b30ec01054d8b4e7092b3a51ee, type: 3}
+    - {fileID: 922540765831675765, guid: 7d89eaaee3c952d45825c03443ad23a3, type: 3}
+    - {fileID: 2597884934586592861, guid: fa0c055e372b9404080553cc245b89e7, type: 3}
+    - {fileID: 9124593470328129029, guid: 9c6a910f36b32044f8cb90d3d26bea1f, type: 3}
+    - {fileID: 8816930163735348605, guid: ab2f1ef01a9416f4996646665777154a, type: 3}
+    - {fileID: 6506805637660437000, guid: e6839025d281eb242a4af635bd7ecd4b, type: 3}
+    - {fileID: 500707136937944548, guid: 78c7cc2c2e4b66a4da0b855660463e90, type: 3}
+    - {fileID: 2038355111097689384, guid: f3486919b2837c94bbc39f1fab5f7f85, type: 3}
+    bossRoom: {fileID: 5266341672828948613, guid: 577e161d07a45b94b8aa510c46694caf, type: 3}
+    normalRoomCount: 3
+    chestPreview: {fileID: 11400000, guid: dc43044d8aa69294697b032fa997ab78, type: 2}
+  - requiredLevel: 2
+    implemented: 0
+    normalRooms: []
+    bossRoom: {fileID: 0}
+    normalRoomCount: 3
+    chestPreview: {fileID: 11400000, guid: 3c8b408473d96464faa3cc2978153ded, type: 2}
+  - requiredLevel: 3
+    implemented: 0
+    normalRooms: []
+    bossRoom: {fileID: 0}
+    normalRoomCount: 3
+    chestPreview: {fileID: 11400000, guid: b17eb25b604695e45be774e252d343eb, type: 2}
+  - requiredLevel: 5
+    implemented: 0
+    normalRooms: []
+    bossRoom: {fileID: 0}
+    normalRoomCount: 3
+    chestPreview: {fileID: 11400000, guid: 6c29519e7c68b564585e052f1870ff7e, type: 2}

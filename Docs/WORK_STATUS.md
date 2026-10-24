@@ -778,3 +778,25 @@
 - 변경: DungeonRunSettlement.StartQueuedDungeon에서 동일 층/난이도의 StartDungeon 성공 후 기존 MineEntranceUI.CompleteEntry 호출. MineEntranceUI.CompleteEntry를 공용으로 노출하고 준비 중/현재 방 없음이면 실행하지 않는 보호 추가. 로비 삭제나 화면 밖 이동 없이 기존 비활성화 재사용. 재입장 실패 시 로비 유지, 로비 복귀만 할 때는 기존 Main 재로드 유지. 랜덤 후보/일반3방→보스/카메라/맵/배치/보상/저장 로직 변경 없음.
 - 확인: 사용자 직접 Play 종료 후 코드 반영. Unity 컴파일 완료, Console 오류0, Main Canvas의 MineEntranceUI 활성 및 로비 밖 위치/rooms 참조 확인, 로비 계층 Missing Script0, git diff --check 통과. 수정 후 자동 Play/재시작 테스트 미실행. 사용자 저장/백업 접근·변경, 씬/프리팹 저장, 커밋·푸시 없음.
 - 수동 검증: 최초 입장→클리어→다시하기를 2회 확인하여 현재 DungeonRoom1개/MainMineEntrance 비활성 및 문/로비 바닥 미노출 확인. 동일 층·난이도/새 런 초기화·부활2회, 로비 복귀 후 로비 표시 및 재입장 확인. 수정 후 실제 화면 해결 여부는 이 수동 검증 전까지 미검증.
+
+### 2026-10-24 — 24×22 독립 보스룸 프로토타입 (Play 미실행)
+
+- 신규 Assets/Prototypes/BossRoom24x22/: BossRoom24x22.prefab, BossRoom24x22_Floor.asset, BossRoom24x22_Test.unity 및 Unity 생성 meta. 기존 정규 Room_Boss_Test Variant를 MCP로 복제/최상위 unpack하여 보스·RoomController·RoomExit·부활 참조 보존. Cave06_Test를 별도 씬으로 복제하고 테스트 층 참조만 연결. 정규 층/보스 참조 변경 없음.
+- 경계(0,0)~(24,22). 바닥 union: 입구 X10~14/Y1~5; X6~18/Y3~4; X4~20/Y4~5; X3~21/Y5~7; X2~22/Y7~16; X2.5~21.5/Y16~18; X3.5~20.5/Y18~19; X5~19/Y19~20. 외곽 모서리를 계단형으로 정리하고 내부 장애물 없음. 기존 MineMapBuilder 타일/암벽 색상·Sprite/Wall BoxCollider 방식 재사용, 남는 전체 외곽은106개 암벽 셀로 채움. 입구(12,2), 보스 월드/방 로컬(12,14), 기존 필수 출구 참조는 안전 바닥(12,19). 보스 부모 Monsters의 기존 offset을 고려해 위치를 지정하여 보스 하위 구조 보존.
+- 실행: 기존 Cave01PlaySession에 Tools > MineDungeon > Prototypes > Open Boss Room 24x22 및 경로 분기만 추가. 직접 보스 시작 신규 규칙 없이 독립 테스트 층의 기존 정규10종 랜덤 일반3방→새 보스→기존 결과/정산을 사용한다. 정규 층 복제의 배치·밸런스·보상 참조 재사용(변경 없음). 초기 쉬움 CanEnter=True. 메뉴로 씬 열기 후 사용자가 Play. 실행별 Library/Cave01Sessions/GUID/character.json override를 Awake 이전 설정, 기존 실행기 경로 확인 및 종료 복구 사용. 사용자 실제 저장/백업 접근 없음.
+- 카메라: 기존 CameraFollow/Size4.5. 방 LoadRoom→SetRoom이 새 bounds를 전달하며16:9에서 중심 X8~16/Y4.5~17.5. 기존 SmoothDamp/흔들림 최종 clamp 유지. 일반 방으로 이동/재시작 시 각 방 bounds로 갱신하는 기존 경로 유지. 화면비 복원 문제 수정 없음.
+- 정적 검사: player radius0.65 입구→보스 경로=True, boss radius1+skin0.03 초기 몸체=True, (4,10)→(20,10) 보스 여유 포함 횡단=True. 암벽 데이터/Wall 비트리거 BoxCollider106/106. 새 프리팹/씬 Missing Script0, BossHealthHUD1, Controller enemies가 새 보스1개 정확히 참조. 보스 AI 직렬화58개 검사에서 수치/외부참조 동일; 내부5개 참조는 새 prefab 경로로 바뀌므로 추가 상대경로/소유권 검증 모두 일치. EnemyHealth scalar2개 동일. 도약 최대7/반경1.8, 강타반경3, 돌진8, 파편거리8, 낙석반경1.2 등 기존 값 보존. 도약 landing/이동 PathClear와 CircleCast/OverlapCircle, 돌진 CircleCast/벽 종료, 파편 벽 검사는 기존 코드 그대로. 패턴/AI/보상 파일 변경 없음.
+- 보존: 기존 Prototypes/Rooms/Dungeons224파일 SHA256 비교에서 허용된 Cave01PlaySession.cs1개만 변경. 기존 일반10종/정규보스/프로토타입/메타 및 앞선 다시하기 수정 보존. 컴파일 완료·콘솔 오류/경고0·diff --check 통과. 검사 근거 Library/BossRoom24x22Verification. Play/자동 전투 미실행, 실제 회피 난도·입구에서 보스 추적·모서리 착지/돌진·낙석/투사체·사망/부활2회·클리어/정산/다시하기·카메라 화면은 미검증. 입구 폭4는 보스가 통과 가능한 정적 폭이지만 가장자리에서의 기존 직선 추적 정체 여부는 수동 확인 필요. 기존 화면비 복원/전역 조명 이슈 미수정. GDD/Systems 수정·커밋·푸시 없음.
+
+### 2026-10-24 — BossRoom24x22 출구 제거 (Play 미실행)
+
+- BossRoom24x22.prefab의 RoomExit GameObject/SpriteRenderer1개/BoxCollider2D1개 제거. DungeonRoom·RoomController·RoomWalkableLayout 출구 참조 및 exitCandidates 정리. 기존 출구(12,19)는 이미 바닥 위에 있었고 상단 암벽 Y20~22는 연속되어 있으므로 지형을 새로 막거나 이동하지 않음. 외곽24×22/암벽106개/입구(12,2)/보스(12,14) 보존.
+- DungeonRoom에 기본false인 clearWithoutExit 옵션을 추가하고 이 프로토타입에서만 true. 일반 방은 기존 출구 필수 검사 유지. RoomController는 명시적 출구 없는 방에서만 출구 누락을 허용하고 전멸 시 Cleared 이벤트를 기존대로 전달. DungeonRoom.Bind/RoomController.TryClearRoom의 출구 호출만 null 보호. 보스 클리어는 기존 DungeonRoomManager.OnRoomCleared→CompleteRun 경로이며 출구 통과와 무관. RoomExit/보스AI/보상·저장/카메라/정규보스 및 일반맵 에셋 변경 없음.
+- 최소 정적 결과: PrefabContents에서 일반10종 모두 clearWithoutExit=false/출구1개/IsConfigured=true. 새 보스룸 출구0/IsConfigured=true/보스 등록 참조 정상/Missing Script0/암벽 Collider106개 유지/옛 문 위치 이동가능 및 상단 암벽 차단 확인. 최초 검사에서 prefab asset의 activeInHierarchy를 사용하는 IsConfigured 호출이 실패해 로드된 PrefabContents 대상으로 바로잡았으며 실제 일반맵 변경이 아님. 컴파일 완료·콘솔 오류0. 자동 Play 미실행. 사용자 수동 검증: 옛 문 위치 이동·공격/벽 연속성, 보스 처치→결과 및 보상, 부활·다시하기 확인. 기존 Git 변경 보존, 사용자 저장 접근·커밋·푸시 없음.
+
+### 2026-10-24 — 승인된 BossRoom24x22 정규 보스룸 적용 (Play 미실행)
+
+- 신규 정규 Assets/Prefabs/Rooms/BossRoom24x22.prefab(+meta)을 출구 제거 완료 프로토타입에서 AssetDatabase.CopyAsset으로 독립 복제. prefab 본문 SHA256 동일, 새 GUID134ac989ddd85bb41925d5bec3f9aefd. Assets/Dungeons/Floor1_RockMine.asset의 쉬움 bossRoom 참조1개만 변경. 일반10종 후보/일반3방/밸런스/보상/상위 난이도/2층 데이터 보존. 기존 testConfiguration 값도 그대로이며 프로토타입 층·실행기·격리 저장 설정을 정규 데이터로 가져오지 않음.
+- 이전 Room_Boss_Test Variant.prefab/GUID49e6f9a1c41923b45aff2ad996e68f6e 보존. 변경 전 층 파일은 PrototypeBackups/Floor1_BeforeBoss24x22.asset.txt로 보관. 이 참조로 복구 가능. 프로토타입과 정규 보스룸은 독립 GUID. 기존 Main의 초기 fallback 보스 참조는 그대로 두며 실제 StartDungeon의 층 설정이 normalRoomCount=3 및 새 bossRoom으로 런 후보를 설정한다.
+- 정적: 새 방 IsConfigured=true, clearWithoutExit=true, RoomExit0, 외곽(0,0)~(24,22)/입구(12,2)/보스(12,14)/Wall106개, 보스1개 Controller 등록, Missing Script0, 1층쉬움 CanEnter=true. LoadRoom의 4번째 방은 새 bossRoom 선택, 기존 OnRoomCleared→CompleteRun 및 SetRoom 카메라 경계 경로 유지. 원본과 prefab 본문 동일하여 보스5패턴/수치/참조/지형 재설계 없음. 관련100파일 해시에서 Floor1_RockMine만 변경 확인. Console 오류0, 스크립트 추가 변경 없음. 사용자 저장/백업 접근 없음.
+- 사용자 승인된 프로토타입 전투와 별개로 정규 연결 후 Play는 미실행. 수동 확인: Main 1층쉬움 입장→일반3방→새 보스룸→처치/결과, 부활2회/입구 복귀, 다시하기·로비 복귀/카메라 갱신. 기존 Git 변경 보존, 공식 문서 수정·커밋·푸시 없음.
