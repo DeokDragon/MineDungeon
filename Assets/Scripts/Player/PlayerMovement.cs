@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    private float CombatTime => GetComponent<PlayerHealth>().CombatTime;
+    private bool CombatLocked => GetComponent<PlayerHealth>().CombatLocked;
+
     [Header("ÀÌµ¿")]
     [SerializeField] private float moveSpeed = 4f;
 
@@ -31,15 +34,15 @@ public class PlayerMovement : MonoBehaviour
 
     private float slowUntil, slowFraction;
     private LineRenderer slowRing;
-    public float SlowMultiplier => Time.time < slowUntil ? 1f - slowFraction : 1f;
+    public float SlowMultiplier => CombatTime < slowUntil ? 1f - slowFraction : 1f;
     public float FinalMoveSpeed => moveSpeed * SlowMultiplier * (skills != null ? skills.MovementMultiplier : 1f);
     public void ApplySlow(float fraction, float seconds, Material material=null)
     {
-        slowFraction=Mathf.Clamp01(fraction); slowUntil=Time.time+Mathf.Max(0,seconds);
+        slowFraction=Mathf.Clamp01(fraction); slowUntil=CombatTime+Mathf.Max(0,seconds);
         if(!slowRing && material) { slowRing=new GameObject("Magnetic slow indicator").AddComponent<LineRenderer>(); slowRing.sharedMaterial=material; slowRing.useWorldSpace=false; slowRing.loop=true; slowRing.widthMultiplier=.025f; slowRing.positionCount=32; slowRing.sortingOrder=2; slowRing.startColor=slowRing.endColor=new Color(.5f,.3f,1,.6f); for(int i=0;i<32;i++) { float a=i*Mathf.PI*2/32;slowRing.SetPosition(i,new Vector3(Mathf.Cos(a),Mathf.Sin(a))*.55f); } }
     }
     public void ClearSlow() { slowUntil=0; slowFraction=0; if(slowRing) Destroy(slowRing.gameObject); slowRing=null; }
-    private void LateUpdate() { if(slowRing) { if(Time.time>=slowUntil) ClearSlow(); else slowRing.transform.position=transform.position; } }
+    private void LateUpdate() { if(slowRing) { if(CombatTime>=slowUntil) ClearSlow(); else slowRing.transform.position=transform.position; } }
 
     private void Awake()
     {
@@ -58,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         moveInput = Vector2.zero;
-        if (InventoryUI.BlockCombatInput) return;
+        if ((CombatLocked || InventoryUI.BlockCombatInput)) return;
 
         if (health != null && health.IsDead)
             return;
@@ -77,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (keyboard.spaceKey.wasPressedThisFrame &&
             !IsDodging &&
-            Time.time >= nextDodgeTime)
+            CombatTime >= nextDodgeTime)
         {
             StartDodge();
         }
@@ -104,9 +107,17 @@ public class PlayerMovement : MonoBehaviour
             aimDirection = direction.normalized;
     }
 
+    internal void CancelForPresentation()
+    {
+        moveInput = Vector2.zero;
+        IsDodging = false;
+        dodgeTimeRemaining = 0f;
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+    }
+
     private void StartDodge()
     {
-        if (InventoryUI.BlockCombatInput || (DungeonRunManager.Instance!=null && DungeonRunManager.Instance.IsRunEnded)) return;
+        if ((CombatLocked || InventoryUI.BlockCombatInput) || (DungeonRunManager.Instance!=null && DungeonRunManager.Instance.IsRunEnded)) return;
         if (skills != null && skills.IsCasting) return;
         PlayerPotion potion = GetComponent<PlayerPotion>();
 
@@ -118,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
 
         IsDodging = true;
         dodgeTimeRemaining = dodgeDuration;
-        nextDodgeTime = Time.time + dodgeCooldown;
+        nextDodgeTime = CombatTime + dodgeCooldown;
 
         if (attack != null)
             attack.CancelAttack();
@@ -129,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (InventoryUI.BlockCombatInput) { rb.linearVelocity = Vector2.zero; return; }
+        if ((CombatLocked || InventoryUI.BlockCombatInput)) { rb.linearVelocity = Vector2.zero; return; }
         if (health != null && health.IsDead)
         {
             rb.linearVelocity = Vector2.zero;

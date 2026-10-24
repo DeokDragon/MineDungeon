@@ -36,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
 
     public bool TryTakeDamage(int damage, Vector2 contact, Vector2 direction)
     {
-        if (isDead || damage <= 0 || (DungeonRunManager.Instance!=null && DungeonRunManager.Instance.IsRunEnded)) return false;
+        if ((TryGetComponent<StoneGolemBossAI>(out var presentingBoss) && presentingBoss.IsPresenting) || isDead || damage <= 0 || (DungeonRunManager.Instance!=null && DungeonRunManager.Instance.IsRunEnded)) return false;
         DungeonRunManager.Instance?.RecordDamageDealt(Mathf.Min(currentHealth,damage));
         currentHealth = Mathf.Max(0, currentHealth - damage);
         // Lock lethal hits before callbacks; rewards precede room/result listeners.

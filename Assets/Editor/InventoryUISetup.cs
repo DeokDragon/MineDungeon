@@ -288,7 +288,7 @@ public static class InventoryUISetup
         Text("Subtitle",left,"준비하고, 광산으로",21,.05f,.865f,.95f,.915f).color=gold;
         var preview=Rect("VisualOnlyPlayerPreview",left,.32f,.52f,.68f,.84f);Image(preview,new Color(.08f,.11f,.14f));
         var playerSprite=player.GetComponent<SpriteRenderer>();var pi=Image(Rect("PlayerSprite",preview,.2f,.22f,.8f,.76f),playerSprite.color);pi.sprite=playerSprite.sprite;pi.preserveAspect=true;
-        Text("PreviewCaption",preview,"현재 플레이어",20,.03f,.03f,.97f,.18f);
+        Text("PreviewCaption",preview,"",20,.03f,.03f,.97f,.18f);
         var equipment=new[]{"무기","상의","하의","액세서리"};var marks=new[]{"곡괭이","상의","하의","장신구"};
         for(int i=0;i<4;i++) {bool l=i==0||i==3;bool top=i<2;var slot=Button(equipment[i],left,"",l?.055f:.75f,top?.69f:.51f,l?.25f:.945f,top?.84f:.66f);Frame("Frame",slot.transform,new Color(.40f,.43f,.47f));Text("Marker",slot.transform,marks[i],25,.03f,.25f,.97f,.85f);Text("State",slot.transform,i==0?"임시 표식":"준비 중",18,.01f,.04f,.99f,.27f);Hover(slot.gameObject,ui,i==0?"곡괭이\n현재 무기 표식입니다.\n무기 데이터와 장착 기능은 준비 중입니다.":equipment[i]+"\n준비 중");}
         Text("SkillHeading",left,"E / R 스킬 장착",23,.05f,.435f,.95f,.485f);
@@ -301,7 +301,7 @@ public static class InventoryUISetup
             prop.FindPropertyRelative("marker").objectReferenceValue=Text("Marker",b.transform,i==0?"I":"III",35,.25f,.3f,.75f,.87f);
             var label=Text("Name",b.transform,i==0?"대지 분쇄":"청록 광선",21,.04f,.03f,.96f,.30f);label.textWrappingMode=TextWrappingModes.NoWrap;label.overflowMode=TextOverflowModes.Ellipsis;prop.FindPropertyRelative("name").objectReferenceValue=label;Hover(b.gameObject,ui,"비어 있음",i);
         }
-        Ref(so,"restrictionText",Text("EquipInstruction",left,"스킬을 선택한 뒤 E/R 슬롯을 클릭하세요",18,.025f,.24f,.975f,.28f));
+        Ref(so,"restrictionText",Text("EquipInstruction",left,"",18,.025f,.24f,.975f,.28f));
         var stats=Rect("CurrentStats",left,.08f,.075f,.92f,.23f);Image(stats,new Color(.04f,.06f,.08f));Ref(so,"statsText",Text("Stats",stats,"",23,.07f,.04f,.95f,.96f,TextAlignmentOptions.MidlineLeft));
         var tabArray=so.FindProperty("tabs");tabArray.arraySize=7;var symbols=new[]{"≡","무","상","하","장","스","재"};
         for(int i=0;i<7;i++){float x=.035f+i*.115f;var b=Button("Tab_"+i,right,symbols[i],x,.90f,x+.10f,.975f,27);var tp=tabArray.GetArrayElementAtIndex(i);tp.FindPropertyRelative("button").objectReferenceValue=b;tp.FindPropertyRelative("background").objectReferenceValue=b.GetComponent<Image>();tp.FindPropertyRelative("border").objectReferenceValue=Frame("SelectedTab",b.transform,gold);Hover(b.gameObject,ui,InventoryPresentation.Categories[i]);}

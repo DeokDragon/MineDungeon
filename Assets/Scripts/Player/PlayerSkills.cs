@@ -8,6 +8,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerHealth), typeof(Rigidbody2D), typeof(PlayerSkillAttackPower))]
 public partial class PlayerSkills : MonoBehaviour
 {
+    private float CombatTime => GetComponent<PlayerHealth>().CombatTime;
+    private bool CombatLocked => GetComponent<PlayerHealth>().CombatLocked;
+
     [SerializeField] private SkillData eSkill, rSkill;
     [SerializeField] private PlayerSkillAttackPower attackPower;
     [SerializeField] private Camera aimCamera;
@@ -54,7 +57,7 @@ public partial class PlayerSkills : MonoBehaviour
     internal void ApplyInventoryLoadout(SkillData e, SkillData r) { eSkill = e; rSkill = r; }
     public void ResetForNewRun() { CancelAll(); readyAt[0] = readyAt[1] = 0f; appliedCooldowns[0] = appliedCooldowns[1] = 0f; explosionReadyAt = 0f; }
     public SkillData Equipped(int slot) => slot == 0 ? eSkill : slot == 1 ? rSkill : null;
-    public float CooldownRemaining(int slot) => slot >= 0 && slot < 2 ? Mathf.Max(0, readyAt[slot] - Time.time) : 0f;
+    public float CooldownRemaining(int slot) => slot >= 0 && slot < 2 ? Mathf.Max(0, readyAt[slot] - CombatTime) : 0f;
     public float AppliedCooldown(int slot) => slot >= 0 && slot < 2 ? appliedCooldowns[slot] : 0f;
     private sealed class Cast
     {
@@ -114,7 +117,7 @@ public partial class PlayerSkills : MonoBehaviour
     public bool TryCast(int slot, Vector2 mouseWorld)
     {
         SkillData data = Equipped(slot);
-        if (InventoryUI.BlockCombatInput || !isActiveAndEnabled || data == null || effectPrefab == null || Time.timeScale <= 0 || health.IsDead || IsCasting ||
+        if ((CombatLocked || InventoryUI.BlockCombatInput) || !isActiveAndEnabled || data == null || effectPrefab == null || Time.timeScale <= 0 || health.IsDead || IsCasting ||
             (run != null && (run.IsRunEnded || run.IsRestarting)) || (movement != null && movement.IsDodging) ||
             (potion != null && potion.IsUsing) || (attack != null && attack.IsAttacking) || CooldownRemaining(slot) > 0) return false;
         if (data.kind == PlayerSkillKind.DrillDash && !FreePosition(rb.position)) return false;
@@ -133,7 +136,7 @@ public partial class PlayerSkills : MonoBehaviour
         if (data.kind == PlayerSkillKind.OreBlast)
             c.target = SafePoint(c.origin, c.direction, Mathf.Min(offset.magnitude, c.range), .12f);
         appliedCooldowns[slot] = EffectiveCooldown(data);
-        readyAt[slot] = Time.time + appliedCooldowns[slot];
+        readyAt[slot] = CombatTime + appliedCooldowns[slot];
         live.Add(c); blocking = c;
         if (OwnsMovement) rb.linearVelocity = Vector2.zero;
         switch (data.kind)
@@ -159,8 +162,8 @@ public partial class PlayerSkills : MonoBehaviour
     private IEnumerator Smash(Cast c)
     {
         var v = Visual(c); v.Configure(c.target, c.direction, 0, c.radius * 2, true, ColorFor(c));
-        float start = Time.time;
-        while (Time.time < start + c.data.windup) { v.SetProgress(Mathf.InverseLerp(start, start + c.data.windup, Time.time)); yield return null; }
+        float start = CombatTime;
+        while (CombatTime < start + c.data.windup) { v.SetProgress(Mathf.InverseLerp(start, start + c.data.windup, CombatTime)); yield return null; }
         if (c.cancelled) yield break;
         if (ClearLine(c.origin, c.target)) HitCircle(c, c.target);
         if (c.cancelled) yield break;
@@ -169,8 +172,8 @@ public partial class PlayerSkills : MonoBehaviour
     }
     private IEnumerator Beam(Cast c)
     {
-        var v = Visual(c); float start = Time.time;
-        while (Time.time < start + c.data.windup)
+        var v = Visual(c); float start = CombatTime;
+        while (CombatTime < start + c.data.windup)
         {
             v.Configure(rb.position, c.direction, StripLength(rb.position, c.direction, c.range, c.width), c.width, false, ColorFor(c));
             v.SetAlpha(.12f); yield return null;
@@ -185,8 +188,8 @@ public partial class PlayerSkills : MonoBehaviour
     }
     private IEnumerator Fade(PlayerSkillVisual v, float duration)
     {
-        float start = Time.time;
-        while (Time.time < start + duration) { if (v == null) yield break; float t = (Time.time - start) / duration; v.SetAlpha(.28f * (1 - t)); v.AnimateChips(t); yield return null; }
+        float start = CombatTime;
+        while (CombatTime < start + duration) { if (v == null) yield break; float t = (CombatTime - start) / duration; v.SetAlpha(.28f * (1 - t)); v.AnimateChips(t); yield return null; }
         Remove(v);
     }
     private bool ClearLine(Vector2 a, Vector2 b) => Physics2D.Linecast(a, b, wallLayer).collider == null;
@@ -248,7 +251,7 @@ public partial class PlayerSkills : MonoBehaviour
     }
     private bool CanApplyDamage(Cast c)
     {
-        return !c.cancelled && health != null && !health.IsDead &&
+        return !c.cancelled && health != null && !health.CombatLocked && !health.IsDead &&
             (run == null || (!run.IsRunEnded && !run.IsEnding && !run.IsRestarting)) &&
             (c.rooms == null ? c.room == null : c.rooms.CurrentRoom == c.room);
     }
@@ -264,8 +267,8 @@ public partial class PlayerSkills : MonoBehaviour
         c.hit.Add(enemy);
         if (!enemy.TryTakeDamage(c.damage, point, direction) || !c.magic100 || c.firstHitChecked) return;
         c.firstHitChecked = true;
-        if (Time.time < explosionReadyAt) return; // This cast has permanently spent its opportunity.
-        explosionReadyAt = Time.time + ExtraExplosionCooldown;
+        if (CombatTime < explosionReadyAt) return; // This cast has permanently spent its opportunity.
+        explosionReadyAt = CombatTime + ExtraExplosionCooldown;
         c.explosionCenter = center;
         c.explosionPending = true;
     }

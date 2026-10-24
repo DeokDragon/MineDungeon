@@ -43,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
     private void ResetRegeneration()
     {
         regenerationFraction = regenerationUsed = 0d;
-        lastHealthDamageAt = Time.time;
+        lastHealthDamageAt = CombatTime;
     }
     public void ResetForNewRun()
     {
@@ -71,6 +71,29 @@ public class PlayerHealth : MonoBehaviour
         regenerationUsed += actual;
         regenerationFraction -= actual;
         if (CurrentHealth >= MaxHealth) regenerationFraction = 0d;
+    }
+
+    // A per-player combat clock: presentations freeze combat without pausing camera/UI time.
+    private float presentationStartedAt, presentationElapsed;
+    public bool CombatLocked { get; private set; }
+    public float CombatTime => (CombatLocked ? presentationStartedAt : Time.time) - presentationElapsed;
+    internal void SetBossPresentation(bool locked)
+    {
+        if (CombatLocked == locked) return;
+        if (locked)
+        {
+            presentationStartedAt = Time.time;
+            CombatLocked = true;
+            attack?.CancelAttack();
+            GetComponent<PlayerSkills>()?.CancelAll();
+            movement?.CancelForPresentation();
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+        }
+        else
+        {
+            presentationElapsed += Time.time - presentationStartedAt;
+            CombatLocked = false;
+        }
     }
 
     public bool IsDead { get; private set; }
@@ -161,7 +184,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        AdvanceRegeneration(Time.time, Time.deltaTime);
+        if (CombatLocked) return;
+        AdvanceRegeneration(CombatTime, Time.deltaTime);
         if (bodyRenderer == null)
             return;
 
@@ -181,9 +205,9 @@ public class PlayerHealth : MonoBehaviour
         // 무적 시간 동안 몸체를 반투명하게 깜빡임
         Color color = originalColor;
 
-        if (Time.time < invincibleUntil)
+        if (CombatTime < invincibleUntil)
         {
-            color.a *= Mathf.PingPong(Time.time * 10f, 1f)
+            color.a *= Mathf.PingPong(CombatTime * 10f, 1f)
                 < 0.5f ? 0.35f : 1f;
         }
 
@@ -196,15 +220,15 @@ public class PlayerHealth : MonoBehaviour
     {
         if (DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunEnded)
             return false;
-        if (IsDead || damage <= 0 || Time.time < invincibleUntil)
+        if (CombatLocked || IsDead || damage <= 0 || CombatTime < invincibleUntil)
             return false;
 
         DungeonRunManager.Instance?.RecordDamageTaken(Mathf.Min(currentHealth,damage));
         int previousHealth = currentHealth;
         currentHealth = Mathf.Max(0, currentHealth - damage);
         if (currentHealth < previousHealth)
-        { lastHealthDamageAt = Time.time; regenerationFraction = 0d; }
-        invincibleUntil = Time.time + invincibleDuration;
+        { lastHealthDamageAt = CombatTime; regenerationFraction = 0d; }
+        invincibleUntil = CombatTime + invincibleDuration;
         hurtFlashRemaining = .10f;
         Damaged?.Invoke();
         if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
@@ -290,7 +314,7 @@ public class PlayerHealth : MonoBehaviour
         if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
             camera.SnapToTarget();
 
-        invincibleUntil = Time.time + reviveInvincibleDuration;
+        invincibleUntil = CombatTime + reviveInvincibleDuration;
         IsDead = false;
         ResetRegeneration();
         attack?.ResetEmpoweredAttack();
@@ -326,7 +350,7 @@ public class PlayerHealth : MonoBehaviour
 
         invincibleUntil = Mathf.Max(
             invincibleUntil,
-            Time.time + duration
+            CombatTime + duration
         );
     }
     public void Heal(int amount)

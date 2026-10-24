@@ -19,8 +19,8 @@ public partial class PlayerSkills
     {
         var v = Visual(c);
         v.Configure(c.origin, c.direction, StripLength(c.origin, c.direction, c.range, c.width), c.width, false, ColorFor(c));
-        float start = Time.time;
-        while (Time.time < start + c.data.windup) { v.SetProgress(Mathf.InverseLerp(start, start + c.data.windup, Time.time)); yield return null; }
+        float start = CombatTime;
+        while (CombatTime < start + c.data.windup) { v.SetProgress(Mathf.InverseLerp(start, start + c.data.windup, CombatTime)); yield return null; }
         if (c.cancelled) yield break;
         dash = new DashState { cast = c }; dash.path.Add(rb.position);
         var state = dash;
@@ -126,24 +126,24 @@ public partial class PlayerSkills
 
     private IEnumerator Blast(Cast c)
     {
-        var v = Visual(c); float started = Time.time;
+        var v = Visual(c); float started = CombatTime;
         v.Configure(c.target, c.direction, 0, .25f, true, ColorFor(c)); v.SetAlpha(.12f);
-        while (Time.time < started + c.data.windup) yield return null;
+        while (CombatTime < started + c.data.windup) yield return null;
         if (c.cancelled) yield break;
         Unlock(c);
         float landedAt = started + c.data.windup + c.data.flightDuration;
-        while (Time.time < landedAt)
+        while (CombatTime < landedAt)
         {
-            float t = c.data.flightDuration > 0 ? Mathf.Clamp01((Time.time - started - c.data.windup) / c.data.flightDuration) : 1;
+            float t = c.data.flightDuration > 0 ? Mathf.Clamp01((CombatTime - started - c.data.windup) / c.data.flightDuration) : 1;
             Vector2 position = Vector2.Lerp(c.origin, c.target, t) + Vector2.up * (Mathf.Sin(t * Mathf.PI) * .7f);
             v.Configure(position, c.direction, 0, .28f, true, ColorFor(c)); v.SetAlpha(.5f); yield return null;
         }
         if (c.cancelled) yield break;
         v.Configure(c.target, c.direction, 0, c.radius * 2, true, ColorFor(c));
         float explodeAt = landedAt + c.data.fuseDuration;
-        while (Time.time < explodeAt)
+        while (CombatTime < explodeAt)
         {
-            v.SetProgress(c.data.fuseDuration > 0 ? (Time.time - landedAt) / c.data.fuseDuration : 1); yield return null;
+            v.SetProgress(c.data.fuseDuration > 0 ? (CombatTime - landedAt) / c.data.fuseDuration : 1); yield return null;
         }
         if (c.cancelled) yield break;
         v.SetProgress(1); HitCircle(c, c.target);

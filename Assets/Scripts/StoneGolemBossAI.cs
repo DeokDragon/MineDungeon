@@ -3,9 +3,9 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D), typeof(EnemyHealth))]
-public class StoneGolemBossAI : MonoBehaviour
+public partial class StoneGolemBossAI : MonoBehaviour
 {
-    public enum BossState { Chase, Warning, Jump, Recovery, Waiting, Charge, Rockfall }
+    public enum BossState { Chase, Warning, Jump, Recovery, Waiting, Charge, Rockfall, Presentation, SecondaryWarning }
     public enum Pattern { None, LeapSlam, GroundSmash, RockCharge, StoneFan, Rockfall }
 
     [Header("References (player is bound by DungeonRoom)")]
@@ -65,13 +65,10 @@ public class StoneGolemBossAI : MonoBehaviour
 
     [Header("Rockfall")]
     [SerializeField] private StoneGolemRockfall rockfallPrefab;
-    [SerializeField, Min(1)] private int rockfallCount = 3;
     [SerializeField, Min(0.01f)] private float rockfallRadius = 1.2f;
-    [SerializeField, Min(0.01f)] private float rockfallInterval = 0.5f;
     [SerializeField, Min(0.01f)] private float rockfallWarning = 0.9f;
     [SerializeField, Min(0f)] private float rockfallCooldown = 12f;
     [SerializeField, Min(0f)] private float rockfallRecovery = 1.2f;
-    [SerializeField, Min(0.01f)] private float rockfallSelectionRange = 8f;
     [SerializeField, Min(1)] private int rockfallDamage = 20;
 
     [Header("Impact camera shake (amplitude in world units)")]
@@ -97,7 +94,6 @@ public class StoneGolemBossAI : MonoBehaviour
     private float nextChargeTime;
     private float nextFanTime, nextRockfallTime;
     private Vector2 fanOrigin, fanDirection;
-    private int rocksSpawned;
     private GameObject effectsRoot;
     private StoneGolemTelegraph telegraph;
     private readonly List<StoneGolemShard> shards = new List<StoneGolemShard>();
@@ -142,16 +138,19 @@ public class StoneGolemBossAI : MonoBehaviour
     private void OnEnable()
     {
         health.Died += OnBossDied;
+        health.HealthChanged += OnBossHealthChanged;
         if (player != null) player.Died += OnPlayerDied;
         CancelAttack();
     }
 
     public void SetTarget(PlayerHealth target, DungeonRoom owner)
     {
+        AbortPresentation();
         CancelAttack(); // Restore the old collision pair before replacing the target.
         if (player != null) player.Died -= OnPlayerDied;
         player = target;
         room = owner;
+        floorBounds.Clear();
         playerCollider = player != null ? player.GetComponent<Collider2D>() : null;
         targetWasDead = player != null && player.IsDead;
         if (isActiveAndEnabled && player != null) player.Died += OnPlayerDied;
@@ -178,6 +177,10 @@ public class StoneGolemBossAI : MonoBehaviour
             CancelAttack(); // A full new wait/telegraph after revival; no suspended hit.
         }
 
+        ReservePhaseTransition();
+        if (IsPresenting) { if (!presentationDriven) EndPresentation(); return; }
+        if (!introCompleted) { BeginPresentation(false); return; }
+        if (transitionPending && ActivePattern == Pattern.None) { BeginPresentation(true); return; }
         timer += Time.fixedDeltaTime;
         switch (State)
         {
@@ -229,96 +232,16 @@ public class StoneGolemBossAI : MonoBehaviour
                 }
                 if (timer >= recoveryDuration && shards.Count == 0)
                 {
-                    ClearOwnedEffects();
-                    ActivePattern = Pattern.None;
-                    SetState(BossState.Waiting);
+                    FinishPattern();
                 }
+                break;
+            case BossState.SecondaryWarning:
+                TickSecondaryWarning();
                 break;
             case BossState.Rockfall:
                 TickRockfalls();
                 break;
         }
-    }
-
-    private bool TrySelectPattern()
-    {
-        Vector2 landing = default;
-        bool canSmash = LastPattern != Pattern.GroundSmash && Time.time >= nextSmashTime &&
-            Vector2.Distance(rb.position, player.transform.position) <= smashSelectionDistance &&
-            !Physics2D.Linecast(rb.position, playerCollider.ClosestPoint(rb.position), wallLayer);
-        bool canLeap = LastPattern != Pattern.LeapSlam && Time.time >= nextLeapTime &&
-            TryGetLanding(out landing);
-        Vector2 direction = ((Vector2)player.transform.position - rb.position).normalized;
-        bool endsAtWall = false;
-        float distance = 0f;
-        bool canCharge = LastPattern != Pattern.RockCharge && Time.time >= nextChargeTime &&
-            chargePath != null && chargeStartCap != null && chargeEndCap != null &&
-            direction.sqrMagnitude > 0.5f;
-        if (canCharge)
-        {
-            distance = ChargeWallDistance(rb.position, direction,
-                Mathf.Min(chargeMaxDistance, chargeSpeed * chargeMaxDuration), out endsAtWall);
-            canCharge = distance >= 0.05f;
-        }
-        float targetDistance = Vector2.Distance(rb.position, player.transform.position);
-        bool visible = Physics2D.Linecast(rb.position, player.transform.position, wallLayer).collider == null;
-        bool canFan = LastPattern != Pattern.StoneFan && Time.time >= nextFanTime && shardPrefab != null && fanWarningMaterial != null &&
-            targetDistance > 0.01f && targetDistance <= shardRange && visible;
-        bool canRockfall = LastPattern != Pattern.Rockfall && Time.time >= nextRockfallTime &&
-            rockfallPrefab != null && targetDistance <= rockfallSelectionRange && visible;
-        int choices = (canLeap ? 1 : 0) + (canSmash ? 1 : 0) + (canCharge ? 1 : 0) +
-            (canFan ? 1 : 0) + (canRockfall ? 1 : 0);
-        if (choices == 0) return false;
-
-        int selected = Random.Range(0, choices);
-        if (canLeap && selected-- == 0) ActivePattern = Pattern.LeapSlam;
-        else if (canSmash && selected-- == 0) ActivePattern = Pattern.GroundSmash;
-        else if (canCharge && selected-- == 0) ActivePattern = Pattern.RockCharge;
-        else if (canFan && selected-- == 0) ActivePattern = Pattern.StoneFan;
-        else ActivePattern = Pattern.Rockfall;
-        LastPattern = ActivePattern;
-        damageApplied = false;
-        if (ActivePattern == Pattern.LeapSlam)
-        {
-            attackCenter = landing;
-            nextLeapTime = Time.time + leapCooldown;
-            ShowWarning(leapRadius, new Color(1f, 0.35f, 0.05f, 0.4f));
-        }
-        else if (ActivePattern == Pattern.GroundSmash)
-        {
-            attackCenter = rb.position;
-            nextSmashTime = Time.time + smashCooldown;
-            ShowWarning(smashRadius, new Color(1f, 0.1f, 0.15f, 0.35f));
-        }
-        else if (ActivePattern == Pattern.RockCharge)
-        {
-            chargeStart = rb.position;
-            chargeDirection = direction;
-            chargeDistance = distance;
-            chargeEndsAtWall = endsAtWall;
-            attackCenter = chargeStart + direction * distance;
-            nextChargeTime = Time.time + chargeCooldown;
-            UpdateChargeWarning();
-        }
-        else if (ActivePattern == Pattern.StoneFan)
-        {
-            fanOrigin = rb.position;
-            fanDirection = direction;
-            nextFanTime = Time.time + fanCooldown;
-            CreateEffectsRoot();
-            ShowFanWarning();
-        }
-        else
-        {
-            nextRockfallTime = Time.time + rockfallCooldown;
-            CreateEffectsRoot();
-            rocksSpawned = 0;
-            SetState(BossState.Rockfall);
-            SpawnRockfall(); // First location is sampled now; the other two are sampled later.
-            return true;
-        }
-        SetState(BossState.Warning);
-        return true;
     }
 
     private void CreateEffectsRoot()
@@ -365,32 +288,6 @@ public class StoneGolemBossAI : MonoBehaviour
         }
     }
 
-    private void SpawnRockfall()
-    {
-        StoneGolemRockfall rock = Instantiate(rockfallPrefab, effectsRoot.transform);
-        rock.Initialize(player, wallLayer, player.transform.position, rockfallRadius,
-            rockfallWarning, rocksSpawned * rockfallInterval, rockfallDamage);
-        rocks.Add(rock);
-        rocksSpawned++;
-    }
-
-    private void TickRockfalls()
-    {
-        while (rocksSpawned < rockfallCount && timer + 0.00001f >= rocksSpawned * rockfallInterval)
-            SpawnRockfall();
-        for (int i = rocks.Count - 1; i >= 0; i--)
-        {
-            bool alive = rocks[i] != null && rocks[i].Tick(timer);
-            if (player.IsDead || !isActiveAndEnabled) return;
-            if (!alive) rocks.RemoveAt(i);
-        }
-        if (rocksSpawned == rockfallCount && rocks.Count == 0)
-        {
-            recoveryDuration = rockfallRecovery;
-            SetState(BossState.Recovery);
-        }
-    }
-
     private void ClearOwnedEffects()
     {
         if (effectsRoot != null)
@@ -402,7 +299,6 @@ public class StoneGolemBossAI : MonoBehaviour
         telegraph = null;
         shards.Clear();
         rocks.Clear();
-        rocksSpawned = 0;
     }
 
     // The telegraph and movement use the same swept circle, including rounded ends.
@@ -469,6 +365,7 @@ public class StoneGolemBossAI : MonoBehaviour
         damageApplied = true;
         if (hitWall)
         {
+            comboNext = Pattern.None;
             // Bounds can also stop a charge. Only a physical wall contact shakes.
             RaycastHit2D contact = Physics2D.CircleCast(rb.position, BodyRadius,
                 chargeDirection, wallSkin * 2f + .01f, wallLayer);
@@ -623,6 +520,9 @@ public class StoneGolemBossAI : MonoBehaviour
 
     private void CancelAttack()
     {
+        AbortPresentation();
+        comboNext = Pattern.None;
+        enhanced = secondaryStarted = false;
         ClearOwnedEffects();
         HideWarning();
         RestorePlayerCollision();
@@ -633,13 +533,14 @@ public class StoneGolemBossAI : MonoBehaviour
         SetState(BossState.Waiting);
     }
 
-    private void OnPlayerDied(PlayerHealth _) { targetWasDead = true; CancelAttack(); }
+    private void OnPlayerDied(PlayerHealth _) { targetWasDead = true; AbortPresentation(); CancelAttack(); }
     private void OnBossDied(EnemyHealth _) { enabled = false; }
 
     private void OnDisable()
     {
+        AbortPresentation();
         CancelAttack();
-        if (health != null) health.Died -= OnBossDied;
+        if (health != null) { health.Died -= OnBossDied; health.HealthChanged -= OnBossHealthChanged; }
         if (player != null) player.Died -= OnPlayerDied;
     }
 }

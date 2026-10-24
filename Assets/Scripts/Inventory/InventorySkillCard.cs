@@ -28,7 +28,8 @@ public sealed class InventorySkillCard : MonoBehaviour
         if(Material!=null)
         {
             nameText.text=Material.displayName;rarityBorder.color=InventoryPresentation.RarityColor(Material.rarity);
-            selectedFrame.gameObject.SetActive(owner.SelectedMaterialId==Material.id);
+            // Keep the selected material for details, without a persistent selection border.
+            selectedFrame.gameObject.SetActive(false);
             icon.sprite=Material.icon;icon.enabled=Material.icon!=null;marker.text="*";marker.enabled=!icon.enabled;marker.color=Color.gray;
             badge.text="";if(quantityText!=null)quantityText.text=owner.MaterialQuantity(Material.id).ToString("N0");return;
         }

@@ -40,7 +40,7 @@ public class PlayerPotion : MonoBehaviour
             return;
         }
 
-        if (Time.timeScale == 0f)
+        if (health.CombatLocked || Time.timeScale == 0f)
             return;
 
         if (IsUsing)
@@ -70,7 +70,7 @@ public class PlayerPotion : MonoBehaviour
 
     private void TryStartUse()
     {
-        if (InventoryUI.BlockCombatInput) return;
+        if (health.CombatLocked || InventoryUI.BlockCombatInput) return;
         var skills = GetComponent<PlayerSkills>();
         if (skills != null && skills.IsCasting) return;
         if (health.CurrentHealth >= health.MaxHealth)

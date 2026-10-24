@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 // One telegraph / one impact. The boss supplies the shared pattern clock.
 public class StoneGolemRockfall : MonoBehaviour
@@ -18,12 +19,14 @@ public class StoneGolemRockfall : MonoBehaviour
     private float radius, warningDuration, spawnTime;
     private int damage;
     private bool finished;
+    private HashSet<PlayerHealth> roundHits;
     public Vector2 Center { get; private set; }
     public float SpawnTime => spawnTime;
 
     public void Initialize(PlayerHealth player, LayerMask wallMask, Vector2 center,
-        float hitRadius, float duration, float startedAt, int hitDamage)
+        float hitRadius, float duration, float startedAt, int hitDamage, HashSet<PlayerHealth> sharedRoundHits = null)
     {
+        roundHits = sharedRoundHits;
         target = player;
         walls = wallMask;
         Center = center;
@@ -61,7 +64,7 @@ public class StoneGolemRockfall : MonoBehaviour
         Finish();
         if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var camera))
             camera.ShakeAt(Center, impactShakeAmplitude, impactShakeDuration);
-        if (hitPlayer) target.TakeDamage(damage);
+        if (hitPlayer && (roundHits == null || roundHits.Add(target))) target.TakeDamage(damage);
         return false;
     }
 

@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    private float CombatTime => GetComponent<PlayerHealth>().CombatTime;
+    private bool CombatLocked => GetComponent<PlayerHealth>().CombatLocked;
+
     [SerializeField] private Transform weaponPivot;
     [SerializeField] private Camera aimCamera;
 
@@ -55,14 +58,14 @@ public class PlayerAttack : MonoBehaviour
         var skills = GetComponent<PlayerSkills>();
         var movement = GetComponent<PlayerMovement>();
         var potion = GetComponent<PlayerPotion>();
-        if (!isActiveAndEnabled || weaponPivot == null || InventoryUI.BlockCombatInput || Time.timeScale <= 0f ||
+        if (!isActiveAndEnabled || weaponPivot == null || (CombatLocked || InventoryUI.BlockCombatInput) || Time.timeScale <= 0f ||
             (health != null && health.IsDead) || (run != null && (run.IsRunEnded || run.IsRestarting)) ||
             (skills != null && skills.IsCasting) || (movement != null && movement.IsDodging) ||
-            (potion != null && potion.IsUsing) || isAttacking || Time.time < nextAttackTime) return false;
+            (potion != null && potion.IsUsing) || isAttacking || CombatTime < nextAttackTime) return false;
         empoweredSwing = HasPhysical100 && empoweredReady;
         if (empoweredSwing) { empoweredReady = false; empoweredCharge = 0; }
         isAttacking = true; damageApplied = false;
-        attackStartTime = Time.time; nextAttackTime = Time.time + attackInterval; attackAngle = aimAngle;
+        attackStartTime = CombatTime; nextAttackTime = CombatTime + attackInterval; attackAngle = aimAngle;
         return true;
     }
     private bool damageApplied;
@@ -89,7 +92,7 @@ public class PlayerAttack : MonoBehaviour
         if (weaponPivot == null || aimCamera == null)
             return;
 
-        if (InventoryUI.BlockCombatInput || Time.timeScale == 0f)
+        if ((CombatLocked || InventoryUI.BlockCombatInput) || Time.timeScale == 0f)
             return;
         var skills = GetComponent<PlayerSkills>();
         if (skills != null && skills.IsCasting) return;
@@ -129,7 +132,7 @@ public class PlayerAttack : MonoBehaviour
             (mouse.leftButton.wasPressedThisFrame
             || mouse.leftButton.isPressed);
 
-        if (attackInput && !isAttacking && Time.time >= nextAttackTime)
+        if (attackInput && !isAttacking && CombatTime >= nextAttackTime)
         {
             BeginAttack();
         }
@@ -139,7 +142,7 @@ public class PlayerAttack : MonoBehaviour
         if (isAttacking)
         {
             float progress = Mathf.Clamp01(
-                (Time.time - attackStartTime) / swingDuration
+                (CombatTime - attackStartTime) / swingDuration
             );
 
             // 한 번 휘두를 때 피해 판정은 한 번만 실행

@@ -26,6 +26,7 @@ public sealed class MagnetMonsterSpriteAnimation : MonoBehaviour
         new System.Collections.Generic.List<StoneMonsterSpriteEffect>();
     private SpriteRenderer halo;
     private StoneMonsterSpriteEffect hitEffect;
+    private StoneMonsterSpriteEffect lethalImpact;
     private float hitStarted = float.NegativeInfinity;
     private bool deathStarted;
 
@@ -168,10 +169,12 @@ public sealed class MagnetMonsterSpriteAnimation : MonoBehaviour
         StopHalo();
         if (showBodyPose && Has(impactFrames)) body.sprite = impactFrames[0];
         if (!Has(fieldImpactFrames)) return false;
-        // The lethal hit's synchronous cancellation has already run. Register this committed
-        // impact afterward, so it displays while future cancellation/death can still clear it.
-        Effect("FieldImpact", fieldImpactFrames, .26f, destination, false,
+        // A committed lethal impact outlives run-end AI cancellation for its existing .26s.
+        // It remains room-owned; owner death/disable also disposes it immediately.
+        if (!showBodyPose) Stop(lethalImpact);
+        var impact = Effect("FieldImpact", fieldImpactFrames, .26f, destination, !showBodyPose,
             Vector3.one * (fieldImpactScale * damageRadius / 1.8f), -1);
+        if (!showBodyPose) lethalImpact = impact;
         return true;
     }
     public bool PlayHit(Vector2 point)
@@ -189,6 +192,7 @@ public sealed class MagnetMonsterSpriteAnimation : MonoBehaviour
         if (deathStarted) return true;
         deathStarted = true;
         CancelCombatVisuals();
+        Stop(lethalImpact);
         var death = Effect("Death", deathFrames, deathDuration, body.transform.position, true,
             body.transform.lossyScale, 0);
         if (death) death.transform.rotation = body.transform.rotation;
@@ -204,5 +208,5 @@ public sealed class MagnetMonsterSpriteAnimation : MonoBehaviour
         hitEffect = null;
         hitStarted = float.NegativeInfinity;
     }
-    private void OnDisable() { CancelCombatVisuals(); }
+    private void OnDisable() { CancelCombatVisuals(); Stop(lethalImpact); lethalImpact = null; }
 }

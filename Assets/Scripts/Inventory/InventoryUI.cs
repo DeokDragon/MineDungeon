@@ -42,8 +42,6 @@ public sealed class InventoryUI : MonoBehaviour
     private int expandedStat = -1, hoveredStat = -1;
     private int investmentMultiplier = 1;
     private string investmentError;
-    private string investmentSuccess;
-    private float investmentSuccessUntil;
     [SerializeField] private PlayerSkills player;
     [SerializeField] private DungeonRoomManager rooms;
     [SerializeField] private PauseMenu pauseMenu;
@@ -84,6 +82,9 @@ public sealed class InventoryUI : MonoBehaviour
     private int hoverSlot = -1;
     private string hoverNote;
     private float hoverAt;
+    private readonly List<RaycastResult> pointerHits = new List<RaycastResult>();
+    private float equipPulseStarted;
+    private Color eHighlightColor, rHighlightColor;
     public PlayerSkills Player => player;
     public string SelectedId { get; private set; }
     public string SelectedMaterialId { get; private set; }
@@ -96,6 +97,7 @@ public sealed class InventoryUI : MonoBehaviour
     private void Awake()
     {
         active = this;
+        eHighlightColor = eSlot.highlight.color; rHighlightColor = rSlot.highlight.color;
         health = player.GetComponent<PlayerHealth>(); attack = player.GetComponent<PlayerAttack>();
         movement = player.GetComponent<PlayerMovement>(); powers = player.GetComponent<PlayerSkillAttackPower>();
         panel.SetActive(false); tooltip.gameObject.SetActive(false);
@@ -148,6 +150,10 @@ public sealed class InventoryUI : MonoBehaviour
         }
         if (noticeUntil > 0 && Time.unscaledTime >= noticeUntil) { noticeText.text = ""; noticeUntil = 0; }
         if (!IsOpen) { if(externalTooltip&&hoverTarget!=null&&Time.unscaledTime>=hoverAt)ShowTooltip();return; }
+        if (SelectedId != null && !CanEquip) CancelPendingEquip();
+        if (SelectedId != null && Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+            HandlePendingPointer(Mouse.current.position.ReadValue());
+        UpdateEquipPulse();
         if (!Mathf.Approximately(lastGridWidth, ((RectTransform)grid.transform).rect.width)) UpdateGrid();
         RefreshStats();
         RefreshGrowth();
@@ -183,6 +189,7 @@ public sealed class InventoryUI : MonoBehaviour
     private void CloseInternal()
     {
         if (!IsOpen) return;
+        CancelPendingEquip();
         CancelStatReset(); HideTooltip(); sorting.Hide(); search.DeactivateInputField(); panel.SetActive(false); IsOpen = false;
         SuppressClosingInput();
     }
@@ -194,12 +201,47 @@ public sealed class InventoryUI : MonoBehaviour
     }
     private void OnResult() { CloseInternal(); HideTooltip(); }
     private void OnPlayerDied(PlayerHealth _) { CloseInternal(); }
-    public void Select(string id) { if (session.Find(id) == null) return; SelectedId = id; SelectedMaterialId=null; RefreshSelection(); }
-    public void SelectMaterial(string id){SelectedId=null;SelectedMaterialId=id;RefreshSelection();}
+    public void Select(string id)
+    {
+        if (!IsOpen || session.Find(id) == null) return;
+        CancelPendingEquip(); SelectedMaterialId = null;
+        if (CanEquip) { SelectedId = id; equipPulseStarted = Time.unscaledTime; }
+        RefreshSelection(); UpdateEquipPulse();
+    }
+    public void SelectMaterial(string id){CancelPendingEquip();SelectedMaterialId=id;RefreshSelection();}
+    private void CancelPendingEquip()
+    {
+        SelectedId = null;
+        eSlot.highlight.color = eHighlightColor; rSlot.highlight.color = rHighlightColor;
+        RefreshSelection();
+    }
+    private void HandlePendingPointer(Vector2 position)
+    {
+        // Inspect the top UI hit before EventSystem dispatches clicks. Never forward a cancel to world input.
+        pointerHits.Clear();
+        if (EventSystem.current != null)
+            EventSystem.current.RaycastAll(new PointerEventData(EventSystem.current) { position = position }, pointerHits);
+        Transform hit = pointerHits.Count > 0 ? pointerHits[0].gameObject.transform : null;
+        if (hit != null && (hit.GetComponentInParent<InventorySkillCard>() != null ||
+            hit.IsChildOf(eSlot.button.transform) || hit.IsChildOf(rSlot.button.transform))) return;
+        if (hit != null && hit.IsChildOf(panel.transform) && hit.GetComponentInParent<Selectable>() != null) return;
+        CancelPendingEquip();
+        suppressedFrame = Time.frameCount; waitingRelease = true;
+        if (attack != null) attack.RequireFreshAttackInput();
+    }
+    private void UpdateEquipPulse()
+    {
+        if (SelectedId == null || !CanEquip) return;
+        float alpha = .65f + .35f * Mathf.Cos((Time.unscaledTime - equipPulseStarted) * (2f * Mathf.PI / .8f));
+        eSlot.highlight.color = new Color(eHighlightColor.r, eHighlightColor.g, eHighlightColor.b, eHighlightColor.a * alpha);
+        rSlot.highlight.color = new Color(rHighlightColor.r, rHighlightColor.g, rHighlightColor.b, rHighlightColor.a * alpha);
+    }
     public bool Equip(int slot)
     {
         if (!CanEquip || SelectedId == null) { Notice("준비 중에만 변경할 수 있습니다"); return false; }
-        return session.TryEquip(slot, SelectedId, rooms);
+        bool equipped = session.TryEquip(slot, SelectedId, rooms);
+        if (equipped) CancelPendingEquip();
+        return equipped;
     }
     private void EquipE() { Equip(0); }
     private void EquipR() { Equip(1); }
@@ -211,6 +253,7 @@ public sealed class InventoryUI : MonoBehaviour
     private InventorySort CurrentSort => sortChoices.Count > sorting.value ? sortChoices[sorting.value] : InventorySort.Recent;
     public void SetCategory(int index)
     {
+        CancelPendingEquip();
         category = (InventoryCategory)Mathf.Clamp(index, 0, 6); HideTooltip();
         sortChoices.Clear(); sortChoices.AddRange(new[] { InventorySort.Recent, InventorySort.Name, InventorySort.Rarity });
         var labels = new List<string> { "최근 획득순", "이름순", "희귀도 높은순" };
@@ -248,7 +291,7 @@ public sealed class InventoryUI : MonoBehaviour
     {
         foreach (var card in cards) card.Refresh();
         RefreshSlot(eSlot, 0); RefreshSlot(rSlot, 1);
-        restrictionText.text = CanEquip ? (SelectedId == null ? "스킬을 선택한 뒤 E/R 슬롯을 클릭하세요" : "장착할 슬롯을 선택하세요 · 반대 슬롯이면 교환") : "준비 중에만 변경할 수 있습니다";
+        restrictionText.text = CanEquip ? (SelectedId == null ? "" : "장착할 슬롯을 선택하세요 · 반대 슬롯이면 교환") : "준비 중에만 변경할 수 있습니다";
         if(SelectedMaterialId!=null)restrictionText.text="재료는 장착할 수 없습니다";
     }
     private void RefreshSlot(Slot slot, int index)
@@ -266,6 +309,7 @@ public sealed class InventoryUI : MonoBehaviour
     public void SetCharacterTab(int index)
     {
         if (characterPage == null) return;
+        CancelPendingEquip();
         CancelStatReset();
         bool stats = index == 1;
         characterPage.SetActive(!stats); statPage.SetActive(stats); HideTooltip();
@@ -330,7 +374,7 @@ public sealed class InventoryUI : MonoBehaviour
             investmentError = growth.CanInvest && growth.InvestablePoints((PlayerProgression.Stat)index, investmentMultiplier) > 0
                 ? "저장 실패 · 투자 미적용 · 다시 시도해 주세요" : error;
         }
-        else { investmentError = null; investmentSuccess = $"{invested}P 투자 · 저장 완료"; investmentSuccessUntil = Time.unscaledTime + 2.5f; }
+        else { investmentError = null; }
         RefreshGrowth(); RefreshStats();
     }
     private void RefreshGrowth()
@@ -343,7 +387,7 @@ public sealed class InventoryUI : MonoBehaviour
         bool allowed = growth.CanInvest;
         string hint = GrowthButtonHint();
         investmentRule.text = !string.IsNullOrEmpty(hint) ? hint : !string.IsNullOrEmpty(investmentError) ? investmentError : !allowed ? "던전에서는 열람만 가능합니다 · 투자 불가"
-            : Time.unscaledTime < investmentSuccessUntil ? investmentSuccess : "메인 준비 상태 · 투자 즉시 저장";
+            : "";
         investmentRule.color = !string.IsNullOrEmpty(hint) || !string.IsNullOrEmpty(investmentError) ? new Color(1,.65f,.4f) : new Color(.58f,.66f,.72f);
         for (int i = 0; i < statCards.Length; i++)
         {
@@ -481,8 +525,6 @@ public sealed class InventoryUI : MonoBehaviour
             else
             {
                 CancelStatReset(); investmentError = null;
-                investmentSuccess = string.IsNullOrEmpty(save.Status) ? "스탯 초기화 · 저장 완료" : save.Status;
-                investmentSuccessUntil = Time.unscaledTime + 4f;
             }
         }
         finally { resetBusy = false; RefreshGrowth(); RefreshStats(); }
