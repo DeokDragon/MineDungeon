@@ -93,7 +93,11 @@ public sealed class MineEntranceUI : MonoBehaviour
         if(!rooms.StartDungeon(SelectedFloor,SelectedDifficulty)){entering=false;Hint("입장 상태를 확인해 주세요.");return;}
         CompleteEntry();
     }
-    private void CompleteEntry() { Close();lobbyRoot.SetActive(false);prompt.text=""; }
+    public void CompleteEntry()
+    {
+        if (rooms.IsPreparing || rooms.CurrentRoom == null) return;
+        Close();lobbyRoot.SetActive(false);prompt.text="";
+    }
 #if UNITY_EDITOR
     public void EditorCompleteDungeonEntry()
     {

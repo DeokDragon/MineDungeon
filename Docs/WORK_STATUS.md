@@ -770,3 +770,11 @@
 - 사망/보상: 공격 중 실제 EnemyHealth API 사망 이벤트1/EXP6·돈10 한 번/중복 치명타 거부/충돌체·RB 즉시 비활성/자기장 이펙트 제거/기존 death burst0→1 확인. 나머지9마리 EXP42·돈90 기대값과 비교, 현재 일반 동굴 총EXP48·돈100/잔여0/출구 개방 확인. 이전 ReferenceMaps의 총EXP47과 달리 현재 일반 동굴은 기존5종 각2마리 배치이며 해당 사용자 데이터를 변경하지 않음. 확률 드롭 분포·실제 수동 입력 전투 전수는 미시험.
 - 보존/최종: 프리팹9개에서 자철석 Body Sprite/Color·전용 컴포넌트 추가 외 기존 fileID/참조/물리/AI 수치/다른4종/지형·배치 동일. 재저장된 기본 aggro/이름 공백만 복구. 기존 아트/다른 몬스터 코드·메타/공식 Docs 등350파일, 작업 시작 시 일반동굴·편집기·Floor1·프로토타입 등 기존 변경191파일의 해시/삭제 상태 동일. Variant 파일·현재 Cave10_Test 씬도 불변. 최종 컴파일 완료/Console 오류·경고0/Missing Script0/작업 대상 diff --check 통과. 원래 `Assets/Prototypes/Cave10/Cave10_Test.unity` 편집모드 dirty=false 복귀/격리 테스트 종료/저장 override 빈값. 공식 GDD·Systems 수정 및 Git 커밋·푸시 없음.
 - 근거/미검증: `Library/MagnetiteM1RVerification/{import.txt,pixels.txt,pixel-details.txt,play-results.txt,death-results.txt,audit.txt,final-check.txt}`. Game 카메라 `idle-compare.png`, `move.png`, `magnetic-warning.png`, `magnetic-impact.png`(runtime 확대/비교 배치, Overlay UI 제외). 자기장 고정 위치와 이동한 플레이어/시각 방향을 캡처. 원본 좌우 경계 여백 외 확인된 신규 기능 오류 없음. 광석·가는 연결선의 축소 가독성/원본 경계 잘림 여부는 사용자 아트 검토 대상. 전맵·난이도/다른4종·보스 전체 패턴/복수 감속·다른 이동 효과 조합/장시간/배포 빌드는 미검증.
+
+### 2026-10-24 — 다시하기 후 로비 지형 중첩 수정
+
+- 수정 전 사용자 실행 중인 Main 씬을 읽기 전용 확인: MainMineEntrance(Instance ID 238022)가 활성 상태로 Map_06(Clone)(ID -189434)과 공존. MainGround 범위 X-15~15/Y-10~10 및 MineOpening/LeftBeam/RightBeam/TopBeam이 좌측 하단의 직사각형/문 형태 원인. 로드된 Scene1개, DungeonRoom1개여서 해당 관측에서 이전 방 잔류나 중복 방/Additive 로딩이 원인이 아님. Instance ID는 해당 실행에 한정.
+- 원인: RetryDungeon → ReturnToMain → LoadSceneAsync(Main,Single) → StartQueuedDungeon → StartDungeon 경로는 새 Main 로비를 활성 상태로 다시 만들지만 최초 MineEntranceUI.Enter가 호출하던 CompleteEntry를 누락함.
+- 변경: DungeonRunSettlement.StartQueuedDungeon에서 동일 층/난이도의 StartDungeon 성공 후 기존 MineEntranceUI.CompleteEntry 호출. MineEntranceUI.CompleteEntry를 공용으로 노출하고 준비 중/현재 방 없음이면 실행하지 않는 보호 추가. 로비 삭제나 화면 밖 이동 없이 기존 비활성화 재사용. 재입장 실패 시 로비 유지, 로비 복귀만 할 때는 기존 Main 재로드 유지. 랜덤 후보/일반3방→보스/카메라/맵/배치/보상/저장 로직 변경 없음.
+- 확인: 사용자 직접 Play 종료 후 코드 반영. Unity 컴파일 완료, Console 오류0, Main Canvas의 MineEntranceUI 활성 및 로비 밖 위치/rooms 참조 확인, 로비 계층 Missing Script0, git diff --check 통과. 수정 후 자동 Play/재시작 테스트 미실행. 사용자 저장/백업 접근·변경, 씬/프리팹 저장, 커밋·푸시 없음.
+- 수동 검증: 최초 입장→클리어→다시하기를 2회 확인하여 현재 DungeonRoom1개/MainMineEntrance 비활성 및 문/로비 바닥 미노출 확인. 동일 층·난이도/새 런 초기화·부활2회, 로비 복귀 후 로비 표시 및 재입장 확인. 수정 후 실제 화면 해결 여부는 이 수동 검증 전까지 미검증.

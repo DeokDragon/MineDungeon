@@ -117,6 +117,7 @@ public partial class DungeonRunManager
     {
         while(IsRestarting)yield return null;
         var floor=retryFloor;int difficulty=retryDifficulty;retryFloor=null;
-        if(rooms && floor)rooms.StartDungeon(floor,difficulty);
+        if(rooms && floor && rooms.StartDungeon(floor,difficulty))
+            FindFirstObjectByType<MineEntranceUI>()?.CompleteEntry();
     }
 }
