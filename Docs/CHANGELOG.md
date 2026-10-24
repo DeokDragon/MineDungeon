@@ -3,6 +3,19 @@
 > 작성 기준: 2026-10-24. GDD v0.1 및 Systems 12개는 사용자 승인 완료이며 로컬 Docs 파일 존재를 확인했다. 아래 최신 항목은 이번에 실제 반영한 문서 변경 기록이다. 이전 승인 항목의 로컬 미확인 표기는 당시 기록으로 보존한다.
 > 적용 원칙: 사용자 최신 명시적 결정 > 최신 공식 GDD/Systems > 기존 CHANGELOG > 인수인계 > 미확정 제안.
 
+## 2026-10-25 — 일반5종 아트/M-1R 채택 및석탄v2 보고 정합성 반영
+
+**승인:** 기존돌B-1R/철I-3R/수정C-2R/석탄C-1R 유지, 자철석M-1R Floating Magnetic Ore 채택. 검푸른 몸체·푸른눈/균열·작은원형가슴구조·부유광석4개/청록연결선, 개별64×64/PPU64/중앙Pivot/Point/무압축RGBA. 게임전체 공통규격 아님.
+
+- M-1R Idle4/Move6·전투5종(Wind-up6/Impact4/Recovery5/Hit3/Death7)·VFX4종(ChargeHalo96×96×6/FieldImpact256×256×6/HitFragments64×64×4/DeathFragments128×128×7). 예고0.90·후딜1.0 내연동/방향고정, Halo본체/Field는저장목표 고정. 기존AI/피해8/감속30%·1.5/간격4.5 및기타수치·보상/전멸/출구 유지.
+- 과거최종사망FieldImpact0개/0프레임FAIL·수정미적용과중간5프레임관측FAIL은 보존. 최신로컬WORK_STATUS/코드에치명타효과만공격취소목록에서분리해기존6프레임/0.26초유지·사망/비활성/방정리보존 수정 존재. 후속Play 일반/취소·부활가능치명타·최종사망/RunEnded/정산/결과UI 각1회·6프레임/잔여0 PASS 보고를 최신상태로반영.
+- 직접확인범위는로컬코드와Library/MagnetFieldImpactFix의normal-cancel/lethal-revive/lethal-final-rendered.txt 읽기다. 기존Play결과를확인했으며 이번신규Play가아님. 정규전체던전 보상/정산전수로확대하지않고이전보상/출구시험재사용을명시.
+- 석탄v2는2026-10-23 Unity임포트/프리팹·맵참조교체/Scale0.980893·반경약2.0/관련회귀PASS 보고존재로정리. 이전‘미확인’은당시사용자지시/독립확인범위. 이번최신프리팹참조Unity조회는자동승인검토사용량제한으로실행되지않아독립확인은미완료.
+
+**최신성:** 시작시공식4문서는GitHub main과줄바꿈외동일. 원격WORK_STATUS는부분완료/최종사망FAIL까지이고로컬에후속수정/Play재검증이추가됨. 기존미커밋MagnetMonsterSpriteAnimation.cs/WORK_STATUS를보존하고후속근거를우선.
+**미검증:** 전맵연속/장시간/복수자철석·다른감속조합/정규전체보상·결과/빌드/아트일관성. Result Korean‘갱’글꼴경고는별도UI항목으로유지.
+**실제변경:** [GDD](GDD.md) §13/14, [ArtDirection](Systems/ArtDirection.md) §2.4/4.2/4.6~4.8/14/17, [MonsterSystem](Systems/MonsterSystem.md) §7.7/8.8~8.9/14, 본CHANGELOG와관련상태표기. 과거로그·실패·기존4종명세보존. WORK_STATUS/Unity코드·씬·프리팹·에셋/meta/GUID·저장수정및Git커밋/푸시없음.
+
 ## 2026-10-25 — 일반 맵10종/28×36 및BossRoom24x22 공식 문서 반영
 
 **구분:** 최신 사용자 승인 기획,2026-10-24 Codex 구현/문제 해결 보고, 사용자 직접 확인을 분리. 이번은 문서 갱신이며 Unity 구현·테스트 재실행 없음.
