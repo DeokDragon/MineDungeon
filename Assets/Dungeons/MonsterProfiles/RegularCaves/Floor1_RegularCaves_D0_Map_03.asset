@@ -63,14 +63,6 @@ MonoBehaviour:
     localScale: {x: 1, y: 1, z: 1}
     reservedHpAdjustment: 0
     reservedAttackAdjustment: 0
-  - id: f97ddf70485444a0b5cef352d5f86955
-    template: {fileID: 1939751819936256716, guid: fca63f807ff20c54e8b83301983d09c7, type: 3}
-    embeddedPath: 
-    localPosition: {x: 11, y: 26, z: 0}
-    localEuler: {x: 0, y: 0, z: 0}
-    localScale: {x: 1, y: 1, z: 1}
-    reservedHpAdjustment: 0
-    reservedAttackAdjustment: 0
   - id: 4f91cc29337143a9a26e947dac2aa71e
     template: {fileID: 2553930121460554645, guid: 3f797d1391208e342adaf86752bb96cf, type: 3}
     embeddedPath: 
@@ -87,10 +79,10 @@ MonoBehaviour:
     localScale: {x: 1, y: 1, z: 1}
     reservedHpAdjustment: 0
     reservedAttackAdjustment: 0
-  - id: ecd7672231ef4db2b3c8d896c54f1f79
-    template: {fileID: 1666796862346513108, guid: 1bf2b6d78e04d3f4582dc6444b041553, type: 3}
+  - id: f97ddf70485444a0b5cef352d5f86955
+    template: {fileID: 9116301093896859827, guid: 929d2143ab0681c47a2733b3fd98eddf, type: 3}
     embeddedPath: 
-    localPosition: {x: 17, y: 28.5, z: 0}
+    localPosition: {x: 11, y: 26, z: 0}
     localEuler: {x: 0, y: 0, z: 0}
     localScale: {x: 1, y: 1, z: 1}
     reservedHpAdjustment: 0

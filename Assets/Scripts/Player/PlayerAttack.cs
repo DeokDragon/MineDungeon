@@ -45,6 +45,8 @@ public class PlayerAttack : MonoBehaviour
     private float nextAttackTime;
     private bool isAttacking;
     public bool IsAttacking => isAttacking;
+    // Read-only presentation of the existing locked aim.
+    public float VisualAimAngle => isAttacking ? attackAngle : aimAngle;
     public float AttackInterval => attackInterval;
     public float EffectiveAttackRange
     {

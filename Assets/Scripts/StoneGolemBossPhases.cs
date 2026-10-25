@@ -253,7 +253,7 @@ public partial class StoneGolemBossAI
         Vector2 point = playerCollider.ClosestPoint(attackCenter);
         if (Vector2.Distance(attackCenter, point) <= SecondaryRadius &&
             !Physics2D.Linecast(attackCenter, point, wallLayer))
-            player.TakeDamage(ActivePattern == Pattern.LeapSlam ? leapDamage : smashDamage);
+            player.TakeDamage(PatternDamage(ActivePattern, true));
     }
 
     private bool CacheFloor()
@@ -304,7 +304,7 @@ public partial class StoneGolemBossAI
         {
             var rock = Instantiate(rockfallPrefab, effectsRoot.transform);
             rock.Initialize(player, wallLayer, SampleRockfallCenter(i == weightedRockIndex), rockfallRadius,
-                rockfallWarning, 0f, rockfallDamage, roundHits);
+                rockfallWarning, 0f, PatternDamage(Pattern.Rockfall), roundHits);
             rocks.Add(rock);
         }
     }

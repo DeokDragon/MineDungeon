@@ -80,6 +80,23 @@ public partial class StoneGolemBossAI : MonoBehaviour
     [SerializeField, Min(0f)] private float wallShakeAmplitude = .09f;
     [SerializeField, Min(0f)] private float wallShakeDuration = .18f;
 
+    private int playtestShockwave, playtestEnhancedSmash, playtestEnhancedFan, playtestEnhancedRockfall;
+    public void ConfigureSpawnDamage(int[] values)
+    {
+        if (player != null || values == null || values.Length != 9 || System.Array.Exists(values, n => n < 1))
+            throw new System.InvalidOperationException("Configure golem damage before binding combat");
+        leapDamage=values[0]; smashDamage=values[1]; chargeDamage=values[2]; shardDamage=values[3]; rockfallDamage=values[4];
+        playtestShockwave=values[5]; playtestEnhancedSmash=values[6]; playtestEnhancedFan=values[7]; playtestEnhancedRockfall=values[8];
+    }
+    private int PatternDamage(Pattern pattern, bool secondary = false)
+    {
+        if(pattern==Pattern.LeapSlam) return enhanced && secondary && playtestShockwave>0 ? playtestShockwave : leapDamage;
+        if(pattern==Pattern.GroundSmash) return enhanced && playtestEnhancedSmash>0 ? playtestEnhancedSmash : smashDamage;
+        if(pattern==Pattern.StoneFan) return enhanced && playtestEnhancedFan>0 ? playtestEnhancedFan : shardDamage;
+        if(pattern==Pattern.Rockfall) return enhanced && playtestEnhancedRockfall>0 ? playtestEnhancedRockfall : rockfallDamage;
+        return chargeDamage;
+    }
+
     private Rigidbody2D rb;
     private CircleCollider2D hitbox;
     private EnemyHealth health;
@@ -295,7 +312,7 @@ public partial class StoneGolemBossAI : MonoBehaviour
                 i / (float)Mathf.Max(1, shardCount - 1))) * Mathf.Deg2Rad;
             StoneGolemShard shard = Instantiate(shardPrefab, effectsRoot.transform);
             shard.Initialize(player, wallLayer, fanOrigin, new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)),
-                shardSpeed, shardRange, shardDiameter, shardDamage);
+                shardSpeed, shardRange, shardDiameter, PatternDamage(Pattern.StoneFan));
             shards.Add(shard);
         }
         recoveryDuration = fanRecovery;
@@ -502,7 +519,7 @@ public partial class StoneGolemBossAI : MonoBehaviour
             : smashRecovery;
         SetState(BossState.Recovery);
         float radius = ActivePattern == Pattern.LeapSlam ? leapRadius : smashRadius;
-        int damage = ActivePattern == Pattern.LeapSlam ? leapDamage : smashDamage;
+        int damage = PatternDamage(ActivePattern);
         Vector2 point = playerCollider.ClosestPoint(attackCenter);
         if (!health.IsDead && !player.IsDead && Vector2.Distance(attackCenter, point) <= radius &&
             Physics2D.Linecast(attackCenter, point, wallLayer).collider == null)

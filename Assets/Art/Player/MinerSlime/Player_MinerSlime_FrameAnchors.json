@@ -1,0 +1,561 @@
+{
+  "coordinate_system": "pixel-edge coordinates, origin top-left, +x right, +y down",
+  "body_pivot": [
+    32,
+    32
+  ],
+  "weapon_pivot_image": [
+    14,
+    24
+  ],
+  "weapon_custom_pivot_unity": [
+    0.25,
+    0.5
+  ],
+  "socket_image_anchor": [
+    2,
+    4
+  ],
+  "frames": [
+    {
+      "animation": "Idle",
+      "frame": 1,
+      "upper_dy": 0,
+      "rim_width_trial": 0,
+      "lower_belly_trial": 0,
+      "right_surface_anchor": [
+        56.0,
+        43.0
+      ],
+      "right_weapon_pivot_ready": [
+        57.147152872702094,
+        41.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          56.0,
+          43.0
+        ],
+        "45": [
+          47.0,
+          58.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          17.0,
+          58.0
+        ],
+        "180": [
+          8.0,
+          43.0
+        ],
+        "225": [
+          16.0,
+          27.0
+        ],
+        "270": [
+          32.0,
+          27.0
+        ],
+        "315": [
+          48.0,
+          27.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.375,
+        -0.171875
+      ]
+    },
+    {
+      "animation": "Idle",
+      "frame": 2,
+      "upper_dy": 1,
+      "rim_width_trial": 0.65,
+      "lower_belly_trial": 0.3,
+      "right_surface_anchor": [
+        57.0,
+        44.0
+      ],
+      "right_weapon_pivot_ready": [
+        58.147152872702094,
+        42.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          57.0,
+          44.0
+        ],
+        "45": [
+          46.0,
+          58.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          18.0,
+          58.0
+        ],
+        "180": [
+          7.0,
+          44.0
+        ],
+        "225": [
+          16.0,
+          28.0
+        ],
+        "270": [
+          32.0,
+          28.0
+        ],
+        "315": [
+          48.0,
+          28.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.390625,
+        -0.1875
+      ]
+    },
+    {
+      "animation": "Idle",
+      "frame": 3,
+      "upper_dy": -1,
+      "rim_width_trial": -0.4,
+      "lower_belly_trial": -0.25,
+      "right_surface_anchor": [
+        56.0,
+        42.0
+      ],
+      "right_weapon_pivot_ready": [
+        57.147152872702094,
+        40.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          56.0,
+          42.0
+        ],
+        "45": [
+          48.0,
+          58.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          16.0,
+          58.0
+        ],
+        "180": [
+          8.0,
+          42.0
+        ],
+        "225": [
+          16.0,
+          26.0
+        ],
+        "270": [
+          32.0,
+          26.0
+        ],
+        "315": [
+          48.0,
+          26.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.375,
+        -0.15625
+      ]
+    },
+    {
+      "animation": "Idle",
+      "frame": 4,
+      "upper_dy": 0,
+      "rim_width_trial": 0.45,
+      "lower_belly_trial": 1.2,
+      "right_surface_anchor": [
+        56.0,
+        43.0
+      ],
+      "right_weapon_pivot_ready": [
+        57.147152872702094,
+        41.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          56.0,
+          43.0
+        ],
+        "45": [
+          47.0,
+          58.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          17.0,
+          58.0
+        ],
+        "180": [
+          8.0,
+          43.0
+        ],
+        "225": [
+          16.0,
+          27.0
+        ],
+        "270": [
+          32.0,
+          27.0
+        ],
+        "315": [
+          48.0,
+          27.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.375,
+        -0.171875
+      ]
+    },
+    {
+      "animation": "Move",
+      "frame": 1,
+      "upper_dy": 0,
+      "rim_width_trial": 0,
+      "lower_belly_trial": 0,
+      "right_surface_anchor": [
+        56.0,
+        43.0
+      ],
+      "right_weapon_pivot_ready": [
+        57.147152872702094,
+        41.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          56.0,
+          43.0
+        ],
+        "45": [
+          47.0,
+          58.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          17.0,
+          58.0
+        ],
+        "180": [
+          8.0,
+          43.0
+        ],
+        "225": [
+          16.0,
+          27.0
+        ],
+        "270": [
+          32.0,
+          27.0
+        ],
+        "315": [
+          48.0,
+          27.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.375,
+        -0.171875
+      ]
+    },
+    {
+      "animation": "Move",
+      "frame": 2,
+      "upper_dy": 3,
+      "rim_width_trial": 2,
+      "lower_belly_trial": 0.6,
+      "right_surface_anchor": [
+        58.0,
+        46.0
+      ],
+      "right_weapon_pivot_ready": [
+        59.147152872702094,
+        44.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          58.0,
+          46.0
+        ],
+        "45": [
+          45.0,
+          59.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          19.0,
+          59.0
+        ],
+        "180": [
+          6.0,
+          46.0
+        ],
+        "225": [
+          16.0,
+          30.0
+        ],
+        "270": [
+          32.0,
+          30.0
+        ],
+        "315": [
+          48.0,
+          30.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.40625,
+        -0.21875
+      ]
+    },
+    {
+      "animation": "Move",
+      "frame": 3,
+      "upper_dy": -2,
+      "rim_width_trial": -1,
+      "lower_belly_trial": -0.4,
+      "right_surface_anchor": [
+        55.0,
+        41.0
+      ],
+      "right_weapon_pivot_ready": [
+        56.147152872702094,
+        39.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          55.0,
+          41.0
+        ],
+        "45": [
+          48.0,
+          57.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          16.0,
+          57.0
+        ],
+        "180": [
+          9.0,
+          41.0
+        ],
+        "225": [
+          16.0,
+          25.0
+        ],
+        "270": [
+          32.0,
+          25.0
+        ],
+        "315": [
+          48.0,
+          25.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.359375,
+        -0.140625
+      ]
+    },
+    {
+      "animation": "Move",
+      "frame": 4,
+      "upper_dy": -1,
+      "rim_width_trial": 0.3,
+      "lower_belly_trial": 0.4,
+      "right_surface_anchor": [
+        56.0,
+        42.0
+      ],
+      "right_weapon_pivot_ready": [
+        57.147152872702094,
+        40.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          56.0,
+          42.0
+        ],
+        "45": [
+          48.0,
+          58.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          16.0,
+          58.0
+        ],
+        "180": [
+          8.0,
+          42.0
+        ],
+        "225": [
+          16.0,
+          26.0
+        ],
+        "270": [
+          32.0,
+          26.0
+        ],
+        "315": [
+          48.0,
+          26.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.375,
+        -0.15625
+      ]
+    },
+    {
+      "animation": "Move",
+      "frame": 5,
+      "upper_dy": 2,
+      "rim_width_trial": 2.5,
+      "lower_belly_trial": 1.1,
+      "right_surface_anchor": [
+        58.0,
+        45.0
+      ],
+      "right_weapon_pivot_ready": [
+        59.147152872702094,
+        43.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          58.0,
+          45.0
+        ],
+        "45": [
+          45.0,
+          58.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          19.0,
+          58.0
+        ],
+        "180": [
+          6.0,
+          45.0
+        ],
+        "225": [
+          16.0,
+          29.0
+        ],
+        "270": [
+          32.0,
+          29.0
+        ],
+        "315": [
+          48.0,
+          29.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.40625,
+        -0.203125
+      ]
+    },
+    {
+      "animation": "Move",
+      "frame": 6,
+      "upper_dy": 1,
+      "rim_width_trial": 0.7,
+      "lower_belly_trial": 0.1,
+      "right_surface_anchor": [
+        57.0,
+        44.0
+      ],
+      "right_weapon_pivot_ready": [
+        58.147152872702094,
+        42.36169591142202
+      ],
+      "weapon_angle_screen_cw": -55,
+      "anchors_8_static": {
+        "0": [
+          57.0,
+          44.0
+        ],
+        "45": [
+          46.0,
+          58.0
+        ],
+        "90": [
+          32.0,
+          60.0
+        ],
+        "135": [
+          18.0,
+          58.0
+        ],
+        "180": [
+          7.0,
+          44.0
+        ],
+        "225": [
+          16.0,
+          28.0
+        ],
+        "270": [
+          32.0,
+          28.0
+        ],
+        "315": [
+          48.0,
+          28.0
+        ]
+      },
+      "unity_right_surface_local_ppu64": [
+        0.390625,
+        -0.1875
+      ]
+    }
+  ]
+}

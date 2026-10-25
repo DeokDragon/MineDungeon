@@ -19,6 +19,11 @@ public sealed class MonsterFloorProfile : ScriptableObject
         public bool experienceConfigured;
         public int[] experience = new int[5];
         public int bossExperience;
+        // Optional floor/difficulty-only playtest values. No changes to shared boss prefabs.
+        public bool bossBalanceConfigured;
+        public int bossHealth;
+        // Leap, smash, charge, fan, rockfall, extra shockwave, enhanced smash/fan/rockfall.
+        public int[] bossDamage = Array.Empty<int>();
         public MonsterMapProfile Find(DungeonRoom map) => maps?.SingleOrDefault(p => p && p.map == map);
     }
     public Difficulty[] difficulties = { new Difficulty(), new Difficulty(), new Difficulty(), new Difficulty() };
@@ -52,6 +57,17 @@ public sealed class MonsterFloorProfile : ScriptableObject
             reward.ConfigureSpawnExperience(boss ? GetDifficulty(index).bossExperience : GetDifficulty(index).experience[(int)MonsterProfileRuntime.Kind(hp)]);
         }
     }
+    public void ApplyBossBalance(int index, DungeonRoom room)
+    {
+        var d = GetDifficulty(index);
+        if (d == null || !d.bossBalanceConfigured) return;
+        if (d.bossHealth < 1 || d.bossDamage == null || d.bossDamage.Length != 9 || d.bossDamage.Any(n => n < 1))
+            throw new InvalidOperationException("Invalid boss playtest HP/damage configuration");
+        var bosses = room.GetComponentsInChildren<StoneGolemBossAI>();
+        if (bosses.Length != 1) throw new InvalidOperationException("Boss playtest requires exactly one golem");
+        bosses[0].GetComponent<EnemyHealth>().ConfigureSpawnHealth(d.bossHealth);
+        bosses[0].ConfigureSpawnDamage(d.bossDamage);
+    }
     public bool CanStart(int index, DungeonRoom[] maps, out string error)
     {
         try
@@ -75,6 +91,8 @@ public sealed class MonsterFloorProfile : ScriptableObject
         if (!configured || d == null || !d.configured) throw new InvalidOperationException("층/난이도 밸런스 미설정");
         foreach (float n in new[] { hpMultiplier, attackMultiplier, d.hpMultiplier, d.attackMultiplier })
             if (float.IsNaN(n) || float.IsInfinity(n) || n < 0) throw new InvalidOperationException("배율은 0 이상 유한 숫자여야 합니다.");
+        if (d.bossBalanceConfigured && (d.bossHealth < 1 || d.bossDamage == null || d.bossDamage.Length != 9 || d.bossDamage.Any(n => n < 1)))
+            throw new InvalidOperationException("Invalid boss playtest HP/damage configuration");
         if (d.adjustments == null || d.adjustments.Length != 5) throw new InvalidOperationException("5종 추가 보정 데이터가 필요합니다.");
     }
     public void ValidateMap(int index, MonsterMapProfile map)

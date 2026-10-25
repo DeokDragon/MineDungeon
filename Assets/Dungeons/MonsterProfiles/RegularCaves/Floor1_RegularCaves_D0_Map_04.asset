@@ -80,17 +80,9 @@ MonoBehaviour:
     reservedHpAdjustment: 0
     reservedAttackAdjustment: 0
   - id: 7387e85d95a94bae89b0df1907c3718a
-    template: {fileID: 3142899006696005507, guid: a95cad705feced64fa5c841a6a0ea996, type: 3}
+    template: {fileID: 9116301093896859827, guid: 929d2143ab0681c47a2733b3fd98eddf, type: 3}
     embeddedPath: 
     localPosition: {x: 16, y: 30, z: 0}
-    localEuler: {x: 0, y: 0, z: 0}
-    localScale: {x: 1, y: 1, z: 1}
-    reservedHpAdjustment: 0
-    reservedAttackAdjustment: 0
-  - id: 64022359fac84b17bc391c3d67a75290
-    template: {fileID: 1666796862346513108, guid: 1bf2b6d78e04d3f4582dc6444b041553, type: 3}
-    embeddedPath: 
-    localPosition: {x: 21, y: 30, z: 0}
     localEuler: {x: 0, y: 0, z: 0}
     localScale: {x: 1, y: 1, z: 1}
     reservedHpAdjustment: 0

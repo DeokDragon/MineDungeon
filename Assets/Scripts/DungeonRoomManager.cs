@@ -229,6 +229,7 @@ public partial class DungeonRoomManager : MonoBehaviour
             var balance = CurrentFloor.monsterProfile;
             if (!isBoss)
                 MonsterProfileRuntime.Apply(next, balance.GetDifficulty(CurrentDifficulty).Find(prefab), balance, CurrentDifficulty);
+            if (isBoss) balance.ApplyBossBalance(CurrentDifficulty, next);
             balance.ApplyExperience(CurrentDifficulty, next, isBoss);
         }
         catch (System.Exception e)

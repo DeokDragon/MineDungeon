@@ -25693,6 +25693,10 @@ PrefabInstance:
       propertyPath: enemies.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6084324814993996779, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7046108252329985706, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -25702,16 +25706,20 @@ PrefabInstance:
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7454182311383773959, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+      propertyPath: m_Sprite
+      value:
+      objectReference: {fileID: 2407386851263734696, guid: ccc504b06438ea94bb2bd715c7337945, type: 3}
+    - target: {fileID: 7454182311383773959, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       propertyPath: m_Color.b
-      value: 0.55
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7454182311383773959, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       propertyPath: m_Color.g
-      value: 0.43
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7454182311383773959, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       propertyPath: m_Color.r
-      value: 0.32
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7454182311383773959, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       propertyPath: m_SortingOrder
@@ -25752,6 +25760,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2129572918538853053, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
     - {fileID: 8424562458053225047, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+    - {fileID: 7463477774009661258, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8751417185392896297, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
     - {fileID: 6027621869970470459, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
@@ -25786,7 +25795,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4632494108523317130, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6041200696737290328}
+    - targetCorrespondingSourceObject: {fileID: 4632494108523317130, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 568016582986333220}
   m_SourcePrefab: {fileID: 100100000, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+--- !u!212 &1422806627744159977 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7454182311383773959, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
+  m_PrefabInstance: {fileID: 8416172479881718766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3784620858985409636 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4632494108523317130, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
@@ -25840,7 +25857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b582c12818fa864a9053b3d668caa35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneGolemBossAI
-  body: {fileID: 6281783254344065672}
+  body: {fileID: 5764570847545002906}
   attackWarning: {fileID: 5064089095129895855}
   wallLayer:
     serializedVersion: 2
@@ -25906,6 +25923,54 @@ MonoBehaviour:
   aimLockLead: 0.2
   comboFollowupDelay: 0.2
   rockfallRoundGap: 0.3
+--- !u!114 &568016582986333220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784620858985409636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78225cada2cfd094e95009ce1e7dfdd1, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::StoneGolemBossSpriteAnimation
+  body: {fileID: 1422806627744159977}
+  phase1Idle:
+  - {fileID: 2407386851263734696, guid: ccc504b06438ea94bb2bd715c7337945, type: 3}
+  - {fileID: -2619810875305221006, guid: ccc504b06438ea94bb2bd715c7337945, type: 3}
+  - {fileID: 2548509811374018008, guid: ccc504b06438ea94bb2bd715c7337945, type: 3}
+  - {fileID: -9058607528471573824, guid: ccc504b06438ea94bb2bd715c7337945, type: 3}
+  phase1Move:
+  - {fileID: 4241868560352507795, guid: 3025b1071d4caab40a4ef458ab8be257, type: 3}
+  - {fileID: 537211655225335545, guid: 3025b1071d4caab40a4ef458ab8be257, type: 3}
+  - {fileID: -6202407710973032962, guid: 3025b1071d4caab40a4ef458ab8be257, type: 3}
+  - {fileID: 1713425840879760255, guid: 3025b1071d4caab40a4ef458ab8be257, type: 3}
+  - {fileID: 403652090601238828, guid: 3025b1071d4caab40a4ef458ab8be257, type: 3}
+  - {fileID: -7936699266358779958, guid: 3025b1071d4caab40a4ef458ab8be257, type: 3}
+  phase2Idle:
+  - {fileID: -6808569027626567857, guid: c82d598f6e675124984a16b8a0ffe087, type: 3}
+  - {fileID: 3677149737549521808, guid: c82d598f6e675124984a16b8a0ffe087, type: 3}
+  - {fileID: -7880017485440189231, guid: c82d598f6e675124984a16b8a0ffe087, type: 3}
+  - {fileID: -8256703736648390870, guid: c82d598f6e675124984a16b8a0ffe087, type: 3}
+  phase2Move:
+  - {fileID: 9168662315912560692, guid: fa4b388531fa21243b2f108cadb6be00, type: 3}
+  - {fileID: 1015079549972321786, guid: fa4b388531fa21243b2f108cadb6be00, type: 3}
+  - {fileID: 3699595710138467123, guid: fa4b388531fa21243b2f108cadb6be00, type: 3}
+  - {fileID: 4327980963769094997, guid: fa4b388531fa21243b2f108cadb6be00, type: 3}
+  - {fileID: -1993186405172430999, guid: fa4b388531fa21243b2f108cadb6be00, type: 3}
+  - {fileID: 1237983600311428394, guid: fa4b388531fa21243b2f108cadb6be00, type: 3}
+  idleFramesPerSecond: 6
+  moveFramesPerSecond: 5.5555553
+  moveFrameWeights:
+  - 0.17
+  - 0.21
+  - 0.16
+  - 0.17
+  - 0.21
+  - 0.16
+  referenceMoveSpeed: 1.4
+  movementThreshold: 0.02
 --- !u!212 &5064089095129895855 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3642007421399939137, guid: 65ddda13e1442ae419111301a9326c36, type: 3}
