@@ -88,6 +88,7 @@ public class PlayerPotion : MonoBehaviour
             return;
 
         IsUsing = true;
+        attack?.ResetCombo();
         remainingUseTime = useDuration;
 
         Debug.Log("물약 사용 중", this);

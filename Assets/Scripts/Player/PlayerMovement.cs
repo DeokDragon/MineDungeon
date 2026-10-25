@@ -132,7 +132,10 @@ public class PlayerMovement : MonoBehaviour
         nextDodgeTime = CombatTime + dodgeCooldown;
 
         if (attack != null)
+        {
             attack.CancelAttack();
+            attack.ResetCombo();
+        }
 
         if (health != null)
             health.GrantInvincibility(dodgeInvincibleTime);

@@ -138,6 +138,7 @@ public partial class PlayerSkills : MonoBehaviour
         appliedCooldowns[slot] = EffectiveCooldown(data);
         readyAt[slot] = CombatTime + appliedCooldowns[slot];
         live.Add(c); blocking = c;
+        attack?.ResetCombo();
         if (OwnsMovement) rb.linearVelocity = Vector2.zero;
         switch (data.kind)
         {

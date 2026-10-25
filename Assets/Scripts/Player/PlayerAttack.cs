@@ -22,6 +22,23 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private LayerMask wallLayer;
 
+    // Initial combo test values; keep existing serialized swing fields and references.
+    [SerializeField, Min(0.01f)] private float thrustDuration = 0.32f;
+    [SerializeField, Min(0f)] private float thrustRange = 1.7f;
+    [SerializeField, Range(0f, 360f)] private float thrustHitAngle = 90f;
+    [SerializeField, Min(0f)] private float comboConnectTime = 0.85f;
+    [SerializeField, Min(0f)] private float thrustVisualDistance = 0.4f;
+
+    private int comboStep;
+    private bool queuedAttack;
+    private float comboExpiresAt;
+    private Transform[] weaponVisuals;
+    private Vector3[] weaponVisualPositions;
+    public int ComboStep => comboStep;
+    private float CurrentDuration => comboStep == 3 ? thrustDuration : swingDuration;
+    private float CurrentHitAngle => comboStep == 3 ? thrustHitAngle : hitAngle;
+    private double ComboDamageMultiplier => comboStep == 3 ? 1.3d : 1d;
+
     private float aimAngle;
     private float attackAngle;
     private float attackStartTime;
@@ -35,7 +52,7 @@ public class PlayerAttack : MonoBehaviour
         {
             var run = DungeonRunManager.Instance;
             var growth = run != null ? run.GetComponent<PlayerProgression>() : null;
-            return attackRange * (growth != null && growth.HasPhysical20Passive ? 1.15f : 1f);
+            return (comboStep == 3 ? thrustRange : attackRange) * (growth != null && growth.HasPhysical20Passive ? 1.15f : 1f);
         }
     }
     private int empoweredCharge;
@@ -64,8 +81,11 @@ public class PlayerAttack : MonoBehaviour
             (potion != null && potion.IsUsing) || isAttacking || CombatTime < nextAttackTime) return false;
         empoweredSwing = HasPhysical100 && empoweredReady;
         if (empoweredSwing) { empoweredReady = false; empoweredCharge = 0; }
+        comboStep = CombatTime > comboExpiresAt ? 1 : comboStep % 3 + 1;
         isAttacking = true; damageApplied = false;
         attackStartTime = CombatTime; nextAttackTime = CombatTime + attackInterval; attackAngle = aimAngle;
+        comboExpiresAt = attackStartTime + CurrentDuration + comboConnectTime;
+        queuedAttack = false;
         return true;
     }
     private bool damageApplied;
@@ -85,6 +105,15 @@ public class PlayerAttack : MonoBehaviour
         attackPower = GetComponent<PlayerSkillAttackPower>();
         if (aimCamera == null)
             aimCamera = Camera.main;
+        // Move sprites only: the pivot remains the following damage origin.
+        var sprites = weaponPivot != null ? weaponPivot.GetComponentsInChildren<SpriteRenderer>(true) : new SpriteRenderer[0];
+        var visuals = new List<Transform>();
+        foreach (var sprite in sprites)
+            if (sprite.transform != weaponPivot) visuals.Add(sprite.transform);
+        weaponVisuals = visuals.ToArray();
+        weaponVisualPositions = new Vector3[weaponVisuals.Length];
+        for (int i = 0; i < weaponVisuals.Length; i++)
+            weaponVisualPositions[i] = weaponVisuals[i].localPosition;
     }
 
     private void Update()
@@ -96,6 +125,8 @@ public class PlayerAttack : MonoBehaviour
             return;
         var skills = GetComponent<PlayerSkills>();
         if (skills != null && skills.IsCasting) return;
+        var potion = GetComponent<PlayerPotion>();
+        if (potion != null && potion.IsUsing) return;
         PlayerMovement movement = GetComponent<PlayerMovement>();
 
         if (movement != null && movement.IsDodging)
@@ -123,26 +154,35 @@ public class PlayerAttack : MonoBehaviour
                 * Mathf.Rad2Deg;
         }
 
+        UpdateAttackMotion();
+        ProcessAttackInput(mouse.leftButton.wasPressedThisFrame, mouse.leftButton.isPressed);
+    }
+
+    private void ProcessAttackInput(bool pressed, bool held)
+    {
+        // Expiry uses the scheduled motion end, not the time a click was queued.
+        if (comboStep != 0 && !isAttacking && CombatTime > comboExpiresAt)
+            ResetCombo();
         bool blockNewAttack = waitForAttackRelease;
-
-        if (waitForAttackRelease && !mouse.leftButton.isPressed)
-            waitForAttackRelease = false;
-
-        bool attackInput = !blockNewAttack &&
-            (mouse.leftButton.wasPressedThisFrame
-            || mouse.leftButton.isPressed);
-
-        if (attackInput && !isAttacking && CombatTime >= nextAttackTime)
+        if (waitForAttackRelease && !held) waitForAttackRelease = false;
+        if (blockNewAttack) return;
+        if (pressed) queuedAttack = true;
+        if ((queuedAttack || held) && !isAttacking)
         {
-            BeginAttack();
+            // Recheck action restrictions and interval at actual execution.
+            if (BeginAttack()) UpdateAttackMotion();
         }
+    }
 
+    private void UpdateAttackMotion()
+    {
+        float thrustOffset = 0f;
         float displayAngle = aimAngle;
 
         if (isAttacking)
         {
             float progress = Mathf.Clamp01(
-                (CombatTime - attackStartTime) / swingDuration
+                (CombatTime - attackStartTime) / CurrentDuration
             );
 
             // 한 번 휘두를 때 피해 판정은 한 번만 실행
@@ -152,11 +192,11 @@ public class PlayerAttack : MonoBehaviour
                 ApplyDamage();
             }
 
-            float swingOffset = Mathf.Lerp(
-                -swingAngle * 0.5f,
-                swingAngle * 0.5f,
-                progress
-            );
+            // Positive Z is counterclockwise: step 1 decreases, step 2 increases.
+            float swingOffset = comboStep == 3 ? 0f : Mathf.Lerp(
+                swingAngle * 0.5f, -swingAngle * 0.5f, progress) * (comboStep == 1 ? 1f : -1f);
+            if (comboStep == 3)
+                thrustOffset = thrustVisualDistance * (1f - Mathf.Abs(progress * 2f - 1f));
 
             displayAngle = attackAngle + swingOffset;
 
@@ -168,10 +208,23 @@ public class PlayerAttack : MonoBehaviour
         }
 
         weaponPivot.rotation = Quaternion.Euler(0f, 0f, displayAngle);
-        PlayerPotion potion = GetComponent<PlayerPotion>();
+        SetThrustVisual(thrustOffset);
+    }
 
-        if (potion != null && potion.IsUsing)
-            return;
+    private void SetThrustVisual(float distance)
+    {
+        if (weaponVisuals == null) return;
+        for (int i = 0; i < weaponVisuals.Length; i++)
+            if (weaponVisuals[i] != null)
+                weaponVisuals[i].localPosition = weaponVisualPositions[i] +
+                    weaponVisuals[i].parent.InverseTransformVector(weaponPivot.right * distance);
+    }
+
+    public void ResetCombo()
+    {
+        comboStep = 0;
+        comboExpiresAt = 0f;
+        queuedAttack = false;
     }
 
     private void ApplyDamage()
@@ -194,7 +247,7 @@ public class PlayerAttack : MonoBehaviour
         double rawDamage = PlayerSkillAttackPower.UnroundedDamage(attackDamage,
             attackPower != null ? attackPower.PhysicalAttack : 0f);
         bool enhanced = empoweredSwing;
-        double multiplier = enhanced ? 2d : 1d;
+        double multiplier = ComboDamageMultiplier * (enhanced ? 2d : 1d);
         int damage = PlayerSkillAttackPower.RoundDamage(rawDamage * multiplier);
         var run = DungeonRunManager.Instance;
         var growth = run != null ? run.GetComponent<PlayerProgression>() : null;
@@ -214,7 +267,7 @@ public class PlayerAttack : MonoBehaviour
 
             // 전방 부채꼴 안에 있는지 확인
             if (toTarget.sqrMagnitude > 0.0001f &&
-                Vector2.Angle(forward, toTarget) > hitAngle * 0.5f)
+                Vector2.Angle(forward, toTarget) > CurrentHitAngle * 0.5f)
             {
                 continue;
             }
@@ -259,7 +312,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDisable()
     {
-        isAttacking = false;
+        CancelAttack();
+        ResetCombo();
         nextAttackTime = 0f;
     }
 
@@ -276,6 +330,7 @@ public class PlayerAttack : MonoBehaviour
     {
         isAttacking = false;
         damageApplied = true;
+        SetThrustVisual(0f);
 
         if (weaponPivot != null)
         {
@@ -287,5 +342,6 @@ public class PlayerAttack : MonoBehaviour
     public void RequireFreshAttackInput()
     {
         waitForAttackRelease = true;
+        queuedAttack = false;
     }
 }
