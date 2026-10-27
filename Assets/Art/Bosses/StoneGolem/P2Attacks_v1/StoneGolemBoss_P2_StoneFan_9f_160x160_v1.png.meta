@@ -1,0 +1,387 @@
+fileFormatVersion: 2
+guid: 065248bddbc2a7b4896f36336fab1b24
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6972842078119472159
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_0
+  - first:
+      213: -5072007855314350604
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_1
+  - first:
+      213: -5634283391602318804
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_2
+  - first:
+      213: 5974291218987888547
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_3
+  - first:
+      213: -746322862682869018
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_4
+  - first:
+      213: 3330782512331272422
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_5
+  - first:
+      213: -1984473694911015958
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_6
+  - first:
+      213: 6153466816597329247
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_7
+  - first:
+      213: -5188048743132802858
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_8
+  - first:
+      213: 2818818098299169811
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_00
+  - first:
+      213: -7228512603158229707
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_01
+  - first:
+      213: 3300526185908179194
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_02
+  - first:
+      213: 8820667657953518864
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_03
+  - first:
+      213: -8386673788337775616
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_04
+  - first:
+      213: -1259775261488287549
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_05
+  - first:
+      213: 6621596578945903138
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_06
+  - first:
+      213: 3944734169281700145
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_07
+  - first:
+      213: 6086361130400855565
+    second: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c609b20247e1720800000000000000
+      internalID: 2818818098299169811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_01
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53dc152f51a2fab90800000000000000
+      internalID: -7228512603158229707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_02
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af09ee24413ddcd20800000000000000
+      internalID: 3300526185908179194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_03
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015a812408e496a70800000000000000
+      internalID: 8820667657953518864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_04
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00c1c0fbf9c8c9b80800000000000000
+      internalID: -8386673788337775616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_05
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c07a220311648ee0800000000000000
+      internalID: -1259775261488287549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_06
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a230e7103a4eb50800000000000000
+      internalID: 6621596578945903138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_07
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131a16da3d28eb630800000000000000
+      internalID: 3944734169281700145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_StoneFan_9f_160x160_v1_08
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d06b9408339177450800000000000000
+      internalID: 6086361130400855565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_0: 6972842078119472159
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_00: 2818818098299169811
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_01: -7228512603158229707
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_02: 3300526185908179194
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_03: 8820667657953518864
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_04: -8386673788337775616
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_05: -1259775261488287549
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_06: 6621596578945903138
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_07: 3944734169281700145
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_08: 6086361130400855565
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_1: -5072007855314350604
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_2: -5634283391602318804
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_3: 5974291218987888547
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_4: -746322862682869018
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_5: 3330782512331272422
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_6: -1984473694911015958
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_7: 6153466816597329247
+      StoneGolemBoss_P2_StoneFan_9f_160x160_v1_8: -5188048743132802858
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

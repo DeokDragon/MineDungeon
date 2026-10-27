@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: 011cb1c56edab574697a3223c8d78203
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7835604763889386929
+    second: MineExit_Opening_6f_128x128_v2_0
+  - first:
+      213: 1344389022820952656
+    second: MineExit_Opening_6f_128x128_v2_1
+  - first:
+      213: 1392600287883605554
+    second: MineExit_Opening_6f_128x128_v2_2
+  - first:
+      213: 2063405042262851068
+    second: MineExit_Opening_6f_128x128_v2_3
+  - first:
+      213: 5426926505627475270
+    second: MineExit_Opening_6f_128x128_v2_4
+  - first:
+      213: 160328495205638428
+    second: MineExit_Opening_6f_128x128_v2_5
+  - first:
+      213: -1861531173136057524
+    second: MineExit_Opening_6f_128x128_v2_00
+  - first:
+      213: 249602559787065358
+    second: MineExit_Opening_6f_128x128_v2_01
+  - first:
+      213: 3540948096905388532
+    second: MineExit_Opening_6f_128x128_v2_02
+  - first:
+      213: 1495760688109686188
+    second: MineExit_Opening_6f_128x128_v2_03
+  - first:
+      213: 3174088431726016487
+    second: MineExit_Opening_6f_128x128_v2_04
+  - first:
+      213: -4823226240165902084
+    second: MineExit_Opening_6f_128x128_v2_05
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MineExit_Opening_6f_128x128_v2_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4bb8e6c2438a26e0800000000000000
+      internalID: -1861531173136057524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MineExit_Opening_6f_128x128_v2_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00e227a434c67300800000000000000
+      internalID: 249602559787065358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MineExit_Opening_6f_128x128_v2_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1242c8889f32130800000000000000
+      internalID: 3540948096905388532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MineExit_Opening_6f_128x128_v2_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cad85c3cb6202c410800000000000000
+      internalID: 1495760688109686188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MineExit_Opening_6f_128x128_v2_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7b4b29c90ac0c20800000000000000
+      internalID: 3174088431726016487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MineExit_Opening_6f_128x128_v2_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf881930a45701db0800000000000000
+      internalID: -4823226240165902084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MineExit_Opening_6f_128x128_v2_0: 7835604763889386929
+      MineExit_Opening_6f_128x128_v2_00: -1861531173136057524
+      MineExit_Opening_6f_128x128_v2_01: 249602559787065358
+      MineExit_Opening_6f_128x128_v2_02: 3540948096905388532
+      MineExit_Opening_6f_128x128_v2_03: 1495760688109686188
+      MineExit_Opening_6f_128x128_v2_04: 3174088431726016487
+      MineExit_Opening_6f_128x128_v2_05: -4823226240165902084
+      MineExit_Opening_6f_128x128_v2_1: 1344389022820952656
+      MineExit_Opening_6f_128x128_v2_2: 1392600287883605554
+      MineExit_Opening_6f_128x128_v2_3: 2063405042262851068
+      MineExit_Opening_6f_128x128_v2_4: 5426926505627475270
+      MineExit_Opening_6f_128x128_v2_5: 160328495205638428
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

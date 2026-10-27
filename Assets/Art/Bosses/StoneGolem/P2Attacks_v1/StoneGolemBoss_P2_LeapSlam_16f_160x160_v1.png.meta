@@ -1,0 +1,573 @@
+fileFormatVersion: 2
+guid: c92ef8e80b3f9504cb67d6e93335174a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8968091797416040520
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_0
+  - first:
+      213: 5005501985906496979
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_1
+  - first:
+      213: -7675826545988822927
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_2
+  - first:
+      213: -2206806697201441913
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_3
+  - first:
+      213: -80517761950852424
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_4
+  - first:
+      213: -7529750442290570771
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_5
+  - first:
+      213: -4539628809502843915
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_6
+  - first:
+      213: 1026924496827072011
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_7
+  - first:
+      213: -9174139201855609698
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_8
+  - first:
+      213: -6254810762927600963
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_9
+  - first:
+      213: 6734121736609472876
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_10
+  - first:
+      213: -2439800632167744974
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_11
+  - first:
+      213: -7364610785801531286
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_12
+  - first:
+      213: 5700434605978295148
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_13
+  - first:
+      213: -5058341012350900729
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_14
+  - first:
+      213: 6913059275852405713
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_15
+  - first:
+      213: -2960984510445135995
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_00
+  - first:
+      213: -8263768953848587623
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_01
+  - first:
+      213: -670351918123609132
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_02
+  - first:
+      213: 588353519194019715
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_03
+  - first:
+      213: 8186996181856385685
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_04
+  - first:
+      213: 8272204600807593001
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_05
+  - first:
+      213: 5474719721282877514
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_06
+  - first:
+      213: -6249687532674755304
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_07
+  - first:
+      213: -2308554228221395521
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_08
+  - first:
+      213: 4051361342042485680
+    second: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 587db75964878e6d0800000000000000
+      internalID: -2960984510445135995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_01
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a14f77be1315d80800000000000000
+      internalID: -8263768953848587623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_02
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d39dbd6b7e62b6f0800000000000000
+      internalID: -670351918123609132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_03
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38719e198604a2800800000000000000
+      internalID: 588353519194019715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_04
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a770d96ad0e9170800000000000000
+      internalID: 8186996181856385685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_05
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9241d74a146ccc270800000000000000
+      internalID: 8272204600807593001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_06
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4834e7849c1afb40800000000000000
+      internalID: 5474719721282877514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_07
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815dbb12d46a449a0800000000000000
+      internalID: -6249687532674755304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_08
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd3322292e56ffd0800000000000000
+      internalID: -2308554228221395521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_09
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b33131fca3593830800000000000000
+      internalID: 4051361342042485680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6128d06a08647d50800000000000000
+      internalID: 6734121736609472876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_11
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a3edc6046142ed0800000000000000
+      internalID: -2439800632167744974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_12
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a601a4b7285abc990800000000000000
+      internalID: -7364610785801531286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_13
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b1eaa62130c1f40800000000000000
+      internalID: 5700434605978295148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 706e80646a92dc9b0800000000000000
+      internalID: -5058341012350900729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_15
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbd660d8ce10ff50800000000000000
+      internalID: 6913059275852405713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_0: 8968091797416040520
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_00: -2960984510445135995
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_01: -8263768953848587623
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_02: -670351918123609132
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_03: 588353519194019715
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_04: 8186996181856385685
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_05: 8272204600807593001
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_06: 5474719721282877514
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_07: -6249687532674755304
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_08: -2308554228221395521
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_09: 4051361342042485680
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_1: 5005501985906496979
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_10: 6734121736609472876
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_11: -2439800632167744974
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_12: -7364610785801531286
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_13: 5700434605978295148
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_14: -5058341012350900729
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_15: 6913059275852405713
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_2: -7675826545988822927
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_3: -2206806697201441913
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_4: -80517761950852424
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_5: -7529750442290570771
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_6: -4539628809502843915
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_7: 1026924496827072011
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_8: -9174139201855609698
+      StoneGolemBoss_P2_LeapSlam_16f_160x160_v1_9: -6254810762927600963
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

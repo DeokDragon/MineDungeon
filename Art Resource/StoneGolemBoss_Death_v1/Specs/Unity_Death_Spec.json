@@ -1,0 +1,167 @@
+{
+  "body_cell": [
+    160,
+    160
+  ],
+  "PPU": 128,
+  "pivot_pixel": [
+    80,
+    80
+  ],
+  "pivot_normalized": [
+    0.5,
+    0.5
+  ],
+  "existing_body_scale": 1.8,
+  "image_origin": "top-left, x right, y down",
+  "local_coordinate": "((px-80)/128,(80-py)/128), existing BodyScale applied once",
+  "frames_per_phase": 12,
+  "duration_trial_ms": 1600,
+  "timeline": [
+    {
+      "frame": 1,
+      "start_ms": 0,
+      "end_ms": 80,
+      "duration_ms": 80
+    },
+    {
+      "frame": 2,
+      "start_ms": 80,
+      "end_ms": 170,
+      "duration_ms": 90
+    },
+    {
+      "frame": 3,
+      "start_ms": 170,
+      "end_ms": 280,
+      "duration_ms": 110
+    },
+    {
+      "frame": 4,
+      "start_ms": 280,
+      "end_ms": 410,
+      "duration_ms": 130
+    },
+    {
+      "frame": 5,
+      "start_ms": 410,
+      "end_ms": 560,
+      "duration_ms": 150
+    },
+    {
+      "frame": 6,
+      "start_ms": 560,
+      "end_ms": 720,
+      "duration_ms": 160
+    },
+    {
+      "frame": 7,
+      "start_ms": 720,
+      "end_ms": 880,
+      "duration_ms": 160
+    },
+    {
+      "frame": 8,
+      "start_ms": 880,
+      "end_ms": 1040,
+      "duration_ms": 160
+    },
+    {
+      "frame": 9,
+      "start_ms": 1040,
+      "end_ms": 1190,
+      "duration_ms": 150
+    },
+    {
+      "frame": 10,
+      "start_ms": 1190,
+      "end_ms": 1340,
+      "duration_ms": 150
+    },
+    {
+      "frame": 11,
+      "start_ms": 1340,
+      "end_ms": 1480,
+      "duration_ms": 140
+    },
+    {
+      "frame": 12,
+      "start_ms": 1480,
+      "end_ms": 1600,
+      "duration_ms": 120
+    }
+  ],
+  "sections_1based_inclusive": {
+    "weaken": [
+      1,
+      3
+    ],
+    "detach": [
+      4,
+      5
+    ],
+    "collapse_and_settle": [
+      6,
+      9
+    ],
+    "remnant_disappearance": [
+      10,
+      11
+    ],
+    "clear": [
+      12,
+      12
+    ]
+  },
+  "phase_files": {
+    "1": "Sprites/StoneGolemBoss_P1_Death_12f_160x160_v1.png",
+    "2": "Sprites/StoneGolemBoss_P2_Death_12f_160x160_v1.png"
+  },
+  "glow_strength": [
+    1,
+    0.8,
+    0.6,
+    0.4,
+    0.28,
+    0.15,
+    0.07,
+    0.02,
+    0,
+    0,
+    0,
+    0
+  ],
+  "eye_strength": [
+    1,
+    0.65,
+    0.3,
+    0.1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "event_rules": {
+    "start": "existing confirmed death only; snapshot phase/visual transform before destruction; independent visual clone may play",
+    "completion": "last fully-transparent frame -> remove visual only",
+    "do_not_delay": "death confirmation, collider shutdown, clear, reward, result screen",
+    "cancel": "scene/room cleanup or higher-priority transition can remove visual immediately"
+  },
+  "camera_example": {
+    "resolution": [
+      960,
+      540
+    ],
+    "orthographic_size_assumed": 4.5,
+    "screen_pixels_per_unit": 60,
+    "body_display_cell_pixels": [
+      135,
+      135
+    ],
+    "actual_Unity_capture": false
+  }
+}

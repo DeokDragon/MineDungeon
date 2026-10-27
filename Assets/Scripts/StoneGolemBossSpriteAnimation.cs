@@ -21,6 +21,14 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
 
     [Header("P1 basic attacks - presentation only")]
     [SerializeField] private Sprite[] leapSlam, groundSmash, rockCharge, stoneFan, rockfall;
+    [Header("P2 attacks - enhanced and basic combo presentation")]
+    [SerializeField] private Sprite[] phase2LeapSlam, phase2GroundSmash, phase2RockCharge, phase2StoneFan, phase2Rockfall;
+    [Header("Presentation timing trials - not final balance")]
+    [SerializeField] private Sprite[] introFrames, transformFrames, transformChips;
+    [SerializeField] private SpriteRenderer chipsVisual;
+    [SerializeField, Min(.01f)] private float introDuration = 2f, transformDuration = 2.5f;
+    private bool presentationActive, presentationTransform;
+    private float presentationStartedAt;
     private bool showingAttack;
 
     private StoneGolemBossAI ai;
@@ -41,12 +49,18 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
 
     private void OnEnable()
     {
+        ai.PresentationStarted -= OnPresentationStarted;
+        ai.PresentationEnded -= OnPresentationEnded;
+        ai.PresentationStarted += OnPresentationStarted;
+        ai.PresentationEnded += OnPresentationEnded;
+        ClearPresentationVisual(false);
         previousPosition = rb.position;
         actualSpeed = 0;
         frame = 0;
         phase = ai.Phase;
         moving = combat = false;
         Show(phase == 2 ? phase2Idle : phase1Idle, 0);
+        if (ai.IsPresenting) OnPresentationStarted(ai, ai.IsTransforming);
     }
 
     private void Start() { previousPosition = rb.position; }
@@ -60,13 +74,26 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!body) return;
+        if (!body)
+        {
+            ClearPresentationVisual(false);
+            if (ai.IsPresenting) ai.EndPresentation();
+            return;
+        }
         if (health.IsDead || !ai.isActiveAndEnabled)
         {
+            ClearPresentationVisual(!health.IsDead);
             ClearAttackPose();
             return;
         }
+        if (presentationActive && !ai.IsPresenting) ClearPresentationVisual(true);
         if (Time.timeScale == 0f) return;
+        if (ai.IsPresenting)
+        {
+            if (!presentationActive) OnPresentationStarted(ai, ai.IsTransforming);
+            TickPresentation();
+            return;
+        }
         if (ShowAttack()) { showingAttack = true; return; }
         if (showingAttack) { showingAttack = false; frame = 0; }
         bool nextCombat = ai.IsPresenting || ai.ActivePattern != StoneGolemBossAI.Pattern.None;
@@ -87,11 +114,89 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
             float fps = moving ? moveFps * actualSpeed / referenceMoveSpeed : idleFramesPerSecond;
             if (frames != null && frames.Length > 0) frame = (frame + Time.deltaTime * fps) % frames.Length;
         }
-        // Keep the existing flipX and use a base pose throughout attacks/presentations.
+        // Keep existing flipX; presentations or missing attack art use the base pose.
         Show(frames, combat ? 0 : moving ? MoveIndex(frames) : (int)frame);
     }
 
-    private void OnDisable() { ClearAttackPose(); }
+    private void OnDisable()
+    {
+        if (ai != null)
+        {
+            ai.PresentationStarted -= OnPresentationStarted;
+            ai.PresentationEnded -= OnPresentationEnded;
+        }
+        ClearPresentationVisual(health != null && !health.IsDead);
+        // Disabling just the art driver must not leave its AI-owned combat lock forever.
+        if (ai != null && ai.isActiveAndEnabled && ai.IsPresenting)
+        {
+            ai.EndPresentation();
+            if (health != null && !health.IsDead) Show(ai.Phase == 2 ? phase2Idle : phase1Idle, 0);
+        }
+        ClearAttackPose();
+    }
+
+    private void OnPresentationStarted(StoneGolemBossAI source, bool transformation)
+    {
+        if (source != ai || presentationActive) return;
+        var frames = transformation ? transformFrames : introFrames;
+        if (!body || frames == null || frames.Length == 0) { ai.EndPresentation(); return; }
+        presentationActive = true;
+        presentationTransform = transformation;
+        presentationStartedAt = Time.time;
+        showingAttack = false;
+        frame = 0;
+        if (chipsVisual) { chipsVisual.enabled = false; chipsVisual.sprite = null; }
+        Show(frames, 0);
+    }
+
+    private void OnPresentationEnded(StoneGolemBossAI source, bool transformation)
+    {
+        if (source == ai) ClearPresentationVisual(true);
+    }
+
+    private void TickPresentation()
+    {
+        if (!presentationActive || !ai.IsPresenting) return;
+        float duration = presentationTransform ? transformDuration : introDuration;
+        float elapsed = Mathf.Max(0f, Time.time - presentationStartedAt);
+        if (elapsed >= duration) { ai.EndPresentation(); return; }
+        float normalized = elapsed / duration;
+        Show(presentationTransform ? transformFrames : introFrames,
+            Timed(normalized, 0, presentationTransform ? TransformTiming : IntroTiming));
+        if (chipsVisual)
+        {
+            // The chip clock is normalized with the body trial; no combat clock is advanced.
+            float sourceTime = normalized * 2.5f;
+            bool visible = presentationTransform && sourceTime >= .86f && sourceTime < 2.34f &&
+                transformChips != null && transformChips.Length == 8;
+            chipsVisual.enabled = visible;
+            if (visible)
+            {
+                chipsVisual.sprite = transformChips[Timed((sourceTime - .86f) / 1.48f, 0, ChipsTiming)];
+                chipsVisual.flipX = body.flipX;
+                chipsVisual.flipY = body.flipY;
+            }
+            else chipsVisual.sprite = null;
+        }
+    }
+
+    private void ClearPresentationVisual(bool restoreIdle)
+    {
+        bool wasActive = presentationActive;
+        presentationActive = false;
+        if (chipsVisual) { chipsVisual.enabled = false; chipsVisual.sprite = null; }
+        if (wasActive)
+        {
+            frame = 0;
+            moving = combat = false;
+            if (restoreIdle && health != null && !health.IsDead && ai != null)
+                Show(ai.Phase == 2 ? phase2Idle : phase1Idle, 0);
+        }
+    }
+
+    private static readonly float[] IntroTiming = {180, 180, 200, 200, 220, 220, 200, 200, 200, 200},
+        TransformTiming = {160, 170, 170, 180, 180, 180, 190, 190, 190, 190, 180, 180, 180, 160},
+        ChipsTiming = {180, 190, 190, 190, 190, 180, 180, 180};
 
     private void ClearAttackPose()
     {
@@ -103,16 +208,16 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
 
     private bool ShowAttack()
     {
-        // P2 (including its basic combos) retains its original base-pose presentation.
-        if (ai.Phase != 1 || ai.IsPresenting) return false;
+        if (ai.IsPresenting) return false;
+        bool phase2 = ai.Phase == 2;
         Sprite[] frames;
         switch (ai.ActivePattern)
         {
-            case StoneGolemBossAI.Pattern.LeapSlam: frames = leapSlam; break;
-            case StoneGolemBossAI.Pattern.GroundSmash: frames = groundSmash; break;
-            case StoneGolemBossAI.Pattern.RockCharge: frames = rockCharge; break;
-            case StoneGolemBossAI.Pattern.StoneFan: frames = stoneFan; break;
-            case StoneGolemBossAI.Pattern.Rockfall: frames = rockfall; break;
+            case StoneGolemBossAI.Pattern.LeapSlam: frames = phase2 ? phase2LeapSlam : leapSlam; break;
+            case StoneGolemBossAI.Pattern.GroundSmash: frames = phase2 ? phase2GroundSmash : groundSmash; break;
+            case StoneGolemBossAI.Pattern.RockCharge: frames = phase2 ? phase2RockCharge : rockCharge; break;
+            case StoneGolemBossAI.Pattern.StoneFan: frames = phase2 ? phase2StoneFan : stoneFan; break;
+            case StoneGolemBossAI.Pattern.Rockfall: frames = phase2 ? phase2Rockfall : rockfall; break;
             default: return false;
         }
         if (frames == null || frames.Length == 0) return false;
@@ -120,7 +225,8 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
         float duration = Mathf.Max(.00001f, ai.VisualStateDuration);
         float normalized = Mathf.Clamp01(t / duration);
         int index;
-        if (ai.State == StoneGolemBossAI.BossState.Warning)
+        if (phase2 && Phase2Index(normalized, out index)) { }
+        else if (ai.State == StoneGolemBossAI.BossState.Warning)
         {
             switch (ai.ActivePattern)
             {
@@ -151,6 +257,54 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
         else return false;
         Show(frames, Mathf.Min(index, frames.Length - 1));
         return true;
+    }
+
+    private bool Phase2Index(float normalized, out int index)
+    {
+        var state = ai.State;
+        var pattern = ai.ActivePattern;
+        index = 0;
+        if (state == StoneGolemBossAI.BossState.SecondaryWarning)
+            index = pattern == StoneGolemBossAI.Pattern.LeapSlam
+                ? Sequence(normalized, ShockPrepareFrames, ShockPrepare)
+                : Sequence(normalized, SmashSecondFrames, SmashSecond);
+        else if (state == StoneGolemBossAI.BossState.FanFollowup)
+            index = Sequence(normalized, FanSecondFrames, FanSecond);
+        else if (state == StoneGolemBossAI.BossState.RockfallGap) index = 10;
+        else if (state == StoneGolemBossAI.BossState.ComboAInterval)
+            index = Timed(normalized, 6, ComboLanding);
+        else if (state == StoneGolemBossAI.BossState.Warning && ai.VisualComboFollowup &&
+            pattern == StoneGolemBossAI.Pattern.StoneFan)
+            index = Sequence(normalized, ComboFanFrames, ComboFan);
+        else if (state == StoneGolemBossAI.BossState.Warning &&
+            ai.VisualPreviousState == StoneGolemBossAI.BossState.ComboAInterval &&
+            pattern == StoneGolemBossAI.Pattern.GroundSmash)
+            index = Sequence(normalized, ComboSmashFrames, ComboSmash);
+        else if (state == StoneGolemBossAI.BossState.Recovery &&
+            pattern == StoneGolemBossAI.Pattern.LeapSlam && ai.IsEnhanced)
+            index = ai.VisualSecondaryStarted
+                ? Sequence(normalized, ShockRecoverFrames, LeapRecover)
+                : Sequence(normalized, LeapWaitFrames, LeapWait);
+        else if (state == StoneGolemBossAI.BossState.Rockfall &&
+            ai.VisualPreviousState == StoneGolemBossAI.BossState.RockfallGap &&
+            ai.VisualStateElapsed < ai.VisualStateDuration)
+            index = Timed(normalized, 1, RockfallRepeat);
+        else return false;
+        return true;
+    }
+
+    // Frame numbers below are zero-based; time weights come from the P2 README.
+    private static readonly int[] LeapWaitFrames = {6, 7, 8, 11}, ShockPrepareFrames = {12, 13},
+        ShockRecoverFrames = {14, 15, 8, 9, 10}, SmashSecondFrames = {5, 6, 10, 1, 2, 3, 4},
+        FanSecondFrames = {3, 4, 8, 2}, ComboSmashFrames = {10, 1, 2, 3, 4}, ComboFanFrames = {8, 2};
+    private static readonly float[] LeapWait = {80, 120, 200, 900}, ShockPrepare = {300, 500},
+        SmashSecond = {70, 130, 200, 250, 300, 150, 100}, FanSecond = {70, 90, 340, 400},
+        ComboLanding = {80, 120}, ComboSmash = {200, 300, 350, 250, 100},
+        ComboFan = {60, 140}, RockfallRepeat = {300, 600};
+
+    private static int Sequence(float normalized, int[] indices, float[] weights)
+    {
+        return indices[Timed(normalized, 0, weights)];
     }
 
     // README timing weights, normalized within the AI-owned interval.

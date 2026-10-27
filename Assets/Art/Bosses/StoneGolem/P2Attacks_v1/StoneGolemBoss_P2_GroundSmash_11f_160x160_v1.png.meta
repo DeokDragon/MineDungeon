@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: f3a92efc695611741a74a7a1ed5b01ae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1787198119901526387
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_0
+  - first:
+      213: 2443574764000176756
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_1
+  - first:
+      213: -8208786848329713845
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_2
+  - first:
+      213: -7955031607369691401
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_3
+  - first:
+      213: -2315416206723063777
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_4
+  - first:
+      213: -3956453409373320233
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_5
+  - first:
+      213: 2052334223512588194
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_6
+  - first:
+      213: -6261400194666755905
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_7
+  - first:
+      213: 4507983090775862717
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_8
+  - first:
+      213: -269031746994503901
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_9
+  - first:
+      213: -6958449594025944961
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_10
+  - first:
+      213: -6535771906766993734
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_00
+  - first:
+      213: -4395449934926125240
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_01
+  - first:
+      213: -2456649766029015520
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_02
+  - first:
+      213: 40876449233868760
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_03
+  - first:
+      213: -4959527133518234788
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_04
+  - first:
+      213: -243007855070923088
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_05
+  - first:
+      213: -314404227680210734
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_06
+  - first:
+      213: 2718328653631686727
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_07
+  - first:
+      213: 2253674192198583996
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_08
+  - first:
+      213: -2627238541243602415
+    second: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab60d2c24164c45a0800000000000000
+      internalID: -6535771906766993734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_01
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 847e6b082993003c0800000000000000
+      internalID: -4395449934926125240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_02
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0264b4ebd0a38edd0800000000000000
+      internalID: -2456649766029015520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_03
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d7934cf9e8319000800000000000000
+      internalID: 40876449233868760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_04
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5bfbb849583c2bb0800000000000000
+      internalID: -4959527133518234788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_05
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b63ed0b4a9a0acf0800000000000000
+      internalID: -243007855070923088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_06
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d07d3d450303abf0800000000000000
+      internalID: -314404227680210734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_07
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7488b76128179b520800000000000000
+      internalID: 2718328653631686727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_08
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb64671ccb8a64f10800000000000000
+      internalID: 2253674192198583996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_09
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11aa5f8677c2a8bd0800000000000000
+      internalID: -2627238541243602415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f785f9036fe9e6f90800000000000000
+      internalID: -6958449594025944961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_0: 1787198119901526387
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_00: -6535771906766993734
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_01: -4395449934926125240
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_02: -2456649766029015520
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_03: 40876449233868760
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_04: -4959527133518234788
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_05: -243007855070923088
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_06: -314404227680210734
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_07: 2718328653631686727
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_08: 2253674192198583996
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_09: -2627238541243602415
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_1: 2443574764000176756
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_10: -6958449594025944961
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_2: -8208786848329713845
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_3: -7955031607369691401
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_4: -2315416206723063777
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_5: -3956453409373320233
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_6: 2052334223512588194
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_7: -6261400194666755905
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_8: 4507983090775862717
+      StoneGolemBoss_P2_GroundSmash_11f_160x160_v1_9: -269031746994503901
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

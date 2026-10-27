@@ -14,6 +14,7 @@ public class CameraFollow : MonoBehaviour
     private Camera cam;
     private Vector3 followVelocity;
     private Vector3 basePosition;
+    private Transform presentationTarget;
     [SerializeField, Range(0f, 2f)] private float shakeIntensity = 1f;
     [Header("Impact distance falloff (player world position)")]
     [SerializeField, Min(0f)] private float impactFullStrengthDistance = 3f;
@@ -55,6 +56,7 @@ public class CameraFollow : MonoBehaviour
 
     private void OnDisable()
     {
+        presentationTarget = null;
         ResetShake();
         if (cam != null) transform.position = ClampPosition(basePosition);
     }
@@ -78,7 +80,7 @@ public class CameraFollow : MonoBehaviour
         if (target == null)
             return;
 
-        Vector3 destination = ClampPosition(target.position);
+        Vector3 destination = ClampPosition(presentationTarget != null ? presentationTarget.position : target.position);
 
         Vector3 nextPosition = Time.timeScale > 0f && Time.deltaTime > 0f ? Vector3.SmoothDamp(
             basePosition,
@@ -147,8 +149,24 @@ public class CameraFollow : MonoBehaviour
         ResetShake();
         if (target != null) transform.position = basePosition = ClampPosition(target.position);
     }
+    // Presentation changes only the camera focus; player tracking and room bounds stay intact.
+    public void FocusPresentation(Transform focus)
+    {
+        if (focus == null || !isActiveAndEnabled) return;
+        presentationTarget = focus;
+        followVelocity = Vector3.zero;
+        ResetShake();
+        transform.position = basePosition = ClampPosition(focus.position);
+    }
+    public void ReleasePresentation(Transform focus)
+    {
+        if (presentationTarget != focus) return;
+        presentationTarget = null;
+        SnapToTarget();
+    }
     public void SetRoom(Transform player, Vector2 minimum, Vector2 maximum)
     {
+        presentationTarget = null;
         target = player;
         mapMin = minimum;
         mapMax = maximum;

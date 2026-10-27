@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: 2c0a69f194d668945b6137d29e702ed7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4640796204486397986
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_0
+  - first:
+      213: -8531769169673063128
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_1
+  - first:
+      213: 289610954158343579
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_2
+  - first:
+      213: -1927226512964515619
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_3
+  - first:
+      213: -3594255281217834158
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_4
+  - first:
+      213: 7867931987893959541
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_5
+  - first:
+      213: 3753521624872018732
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_6
+  - first:
+      213: -9004117605434098306
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_7
+  - first:
+      213: -8829085877596920220
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_8
+  - first:
+      213: -8639963703628956631
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_9
+  - first:
+      213: -5114064093915445133
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_10
+  - first:
+      213: 2806040520559134672
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_00
+  - first:
+      213: 4617087744193380208
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_01
+  - first:
+      213: -3184497175203151953
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_02
+  - first:
+      213: -2046452839779998208
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_03
+  - first:
+      213: -2591772162565075853
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_04
+  - first:
+      213: -1690772435056988219
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_05
+  - first:
+      213: 3247936467247060256
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_06
+  - first:
+      213: -3129926093400946737
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_07
+  - first:
+      213: 910850527125300390
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_08
+  - first:
+      213: -5192862555079781035
+    second: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d787458cfe01f620800000000000000
+      internalID: 2806040520559134672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_01
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07fb47947d0331040800000000000000
+      internalID: 4617087744193380208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_02
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faff7cbf0b46ec3d0800000000000000
+      internalID: -3184497175203151953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_03
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 006e25b1cf98993e0800000000000000
+      internalID: -2046452839779998208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_04
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c009f23fc280cd0800000000000000
+      internalID: -2591772162565075853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_05
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cfe76cad6b2988e0800000000000000
+      internalID: -1690772435056988219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_06
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0255c47320df21d20800000000000000
+      internalID: 3247936467247060256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_07
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc74c951dc44094d0800000000000000
+      internalID: -3129926093400946737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_08
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a4e7c08abdf3ac00800000000000000
+      internalID: 910850527125300390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_09
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 555da05e40f3fe7b0800000000000000
+      internalID: -5192862555079781035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Rockfall_11f_160x160_v1_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37807935dc13709b0800000000000000
+      internalID: -5114064093915445133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_0: -4640796204486397986
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_00: 2806040520559134672
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_01: 4617087744193380208
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_02: -3184497175203151953
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_03: -2046452839779998208
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_04: -2591772162565075853
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_05: -1690772435056988219
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_06: 3247936467247060256
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_07: -3129926093400946737
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_08: 910850527125300390
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_09: -5192862555079781035
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_1: -8531769169673063128
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_10: -5114064093915445133
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_2: 289610954158343579
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_3: -1927226512964515619
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_4: -3594255281217834158
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_5: 7867931987893959541
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_6: 3753521624872018732
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_7: -9004117605434098306
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_8: -8829085877596920220
+      StoneGolemBoss_P2_Rockfall_11f_160x160_v1_9: -8639963703628956631
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
