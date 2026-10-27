@@ -1,0 +1,3910 @@
+{
+  "assets": {
+    "LeapSlam": {
+      "file": "Sprites\\StoneGolemBoss_P2_LeapSlam_16f_160x160_v1.png",
+      "size": [
+        2560,
+        160
+      ],
+      "frames": 16,
+      "poses": [
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        },
+        {
+          "pose": "Gather",
+          "down": 5,
+          "lean": 0,
+          "hands": [
+            [
+              34,
+              99
+            ],
+            [
+              110,
+              88
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                44.56167641003727,
+                99.90482749174053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                90.53326642291228,
+                99.81601479240491
+              ]
+            }
+          ],
+          "bbox": [
+            32,
+            23,
+            138,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8627
+          ]
+        },
+        {
+          "pose": "Deep brace",
+          "down": 10,
+          "lean": 0,
+          "hands": [
+            [
+              37,
+              104
+            ],
+            [
+              110,
+              94
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.031349755506916,
+                100.49798352639571
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.84380522906454,
+                100.94729309234027
+              ]
+            }
+          ],
+          "bbox": [
+            32,
+            28,
+            138,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8235
+          ]
+        },
+        {
+          "pose": "Takeoff",
+          "down": 0,
+          "lean": 0,
+          "hands": [
+            [
+              23,
+              80
+            ],
+            [
+              118,
+              66
+            ]
+          ],
+          "air_foot_lift": 3,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                46.25,
+                113.0
+              ],
+              "knee": [
+                44.15956839947083,
+                96.85595788770641
+              ]
+            },
+            {
+              "ankle": [
+                86.75,
+                109.0
+              ],
+              "knee": [
+                91.0663490127751,
+                96.73749082773368
+              ]
+            }
+          ],
+          "bbox": [
+            27,
+            18,
+            147,
+            140
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8795
+          ]
+        },
+        {
+          "pose": "Air tuck",
+          "down": 1,
+          "lean": 0,
+          "hands": [
+            [
+              28,
+              82
+            ],
+            [
+              118,
+              66
+            ]
+          ],
+          "air_foot_lift": 10,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                44.5,
+                106.0
+              ],
+              "knee": [
+                38.49326756919447,
+                90.86992513221732
+              ]
+            },
+            {
+              "ankle": [
+                88.5,
+                102.0
+              ],
+              "knee": [
+                96.59836623216424,
+                91.83061140629674
+              ]
+            }
+          ],
+          "bbox": [
+            32,
+            19,
+            147,
+            134
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8394
+          ]
+        },
+        {
+          "pose": "Landing ready",
+          "down": 2,
+          "lean": 0,
+          "hands": [
+            [
+              20,
+              101
+            ],
+            [
+              120,
+              91
+            ]
+          ],
+          "air_foot_lift": 2,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                46.5,
+                114.0
+              ],
+              "knee": [
+                44.08763368190026,
+                97.90091652461862
+              ]
+            },
+            {
+              "ankle": [
+                86.5,
+                110.0
+              ],
+              "knee": [
+                91.0753246380034,
+                97.83174603910327
+              ]
+            }
+          ],
+          "bbox": [
+            24,
+            20,
+            150,
+            140
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9689
+          ]
+        },
+        {
+          "pose": "Contact",
+          "down": 9,
+          "lean": 0,
+          "hands": [
+            [
+              24,
+              120
+            ],
+            [
+              114,
+              110
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.462570305527386,
+                100.36632699050801
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.44881340445623,
+                100.71227189933661
+              ]
+            }
+          ],
+          "bbox": [
+            21,
+            27,
+            142,
+            143
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9661
+          ]
+        },
+        {
+          "pose": "Maximum compression",
+          "down": 12,
+          "lean": 0,
+          "hands": [
+            [
+              24,
+              123
+            ],
+            [
+              115,
+              113
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 2,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                41.24681876957882,
+                100.7717070644826
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                93.56303813347651,
+                101.42642661199253
+              ]
+            }
+          ],
+          "bbox": [
+            21,
+            30,
+            143,
+            148
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9428
+          ]
+        },
+        {
+          "pose": "Absorb",
+          "down": 8,
+          "lean": 0,
+          "hands": [
+            [
+              27,
+              117
+            ],
+            [
+              114,
+              106
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.92484495305389,
+                100.23950789653605
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.02575454885661,
+                100.48087320510214
+              ]
+            }
+          ],
+          "bbox": [
+            22,
+            26,
+            143,
+            144
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9598
+          ]
+        },
+        {
+          "pose": "Rise",
+          "down": 3,
+          "lean": 0,
+          "hands": [
+            [
+              28,
+              109
+            ],
+            [
+              113,
+              96
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.98679197507691,
+                99.75274147746053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.24784890108319,
+                99.41224890952587
+              ]
+            }
+          ],
+          "bbox": [
+            25,
+            21,
+            143,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9802
+          ]
+        },
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        },
+        {
+          "pose": "Landing wait",
+          "down": 6,
+          "lean": 0,
+          "hands": [
+            [
+              29,
+              113
+            ],
+            [
+              114,
+              102
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                43.965672035624756,
+                100.00647462863142
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                91.07540222351977,
+                100.03169634954517
+              ]
+            }
+          ],
+          "bbox": [
+            23,
+            24,
+            143,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9679
+          ]
+        },
+        {
+          "pose": "Wave gather",
+          "down": 7,
+          "lean": 0,
+          "hands": [
+            [
+              37,
+              101
+            ],
+            [
+              110,
+              91
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                43.423475805532455,
+                100.1189271556866
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                91.57001449679831,
+                100.25372661200768
+              ]
+            }
+          ],
+          "bbox": [
+            32,
+            25,
+            138,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8420
+          ]
+        },
+        {
+          "pose": "Wave charged",
+          "down": 9,
+          "lean": 0,
+          "hands": [
+            [
+              42,
+              94
+            ],
+            [
+              109,
+              84
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.462570305527386,
+                100.36632699050801
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.44881340445623,
+                100.71227189933661
+              ]
+            }
+          ],
+          "bbox": [
+            32,
+            27,
+            138,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            7798
+          ]
+        },
+        {
+          "pose": "Wave release",
+          "down": 10,
+          "lean": 0,
+          "hands": [
+            [
+              21,
+              117
+            ],
+            [
+              121,
+              108
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.031349755506916,
+                100.49798352639571
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.84380522906454,
+                100.94729309234027
+              ]
+            }
+          ],
+          "bbox": [
+            20,
+            28,
+            148,
+            144
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9680
+          ]
+        },
+        {
+          "pose": "Wave absorb",
+          "down": 8,
+          "lean": 0,
+          "hands": [
+            [
+              25,
+              116
+            ],
+            [
+              118,
+              106
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.92484495305389,
+                100.23950789653605
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.02575454885661,
+                100.48087320510214
+              ]
+            }
+          ],
+          "bbox": [
+            21,
+            26,
+            146,
+            144
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9661
+          ]
+        }
+      ]
+    },
+    "GroundSmash": {
+      "file": "Sprites\\StoneGolemBoss_P2_GroundSmash_11f_160x160_v1.png",
+      "size": [
+        1760,
+        160
+      ],
+      "frames": 11,
+      "poses": [
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        },
+        {
+          "pose": "Raise",
+          "down": 2,
+          "lean": 0,
+          "hands": [
+            [
+              25,
+              73
+            ],
+            [
+              116,
+              63
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                46.888743001436026,
+                99.72155959926535
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                88.44811076431041,
+                99.23259017319224
+              ]
+            }
+          ],
+          "bbox": [
+            30,
+            20,
+            146,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8567
+          ]
+        },
+        {
+          "pose": "Arms lifted",
+          "down": 3,
+          "lean": 0,
+          "hands": [
+            [
+              27,
+              39
+            ],
+            [
+              116,
+              38
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": -1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.98679197507691,
+                99.75274147746053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.24784890108319,
+                99.41224890952587
+              ]
+            }
+          ],
+          "bbox": [
+            11,
+            21,
+            153,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8387
+          ]
+        },
+        {
+          "pose": "Brace overhead",
+          "down": 5,
+          "lean": 0,
+          "hands": [
+            [
+              31,
+              24
+            ],
+            [
+              113,
+              29
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": -1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                44.56167641003727,
+                99.90482749174053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                90.53326642291228,
+                99.81601479240491
+              ]
+            }
+          ],
+          "bbox": [
+            15,
+            23,
+            151,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8108
+          ]
+        },
+        {
+          "pose": "Downstroke",
+          "down": 7,
+          "lean": 0,
+          "hands": [
+            [
+              23,
+              64
+            ],
+            [
+              120,
+              58
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                43.423475805532455,
+                100.1189271556866
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                91.57001449679831,
+                100.25372661200768
+              ]
+            }
+          ],
+          "bbox": [
+            24,
+            25,
+            151,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8581
+          ]
+        },
+        {
+          "pose": "Ground contact",
+          "down": 10,
+          "lean": 0,
+          "hands": [
+            [
+              25,
+              124
+            ],
+            [
+              117,
+              119
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.031349755506916,
+                100.49798352639571
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.84380522906454,
+                100.94729309234027
+              ]
+            }
+          ],
+          "bbox": [
+            22,
+            28,
+            143,
+            144
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9576
+          ]
+        },
+        {
+          "pose": "Deep impact",
+          "down": 12,
+          "lean": 0,
+          "hands": [
+            [
+              25,
+              124
+            ],
+            [
+              117,
+              120
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                41.24681876957882,
+                100.7717070644826
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                93.56303813347651,
+                101.42642661199253
+              ]
+            }
+          ],
+          "bbox": [
+            21,
+            30,
+            143,
+            148
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9422
+          ]
+        },
+        {
+          "pose": "Release",
+          "down": 8,
+          "lean": 0,
+          "hands": [
+            [
+              27,
+              118
+            ],
+            [
+              115,
+              110
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.92484495305389,
+                100.23950789653605
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.02575454885661,
+                100.48087320510214
+              ]
+            }
+          ],
+          "bbox": [
+            22,
+            26,
+            143,
+            144
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9596
+          ]
+        },
+        {
+          "pose": "Recover",
+          "down": 3,
+          "lean": 0,
+          "hands": [
+            [
+              28,
+              109
+            ],
+            [
+              114,
+              98
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.98679197507691,
+                99.75274147746053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.24784890108319,
+                99.41224890952587
+              ]
+            }
+          ],
+          "bbox": [
+            25,
+            21,
+            143,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9802
+          ]
+        },
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        },
+        {
+          "pose": "Second strike bridge",
+          "down": 8,
+          "lean": 0,
+          "hands": [
+            [
+              25,
+              100
+            ],
+            [
+              117,
+              91
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.92484495305389,
+                100.23950789653605
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.02575454885661,
+                100.48087320510214
+              ]
+            }
+          ],
+          "bbox": [
+            28,
+            26,
+            146,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8831
+          ]
+        }
+      ]
+    },
+    "RockCharge": {
+      "file": "Sprites\\StoneGolemBoss_P2_RockCharge_11f_160x160_v1.png",
+      "size": [
+        1760,
+        160
+      ],
+      "frames": 11,
+      "poses": [
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        },
+        {
+          "pose": "Shoulder brace",
+          "down": 4,
+          "lean": 2,
+          "hands": [
+            [
+              38,
+              93
+            ],
+            [
+              111,
+              85
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.843934854658954,
+                99.76228115221453
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                90.36015361187671,
+                99.75299789822675
+              ]
+            }
+          ],
+          "bbox": [
+            34,
+            22,
+            140,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8370
+          ]
+        },
+        {
+          "pose": "Low guard",
+          "down": 8,
+          "lean": 4,
+          "hands": [
+            [
+              47,
+              87
+            ],
+            [
+              107,
+              81
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                44.04978540733337,
+                99.99074536846837
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.79901211081354,
+                100.91968257146885
+              ]
+            }
+          ],
+          "bbox": [
+            36,
+            26,
+            137,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            7498
+          ]
+        },
+        {
+          "pose": "Drive A",
+          "down": 8,
+          "lean": 4,
+          "hands": [
+            [
+              46,
+              89
+            ],
+            [
+              108,
+              80
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                44.04978540733337,
+                99.99074536846837
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.79901211081354,
+                100.91968257146885
+              ]
+            }
+          ],
+          "bbox": [
+            36,
+            26,
+            138,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            7622
+          ]
+        },
+        {
+          "pose": "Drive B",
+          "down": 9,
+          "lean": 4,
+          "hands": [
+            [
+              46,
+              90
+            ],
+            [
+              108,
+              81
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                43.57129069376965,
+                100.08635954618273
+              ]
+            },
+            {
+              "ankle": [
+                86.5,
+                110.0
+              ],
+              "knee": [
+                94.75810654273732,
+                99.95989659770382
+              ]
+            }
+          ],
+          "bbox": [
+            36,
+            27,
+            139,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            7518
+          ]
+        },
+        {
+          "pose": "Drive C",
+          "down": 8,
+          "lean": 3,
+          "hands": [
+            [
+              45,
+              90
+            ],
+            [
+              108,
+              82
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                43.76081864362088,
+                100.04670240544337
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.61367900253126,
+                100.80807210300758
+              ]
+            }
+          ],
+          "bbox": [
+            35,
+            26,
+            138,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            7598
+          ]
+        },
+        {
+          "pose": "Drive D",
+          "down": 8,
+          "lean": 4,
+          "hands": [
+            [
+              46,
+              89
+            ],
+            [
+              108,
+              81
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                46.5,
+                114.0
+              ],
+              "knee": [
+                42.367163277093624,
+                98.25453523639914
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                92.79901211081354,
+                100.91968257146885
+              ]
+            }
+          ],
+          "bbox": [
+            36,
+            26,
+            138,
+            140
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            7576
+          ]
+        },
+        {
+          "pose": "Brake",
+          "down": 11,
+          "lean": 2,
+          "hands": [
+            [
+              33,
+              109
+            ],
+            [
+              116,
+              99
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.1615714148174,
+                100.45684688275612
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                93.59875812253091,
+                101.45206773840148
+              ]
+            }
+          ],
+          "bbox": [
+            33,
+            29,
+            146,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8529
+          ]
+        },
+        {
+          "pose": "Balance",
+          "down": 8,
+          "lean": -1,
+          "hands": [
+            [
+              24,
+              110
+            ],
+            [
+              119,
+              96
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                42.65619640512409,
+                100.31142548447619
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                91.81902755388359,
+                100.37507340551589
+              ]
+            }
+          ],
+          "bbox": [
+            27,
+            26,
+            148,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9316
+          ]
+        },
+        {
+          "pose": "Restore",
+          "down": 3,
+          "lean": 0,
+          "hands": [
+            [
+              28,
+              108
+            ],
+            [
+              114,
+              94
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.98679197507691,
+                99.75274147746053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.24784890108319,
+                99.41224890952587
+              ]
+            }
+          ],
+          "bbox": [
+            26,
+            21,
+            144,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9698
+          ]
+        },
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        }
+      ]
+    },
+    "StoneFan": {
+      "file": "Sprites\\StoneGolemBoss_P2_StoneFan_9f_160x160_v1.png",
+      "size": [
+        1440,
+        160
+      ],
+      "frames": 9,
+      "poses": [
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        },
+        {
+          "pose": "Draw back",
+          "down": 2,
+          "lean": -2,
+          "hands": [
+            [
+              23,
+              96
+            ],
+            [
+              119,
+              78
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": -1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                46.22234306638288,
+                99.73976477127108
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                87.94386519246255,
+                99.14615278939677
+              ]
+            }
+          ],
+          "bbox": [
+            26,
+            20,
+            148,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9356
+          ]
+        },
+        {
+          "pose": "Loaded",
+          "down": 4,
+          "lean": -3,
+          "hands": [
+            [
+              22,
+              83
+            ],
+            [
+              118,
+              67
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": -1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                44.357165412077826,
+                99.93714143307977
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.23719359074985,
+                99.40950447138762
+              ]
+            }
+          ],
+          "bbox": [
+            25,
+            22,
+            146,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8738
+          ]
+        },
+        {
+          "pose": "Release forward",
+          "down": 5,
+          "lean": 4,
+          "hands": [
+            [
+              44,
+              88
+            ],
+            [
+              109,
+              78
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.77429386270838,
+                99.7673894747331
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                91.34618406522566,
+                100.15017654390046
+              ]
+            }
+          ],
+          "bbox": [
+            36,
+            23,
+            139,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            7857
+          ]
+        },
+        {
+          "pose": "Recoil",
+          "down": 3,
+          "lean": -2,
+          "hands": [
+            [
+              32,
+              91
+            ],
+            [
+              117,
+              85
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 2,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.369842551596854,
+                99.80300686258664
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                88.77352059559719,
+                99.29930775485846
+              ]
+            }
+          ],
+          "bbox": [
+            30,
+            21,
+            145,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8739
+          ]
+        },
+        {
+          "pose": "Arms settle",
+          "down": 3,
+          "lean": -1,
+          "hands": [
+            [
+              28,
+              102
+            ],
+            [
+              115,
+              92
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.67392552603456,
+                99.7752803879544
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.01451057912675,
+                99.35433963889854
+              ]
+            }
+          ],
+          "bbox": [
+            29,
+            21,
+            144,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9374
+          ]
+        },
+        {
+          "pose": "Restore",
+          "down": 1,
+          "lean": 0,
+          "hands": [
+            [
+              29,
+              105
+            ],
+            [
+              114,
+              92
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                48.04594910929909,
+                99.75481639190383
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                87.45340696958871,
+                99.08150131862254
+              ]
+            }
+          ],
+          "bbox": [
+            27,
+            19,
+            144,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9824
+          ]
+        },
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        },
+        {
+          "pose": "Reaim draw",
+          "down": 4,
+          "lean": -1,
+          "hands": [
+            [
+              25,
+              87
+            ],
+            [
+              118,
+              74
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                44.92993915477861,
+                99.85333322022527
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.7064159050887,
+                99.53956336485332
+              ]
+            }
+          ],
+          "bbox": [
+            29,
+            22,
+            146,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8733
+          ]
+        }
+      ]
+    },
+    "Rockfall": {
+      "file": "Sprites\\StoneGolemBoss_P2_Rockfall_11f_160x160_v1.png",
+      "size": [
+        1760,
+        160
+      ],
+      "frames": 11,
+      "poses": [
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        },
+        {
+          "pose": "Channel rise",
+          "down": 1,
+          "lean": 0,
+          "hands": [
+            [
+              26,
+              81
+            ],
+            [
+              119,
+              64
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": -1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                48.04594910929909,
+                99.75481639190383
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                87.45340696958871,
+                99.08150131862254
+              ]
+            }
+          ],
+          "bbox": [
+            30,
+            19,
+            148,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8776
+          ]
+        },
+        {
+          "pose": "Call stone",
+          "down": 2,
+          "lean": 0,
+          "hands": [
+            [
+              24,
+              52
+            ],
+            [
+              118,
+              43
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": -1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                46.888743001436026,
+                99.72155959926535
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                88.44811076431041,
+                99.23259017319224
+              ]
+            }
+          ],
+          "bbox": [
+            18,
+            20,
+            152,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8815
+          ]
+        },
+        {
+          "pose": "Summon",
+          "down": 3,
+          "lean": 0,
+          "hands": [
+            [
+              26,
+              34
+            ],
+            [
+              116,
+              32
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": -1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.98679197507691,
+                99.75274147746053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.24784890108319,
+                99.41224890952587
+              ]
+            }
+          ],
+          "bbox": [
+            12,
+            21,
+            153,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8391
+          ]
+        },
+        {
+          "pose": "Sustain",
+          "down": 3,
+          "lean": 0,
+          "hands": [
+            [
+              27,
+              35
+            ],
+            [
+              115,
+              33
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.98679197507691,
+                99.75274147746053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.24784890108319,
+                99.41224890952587
+              ]
+            }
+          ],
+          "bbox": [
+            13,
+            21,
+            153,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8364
+          ]
+        },
+        {
+          "pose": "Hold until rocks finish",
+          "down": 2,
+          "lean": 0,
+          "hands": [
+            [
+              27,
+              36
+            ],
+            [
+              115,
+              34
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                46.888743001436026,
+                99.72155959926535
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                88.44811076431041,
+                99.23259017319224
+              ]
+            }
+          ],
+          "bbox": [
+            12,
+            20,
+            153,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8428
+          ]
+        },
+        {
+          "pose": "Lower arms",
+          "down": 3,
+          "lean": 0,
+          "hands": [
+            [
+              26,
+              59
+            ],
+            [
+              117,
+              52
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.98679197507691,
+                99.75274147746053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.24784890108319,
+                99.41224890952587
+              ]
+            }
+          ],
+          "bbox": [
+            27,
+            21,
+            149,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8621
+          ]
+        },
+        {
+          "pose": "Settle",
+          "down": 3,
+          "lean": 0,
+          "hands": [
+            [
+              27,
+              86
+            ],
+            [
+              115,
+              76
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.98679197507691,
+                99.75274147746053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.24784890108319,
+                99.41224890952587
+              ]
+            }
+          ],
+          "bbox": [
+            31,
+            21,
+            144,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8673
+          ]
+        },
+        {
+          "pose": "Restore",
+          "down": 1,
+          "lean": 0,
+          "hands": [
+            [
+              28,
+              102
+            ],
+            [
+              114,
+              89
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 0,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                48.04594910929909,
+                99.75481639190383
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                87.45340696958871,
+                99.08150131862254
+              ]
+            }
+          ],
+          "bbox": [
+            28,
+            19,
+            143,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            9606
+          ]
+        },
+        {
+          "pose": "Idle",
+          "exact_idle": true
+        },
+        {
+          "pose": "Round gap hold",
+          "down": 3,
+          "lean": 0,
+          "hands": [
+            [
+              26,
+              50
+            ],
+            [
+              116,
+              45
+            ]
+          ],
+          "air_foot_lift": 0,
+          "shoulder_lag": 1,
+          "arm_lag": 0,
+          "legs": [
+            {
+              "ankle": [
+                47.0,
+                116.0
+              ],
+              "knee": [
+                45.98679197507691,
+                99.75274147746053
+              ]
+            },
+            {
+              "ankle": [
+                86.0,
+                112.0
+              ],
+              "knee": [
+                89.24784890108319,
+                99.41224890952587
+              ]
+            }
+          ],
+          "bbox": [
+            8,
+            21,
+            152,
+            142
+          ],
+          "face_pixels_exact": true,
+          "opaque_components": [
+            8587
+          ]
+        }
+      ]
+    }
+  },
+  "final_checks": [
+    {
+      "pattern": "LeapSlam",
+      "rgba": "RGBA",
+      "size": [
+        2560,
+        160
+      ],
+      "frames": 16,
+      "original_palette_only": true,
+      "min_margin": 10,
+      "components": [
+        null,
+        [
+          8627
+        ],
+        [
+          8235
+        ],
+        [
+          8795
+        ],
+        [
+          8394
+        ],
+        [
+          9689
+        ],
+        [
+          9661
+        ],
+        [
+          9428
+        ],
+        [
+          9598
+        ],
+        [
+          9802
+        ],
+        null,
+        [
+          9679
+        ],
+        [
+          8420
+        ],
+        [
+          7798
+        ],
+        [
+          9680
+        ],
+        [
+          9661
+        ]
+      ]
+    },
+    {
+      "pattern": "GroundSmash",
+      "rgba": "RGBA",
+      "size": [
+        1760,
+        160
+      ],
+      "frames": 11,
+      "original_palette_only": true,
+      "min_margin": 7,
+      "components": [
+        null,
+        [
+          8567
+        ],
+        [
+          8387
+        ],
+        [
+          8108
+        ],
+        [
+          8581
+        ],
+        [
+          9576
+        ],
+        [
+          9422
+        ],
+        [
+          9596
+        ],
+        [
+          9802
+        ],
+        null,
+        [
+          8831
+        ]
+      ]
+    },
+    {
+      "pattern": "RockCharge",
+      "rgba": "RGBA",
+      "size": [
+        1760,
+        160
+      ],
+      "frames": 11,
+      "original_palette_only": true,
+      "min_margin": 12,
+      "components": [
+        null,
+        [
+          8370
+        ],
+        [
+          7498
+        ],
+        [
+          7622
+        ],
+        [
+          7518
+        ],
+        [
+          7598
+        ],
+        [
+          7576
+        ],
+        [
+          8529
+        ],
+        [
+          9316
+        ],
+        [
+          9698
+        ],
+        null
+      ]
+    },
+    {
+      "pattern": "StoneFan",
+      "rgba": "RGBA",
+      "size": [
+        1440,
+        160
+      ],
+      "frames": 9,
+      "original_palette_only": true,
+      "min_margin": 12,
+      "components": [
+        null,
+        [
+          9356
+        ],
+        [
+          8738
+        ],
+        [
+          7857
+        ],
+        [
+          8739
+        ],
+        [
+          9374
+        ],
+        [
+          9824
+        ],
+        null,
+        [
+          8733
+        ]
+      ]
+    },
+    {
+      "pattern": "Rockfall",
+      "rgba": "RGBA",
+      "size": [
+        1760,
+        160
+      ],
+      "frames": 11,
+      "original_palette_only": true,
+      "min_margin": 7,
+      "components": [
+        null,
+        [
+          8776
+        ],
+        [
+          8815
+        ],
+        [
+          8391
+        ],
+        [
+          8364
+        ],
+        [
+          8428
+        ],
+        [
+          8621
+        ],
+        [
+          8673
+        ],
+        [
+          9606
+        ],
+        null,
+        [
+          8587
+        ]
+      ]
+    }
+  ],
+  "gif_checks": [
+    {
+      "file": "Previews\\LeapSlam_Enhanced_Native160.gif",
+      "frames": 17,
+      "duration_ms": 4400,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\LeapSlam_Enhanced_3x.gif",
+      "frames": 17,
+      "duration_ms": 4400,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\LeapSlam_Idle_Transition.gif",
+      "frames": 19,
+      "duration_ms": 5200,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\LeapSlam_Basic_Native160.gif",
+      "frames": 11,
+      "duration_ms": 2300,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\GroundSmash_Enhanced_Native160.gif",
+      "frames": 17,
+      "duration_ms": 3200,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\GroundSmash_Enhanced_3x.gif",
+      "frames": 17,
+      "duration_ms": 3200,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\GroundSmash_Idle_Transition.gif",
+      "frames": 19,
+      "duration_ms": 4000,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\GroundSmash_Basic_Native160.gif",
+      "frames": 10,
+      "duration_ms": 2000,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_Enhanced_Native160.gif",
+      "frames": 16,
+      "duration_ms": 2600,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_Enhanced_3x.gif",
+      "frames": 16,
+      "duration_ms": 2600,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_Idle_Transition.gif",
+      "frames": 18,
+      "duration_ms": 3400,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_Basic_Native160.gif",
+      "frames": 16,
+      "duration_ms": 2600,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\StoneFan_Enhanced_Native160.gif",
+      "frames": 12,
+      "duration_ms": 2400,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\StoneFan_Enhanced_3x.gif",
+      "frames": 12,
+      "duration_ms": 2400,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\StoneFan_Idle_Transition.gif",
+      "frames": 14,
+      "duration_ms": 3200,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\StoneFan_Basic_Native160.gif",
+      "frames": 8,
+      "duration_ms": 1500,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Rockfall_Enhanced_Native160.gif",
+      "frames": 22,
+      "duration_ms": 5650,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Rockfall_Enhanced_3x.gif",
+      "frames": 22,
+      "duration_ms": 5650,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Rockfall_Idle_Transition.gif",
+      "frames": 24,
+      "duration_ms": 6450,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Rockfall_Basic_Native160.gif",
+      "frames": 10,
+      "duration_ms": 2150,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_WallRecovery.gif",
+      "frames": 16,
+      "duration_ms": 3100,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_EarlyEnd.gif",
+      "frames": 10,
+      "duration_ms": 2000,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\ComboA_Native160.gif",
+      "frames": 18,
+      "duration_ms": 3800,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\ComboA_3x.gif",
+      "frames": 18,
+      "duration_ms": 3800,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\ComboB_Native160.gif",
+      "frames": 19,
+      "duration_ms": 2700,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\ComboB_3x.gif",
+      "frames": 19,
+      "duration_ms": 2700,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\LeapSlam_Move_Idle_Attack_Transition.gif",
+      "frames": 26,
+      "duration_ms": 6380,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\LeapSlam_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 17,
+      "duration_ms": 4400,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\GroundSmash_Move_Idle_Attack_Transition.gif",
+      "frames": 26,
+      "duration_ms": 5180,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\GroundSmash_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 17,
+      "duration_ms": 3200,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_Move_Idle_Attack_Transition.gif",
+      "frames": 25,
+      "duration_ms": 4580,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 16,
+      "duration_ms": 2600,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\StoneFan_Move_Idle_Attack_Transition.gif",
+      "frames": 21,
+      "duration_ms": 4380,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\StoneFan_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 12,
+      "duration_ms": 2400,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Rockfall_Move_Idle_Attack_Transition.gif",
+      "frames": 31,
+      "duration_ms": 7630,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Rockfall_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 22,
+      "duration_ms": 5650,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\LeapSlam_Move_Idle_Attack_Transition.gif",
+      "frames": 26,
+      "duration_ms": 6380,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\LeapSlam_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 17,
+      "duration_ms": 4400,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\GroundSmash_Move_Idle_Attack_Transition.gif",
+      "frames": 26,
+      "duration_ms": 5180,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\GroundSmash_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 17,
+      "duration_ms": 3200,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_Move_Idle_Attack_Transition.gif",
+      "frames": 25,
+      "duration_ms": 4580,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\RockCharge_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 16,
+      "duration_ms": 2600,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\StoneFan_Move_Idle_Attack_Transition.gif",
+      "frames": 21,
+      "duration_ms": 4380,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\StoneFan_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 12,
+      "duration_ms": 2400,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Rockfall_Move_Idle_Attack_Transition.gif",
+      "frames": 31,
+      "duration_ms": 7630,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Rockfall_CameraScale_Example_1080p_Ortho4p5.gif",
+      "frames": 22,
+      "duration_ms": 5650,
+      "decoded_pixels_and_durations_checked": true
+    }
+  ],
+  "protected_hashes": {
+    "D:\\던전 게임\\아트 리소스\\몬스터 정지 이미지\\Code_Generated2_Image.png": "395a634074f1e22ec301ed1aa3b1455065a69f8349bf598412d2e84a085e1fde",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1.meta": "ce9654977b28fa932397ff4dc779cae1adbaaf950c31eb2d11d0ed9915572821",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Idle_4f_160x160_v1.png": "2c9e824cad9c26947e5f261d945b8626c6d20b993f95f586106f186261981399",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Idle_4f_160x160_v1.png.meta": "61b5b9035d3ee8bccc85f880fe06ecfa1b66221d90885b651c73c476dcd61700",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v1.png": "a0f4084b3e6374db0747b062879b298c997ca86614be3236221f3c4de3354933",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v1.png.meta": "78f5cac290fea71b80c90eff63c9701848efa92b2348f31fbc43c6ac7275eea9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v4_1.png": "223c9836c4bc2a1bc20c0fa9876dc16874164b8bd4def56e6e5552037250b718",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v4_1.png.meta": "50ddb5a42e79b00eb590edda0dfe3c20da01a02fa71ac10be01eb0c0c33bf025",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Idle_4f_160x160_v1.png": "83f40dba90cbe55398180f2736fe6a13520cc179a29721d67213939657b32555",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Idle_4f_160x160_v1.png.meta": "e080a7a5cfe3682033fe8239cbcaad36c81ae94902e4036290e2a13e4fbd39ab",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v1.png": "3246aa8de009f6a1ef458001934d9c0aed37266820a1bb469c5fc92ecb11a372",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v1.png.meta": "8c7971e7b0e454d59190dc409e53dcbf2578e27e8a28c96621a058edd4a601ea",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v4_1.png": "81121c9f09ce67d1c1ad543c5e8ba60b939293f41c83c79a5694d597c6385448",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v4_1.png.meta": "20e4dfdac4a3b053e85f0c7aa893c3e135e8ed967ee235a1b59d8ad1308a60fc",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Trials.meta": "1bea8fef47bdb5187cf89c64e0ccd3ee7c52a788c6442df40a4d3731e37cd837",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_GroundSmash_10f_160x160_v1.png": "46434a4215eedee0f940655ffa7e27c9b8bd7af7cade5ca706829e3bb28ce67f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_GroundSmash_10f_160x160_v1.png.meta": "76a08c0eaf0a759752357fc16ca5dafd4767be6ee38a393094e0aca973773905",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_LeapSlam_11f_160x160_v1.png": "8ec4ed3fe191c5054825aed5b87785656a1e9adc97fca04e4340dad1e41f0a6c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_LeapSlam_11f_160x160_v1.png.meta": "4da2755d0b1ce4b6a424f4f58b337c4c3b83332442c046dff3f70a51c939c727",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_RockCharge_11f_160x160_v1.png": "952dc622b51e90a64a685bafb27a0bbca6373593d960d57478502d40b8089077",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_RockCharge_11f_160x160_v1.png.meta": "4bd01f1894ac36ff78799dea55629c9d0eeb5e23f071154eeef86be046e4c5ef",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_Rockfall_10f_160x160_v1.png": "1a4e564731e94edd19f04cdeadb1a41174124d56946e751295904b0b47580546",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_Rockfall_10f_160x160_v1.png.meta": "afc34c8119311c2c0af6e35f7ae6073780d5c81cd020e6171ba06839f8f75573",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_StoneFan_8f_160x160_v1.png": "3fd1685eb58b11e840bebe8b420efa68d1f86c5ad993c472e13ba4f21f99c0a4",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_StoneFan_8f_160x160_v1.png.meta": "b95e2fa5931e622280da697a7417e44d31cc4fe138f1475eca77ba511c79e833",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Trials\\StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1.png": "4e5c0e0ccd14b7ac889c37f881053736be287173df2b27af16afb068a318e8a7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Trials\\StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1.png.meta": "be7288c68a76481594b09055c849989a686154d2c6c2eac4d1e6ddfc4854a45f",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossAI.cs": "7f9a4a89d705cae5ef84e87806be215ebcf04b52365b5426721a49a41116821a",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossAI.cs.meta": "4ffecfd582fe67298ae5784ed7d0373948ce34232b49309a34aed51da5b58bff",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossPhases.cs": "7bb474d3cf2b9ceab3597679bc71e68ee032effec221d797bc88e9acba5d9056",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossPhases.cs.meta": "30465ee70b08bd2c1f4dd187fbbb49687040dc37e90db9eaef3392b1d110de73",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossSpriteAnimation.cs": "6b02be6187e57c618fb0f74bdecd104d3a3b65cd840f45cf656833248c4016a7",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossSpriteAnimation.cs.meta": "5ce9d1da8e32dfc44b442b7508f5811127489a3bbe80ba6091c939b1b562b428",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemRockfall.cs": "bb46d8b21bde6e855cb266eab1e393ee420cd0bd0578b9c69c1fdf67ac15ee89",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemRockfall.cs.meta": "bbff18230ecc3c4e71b63ba1f0471a61e8d3a10a8613395a5f360da471966fec",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemShard.cs": "9445d82a2f819aea5cf4bdf0977a60073456db516e0159c181e543d22514fd76",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemShard.cs.meta": "df5000b469cc4b727bd78f25c0bb7e7f6eaf3d4b030b9a3f9372a7ab26e75cd2",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemTelegraph.cs": "70b78aa1780a6615fb241a3ae83103a2b4c03becfc3c138077b6b4bcc764b664",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemTelegraph.cs.meta": "f3b42b74a726364700b94b6f9c0bbe281771b0b576ed11999737fcabcb821b8c",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\BossRoom24x22.prefab": "3c81ae8df9033473f326d41e398bbacd0bb32275085f782d7ec84e468cfc89e7",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\BossRoom24x22.prefab.meta": "49e13b15064c42bcfbdc9c01f0b5e0772ee327870aaecdb7b67780084fb47333",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps.meta": "928452176c5c9c616f43924f649202640e9e0c1e92f397da36b75b4be58c1b66",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves.meta": "d109c20f90815de7abc0a19d82c198c04baca9d0de35e00e34d164ea09b8580f",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\Room_Boss_Test Variant.prefab": "f9d2844942d14efa4bd9fae60a9701f4b29b1775c0f176464abc18678ed69247",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\Room_Boss_Test Variant.prefab.meta": "705a466cba7b393bc75d7dc692d745ec28e789eaaa2fc8980bbad0f7c48a535c",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\Room_Normal_01.prefab": "4b9dcb62295bd6b23d851132b0f74a8076798c70b4521d166e2142198013ba71",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\Room_Normal_01.prefab.meta": "7238b9cf4c8bd08df27553f55a9ddab286a8f0688b20c78d5bfa33511a0b43cb",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\Room_Normal_02 Variant.prefab": "d35f16c9c44713b43c701c37ad0025de62e7c6b68171ef0ec2129ea80d87e8a2",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\Room_Normal_02 Variant.prefab.meta": "577ac43495e56ec93748888f3bdd214c6c79eeecb88644ae6465d6dea6adcdb3",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_01.prefab": "dd378a9092c4aa2f1cb24e03fbf3a2b4266630facb8700f94c316a4cbe6a4cdb",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_01.prefab.meta": "fb4dcdc9f808dc452f414434c22bfaf9fb1c7d857ac838ca9eb53f3c208d1594",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_02.prefab": "c897b936d10da734798b0ed7832f2862da133de509887c070bd23576df5ef48c",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_02.prefab.meta": "d99f8ca89b08559345c2b77c82d31b8db7ddeb86fc449540f977d9e72f0a1079",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_03.prefab": "66e84d28bd51b24e005f3d445b24ca952d1560e05e4b06902c227a3b0065155d",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_03.prefab.meta": "a04a77b63b2396bfe7b86ee98c1eb5914149bf9f386c2e9470f2764ccbe28317",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_04.prefab": "3bd578d25543e5040d6dd0e967bd2282965dcef285f87289e7c45395376560e0",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_04.prefab.meta": "ffc43d4240f156f765f3ae64fcd86f1624e6571a972e6f13ce2e4e938a00f443",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_05.prefab": "3ee79449c3f9a206246d257f952317ff6de841be67e55033a7fe2e4436b43371",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_05.prefab.meta": "47c5fc86cfba242d44c61e77752b62f06c0471deabdde7e338b397a2379e246d",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_06.prefab": "258a5c947a51b33421750a89fac63c744fc5063e93be109cce7cdfff171d869c",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_06.prefab.meta": "5c46b57f0389392132d039ef622a4cdab40f5e50710790d3b745929dfa5fccc3",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_07.prefab": "ca6efd2db331a839cb62ab8fd8838a794436f9e1281984824d0d04fe3532caf5",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\ReferenceMaps\\Map_07.prefab.meta": "43b9f4615edf357d5d703ae47405ba9f9d70f05c0078786dd15417554c125f14",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_01.prefab": "d3402fdf8c03d3cb073184363f573aefbf647ad7edd068dced1f4fc57c0f1c9d",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_01.prefab.meta": "53601ac580ae330504445747cb1a2def0e8c9eec4250cf645d696d5e78602243",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_02.prefab": "ace32003c3253da3eeabc7cbdae4a1d864c5bb788d9239127bb91440c17168a1",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_02.prefab.meta": "31a9db391bbd799da8f417558bdc08918d62e1814788801aa54a5114a3c6bdad",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_03.prefab": "75d5d44d5be370e02fd573b3c2dbc6a8f7e063c44ec1d1276515eebc6808d4f2",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_03.prefab.meta": "fa321cc7f5a804dfd15810e1718eb0ab62627eada30894de757e11898edb542e",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_04.prefab": "132fd8d25108424c9bb4bf9c1f133d984d7a2377087ff60c2228b37dba3d9256",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_04.prefab.meta": "8d8076531da68d7715a02e23a5e3b04649dedeb40493ef44ee0cd90a47045789",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_05.prefab": "a1c84c2d751c70ac06e397da1b4474980de212f4693fec07d967c3311f823737",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_05.prefab.meta": "65ededf403cabf57b1852c717a27b879ac60929972480f3d5c814756b20f1103",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_06.prefab": "263c29e51d2aaf75f176743eac6efc7ff7570b11da468a87e090d70ac3ad0446",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_06.prefab.meta": "8013a0ac333b7e641e3b056f5038b2b323650ad7f8c42a127ec6fe421dcef15a",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_07.prefab": "643bd7e4f5c69782b9bb7067d5b7627a435097b594a2d98d54ac7d8cf012c62f",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_07.prefab.meta": "1bc7393612411cf4bb445d3b76a2ea68f902979f85523108f156196b2f309174",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_08.prefab": "89faacf06b9306115e268578b4998b93a4ebf21ca0c09f427639847d76635e10",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_08.prefab.meta": "b523f34138ecaac4374b2e1dfed6583c2135f8cb0b58d9dc5b8ef5bb21e9bbda",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_09.prefab": "0c331ec0019919026600c6b6262d1ccbd5f57d99975900567c2a5aec384dd28d",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_09.prefab.meta": "becd48363685616f523870e9dd188a2badba7de2198dfa7968d38ddc430a0252",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_10.prefab": "dbbdebbca0d934c3ac4cfdda7077acf1fde3eb58793258c752a093b670ec79c3",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_10.prefab.meta": "01770e22fd3a50c8e66f02a4dd8cda9f74d81ebf19d651b0c28556a6226d3490",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\Main.unity": "e078c7f2ddc1c7aff8882519647a796d07863dac98d95392e45e165605fa4eda",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\Main.unity.meta": "347e0b42b8bcf98c337d15a7fc621c5593f3cfbf8618887a7a95ec0bdfb1637e",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\SampleScene.unity": "ea965acf51bc005dfcf0aec211435ea78d239e04471c4e1b837ec0f5a03f77cc",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\SampleScene.unity.meta": "d4a30a2dd8322ca15c8c0fe5d67e72608515fbac5d5f6e3d98d6abc5dd586b09",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\TestRoom.unity": "4f83c1ca2f871c3fd7d921c818b6c4d36bc594724befcc739e5415157e4b8a5a",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\TestRoom.unity.meta": "2e021afd96e3563ad599ac160cf8d6d485c1f2f08c47824e22525d3a9b6e7eb1",
+    "D:\\Git\\MineDungeon2\\Docs\\CHANGELOG.md": "5a6387e6b4a7ec260a3234db33bcf7b334d6174eb7479db4ac7ed0fc53862b17",
+    "D:\\Git\\MineDungeon2\\Docs\\GDD.md": "3af0b2605b6d6515e084e632af5ffc3957582cc2fb6a243948f1e489d5935cd0",
+    "D:\\Git\\MineDungeon2\\Docs\\WORK_STATUS.md": "634d2affc9dfb7afb97593c7d3b257d3d4e7bce275e10b474ded1fcbeb1da94e",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\ArtDirection.md": "9a95ae500804bc18495a722edb2ef6fcfdc1308906a9fbe43959d15f03e79e05",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\BossSystem.md": "8b58bf2b1dcbd702121bf11d173aedbcf2372dffc5899fa0483a8c8c9d7279f4",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\CombatSystem.md": "fabd634475bb9c85b6a13c6a48c516c60175531dc671cefb22b850e9c08abe02",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\DungeonSystem.md": "1ddd6e1305428c326b532252f0699d2f225acfccb16b3c498a8c94f058f3c05e",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\EquipmentSkillSystem.md": "28fb09e5fecba9fc93c45dfb90379ee44b47017463d3e36ed3f7ebd0b6ab0762",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\MapSystem.md": "ad4fd4356ef2ff86d10df871eab4d229297c26f8e4ef5a555dd29ebf054022df",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\MonsterSystem.md": "6ec85ac7fca905d12caf99bb938213118db71f8a780720cf5ad480228dc50d5e",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\PlayerSystem.md": "377c88ee0ec7bf0aba075e5bd63d8eea33118c5b984ae0ddaeaf1effaa51b32d",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\ProgressionSystem.md": "0d4f008e67dda5065c6867238bb4d62c737ba7fd8121d84dbabd4b175a90d564",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\RewardSystem.md": "fce745e0f6aa580d2a3e3880e4fd064bf166e5429c6baaacef1c55429a140ab3",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\SaveSystem.md": "7f800c6d50cbbedfc6768e75c7343c69297b5f700187d52042e40ddef98881ec",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\UISystem.md": "8701d69bf6cbb8560fef4999a68733f5fe13fb8a2be2f88f532ab1e53d25aa6c",
+    "D:\\Git\\MineDungeon2\\Docs\\Tasks\\RegularMaps_Batch_Implementation.md": "d820605e1631b12d168cf14856525e857c1ccfa85786a752d060948d6fa94dfc",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_ContactWalk_Trial_v1.zip": "98e15e2f26c672f1f5bb3de33e4fd7926d4730cc449c6a8ce12be5efab0c104f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\README_KO.md": "ded1ac7e116723b65b02679dab338a33e1468124ad0858f196b26f595661ecb7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Unity_FrameTiming_Spec.json": "a86b3b48936f07558e5de57ec158c6570288f746b993a05117b77c5b457ea465",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\GroundSmash_3x.gif": "f5e9102bda64400b6eb9c437eb881937e4e3a3a1bca0d313c23aee7d74e1fd3a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\GroundSmash_Idle_Transition.gif": "d9e45f997282d9da6b22c1ce616d0f9603bdca7387cd4dbc5f337cbc063d5100",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\GroundSmash_Native160.gif": "4a6163bbbfcfdf4ab833fc2c17a1b539b99801badf46f8f1ee6d03746fd7e5a2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\LeapSlam_3x.gif": "6d492452d62c2df044e8bafa6e7aa564b523ca981bae71ce9534117502dda529",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\LeapSlam_Idle_Transition.gif": "b43b7df0857ad82227dac32a8fb4cfcd7913d1a2864d4e64e6cf3a761d3bdfd0",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\LeapSlam_Native160.gif": "8552430d118c10c750eeadad33f07473091045d2bf9e305a866d60b21c69d9c2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\RockCharge_3x.gif": "90d915a9caba7c196f3f4df5d81efcb37e4891a574bebf8aea6e1c52bd35efc8",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\RockCharge_Idle_Transition.gif": "2a08ce937540134ac79a962b77944c407c1f4fd6e703c09cb8c5bcfd3d1826e2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\RockCharge_Native160.gif": "cc4ba96368fc077bdd026edc213ba2f6133f8d38a478bfcb48f4da8373a494cc",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\Rockfall_3x.gif": "c13463e33e375e72950d577435386ac43fe4754c86cd9887bd25cd3deec9c371",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\Rockfall_Idle_Transition.gif": "b971d3214c2a2f23518f71c1ca7c60fa38342703d91b8f9d6cf3a601fe02660d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\Rockfall_Native160.gif": "f4e02c2c8651416998ae7daa0e7050c39f5072af202441dab9bc429b68d33621",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\StoneFan_3x.gif": "5d1bf9ade595628dd75b757aa1b26473a43bb93f9cc6af8253b56191608585aa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\StoneFan_Idle_Transition.gif": "15e28403f632eaf9dc34d310028287b3ec7152b180cf38f34ee3f0be92148182",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\StoneFan_Native160.gif": "0caba8fe217001a2d51feb7117bfbe4262658e6306cb804a9732ab46bc74bbfb",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Five_Attacks_3x_Comparison.png": "e2dad065893b6f9bb8afc1e86635e1f3e73491e77b81ffcaeb58f85128bffdaa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Five_Attacks_Native_Comparison.png": "e461e7f07e9c298e6a5713e6f59491fc067d17c8001fba2f6dac77b4dd2c0f66",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\GroundSmash_Frames_6x.png": "3569506916f3badf67b4260ab1692a42ea8bd9977268bed1693fdea16c8269df",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\GroundSmash_Poses_Native.png": "17cd944fa9bb7ded580cb735dbbc1cd4cafdb97dd6d53198f15d24be631f6a89",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\LeapSlam_Frames_6x.png": "dd07125f1911dfbbac46ed1530e5b872467ebba1741421ef8f9ac5ef6e41b5aa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\LeapSlam_Poses_Native.png": "2e29b1586882a5ed8005682a5b3a849aabe66a241c6c485894f040236abe4f4c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Light_Dark_Mine_Backgrounds.png": "db264460a99a3e5e8188a6d0b25145d089581c04871e2975f09a05afffd58351",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\RockCharge_Frames_6x.png": "eed97d35a912c3d4ffc7dcbce54c20f88b7ec735a466fcb0719089948bece0fe",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\RockCharge_Poses_Native.png": "db800cc916076e4b9ef44b8c6a4afe0fb3420bb5b8dcefae5a6cc55341002c5b",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Rockfall_Frames_6x.png": "c630924f3b1a6f3664b4626b46ceeec152a3f433e95af5f73eddc933ad706852",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Rockfall_Poses_Native.png": "28ec00e81d612262e91b5fe0a4ee12e9ec066aa195f2b7fc6e20e7e5498487d7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\StoneFan_Frames_6x.png": "41e1e5c5e32b314a3c456c5e51c3bf413c51893902dada3ee06a232143bf5d34",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\StoneFan_Poses_Native.png": "5fe8694443e1f050148aaf6f5ec2ce1c82066f4cddc8a49215b1a4b7d3f815f7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\validation.json": "b7a88d6dc89fc6003b19ee3266586af71277bcd61b0dae2dcae846cd02082507",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_GroundSmash_10f_160x160_v1.png": "46434a4215eedee0f940655ffa7e27c9b8bd7af7cade5ca706829e3bb28ce67f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_LeapSlam_11f_160x160_v1.png": "8ec4ed3fe191c5054825aed5b87785656a1e9adc97fca04e4340dad1e41f0a6c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_RockCharge_11f_160x160_v1.png": "952dc622b51e90a64a685bafb27a0bbca6373593d960d57478502d40b8089077",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_Rockfall_10f_160x160_v1.png": "1a4e564731e94edd19f04cdeadb1a41174124d56946e751295904b0b47580546",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_StoneFan_8f_160x160_v1.png": "3fd1685eb58b11e840bebe8b420efa68d1f86c5ad993c472e13ba4f21f99c0a4"
+  },
+  "changed_since_read": [],
+  "real_time_animation_observed": false,
+  "Unity_Play": "separate task, not performed",
+  "basic_playback": {
+    "LeapSlam": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        450
+      ],
+      [
+        4,
+        160
+      ],
+      [
+        5,
+        220
+      ],
+      [
+        6,
+        220
+      ],
+      [
+        7,
+        80
+      ],
+      [
+        8,
+        120
+      ],
+      [
+        9,
+        170
+      ],
+      [
+        10,
+        160
+      ],
+      [
+        11,
+        170
+      ]
+    ],
+    "GroundSmash": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        350
+      ],
+      [
+        4,
+        200
+      ],
+      [
+        5,
+        100
+      ],
+      [
+        6,
+        70
+      ],
+      [
+        7,
+        130
+      ],
+      [
+        8,
+        190
+      ],
+      [
+        9,
+        210
+      ],
+      [
+        10,
+        200
+      ]
+    ],
+    "RockCharge": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        350
+      ],
+      [
+        3,
+        400
+      ],
+      [
+        4,
+        100
+      ],
+      [
+        5,
+        100
+      ],
+      [
+        6,
+        100
+      ],
+      [
+        7,
+        100
+      ],
+      [
+        4,
+        100
+      ],
+      [
+        5,
+        100
+      ],
+      [
+        6,
+        100
+      ],
+      [
+        7,
+        100
+      ],
+      [
+        4,
+        100
+      ],
+      [
+        8,
+        90
+      ],
+      [
+        9,
+        160
+      ],
+      [
+        10,
+        200
+      ],
+      [
+        11,
+        250
+      ]
+    ],
+    "StoneFan": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        350
+      ],
+      [
+        4,
+        70
+      ],
+      [
+        5,
+        90
+      ],
+      [
+        6,
+        150
+      ],
+      [
+        7,
+        140
+      ],
+      [
+        8,
+        150
+      ]
+    ],
+    "Rockfall": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        350
+      ],
+      [
+        4,
+        150
+      ],
+      [
+        5,
+        200
+      ],
+      [
+        6,
+        200
+      ],
+      [
+        7,
+        160
+      ],
+      [
+        8,
+        180
+      ],
+      [
+        9,
+        180
+      ],
+      [
+        10,
+        180
+      ]
+    ]
+  },
+  "enhanced_playback": {
+    "LeapSlam": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        450
+      ],
+      [
+        4,
+        160
+      ],
+      [
+        5,
+        220
+      ],
+      [
+        6,
+        220
+      ],
+      [
+        7,
+        80
+      ],
+      [
+        8,
+        120
+      ],
+      [
+        9,
+        200
+      ],
+      [
+        12,
+        900
+      ],
+      [
+        13,
+        300
+      ],
+      [
+        14,
+        500
+      ],
+      [
+        15,
+        80
+      ],
+      [
+        16,
+        120
+      ],
+      [
+        9,
+        170
+      ],
+      [
+        10,
+        160
+      ],
+      [
+        11,
+        170
+      ]
+    ],
+    "GroundSmash": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        350
+      ],
+      [
+        4,
+        200
+      ],
+      [
+        5,
+        100
+      ],
+      [
+        6,
+        70
+      ],
+      [
+        7,
+        130
+      ],
+      [
+        11,
+        200
+      ],
+      [
+        2,
+        250
+      ],
+      [
+        3,
+        300
+      ],
+      [
+        4,
+        150
+      ],
+      [
+        5,
+        100
+      ],
+      [
+        6,
+        70
+      ],
+      [
+        7,
+        130
+      ],
+      [
+        8,
+        190
+      ],
+      [
+        9,
+        210
+      ],
+      [
+        10,
+        200
+      ]
+    ],
+    "RockCharge": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        350
+      ],
+      [
+        3,
+        400
+      ],
+      [
+        4,
+        100
+      ],
+      [
+        5,
+        100
+      ],
+      [
+        6,
+        100
+      ],
+      [
+        7,
+        100
+      ],
+      [
+        4,
+        100
+      ],
+      [
+        5,
+        100
+      ],
+      [
+        6,
+        100
+      ],
+      [
+        7,
+        100
+      ],
+      [
+        4,
+        100
+      ],
+      [
+        8,
+        90
+      ],
+      [
+        9,
+        160
+      ],
+      [
+        10,
+        200
+      ],
+      [
+        11,
+        250
+      ]
+    ],
+    "StoneFan": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        350
+      ],
+      [
+        4,
+        70
+      ],
+      [
+        5,
+        90
+      ],
+      [
+        9,
+        340
+      ],
+      [
+        3,
+        400
+      ],
+      [
+        4,
+        70
+      ],
+      [
+        5,
+        90
+      ],
+      [
+        6,
+        150
+      ],
+      [
+        7,
+        140
+      ],
+      [
+        8,
+        150
+      ]
+    ],
+    "Rockfall": [
+      [
+        1,
+        250
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        350
+      ],
+      [
+        4,
+        150
+      ],
+      [
+        5,
+        200
+      ],
+      [
+        6,
+        200
+      ],
+      [
+        11,
+        300
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        600
+      ],
+      [
+        4,
+        150
+      ],
+      [
+        5,
+        200
+      ],
+      [
+        6,
+        200
+      ],
+      [
+        11,
+        300
+      ],
+      [
+        2,
+        300
+      ],
+      [
+        3,
+        600
+      ],
+      [
+        4,
+        150
+      ],
+      [
+        5,
+        200
+      ],
+      [
+        6,
+        200
+      ],
+      [
+        7,
+        160
+      ],
+      [
+        8,
+        180
+      ],
+      [
+        9,
+        180
+      ],
+      [
+        10,
+        180
+      ]
+    ]
+  },
+  "combo_A": [
+    [
+      "LeapSlam",
+      1,
+      250
+    ],
+    [
+      "LeapSlam",
+      2,
+      300
+    ],
+    [
+      "LeapSlam",
+      3,
+      450
+    ],
+    [
+      "LeapSlam",
+      4,
+      160
+    ],
+    [
+      "LeapSlam",
+      5,
+      220
+    ],
+    [
+      "LeapSlam",
+      6,
+      220
+    ],
+    [
+      "LeapSlam",
+      7,
+      80
+    ],
+    [
+      "LeapSlam",
+      8,
+      120
+    ],
+    [
+      "GroundSmash",
+      11,
+      200
+    ],
+    [
+      "GroundSmash",
+      2,
+      300
+    ],
+    [
+      "GroundSmash",
+      3,
+      350
+    ],
+    [
+      "GroundSmash",
+      4,
+      250
+    ],
+    [
+      "GroundSmash",
+      5,
+      100
+    ],
+    [
+      "GroundSmash",
+      6,
+      70
+    ],
+    [
+      "GroundSmash",
+      7,
+      130
+    ],
+    [
+      "GroundSmash",
+      8,
+      190
+    ],
+    [
+      "GroundSmash",
+      9,
+      210
+    ],
+    [
+      "GroundSmash",
+      10,
+      200
+    ]
+  ],
+  "combo_B": [
+    [
+      "RockCharge",
+      1,
+      250
+    ],
+    [
+      "RockCharge",
+      2,
+      350
+    ],
+    [
+      "RockCharge",
+      3,
+      400
+    ],
+    [
+      "RockCharge",
+      4,
+      100
+    ],
+    [
+      "RockCharge",
+      5,
+      100
+    ],
+    [
+      "RockCharge",
+      6,
+      100
+    ],
+    [
+      "RockCharge",
+      7,
+      100
+    ],
+    [
+      "RockCharge",
+      4,
+      100
+    ],
+    [
+      "RockCharge",
+      5,
+      100
+    ],
+    [
+      "RockCharge",
+      6,
+      100
+    ],
+    [
+      "RockCharge",
+      7,
+      100
+    ],
+    [
+      "RockCharge",
+      4,
+      100
+    ],
+    [
+      "StoneFan",
+      9,
+      60
+    ],
+    [
+      "StoneFan",
+      3,
+      140
+    ],
+    [
+      "StoneFan",
+      4,
+      70
+    ],
+    [
+      "StoneFan",
+      5,
+      90
+    ],
+    [
+      "StoneFan",
+      6,
+      150
+    ],
+    [
+      "StoneFan",
+      7,
+      140
+    ],
+    [
+      "StoneFan",
+      8,
+      150
+    ]
+  ],
+  "packaging_changed_since_read": []
+}

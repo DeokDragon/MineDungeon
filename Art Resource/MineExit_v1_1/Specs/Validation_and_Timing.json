@@ -1,0 +1,182 @@
+{
+  "version": "1.1",
+  "cell": [
+    128,
+    64
+  ],
+  "PPU": 64,
+  "pivot_normalized": [
+    0.5,
+    0.5
+  ],
+  "pivot_pixel": [
+    64,
+    32
+  ],
+  "world_canvas": [
+    2,
+    1
+  ],
+  "opening_timing_ms": [
+    60,
+    70,
+    80,
+    100,
+    110,
+    100
+  ],
+  "opening_duration_ms": 520,
+  "ignition_strength": [
+    0,
+    0.15,
+    0.33,
+    0.55,
+    0.78,
+    1.0
+  ],
+  "flame_pixel_counts": [
+    5,
+    5
+  ],
+  "loop_timing_ms": [
+    180,
+    160,
+    200,
+    160
+  ],
+  "loop_duration_ms": 700,
+  "lamp_centers_image_pixels": [
+    [
+      31.5,
+      32.5
+    ],
+    [
+      95.5,
+      32.5
+    ]
+  ],
+  "allowed_edit_pixels": 336,
+  "frame_checks": [
+    {
+      "frame": 1,
+      "changed_pixels_vs_v1": 40,
+      "outside_lighting_exact": true,
+      "door_and_tunnel_exact": true,
+      "alpha_and_bbox_exact": true,
+      "lamp_core_mean_rgb": 28.333333333333332
+    },
+    {
+      "frame": 2,
+      "changed_pixels_vs_v1": 181,
+      "outside_lighting_exact": true,
+      "door_and_tunnel_exact": true,
+      "alpha_and_bbox_exact": true,
+      "lamp_core_mean_rgb": 31.266666666666666
+    },
+    {
+      "frame": 3,
+      "changed_pixels_vs_v1": 329,
+      "outside_lighting_exact": true,
+      "door_and_tunnel_exact": true,
+      "alpha_and_bbox_exact": true,
+      "lamp_core_mean_rgb": 39.125
+    },
+    {
+      "frame": 4,
+      "changed_pixels_vs_v1": 336,
+      "outside_lighting_exact": true,
+      "door_and_tunnel_exact": true,
+      "alpha_and_bbox_exact": true,
+      "lamp_core_mean_rgb": 49.05833333333333
+    },
+    {
+      "frame": 5,
+      "changed_pixels_vs_v1": 336,
+      "outside_lighting_exact": true,
+      "door_and_tunnel_exact": true,
+      "alpha_and_bbox_exact": true,
+      "lamp_core_mean_rgb": 57.666666666666664
+    },
+    {
+      "frame": 6,
+      "changed_pixels_vs_v1": 336,
+      "outside_lighting_exact": true,
+      "door_and_tunnel_exact": true,
+      "alpha_and_bbox_exact": true,
+      "lamp_core_mean_rgb": 65.925
+    }
+  ],
+  "gif_checks": [
+    {
+      "file": "Previews\\Opening_Ignition_Native.gif",
+      "frames": 6,
+      "duration_ms": 520,
+      "decode_pixels_timing_match": true
+    },
+    {
+      "file": "Previews\\Open_TorchLoop_Native.gif",
+      "frames": 4,
+      "duration_ms": 700,
+      "decode_pixels_timing_match": true
+    },
+    {
+      "file": "Previews\\Opening_Ignition_6x.gif",
+      "frames": 6,
+      "duration_ms": 520,
+      "decode_pixels_timing_match": true
+    },
+    {
+      "file": "Previews\\Open_TorchLoop_6x.gif",
+      "frames": 4,
+      "duration_ms": 700,
+      "decode_pixels_timing_match": true
+    },
+    {
+      "file": "Previews\\Locked_Opening_LitLoop_6x.gif",
+      "frames": 15,
+      "duration_ms": 2520,
+      "decode_pixels_timing_match": true
+    },
+    {
+      "file": "Previews\\v1_vs_v1_1_Opening_3x.gif",
+      "frames": 6,
+      "duration_ms": 520,
+      "decode_pixels_timing_match": true
+    }
+  ],
+  "original_v1_and_unity_unchanged": true,
+  "changed_files": [],
+  "protected_hashes": {
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\README_KO.md": "0f9fcc7a1dca40541cfc639e150fe60067b34405d152b95c959779ff246d474c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Previews\\MineExit_Alpha_Backgrounds_4x.png": "6b53c4e41744faa8d25bd99dce010d44d7630455213f9a2bb1b2e2d4a529e336",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Previews\\MineExit_Environment_Comparison_3x.png": "266afeab96b7df20924d2475a60d13107e949559be473d5e67ad7b151cfe2333",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Previews\\MineExit_Environment_Comparison_Native.png": "00382920e8b1e6b23e90eec6f098f4f5f4eaf01317c4d6631fbce4158c541f01",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Previews\\MineExit_Environment_Opening_3x.gif": "3cf0dd13cbdd1f192c0a0dc7beba13d1d2ed48d0f4872b37ab418a4c6e34cc34",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Previews\\MineExit_Locked_Opening_Open_6x.gif": "dc089b3ed677d19f40c74c9e4b358e7086aec5ae8f8ca4efbbc44752588114cb",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Previews\\MineExit_Locked_Open_Comparison_6x.png": "fa446ad3e4730663a88ffd691d36d4f4d4430b920143bb5605182f8e51e5d260",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Previews\\MineExit_Opening_6x.gif": "b1faa5d8f37f1fec32894dfdf9fc0ae3ef7f5d47e24588b2b38fbbc11c4208d1",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Previews\\MineExit_Opening_Frames_6x.png": "a4ffdb95bf2dcd1a1494d8eccad2844933c3d774b8031949a6658e08bb2a0814",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Previews\\MineExit_Opening_Native.gif": "b4bf4c65d69623cd554b3fb479d96c1b111593636f0e4891c4fa0ca8eda1f0e6",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Source\\Generation_Brief.md": "27edff27cb6844fd8067be121babe9e57a907949f1131b74afd647e449873dbe",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Source\\MineExit_Generated_Atlas.png": "ec18fcfcb10a4d3f36b0fb52066ac9ff84d33bff8c7c98cd7bb787ef157a5aab",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Specs\\MineExit_Spec.json": "2d0039f5ffcc83db36b517ef06bcda3688e851462e15af886068f7eb7d17557a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Sprites\\MineExit_Locked_128x64_v1.png": "fc181f7c69c4ecc3eff264a0fa917b3a15fe26809ca351d23d8af5c815bfbcf5",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Sprites\\MineExit_Opening_6f_128x64_v1.png": "29eb4085b04f9c3f79974641558520468981d7b8ea13a72be00006a6841b7247",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineExit_v1\\Sprites\\MineExit_Open_128x64_v1.png": "0ef2d4c1a9819539a83504ced6f88334513e3587a71ffc49313265a3e2a2973e",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\RoomExit.cs": "c698a911bfc84cab09fd32c4dc332b92219a0b33600e56c7e19c6697abdbe218",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_01.prefab": "d3402fdf8c03d3cb073184363f573aefbf647ad7edd068dced1f4fc57c0f1c9d",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_02.prefab": "ace32003c3253da3eeabc7cbdae4a1d864c5bb788d9239127bb91440c17168a1",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_03.prefab": "75d5d44d5be370e02fd573b3c2dbc6a8f7e063c44ec1d1276515eebc6808d4f2",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_04.prefab": "132fd8d25108424c9bb4bf9c1f133d984d7a2377087ff60c2228b37dba3d9256",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_05.prefab": "a1c84c2d751c70ac06e397da1b4474980de212f4693fec07d967c3311f823737",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_06.prefab": "263c29e51d2aaf75f176743eac6efc7ff7570b11da468a87e090d70ac3ad0446",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_07.prefab": "643bd7e4f5c69782b9bb7067d5b7627a435097b594a2d98d54ac7d8cf012c62f",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_08.prefab": "89faacf06b9306115e268578b4998b93a4ebf21ca0c09f427639847d76635e10",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_09.prefab": "0c331ec0019919026600c6b6262d1ccbd5f57d99975900567c2a5aec384dd28d",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_10.prefab": "dbbdebbca0d934c3ac4cfdda7077acf1fde3eb58793258c752a093b670ec79c3"
+  },
+  "real_time_playback_observed": false,
+  "Unity_Play": false,
+  "logical_unlock_delay_added": false,
+  "packaging_changed_files": []
+}
