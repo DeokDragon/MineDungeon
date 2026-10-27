@@ -1,0 +1,42 @@
+[
+  {
+    "path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Player\\MinerSlime\\Player_MinerSlime_Idle_4f_64x64_v1.png",
+    "sha256": "5c8e0d07e8e6d7e1a9142d1dfbc310be9e4cd51d368f147836e1b2703cd4f9c4",
+    "role": "style reference only; never modified"
+  },
+  {
+    "path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\B-1R_Idle_4f_64x64_v2.png",
+    "sha256": "8fb203aec0e14f0c75f5e8828af3e37c6e83392bbec9a3f9853630ab03ea0a1e",
+    "role": "style reference only; never modified"
+  },
+  {
+    "path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\IronI3R\\IronMonster_I-3R_Idle_4f_64x64_v1.png",
+    "sha256": "0a40e4c49e6d421fb9d0e0401bd14fbd56a3bc86a4c60e12c99df8437412faad",
+    "role": "style reference only; never modified"
+  },
+  {
+    "path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CoalC1R\\CoalC1R_Idle_4f_64x64_v1.png",
+    "sha256": "5ee609eb12f11ec38b082050bd59a68e0a87ebfbf36d038165682969b98b53ce",
+    "role": "style reference only; never modified"
+  },
+  {
+    "path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\CrystalC2R\\CrystalC2R_Idle_4f_64x64_v1.png",
+    "sha256": "c1e4a0487652ed5c8e9765eb978698eae4467e5ca646e346adc1de2273683a52",
+    "role": "style reference only; never modified"
+  },
+  {
+    "path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\MagnetiteM1R\\MagnetiteM1R_Idle_4f_64x64_v1.png",
+    "sha256": "53cb96ed7649eaaec167b4b8645949145e0c4b11386cf23274025588eefbd8cb",
+    "role": "style reference only; never modified"
+  },
+  {
+    "path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Idle_4f_160x160_v1.png",
+    "sha256": "2c9e824cad9c26947e5f261d945b8626c6d20b993f95f586106f186261981399",
+    "role": "style reference only; never modified"
+  },
+  {
+    "path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Idle_4f_160x160_v1.png",
+    "sha256": "83f40dba90cbe55398180f2736fe6a13520cc179a29721d67213939657b32555",
+    "role": "style reference only; never modified"
+  }
+]

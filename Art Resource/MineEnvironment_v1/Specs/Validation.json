@@ -1,0 +1,1364 @@
+{
+  "asset_count": 50,
+  "all_rgba": true,
+  "transparent_padding_ok": true,
+  "floor_edge_pairs": [
+    {
+      "a": 0,
+      "b": 0,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 0,
+      "b": 1,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 0,
+      "b": 2,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 0,
+      "b": 3,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 1,
+      "b": 0,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 1,
+      "b": 1,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 1,
+      "b": 2,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 1,
+      "b": 3,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 2,
+      "b": 0,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 2,
+      "b": 1,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 2,
+      "b": 2,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 2,
+      "b": 3,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 3,
+      "b": 0,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 3,
+      "b": 1,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 3,
+      "b": 2,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "a": 3,
+      "b": 3,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    }
+  ],
+  "wall_edge_pairs": [
+    {
+      "tile": 0,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "tile": 1,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "tile": 2,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    },
+    {
+      "tile": 3,
+      "max_rgb_difference_x": 0,
+      "max_rgb_difference_y": 0
+    }
+  ],
+  "files": [
+    {
+      "file": "Rubble/Pebbles_Small_24x24.png",
+      "size": [
+        24,
+        24
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        3,
+        22,
+        20
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "2f5e6782ec25858b9d7ffaadde9fab379f0efa764dd8a11ba3e170690c1a0190"
+    },
+    {
+      "file": "Rubble/RubblePile_Medium_48x48.png",
+      "size": [
+        48,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        46,
+        40
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "e5a06fb0a4bb75492505a05f13ce777fbd22145621a8123675f88a09a33f81b9"
+    },
+    {
+      "file": "Rubble/RockShards_Broken_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        5,
+        30,
+        27
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "0e617e7593b8e1b6098de777ca1e314920be6adc4a18ee9a052ed851d2ccb22d"
+    },
+    {
+      "file": "Ores/OreLump_Iron_24x24.png",
+      "size": [
+        24,
+        24
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        3,
+        22,
+        20
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "d22e318776816a8c52d779f8cf0fd82ffc26190602165baa72d1e1b1535ff097"
+    },
+    {
+      "file": "Ores/OreLump_Crystal_24x32.png",
+      "size": [
+        24,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        6,
+        22,
+        25
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "27175f1ecb1ea2da52be40fa5888f8bffd7243b8d12acc708376611b05e1b9e6"
+    },
+    {
+      "file": "Ores/OreLump_Coal_24x24.png",
+      "size": [
+        24,
+        24
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        4,
+        22,
+        20
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "4e426d8d5d88556c58ec3e4eb6f8b9e8ddcabf82c03ade471657d1e7d7bac553"
+    },
+    {
+      "file": "Ores/OreLump_Magnetite_24x24.png",
+      "size": [
+        24,
+        24
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        4,
+        22,
+        20
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "cfe8d0751bdcf1226459bc31c0fe5b983b54b09e2ac1b7eebe603e9ad18d200f"
+    },
+    {
+      "file": "Ores/WallVein_Iron_64x48.png",
+      "size": [
+        64,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        2,
+        58,
+        46
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "9eee153b483ea3b9c17c02c4e3bd5729df5fb5fbe941d5ff4027b48e051c5db5"
+    },
+    {
+      "file": "Ores/WallVein_Crystal_64x48.png",
+      "size": [
+        64,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        2,
+        58,
+        46
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "f0358d8b999863c89e6a075632186f49a25f1a2f69d589482ac6550330a0ac47"
+    },
+    {
+      "file": "Ores/WallVein_Coal_64x48.png",
+      "size": [
+        64,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        2,
+        58,
+        46
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "f3282fe6974b7ab631695b5f7e3e6e39d545460a1c31442b81796a791cff5321"
+    },
+    {
+      "file": "WoodenStructures/TimberSupport_Vertical_32x64.png",
+      "size": [
+        32,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        11,
+        30,
+        53
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "3e835b75ac3fc12e6c80b456426c78a3c352d1cf1fe6a7aec8804d6014130ca0"
+    },
+    {
+      "file": "WoodenStructures/TimberBeam_Horizontal_64x24.png",
+      "size": [
+        64,
+        24
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        6,
+        2,
+        58,
+        22
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "f038f1d3521fae956cea78d7b5775173ffeb78e6cc2f4bc6954473e8277f2616"
+    },
+    {
+      "file": "WoodenStructures/LoosePlanks_48x24.png",
+      "size": [
+        48,
+        24
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        11,
+        2,
+        36,
+        22
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "5cc792c8eb1c99893f8923246d00182d7fb3f68080bd53768923c8b38828d821"
+    },
+    {
+      "file": "WoodenStructures/WoodDebris_48x32.png",
+      "size": [
+        48,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        7,
+        2,
+        41,
+        30
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "a13cadafadf7326a80d9a670fecf9aea233657647e117ebbe1a73ed8464c4944"
+    },
+    {
+      "file": "Props/Crate_48x48.png",
+      "size": [
+        48,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        2,
+        45,
+        46
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "fb8c41377d25f641b417c167193531767357d3c546da6a216d6950a81b09e0ca"
+    },
+    {
+      "file": "Props/MineLantern_16x32.png",
+      "size": [
+        16,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        4,
+        14,
+        27
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "8e68a3351bf3ff79c86eaeb2f38bd0038647620d9fdb8992b340c3f65cd8344c"
+    },
+    {
+      "file": "Floors/Floor_RockGray_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_values": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "b188850c281aa908a6b1390fad776272dff9ab79f2f892210657d9266c570837"
+    },
+    {
+      "file": "Floors/Floor_ExposedEarth_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_values": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "5b28d08a9d900b150f382f87e69010d7b1f9aecc90e5d165da13c674f0bdf5f0"
+    },
+    {
+      "file": "Floors/Floor_CoolStone_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_values": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "4265d0069c9812b95d540aa32bd83764a821d6f31dbd0d45bb37515a467f442c"
+    },
+    {
+      "file": "Floors/Floor_WornStone_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_values": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "cd57d83c067036fc880f229a94482dadc77fd203bc1f5147dda255d6ba73ca1b"
+    },
+    {
+      "file": "Walls/Wall_RockMass_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_values": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "d0bd58ebce8f8af6909738388eba0595d10d7ebb8df7e7da51bcd31e3d3b9b3a"
+    },
+    {
+      "file": "Walls/Wall_Protruding_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_values": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "d0413de5fe748c60ff99c4bff4e5dde82cd680ba6849bc5bac0ca15b016f581a"
+    },
+    {
+      "file": "Walls/Wall_Fractured_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_values": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "417799768ff3cf5108b465fe2657816dfd6eb51da3b0bbfc192a04bedf423bab"
+    },
+    {
+      "file": "Walls/Wall_AgedRock_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_values": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "547d3c717cd77ca11eaf0216aff22b793e50258cc60c107aadadf05e1171f15c"
+    },
+    {
+      "file": "Walls/Wall_NarrowStrip_16x64.png",
+      "size": [
+        16,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_values": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        16,
+        64
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "66c57fd29a85ff887100732d050c98da53f4b99a327a8c9a2b65e91ad3e3cd26"
+    },
+    {
+      "file": "Borders/RockRim_South_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        7,
+        32,
+        24
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "4c7dcadefb0292c3d0ee63ee8ff0e35b728b38eff52db810e760b0e37ed7a5c7"
+    },
+    {
+      "file": "Borders/RockRim_East_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        7,
+        0,
+        24,
+        32
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "b19fd985264bf3bc40fd2988f7758469430733d607b98c63611305d5529336ce"
+    },
+    {
+      "file": "Borders/RockRim_North_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        8,
+        32,
+        25
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "129d297fadb60793c2e492232ad7c6da08a7f01316fdc7de6641b6e6d4c9e9b5"
+    },
+    {
+      "file": "Borders/RockRim_West_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        8,
+        0,
+        25,
+        32
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "26958a662492317dd55d991cebd1b46a0d582f1173843a586e30e0c2009fcfef"
+    },
+    {
+      "file": "Borders/CornerOuter_SE_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        1,
+        29,
+        31
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "bfbe1ff6f05b622bc1fa8758528b4a9796fdf376b61004483c4b8d7a77d7e363"
+    },
+    {
+      "file": "Borders/CornerOuter_NE_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        3,
+        31,
+        30
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "6812eef0e35cacb2c911bca6e998fe9da82348e91cdc74577c8c132cef6673d7"
+    },
+    {
+      "file": "Borders/CornerOuter_NW_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        3,
+        1,
+        30,
+        31
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "e51cbc6040c8ac72d151ca071e77fabcbc735ad9c2fffaaae040c80a5139bdce"
+    },
+    {
+      "file": "Borders/CornerOuter_SW_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        2,
+        31,
+        29
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "2ba51d01516cad5b3e75a733c143d5dd6f8b91cda7db00833afe11a50952de07"
+    },
+    {
+      "file": "Borders/CornerInner_SE_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        2,
+        31,
+        30
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "8ae546ef81ae5882f48016fe3c8f9ff19d532a5cc2fab6988bd00479e07ea65c"
+    },
+    {
+      "file": "Borders/CornerInner_NE_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        1,
+        30,
+        31
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "3f6f1c234998d361cd403c31c528ec141f30b48c952fae6d3bfae6c086a6c981"
+    },
+    {
+      "file": "Borders/CornerInner_NW_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        2,
+        31,
+        30
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "92a57b2a5b63c1f169109279ba16f0fecb4aee7cd0b5ee1bb4e97cdf4b755988"
+    },
+    {
+      "file": "Borders/CornerInner_SW_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        1,
+        30,
+        31
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "099be890fcc2190b0f3417bbba88e38519d0db13ae8204e0d088f6c7beafed8f"
+    },
+    {
+      "file": "Borders/WallFoot_Shadow_32x16.png",
+      "size": [
+        32,
+        16
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        110
+      ],
+      "alpha_values": [
+        0,
+        110
+      ],
+      "bbox": [
+        0,
+        4,
+        32,
+        11
+      ],
+      "isolated_padding_ok": "repeat edge intentional",
+      "sha256": "7f47fede81e7e164e10e4d3ac986b4fea5b4ccf3fd0b4650de01df7f47ca6bb6"
+    },
+    {
+      "file": "Floors/Decal_FloorCrack_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        100
+      ],
+      "alpha_values": [
+        0,
+        100
+      ],
+      "bbox": [
+        2,
+        5,
+        61,
+        59
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "ff732d0d22df52c0b5f90f5162602229e69d89b75a5db3037bc2b638bde26d72"
+    },
+    {
+      "file": "Floors/Decal_WornPatch_64x48.png",
+      "size": [
+        64,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        100
+      ],
+      "alpha_values": [
+        0,
+        100
+      ],
+      "bbox": [
+        2,
+        2,
+        62,
+        45
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "5a04a9af29f9506746d1a05490f6a2d1ff8580ac66e0b626aa7e304b52acf437"
+    },
+    {
+      "file": "Floors/Decal_MiningScratches_48x48.png",
+      "size": [
+        48,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        100
+      ],
+      "alpha_values": [
+        0,
+        100
+      ],
+      "bbox": [
+        2,
+        5,
+        45,
+        43
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "416040b5ff604e9af61271c6964f3a95506938b80e5e50503e4493c16fef5296"
+    },
+    {
+      "file": "Rubble/EmbeddedGravel_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        5,
+        30,
+        26
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "d577c11bac6ff8ebcde85dfcfab3b6e1656a85d4ed7d68f5b455b2faaa32645f"
+    },
+    {
+      "file": "BossRoom/Boss_WallCrack_Large_96x96.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        9,
+        94,
+        86
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "af047ac48c47ada1ae62e2382fcf63be7ad287ddf422ddcfc6ea4643f9138c96"
+    },
+    {
+      "file": "BossRoom/Boss_WallVein_Iron_128x96.png",
+      "size": [
+        128,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        24,
+        2,
+        104,
+        94
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "4088f313bb8aa359015b85bfee79e715d5577cb1ace271fff075f207976ec2fa"
+    },
+    {
+      "file": "BossRoom/Boss_WallVein_Crystal_128x96.png",
+      "size": [
+        128,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        18,
+        2,
+        110,
+        94
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "7ef76ec7ac7cd23cb7bebfe0e36b72f8972d49d900b979b5cca3e155cb1a9775"
+    },
+    {
+      "file": "BossRoom/Boss_AncientBrokenRock_96x64.png",
+      "size": [
+        96,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        9,
+        2,
+        86,
+        62
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "396830eae884518184385a8a754b670435b75ceb9b4afce8627286cd95798ee2"
+    },
+    {
+      "file": "BossRoom/Boss_EntranceScuff_128x96.png",
+      "size": [
+        128,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        100
+      ],
+      "alpha_values": [
+        0,
+        100
+      ],
+      "bbox": [
+        2,
+        6,
+        126,
+        90
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "940064d4457fdf5bc4c243fb9c15add6561b677a679c346a42bb38f0786050d1"
+    },
+    {
+      "file": "WoodenStructures/TimberBrace_Broken_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        62,
+        55
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "39928c5f4d2c7ad9a3d45ea507c8fc9c7d3efb89ca188078d5ac5f88a26c1ec0"
+    },
+    {
+      "file": "Walls/RockSpine_Narrow_16x64.png",
+      "size": [
+        16,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        19,
+        14,
+        44
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "95c82e43486d9426fda2cdf2a320112dd130e6043002cb71cfcae3b338be1582"
+    },
+    {
+      "file": "Borders/RockEndCap_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "bbox": [
+        3,
+        2,
+        29,
+        30
+      ],
+      "isolated_padding_ok": true,
+      "sha256": "7c646c3558a19d7efa9da48120403197d5ef8af911b720d5db97d5c52a009f6f"
+    }
+  ],
+  "floor_edges_exact": true,
+  "wall_self_edges_exact": true,
+  "unity_applied": false,
+  "gameplay_tested": false,
+  "repeat_module_edges": [
+    {
+      "file": "Walls/Wall_NarrowStrip_16x64.png",
+      "axis": "y",
+      "max_rgba_difference": 0
+    },
+    {
+      "file": "Borders/RockRim_South_32x32.png",
+      "axis": "x",
+      "max_rgba_difference": 0
+    },
+    {
+      "file": "Borders/RockRim_East_32x32.png",
+      "axis": "y",
+      "max_rgba_difference": 0
+    },
+    {
+      "file": "Borders/RockRim_North_32x32.png",
+      "axis": "x",
+      "max_rgba_difference": 0
+    },
+    {
+      "file": "Borders/RockRim_West_32x32.png",
+      "axis": "y",
+      "max_rgba_difference": 0
+    },
+    {
+      "file": "Borders/WallFoot_Shadow_32x16.png",
+      "axis": "x",
+      "max_rgba_difference": 0
+    }
+  ],
+  "repeat_module_edges_exact": true,
+  "unity_console_errors_at_delivery": 0,
+  "reviewed_previews": [
+    "FloorRepeat_Overview.png",
+    "Concept_Mine_16x9_WithReferences_1x.png",
+    "Concept_BossRoom_16x9_WithReferences_1x.png",
+    "NativeScale_ReferenceComparison.png",
+    "AllAssets_ContactSheet.png",
+    "BorderAssembly_Examples.png"
+  ]
+}

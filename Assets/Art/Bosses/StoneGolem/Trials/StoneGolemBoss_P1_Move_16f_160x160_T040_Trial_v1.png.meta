@@ -1,0 +1,549 @@
+fileFormatVersion: 2
+guid: 7c75b99642991fe4e9ae24efb3001eec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8644640058490469132
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_0
+  - first:
+      213: 3316846567209577090
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_1
+  - first:
+      213: 8949805193238572836
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_2
+  - first:
+      213: -47458289596349575
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_3
+  - first:
+      213: -3568901954522234255
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_4
+  - first:
+      213: 2253570531233033135
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_5
+  - first:
+      213: 4751571664888781651
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_6
+  - first:
+      213: -6487992689199834300
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_7
+  - first:
+      213: -6013624118495950771
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_8
+  - first:
+      213: -7145897295738445567
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_9
+  - first:
+      213: -8077085919830273434
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_10
+  - first:
+      213: -4663735892924413892
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_11
+  - first:
+      213: 8996844307560421877
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_12
+  - first:
+      213: 5275646603154750230
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_13
+  - first:
+      213: 395946358935773182
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_14
+  - first:
+      213: -2255932115595517700
+    second: StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529d482e6abc5da4db3210be19ee473a
+      internalID: 1410262655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_01
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f49e2ce2c6c084bacc06f384b35de6
+      internalID: -431720697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_02
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3823183d371f4249ace734be65fa04e
+      internalID: 1502942137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_03
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1cea1cddea6ba14c8327622aa4b51d5
+      internalID: 525794504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_04
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5145efd089584048a61a63fc2a54fe3
+      internalID: 1240871615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_05
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b527db18ebbee48add797cf34c1315
+      internalID: 1604951841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_06
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff83faed0fe122458a894b433254bd1
+      internalID: -2125822952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_07
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b304fce4e39c74ea35c12c8ab9f145
+      internalID: -506811028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_08
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9c0438008355d4f8e01a91cddce24c
+      internalID: 69677724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_09
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e024935bd5b0b2479e95d9d116dc3eb
+      internalID: -55014524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058ee570f57811b41beccdc2365fe898
+      internalID: -2006137367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_11
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3856d3bddb1d3ab478c08ffd65bf8ccd
+      internalID: 333212039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_12
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f640f9ef8ed14e4a863ef448a8aba56
+      internalID: -598334048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_13
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e257fddbcdd20c046bab4bb48b226f76
+      internalID: -538545508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f706274b2c46148bbcfb93626ecd95
+      internalID: -492698010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_ContactWalk_Trial_15
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee4aa138c705dd44a65f9b4deb64b0a
+      internalID: -1632084091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6be6416741f629e48860b23ed6949c3d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P1_ContactWalk_Trial_00: 1410262655
+      P1_ContactWalk_Trial_01: -431720697
+      P1_ContactWalk_Trial_02: 1502942137
+      P1_ContactWalk_Trial_03: 525794504
+      P1_ContactWalk_Trial_04: 1240871615
+      P1_ContactWalk_Trial_05: 1604951841
+      P1_ContactWalk_Trial_06: -2125822952
+      P1_ContactWalk_Trial_07: -506811028
+      P1_ContactWalk_Trial_08: 69677724
+      P1_ContactWalk_Trial_09: -55014524
+      P1_ContactWalk_Trial_10: -2006137367
+      P1_ContactWalk_Trial_11: 333212039
+      P1_ContactWalk_Trial_12: -598334048
+      P1_ContactWalk_Trial_13: -538545508
+      P1_ContactWalk_Trial_14: -492698010
+      P1_ContactWalk_Trial_15: -1632084091
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_0: -8644640058490469132
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_1: 3316846567209577090
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_10: -8077085919830273434
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_11: -4663735892924413892
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_12: 8996844307560421877
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_13: 5275646603154750230
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_14: 395946358935773182
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_15: -2255932115595517700
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_2: 8949805193238572836
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_3: -47458289596349575
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_4: -3568901954522234255
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_5: 2253570531233033135
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_6: 4751571664888781651
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_7: -6487992689199834300
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_8: -6013624118495950771
+      StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1_9: -7145897295738445567
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

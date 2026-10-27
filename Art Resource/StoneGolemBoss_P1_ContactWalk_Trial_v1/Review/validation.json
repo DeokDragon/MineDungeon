@@ -1,0 +1,167 @@
+{
+  "png_size": [
+    2560,
+    160
+  ],
+  "rgba": "RGBA",
+  "alpha_values": [
+    0,
+    255
+  ],
+  "face_source_pixels_exact": true,
+  "projected_bones_not_lengthened": true,
+  "stance_metrics": {
+    "ideal": {
+      "rms_px": 8.62259584735364e-15,
+      "max_abs_px": 2.842170943040401e-14,
+      "max_abs_world": 3.9968028886505636e-16
+    },
+    "held_sprite": {
+      "rms_px": 0.7636708635793175,
+      "max_abs_px": 1.5209508015478264,
+      "max_abs_world": 0.021388370646766307
+    },
+    "raster_root": {
+      "rms_px": 0.8108789811486476,
+      "max_abs_px": 1.9555555555555628,
+      "max_abs_world": 0.027500000000000104
+    },
+    "common_200ms": {
+      "old_foot_world_travel_px": 19.91111111111111,
+      "old_world_travel_units": 0.27999999999999997,
+      "trial_max_contact_span_px": 3.0,
+      "trial_max_contact_span_units": 0.0421875
+    }
+  },
+  "gif_files": [
+    {
+      "file": "P1_v41_vs_Trial_T040_SameSpeed_CameraFollow.gif",
+      "frames": 540,
+      "size": [
+        320,
+        408
+      ],
+      "total_ms": 10800,
+      "world_speed": 1.4,
+      "sampling_ms": 20,
+      "decoded_pixels_match_expected": true
+    },
+    {
+      "file": "P1_v41_vs_Trial_T040_GroundMarkers.gif",
+      "frames": 540,
+      "size": [
+        320,
+        408
+      ],
+      "total_ms": 10800,
+      "world_speed": 1.4,
+      "sampling_ms": 20,
+      "decoded_pixels_match_expected": true
+    },
+    {
+      "file": "P1_ThreeWay_Original_Retimed_ContactTrial.gif",
+      "frames": 540,
+      "size": [
+        320,
+        612
+      ],
+      "total_ms": 10800,
+      "world_speed": 1.4,
+      "sampling_ms": 20,
+      "decoded_pixels_match_expected": true
+    },
+    {
+      "file": "P1_WorldFixed_Translation_1p4.gif",
+      "frames": 120,
+      "size": [
+        448,
+        408
+      ],
+      "total_ms": 2400,
+      "world_speed": 1.4,
+      "sampling_ms": 20,
+      "decoded_pixels_match_expected": true
+    },
+    {
+      "file": "P1_LeftFlip_SameSpeed_CameraFollow.gif",
+      "frames": 540,
+      "size": [
+        320,
+        408
+      ],
+      "total_ms": 10800,
+      "world_speed": 1.4,
+      "sampling_ms": 20,
+      "decoded_pixels_match_expected": true
+    },
+    {
+      "file": "P1_Trial_T040_PoseLoop_Native160.gif",
+      "frames": 20,
+      "size": [
+        160,
+        160
+      ],
+      "total_ms": 400,
+      "world_speed": 1.4,
+      "sampling_ms": 20,
+      "decoded_pixels_match_expected": true
+    },
+    {
+      "file": "P1_Trial_T040_PoseLoop_3x.gif",
+      "frames": 20,
+      "size": [
+        480,
+        480
+      ],
+      "total_ms": 400,
+      "world_speed": 1.4,
+      "sampling_ms": 20,
+      "decoded_pixels_match_expected": true
+    }
+  ],
+  "protected_sha256": {
+    "D:\\던전 게임\\아트 리소스\\몬스터 정지 이미지\\Code_Generated1_Image.png": "00b43ade4fa8bcc30950a7b34f23a63ee37eb62b1b103966bce7d7d553dde30b",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\BossRoom24x22.prefab": "454aebd2ef6f40d6dd8418ac651ee90b0c85bb7f3a4c1bc472ceaf97dbfc90f8",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\Main.unity": "e078c7f2ddc1c7aff8882519647a796d07863dac98d95392e45e165605fa4eda",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossAI.cs": "37c492d054d364c0d91466850faf5fc4e7c1bef3d7bb6255cf5dd0708db1dc30",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossSpriteAnimation.cs": "69049e6f9b20f358166809988b33e799adc801c2b4e0942513aa851599095770",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Idle_4f_160x160_v1.png": "2c9e824cad9c26947e5f261d945b8626c6d20b993f95f586106f186261981399",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Idle_4f_160x160_v1.png.meta": "61b5b9035d3ee8bccc85f880fe06ecfa1b66221d90885b651c73c476dcd61700",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v1.png": "a0f4084b3e6374db0747b062879b298c997ca86614be3236221f3c4de3354933",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v1.png.meta": "78f5cac290fea71b80c90eff63c9701848efa92b2348f31fbc43c6ac7275eea9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v4_1.png": "223c9836c4bc2a1bc20c0fa9876dc16874164b8bd4def56e6e5552037250b718",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v4_1.png.meta": "50ddb5a42e79b00eb590edda0dfe3c20da01a02fa71ac10be01eb0c0c33bf025",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Idle_4f_160x160_v1.png": "83f40dba90cbe55398180f2736fe6a13520cc179a29721d67213939657b32555",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Idle_4f_160x160_v1.png.meta": "e080a7a5cfe3682033fe8239cbcaad36c81ae94902e4036290e2a13e4fbd39ab",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v1.png": "3246aa8de009f6a1ef458001934d9c0aed37266820a1bb469c5fc92ecb11a372",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v1.png.meta": "8c7971e7b0e454d59190dc409e53dcbf2578e27e8a28c96621a058edd4a601ea",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v4_1.png": "81121c9f09ce67d1c1ad543c5e8ba60b939293f41c83c79a5694d597c6385448",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v4_1.png.meta": "20e4dfdac4a3b053e85f0c7aa893c3e135e8ed967ee235a1b59d8ad1308a60fc",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_Idle_4f_160x160_v1.png": "2c9e824cad9c26947e5f261d945b8626c6d20b993f95f586106f186261981399",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_Move_6f_160x160_v4.png": "04dee03330ef9a574dd8085c4013df997bd79eecce64cc437978b9b4b41ecc17",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Idle_4f_160x160_v1.png": "83f40dba90cbe55398180f2736fe6a13520cc179a29721d67213939657b32555",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Move_6f_160x160_v4.png": "6f4b7a297f04705f6d53de1f50f136a3f94932768a9c73700a363696fe9ae86f"
+  },
+  "realtime_gif_observed": false,
+  "unity_play_tested": false,
+  "adopted": false,
+  "static_visual_review": {
+    "reviewed": [
+      "native16-pose sheet",
+      "world-moving GIF decoded keyframes",
+      "world-contact data plot"
+    ],
+    "finding": "Horizontal support drift reduced numerically. Faster .40s gait weight/naturalness not approved."
+  },
+  "decision": "Keep existing v4.1. P1 trial only; P2 untouched.",
+  "same_200ms_metrics": {
+    "old_foot_world_travel_px": 19.91111111111111,
+    "old_world_travel_units": 0.27999999999999997,
+    "trial_max_contact_span_px": 3.0,
+    "trial_max_contact_span_units": 0.0421875
+  },
+  "support_sole_final_pixel_visibility_verified": true,
+  "all_frames_single_component": true,
+  "all_frame_colors_from_original_palette": true,
+  "texture_import_note": "2560-wide trial needs max texture size >=4096 later; no importer settings changed."
+}

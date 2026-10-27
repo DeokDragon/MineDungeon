@@ -129,6 +129,14 @@ public partial class StoneGolemBossAI : MonoBehaviour
     public BossState State { get; private set; }
     public Pattern ActivePattern { get; private set; }
     public Pattern LastPattern { get; private set; }
+    // Presentation reads the existing physics clock; it never advances combat.
+    public float VisualStateElapsed => timer;
+    public float VisualStateDuration => State == BossState.Recovery ? recoveryDuration :
+        State == BossState.Jump ? leapDuration : State == BossState.Charge ? chargeMaxDuration :
+        State == BossState.Rockfall ? rockfallWarning :
+        comboFollowup ? comboFollowupDelay : ActivePattern == Pattern.StoneFan ? fanWarning :
+        ActivePattern == Pattern.RockCharge ? chargeWarning :
+        ActivePattern == Pattern.LeapSlam ? leapWarning : smashWarning;
     public PlayerHealth Target => player;
     public Vector2 AttackCenter => attackCenter;
 

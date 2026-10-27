@@ -1,0 +1,342 @@
+{
+  "version": "P1 BasicAttacks v1",
+  "coordinate_system": {
+    "image": "top-left origin; x right, y down; coordinates are pixels",
+    "frame": [
+      160,
+      160
+    ],
+    "pivot_pixel_top_left": [
+      80,
+      80
+    ],
+    "unity_normalized_pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU": 128,
+    "body_scale": 1.8,
+    "local_conversion": "x=(pixel_x-80)/128, y=(80-pixel_y)/128. Body scale is applied once by existing parent."
+  },
+  "source_idle": "Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Idle_4f_160x160_v1.png",
+  "patterns": {
+    "LeapSlam": {
+      "file": "Sprites\\StoneGolemBoss_P1_LeapSlam_11f_160x160_v1.png",
+      "frames": 11,
+      "sections_1based_inclusive": [
+        [
+          1,
+          3,
+          "prepare"
+        ],
+        [
+          4,
+          6,
+          "airborne"
+        ],
+        [
+          7,
+          8,
+          "landing"
+        ],
+        [
+          9,
+          11,
+          "recover"
+        ]
+      ],
+      "prepare": {
+        "frames": [
+          1,
+          2,
+          3
+        ],
+        "milliseconds": [
+          250,
+          300,
+          450
+        ]
+      },
+      "air": {
+        "frames": [
+          4,
+          5,
+          6
+        ],
+        "milliseconds": [
+          160,
+          220,
+          220
+        ],
+        "hold_last_until": "actual TickJump landing / ResolveAttack; cancel follows existing CancelAttack"
+      },
+      "on_landing": {
+        "frame": 7,
+        "same_event_as_damage": true
+      },
+      "recovery": {
+        "frames": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "milliseconds": [
+          80,
+          120,
+          170,
+          160,
+          170
+        ],
+        "duration": 0.7
+      }
+    },
+    "GroundSmash": {
+      "file": "Sprites\\StoneGolemBoss_P1_GroundSmash_10f_160x160_v1.png",
+      "frames": 10,
+      "sections_1based_inclusive": [
+        [
+          1,
+          5,
+          "prepare"
+        ],
+        [
+          6,
+          7,
+          "contact"
+        ],
+        [
+          8,
+          10,
+          "recover"
+        ]
+      ],
+      "prepare": {
+        "frames": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "milliseconds": [
+          250,
+          300,
+          350,
+          200,
+          100
+        ]
+      },
+      "on_warning_end": {
+        "frame": 6,
+        "same_event_as_damage": true
+      },
+      "recovery": {
+        "frames": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "milliseconds": [
+          70,
+          130,
+          190,
+          210,
+          200
+        ],
+        "duration": 0.8
+      }
+    },
+    "RockCharge": {
+      "file": "Sprites\\StoneGolemBoss_P1_RockCharge_11f_160x160_v1.png",
+      "frames": 11,
+      "sections_1based_inclusive": [
+        [
+          1,
+          3,
+          "prepare"
+        ],
+        [
+          4,
+          7,
+          "loop"
+        ],
+        [
+          8,
+          11,
+          "recover"
+        ]
+      ],
+      "prepare": {
+        "frames": [
+          1,
+          2,
+          3
+        ],
+        "milliseconds": [
+          250,
+          350,
+          400
+        ]
+      },
+      "execute": {
+        "frames": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "milliseconds": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "loop": true,
+        "stop_on": "FinishCharge / Charge to Recovery, never wait for loop completion"
+      },
+      "on_charge_end": {
+        "frame": 8
+      },
+      "recovery": {
+        "frames": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "weights": [
+          0.12857142857142856,
+          0.22857142857142856,
+          0.2857142857142857,
+          0.35714285714285715
+        ],
+        "duration_normal": 0.7,
+        "duration_wall": 1.2
+      }
+    },
+    "StoneFan": {
+      "file": "Sprites\\StoneGolemBoss_P1_StoneFan_8f_160x160_v1.png",
+      "frames": 8,
+      "sections_1based_inclusive": [
+        [
+          1,
+          3,
+          "prepare"
+        ],
+        [
+          4,
+          5,
+          "release"
+        ],
+        [
+          6,
+          8,
+          "recover"
+        ]
+      ],
+      "prepare": {
+        "frames": [
+          1,
+          2,
+          3
+        ],
+        "milliseconds": [
+          250,
+          300,
+          350
+        ]
+      },
+      "on_FireShards": {
+        "frame": 4,
+        "same_event_as_projectile_spawn": true
+      },
+      "recovery": {
+        "frames": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "milliseconds": [
+          70,
+          90,
+          150,
+          140,
+          150
+        ],
+        "duration": 0.6,
+        "hold_idle_if": "shards.Count > 0 after recovery deadline; do not replay release"
+      }
+    },
+    "Rockfall": {
+      "file": "Sprites\\StoneGolemBoss_P1_Rockfall_10f_160x160_v1.png",
+      "frames": 10,
+      "sections_1based_inclusive": [
+        [
+          1,
+          3,
+          "prepare"
+        ],
+        [
+          4,
+          6,
+          "summon_hold"
+        ],
+        [
+          7,
+          10,
+          "recover"
+        ]
+      ],
+      "prepare": {
+        "frames": [
+          1,
+          2,
+          3
+        ],
+        "milliseconds": [
+          250,
+          300,
+          350
+        ]
+      },
+      "at_falling_start": {
+        "frame": 4,
+        "warning_duration": 0.9
+      },
+      "fall_hold": {
+        "frames": [
+          4,
+          5,
+          6
+        ],
+        "milliseconds": [
+          150,
+          200,
+          200
+        ],
+        "hold_last_until": "TickRockfalls removes final rock and enters Recovery; do not trigger damage from these frames"
+      },
+      "recovery": {
+        "frames": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "milliseconds": [
+          160,
+          180,
+          180,
+          180
+        ],
+        "duration": 0.7
+      }
+    }
+  }
+}

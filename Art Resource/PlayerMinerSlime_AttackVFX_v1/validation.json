@@ -1,0 +1,340 @@
+{
+  "protected_source_hashes": {
+    "D:\\던전 게임\\아트 리소스\\몬스터 정지 이미지\\Player_slime.png": "74d996652f532caa4b257d8b9f6bcfafd7b55809105ba77c24c2096beedd22d8",
+    "D:\\Git\\MineDungeon2\\Art Resource\\Pickaxe_Basic_v1.png": "100524ccbc09dda83f1f10c519684cd8cfa54408e0c000116d69beb83b63a903",
+    "D:\\Git\\MineDungeon2\\Art Resource\\B-1R_CombatPack_v1\\Animations\\B-1R_Recovery_5f_64x64_v2.png": "5de67924025a49532a4ebd409a6458e8d77afcb1054e0e4c77c79d7616ee7cab",
+    "D:\\Git\\MineDungeon2\\Art Resource\\PlayerMinerSlime_ComboAttack_v1\\FrameAndAttachment_Coordinates.json": "dde69b4a6aee6e5d4832a288545451c8e3848c159ea27b696d777142509a4796",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\Player\\PlayerAttack.cs": "18f0aa5aba6aded9b818f6095ffb44aea3aaee421b6e0b5949773955c60dc083",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\Player\\PlayerMinerSlimeVisual.cs": "9219a703fc022ea59f2a7cf054cb12d1417fc3122fce414a869f6c306531d3f2",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\Main.unity": "0ae714de258ac3dbd22116824b0d0bc2a5e051a8e960679213001827688087dd",
+    "D:\\Git\\MineDungeon2\\Art Resource\\PlayerMinerSlime_ComboAttack_v1\\Player_MinerSlime_Attack1_Body_6f_64x64_v1.png": "713885820ed4bf0c96ded7d64150a008c97c564c5564f00adc10a88ff8ccb87a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\PlayerMinerSlime_ComboAttack_v1\\Player_MinerSlime_Attack1_Socket_6f_8x8_v1.png": "f38323139ad0af26fe04564cdbfee161518ae11423ddce597c1851aa8b481d4e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\PlayerMinerSlime_ComboAttack_v1\\Player_MinerSlime_Attack2_Body_6f_64x64_v1.png": "737621ed901a53cdd8a46f968a1014ce656b447c1529adc701d10abb9cfa9694",
+    "D:\\Git\\MineDungeon2\\Art Resource\\PlayerMinerSlime_ComboAttack_v1\\Player_MinerSlime_Attack2_Socket_6f_8x8_v1.png": "f38323139ad0af26fe04564cdbfee161518ae11423ddce597c1851aa8b481d4e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\PlayerMinerSlime_ComboAttack_v1\\Player_MinerSlime_Attack3_Body_8f_64x64_v1.png": "d81cabc4c658d84af5da85ecade370a16c888d48274873c1d13dcda13107393f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\PlayerMinerSlime_ComboAttack_v1\\Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1.png": "f5106053b93981f1f656f6b1c25a38b61b1ad0e66a46e84fd1364c77a61d9990",
+    "D:\\Git\\MineDungeon2\\Art Resource\\PlayerMinerSlime_ComboAttack_v1\\Player_MinerSlime_Attack3_Socket_17f_8x8_v1.png": "ec473d3c63043233807754f312e7c7ca87d7c047b86190f20e007810eb19bcdd",
+    "D:\\Git\\MineDungeon2\\Art Resource\\Player_MinerSlime_Idle_4f_64x64_v1.png": "5c8e0d07e8e6d7e1a9142d1dfbc310be9e4cd51d368f147836e1b2703cd4f9c4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\Player_MinerSlime_Move_6f_64x64_v1.png": "af3ea2fe2aa2da899a13f6ec12d6758daf1839d30c055e0d9ba2962aad9526fd"
+  },
+  "png_files": [
+    {
+      "file": "Player_Pickaxe_Attack1_HeadTrail_v1.png",
+      "size": [
+        24,
+        40
+      ],
+      "mode": "RGBA",
+      "alpha_max": 89,
+      "alpha_has_zero": true
+    },
+    {
+      "file": "Player_Pickaxe_Attack2_HeadTrail_v1.png",
+      "size": [
+        24,
+        40
+      ],
+      "mode": "RGBA",
+      "alpha_max": 114,
+      "alpha_has_zero": true
+    },
+    {
+      "file": "Player_Pickaxe_Attack3_HeadTrail_v1.png",
+      "size": [
+        24,
+        40
+      ],
+      "mode": "RGBA",
+      "alpha_max": 127,
+      "alpha_has_zero": true
+    },
+    {
+      "file": "Player_Pickaxe_Attack1_HitDust_6f_32x32_v1.png",
+      "size": [
+        192,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_max": 200,
+      "alpha_has_zero": true
+    },
+    {
+      "file": "Player_Pickaxe_Attack2_HitDust_6f_32x32_v1.png",
+      "size": [
+        192,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_max": 243,
+      "alpha_has_zero": true
+    },
+    {
+      "file": "Player_Pickaxe_Attack3_HitDust_6f_32x32_v1.png",
+      "size": [
+        192,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_max": 252,
+      "alpha_has_zero": true
+    },
+    {
+      "file": "Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1.png",
+      "size": [
+        280,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_max": 255,
+      "alpha_has_zero": true
+    }
+  ],
+  "gif_files": [
+    {
+      "file": "Attack1_HitDust_Standalone_6x.gif",
+      "size": [
+        192,
+        192
+      ],
+      "frames": 6,
+      "duration_ms": 500,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack2_HitDust_Standalone_6x.gif",
+      "size": [
+        192,
+        192
+      ],
+      "frames": 6,
+      "duration_ms": 560,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack3_HitDust_Standalone_6x.gif",
+      "size": [
+        192,
+        192
+      ],
+      "frames": 6,
+      "duration_ms": 620,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack3_StoneFragments_Standalone_6x.gif",
+      "size": [
+        240,
+        192
+      ],
+      "frames": 7,
+      "duration_ms": 600,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack1_HeadTrail_Standalone_2x.gif",
+      "size": [
+        640,
+        640
+      ],
+      "frames": 16,
+      "duration_ms": 640,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack2_HeadTrail_Standalone_2x.gif",
+      "size": [
+        640,
+        640
+      ],
+      "frames": 17,
+      "duration_ms": 660,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack3_HeadTrail_Standalone_2x.gif",
+      "size": [
+        640,
+        640
+      ],
+      "frames": 13,
+      "duration_ms": 760,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack1_Air_TrailOnly_1x.gif",
+      "size": [
+        320,
+        320
+      ],
+      "frames": 17,
+      "duration_ms": 620,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack1_Hit_3x.gif",
+      "size": [
+        960,
+        960
+      ],
+      "frames": 17,
+      "duration_ms": 620,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack1_BeforeAfter_1x.gif",
+      "size": [
+        640,
+        350
+      ],
+      "frames": 17,
+      "duration_ms": 620,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack1_8Directions_Hit.gif",
+      "size": [
+        1280,
+        700
+      ],
+      "frames": 17,
+      "duration_ms": 620,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack2_Air_TrailOnly_1x.gif",
+      "size": [
+        320,
+        320
+      ],
+      "frames": 18,
+      "duration_ms": 620,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack2_Hit_3x.gif",
+      "size": [
+        960,
+        960
+      ],
+      "frames": 18,
+      "duration_ms": 620,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack2_BeforeAfter_1x.gif",
+      "size": [
+        640,
+        350
+      ],
+      "frames": 18,
+      "duration_ms": 620,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack2_8Directions_Hit.gif",
+      "size": [
+        1280,
+        700
+      ],
+      "frames": 18,
+      "duration_ms": 620,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack3_Air_TrailOnly_1x.gif",
+      "size": [
+        320,
+        320
+      ],
+      "frames": 17,
+      "duration_ms": 680,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack3_Hit_3x.gif",
+      "size": [
+        960,
+        960
+      ],
+      "frames": 20,
+      "duration_ms": 680,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack3_BeforeAfter_1x.gif",
+      "size": [
+        640,
+        350
+      ],
+      "frames": 20,
+      "duration_ms": 680,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack3_8Directions_Hit.gif",
+      "size": [
+        1280,
+        700
+      ],
+      "frames": 20,
+      "duration_ms": 680,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Attack3_Moving_WorldSpaceGhosts_1x.gif",
+      "size": [
+        320,
+        320
+      ],
+      "frames": 32,
+      "duration_ms": 680,
+      "decoded_matches_quantized_png_composites": true
+    },
+    {
+      "file": "Combo_HitDemo_DefaultCadence_1x.gif",
+      "size": [
+        320,
+        320
+      ],
+      "frames": 55,
+      "duration_ms": 1880,
+      "decoded_matches_quantized_png_composites": true
+    }
+  ],
+  "model_checks": 3600,
+  "max_face_overlap_pixels": 0,
+  "max_helmet_overlap_pixels": 0,
+  "max_hit_face_overlap_pixels": 0,
+  "max_hit_helmet_overlap_pixels": 0,
+  "max_hit_effect_enemy_alpha_coverage": 0.018695093758027227,
+  "max_trail_lobe_overlap_pixels": 0,
+  "clipped_model_samples": 0,
+  "air_dust_event_count": 0,
+  "metal_pixels_exact_source": true,
+  "static_visual_review": {
+    "reviewed": [
+      "VFX pixel inspection at6x",
+      "before/after GIF decoded contact sheet",
+      "native game PNG sheets"
+    ],
+    "assessment": "Muted grey-brown particles, small discrete head traces. Existing attack and lobe unchanged. Subjective real-time clarity unverified."
+  },
+  "realtime_gif_visual_review": {
+    "verified": false,
+    "reason": "Prior Chrome Computer Use use was denied; no bypass or new UI automation attempted."
+  },
+  "unity_play_review": false,
+  "head_crop_transform_alignment": {
+    "angles_tested": 72,
+    "max_mismatched_pixels": 0,
+    "anchor_head": [
+      43,
+      24
+    ],
+    "anchor_grip": [
+      14,
+      24
+    ]
+  },
+  "integration_status": "Art and previews only. Confirmed-hit event, history/tint and sorting bindings are not installed in Unity."
+}

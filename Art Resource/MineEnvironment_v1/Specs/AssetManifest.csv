@@ -1,0 +1,51 @@
+﻿file,width,height,ppu,world_width,world_height,pivot_x,pivot_y,suggested_layer,relative_sort_order,repeat,usage_ko,source
+Rubble/Pebbles_Small_24x24.png,24,24,64,0.375,0.375,0.5,0.5,EnvironmentProps,-10,none,"작은 자갈, 드문 바닥 장식",Props_Source cell 0
+Rubble/RubblePile_Medium_48x48.png,48,48,64,0.75,0.75,0.5,0.5,EnvironmentProps,-10,none,기존 충돌 영역 또는 벽 주변 돌무더기,Props_Source cell 1
+Rubble/RockShards_Broken_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentProps,-10,none,부서진 암석 조각,Props_Source cell 2
+Ores/OreLump_Iron_24x24.png,24,24,64,0.375,0.375,0.5,0.5,EnvironmentProps,-10,none,"작은 철광석 덩어리, 보상 아이템 아님",Props_Source cell 3
+Ores/OreLump_Crystal_24x32.png,24,32,64,0.375,0.5,0.5,0.5,EnvironmentProps,-10,none,"작은 수정 덩어리, 보상 아이템 아님",Props_Source cell 4
+Ores/OreLump_Coal_24x24.png,24,24,64,0.375,0.375,0.5,0.5,EnvironmentProps,-10,none,작은 석탄 덩어리,Props_Source cell 5
+Ores/OreLump_Magnetite_24x24.png,24,24,64,0.375,0.375,0.5,0.5,EnvironmentProps,-10,none,작은 자철석 덩어리,Props_Source cell 6
+Ores/WallVein_Iron_64x48.png,64,48,64,1.0,0.75,0.5,0.5,EnvironmentProps,-10,none,기존 벽 영역에 붙이는 철 광맥,Props_Source cell 7
+Ores/WallVein_Crystal_64x48.png,64,48,64,1.0,0.75,0.5,0.5,EnvironmentProps,-10,none,기존 벽 영역에 붙이는 수정 광맥,Props_Source cell 8
+Ores/WallVein_Coal_64x48.png,64,48,64,1.0,0.75,0.5,0.5,EnvironmentProps,-10,none,기존 벽 영역에 붙이는 석탄 광맥,Props_Source cell 9
+WoodenStructures/TimberSupport_Vertical_32x64.png,32,64,64,0.5,1.0,0.5,0.5,EnvironmentProps,-10,none,벽 부착 목재 버팀목,Props_Source cell 10
+WoodenStructures/TimberBeam_Horizontal_64x24.png,64,24,64,1.0,0.375,0.5,0.5,EnvironmentProps,-10,none,벽 부착 가로 목재 들보,Props_Source cell 11
+WoodenStructures/LoosePlanks_48x24.png,48,24,64,0.75,0.375,0.5,0.5,EnvironmentProps,-10,none,바닥의 낮은 판자,Props_Source cell 12
+WoodenStructures/WoodDebris_48x32.png,48,32,64,0.75,0.5,0.5,0.5,EnvironmentProps,-10,none,부서진 목재 잔해,Props_Source cell 13
+Props/Crate_48x48.png,48,48,64,0.75,0.75,0.5,0.5,EnvironmentProps,-10,none,"기존 충돌 영역 안의 상자, 이동 공간 배치 금지",Props_Source cell 14
+Props/MineLantern_16x32.png,16,32,64,0.25,0.5,0.5,0.5,EnvironmentProps,-10,none,"벽 부착 광산 랜턴, 실제 Light 미포함",Props_Source cell 15
+Floors/Floor_RockGray_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentFloor,-50,xy,"상하좌우 반복 바닥, 네 변형 간 경계 호환",Surfaces_Source cell 0; periodic export
+Floors/Floor_ExposedEarth_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentFloor,-50,xy,"상하좌우 반복 바닥, 네 변형 간 경계 호환",Surfaces_Source cell 1; periodic export
+Floors/Floor_CoolStone_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentFloor,-50,xy,"상하좌우 반복 바닥, 네 변형 간 경계 호환",Surfaces_Source cell 2; periodic export
+Floors/Floor_WornStone_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentFloor,-50,xy,"상하좌우 반복 바닥, 네 변형 간 경계 호환",Surfaces_Source cell 3; periodic export
+Walls/Wall_RockMass_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentWall,-30,xy,동일 종류 반복용 암벽 표면. 기존 벽 범위로 자르기,Surfaces_Source cell 4
+Walls/Wall_Protruding_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentWall,-30,xy,동일 종류 반복용 암벽 표면. 기존 벽 범위로 자르기,Surfaces_Source cell 5
+Walls/Wall_Fractured_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentWall,-30,xy,동일 종류 반복용 암벽 표면. 기존 벽 범위로 자르기,Surfaces_Source cell 6
+Walls/Wall_AgedRock_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentWall,-30,xy,동일 종류 반복용 암벽 표면. 기존 벽 범위로 자르기,Surfaces_Source cell 7
+Walls/Wall_NarrowStrip_16x64.png,16,64,64,0.25,1.0,0.5,0.5,EnvironmentWall,-30,y,0.25유닛 폭 암벽용 표면 스트립. 가로 늘이기 금지,Wall_RockMass center crop
+Borders/RockRim_South_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-20,x,벽의 해당 방향 바닥 접점. 반복 축 끝에는 Corner/EndCap 덮기,Details_Source row1 col1
+Borders/RockRim_East_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-20,y,벽의 해당 방향 바닥 접점. 반복 축 끝에는 Corner/EndCap 덮기,Details_Source row1 col1
+Borders/RockRim_North_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-20,x,벽의 해당 방향 바닥 접점. 반복 축 끝에는 Corner/EndCap 덮기,Details_Source row1 col1
+Borders/RockRim_West_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-20,y,벽의 해당 방향 바닥 접점. 반복 축 끝에는 Corner/EndCap 덮기,Details_Source row1 col1
+Borders/CornerOuter_SE_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-19,none,"Outer 굴곡의 연결부 장식, 벽 밖 시각 돌출 최소화",Details_Source row1 col2
+Borders/CornerOuter_NE_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-19,none,"Outer 굴곡의 연결부 장식, 벽 밖 시각 돌출 최소화",Details_Source row1 col2
+Borders/CornerOuter_NW_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-19,none,"Outer 굴곡의 연결부 장식, 벽 밖 시각 돌출 최소화",Details_Source row1 col2
+Borders/CornerOuter_SW_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-19,none,"Outer 굴곡의 연결부 장식, 벽 밖 시각 돌출 최소화",Details_Source row1 col2
+Borders/CornerInner_SE_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-19,none,"Inner 굴곡의 연결부 장식, 벽 밖 시각 돌출 최소화",Details_Source row1 col3
+Borders/CornerInner_NE_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-19,none,"Inner 굴곡의 연결부 장식, 벽 밖 시각 돌출 최소화",Details_Source row1 col3
+Borders/CornerInner_NW_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-19,none,"Inner 굴곡의 연결부 장식, 벽 밖 시각 돌출 최소화",Details_Source row1 col3
+Borders/CornerInner_SW_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-19,none,"Inner 굴곡의 연결부 장식, 벽 밖 시각 돌출 최소화",Details_Source row1 col3
+Borders/WallFoot_Shadow_32x16.png,32,16,64,0.5,0.25,0.5,0.5,EnvironmentShadow,-40,x,바닥 접점 음영. Sprite tint alpha 조절 가능,Details_Source row1 col4
+Floors/Decal_FloorCrack_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentDecal,-45,none,작은 바닥 균열,Details_Source cell 4
+Floors/Decal_WornPatch_64x48.png,64,48,64,1.0,0.75,0.5,0.5,EnvironmentDecal,-45,none,낮은 대비의 바닥 마모,Details_Source cell 5
+Floors/Decal_MiningScratches_48x48.png,48,48,64,0.75,0.75,0.5,0.5,EnvironmentDecal,-45,none,채굴 긁힘,Details_Source cell 6
+Rubble/EmbeddedGravel_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentWallDetail,-15,none,낮게 박힌 잔자갈,Details_Source cell 7
+BossRoom/Boss_WallCrack_Large_96x96.png,96,96,64,1.5,1.5,0.5,0.5,EnvironmentWallDetail,-15,none,외곽 암벽의 큰 균열,Details_Source cell 8
+BossRoom/Boss_WallVein_Iron_128x96.png,128,96,64,2.0,1.5,0.5,0.5,EnvironmentWallDetail,-15,none,보스룸 외곽 대형 철 광맥,Details_Source cell 9
+BossRoom/Boss_WallVein_Crystal_128x96.png,128,96,64,2.0,1.5,0.5,0.5,EnvironmentWallDetail,-15,none,보스룸 외곽 대형 수정 광맥,Details_Source cell 10
+BossRoom/Boss_AncientBrokenRock_96x64.png,96,64,64,1.5,1.0,0.5,0.5,EnvironmentWallDetail,-15,none,외곽 기존 충돌 영역의 낡은 암석,Details_Source cell 11
+BossRoom/Boss_EntranceScuff_128x96.png,128,96,64,2.0,1.5,0.5,0.5,EnvironmentDecal,-45,none,"보스 등장 위치의 낮은 대비 바닥 흔적, 원형 예고 아님",Details_Source cell 12
+WoodenStructures/TimberBrace_Broken_64x64.png,64,64,64,1.0,1.0,0.5,0.5,EnvironmentWallDetail,-15,none,벽 부착 부러진 버팀목,Details_Source cell 13
+Walls/RockSpine_Narrow_16x64.png,16,64,64,0.25,1.0,0.5,0.5,EnvironmentWallDetail,-15,none,좁은 벽의 불규칙 시각 장식. 충돌 영역 안으로 배치,Details_Source cell 14
+Borders/RockEndCap_32x32.png,32,32,64,0.5,0.5,0.5,0.5,EnvironmentBorder,-15,none,짧은 벽 끝을 덮는 캡,Details_Source cell 15

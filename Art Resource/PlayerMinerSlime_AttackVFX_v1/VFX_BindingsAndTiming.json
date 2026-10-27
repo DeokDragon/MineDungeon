@@ -1,0 +1,1475 @@
+{
+  "coordinate_system": "top-left pixel-edge X right/Y down; positive screen angle clockwise",
+  "weapon_source": "D:\\Git\\MineDungeon2\\Art Resource\\Pickaxe_Basic_v1.png",
+  "grip_image": [
+    14,
+    24
+  ],
+  "metal_head_center_image": [
+    43,
+    24
+  ],
+  "head_offset_from_grip_px": [
+    29,
+    0
+  ],
+  "reference_ppu": 64,
+  "reference_scale": 0.8,
+  "thrust_model_world": 0.4,
+  "thrust_model_native_px": 32,
+  "resources": [
+    {
+      "file": "Player_Pickaxe_Attack1_HeadTrail_v1.png",
+      "kind": "head_stamp",
+      "cell": [
+        24,
+        40
+      ],
+      "frames": 1,
+      "pivot_top_left": [
+        12,
+        20
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "life_s": 0.1,
+      "max_alpha": 89,
+      "cap_percent": 34.90196078431372,
+      "emit_step_s": 0.02,
+      "emit_progress": [
+        0.12,
+        0.88
+      ],
+      "max_history_span_px": null
+    },
+    {
+      "file": "Player_Pickaxe_Attack2_HeadTrail_v1.png",
+      "kind": "head_stamp",
+      "cell": [
+        24,
+        40
+      ],
+      "frames": 1,
+      "pivot_top_left": [
+        12,
+        20
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "life_s": 0.12,
+      "max_alpha": 114,
+      "cap_percent": 44.705882352941174,
+      "emit_step_s": 0.02,
+      "emit_progress": [
+        0.12,
+        0.88
+      ],
+      "max_history_span_px": null
+    },
+    {
+      "file": "Player_Pickaxe_Attack3_HeadTrail_v1.png",
+      "kind": "head_stamp",
+      "cell": [
+        24,
+        40
+      ],
+      "frames": 1,
+      "pivot_top_left": [
+        12,
+        20
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "life_s": 0.15,
+      "max_alpha": 127,
+      "cap_percent": 49.80392156862745,
+      "emit_step_s": 0.02,
+      "emit_progress": [
+        0.1,
+        0.5
+      ],
+      "max_history_span_px": 8
+    },
+    {
+      "file": "Player_Pickaxe_Attack1_HitDust_6f_32x32_v1.png",
+      "kind": "dust",
+      "cell": [
+        32,
+        32
+      ],
+      "frames": 6,
+      "sheet": [
+        192,
+        32
+      ],
+      "pivot_top_left": [
+        16.0,
+        16.0
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "frame_ms": 30,
+      "duration_s": 0.18,
+      "event": "confirmed_hit_only",
+      "particles": 3
+    },
+    {
+      "file": "Player_Pickaxe_Attack2_HitDust_6f_32x32_v1.png",
+      "kind": "dust",
+      "cell": [
+        32,
+        32
+      ],
+      "frames": 6,
+      "sheet": [
+        192,
+        32
+      ],
+      "pivot_top_left": [
+        16.0,
+        16.0
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "frame_ms": 40,
+      "duration_s": 0.24,
+      "event": "confirmed_hit_only",
+      "particles": 4
+    },
+    {
+      "file": "Player_Pickaxe_Attack3_HitDust_6f_32x32_v1.png",
+      "kind": "dust",
+      "cell": [
+        32,
+        32
+      ],
+      "frames": 6,
+      "sheet": [
+        192,
+        32
+      ],
+      "pivot_top_left": [
+        16.0,
+        16.0
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "frame_ms": 50,
+      "duration_s": 0.3,
+      "event": "confirmed_hit_only",
+      "particles": 6
+    },
+    {
+      "file": "Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1.png",
+      "kind": "fragments",
+      "cell": [
+        40,
+        32
+      ],
+      "frames": 7,
+      "sheet": [
+        280,
+        32
+      ],
+      "pivot_top_left": [
+        20.0,
+        16.0
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "frame_ms": 40,
+      "duration_s": 0.28,
+      "event": "confirmed_hit_only",
+      "particles": 3
+    }
+  ],
+  "particles": [
+    {
+      "file": "Player_Pickaxe_Attack1_HitDust_6f_32x32_v1.png",
+      "count": 3,
+      "paths": [
+        [
+          {
+            "particle": 0,
+            "center": [
+              15.127342683556593,
+              14.425684527149087
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 1,
+            "center": [
+              17.766928930205793,
+              15.656543808322219
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 2,
+            "center": [
+              14.601137269377453,
+              17.132776703889707
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 200
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              13.515932056968186,
+              11.518622803431752
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 1,
+            "center": [
+              22.42797645041407,
+              14.750527950438538
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 2,
+            "center": [
+              12.01805886415579,
+              19.224512352929032
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 165
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              12.631571154570901,
+              9.923193502612119
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 1,
+            "center": [
+              24.986013565891582,
+              14.253295905146262
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 2,
+            "center": [
+              10.60043537842694,
+              20.372481216754505
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 129
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              12.146223600828659,
+              9.04760333775695
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 1,
+            "center": [
+              26.389894100426034,
+              13.98040917285103
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 2,
+            "center": [
+              9.822427113858776,
+              21.00249988709556
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 91
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              11.879859215785144,
+              8.567069266834945
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 1,
+            "center": [
+              27.160360073464446,
+              13.83064575883173
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 2,
+            "center": [
+              9.395447125286445,
+              21.34826146433522
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 50
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              11.733675341832235,
+              8.303346577173317
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 1,
+            "center": [
+              27.58320076468243,
+              13.748453854556772
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 2,
+            "center": [
+              9.161115539178656,
+              21.538019441238568
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 0
+          }
+        ]
+      ],
+      "deceleration": "s(p)=(1-exp(-3p))/(1-exp(-3))",
+      "space": "local impact fan, not world gravity"
+    },
+    {
+      "file": "Player_Pickaxe_Attack2_HitDust_6f_32x32_v1.png",
+      "count": 4,
+      "paths": [
+        [
+          {
+            "particle": 0,
+            "center": [
+              15.127342683556593,
+              14.425684527149087
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 1,
+            "center": [
+              17.049523590851443,
+              14.537638816076448
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 2,
+            "center": [
+              17.049523590851443,
+              17.46236118392355
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 3,
+            "center": [
+              15.127342683556593,
+              17.574315472850913
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 200
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              13.515932056968186,
+              11.518622803431752
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 1,
+            "center": [
+              19.818100892921223,
+              10.680021877752939
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 2,
+            "center": [
+              18.987527702300287,
+              20.16269304075001
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 3,
+            "center": [
+              12.82532750271601,
+              21.727260792447105
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 165
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              12.631571154570901,
+              9.923193502612119
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 1,
+            "center": [
+              21.337528331722925,
+              8.562916814407583
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 2,
+            "center": [
+              20.05112690946148,
+              21.64466658509176
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 3,
+            "center": [
+              11.561954785005604,
+              24.006445507903724
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 129
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              12.146223600828659,
+              9.04760333775695
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 1,
+            "center": [
+              22.171407790337845,
+              7.401024920810074
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 2,
+            "center": [
+              20.634842530491923,
+              22.457990910610015
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 3,
+            "center": [
+              10.8686011368024,
+              25.257288600553967
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 91
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              11.879859215785144,
+              8.567069266834945
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 1,
+            "center": [
+              22.629050540325498,
+              6.763365129720437
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 2,
+            "center": [
+              20.955192455483278,
+              22.90435276437276
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 3,
+            "center": [
+              10.488080586740237,
+              25.943765844728258
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 50
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              11.733675341832235,
+              8.303346577173317
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 1,
+            "center": [
+              22.88021020669279,
+              6.4134100165011585
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 2,
+            "center": [
+              21.131004221940387,
+              23.149321343626255
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 3,
+            "center": [
+              10.279246481093223,
+              26.32051254424487
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 0
+          }
+        ]
+      ],
+      "deceleration": "s(p)=(1-exp(-3p))/(1-exp(-3))",
+      "space": "local impact fan, not world gravity"
+    },
+    {
+      "file": "Player_Pickaxe_Attack3_HitDust_6f_32x32_v1.png",
+      "count": 6,
+      "paths": [
+        [
+          {
+            "particle": 0,
+            "center": [
+              15.127342683556593,
+              14.425684527149087
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 1,
+            "center": [
+              16.03141433158711,
+              14.200274148718496
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 2,
+            "center": [
+              17.738666487320323,
+              15.534125718815464
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 3,
+            "center": [
+              17.738666487320323,
+              16.465874281184536
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 4,
+            "center": [
+              16.03141433158711,
+              17.799725851281504
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 200
+          },
+          {
+            "particle": 5,
+            "center": [
+              15.127342683556593,
+              17.574315472850913
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 200
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              13.515932056968186,
+              11.518622803431752
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 1,
+            "center": [
+              16.114283364879835,
+              9.452710411000215
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 2,
+            "center": [
+              20.9492115672375,
+              14.67386275738794
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 3,
+            "center": [
+              22.32515945863058,
+              17.69482136893814
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 4,
+            "center": [
+              16.08942265489202,
+              21.1230204676843
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 165
+          },
+          {
+            "particle": 5,
+            "center": [
+              12.82532750271601,
+              21.727260792447105
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 165
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              12.631571154570901,
+              9.923193502612119
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 1,
+            "center": [
+              16.159762854622745,
+              6.847192188642374
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 2,
+            "center": [
+              22.711196065300477,
+              14.20174043405581
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 3,
+            "center": [
+              24.842280170149113,
+              18.369281830841185
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 4,
+            "center": [
+              16.121258297712057,
+              22.94688322333479
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 129
+          },
+          {
+            "particle": 5,
+            "center": [
+              11.561954785005604,
+              24.006445507903724
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 129
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              12.146223600828659,
+              9.04760333775695
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 1,
+            "center": [
+              16.184722527797273,
+              5.41725347015737
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 2,
+            "center": [
+              23.678193660454728,
+              13.942634209351391
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 3,
+            "center": [
+              26.223705306083758,
+              18.739433580418925
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 4,
+            "center": [
+              16.138730068934226,
+              23.947840326274292
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 91
+          },
+          {
+            "particle": 5,
+            "center": [
+              10.8686011368024,
+              25.257288600553967
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 91
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              11.879859215785144,
+              8.567069266834945
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 1,
+            "center": [
+              16.19842068686856,
+              4.6324864625514195
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 2,
+            "center": [
+              24.20889319275032,
+              13.800433698249211
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 3,
+            "center": [
+              26.981847495077464,
+              18.942577167707753
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 4,
+            "center": [
+              16.148318780284125,
+              24.497177231598457
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 50
+          },
+          {
+            "particle": 5,
+            "center": [
+              10.488080586740237,
+              25.943765844728258
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 50
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              11.733675341832235,
+              8.303346577173317
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 1,
+            "center": [
+              16.205938395959947,
+              4.201797197154583
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 2,
+            "center": [
+              24.5001472713438,
+              13.722392403097817
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 3,
+            "center": [
+              27.397924750211004,
+              19.054064732209746
+            ],
+            "size": [
+              4,
+              4
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 4,
+            "center": [
+              16.153581176648096,
+              24.798659717376243
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 5,
+            "center": [
+              10.279246481093223,
+              26.32051254424487
+            ],
+            "size": [
+              3,
+              3
+            ],
+            "alpha": 0
+          }
+        ]
+      ],
+      "deceleration": "s(p)=(1-exp(-3p))/(1-exp(-3))",
+      "space": "local impact fan, not world gravity"
+    },
+    {
+      "file": "Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1.png",
+      "count": 3,
+      "paths": [
+        [
+          {
+            "particle": 0,
+            "center": [
+              19.127342683556595,
+              14.425684527149087
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 255
+          },
+          {
+            "particle": 1,
+            "center": [
+              21.766928930205793,
+              15.656543808322219
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 255
+          },
+          {
+            "particle": 2,
+            "center": [
+              18.601137269377453,
+              17.132776703889707
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 255
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              16.71831142212378,
+              10.079677087582528
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 218
+          },
+          {
+            "particle": 1,
+            "center": [
+              25.831704176064335,
+              14.86643153945689
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 218
+          },
+          {
+            "particle": 2,
+            "center": [
+              15.704893819894897,
+              19.47810840552631
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 218
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              15.257160101858574,
+              7.44369032814621
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 180
+          },
+          {
+            "particle": 1,
+            "center": [
+              28.297114987518498,
+              14.387204223774956
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 180
+          },
+          {
+            "particle": 2,
+            "center": [
+              13.94823336979185,
+              20.900623989764913
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 180
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              14.370927027638135,
+              5.844883539951532
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 141
+          },
+          {
+            "particle": 1,
+            "center": [
+              29.79246223345245,
+              14.096538163842078
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 141
+          },
+          {
+            "particle": 2,
+            "center": [
+              12.882764948099755,
+              21.763423305524658
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 141
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              13.833399496472058,
+              4.875158203954779
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 100
+          },
+          {
+            "particle": 1,
+            "center": [
+              30.69943618502824,
+              13.920240286754918
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 100
+          },
+          {
+            "particle": 2,
+            "center": [
+              12.236525683387873,
+              22.28673754371202
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 100
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              13.507372568380193,
+              4.286990056172613
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 55
+          },
+          {
+            "particle": 1,
+            "center": [
+              31.249543694219675,
+              13.813310219059307
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 55
+          },
+          {
+            "particle": 2,
+            "center": [
+              11.844561755829966,
+              22.604143673836816
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 55
+          }
+        ],
+        [
+          {
+            "particle": 0,
+            "center": [
+              13.309627240600552,
+              3.9302480414763377
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 1,
+            "center": [
+              31.58320076468243,
+              13.748453854556772
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 0
+          },
+          {
+            "particle": 2,
+            "center": [
+              11.606823616264716,
+              22.796660223338243
+            ],
+            "size": [
+              5,
+              5
+            ],
+            "alpha": 0
+          }
+        ]
+      ],
+      "deceleration": "s(p)=(1-exp(-3p))/(1-exp(-3))",
+      "space": "local impact fan, not world gravity"
+    }
+  ],
+  "trail_tint_alpha_formula": "a_i=1-(1-cap)^(w_i/max(1,sum(w))); w_i=(1-age/life)^2; tintAlpha=a_i/materialCap",
+  "impact_trigger": "confirmed-hit visual event; NOT attack progress alone",
+  "preview_fixture": "hit at p=.5 at visual head point for illustration only; does not redefine collision point"
+}

@@ -34,6 +34,10 @@ public class PlayerAttack : MonoBehaviour
     private float comboExpiresAt;
     private Transform[] weaponVisuals;
     private Vector3[] weaponVisualPositions;
+    public event System.Action<int, Vector2, Vector2> VisualDirectHit;
+    public event System.Action VisualAttackCancelled;
+    // Map-local trial receivers; excluded from enemy damage, hit VFX and passive acceptance.
+    public event System.Action<Vector2, Vector2, float, float, LayerMask> BasicAttackResolved;
     public int ComboStep => comboStep;
     private float CurrentDuration => comboStep == 3 ? thrustDuration : swingDuration;
     private float CurrentHitAngle => comboStep == 3 ? thrustHitAngle : hitAngle;
@@ -47,6 +51,7 @@ public class PlayerAttack : MonoBehaviour
     public bool IsAttacking => isAttacking;
     // Read-only presentation of the existing locked aim.
     public float VisualAimAngle => isAttacking ? attackAngle : aimAngle;
+    public float VisualAttackProgress => isAttacking ? Mathf.Clamp01((CombatTime - attackStartTime) / CurrentDuration) : 0f;
     public float AttackInterval => attackInterval;
     public float EffectiveAttackRange
     {
@@ -285,7 +290,12 @@ public class PlayerAttack : MonoBehaviour
                 continue;
 
             hitEnemies.Add(health);
-            if (health.TryTakeDamage(damage, hitPoint, forward)) accepted = true;
+            if (health.TryTakeDamage(damage, hitPoint, forward))
+            {
+                // One visual burst at the first confirmed direct contact; no shockwave hook.
+                if (!accepted) VisualDirectHit?.Invoke(comboStep, hitPoint, forward);
+                accepted = true;
+            }
         }
         if (accepted && !enhanced && HasPhysical100 && (GetComponent<PlayerHealth>() == null || !GetComponent<PlayerHealth>().IsDead))
         {
@@ -294,6 +304,7 @@ public class PlayerAttack : MonoBehaviour
         }
         if (accepted && shockwave)
             ApplyShockwave(shockwaveOrigin, forward, PlayerSkillAttackPower.RoundDamage(rawDamage * .30d * multiplier));
+        BasicAttackResolved?.Invoke(origin, forward, EffectiveAttackRange, CurrentHitAngle, wallLayer);
     }
 
     private void ApplyShockwave(Vector2 origin, Vector2 forward, int damage)
@@ -330,6 +341,7 @@ public class PlayerAttack : MonoBehaviour
     }
     public void CancelAttack()
     {
+        VisualAttackCancelled?.Invoke();
         isAttacking = false;
         damageApplied = true;
         SetThrustVisual(0f);

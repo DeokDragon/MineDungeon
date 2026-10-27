@@ -1,0 +1,292 @@
+{
+  "protected_source_hashes": {
+    "D:\\던전 게임\\아트 리소스\\몬스터 정지 이미지\\Player_slime.png": "74d996652f532caa4b257d8b9f6bcfafd7b55809105ba77c24c2096beedd22d8",
+    "D:\\Git\\MineDungeon2\\Art Resource\\Pickaxe_Basic_v1.png": "100524ccbc09dda83f1f10c519684cd8cfa54408e0c000116d69beb83b63a903",
+    "D:\\Git\\MineDungeon2\\Art Resource\\Player_MinerSlime_Idle_4f_64x64_v1.png": "5c8e0d07e8e6d7e1a9142d1dfbc310be9e4cd51d368f147836e1b2703cd4f9c4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\Player_MinerSlime_Move_6f_64x64_v1.png": "af3ea2fe2aa2da899a13f6ec12d6758daf1839d30c055e0d9ba2962aad9526fd",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\Player\\PlayerAttack.cs": "8cd36392892286987fb35e6d4341bc8439d97ad7e9025a7c49a3fc46920877ee",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\Player\\PlayerMinerSlimeVisual.cs": "1f2e9f5cb78c186993e881872378450fcfc2e45baa7d98732e87bc5241a72ec2",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\Main.unity": "c90e5a18147bad1ea9f3f0449d866549e5e92a3a3bce224b3b8db48aa866d308"
+  },
+  "pngs": [
+    {
+      "file": "Player_MinerSlime_Attack1_Body_6f_64x64_v1.png",
+      "size": [
+        384,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Player_MinerSlime_Attack1_Socket_6f_8x8_v1.png",
+      "size": [
+        48,
+        8
+      ],
+      "mode": "RGBA",
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Player_MinerSlime_Attack2_Body_6f_64x64_v1.png",
+      "size": [
+        384,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Player_MinerSlime_Attack2_Socket_6f_8x8_v1.png",
+      "size": [
+        48,
+        8
+      ],
+      "mode": "RGBA",
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Player_MinerSlime_Attack3_Body_8f_64x64_v1.png",
+      "size": [
+        512,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1.png",
+      "size": [
+        1088,
+        64
+      ],
+      "mode": "RGBA",
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Player_MinerSlime_Attack3_Socket_17f_8x8_v1.png",
+      "size": [
+        136,
+        8
+      ],
+      "mode": "RGBA",
+      "alpha_values": [
+        0,
+        255
+      ]
+    }
+  ],
+  "gif_reports": [
+    {
+      "name": "Attack1_Body_64px.gif",
+      "frames": 6,
+      "duration_ms": 250,
+      "size": [
+        64,
+        64
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack1_Attached_1x.gif",
+      "frames": 25,
+      "duration_ms": 250,
+      "size": [
+        224,
+        224
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack1_Attached_3x.gif",
+      "frames": 25,
+      "duration_ms": 250,
+      "size": [
+        672,
+        672
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack2_Body_64px.gif",
+      "frames": 6,
+      "duration_ms": 250,
+      "size": [
+        64,
+        64
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack2_Attached_1x.gif",
+      "frames": 25,
+      "duration_ms": 250,
+      "size": [
+        224,
+        224
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack2_Attached_3x.gif",
+      "frames": 25,
+      "duration_ms": 250,
+      "size": [
+        672,
+        672
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack3_Body_64px.gif",
+      "frames": 7,
+      "duration_ms": 320,
+      "size": [
+        64,
+        64
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack3_Attached_1x.gif",
+      "frames": 32,
+      "duration_ms": 320,
+      "size": [
+        224,
+        224
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack3_Attached_3x.gif",
+      "frames": 32,
+      "duration_ms": 320,
+      "size": [
+        672,
+        672
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Combo_DefaultInterval_1p52s_1x.gif",
+      "frames": 83,
+      "duration_ms": 1520,
+      "size": [
+        224,
+        224
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Combo_DefaultInterval_1p52s_3x.gif",
+      "frames": 83,
+      "duration_ms": 1520,
+      "size": [
+        672,
+        672
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Combo_ArtOnly_NoInterval_0p82s.gif",
+      "frames": 82,
+      "duration_ms": 820,
+      "size": [
+        672,
+        672
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack3_Connection_Comparison.gif",
+      "frames": 32,
+      "duration_ms": 320,
+      "size": [
+        1344,
+        524
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack3_Connection_Closeup_6x.gif",
+      "frames": 32,
+      "duration_ms": 320,
+      "size": [
+        516,
+        336
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack1_8Directions.gif",
+      "frames": 25,
+      "duration_ms": 250,
+      "size": [
+        896,
+        508
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack2_8Directions.gif",
+      "frames": 25,
+      "duration_ms": 250,
+      "size": [
+        896,
+        508
+      ],
+      "readback_matches_palette_quantized_frames": true
+    },
+    {
+      "name": "Attack3_8Directions.gif",
+      "frames": 32,
+      "duration_ms": 320,
+      "size": [
+        896,
+        508
+      ],
+      "readback_matches_palette_quantized_frames": true
+    }
+  ],
+  "connection_samples": 3120,
+  "connection_fail_count": 0,
+  "connection_fail_examples": [],
+  "body_face_helmet_preserved": true,
+  "body_floor_last_opaque_row": 59,
+  "static_visual_review": {
+    "reviewed": [
+      "body frame contact sheet",
+      "Attack3 peak eight-direction view",
+      "decoded Attack3 temporal contact sheet"
+    ],
+    "assessment": "Body pose variants distinct. Broad lobe maintains geometry but visibly large below/diagonally. Attack3 not approved as final natural visual."
+  },
+  "realtime_gif_visual_review": {
+    "verified": false,
+    "reason": "Prior Chrome Computer Use approval was denied; no bypass attempted."
+  },
+  "unity_play_review": false,
+  "candidate_status": "Attack3 broad lobe requires aesthetic review, not a proven final 360 connector",
+  "runtime_integration_required": true,
+  "integration_status": "Not integrated. Existing scripts do not automatically play these body/lobe/socket sheets.",
+  "png_structure_pass": true,
+  "body_first_and_last_exact_base": true
+}

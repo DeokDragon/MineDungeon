@@ -1,0 +1,1720 @@
+{
+  "trial_only": true,
+  "phase": 1,
+  "cell": [
+    160,
+    160
+  ],
+  "frames": 16,
+  "sheet": [
+    2560,
+    160
+  ],
+  "ppu": 128.0,
+  "reference_body_scale": 1.8,
+  "speed_world": 1.4,
+  "trial_period_s": 0.4,
+  "frame_hold_s": 0.025,
+  "source_px_per_s": 99.55555555555554,
+  "stance_s": 0.2,
+  "stance_local_travel_px": 19.91111111111111,
+  "old_period_s": 1.08,
+  "old_world_slide_over_054s": 0.756,
+  "old_world_slide_over_full_075s": 1.0499999999999998,
+  "same_200ms_old_slide_px": 19.91111111111111,
+  "stance_metrics": {
+    "ideal": {
+      "rms_px": 8.62259584735364e-15,
+      "max_abs_px": 2.842170943040401e-14,
+      "max_abs_world": 3.9968028886505636e-16
+    },
+    "held_sprite": {
+      "rms_px": 0.7636708635793175,
+      "max_abs_px": 1.5209508015478264,
+      "max_abs_world": 0.021388370646766307
+    },
+    "raster_root": {
+      "rms_px": 0.8108789811486476,
+      "max_abs_px": 1.9555555555555628,
+      "max_abs_world": 0.027500000000000104
+    },
+    "common_200ms": {
+      "old_foot_world_travel_px": 19.91111111111111,
+      "old_world_travel_units": 0.27999999999999997,
+      "trial_max_contact_span_px": 3.0,
+      "trial_max_contact_span_units": 0.0421875
+    }
+  },
+  "metrics_use_actual_support_sole_pixels": true,
+  "max_ankle_pose_jump_px": 5.092333383225297,
+  "min_visible_foot_fraction": 0.8038277511961722,
+  "reassigned_source_limb_pixels": 44,
+  "records": [
+    {
+      "frame": 1,
+      "time_start": 0.0,
+      "time_end": 0.025,
+      "pose_sample_time": 0.0125,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.03125,
+          "stance": true,
+          "hip": [
+            58.70576441587903,
+            84.36979166666667
+          ],
+          "knee": [
+            52.384621792872544,
+            104.5946070166176
+          ],
+          "ankle": [
+            64.0,
+            116.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            77.02941176470588,
+            141
+          ],
+          "foot_bbox": [
+            69,
+            130,
+            88,
+            142
+          ],
+          "projected_lengths": [
+            21.189620100417095,
+            16.278820596099703
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.53125,
+          "stance": false,
+          "hip": [
+            82.70576441587903,
+            85.36979166666667
+          ],
+          "knee": [
+            87.31677285271209,
+            103.47334383731689
+          ],
+          "ankle": [
+            77.24722222222223,
+            111.69551813004514
+          ],
+          "pitch": -1.560722576129026,
+          "contact_center": [
+            97.21428571428571,
+            132
+          ],
+          "foot_bbox": [
+            83,
+            125,
+            107,
+            133
+          ],
+          "projected_lengths": [
+            18.681541692269402,
+            13.000000000000002
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        19,
+        23,
+        140,
+        142
+      ],
+      "head_offset": [
+        -1,
+        2
+      ],
+      "hip_offset": [
+        1.7057644158790308,
+        4.369791666666667
+      ],
+      "shoulder_offset": [
+        -1,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9509
+      ]
+    },
+    {
+      "frame": 2,
+      "time_start": 0.025,
+      "time_end": 0.05,
+      "pose_sample_time": 0.037500000000000006,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.09375,
+          "stance": true,
+          "hip": [
+            58.75055911630923,
+            84.109375
+          ],
+          "knee": [
+            50.44762995690338,
+            103.60453766600224
+          ],
+          "ankle": [
+            61.0,
+            116.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            74.02941176470588,
+            141
+          ],
+          "foot_bbox": [
+            66,
+            130,
+            85,
+            142
+          ],
+          "projected_lengths": [
+            21.189620100417084,
+            16.27882059609971
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.59375,
+          "stance": false,
+          "hip": [
+            82.75055911630923,
+            85.109375
+          ],
+          "knee": [
+            89.04583697745107,
+            102.6982770877091
+          ],
+          "ankle": [
+            77.98611111111111,
+            109.53073372946037
+          ],
+          "pitch": -4.444561864156817,
+          "contact_center": [
+            98.24,
+            129
+          ],
+          "foot_bbox": [
+            84,
+            122,
+            108,
+            130
+          ],
+          "projected_lengths": [
+            18.68154169226941,
+            13.000000000000005
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        19,
+        23,
+        140,
+        142
+      ],
+      "head_offset": [
+        -1,
+        1
+      ],
+      "hip_offset": [
+        1.7505591163092364,
+        4.109375
+      ],
+      "shoulder_offset": [
+        -1,
+        2
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9501
+      ]
+    },
+    {
+      "frame": 3,
+      "time_start": 0.05,
+      "time_end": 0.07500000000000001,
+      "pose_sample_time": 0.0625,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.15625,
+          "stance": true,
+          "hip": [
+            58.83332893009412,
+            84.0
+          ],
+          "knee": [
+            49.302249078520454,
+            102.9250764030935
+          ],
+          "ankle": [
+            59.0,
+            116.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            72.02941176470588,
+            141
+          ],
+          "foot_bbox": [
+            64,
+            130,
+            83,
+            142
+          ],
+          "projected_lengths": [
+            21.189620100417088,
+            16.278820596099703
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.65625,
+          "stance": false,
+          "hip": [
+            82.83332893009413,
+            85.0
+          ],
+          "knee": [
+            92.76735031502372,
+            100.82135326461557
+          ],
+          "ankle": [
+            81.05833333333334,
+            106.46926627053963
+          ],
+          "pitch": -6.651756898420362,
+          "contact_center": [
+            100.38888888888889,
+            126
+          ],
+          "foot_bbox": [
+            87,
+            119,
+            111,
+            127
+          ],
+          "projected_lengths": [
+            18.68154169226941,
+            13.0
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        19,
+        23,
+        140,
+        142
+      ],
+      "head_offset": [
+        0,
+        1
+      ],
+      "hip_offset": [
+        1.8333289300941193,
+        4.0
+      ],
+      "shoulder_offset": [
+        -1,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9454
+      ]
+    },
+    {
+      "frame": 4,
+      "time_start": 0.07500000000000001,
+      "time_end": 0.1,
+      "pose_sample_time": 0.08750000000000001,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.21875,
+          "stance": true,
+          "hip": [
+            58.94147290339516,
+            84.0
+          ],
+          "knee": [
+            47.728112579203454,
+            101.97944799597148
+          ],
+          "ankle": [
+            56.0,
+            116.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            69.02941176470588,
+            141
+          ],
+          "foot_bbox": [
+            61,
+            130,
+            80,
+            142
+          ],
+          "projected_lengths": [
+            21.189620100417084,
+            16.278820596099713
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.71875,
+          "stance": false,
+          "hip": [
+            82.94147290339517,
+            85.0
+          ],
+          "knee": [
+            96.69438154070015,
+            97.64347673758851
+          ],
+          "ankle": [
+            85.53055555555557,
+            104.30448186995486
+          ],
+          "pitch": -7.8462822432258434,
+          "contact_center": [
+            105.06666666666666,
+            124
+          ],
+          "foot_bbox": [
+            91,
+            116,
+            116,
+            125
+          ],
+          "projected_lengths": [
+            18.681541692269402,
+            13.000000000000007
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        19,
+        23,
+        141,
+        142
+      ],
+      "head_offset": [
+        0,
+        1
+      ],
+      "hip_offset": [
+        1.9414729033951614,
+        4.0
+      ],
+      "shoulder_offset": [
+        0,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9433
+      ]
+    },
+    {
+      "frame": 5,
+      "time_start": 0.1,
+      "time_end": 0.125,
+      "pose_sample_time": 0.1125,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.28125,
+          "stance": true,
+          "hip": [
+            59.05852709660484,
+            84.0
+          ],
+          "knee": [
+            46.897345241715826,
+            101.35239625793272
+          ],
+          "ankle": [
+            54.0,
+            116.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            67.02941176470588,
+            141
+          ],
+          "foot_bbox": [
+            59,
+            130,
+            78,
+            142
+          ],
+          "projected_lengths": [
+            21.189620100417077,
+            16.27882059609971
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.78125,
+          "stance": false,
+          "hip": [
+            83.05852709660483,
+            85.0
+          ],
+          "knee": [
+            99.09681107154333,
+            94.57984588285382
+          ],
+          "ankle": [
+            90.46944444444445,
+            104.30448186995486
+          ],
+          "pitch": -7.8462822432258434,
+          "contact_center": [
+            110.06666666666666,
+            124
+          ],
+          "foot_bbox": [
+            96,
+            116,
+            121,
+            125
+          ],
+          "projected_lengths": [
+            18.68154169226941,
+            13.000000000000004
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 0.9769230769230769
+        }
+      ],
+      "bbox": [
+        20,
+        23,
+        142,
+        142
+      ],
+      "head_offset": [
+        0,
+        1
+      ],
+      "hip_offset": [
+        2.0585270966048386,
+        4.0
+      ],
+      "shoulder_offset": [
+        0,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9437
+      ]
+    },
+    {
+      "frame": 6,
+      "time_start": 0.125,
+      "time_end": 0.15000000000000002,
+      "pose_sample_time": 0.1375,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.34375,
+          "stance": true,
+          "hip": [
+            59.16667106990588,
+            84.0
+          ],
+          "knee": [
+            45.916018972768285,
+            100.5354231575918
+          ],
+          "ankle": [
+            51.0,
+            116.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            64.02941176470588,
+            141
+          ],
+          "foot_bbox": [
+            56,
+            130,
+            75,
+            142
+          ],
+          "projected_lengths": [
+            21.189620100417088,
+            16.278820596099713
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.84375,
+          "stance": false,
+          "hip": [
+            83.16667106990587,
+            85.0
+          ],
+          "knee": [
+            99.39425512253841,
+            94.25556674735512
+          ],
+          "ankle": [
+            94.94166666666668,
+            106.46926627053963
+          ],
+          "pitch": -6.651756898420363,
+          "contact_center": [
+            114.2,
+            126
+          ],
+          "foot_bbox": [
+            101,
+            119,
+            125,
+            127
+          ],
+          "projected_lengths": [
+            18.681541692269395,
+            12.999999999999996
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 0.8560606060606061
+        }
+      ],
+      "bbox": [
+        20,
+        23,
+        142,
+        142
+      ],
+      "head_offset": [
+        0,
+        1
+      ],
+      "hip_offset": [
+        2.1666710699058807,
+        4.0
+      ],
+      "shoulder_offset": [
+        0,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9441
+      ]
+    },
+    {
+      "frame": 7,
+      "time_start": 0.15000000000000002,
+      "time_end": 0.17500000000000002,
+      "pose_sample_time": 0.1625,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.40625,
+          "stance": true,
+          "hip": [
+            59.24944088369077,
+            84.0
+          ],
+          "knee": [
+            45.48030291986141,
+            100.10623605107764
+          ],
+          "ankle": [
+            49.0,
+            116.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            62.029411764705884,
+            141
+          ],
+          "foot_bbox": [
+            54,
+            130,
+            73,
+            142
+          ],
+          "projected_lengths": [
+            21.189620100417095,
+            16.27882059609971
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.90625,
+          "stance": false,
+          "hip": [
+            83.24944088369077,
+            85.0
+          ],
+          "knee": [
+            97.94768199145888,
+            96.53090232106383
+          ],
+          "ankle": [
+            98.0138888888889,
+            109.53073372946037
+          ],
+          "pitch": -4.444561864156817,
+          "contact_center": [
+            118.24,
+            129
+          ],
+          "foot_bbox": [
+            104,
+            122,
+            128,
+            130
+          ],
+          "projected_lengths": [
+            18.6815416922694,
+            13.00000000000001
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 0.9545454545454546
+        }
+      ],
+      "bbox": [
+        20,
+        23,
+        142,
+        142
+      ],
+      "head_offset": [
+        1,
+        1
+      ],
+      "hip_offset": [
+        2.2494408836907636,
+        4.0
+      ],
+      "shoulder_offset": [
+        0,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9461
+      ]
+    },
+    {
+      "frame": 8,
+      "time_start": 0.17500000000000002,
+      "time_end": 0.2,
+      "pose_sample_time": 0.1875,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.46875,
+          "stance": true,
+          "hip": [
+            59.29423558412097,
+            84.0
+          ],
+          "knee": [
+            45.11379429700838,
+            99.74531946016825
+          ],
+          "ankle": [
+            46.0,
+            116.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            59.029411764705884,
+            141
+          ],
+          "foot_bbox": [
+            51,
+            130,
+            70,
+            142
+          ],
+          "projected_lengths": [
+            21.189620100417095,
+            16.278820596099706
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 0.9952380952380953
+        },
+        {
+          "side": "R",
+          "phase": 0.96875,
+          "stance": false,
+          "hip": [
+            83.29423558412097,
+            85.0
+          ],
+          "knee": [
+            95.55534135105717,
+            99.09486734141204
+          ],
+          "ankle": [
+            98.75277777777778,
+            111.69551813004514
+          ],
+          "pitch": -1.5607225761290289,
+          "contact_center": [
+            119.21428571428571,
+            132
+          ],
+          "foot_bbox": [
+            105,
+            125,
+            129,
+            133
+          ],
+          "projected_lengths": [
+            18.6815416922694,
+            12.999999999999998
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        20,
+        23,
+        142,
+        142
+      ],
+      "head_offset": [
+        1,
+        1
+      ],
+      "hip_offset": [
+        2.294235584120969,
+        4.0
+      ],
+      "shoulder_offset": [
+        1,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9549
+      ]
+    },
+    {
+      "frame": 9,
+      "time_start": 0.2,
+      "time_end": 0.225,
+      "pose_sample_time": 0.21250000000000002,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.53125,
+          "stance": false,
+          "hip": [
+            59.29423558412097,
+            84.36979166666667
+          ],
+          "knee": [
+            44.33672352231741,
+            99.37888334208132
+          ],
+          "ankle": [
+            44.24722222222222,
+            115.65745789630078
+          ],
+          "pitch": 1.560722576129026,
+          "contact_center": [
+            58.06896551724138,
+            141
+          ],
+          "foot_bbox": [
+            49,
+            129,
+            68,
+            142
+          ],
+          "projected_lengths": [
+            21.1896201004171,
+            16.27882059609971
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 0.95260663507109
+        },
+        {
+          "side": "R",
+          "phase": 0.03125,
+          "stance": true,
+          "hip": [
+            83.29423558412097,
+            85.36979166666667
+          ],
+          "knee": [
+            96.03121742026548,
+            99.03614793692851
+          ],
+          "ankle": [
+            97.0,
+            112.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            118.8,
+            132
+          ],
+          "foot_bbox": [
+            103,
+            126,
+            127,
+            133
+          ],
+          "projected_lengths": [
+            18.681541692269413,
+            12.999999999999996
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        21,
+        23,
+        142,
+        142
+      ],
+      "head_offset": [
+        1,
+        2
+      ],
+      "hip_offset": [
+        2.294235584120969,
+        4.369791666666667
+      ],
+      "shoulder_offset": [
+        1,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9446
+      ]
+    },
+    {
+      "frame": 10,
+      "time_start": 0.225,
+      "time_end": 0.25,
+      "pose_sample_time": 0.23750000000000002,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.59375,
+          "stance": false,
+          "hip": [
+            59.24944088369077,
+            84.109375
+          ],
+          "knee": [
+            42.531768589090206,
+            97.12933786670376
+          ],
+          "ankle": [
+            44.986111111111114,
+            113.2220754456429
+          ],
+          "pitch": 4.444561864156817,
+          "contact_center": [
+            58.8235294117647,
+            139
+          ],
+          "foot_bbox": [
+            49,
+            127,
+            69,
+            140
+          ],
+          "projected_lengths": [
+            21.189620100417095,
+            16.278820596099703
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 0.8909952606635071
+        },
+        {
+          "side": "R",
+          "phase": 0.09375,
+          "stance": true,
+          "hip": [
+            83.24944088369077,
+            85.109375
+          ],
+          "knee": [
+            95.62687531475876,
+            99.10219876450917
+          ],
+          "ankle": [
+            94.0,
+            112.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            115.8,
+            132
+          ],
+          "foot_bbox": [
+            100,
+            126,
+            124,
+            133
+          ],
+          "projected_lengths": [
+            18.681541692269406,
+            13.00000000000001
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        21,
+        23,
+        142,
+        140
+      ],
+      "head_offset": [
+        1,
+        1
+      ],
+      "hip_offset": [
+        2.2494408836907636,
+        4.109375
+      ],
+      "shoulder_offset": [
+        1,
+        2
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9400
+      ]
+    },
+    {
+      "frame": 11,
+      "time_start": 0.25,
+      "time_end": 0.275,
+      "pose_sample_time": 0.2625,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.65625,
+          "stance": false,
+          "hip": [
+            59.16667106990588,
+            84.0
+          ],
+          "knee": [
+            41.09474381020658,
+            95.06369943193222
+          ],
+          "ankle": [
+            48.05833333333333,
+            109.7779245543571
+          ],
+          "pitch": 6.651756898420362,
+          "contact_center": [
+            61.875,
+            135
+          ],
+          "foot_bbox": [
+            52,
+            123,
+            72,
+            136
+          ],
+          "projected_lengths": [
+            21.18962010041709,
+            16.27882059609971
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 0.8038277511961722
+        },
+        {
+          "side": "R",
+          "phase": 0.15625,
+          "stance": true,
+          "hip": [
+            83.16667106990587,
+            85.0
+          ],
+          "knee": [
+            95.09852289971435,
+            99.37466214947315
+          ],
+          "ankle": [
+            92.0,
+            112.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            113.8,
+            132
+          ],
+          "foot_bbox": [
+            98,
+            126,
+            122,
+            133
+          ],
+          "projected_lengths": [
+            18.681541692269406,
+            13.000000000000004
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        21,
+        23,
+        142,
+        136
+      ],
+      "head_offset": [
+        0,
+        1
+      ],
+      "hip_offset": [
+        2.1666710699058807,
+        4.0
+      ],
+      "shoulder_offset": [
+        1,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9365
+      ]
+    },
+    {
+      "frame": 12,
+      "time_start": 0.275,
+      "time_end": 0.30000000000000004,
+      "pose_sample_time": 0.28750000000000003,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.71875,
+          "stance": false,
+          "hip": [
+            59.05852709660484,
+            84.0
+          ],
+          "knee": [
+            41.29919102328199,
+            95.55880539825694
+          ],
+          "ankle": [
+            52.53055555555556,
+            107.3425421036992
+          ],
+          "pitch": 7.8462822432258434,
+          "contact_center": [
+            68.0,
+            133
+          ],
+          "foot_bbox": [
+            56,
+            120,
+            77,
+            134
+          ],
+          "projected_lengths": [
+            21.189620100417088,
+            16.278820596099706
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 0.919047619047619
+        },
+        {
+          "side": "R",
+          "phase": 0.21875,
+          "stance": true,
+          "hip": [
+            83.05852709660483,
+            85.0
+          ],
+          "knee": [
+            94.12342655959397,
+            100.05217591824992
+          ],
+          "ankle": [
+            89.0,
+            112.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            110.8,
+            132
+          ],
+          "foot_bbox": [
+            95,
+            126,
+            119,
+            133
+          ],
+          "projected_lengths": [
+            18.6815416922694,
+            13.000000000000004
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        21,
+        23,
+        142,
+        134
+      ],
+      "head_offset": [
+        0,
+        1
+      ],
+      "hip_offset": [
+        2.0585270966048386,
+        4.0
+      ],
+      "shoulder_offset": [
+        0,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9385
+      ]
+    },
+    {
+      "frame": 13,
+      "time_start": 0.30000000000000004,
+      "time_end": 0.325,
+      "pose_sample_time": 0.3125,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.78125,
+          "stance": false,
+          "hip": [
+            58.94147290339516,
+            84.0
+          ],
+          "knee": [
+            43.67657004695235,
+            98.69635127449546
+          ],
+          "ankle": [
+            57.46944444444445,
+            107.3425421036992
+          ],
+          "pitch": 7.8462822432258434,
+          "contact_center": [
+            73.0,
+            133
+          ],
+          "foot_bbox": [
+            61,
+            120,
+            82,
+            134
+          ],
+          "projected_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.28125,
+          "stance": true,
+          "hip": [
+            82.94147290339517,
+            85.0
+          ],
+          "knee": [
+            93.23257230843254,
+            100.59144871510148
+          ],
+          "ankle": [
+            87.0,
+            112.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            108.8,
+            132
+          ],
+          "foot_bbox": [
+            93,
+            126,
+            117,
+            133
+          ],
+          "projected_lengths": [
+            18.681541692269406,
+            12.999999999999993
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        20,
+        23,
+        140,
+        134
+      ],
+      "head_offset": [
+        0,
+        1
+      ],
+      "hip_offset": [
+        1.9414729033951614,
+        4.0
+      ],
+      "shoulder_offset": [
+        0,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9420
+      ]
+    },
+    {
+      "frame": 14,
+      "time_start": 0.325,
+      "time_end": 0.35000000000000003,
+      "pose_sample_time": 0.3375,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.84375,
+          "stance": false,
+          "hip": [
+            58.83332893009412,
+            84.0
+          ],
+          "knee": [
+            47.64416501824648,
+            101.99451613558438
+          ],
+          "ankle": [
+            61.94166666666666,
+            109.7779245543571
+          ],
+          "pitch": 6.651756898420363,
+          "contact_center": [
+            75.48,
+            135
+          ],
+          "foot_bbox": [
+            66,
+            123,
+            86,
+            136
+          ],
+          "projected_lengths": [
+            21.18962010041709,
+            16.278820596099703
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.34375,
+          "stance": true,
+          "hip": [
+            82.83332893009413,
+            85.0
+          ],
+          "knee": [
+            91.63493163390515,
+            101.47822168330873
+          ],
+          "ankle": [
+            84.0,
+            112.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            105.8,
+            132
+          ],
+          "foot_bbox": [
+            90,
+            126,
+            114,
+            133
+          ],
+          "projected_lengths": [
+            18.681541692269395,
+            13.000000000000007
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        20,
+        23,
+        140,
+        136
+      ],
+      "head_offset": [
+        0,
+        1
+      ],
+      "hip_offset": [
+        1.8333289300941193,
+        4.0
+      ],
+      "shoulder_offset": [
+        0,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9498
+      ]
+    },
+    {
+      "frame": 15,
+      "time_start": 0.35000000000000003,
+      "time_end": 0.375,
+      "pose_sample_time": 0.36250000000000004,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.90625,
+          "stance": false,
+          "hip": [
+            58.75055911630923,
+            84.0
+          ],
+          "knee": [
+            51.6288848342721,
+            103.9569976554734
+          ],
+          "ankle": [
+            65.01388888888889,
+            113.2220754456429
+          ],
+          "pitch": 4.444561864156817,
+          "contact_center": [
+            78.82352941176471,
+            139
+          ],
+          "foot_bbox": [
+            69,
+            127,
+            89,
+            140
+          ],
+          "projected_lengths": [
+            21.189620100417088,
+            16.278820596099706
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.40625,
+          "stance": true,
+          "hip": [
+            82.75055911630923,
+            85.0
+          ],
+          "knee": [
+            90.37318095324467,
+            102.05566288160841
+          ],
+          "ankle": [
+            82.0,
+            112.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            103.8,
+            132
+          ],
+          "foot_bbox": [
+            88,
+            126,
+            112,
+            133
+          ],
+          "projected_lengths": [
+            18.681541692269402,
+            13.000000000000002
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        20,
+        23,
+        140,
+        140
+      ],
+      "head_offset": [
+        -1,
+        1
+      ],
+      "hip_offset": [
+        1.7505591163092364,
+        4.0
+      ],
+      "shoulder_offset": [
+        0,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9507
+      ]
+    },
+    {
+      "frame": 16,
+      "time_start": 0.375,
+      "time_end": 0.4,
+      "pose_sample_time": 0.3875,
+      "legs": [
+        {
+          "side": "L",
+          "phase": 0.96875,
+          "stance": false,
+          "hip": [
+            58.70576441587903,
+            84.0
+          ],
+          "knee": [
+            53.794129358451194,
+            104.61251661157962
+          ],
+          "ankle": [
+            65.75277777777778,
+            115.65745789630078
+          ],
+          "pitch": 1.5607225761290289,
+          "contact_center": [
+            79.85714285714286,
+            141
+          ],
+          "foot_bbox": [
+            71,
+            129,
+            90,
+            142
+          ],
+          "projected_lengths": [
+            21.18962010041709,
+            16.278820596099713
+          ],
+          "source_lengths": [
+            21.18962010041709,
+            16.278820596099706
+          ],
+          "visible_foot_fraction": 1.0
+        },
+        {
+          "side": "R",
+          "phase": 0.46875,
+          "stance": true,
+          "hip": [
+            82.70576441587903,
+            85.0
+          ],
+          "knee": [
+            88.2305378297825,
+            102.84592050651985
+          ],
+          "ankle": [
+            79.0,
+            112.0
+          ],
+          "pitch": 0.0,
+          "contact_center": [
+            100.8,
+            132
+          ],
+          "foot_bbox": [
+            85,
+            126,
+            109,
+            133
+          ],
+          "projected_lengths": [
+            18.68154169226941,
+            12.999999999999993
+          ],
+          "source_lengths": [
+            18.681541692269406,
+            13.0
+          ],
+          "visible_foot_fraction": 1.0
+        }
+      ],
+      "bbox": [
+        20,
+        23,
+        141,
+        142
+      ],
+      "head_offset": [
+        -1,
+        1
+      ],
+      "hip_offset": [
+        1.705764415879031,
+        4.0
+      ],
+      "shoulder_offset": [
+        -1,
+        1
+      ],
+      "removed_raster_specks": 0,
+      "component_sizes": [
+        9572
+      ]
+    }
+  ],
+  "direction_scope": "rightward horizontal; mirrored left diagnostic only. No all-direction guarantee.",
+  "recommended_status": "Keep existing v4.1 until qualitative moving review approves the trial."
+}

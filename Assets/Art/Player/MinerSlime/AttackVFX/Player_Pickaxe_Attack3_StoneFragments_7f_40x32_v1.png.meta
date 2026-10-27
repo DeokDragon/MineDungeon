@@ -1,0 +1,342 @@
+fileFormatVersion: 2
+guid: 229c5ec5d2559f440924c8065cec7445
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4199762253289555528
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_0
+  - first:
+      213: 6117326906097621612
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_1
+  - first:
+      213: -3669207570683106791
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_2
+  - first:
+      213: 7769862181979091850
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_3
+  - first:
+      213: 5806936218230005233
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_4
+  - first:
+      213: -271131574422403404
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_5
+  - first:
+      213: 2711038238406832478
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_6
+  - first:
+      213: 1736427479614485
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_7
+  - first:
+      213: 6928422411745814454
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_8
+  - first:
+      213: 2991546441303155695
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_9
+  - first:
+      213: -4138568194839446358
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_10
+  - first:
+      213: -3870893851538663408
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_11
+  - first:
+      213: 5392689273244450857
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_12
+  - first:
+      213: -936903410074818415
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_13
+  - first:
+      213: -7990082995847130940
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_14
+  - first:
+      213: -3157695190674848416
+    second: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c61a60a4c270e5488613576ce151299
+      internalID: -248791436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_01
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e3afa8b4ff3134fa7cc4c95585295b
+      internalID: 1944120607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_02
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b0fb148ad6b5b44a84a6f68f41acc4f
+      internalID: -1165527649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_03
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc683be9771bbed4ca9fb777a2af91ef
+      internalID: 445334350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_04
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee5b0ea01692794592f5d4f9b848002
+      internalID: 941526822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_05
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e646dde7dd28c4c489af015889d24019
+      internalID: 419123955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_06
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6fdf634da44e846b3afed17fd19a54
+      internalID: 385188552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8fa2ea5cbc3619c46997150a86635072
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_0: -4199762253289555528
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_00: -248791436
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_01: 1944120607
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_02: -1165527649
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_03: 445334350
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_04: 941526822
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_05: 419123955
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_06: 385188552
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_1: 6117326906097621612
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_10: -4138568194839446358
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_11: -3870893851538663408
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_12: 5392689273244450857
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_13: -936903410074818415
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_14: -7990082995847130940
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_15: -3157695190674848416
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_2: -3669207570683106791
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_3: 7769862181979091850
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_4: 5806936218230005233
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_5: -271131574422403404
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_6: 2711038238406832478
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_7: 1736427479614485
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_8: 6928422411745814454
+      Player_Pickaxe_Attack3_StoneFragments_7f_40x32_v1_9: 2991546441303155695
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

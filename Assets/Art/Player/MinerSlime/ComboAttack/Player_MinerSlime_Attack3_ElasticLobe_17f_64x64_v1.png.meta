@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: 1002815fee36f2b45bd751434408fe4c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5506018528747164198
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_0
+  - first:
+      213: -8891102538555179727
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_1
+  - first:
+      213: 902456098757155046
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_2
+  - first:
+      213: 2628670561153189097
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_3
+  - first:
+      213: 1431014647694404148
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_4
+  - first:
+      213: 6680831139407595972
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_5
+  - first:
+      213: -9080428149437954185
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_6
+  - first:
+      213: -8056039194223042718
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_7
+  - first:
+      213: -1593065331564234990
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_8
+  - first:
+      213: 3861791685194571834
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_9
+  - first:
+      213: -3880202350291126142
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_10
+  - first:
+      213: -2436146656214361526
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_11
+  - first:
+      213: -7351341718726380974
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_12
+  - first:
+      213: -4674901390761573996
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_13
+  - first:
+      213: -6064583044441754521
+    second: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eff59e2adce16a48a87f3dfa487e65e
+      internalID: 1376857879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e88700d94ef5d4eabf8bd7128725df
+      internalID: -1515668515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e426543c5a4776f4eb49d710af87cd79
+      internalID: 506062607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b64c6c6089a9a468d97612cf6d1822
+      internalID: -1694384244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1bd0c7aa87fbb4cb3c5fb727bba76d
+      internalID: 1198197459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1977c9b420397409500a0b7f3ed228
+      internalID: -2040417915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bebb60a4eeb40c48a9731e09d3c0843
+      internalID: 868593323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69cecc86c85baf9488c83ac3d2d8abcd
+      internalID: -1744980265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec2db13ed19743e45ad8b36eefbce897
+      internalID: 1629176124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_09
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b777e10eaf1e1e4cbaa83ee0bd338b1
+      internalID: 1444765058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be7f6e58bbec1444bf39d7dfbfce4b5
+      internalID: -3880202350291126142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885d8b248301d254483f6a1f341a5eba
+      internalID: -2436146656214361526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb86151f07ee034380495fdf75c5b3f
+      internalID: -7351341718726380974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5754cbcf05eb1140994cbaa7b6ced05
+      internalID: -4674901390761573996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f7c085e1d4b4943843bfa006ce2cfa
+      internalID: -6064583044441754521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237d87adea7dbb24db3384a69e4bd775
+      internalID: 157860668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55526c4fe44c4945a7d163f8d0a0e0f
+      internalID: 543078036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e905c556661e36249b53324ec4cfb624
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_0: -5506018528747164198
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_00: 1376857879
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_01: -1515668515
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_02: 506062607
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_03: -1694384244
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_04: 1198197459
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_05: -2040417915
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_06: 868593323
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_07: -1744980265
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_08: 1629176124
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_09: 1444765058
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_1: -8891102538555179727
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_10: -3880202350291126142
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_11: -2436146656214361526
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_12: -7351341718726380974
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_13: -4674901390761573996
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_14: -6064583044441754521
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_15: 157860668
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_16: 543078036
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_2: 902456098757155046
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_3: 2628670561153189097
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_4: 1431014647694404148
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_5: 6680831139407595972
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_6: -9080428149437954185
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_7: -8056039194223042718
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_8: -1593065331564234990
+      Player_MinerSlime_Attack3_ElasticLobe_17f_64x64_v1_9: 3861791685194571834
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

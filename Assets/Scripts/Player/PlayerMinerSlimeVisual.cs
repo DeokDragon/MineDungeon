@@ -9,6 +9,11 @@ public sealed class PlayerMinerSlimeVisual : MonoBehaviour
     [SerializeField] private SpriteRenderer body, pickaxe, socket;
     [SerializeField] private Transform weaponPivot, visualGrip;
     [SerializeField] private Sprite[] idleFrames, moveFrames;
+    [SerializeField] private Sprite[] attack1Frames, attack2Frames, attack3Frames;
+    [SerializeField] private Sprite[] attack1Sockets, attack2Sockets, attack3Sockets, elasticFrames;
+    [SerializeField] private Vector2[] attackSurfaceAnchors;
+    [SerializeField] private SpriteRenderer elasticLobe;
+    private Sprite defaultSocket;
     // Clockwise screen-space octants from the supplied FrameAnchors.json.
     [SerializeField] private Vector2[] idleAnchors, moveAnchors;
     [SerializeField] private float idlePeriod = 1f, movePeriod = .72f;
@@ -25,6 +30,7 @@ public sealed class PlayerMinerSlimeVisual : MonoBehaviour
 
     private void Awake()
     {
+        defaultSocket = socket ? socket.sprite : null;
         rb = GetComponent<Rigidbody2D>();
         movement = GetComponent<PlayerMovement>();
         attack = GetComponent<PlayerAttack>();
@@ -61,26 +67,76 @@ public sealed class PlayerMinerSlimeVisual : MonoBehaviour
             elapsed = (elapsed + Time.deltaTime) % period;
             frame = attacking ? 0 : Mathf.Min(frames.Length - 1, (int)(elapsed / period * frames.Length));
             body.sprite = frames[frame];
+            if (attacking)
+            {
+                float p = attack.VisualAttackProgress;
+                var poses = attack.ComboStep == 1 ? attack1Frames : attack.ComboStep == 2 ? attack2Frames : attack3Frames;
+                if (poses != null && poses.Length > 0)
+                {
+                    frame = AttackFrame(attack.ComboStep, p);
+                    body.sprite = poses[Mathf.Min(frame, poses.Length - 1)];
+                }
+            }
         }
         UpdateAttachment();
     }
     private void UpdateAttachment()
     {
         var anchors = moving ? moveAnchors : idleAnchors;
-        if (anchors == null || anchors.Length < (frame + 1) * 8) return;
-        float angle = Mathf.Repeat(body.flipX ? 180f + attack.VisualAimAngle : -attack.VisualAimAngle, 360f) / 45f;
-        int octant = Mathf.FloorToInt(angle);
-        Vector2 anchor = Vector2.Lerp(anchors[frame * 8 + octant], anchors[frame * 8 + (octant + 1) % 8], angle - octant);
-        if (body.flipX) anchor.x = 64f - anchor.x;
-        Vector3 surface = body.transform.TransformPoint(new Vector3((anchor.x - 32f) / 64f, (32f - anchor.y) / 64f));
+        int anchorFrame = attacking ? 0 : frame;
+        if (anchors == null || anchors.Length < (anchorFrame + 1) * 8) return;
+        // The weapon stays on the original reference anchor; deformed surfaces only drive the lobe.
+        Vector3 surface = AnchorWorld(attacking ? idleAnchors : anchors, anchorFrame * 8);
         float pixelWorld = body.transform.TransformVector(Vector3.right / 64f).magnitude;
         // Parent has no renderer: PlayerAttack continues thrusting only its child.
         visualGrip.position = surface + weaponPivot.right * (2f * pixelWorld);
         socket.transform.position = surface;
         socket.transform.rotation = weaponPivot.rotation;
+        bool showAttack = attacking && !health.IsDead && attack.IsAttacking;
+        if (showAttack)
+        {
+            var sockets = attack.ComboStep == 1 ? attack1Sockets : attack.ComboStep == 2 ? attack2Sockets : attack3Sockets;
+            int key = attack.ComboStep == 3 ? Mathf.RoundToInt(attack.VisualAttackProgress * 16f) : frame;
+            if (sockets != null && sockets.Length > 0) socket.sprite = sockets[Mathf.Min(key, sockets.Length - 1)];
+            // Read the existing thrust result, never apply a second thrust to the weapon.
+            socket.transform.position = pickaxe.transform.position - weaponPivot.right * (2f * pixelWorld);
+        }
+        else if (defaultSocket) socket.sprite = defaultSocket;
+        if (elasticLobe)
+        {
+            elasticLobe.enabled = showAttack && attack.ComboStep == 3 && elasticFrames != null && elasticFrames.Length == 17;
+            if (elasticLobe.enabled)
+            {
+                elasticLobe.sprite = elasticFrames[Mathf.RoundToInt(attack.VisualAttackProgress * 16f)];
+                elasticLobe.transform.position = AnchorWorld(attackSurfaceAnchors, (12 + frame) * 8);
+                elasticLobe.transform.rotation = weaponPivot.rotation;
+            }
+        }
         bool rear = weaponPivot.right.y > .02f;
-        pickaxe.sortingOrder = body.sortingOrder + (rear ? -2 : 1);
-        socket.sortingOrder = body.sortingOrder + (rear ? -1 : 2);
-        // Do not shorten or mask the existing .4-world-unit third-hit thrust.
+        if (elasticLobe) elasticLobe.sortingOrder = body.sortingOrder + (rear ? -3 : 1);
+        pickaxe.sortingOrder = body.sortingOrder + (rear ? -2 : 2);
+        socket.sortingOrder = body.sortingOrder + (rear ? -1 : 3);
+        // Existing .4-world-unit thrust is unchanged; supplied art spans the connection.
     }
+    private int AttackFrame(int step, float progress)
+    {
+        if (step == 3) return Mathf.Min(7, (int)(progress * 8f));
+        float t = progress * .25f;
+        return t < .04f ? 0 : t < .08f ? 1 : t < .125f ? 2 : t < .17f ? 3 : t < .21f ? 4 : 5;
+    }
+    private Vector3 AnchorWorld(Vector2[] anchors, int offset)
+    {
+        float angle = Mathf.Repeat(body.flipX ? 180f + attack.VisualAimAngle : -attack.VisualAimAngle, 360f) / 45f;
+        int sector = Mathf.FloorToInt(angle);
+        int octant = sector % 8;
+        Vector2 anchor = Vector2.Lerp(anchors[offset + octant], anchors[offset + (octant + 1) % 8], angle - sector);
+        if (body.flipX) anchor.x = 64f - anchor.x;
+        return body.transform.TransformPoint(new Vector3((anchor.x - 32f) / 64f, (32f - anchor.y) / 64f));
+    }
+    private void OnDisable()
+    {
+        if (elasticLobe) elasticLobe.enabled = false;
+        if (socket && defaultSocket) socket.sprite = defaultSocket;
+    }
+
 }

@@ -1,0 +1,9 @@
+Tool: built-in image_gen; true transparent background. Only dust and mineral chip seed artwork generated. Head ghosts reuse original weapon metal pixels, body/weapon/socket/attack sheets unchanged.
+
+Dust seed prompt:
+Use case: stylized-concept. Asset type: tiny native pixel-art physical impact dust particle for a 64px mining game. Generate ONE isolated small irregular grey-brown stone dust puff only on real transparent background. Target logical native footprint 4x4 pixels, rendered as large nearest-neighbor pixels. A chunky asymmetrical 2-tone warm grey/taupe cluster with a muted pale upper-left pixel, dark grey-brown underside. No glow, smoke plume, sparks, ring, explosion, ground, shadow, text, weapon or character. Modest dark mine palette, crisp binary alpha edges, no blur or antialias. The final sprite will be downsampled to an extremely small 4-pixel particle so keep its silhouette simple.
+
+Mineral chip seed prompt:
+Use case: stylized-concept. Asset type: tiny native pixel-art mineral fragment for a 64px mining game. Generate ONE isolated small angular mineral chip only on real transparent background. Target logical native footprint 5x5 pixels, rendered as large nearest-neighbor blocks. A broken asymmetrical grey-brown stone shard with one small slate-grey lit facet, dark charcoal contour and muted brown underside, three or four flat color clusters. Physical ordinary stone, NOT crystal, NOT metal sparkle, NO glowing pixels. No ground, shadow, dust, explosion, ring, character, weapon or text. Crisp native-pixel edges without blur or antialias.
+
+Production sizing: alpha cutoff221, nearest-neighbor native4x4/5x5, small grey-brown palette. Deterministic independent particle trajectories, fades and sprite sheet assembly. Transparent exterior and per-frame registration checked. All generated source images retained at default original paths.

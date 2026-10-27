@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: 0cc9330eb4e482848aee7cd6dc2111bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7334599096307389661
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_0
+  - first:
+      213: -5646864349516229470
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_1
+  - first:
+      213: -3063119256167474342
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_2
+  - first:
+      213: 5869851720954140262
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_3
+  - first:
+      213: 3271476777058516330
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_4
+  - first:
+      213: -9208892346274087487
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_5
+  - first:
+      213: 9203547658668554733
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_6
+  - first:
+      213: -5665443417109554796
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_7
+  - first:
+      213: -1481842445164458019
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_8
+  - first:
+      213: 92737109486968972
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_9
+  - first:
+      213: -1136456392432849504
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_10
+  - first:
+      213: -174999438621030726
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_00
+  - first:
+      213: -7025855011769824244
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_01
+  - first:
+      213: 6616188629002754413
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_02
+  - first:
+      213: -507642549141239254
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_03
+  - first:
+      213: 7050546143635099555
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_04
+  - first:
+      213: 3685594547960591041
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_05
+  - first:
+      213: -4589554576426977670
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_06
+  - first:
+      213: -8235905481018350623
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_07
+  - first:
+      213: -4248444938067932298
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_08
+  - first:
+      213: 4714798704980672241
+    second: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab6c91110f6429df0800000000000000
+      internalID: -174999438621030726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_01
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ccf0467162f7e90800000000000000
+      internalID: -7025855011769824244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_02
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6910b6018c61db50800000000000000
+      internalID: 6616188629002754413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_03
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2a00998acd74f8f0800000000000000
+      internalID: -507642549141239254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_04
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3afcedbbc5298d160800000000000000
+      internalID: 7050546143635099555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_05
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c2be49d6bcd52330800000000000000
+      internalID: 3685594547960591041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_06
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a763dc2ed60ae40c0800000000000000
+      internalID: -4589554576426977670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_07
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e36538c99f24bd80800000000000000
+      internalID: -8235905481018350623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_08
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b87aa86dd7a05c0800000000000000
+      internalID: -4248444938067932298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_09
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe38dd21745e6140800000000000000
+      internalID: 4714798704980672241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_RockCharge_11f_160x160_v1_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad615aaeee7a30f0800000000000000
+      internalID: -1136456392432849504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_0: 7334599096307389661
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_00: -174999438621030726
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_01: -7025855011769824244
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_02: 6616188629002754413
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_03: -507642549141239254
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_04: 7050546143635099555
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_05: 3685594547960591041
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_06: -4589554576426977670
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_07: -8235905481018350623
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_08: -4248444938067932298
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_09: 4714798704980672241
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_1: -5646864349516229470
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_10: -1136456392432849504
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_2: -3063119256167474342
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_3: 5869851720954140262
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_4: 3271476777058516330
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_5: -9208892346274087487
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_6: 9203547658668554733
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_7: -5665443417109554796
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_8: -1481842445164458019
+      StoneGolemBoss_P1_RockCharge_11f_160x160_v1_9: 92737109486968972
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
