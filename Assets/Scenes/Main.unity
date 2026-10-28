@@ -22548,6 +22548,7 @@ GameObject:
   - component: {fileID: 1093173861}
   - component: {fileID: 1093173862}
   - component: {fileID: 1093173863}
+  - component: {fileID: 1093173864}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -22970,6 +22971,24 @@ MonoBehaviour:
   rewardContent: {fileID: 730822003}
   rewardScroll: {fileID: 1259697217}
   rewardCardTemplate: {fileID: 248273476}
+--- !u!114 &1093173864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093173852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16154ed091ed08948835840ab6ec7696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CurrentRoomMapUI
+  rooms: {fileID: 1136466788}
+  player: {fileID: 333641619}
+  pauseMenu: {fileID: 1093173858}
+  resultUI: {fileID: 1093173859}
+  supportedFloor: {fileID: 11400000, guid: 75054849057984743822b0da18464edb, type: 2}
+  font: {fileID: 11400000, guid: 8d8c9c684d5a0824a9014a672cc8d01b, type: 2}
 --- !u!1 &1095043504
 GameObject:
   m_ObjectHideFlags: 0

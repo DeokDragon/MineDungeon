@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // A single UI mesh: room terrain plus live markers. No camera or world objects.
+[RequireComponent(typeof(CanvasRenderer))]
 public sealed class CurrentRoomMapGraphic : MaskableGraphic
 {
     DungeonRoom room;

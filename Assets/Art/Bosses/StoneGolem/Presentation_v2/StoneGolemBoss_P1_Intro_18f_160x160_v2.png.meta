@@ -1,0 +1,657 @@
+fileFormatVersion: 2
+guid: 3b5990f9b1163b049a4450d339b6c4ac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8169597382325632860
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_0
+  - first:
+      213: 413470230950053462
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_1
+  - first:
+      213: 4459685458959326834
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_2
+  - first:
+      213: -2498593057557562535
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_3
+  - first:
+      213: 2189365575103501034
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_4
+  - first:
+      213: 6733136528347303118
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_5
+  - first:
+      213: 1056389611030669531
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_6
+  - first:
+      213: -7262599219781410268
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_7
+  - first:
+      213: 7516125877703837113
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_8
+  - first:
+      213: -7563452086366768926
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_9
+  - first:
+      213: -7930447360380493656
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_10
+  - first:
+      213: 647745934453585089
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_11
+  - first:
+      213: 5057999362277902385
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_12
+  - first:
+      213: 7772330773213894707
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_13
+  - first:
+      213: 1342854603941091819
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_14
+  - first:
+      213: 9211398803367705625
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_15
+  - first:
+      213: 6680720769540795766
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_16
+  - first:
+      213: 5694978742865140305
+    second: StoneGolemBoss_P1_Intro_18f_160x160_v2_17
+  - first:
+      213: -3576998873979244179
+    second: StoneGolemBoss_P1_Intro_v2_00
+  - first:
+      213: -4566203188977839491
+    second: StoneGolemBoss_P1_Intro_v2_01
+  - first:
+      213: -6365379941937831186
+    second: StoneGolemBoss_P1_Intro_v2_02
+  - first:
+      213: 1187383553664487175
+    second: StoneGolemBoss_P1_Intro_v2_03
+  - first:
+      213: -1929666561839709141
+    second: StoneGolemBoss_P1_Intro_v2_04
+  - first:
+      213: 2567587689933050331
+    second: StoneGolemBoss_P1_Intro_v2_05
+  - first:
+      213: 2299673589104076453
+    second: StoneGolemBoss_P1_Intro_v2_06
+  - first:
+      213: -1717161462041709403
+    second: StoneGolemBoss_P1_Intro_v2_07
+  - first:
+      213: -5857116545386387608
+    second: StoneGolemBoss_P1_Intro_v2_08
+  - first:
+      213: -7437973226166761830
+    second: StoneGolemBoss_P1_Intro_v2_09
+  - first:
+      213: -460388977822006487
+    second: StoneGolemBoss_P1_Intro_v2_10
+  - first:
+      213: -8533764431334445182
+    second: StoneGolemBoss_P1_Intro_v2_11
+  - first:
+      213: -4934119919601654610
+    second: StoneGolemBoss_P1_Intro_v2_12
+  - first:
+      213: -3335439782888190356
+    second: StoneGolemBoss_P1_Intro_v2_13
+  - first:
+      213: -1818584487075740749
+    second: StoneGolemBoss_P1_Intro_v2_14
+  - first:
+      213: 4384665493158078439
+    second: StoneGolemBoss_P1_Intro_v2_15
+  - first:
+      213: 2177311404196367924
+    second: StoneGolemBoss_P1_Intro_v2_16
+  - first:
+      213: -8961650500680258451
+    second: StoneGolemBoss_P1_Intro_v2_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61be72d972fb5ec0800000000000000
+      internalID: -3576998873979244179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_01
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7258b4746691a0c0800000000000000
+      internalID: -4566203188977839491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_02
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee226640ba0a9a7a0800000000000000
+      internalID: -6365379941937831186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_03
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f00501d0f6a7010800000000000000
+      internalID: 1187383553664487175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_04
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24489e5c727835e0800000000000000
+      internalID: -1929666561839709141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_05
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1102c7667e1a320800000000000000
+      internalID: 2567587689933050331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_06
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a665e1f1f41aef10800000000000000
+      internalID: 2299673589104076453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_07
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a473098fba6b28e0800000000000000
+      internalID: -1717161462041709403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_08
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8676e28c88757bea0800000000000000
+      internalID: -5857116545386387608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_09
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a96c67542c207c890800000000000000
+      internalID: -7437973226166761830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9230a66f9ae5c99f0800000000000000
+      internalID: -460388977822006487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_11
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f6279a67af19980800000000000000
+      internalID: -8533764431334445182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_12
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea4e6f0431c768bb0800000000000000
+      internalID: -4934119919601654610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_13
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e4e3b703326b1d0800000000000000
+      internalID: -3335439782888190356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b380d55b0713c6e0800000000000000
+      internalID: -1818584487075740749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_15
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7a99af80679dc30800000000000000
+      internalID: 4384665493158078439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_16
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e088caf2d573e10800000000000000
+      internalID: 2177311404196367924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P1_Intro_v2_17
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6c60c9b952d1a380800000000000000
+      internalID: -8961650500680258451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_0: 8169597382325632860
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_1: 413470230950053462
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_10: -7930447360380493656
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_11: 647745934453585089
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_12: 5057999362277902385
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_13: 7772330773213894707
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_14: 1342854603941091819
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_15: 9211398803367705625
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_16: 6680720769540795766
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_17: 5694978742865140305
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_2: 4459685458959326834
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_3: -2498593057557562535
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_4: 2189365575103501034
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_5: 6733136528347303118
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_6: 1056389611030669531
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_7: -7262599219781410268
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_8: 7516125877703837113
+      StoneGolemBoss_P1_Intro_18f_160x160_v2_9: -7563452086366768926
+      StoneGolemBoss_P1_Intro_v2_00: -3576998873979244179
+      StoneGolemBoss_P1_Intro_v2_01: -4566203188977839491
+      StoneGolemBoss_P1_Intro_v2_02: -6365379941937831186
+      StoneGolemBoss_P1_Intro_v2_03: 1187383553664487175
+      StoneGolemBoss_P1_Intro_v2_04: -1929666561839709141
+      StoneGolemBoss_P1_Intro_v2_05: 2567587689933050331
+      StoneGolemBoss_P1_Intro_v2_06: 2299673589104076453
+      StoneGolemBoss_P1_Intro_v2_07: -1717161462041709403
+      StoneGolemBoss_P1_Intro_v2_08: -5857116545386387608
+      StoneGolemBoss_P1_Intro_v2_09: -7437973226166761830
+      StoneGolemBoss_P1_Intro_v2_10: -460388977822006487
+      StoneGolemBoss_P1_Intro_v2_11: -8533764431334445182
+      StoneGolemBoss_P1_Intro_v2_12: -4934119919601654610
+      StoneGolemBoss_P1_Intro_v2_13: -3335439782888190356
+      StoneGolemBoss_P1_Intro_v2_14: -1818584487075740749
+      StoneGolemBoss_P1_Intro_v2_15: 4384665493158078439
+      StoneGolemBoss_P1_Intro_v2_16: 2177311404196367924
+      StoneGolemBoss_P1_Intro_v2_17: -8961650500680258451
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

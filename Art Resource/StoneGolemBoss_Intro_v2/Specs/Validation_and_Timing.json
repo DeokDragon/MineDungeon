@@ -1,0 +1,1363 @@
+{
+  "body_sheet": {
+    "file": "Sprites/StoneGolemBoss_P1_Intro_18f_160x160_v2.png",
+    "size": [
+      2880,
+      160
+    ],
+    "cell": [
+      160,
+      160
+    ],
+    "frames": 18,
+    "RGBA": true,
+    "binary_alpha": true,
+    "pivot_pixels": [
+      80,
+      80
+    ],
+    "PPU": 128,
+    "BodyScale": 1.8
+  },
+  "timing_ms": [
+    220,
+    200,
+    220,
+    240,
+    240,
+    260,
+    240,
+    220,
+    200,
+    200,
+    160,
+    140,
+    120,
+    160,
+    180,
+    200,
+    220,
+    180
+  ],
+  "records": [
+    {
+      "pose": "Dormant",
+      "down": 16,
+      "lean": 0,
+      "hands": [
+        [
+          24,
+          111
+        ],
+        [
+          115,
+          104
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 2,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            39.92030103475528,
+            101.34128714513062
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            94.78049714173255,
+            102.41340154465483
+          ]
+        }
+      ],
+      "bbox": [
+        28,
+        38,
+        142,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8027
+      ],
+      "frame": 1,
+      "name": "Dormant",
+      "start_ms": 0,
+      "duration_ms": 220,
+      "head_relative_down": 7,
+      "eye_level": 0,
+      "existing_seam_warmth": 0
+    },
+    {
+      "pose": "Stone settles",
+      "down": 17,
+      "lean": 0,
+      "hands": [
+        [
+          25,
+          111
+        ],
+        [
+          114,
+          104
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 3,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            39.62950921643359,
+            101.48532240766738
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            95.04767709465071,
+            102.66514385804832
+          ]
+        }
+      ],
+      "bbox": [
+        29,
+        39,
+        141,
+        143
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        7810
+      ],
+      "frame": 2,
+      "name": "Stone settles",
+      "start_ms": 220,
+      "duration_ms": 200,
+      "head_relative_down": 7,
+      "eye_level": 0,
+      "existing_seam_warmth": 0
+    },
+    {
+      "pose": "First amber",
+      "down": 16,
+      "lean": 0,
+      "hands": [
+        [
+          26,
+          111
+        ],
+        [
+          114,
+          104
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 2,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            39.92030103475528,
+            101.34128714513062
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            94.78049714173255,
+            102.41340154465483
+          ]
+        }
+      ],
+      "bbox": [
+        30,
+        38,
+        141,
+        143
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        7928
+      ],
+      "frame": 3,
+      "name": "First amber",
+      "start_ms": 420,
+      "duration_ms": 220,
+      "head_relative_down": 6,
+      "eye_level": 0.12,
+      "existing_seam_warmth": 0.02
+    },
+    {
+      "pose": "Head stirs",
+      "down": 15,
+      "lean": 0,
+      "hands": [
+        [
+          28,
+          110
+        ],
+        [
+          113,
+          103
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 1,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            40.22612729372642,
+            101.19747830404556
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            94.49964879378552,
+            102.16353872664054
+          ]
+        }
+      ],
+      "bbox": [
+        32,
+        37,
+        140,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        7960
+      ],
+      "frame": 4,
+      "name": "Head stirs",
+      "start_ms": 640,
+      "duration_ms": 240,
+      "head_relative_down": 5,
+      "eye_level": 0.32,
+      "existing_seam_warmth": 0.04
+    },
+    {
+      "pose": "Brace hands",
+      "down": 13,
+      "lean": 0,
+      "hands": [
+        [
+          32,
+          108
+        ],
+        [
+          112,
+          98
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 0,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            40.887840900863274,
+            100.91220655142574
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            93.89233736566192,
+            101.66989782690527
+          ]
+        }
+      ],
+      "bbox": [
+        35,
+        35,
+        139,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        7920
+      ],
+      "frame": 5,
+      "name": "Brace hands",
+      "start_ms": 880,
+      "duration_ms": 240,
+      "head_relative_down": 4,
+      "eye_level": 0.55,
+      "existing_seam_warmth": 0.07
+    },
+    {
+      "pose": "Push upward",
+      "down": 10,
+      "lean": 0,
+      "hands": [
+        [
+          31,
+          104
+        ],
+        [
+          114,
+          95
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": -1,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            42.031349755506916,
+            100.49798352639571
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            92.84380522906454,
+            100.94729309234027
+          ]
+        }
+      ],
+      "bbox": [
+        34,
+        31,
+        141,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8194
+      ],
+      "frame": 6,
+      "name": "Push upward",
+      "start_ms": 1120,
+      "duration_ms": 260,
+      "head_relative_down": 3,
+      "eye_level": 0.8,
+      "existing_seam_warmth": 0.1
+    },
+    {
+      "pose": "Heavy rise",
+      "down": 7,
+      "lean": 0,
+      "hands": [
+        [
+          27,
+          92
+        ],
+        [
+          117,
+          80
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 1,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            43.423475805532455,
+            100.1189271556866
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            91.57001449679831,
+            100.25372661200768
+          ]
+        }
+      ],
+      "bbox": [
+        31,
+        29,
+        145,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8144
+      ],
+      "frame": 7,
+      "name": "Heavy rise",
+      "start_ms": 1380,
+      "duration_ms": 240,
+      "head_relative_down": 2,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.13
+    },
+    {
+      "pose": "Shoulders follow",
+      "down": 4,
+      "lean": 0,
+      "hands": [
+        [
+          24,
+          80
+        ],
+        [
+          119,
+          70
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 1,
+      "arm_lag": 1,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            45.226933007506034,
+            99.81802751701363
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            89.93084700115686,
+            99.6085335067436
+          ]
+        }
+      ],
+      "bbox": [
+        29,
+        26,
+        148,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8215
+      ],
+      "frame": 8,
+      "name": "Shoulders follow",
+      "start_ms": 1620,
+      "duration_ms": 220,
+      "head_relative_down": 1,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.16
+    },
+    {
+      "pose": "Arms uncoil",
+      "down": 2,
+      "lean": 0,
+      "hands": [
+        [
+          23,
+          68
+        ],
+        [
+          118,
+          58
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 0,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            46.888743001436026,
+            99.72155959926535
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            88.44811076431041,
+            99.23259017319224
+          ]
+        }
+      ],
+      "bbox": [
+        26,
+        24,
+        150,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8249
+      ],
+      "frame": 9,
+      "name": "Arms uncoil",
+      "start_ms": 1840,
+      "duration_ms": 200,
+      "head_relative_down": 0,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.18
+    },
+    {
+      "pose": "Threat raise",
+      "down": 2,
+      "lean": 0,
+      "hands": [
+        [
+          30,
+          42
+        ],
+        [
+          116,
+          43
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": -1,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            46.888743001436026,
+            99.72155959926535
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            88.44811076431041,
+            99.23259017319224
+          ]
+        }
+      ],
+      "bbox": [
+        13,
+        23,
+        153,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8051
+      ],
+      "frame": 10,
+      "name": "Threat raise",
+      "start_ms": 2040,
+      "duration_ms": 200,
+      "head_relative_down": 0,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.22
+    },
+    {
+      "pose": "Threat spread",
+      "down": 3,
+      "lean": 0,
+      "hands": [
+        [
+          25,
+          51
+        ],
+        [
+          117,
+          48
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": -1,
+      "arm_lag": 1,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            45.98679197507691,
+            99.75274147746053
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            89.24784890108319,
+            99.41224890952587
+          ]
+        }
+      ],
+      "bbox": [
+        20,
+        24,
+        149,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8323
+      ],
+      "frame": 11,
+      "name": "Threat spread",
+      "start_ms": 2240,
+      "duration_ms": 160,
+      "head_relative_down": 0,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.24
+    },
+    {
+      "pose": "Heavy downstroke",
+      "down": 5,
+      "lean": 0,
+      "hands": [
+        [
+          24,
+          80
+        ],
+        [
+          118,
+          73
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 0,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            44.56167641003727,
+            99.90482749174053
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            90.53326642291228,
+            99.81601479240491
+          ]
+        }
+      ],
+      "bbox": [
+        29,
+        27,
+        147,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8173
+      ],
+      "frame": 12,
+      "name": "Heavy downstroke",
+      "start_ms": 2400,
+      "duration_ms": 140,
+      "head_relative_down": 1,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.2
+    },
+    {
+      "pose": "Grounded weight",
+      "down": 9,
+      "lean": 0,
+      "hands": [
+        [
+          24,
+          111
+        ],
+        [
+          116,
+          102
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 1,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            42.462570305527386,
+            100.36632699050801
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            92.44881340445623,
+            100.71227189933661
+          ]
+        }
+      ],
+      "bbox": [
+        27,
+        31,
+        143,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8845
+      ],
+      "frame": 13,
+      "name": "Grounded weight",
+      "start_ms": 2540,
+      "duration_ms": 120,
+      "head_relative_down": 1,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.17
+    },
+    {
+      "pose": "Shoulder followthrough",
+      "down": 10,
+      "lean": 0,
+      "hands": [
+        [
+          24,
+          111
+        ],
+        [
+          116,
+          102
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 3,
+      "arm_lag": 1,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            42.031349755506916,
+            100.49798352639571
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            92.84380522906454,
+            100.94729309234027
+          ]
+        }
+      ],
+      "bbox": [
+        27,
+        32,
+        143,
+        144
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        8650
+      ],
+      "frame": 14,
+      "name": "Shoulder followthrough",
+      "start_ms": 2660,
+      "duration_ms": 160,
+      "head_relative_down": 1,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.13
+    },
+    {
+      "pose": "Absorb weight",
+      "down": 6,
+      "lean": 0,
+      "hands": [
+        [
+          25,
+          114
+        ],
+        [
+          116,
+          103
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 3,
+      "arm_lag": 1,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            43.965672035624756,
+            100.00647462863142
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            91.07540222351977,
+            100.03169634954517
+          ]
+        }
+      ],
+      "bbox": [
+        25,
+        28,
+        142,
+        143
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        9165
+      ],
+      "frame": 15,
+      "name": "Absorb weight",
+      "start_ms": 2820,
+      "duration_ms": 180,
+      "head_relative_down": 0,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.08
+    },
+    {
+      "pose": "Ready recovery",
+      "down": 3,
+      "lean": 0,
+      "hands": [
+        [
+          28,
+          109
+        ],
+        [
+          114,
+          98
+        ]
+      ],
+      "air_foot_lift": 0,
+      "shoulder_lag": 2,
+      "arm_lag": 0,
+      "legs": [
+        {
+          "ankle": [
+            47.0,
+            116.0
+          ],
+          "knee": [
+            45.98679197507691,
+            99.75274147746053
+          ]
+        },
+        {
+          "ankle": [
+            86.0,
+            112.0
+          ],
+          "knee": [
+            89.24784890108319,
+            99.41224890952587
+          ]
+        }
+      ],
+      "bbox": [
+        28,
+        25,
+        140,
+        142
+      ],
+      "face_pixels_exact": true,
+      "opaque_components": [
+        9123
+      ],
+      "frame": 16,
+      "name": "Ready recovery",
+      "start_ms": 3000,
+      "duration_ms": 200,
+      "head_relative_down": 0,
+      "eye_level": 1,
+      "existing_seam_warmth": 0.03
+    },
+    {
+      "source": "current Idle F2",
+      "frame": 17,
+      "name": "Idle settling",
+      "start_ms": 3200,
+      "duration_ms": 220,
+      "head_relative_down": 0,
+      "eye_level": 1,
+      "existing_seam_warmth": 0
+    },
+    {
+      "exact_idle": true,
+      "frame": 18,
+      "name": "Idle exact",
+      "start_ms": 3420,
+      "duration_ms": 180,
+      "head_relative_down": 0,
+      "eye_level": 1,
+      "existing_seam_warmth": 0
+    }
+  ],
+  "sole_checks": [
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    },
+    {
+      "source_sole_pixels": 109,
+      "unchanged_pixels": 109,
+      "all_exact": true
+    }
+  ],
+  "vfx": {
+    "chips": {
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\VFX\\StoneGolemBoss_Transform_Chips_8f_192x192_v1.png",
+      "file": "ReusedVFX/StoneGolemBoss_Transform_Chips_8f_192x192_v1.png",
+      "cell": [
+        192,
+        192
+      ],
+      "frames": 8,
+      "byte_identical": true
+    },
+    "dust": {
+      "source": "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_JumpDust.png",
+      "file": "ReusedVFX/B-1R_VFX_JumpDust.png",
+      "cell": [
+        64,
+        64
+      ],
+      "frames": 5,
+      "byte_identical": true
+    }
+  },
+  "gif_checks": [
+    {
+      "file": "Previews\\Intro_Body_Native160.gif",
+      "frames": 18,
+      "duration_ms": 3600,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Intro_Body_3x.gif",
+      "frames": 18,
+      "duration_ms": 3600,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\P1Idle_Intro_P1Idle_Transition.gif",
+      "frames": 20,
+      "duration_ms": 4600,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Intro_With_ReusedVFX_2x.gif",
+      "frames": 34,
+      "duration_ms": 3600,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Reused_chips_Only.gif",
+      "frames": 8,
+      "duration_ms": 1120,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Reused_dust_Only.gif",
+      "frames": 5,
+      "duration_ms": 500,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\BossRoom_5s_ArtComposite.gif",
+      "frames": 36,
+      "duration_ms": 5000,
+      "decoded_pixels_and_durations_checked": true
+    }
+  ],
+  "checks": {
+    "all_frames_unique": true,
+    "final_frame_exact_current_idle_f1": true,
+    "no_cell_edge_clipping": true,
+    "existing_files_hash_unchanged": true,
+    "static_contact_sheet_visually_reviewed": true,
+    "actual_realtime_GIF_observation": false,
+    "Unity_Play": "not performed / out of scope"
+  },
+  "protected_sha256": {
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1.meta": "ce9654977b28fa932397ff4dc779cae1adbaaf950c31eb2d11d0ed9915572821",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1.meta": "f9294408857828887d803efac5519063a160f6e13a745ce00ee758c56f579e28",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Presentation_v1.meta": "1306e72969510415fd429df69d7df7dfefc20df1da9ae25015b0e2a1f95d65b9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Idle_4f_160x160_v1.png": "2c9e824cad9c26947e5f261d945b8626c6d20b993f95f586106f186261981399",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Idle_4f_160x160_v1.png.meta": "61b5b9035d3ee8bccc85f880fe06ecfa1b66221d90885b651c73c476dcd61700",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v1.png": "a0f4084b3e6374db0747b062879b298c997ca86614be3236221f3c4de3354933",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v1.png.meta": "78f5cac290fea71b80c90eff63c9701848efa92b2348f31fbc43c6ac7275eea9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v4_1.png": "223c9836c4bc2a1bc20c0fa9876dc16874164b8bd4def56e6e5552037250b718",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P1_Move_6f_160x160_v4_1.png.meta": "50ddb5a42e79b00eb590edda0dfe3c20da01a02fa71ac10be01eb0c0c33bf025",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Idle_4f_160x160_v1.png": "83f40dba90cbe55398180f2736fe6a13520cc179a29721d67213939657b32555",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Idle_4f_160x160_v1.png.meta": "e080a7a5cfe3682033fe8239cbcaad36c81ae94902e4036290e2a13e4fbd39ab",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v1.png": "3246aa8de009f6a1ef458001934d9c0aed37266820a1bb469c5fc92ecb11a372",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v1.png.meta": "8c7971e7b0e454d59190dc409e53dcbf2578e27e8a28c96621a058edd4a601ea",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v4_1.png": "81121c9f09ce67d1c1ad543c5e8ba60b939293f41c83c79a5694d597c6385448",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\StoneGolemBoss_P2_Move_6f_160x160_v4_1.png.meta": "20e4dfdac4a3b053e85f0c7aa893c3e135e8ed967ee235a1b59d8ad1308a60fc",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Trials.meta": "1bea8fef47bdb5187cf89c64e0ccd3ee7c52a788c6442df40a4d3731e37cd837",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_GroundSmash_10f_160x160_v1.png": "46434a4215eedee0f940655ffa7e27c9b8bd7af7cade5ca706829e3bb28ce67f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_GroundSmash_10f_160x160_v1.png.meta": "76a08c0eaf0a759752357fc16ca5dafd4767be6ee38a393094e0aca973773905",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_LeapSlam_11f_160x160_v1.png": "8ec4ed3fe191c5054825aed5b87785656a1e9adc97fca04e4340dad1e41f0a6c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_LeapSlam_11f_160x160_v1.png.meta": "4da2755d0b1ce4b6a424f4f58b337c4c3b83332442c046dff3f70a51c939c727",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_RockCharge_11f_160x160_v1.png": "952dc622b51e90a64a685bafb27a0bbca6373593d960d57478502d40b8089077",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_RockCharge_11f_160x160_v1.png.meta": "4bd01f1894ac36ff78799dea55629c9d0eeb5e23f071154eeef86be046e4c5ef",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_Rockfall_10f_160x160_v1.png": "1a4e564731e94edd19f04cdeadb1a41174124d56946e751295904b0b47580546",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_Rockfall_10f_160x160_v1.png.meta": "afc34c8119311c2c0af6e35f7ae6073780d5c81cd020e6171ba06839f8f75573",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_StoneFan_8f_160x160_v1.png": "3fd1685eb58b11e840bebe8b420efa68d1f86c5ad993c472e13ba4f21f99c0a4",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P1BasicAttacks_v1\\StoneGolemBoss_P1_StoneFan_8f_160x160_v1.png.meta": "b95e2fa5931e622280da697a7417e44d31cc4fe138f1475eca77ba511c79e833",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_GroundSmash_11f_160x160_v1.png": "d57f32633a1f792744a6786899013be521adda5b8fb81950804fa9723d9f654f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_GroundSmash_11f_160x160_v1.png.meta": "97e6636bbe68ab98801637019a9a59158869fb437fb0beacafceab0f4e8a71a6",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_LeapSlam_16f_160x160_v1.png": "fb72f4cb1ded5b379137e58c8b4d5597f2429de11b9e3f5e3229f81b656c189d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_LeapSlam_16f_160x160_v1.png.meta": "e1d4a1ab2883337648a134ece9c5f305c1b94b2e3c0e9c2fdaecfa391fcb3a54",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_RockCharge_11f_160x160_v1.png": "f98a33a9cd437e38eca955de87497117910f356ba2cb9a4bba5d64cc55ec136f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_RockCharge_11f_160x160_v1.png.meta": "9955378f3ce0d40edb6e9fefacb518f4aee2c374409f3562bf35ded273fe08af",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_Rockfall_11f_160x160_v1.png": "d30f5cf59da3d146705a31263feee427fb58f073a5212bccc7fa30925ca2e17b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_Rockfall_11f_160x160_v1.png.meta": "35f8a101ae0c50c49c16184f4d0cb81556de1ae2fceb8b86d2b9293e2bcda8ee",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_StoneFan_9f_160x160_v1.png": "2f6361d71ac5ed925b33b1d1a47d60aef7aaf2deafb849b050a50ffa9808bb98",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\P2Attacks_v1\\StoneGolemBoss_P2_StoneFan_9f_160x160_v1.png.meta": "f573afd2c9d1f32183f9e3f4beb1ab00accc52287e854041c3e954c92d1b807b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Presentation_v1\\Sprites.meta": "9c6be7448b4ff2016ac07800d92443fb27b7bb84526c88907b89b31e46e91132",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Presentation_v1\\VFX.meta": "4ff41fa1cf639d884d15697d1773daf450ca3f9d8345249bff87facc3aa3a5b2",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Trials\\StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1.png": "4e5c0e0ccd14b7ac889c37f881053736be287173df2b27af16afb068a318e8a7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Trials\\StoneGolemBoss_P1_Move_16f_160x160_T040_Trial_v1.png.meta": "be7288c68a76481594b09055c849989a686154d2c6c2eac4d1e6ddfc4854a45f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Presentation_v1\\Sprites\\StoneGolemBoss_P1ToP2_Transform_14f_160x160_v1.png": "c7bde5d1bd818c0bda80c44dedd2b118150c0cf3e98471797ac2b7c1e97679a2",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Presentation_v1\\Sprites\\StoneGolemBoss_P1ToP2_Transform_14f_160x160_v1.png.meta": "21765e3b2f37610c02c62f87724d9aa500e000ad84c2a06e90038ed95ba75cb8",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Presentation_v1\\Sprites\\StoneGolemBoss_P1_Intro_10f_160x160_v1.png": "cf87a7fcbefd9945a2a981aa8ca816023006c5f438c11dbfd1766f9adbe55e3a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Presentation_v1\\Sprites\\StoneGolemBoss_P1_Intro_10f_160x160_v1.png.meta": "c1f85438ddcbb6033ba6388731f9154baf2099b18972a18705144d920b85f54b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Presentation_v1\\VFX\\StoneGolemBoss_Transform_Chips_8f_192x192_v1.png": "66e45e8ce0eec0a6b1f044632a76d518b9558d05bd253a0b99396f8cbd6f6702",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Bosses\\StoneGolem\\Presentation_v1\\VFX\\StoneGolemBoss_Transform_Chips_8f_192x192_v1.png.meta": "33b62a3ef5dedd7596bddbedc2ead8ac417851cabdfe2d19484fe3c0a7d82e1a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\README_KO.md": "22473a3c1ff37509b662d3befd68ea2760fec29ab6ffbbf6de4a9058818fd941",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Previews\\Intro_3x.gif": "36e5910568b29ff03c0bde294674ee7267ec715a57d9a1e35d6763b3d9383b10",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Previews\\Intro_Native.gif": "63203d2b90fbbbcf744fd7bb9e54897d68b137cd44a41589c19b31901e5869a9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Previews\\P1Idle_Intro_P1Idle_Transition.gif": "8d60c81d6433c6e6eca4bd0845bf3447a4205910b614b2dea124393c65754f75",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Previews\\P1Idle_Transform_P2Idle_Transition.gif": "c0bb476c774e55fff093958366d3b5d9ac8b87d1619235010af40cebe0805c34",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Previews\\Transform_BodyOnly_3x.gif": "7c50b46253643434e034b4b0d925e22b1e70c31b9ddd4f1bd66201a8c8e2082c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Previews\\Transform_BodyOnly_Native.gif": "3b1755c83978bfb397aa890d0fa5513d9daf9fa8e5095c4d8c347e760142dba4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Previews\\Transform_Chips_Only_3x.gif": "2e7c94b9dfd45e071b8fcb7d225cf7af73c9c688d1a4207893d78fdc0086e0ef",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Previews\\Transform_WithChips_3x.gif": "9015670a85e0d6f66cc74cedc3250edd6582e038daf4c259bc71bd75adf0f524",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Previews\\Transform_WithChips_Native.gif": "49e4a6300e786cb814c8b8ac1cb15dde05a45e2ba9dc37efe9306b333e82e5cc",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Review\\Intro_AllFrames_3x.png": "cb5c55dd636f1b1efd0dda2bd5a0ba57e44e972954c79e4f02b75e8658d98d7b",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Review\\Intro_AllFrames_Native.png": "7d4717326146148880eb08f8e9d38ea20c260a4dd678475c88896ff06e035f3b",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Review\\Keyframes_3x.png": "bca3f91d355164fd4d5fe0ebb96514bc8cc8d7fc9c99611f63031c74d4860b1e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Review\\Keyframes_Native.png": "e53d765092d029c454dbacf186a6aa34adb0537c3328f7092e025ee5a860ca5b",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Review\\Transform_AllFrames_3x.png": "3863e76850def4c7f1c997aadb20b997caffc0e3ef59fb3a404da8617efbb335",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Review\\Transform_AllFrames_Native.png": "e6f3ef5e35a9b7d14381bbb977747c9ae1c80e219f79ee154faf10a2844a67af",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Specs\\Unity_Presentation_Spec.json": "1276c6e54a8fe6eec3a6fb266b957c3c3c4a20203cae136a3502f25b96d9cf72",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Specs\\Validation_and_Timing.json": "b3f123c8711e0dc20572952c819e4251629b9780138c5f306e761be0a0438366",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Sprites\\StoneGolemBoss_P1ToP2_Transform_14f_160x160_v1.png": "c7bde5d1bd818c0bda80c44dedd2b118150c0cf3e98471797ac2b7c1e97679a2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\Sprites\\StoneGolemBoss_P1_Intro_10f_160x160_v1.png": "cf87a7fcbefd9945a2a981aa8ca816023006c5f438c11dbfd1766f9adbe55e3a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Presentation_v1\\VFX\\StoneGolemBoss_Transform_Chips_8f_192x192_v1.png": "66e45e8ce0eec0a6b1f044632a76d518b9558d05bd253a0b99396f8cbd6f6702",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\README_KO.md": "ded1ac7e116723b65b02679dab338a33e1468124ad0858f196b26f595661ecb7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Unity_FrameTiming_Spec.json": "a86b3b48936f07558e5de57ec158c6570288f746b993a05117b77c5b457ea465",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\GroundSmash_3x.gif": "f5e9102bda64400b6eb9c437eb881937e4e3a3a1bca0d313c23aee7d74e1fd3a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\GroundSmash_Idle_Transition.gif": "d9e45f997282d9da6b22c1ce616d0f9603bdca7387cd4dbc5f337cbc063d5100",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\GroundSmash_Native160.gif": "4a6163bbbfcfdf4ab833fc2c17a1b539b99801badf46f8f1ee6d03746fd7e5a2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\LeapSlam_3x.gif": "6d492452d62c2df044e8bafa6e7aa564b523ca981bae71ce9534117502dda529",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\LeapSlam_Idle_Transition.gif": "b43b7df0857ad82227dac32a8fb4cfcd7913d1a2864d4e64e6cf3a761d3bdfd0",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\LeapSlam_Native160.gif": "8552430d118c10c750eeadad33f07473091045d2bf9e305a866d60b21c69d9c2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\RockCharge_3x.gif": "90d915a9caba7c196f3f4df5d81efcb37e4891a574bebf8aea6e1c52bd35efc8",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\RockCharge_Idle_Transition.gif": "2a08ce937540134ac79a962b77944c407c1f4fd6e703c09cb8c5bcfd3d1826e2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\RockCharge_Native160.gif": "cc4ba96368fc077bdd026edc213ba2f6133f8d38a478bfcb48f4da8373a494cc",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\Rockfall_3x.gif": "c13463e33e375e72950d577435386ac43fe4754c86cd9887bd25cd3deec9c371",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\Rockfall_Idle_Transition.gif": "b971d3214c2a2f23518f71c1ca7c60fa38342703d91b8f9d6cf3a601fe02660d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\Rockfall_Native160.gif": "f4e02c2c8651416998ae7daa0e7050c39f5072af202441dab9bc429b68d33621",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\StoneFan_3x.gif": "5d1bf9ade595628dd75b757aa1b26473a43bb93f9cc6af8253b56191608585aa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\StoneFan_Idle_Transition.gif": "15e28403f632eaf9dc34d310028287b3ec7152b180cf38f34ee3f0be92148182",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Previews\\StoneFan_Native160.gif": "0caba8fe217001a2d51feb7117bfbe4262658e6306cb804a9732ab46bc74bbfb",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Five_Attacks_3x_Comparison.png": "e2dad065893b6f9bb8afc1e86635e1f3e73491e77b81ffcaeb58f85128bffdaa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Five_Attacks_Native_Comparison.png": "e461e7f07e9c298e6a5713e6f59491fc067d17c8001fba2f6dac77b4dd2c0f66",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\GroundSmash_Frames_6x.png": "3569506916f3badf67b4260ab1692a42ea8bd9977268bed1693fdea16c8269df",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\GroundSmash_Poses_Native.png": "17cd944fa9bb7ded580cb735dbbc1cd4cafdb97dd6d53198f15d24be631f6a89",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\LeapSlam_Frames_6x.png": "dd07125f1911dfbbac46ed1530e5b872467ebba1741421ef8f9ac5ef6e41b5aa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\LeapSlam_Poses_Native.png": "2e29b1586882a5ed8005682a5b3a849aabe66a241c6c485894f040236abe4f4c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Light_Dark_Mine_Backgrounds.png": "db264460a99a3e5e8188a6d0b25145d089581c04871e2975f09a05afffd58351",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\RockCharge_Frames_6x.png": "eed97d35a912c3d4ffc7dcbce54c20f88b7ec735a466fcb0719089948bece0fe",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\RockCharge_Poses_Native.png": "db800cc916076e4b9ef44b8c6a4afe0fb3420bb5b8dcefae5a6cc55341002c5b",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Rockfall_Frames_6x.png": "c630924f3b1a6f3664b4626b46ceeec152a3f433e95af5f73eddc933ad706852",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\Rockfall_Poses_Native.png": "28ec00e81d612262e91b5fe0a4ee12e9ec066aa195f2b7fc6e20e7e5498487d7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\StoneFan_Frames_6x.png": "41e1e5c5e32b314a3c456c5e51c3bf413c51893902dada3ee06a232143bf5d34",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\StoneFan_Poses_Native.png": "5fe8694443e1f050148aaf6f5ec2ce1c82066f4cddc8a49215b1a4b7d3f815f7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Review\\validation.json": "b7a88d6dc89fc6003b19ee3266586af71277bcd61b0dae2dcae846cd02082507",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_GroundSmash_10f_160x160_v1.png": "46434a4215eedee0f940655ffa7e27c9b8bd7af7cade5ca706829e3bb28ce67f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_LeapSlam_11f_160x160_v1.png": "8ec4ed3fe191c5054825aed5b87785656a1e9adc97fca04e4340dad1e41f0a6c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_RockCharge_11f_160x160_v1.png": "952dc622b51e90a64a685bafb27a0bbca6373593d960d57478502d40b8089077",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_Rockfall_10f_160x160_v1.png": "1a4e564731e94edd19f04cdeadb1a41174124d56946e751295904b0b47580546",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P1_BasicAttacks_v1\\Sprites\\StoneGolemBoss_P1_StoneFan_8f_160x160_v1.png": "3fd1685eb58b11e840bebe8b420efa68d1f86c5ad993c472e13ba4f21f99c0a4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\README_KO.md": "d53b9bf6fa400c8d2514857c0c3ad2209caa39620cfd79b387a5945cbf8aba9a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Unity_FrameTiming_Spec.json": "0cb1e7ec404fdfca5cbfd15cc2b5d653c79433f1a5f5bf9ec706e63c9818e15c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\ComboA_3x.gif": "8f49aa51973505eb0fb72049ff6af3dd72c942673bd0d3003e4cfcafbf823080",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\ComboA_Native160.gif": "ccc57fb062eabdf5dbff53bf1451c77e804e040991a5968022750a58dcec9659",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\ComboB_3x.gif": "f5a9aa6681fb0d0a82491a981389dc99eec9f18293ce901167da51782d94e83f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\ComboB_Native160.gif": "80587297223906c392d2d82519f1cf9d6dfd6000ca4408d97cf1e636853a03d7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\GroundSmash_Basic_Native160.gif": "aab59ab00ff7773b82e7dda2785a70dbae543d0d130ea486493761fc5750c2c8",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\GroundSmash_CameraScale_Example_1080p_Ortho4p5.gif": "a1009713c538734849e8dd24ea3c6211e3c792d9d4b3b41461c990c310010b86",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\GroundSmash_Enhanced_3x.gif": "69985fff9f562225354aa25f538714c506c1eaf314149072a90c1eff53e701be",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\GroundSmash_Enhanced_Native160.gif": "1a6c2f636d5661ed5ef27dd257d79aeaff03b72ae36ebe87d7c2c4be1f4f8883",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\GroundSmash_Idle_Transition.gif": "07eb46dec8f1fbaaa48166f05d59f780ef0d37ccd8804c5a7c7d3e463af0d2bf",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\GroundSmash_Move_Idle_Attack_Transition.gif": "a32420b0ce8f88e7d8e80598835446d3bde4050376e92c9bf756df2bc49d8a26",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\LeapSlam_Basic_Native160.gif": "e97e41d0effaa342adcc77e332c8d90e3f03b810aa28caec7503945e2fc9795c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\LeapSlam_CameraScale_Example_1080p_Ortho4p5.gif": "f3f4afd5eb004f73aa832233e2a06530cd98dc26cc429d214f8391cd9d34ea4f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\LeapSlam_Enhanced_3x.gif": "37be6f6bd195c542b21d6f08dba256209ae8df40572526380fbd44632b8c1016",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\LeapSlam_Enhanced_Native160.gif": "c56649fd5ac816a28bca720e8e9e38b61b3e6a25a8be7cfeac6b3abc1ca899bd",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\LeapSlam_Idle_Transition.gif": "b197903efc099491f1b43c18e6f9c85c9196813e005ef914b3fda6c198feb794",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\LeapSlam_Move_Idle_Attack_Transition.gif": "816c3c677e570ab59b6a9b080b733eb14159ae8a8ae92a13dd7e5b94b68f0fbe",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\RockCharge_Basic_Native160.gif": "318e15f6ec76566f2ca2054fe658863e5fe1a1acfe30634c801a3aad75c2868c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\RockCharge_CameraScale_Example_1080p_Ortho4p5.gif": "d887a8650f84ddfb6a499b8a6ac1e423f1e4ab90b2a2d50bd00d204dd30c25e9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\RockCharge_EarlyEnd.gif": "05deb2a2245643e6f539d0319151fff551dc67d8e8fac6a770d5f6edbb9beb91",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\RockCharge_Enhanced_3x.gif": "edff94fd5343d1df042ff480832cd556ec5d8c6fc7f6c1e2925336f176dda287",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\RockCharge_Enhanced_Native160.gif": "318e15f6ec76566f2ca2054fe658863e5fe1a1acfe30634c801a3aad75c2868c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\RockCharge_Idle_Transition.gif": "16b06217eb7b884dee5ac989bf9b6753b24aa5465a0e418ac4e2d9ea3d871c4e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\RockCharge_Move_Idle_Attack_Transition.gif": "f5c7b182adf13b168eb4f7e294d2ec54940c40863e01ac53b067fc6c43d4ab50",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\RockCharge_WallRecovery.gif": "6a04e3b54c8ad228840fcbf7808e44b9cce1f3ce9038560e0fcccf8a80ee3521",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\Rockfall_Basic_Native160.gif": "7729b77dc34526be42ca89642cab29b06bb8c891eeb0100548c187e115926cee",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\Rockfall_CameraScale_Example_1080p_Ortho4p5.gif": "1e315a41d15d4f7907eac3b3e6a2c9f60a41784e771022beefa49504702795b1",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\Rockfall_Enhanced_3x.gif": "2f4c1748afab58f27626012a6c1317d8e5199af7270e223c45a7822df0e06a63",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\Rockfall_Enhanced_Native160.gif": "bb3aabfdffe21cab2f11e969546e87eb55cd61d0c0ae03c536f50917471a0d14",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\Rockfall_Idle_Transition.gif": "7d9d6c6fddfe6554d72179ab2586231891b71859ae65d73b6af88316711eea2f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\Rockfall_Move_Idle_Attack_Transition.gif": "d9899b5909874acaf06a388eba8c8dbe3c36b71376664a310edc9cbe50dbe5ef",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\StoneFan_Basic_Native160.gif": "d4f73265171946bb2e7a2cca08f267b68427e05da66cee6513c4484693dc5a1f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\StoneFan_CameraScale_Example_1080p_Ortho4p5.gif": "ee8e56f85c411889df8d4ab77c35f400843ee730d5c3e0fa08df482f393e745c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\StoneFan_Enhanced_3x.gif": "1f8b796f5856e6b136424193027a5658652312b8cf5bd985e9b413be75f6ddca",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\StoneFan_Enhanced_Native160.gif": "8b777fac452cd0384e06d3bfac7aa4d3c12d04286bd114580578c4ddd39d00cf",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\StoneFan_Idle_Transition.gif": "049938366ec991f94850f787cd58e92ad3dc328da5e372c04b729d2c1c23e41f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Previews\\StoneFan_Move_Idle_Attack_Transition.gif": "0054b5894948a893136fbdf6ffcd6fce14dea23b6c72f4932093a4956d637353",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\GroundSmash_6x.png": "48fc431a6351ab958e5ba6775165d70560cee11a10b42ebc8f3e63111f440e11",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\GroundSmash_Poses_Native.png": "2a4372eccf3e8c1b9ec7be6b9d637f863203acd9c5f72b792a7506fdcf8a7107",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\LeapSlam_6x.png": "bbc083aeee42530c5cb88c66c7f83f6dd4f5e181a4a0c3c041e4014bb1631afc",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\LeapSlam_Poses_Native.png": "17ea29c50d869939181854e8b3d923b2f1103d759e7d6abd2df789e05af55a5b",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\Leap_Shockwave_Additional_Poses_3x.png": "0676b7413261e926da612bc397f9bdbab3e416293d88cc0baaaf7c6374ea8db9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\P1_P2_Appearance_3x.png": "457bd9d6f6d67bf4fd6a371f3139f23f0bf5320cfa6e924b31b5a7fb9d4201b7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\P1_P2_Appearance_Native.png": "6c023d9c8c274989ceb269a46b6add43b7bb6d7599fa6af86ed5e92198b05bf1",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\P2_FiveAttacks_Native.png": "36f4c02e42857e8df782d665c3910a4cc62b533944c59172abfd39d2693bd34d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\RockCharge_6x.png": "994bec3b8b9e5a113ffa09644b89c69a9fae8c3031ffa2f489e2537d4ae5e58a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\RockCharge_Poses_Native.png": "65a239ea244856151dde9b160ca2eb7ecff2b87064fd39bbe74cb3f3dd59bcb7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\Rockfall_6x.png": "0e3b31466eb61d279eea340be46df8d4385d76fcdc7d35ae46fde6cefbb307a5",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\Rockfall_Poses_Native.png": "5b54f9d52edcc8a14f93bc6eceaaa8c0adca336e8de8ec3a869d698f997f17dd",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\StoneFan_6x.png": "236128d318f9221634e0739d39eabf36b6698d281f7827020b94a31154f2f996",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\StoneFan_Poses_Native.png": "493b505bbfebe5b2c54b38664747e571cfbde8e47606bf907ebe24eb69fc7281",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Review\\validation.json": "c2a4930ac5cff19684a383352393f0ea20746ca3a7f1c6d343a7355f8a822d1e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Sprites\\StoneGolemBoss_P2_GroundSmash_11f_160x160_v1.png": "d57f32633a1f792744a6786899013be521adda5b8fb81950804fa9723d9f654f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Sprites\\StoneGolemBoss_P2_LeapSlam_16f_160x160_v1.png": "fb72f4cb1ded5b379137e58c8b4d5597f2429de11b9e3f5e3229f81b656c189d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Sprites\\StoneGolemBoss_P2_RockCharge_11f_160x160_v1.png": "f98a33a9cd437e38eca955de87497117910f356ba2cb9a4bba5d64cc55ec136f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Sprites\\StoneGolemBoss_P2_Rockfall_11f_160x160_v1.png": "d30f5cf59da3d146705a31263feee427fb58f073a5212bccc7fa30925ca2e17b",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_P2_Attacks_v1\\Sprites\\StoneGolemBoss_P2_StoneFan_9f_160x160_v1.png": "2f6361d71ac5ed925b33b1d1a47d60aef7aaf2deafb849b050a50ffa9808bb98",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\README_KO.md": "bd4df10e56ad35408ee7f2101d58fcaadcdf634a6d0eae1fde97a274c77143fe",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P1_CameraScale_1080p_Ortho4p5_Example.gif": "6c53472e74b8eb26022ac9643f97637bd54425d512807793e613f7907f7c2c89",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P1_Death_3x.gif": "ed6e0a598216b9c536cd716402edb3697804361ca030233fa09a2e8347659e30",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P1_Death_Native160.gif": "a6d5af58ed32529069ff5b1ee95371586174ebbad1c990f1ca7b3c9c10ca51fd",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P1_FloorContext_960x540_Example.gif": "588a7224607083397ae840a8aaae874edf0225f59e35b1eed4bf8fd6622e9eaa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P1_Idle_Death_Disappear.gif": "74b8881e539f10e9ec972220b1237f1c397dc842f63f233399e74ec6544a10df",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P1_P2_Death_Comparison.gif": "3a1d0c757597f56288737a88166bccee6e12f0c1496e3dd6f459a50ab298e7f4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P2_CameraScale_1080p_Ortho4p5_Example.gif": "0894029d95d510932fa76b2595956bcd2c8e8624ec49c6c18332ff4dd5009293",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P2_Death_3x.gif": "ca43cfbe6ae4acc04c4caae694c7902b9177990992f1aaa8ca13108e69bfafb5",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P2_Death_Native160.gif": "bfa211ff45857d3fbb393ea703e7bbab26c61b11707c2c13456bc3d7cf273100",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P2_FloorContext_960x540_Example.gif": "174dc110bb1bf5095804c97a1674202c9c32041e0e57aef424dd2530518b97c6",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Previews\\P2_Idle_Death_Disappear.gif": "ad3678ddb441614f4f8fadf5755ebaf70aeee883b2a2de859758deb5c7b2cc38",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\Idle_and_Collapse_Keyframes_3x.png": "6c18213e446d30d538f41c227de3e12475b54e7db617c7b7cfb757a0347276e4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\Idle_and_Collapse_Keyframes_Native.png": "b4f75681be18d613326f91360586981a80fc618d536e8af9151bdb6dea0a6385",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_AllFrames_3x.png": "5ba085062830c0a0c730bb8f0addb43b6305decfaa99320c1c9842d4b036f7b2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_AllFrames_Native.png": "16355fa12eebd0171a4e85a9be78bf6490e64aae2220da42797f9520fcaf80c4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F01.png": "652efa0bb0b0b88d1093d6aec6a9639373d7d0c30c53133bacd9bbc5d621f69e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F02.png": "74c4cf4efbe82fe6f08e2f9cdae3c5536a6299a8b4d17c4b1f2aa541ed7a704c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F03.png": "823df694f0182cc91dcd1f5a7f70a3a5e9a92a2d51bf5f430188ee03a3f7c23b",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F04.png": "1533bc3d4ee14296874e7a97ea3e8af93db3aad803830131e66188731db1b0d4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F05.png": "03ea95484a445e543f132f0cfb4123a9ecd3608a86ff8be80ea48f26525f3b8d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F06.png": "bdbb3ccfc7867a856103a8ee259ac7b27304943c0f381c6a62745efe9b028395",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F07.png": "8633566b67c926f6cd6b2a2eb5e3f156537084ad610ef4abf9ddbb79fe3fa7ff",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F08.png": "0aabd24562ea915126a5e8a04a2c21de2563c54173927509c75a23f348f7ccf2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F09.png": "ecc1532c23a5a8c6b5f4c292f1a71240faa9278359d6487a2c4c6e6855193e28",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F10.png": "6e0dddde2f8df33c9e281ed4d45b16cb57731cd6ca9e0d343a14feb9ce25acfe",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F11.png": "95d3a305f9aea4ad7aec4a1ffaa91879679b4cfaef1f1778ec2643286d790378",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_F12.png": "864fc05bbb1a1088dc43d7d4f36cf6d42263745fa602e70a389186b82bc90fd9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P1_FloorContext_Collapse.png": "311b104e46c449f37c4b5d9c491512e68d75b58788fd556436dec68eb3debcd5",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_AllFrames_3x.png": "18c2745b924a830b09ec0b24303e87830de3a0b02f36d91fba2635aeb74534e5",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_AllFrames_Native.png": "dc65eea821bd732e11471b8acbf65742fcfa72f560c56334d9a5dc33a8d7a65e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F01.png": "3f18b9df44dbc43b17e53a885e2c25b01065fa75a8259c8af95a134437e5b350",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F02.png": "092d84f3ede22edff3d4164570d16e8b7d6d9c0157e722c8ad0bb22ccb4fb0d6",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F03.png": "56c3047f114008a6cda1bb05b653242ba06137923f1e730b37507dbd34094df3",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F04.png": "8ffe3593e808ff1e5749f8a64dba0dbd7cc070ca6067ee4cc7d0322856bda9dc",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F05.png": "34e99d2ff0d82f5d07dadbec1e819bbbef9aebb9480d480a5937d81fe75eba6e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F06.png": "261f080bba7b887f10db11e6a9dbf5887d667ae84d07f7894001041f99de2392",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F07.png": "385c405dfca8b21684f03924b51e337cc7fbceea116978fc47c986297f6d5cc4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F08.png": "e7701656a614381841ade3adc7013e944f06d72b8353a3875f9d481a79e60533",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F09.png": "ac5d213cc0d46d44eff0e12a64b4790e41d46c0a6a1ff0b62b2b77efee35610f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F10.png": "f36058c2d181a9df22b97048788d2b353b5e5327c8e653c7da72cb94424e609d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F11.png": "04218c64d572ce8a2c8671e2b3ee4f7a7a297dd90fa283a06eb4c40be57d6d93",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_F12.png": "864fc05bbb1a1088dc43d7d4f36cf6d42263745fa602e70a389186b82bc90fd9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Review\\P2_FloorContext_Collapse.png": "0b557e0684b1076abc5574a792ae559c601730c92421ff933514ad755b9ada4f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Specs\\Unity_Death_Spec.json": "907186551dd4add974d3027e1a9606122f752929850d9ad5e19e549cf327b025",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Specs\\Validation_and_Timing.json": "1458c734cdf7b3c9fa3a9c0e412fb0115a60bfa6b03681d7ef52b10b11644674",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Sprites\\StoneGolemBoss_P1_Death_12f_160x160_v1.png": "e2ad1c7eff0d3fa4a2b5897513978fa56cdee8dd599502bafbbb038013734a08",
+    "D:\\Git\\MineDungeon2\\Art Resource\\StoneGolemBoss_Death_v1\\Sprites\\StoneGolemBoss_P2_Death_12f_160x160_v1.png": "530c02bd13a0930214e5d98b8e67ba94248e6e45c9c2b49102fab29e2e0d11b4",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\BossSystem.md": "b4d4434563a572f1c060c6abd46c898bc7f02b2c5d7e44e5e99a67324919fa34",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\ArtDirection.md": "263dcc78190e6bcded99fd8fa387a2bfd9cea84c4a553700fd3836420f160c99",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossSpriteAnimation.cs": "e60f0e235b21de783529edf0a7cf25d54c7247410454e4d0461fa1362a5d3ebd",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\StoneGolemBossPhases.cs": "7bb474d3cf2b9ceab3597679bc71e68ee032effec221d797bc88e9acba5d9056",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\BossRoom24x22.prefab": "91242dd5f013141947b405ed336a8e7454b88cca0f7bc423a3b47b7d525aeac9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Monsters\\StoneB1R\\Combat\\VFX\\B-1R_VFX_JumpDust.png": "33d02ab43085c0c57cdfb107c7329752fa13e369a27ff7530166b0dabe3b625e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Previews\\Concept_BossRoom_16x9_EnvironmentOnly_1x.png": "0b58379bf5af457fbc18fbb1bb4bef6c36ae02756e3de2635ae73396ccd2f361"
+  },
+  "environment_preview_source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Previews\\Concept_BossRoom_16x9_EnvironmentOnly_1x.png",
+  "environment_preview_kind": "Art composite using existing concept background; not a screenshot of current boss-room prefab"
+}

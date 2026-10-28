@@ -27,7 +27,10 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
     [SerializeField] private Sprite[] introFrames, transformFrames, transformChips;
     [SerializeField] private SpriteRenderer chipsVisual;
     [SerializeField, Min(.01f)] private float introDuration = 2f, transformDuration = 2.5f;
+    [SerializeField, Min(0f)] private float introCameraApproachDuration, introCameraReturnDuration;
     private bool presentationActive, presentationTransform;
+    private bool presentationReturning;
+    private CameraFollow presentationCamera;
     private float presentationStartedAt;
     private bool showingAttack;
 
@@ -143,6 +146,10 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
         presentationActive = true;
         presentationTransform = transformation;
         presentationStartedAt = Time.time;
+        presentationReturning = false;
+        presentationCamera = Camera.main != null ? Camera.main.GetComponent<CameraFollow>() : null;
+        if (presentationCamera != null)
+            presentationCamera.FocusPresentation(transform, transformation ? 0f : introCameraApproachDuration);
         showingAttack = false;
         frame = 0;
         if (chipsVisual) { chipsVisual.enabled = false; chipsVisual.sprite = null; }
@@ -159,10 +166,20 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
         if (!presentationActive || !ai.IsPresenting) return;
         float duration = presentationTransform ? transformDuration : introDuration;
         float elapsed = Mathf.Max(0f, Time.time - presentationStartedAt);
-        if (elapsed >= duration) { ai.EndPresentation(); return; }
-        float normalized = elapsed / duration;
+        float approach = presentationTransform ? 0f : introCameraApproachDuration;
+        float returning = presentationTransform ? 0f : introCameraReturnDuration;
+        if (!presentationTransform && elapsed >= approach + duration && !presentationReturning)
+        {
+            presentationReturning = true;
+            if (presentationCamera != null) presentationCamera.ReturnFromPresentation(transform, returning);
+        }
+        if (elapsed >= approach + duration + returning &&
+            (presentationCamera == null || !presentationCamera.isActiveAndEnabled || !presentationCamera.IsPresentationMoving(transform)))
+        { ai.EndPresentation(); return; }
+        float normalized = Mathf.Clamp01((elapsed - approach) / duration);
         Show(presentationTransform ? transformFrames : introFrames,
-            Timed(normalized, 0, presentationTransform ? TransformTiming : IntroTiming));
+            Timed(normalized, 0, presentationTransform ? TransformTiming :
+                introFrames.Length == 18 ? IntroV2Timing : IntroTiming));
         if (chipsVisual)
         {
             // The chip clock is normalized with the body trial; no combat clock is advanced.
@@ -184,6 +201,9 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
     {
         bool wasActive = presentationActive;
         presentationActive = false;
+        if (presentationCamera != null) presentationCamera.ReleasePresentation(transform);
+        presentationCamera = null;
+        presentationReturning = false;
         if (chipsVisual) { chipsVisual.enabled = false; chipsVisual.sprite = null; }
         if (wasActive)
         {
@@ -195,6 +215,7 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
     }
 
     private static readonly float[] IntroTiming = {180, 180, 200, 200, 220, 220, 200, 200, 200, 200},
+        IntroV2Timing = {220, 200, 220, 240, 240, 260, 240, 220, 200, 200, 160, 140, 120, 160, 180, 200, 220, 180},
         TransformTiming = {160, 170, 170, 180, 180, 180, 190, 190, 190, 190, 180, 180, 180, 160},
         ChipsTiming = {180, 190, 190, 190, 190, 180, 180, 180};
 

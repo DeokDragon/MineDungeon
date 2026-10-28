@@ -15,6 +15,9 @@ public class CameraFollow : MonoBehaviour
     private Vector3 followVelocity;
     private Vector3 basePosition;
     private Transform presentationTarget;
+    private Vector3 presentationFrom, presentationDestination;
+    private float presentationTravel, presentationElapsed;
+    private bool presentationReturning;
     [SerializeField, Range(0f, 2f)] private float shakeIntensity = 1f;
     [Header("Impact distance falloff (player world position)")]
     [SerializeField, Min(0f)] private float impactFullStrengthDistance = 3f;
@@ -80,7 +83,18 @@ public class CameraFollow : MonoBehaviour
         if (target == null)
             return;
 
-        Vector3 destination = ClampPosition(presentationTarget != null ? presentationTarget.position : target.position);
+        if (presentationTarget != null)
+        {
+            if (Time.timeScale > 0f) presentationElapsed += Time.deltaTime;
+            float t = presentationTravel > 0f ? Mathf.Clamp01(presentationElapsed / presentationTravel) : 1f;
+            // Zero speed and acceleration at both ends, followed by a stationary focus.
+            float eased = t * t * t * (t * (t * 6f - 15f) + 10f);
+            basePosition = ClampPosition(Vector3.Lerp(presentationFrom, presentationDestination, eased));
+            if (t >= 1f) basePosition = ClampPosition(presentationReturning ? target.position : presentationTarget.position);
+            transform.position = basePosition;
+            return;
+        }
+        Vector3 destination = ClampPosition(target.position);
 
         Vector3 nextPosition = Time.timeScale > 0f && Time.deltaTime > 0f ? Vector3.SmoothDamp(
             basePosition,
@@ -150,14 +164,29 @@ public class CameraFollow : MonoBehaviour
         if (target != null) transform.position = basePosition = ClampPosition(target.position);
     }
     // Presentation changes only the camera focus; player tracking and room bounds stay intact.
-    public void FocusPresentation(Transform focus)
+    public void FocusPresentation(Transform focus, float travelDuration = 0f)
     {
         if (focus == null || !isActiveAndEnabled) return;
         presentationTarget = focus;
+        presentationReturning = false;
+        presentationFrom = basePosition;
+        presentationDestination = ClampPosition(focus.position);
+        presentationTravel = Mathf.Max(0f, travelDuration);
+        presentationElapsed = 0f;
         followVelocity = Vector3.zero;
         ResetShake();
-        transform.position = basePosition = ClampPosition(focus.position);
+        if (presentationTravel == 0f) transform.position = basePosition = presentationDestination;
     }
+    public void ReturnFromPresentation(Transform focus, float travelDuration)
+    {
+        if (presentationTarget != focus || presentationReturning || target == null) return;
+        presentationReturning = true;
+        presentationFrom = basePosition;
+        presentationDestination = ClampPosition(target.position);
+        presentationTravel = Mathf.Max(0f, travelDuration);
+        presentationElapsed = 0f;
+    }
+    public bool IsPresentationMoving(Transform focus) => presentationTarget == focus && presentationElapsed < presentationTravel;
     public void ReleasePresentation(Transform focus)
     {
         if (presentationTarget != focus) return;

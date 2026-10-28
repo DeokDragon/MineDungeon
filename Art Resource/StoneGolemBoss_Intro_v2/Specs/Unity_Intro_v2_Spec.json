@@ -1,0 +1,186 @@
+{
+  "body": {
+    "file": "Sprites/StoneGolemBoss_P1_Intro_18f_160x160_v2.png",
+    "size": [
+      2880,
+      160
+    ],
+    "cell": [
+      160,
+      160
+    ],
+    "frames": 18,
+    "RGBA": true,
+    "binary_alpha": true,
+    "pivot_pixels": [
+      80,
+      80
+    ],
+    "PPU": 128,
+    "BodyScale": 1.8
+  },
+  "frame_duration_ms": [
+    220,
+    200,
+    220,
+    240,
+    240,
+    260,
+    240,
+    220,
+    200,
+    200,
+    160,
+    140,
+    120,
+    160,
+    180,
+    200,
+    220,
+    180
+  ],
+  "frame_start_ms": [
+    0,
+    220,
+    420,
+    640,
+    880,
+    1120,
+    1380,
+    1620,
+    1840,
+    2040,
+    2240,
+    2400,
+    2540,
+    2660,
+    2820,
+    3000,
+    3200,
+    3420
+  ],
+  "playback": "one shot, no loop, retain F18 then current P1 Idle",
+  "sections": [
+    {
+      "name": "dormant",
+      "frames": [
+        1,
+        2
+      ],
+      "time_s": [
+        0,
+        0.42
+      ]
+    },
+    {
+      "name": "awakening",
+      "frames": [
+        3,
+        5
+      ],
+      "time_s": [
+        0.42,
+        1.12
+      ]
+    },
+    {
+      "name": "rise",
+      "frames": [
+        6,
+        9
+      ],
+      "time_s": [
+        1.12,
+        2.04
+      ]
+    },
+    {
+      "name": "threat",
+      "frames": [
+        10,
+        14
+      ],
+      "time_s": [
+        2.04,
+        2.82
+      ]
+    },
+    {
+      "name": "ready",
+      "frames": [
+        15,
+        18
+      ],
+      "time_s": [
+        2.82,
+        3.6
+      ]
+    }
+  ],
+  "presentation_trial": {
+    "camera_approach_s": 0.8,
+    "body_s": 3.6,
+    "camera_return_s": 0.6,
+    "total_s": 5.0,
+    "camera_movement_implemented": false,
+    "approach_pose": "Intro F1",
+    "return_pose": "Intro F18 / current P1 Idle F1"
+  },
+  "vfx_cues": [
+    {
+      "name": "rise dust",
+      "time_s": 1.12,
+      "frames": 5,
+      "frame_ms": 100,
+      "alpha": 0.28,
+      "pivot": [
+        32,
+        32
+      ],
+      "body_local_offset_pixels": [
+        0,
+        -54
+      ],
+      "source_import_PPU": 64,
+      "local_scale_under_BodyScale1_8": 0.5
+    },
+    {
+      "name": "shoulder chips",
+      "time_s": 1.38,
+      "frames": 8,
+      "frame_ms": 140,
+      "alpha": 0.6,
+      "pivot": [
+        96,
+        96
+      ],
+      "PPU": 128,
+      "body_local_offset_pixels": [
+        0,
+        0
+      ],
+      "local_scale_under_BodyScale1_8": 1
+    },
+    {
+      "name": "threat dust",
+      "time_s": 2.54,
+      "frames": 5,
+      "frame_ms": 100,
+      "alpha": 0.48,
+      "pivot": [
+        32,
+        32
+      ],
+      "body_local_offset_pixels": [
+        0,
+        -54
+      ],
+      "source_import_PPU": 64,
+      "local_scale_under_BodyScale1_8": 0.5
+    }
+  ],
+  "vfx_clear_time_s": 3.04,
+  "source_frame_coordinate_system": "top-left x right y down; Unity local x right y up; position=((x-80)/128,(80-y)/128), multiplied by existing parent scale1.8",
+  "sorting": "existing body SortingLayer; dust order body-1, chips body+1; reuse existing renderer material; no new Light2D",
+  "skip_target": "current P1 Idle F1; immediately clear these cosmetic VFX; no gameplay side effects"
+}

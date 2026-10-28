@@ -16,15 +16,12 @@ public sealed class BossHealthHUD : MonoBehaviour
     private readonly HealthBarTrail gauge = new HealthBarTrail();
     private EnemyHealth health;
     private bool dying;
-    private StoneGolemBossAI presentationBoss;
-    private CameraFollow presentationCamera;
     private float deathStart, deathElapsed, deathRealStart;
 
     private void OnEnable()
     {
         if (presentationSkip != null)
         {
-            presentationSkip.onClick.AddListener(SkipPresentation);
             presentationSkip.gameObject.SetActive(false);
         }
         if (rooms != null) { rooms.BossChanged += Bind; Bind(rooms.CurrentBoss); }
@@ -32,13 +29,6 @@ public sealed class BossHealthHUD : MonoBehaviour
     }
     private void Unsubscribe()
     {
-        ReleasePresentation();
-        if (presentationBoss != null)
-        {
-            presentationBoss.PresentationStarted -= PresentationStarted;
-            presentationBoss.PresentationEnded -= PresentationEnded;
-        }
-        presentationBoss = null;
         if (health != null) { health.HealthChanged -= Changed; health.Died -= Died; }
         health = null;
     }
@@ -52,13 +42,6 @@ public sealed class BossHealthHUD : MonoBehaviour
         panel.SetActive(next != null && !next.IsDead && (resultUI == null || !resultUI.IsShowing));
         if (!panel.activeSelf) { Render(0f, 0f); return; }
         health = next;
-        presentationBoss = health.GetComponent<StoneGolemBossAI>();
-        if (presentationBoss != null)
-        {
-            presentationBoss.PresentationStarted += PresentationStarted;
-            presentationBoss.PresentationEnded += PresentationEnded;
-            if (presentationBoss.IsPresenting) PresentationStarted(presentationBoss, presentationBoss.IsTransforming);
-        }
         health.HealthChanged += Changed;
         health.Died += Died;
         gauge.Reset(HealthBarTrail.Fraction(health));
@@ -82,13 +65,9 @@ public sealed class BossHealthHUD : MonoBehaviour
     }
     private void Update()
     {
-        bool presenting = presentationBoss != null && presentationBoss.isActiveAndEnabled &&
-            presentationBoss.IsPresenting && health != null && !health.IsDead &&
-            (DungeonRunManager.Instance == null || !DungeonRunManager.Instance.IsRunEnded) &&
-            (resultUI == null || !resultUI.IsShowing);
-        if (!presenting) ReleasePresentation(); // Also covers aborts without an Ended event.
+        // Short intro/transformation presentations have no player-facing skip control.
         if (presentationSkip != null)
-            presentationSkip.gameObject.SetActive(presenting && Time.timeScale > 0f);
+            presentationSkip.gameObject.SetActive(false);
         if (!panel.activeSelf) return;
         if (dying)
         {
@@ -111,36 +90,9 @@ public sealed class BossHealthHUD : MonoBehaviour
     }
     private void Render(float current, float trail) { Fill(currentFill, current); Fill(damageTrail, trail); }
     private void Hide() { Bind(null); }
-    private void PresentationStarted(StoneGolemBossAI source, bool transformation)
-    {
-        if (source != presentationBoss) return;
-        presentationCamera = Camera.main != null ? Camera.main.GetComponent<CameraFollow>() : null;
-        if (presentationCamera != null) presentationCamera.FocusPresentation(source.transform);
-        if (presentationSkip != null) presentationSkip.gameObject.SetActive(Time.timeScale > 0f);
-    }
-    private void PresentationEnded(StoneGolemBossAI source, bool transformation)
-    {
-        if (source == presentationBoss) ReleasePresentation();
-    }
-    private void ReleasePresentation()
-    {
-        if (presentationCamera != null && presentationBoss != null)
-            presentationCamera.ReleasePresentation(presentationBoss.transform);
-        presentationCamera = null;
-        if (presentationSkip != null) presentationSkip.gameObject.SetActive(false);
-    }
-    private void SkipPresentation()
-    {
-        if (Time.timeScale <= 0f || presentationBoss == null || !presentationBoss.isActiveAndEnabled ||
-            !presentationBoss.IsPresenting || health == null || health.IsDead ||
-            (resultUI != null && resultUI.IsShowing) ||
-            (DungeonRunManager.Instance != null && DungeonRunManager.Instance.IsRunEnded)) return;
-        if (presentationSkip != null) presentationSkip.gameObject.SetActive(false);
-        presentationBoss.SkipPresentation(); // Existing idempotent common completion path.
-    }
     private void OnDisable()
     {
-        if (presentationSkip != null) presentationSkip.onClick.RemoveListener(SkipPresentation);
+        if (presentationSkip != null) presentationSkip.gameObject.SetActive(false);
         if (rooms != null) rooms.BossChanged -= Bind;
         if (resultUI != null) resultUI.Shown -= Hide;
         Unsubscribe();
