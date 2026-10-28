@@ -1,0 +1,64 @@
+{
+  "textures": [
+    {
+      "file": "Transition_A_ContactDust_48x128.png",
+      "size": [
+        48,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_levels": [
+        0,
+        24,
+        48,
+        72,
+        96,
+        120,
+        144
+      ],
+      "bbox": [
+        4,
+        6,
+        32,
+        122
+      ]
+    },
+    {
+      "file": "Transition_B_RockToe_48x128.png",
+      "size": [
+        48,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_levels": [
+        0,
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216
+      ],
+      "bbox": [
+        4,
+        5,
+        32,
+        123
+      ]
+    }
+  ],
+  "source_capture_crop": [
+    0,
+    350,
+    220,
+    590
+  ],
+  "screen_pixels_per_native_pixel_trial": 1.875,
+  "protected_files_unchanged": 524,
+  "rim_columns_0_to_51_unchanged": true,
+  "unity_applied": false,
+  "external_zoom_reference_available": false
+}

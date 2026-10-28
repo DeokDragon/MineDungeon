@@ -1,0 +1,654 @@
+{
+  "source_background": "C:\\Users\\User\\Downloads\\TitleScene_background.png",
+  "source_size": [
+    2752,
+    1536
+  ],
+  "source_sha256": "7e8cc8e61be0408d359ed514f11cbd1ae96d1b54b68dfa1ebd6ac5b24b09715b",
+  "coordinate_system": "PNG top-left origin x right y down; all placement in original background pixels; no stretched background",
+  "crop_region": [
+    1728,
+    512,
+    2752,
+    1536
+  ],
+  "surface_crop_center": [
+    2240,
+    1024
+  ],
+  "flame_specs": {
+    "Hanging": {
+      "cell": [
+        32,
+        48
+      ],
+      "file": "Flames/TitleLantern_Hanging_Flame_6f_32x48_v1.png",
+      "source_anchor_top_left": [
+        16,
+        42
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.125
+      ]
+    },
+    "Barrel": {
+      "cell": [
+        24,
+        32
+      ],
+      "file": "Flames/TitleLantern_Barrel_Flame_6f_24x32_v1.png",
+      "source_anchor_top_left": [
+        12,
+        27
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.15625
+      ]
+    }
+  },
+  "lantern_centers": {
+    "Hanging": [
+      2344,
+      800
+    ],
+    "Barrel": [
+      2476,
+      1078
+    ]
+  },
+  "flame_base_anchors": {
+    "Hanging": [
+      2338,
+      820
+    ],
+    "Barrel": [
+      2476,
+      1090
+    ]
+  },
+  "glass_specs": {
+    "Hanging": {
+      "size": [
+        64,
+        80
+      ],
+      "origin": [
+        2312,
+        760
+      ],
+      "polys": [
+        [
+          [
+            2324,
+            777
+          ],
+          [
+            2350,
+            776
+          ],
+          [
+            2351,
+            822
+          ],
+          [
+            2324,
+            820
+          ]
+        ],
+        [
+          [
+            2358,
+            775
+          ],
+          [
+            2370,
+            772
+          ],
+          [
+            2370,
+            822
+          ],
+          [
+            2358,
+            824
+          ]
+        ]
+      ]
+    },
+    "Barrel": {
+      "size": [
+        40,
+        48
+      ],
+      "origin": [
+        2456,
+        1054
+      ],
+      "polys": [
+        [
+          [
+            2468,
+            1063
+          ],
+          [
+            2485,
+            1063
+          ],
+          [
+            2485,
+            1089
+          ],
+          [
+            2468,
+            1089
+          ]
+        ]
+      ]
+    }
+  },
+  "trial_timing": {
+    "flame_Hanging_frame_ms": 140,
+    "flame_Hanging_cycle_ms": 840,
+    "flame_Barrel_frame_ms": 160,
+    "flame_Barrel_cycle_ms": 960,
+    "Barrel_flame_offset_ms": 320,
+    "light_Hanging_cycle_s": 2.6,
+    "light_Barrel_cycle_s": 2.9,
+    "Barrel_light_phase_radians": 1.1,
+    "light_alpha_multiplier_min": 0.88,
+    "light_alpha_multiplier_max": 1.0
+  },
+  "draw_order": [
+    "unchanged background",
+    "surface illumination (combined OR separate components)",
+    "subtle halo",
+    "glass light",
+    "flame"
+  ],
+  "blend": "normal straight RGBA alpha, not additive",
+  "assets": [
+    {
+      "file": "Flames/Frames_Hanging/Flame_F01.png",
+      "size": [
+        32,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Hanging flame frame 1"
+    },
+    {
+      "file": "Flames/Frames_Hanging/Flame_F02.png",
+      "size": [
+        32,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Hanging flame frame 2"
+    },
+    {
+      "file": "Flames/Frames_Hanging/Flame_F03.png",
+      "size": [
+        32,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Hanging flame frame 3"
+    },
+    {
+      "file": "Flames/Frames_Hanging/Flame_F04.png",
+      "size": [
+        32,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Hanging flame frame 4"
+    },
+    {
+      "file": "Flames/Frames_Hanging/Flame_F05.png",
+      "size": [
+        32,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Hanging flame frame 5"
+    },
+    {
+      "file": "Flames/Frames_Hanging/Flame_F06.png",
+      "size": [
+        32,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Hanging flame frame 6"
+    },
+    {
+      "file": "Flames/TitleLantern_Hanging_Flame_6f_32x48_v1.png",
+      "size": [
+        192,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "flame strip",
+      "frames": 6,
+      "cell": [
+        32,
+        48
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.125
+      ]
+    },
+    {
+      "file": "Flames/Frames_Barrel/Flame_F01.png",
+      "size": [
+        24,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Barrel flame frame 1"
+    },
+    {
+      "file": "Flames/Frames_Barrel/Flame_F02.png",
+      "size": [
+        24,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Barrel flame frame 2"
+    },
+    {
+      "file": "Flames/Frames_Barrel/Flame_F03.png",
+      "size": [
+        24,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Barrel flame frame 3"
+    },
+    {
+      "file": "Flames/Frames_Barrel/Flame_F04.png",
+      "size": [
+        24,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Barrel flame frame 4"
+    },
+    {
+      "file": "Flames/Frames_Barrel/Flame_F05.png",
+      "size": [
+        24,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Barrel flame frame 5"
+    },
+    {
+      "file": "Flames/Frames_Barrel/Flame_F06.png",
+      "size": [
+        24,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "Barrel flame frame 6"
+    },
+    {
+      "file": "Flames/TitleLantern_Barrel_Flame_6f_24x32_v1.png",
+      "size": [
+        144,
+        32
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "role": "flame strip",
+      "frames": 6,
+      "cell": [
+        24,
+        32
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.15625
+      ]
+    },
+    {
+      "file": "Glow/TitleLantern_WarmHalo_384x384_v1.png",
+      "size": [
+        384,
+        384
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        45
+      ],
+      "role": "shared subtle halo; position each lamp independently",
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "Glass/TitleLantern_Hanging_GlassLight_v1.png",
+      "size": [
+        64,
+        80
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        72
+      ],
+      "role": "warm glass only, metal bars excluded"
+    },
+    {
+      "file": "Glass/TitleLantern_Barrel_GlassLight_v1.png",
+      "size": [
+        40,
+        48
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        72
+      ],
+      "role": "warm glass only, metal bars excluded"
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Hanging_Wood_Light_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        55
+      ],
+      "role": "Hanging: Wood illumination only",
+      "source_crop": [
+        1728,
+        512,
+        2752,
+        1536
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Hanging_Rock_Light_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        24
+      ],
+      "role": "Hanging: Rock illumination only",
+      "source_crop": [
+        1728,
+        512,
+        2752,
+        1536
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Hanging_Floor_Light_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        20
+      ],
+      "role": "Hanging: Floor illumination only",
+      "source_crop": [
+        1728,
+        512,
+        2752,
+        1536
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Hanging_SurfaceLight_Combined_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        55
+      ],
+      "role": "Hanging: optional combined wood+rock+floor; do not stack with components",
+      "source_crop": [
+        1728,
+        512,
+        2752,
+        1536
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Barrel_Wood_Light_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        63
+      ],
+      "role": "Barrel: Wood illumination only",
+      "source_crop": [
+        1728,
+        512,
+        2752,
+        1536
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Barrel_Rock_Light_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        34
+      ],
+      "role": "Barrel: Rock illumination only",
+      "source_crop": [
+        1728,
+        512,
+        2752,
+        1536
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Barrel_Floor_Light_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        28
+      ],
+      "role": "Barrel: Floor illumination only",
+      "source_crop": [
+        1728,
+        512,
+        2752,
+        1536
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Barrel_SurfaceLight_Combined_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        72
+      ],
+      "role": "Barrel: optional combined wood+rock+floor; do not stack with components",
+      "source_crop": [
+        1728,
+        512,
+        2752,
+        1536
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "gif_checks": [
+    {
+      "file": "Previews\\Hanging_Flame_6f_4x.gif",
+      "frames": 6,
+      "duration_ms": 840,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Barrel_Flame_6f_4x.gif",
+      "frames": 6,
+      "duration_ms": 960,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Title_Lanterns_Lit_5p2s_Preview.gif",
+      "frames": 52,
+      "duration_ms": 5200,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Hanging_LightAndFlame_Closeup.gif",
+      "frames": 29,
+      "duration_ms": 2900,
+      "decoded_pixels_and_durations_checked": true
+    },
+    {
+      "file": "Previews\\Barrel_LightAndFlame_Closeup.gif",
+      "frames": 29,
+      "duration_ms": 2900,
+      "decoded_pixels_and_durations_checked": true
+    }
+  ],
+  "checks": {
+    "source_file_unchanged": true,
+    "all_runtime_PNG_RGBA_and_dimensions_readback": true,
+    "flame_frames_six_unique_each": true,
+    "flames_always_visible": true,
+    "flame_binary_alpha_no_canvas_clipping": true,
+    "flame_inside_existing_windows": {
+      "Hanging": "all six flame masks inside measured existing glass polygons",
+      "Barrel": "all six flame masks inside measured existing glass polygons"
+    },
+    "layers_independent_background_not_baked": true,
+    "preview_restores_original_geometry": true,
+    "static_OFF_ON_and_lantern_closeups_visually_reviewed": true,
+    "actual_realtime_GIF_observation": false,
+    "Unity_Play": "out of scope; not performed"
+  },
+  "generation_sources": {
+    "flames": "C:\\Users\\User\\.codex\\generated_images\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\exec-ed55aff5-1ae0-4cc9-b760-66bd565f02c5.png",
+    "glow": "C:\\Users\\User\\.codex\\generated_images\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\exec-b0594390-fb14-4f1a-a3ba-fedae5140e57.png",
+    "lit_reference": "C:\\Users\\User\\.codex\\generated_images\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\exec-fdcf344a-d2ea-4422-944d-13c74093534d.png"
+  },
+  "surface_method": "Only coarse positive-light guidance extracted from generated lighting edit; pure warm-color alpha layers authored over original surface masks; generated RGB scene is never composited into final background"
+}

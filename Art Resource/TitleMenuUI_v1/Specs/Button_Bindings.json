@@ -1,0 +1,32 @@
+{
+  "게임 시작": {
+    "backgrounds": {
+      "Normal": "Buttons/TitleMenu_Button_Normal_360x80_v1.png",
+      "Hover": "Buttons/TitleMenu_Button_Hover_360x80_v1.png",
+      "Pressed": "Buttons/TitleMenu_Button_Pressed_360x80_v1.png"
+    },
+    "text_separate": true,
+    "text": "게임 시작",
+    "new_menu_function_created": false
+  },
+  "설정": {
+    "backgrounds": {
+      "Normal": "Buttons/TitleMenu_Button_Normal_360x80_v1.png",
+      "Hover": "Buttons/TitleMenu_Button_Hover_360x80_v1.png",
+      "Pressed": "Buttons/TitleMenu_Button_Pressed_360x80_v1.png"
+    },
+    "text_separate": true,
+    "text": "설정",
+    "new_menu_function_created": false
+  },
+  "게임 종료": {
+    "backgrounds": {
+      "Normal": "Buttons/TitleMenu_Button_Normal_360x80_v1.png",
+      "Hover": "Buttons/TitleMenu_Button_Hover_360x80_v1.png",
+      "Pressed": "Buttons/TitleMenu_Button_Pressed_360x80_v1.png"
+    },
+    "text_separate": true,
+    "text": "게임 종료",
+    "new_menu_function_created": false
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "prefabRead": {
+    "layoutJson": "{\"floorAreas\":[{\"serializedVersion\":\"2\",\"x\":11.5,\"y\":3.0,\"width\":5.0,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":14.0,\"y\":5.0,\"width\":8.0,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":17.5,\"y\":7.0,\"width\":4.5,\"height\":8.0},{\"serializedVersion\":\"2\",\"x\":14.0,\"y\":10.5,\"width\":8.0,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":11.75,\"y\":10.5,\"width\":4.5,\"height\":6.5},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":16.0,\"width\":12.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":18.0,\"width\":14.0,\"height\":5.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":23.0,\"width\":12.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":20.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":19.0,\"width\":1.0,\"height\":1.5},{\"serializedVersion\":\"2\",\"x\":11.75,\"y\":24.0,\"width\":4.5,\"height\":6.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":29.0,\"width\":8.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":30.0,\"width\":10.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":32.0,\"width\":8.0,\"height\":1.0}],\"rockAreas\":[{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":2.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":2.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":2.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":2.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":2.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":2.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":2.0,\"width\":1.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":11.5,\"y\":2.0,\"width\":0.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":11.75,\"y\":2.0,\"width\":2.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":14.0,\"y\":2.0,\"width\":2.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":16.25,\"y\":2.0,\"width\":0.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":16.5,\"y\":2.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":17.5,\"y\":2.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":18.0,\"y\":2.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":2.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":2.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":2.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":2.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":2.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":2.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":3.0,\"width\":4.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":3.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":3.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":3.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":3.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":3.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":3.0,\"width\":1.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":16.5,\"y\":3.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":17.5,\"y\":3.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":18.0,\"y\":3.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":3.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":3.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":3.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":3.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":3.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":3.0,\"width\":4.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":5.0,\"width\":4.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":5.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":5.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":5.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":5.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":5.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":5.0,\"width\":1.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":5.0,\"width\":4.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":7.0,\"width\":4.5,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":7.0,\"width\":0.5,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":7.0,\"width\":0.5,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":7.0,\"width\":0.5,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":7.0,\"width\":1.0,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":7.0,\"width\":1.0,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":7.0,\"width\":1.5,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":11.5,\"y\":7.0,\"width\":0.25,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":11.75,\"y\":7.0,\"width\":2.25,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":7.0,\"width\":4.0,\"height\":2.5},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":9.5,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":9.5,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":9.5,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":9.5,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":9.5,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":9.5,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":9.5,\"width\":1.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":11.5,\"y\":9.5,\"width\":0.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":11.75,\"y\":9.5,\"width\":2.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":14.0,\"y\":9.5,\"width\":2.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":16.25,\"y\":9.5,\"width\":0.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":16.5,\"y\":9.5,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":9.5,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":10.5,\"width\":4.5,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":10.5,\"width\":0.5,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":10.5,\"width\":0.5,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":10.5,\"width\":0.5,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":10.5,\"width\":1.0,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":10.5,\"width\":1.0,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":10.5,\"width\":1.5,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":11.5,\"y\":10.5,\"width\":0.25,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":10.5,\"width\":4.0,\"height\":4.5},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":15.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":15.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":15.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":15.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":15.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":15.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":15.0,\"width\":1.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":11.5,\"y\":15.0,\"width\":0.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":16.25,\"y\":15.0,\"width\":0.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":16.5,\"y\":15.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":17.5,\"y\":15.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":18.0,\"y\":15.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":15.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":15.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":15.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":15.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":15.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":15.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":16.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":16.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":16.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":16.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":16.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":16.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":16.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":16.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":16.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":17.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":17.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":17.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":17.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":17.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":17.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":17.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":17.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":17.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":18.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":18.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":18.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":18.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":18.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":19.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":19.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":19.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":19.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":20.0,\"width\":4.5,\"height\":0.5},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":20.0,\"width\":0.5,\"height\":0.5},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":20.0,\"width\":4.0,\"height\":0.5},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":20.5,\"width\":4.5,\"height\":1.5},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":20.5,\"width\":0.5,\"height\":1.5},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":20.5,\"width\":0.5,\"height\":1.5},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":20.5,\"width\":4.0,\"height\":1.5},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":22.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":22.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":22.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":22.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":22.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":23.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":23.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":23.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":23.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":23.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":23.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":23.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":23.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":23.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":24.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":24.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":24.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":24.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":24.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":24.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":24.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":24.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":24.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":25.0,\"width\":4.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":25.0,\"width\":0.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":25.0,\"width\":0.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":25.0,\"width\":0.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":25.0,\"width\":1.0,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":25.0,\"width\":1.0,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":25.0,\"width\":1.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":11.5,\"y\":25.0,\"width\":0.25,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":16.25,\"y\":25.0,\"width\":0.25,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":16.5,\"y\":25.0,\"width\":1.0,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":17.5,\"y\":25.0,\"width\":0.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":18.0,\"y\":25.0,\"width\":1.0,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":25.0,\"width\":1.0,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":25.0,\"width\":0.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":25.0,\"width\":0.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":25.0,\"width\":0.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":25.0,\"width\":0.5,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":25.0,\"width\":4.0,\"height\":4.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":29.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":29.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":29.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":29.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":29.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":29.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":18.0,\"y\":29.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":29.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":29.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":29.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":29.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":29.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":29.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":30.0,\"width\":4.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":30.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":30.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":30.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":30.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":30.0,\"width\":1.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":30.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":30.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":30.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":30.0,\"width\":0.5,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":30.0,\"width\":4.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":32.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":32.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":32.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":32.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":32.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":32.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":18.0,\"y\":32.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":32.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":32.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":32.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":32.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":32.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":32.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":2.0,\"y\":33.0,\"width\":4.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":6.5,\"y\":33.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.0,\"y\":33.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":7.5,\"y\":33.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":33.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":9.0,\"y\":33.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":33.0,\"width\":1.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":11.5,\"y\":33.0,\"width\":0.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":11.75,\"y\":33.0,\"width\":2.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":14.0,\"y\":33.0,\"width\":2.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":16.25,\"y\":33.0,\"width\":0.25,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":16.5,\"y\":33.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":17.5,\"y\":33.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":18.0,\"y\":33.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":33.0,\"width\":1.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.0,\"y\":33.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":20.5,\"y\":33.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.0,\"y\":33.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":21.5,\"y\":33.0,\"width\":0.5,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":22.0,\"y\":33.0,\"width\":4.0,\"height\":1.0},{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":28.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":34.0,\"width\":28.0,\"height\":2.0},{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":2.0,\"width\":2.0,\"height\":32.0},{\"serializedVersion\":\"2\",\"x\":26.0,\"y\":2.0,\"width\":2.0,\"height\":32.0}],\"monsterAreas\":[{\"serializedVersion\":\"2\",\"x\":8.5,\"y\":18.0,\"width\":11.0,\"height\":6.0},{\"serializedVersion\":\"2\",\"x\":10.0,\"y\":30.0,\"width\":8.0,\"height\":2.0}],\"exitCandidates\":[{\"x\":14.0,\"y\":32.25}],\"selectedExit\":0,\"chooseExitOnAwake\":false,\"roomExit\":{\"instanceID\":55136},\"unusedExitBarriers\":[]}",
+    "meshes": [
+      {
+        "name": "Floor_RockGray_64x64",
+        "texture": "Assets/Art/Environment/MineEnvironment/Floors/Floor_RockGray_64x64.png",
+        "order": -50,
+        "vertices": 17912,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "Floor_CoolStone_64x64",
+        "texture": "Assets/Art/Environment/MineEnvironment/Floors/Floor_CoolStone_64x64.png",
+        "order": -48,
+        "vertices": 4332,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "Floor_ExposedEarth_64x64",
+        "texture": "Assets/Art/Environment/MineEnvironment/Floors/Floor_ExposedEarth_64x64.png",
+        "order": -49,
+        "vertices": 7228,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "Floor_WornStone_64x64",
+        "texture": "Assets/Art/Environment/MineEnvironment/Floors/Floor_WornStone_64x64.png",
+        "order": -47,
+        "vertices": 4220,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "Wall_RockMass_64x64",
+        "texture": "Assets/Art/Environment/MineEnvironment/Walls/Wall_RockMass_64x64.png",
+        "order": -30,
+        "vertices": 46600,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "RockRim_East_32x32",
+        "texture": "Assets/Art/Environment/MineEnvironment/Borders/RockRim_East_32x32.png",
+        "order": -20,
+        "vertices": 864,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "RockRim_North_32x32",
+        "texture": "Assets/Art/Environment/MineEnvironment/Borders/RockRim_North_32x32.png",
+        "order": -20,
+        "vertices": 936,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "RockRim_South_32x32",
+        "texture": "Assets/Art/Environment/MineEnvironment/Borders/RockRim_South_32x32.png",
+        "order": -20,
+        "vertices": 988,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "CornerOuter_NE_32x32",
+        "texture": "Assets/Art/Environment/MineEnvironment/Borders/CornerOuter_NE_32x32.png",
+        "order": -19,
+        "vertices": 24,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "CornerOuter_SE_32x32",
+        "texture": "Assets/Art/Environment/MineEnvironment/Borders/CornerOuter_SE_32x32.png",
+        "order": -19,
+        "vertices": 24,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "CornerOuter_SW_32x32",
+        "texture": "Assets/Art/Environment/MineEnvironment/Borders/CornerOuter_SW_32x32.png",
+        "order": -19,
+        "vertices": 20,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "RockRim_West_32x32",
+        "texture": "Assets/Art/Environment/MineEnvironment/Borders/RockRim_West_32x32.png",
+        "order": -20,
+        "vertices": 828,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "CornerOuter_NW_32x32",
+        "texture": "Assets/Art/Environment/MineEnvironment/Borders/CornerOuter_NW_32x32.png",
+        "order": -19,
+        "vertices": 24,
+        "scale": "(1.00, 1.00, 1.00)"
+      },
+      {
+        "name": "WallFoot_Shadow_32x16",
+        "texture": "Assets/Art/Environment/MineEnvironment/Borders/WallFoot_Shadow_32x16.png",
+        "order": -40,
+        "vertices": 1884,
+        "scale": "(1.00, 1.00, 1.00)"
+      }
+    ]
+  },
+  "spriteAndImports": {
+    "enabledEnvironmentSprites": {
+      "Assets/Art/Environment/MineEnvironment/Ores/WallVein_Iron_64x48.png": 5,
+      "Assets/Art/Environment/MineEnvironment/WoodenStructures/TimberSupport_Vertical_32x64.png": 6,
+      "Assets/Art/Environment/MineEnvironment/Props/MineLantern_16x32.png": 7,
+      "Assets/Art/Environment/MineEnvironment/Rubble/Pebbles_Small_24x24.png": 14,
+      "Assets/Art/Environment/MineEnvironment/Ores/WallVein_Crystal_64x48.png": 2,
+      "Assets/Art/Environment/MineEnvironment/WoodenStructures/TimberBrace_Broken_64x64.png": 1,
+      "Assets/Art/Environment/MineEnvironment/Ores/OreLump_Crystal_24x32.png": 1,
+      "Assets/Art/Environment/MineEnvironment/Ores/OreLump_Coal_24x24.png": 1,
+      "Assets/Art/Environment/MineEnvironment/Ores/OreLump_Magnetite_24x24.png": 1,
+      "Assets/Art/Environment/MineEnvironment/Floors/Decal_MiningScratches_48x48.png": 7,
+      "Assets/Art/Environment/MineEnvironment/Floors/Decal_FloorCrack_64x64.png": 5,
+      "Assets/Art/Environment/MineEnvironment/Floors/Decal_WornPatch_64x48.png": 4,
+      "Assets/Art/Environment/MineEnvironment/Rubble/EmbeddedGravel_32x32.png": 5,
+      "Assets/Art/Environment/MineEnvironment/WoodenStructures/TimberBeam_Horizontal_64x24.png": 1,
+      "Assets/Art/Environment/MineEnvironment/Props/Crate_48x48.png": 4,
+      "Assets/Art/Environment/MineEnvironment/Rubble/RubblePile_Medium_48x48.png": 4
+    },
+    "importSettings": [
+      {
+        "path": "Assets/Art/Environment/MineEnvironment/Borders/RockRim_South_32x32.png",
+        "ppu": 64,
+        "filter": "Point",
+        "compression": "Uncompressed",
+        "mipmap": false,
+        "standaloneOverride": false
+      },
+      {
+        "path": "Assets/Art/Environment/MineEnvironment/Borders/CornerInner_SE_32x32.png",
+        "ppu": 64,
+        "filter": "Point",
+        "compression": "Uncompressed",
+        "mipmap": false,
+        "standaloneOverride": false
+      },
+      {
+        "path": "Assets/Art/Environment/MineEnvironment/Walls/Wall_Protruding_64x64.png",
+        "ppu": 64,
+        "filter": "Point",
+        "compression": "Uncompressed",
+        "mipmap": false,
+        "standaloneOverride": false
+      }
+    ]
+  }
+}

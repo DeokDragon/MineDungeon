@@ -1,0 +1,1537 @@
+{
+  "decision": "reuse first; no newly drawn runtime PNG required at this stage",
+  "new_runtime_PNG_count": 0,
+  "existing_asset_count": 50,
+  "source_imported_all50_identical": true,
+  "current_meshes": [
+    {
+      "name": "Floor_RockGray_64x64",
+      "texture": "Assets/Art/Environment/MineEnvironment/Floors/Floor_RockGray_64x64.png",
+      "order": -50,
+      "vertices": 17912,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "Floor_CoolStone_64x64",
+      "texture": "Assets/Art/Environment/MineEnvironment/Floors/Floor_CoolStone_64x64.png",
+      "order": -48,
+      "vertices": 4332,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "Floor_ExposedEarth_64x64",
+      "texture": "Assets/Art/Environment/MineEnvironment/Floors/Floor_ExposedEarth_64x64.png",
+      "order": -49,
+      "vertices": 7228,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "Floor_WornStone_64x64",
+      "texture": "Assets/Art/Environment/MineEnvironment/Floors/Floor_WornStone_64x64.png",
+      "order": -47,
+      "vertices": 4220,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "Wall_RockMass_64x64",
+      "texture": "Assets/Art/Environment/MineEnvironment/Walls/Wall_RockMass_64x64.png",
+      "order": -30,
+      "vertices": 46600,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "RockRim_East_32x32",
+      "texture": "Assets/Art/Environment/MineEnvironment/Borders/RockRim_East_32x32.png",
+      "order": -20,
+      "vertices": 864,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "RockRim_North_32x32",
+      "texture": "Assets/Art/Environment/MineEnvironment/Borders/RockRim_North_32x32.png",
+      "order": -20,
+      "vertices": 936,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "RockRim_South_32x32",
+      "texture": "Assets/Art/Environment/MineEnvironment/Borders/RockRim_South_32x32.png",
+      "order": -20,
+      "vertices": 988,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "CornerOuter_NE_32x32",
+      "texture": "Assets/Art/Environment/MineEnvironment/Borders/CornerOuter_NE_32x32.png",
+      "order": -19,
+      "vertices": 24,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "CornerOuter_SE_32x32",
+      "texture": "Assets/Art/Environment/MineEnvironment/Borders/CornerOuter_SE_32x32.png",
+      "order": -19,
+      "vertices": 24,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "CornerOuter_SW_32x32",
+      "texture": "Assets/Art/Environment/MineEnvironment/Borders/CornerOuter_SW_32x32.png",
+      "order": -19,
+      "vertices": 20,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "RockRim_West_32x32",
+      "texture": "Assets/Art/Environment/MineEnvironment/Borders/RockRim_West_32x32.png",
+      "order": -20,
+      "vertices": 828,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "CornerOuter_NW_32x32",
+      "texture": "Assets/Art/Environment/MineEnvironment/Borders/CornerOuter_NW_32x32.png",
+      "order": -19,
+      "vertices": 24,
+      "scale": "(1.00, 1.00, 1.00)"
+    },
+    {
+      "name": "WallFoot_Shadow_32x16",
+      "texture": "Assets/Art/Environment/MineEnvironment/Borders/WallFoot_Shadow_32x16.png",
+      "order": -40,
+      "vertices": 1884,
+      "scale": "(1.00, 1.00, 1.00)"
+    }
+  ],
+  "current_enabled_sprite_use": {
+    "Assets/Art/Environment/MineEnvironment/Ores/WallVein_Iron_64x48.png": 5,
+    "Assets/Art/Environment/MineEnvironment/WoodenStructures/TimberSupport_Vertical_32x64.png": 6,
+    "Assets/Art/Environment/MineEnvironment/Props/MineLantern_16x32.png": 7,
+    "Assets/Art/Environment/MineEnvironment/Rubble/Pebbles_Small_24x24.png": 14,
+    "Assets/Art/Environment/MineEnvironment/Ores/WallVein_Crystal_64x48.png": 2,
+    "Assets/Art/Environment/MineEnvironment/WoodenStructures/TimberBrace_Broken_64x64.png": 1,
+    "Assets/Art/Environment/MineEnvironment/Ores/OreLump_Crystal_24x32.png": 1,
+    "Assets/Art/Environment/MineEnvironment/Ores/OreLump_Coal_24x24.png": 1,
+    "Assets/Art/Environment/MineEnvironment/Ores/OreLump_Magnetite_24x24.png": 1,
+    "Assets/Art/Environment/MineEnvironment/Floors/Decal_MiningScratches_48x48.png": 7,
+    "Assets/Art/Environment/MineEnvironment/Floors/Decal_FloorCrack_64x64.png": 5,
+    "Assets/Art/Environment/MineEnvironment/Floors/Decal_WornPatch_64x48.png": 4,
+    "Assets/Art/Environment/MineEnvironment/Rubble/EmbeddedGravel_32x32.png": 5,
+    "Assets/Art/Environment/MineEnvironment/WoodenStructures/TimberBeam_Horizontal_64x24.png": 1,
+    "Assets/Art/Environment/MineEnvironment/Props/Crate_48x48.png": 4,
+    "Assets/Art/Environment/MineEnvironment/Rubble/RubblePile_Medium_48x48.png": 4
+  },
+  "existing_assets": [
+    {
+      "file": "Floors/Decal_FloorCrack_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Decal_FloorCrack_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Decal_FloorCrack_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        100
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "ff732d0d22df52c0b5f90f5162602229e69d89b75a5db3037bc2b638bde26d72"
+    },
+    {
+      "file": "Floors/Decal_MiningScratches_48x48.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Decal_MiningScratches_48x48.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Decal_MiningScratches_48x48.png",
+      "size": [
+        48,
+        48
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        100
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "416040b5ff604e9af61271c6964f3a95506938b80e5e50503e4493c16fef5296"
+    },
+    {
+      "file": "Floors/Decal_WornPatch_64x48.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Decal_WornPatch_64x48.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Decal_WornPatch_64x48.png",
+      "size": [
+        64,
+        48
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        100
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "5a04a9af29f9506746d1a05490f6a2d1ff8580ac66e0b626aa7e304b52acf437"
+    },
+    {
+      "file": "Floors/Floor_CoolStone_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Floor_CoolStone_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_CoolStone_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "4265d0069c9812b95d540aa32bd83764a821d6f31dbd0d45bb37515a467f442c"
+    },
+    {
+      "file": "Floors/Floor_ExposedEarth_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Floor_ExposedEarth_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_ExposedEarth_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "5b28d08a9d900b150f382f87e69010d7b1f9aecc90e5d165da13c674f0bdf5f0"
+    },
+    {
+      "file": "Floors/Floor_RockGray_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Floor_RockGray_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_RockGray_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "b188850c281aa908a6b1390fad776272dff9ab79f2f892210657d9266c570837"
+    },
+    {
+      "file": "Floors/Floor_WornStone_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Floor_WornStone_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_WornStone_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "cd57d83c067036fc880f229a94482dadc77fd203bc1f5147dda255d6ba73ca1b"
+    },
+    {
+      "file": "Walls/RockSpine_Narrow_16x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\RockSpine_Narrow_16x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\RockSpine_Narrow_16x64.png",
+      "size": [
+        16,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "95c82e43486d9426fda2cdf2a320112dd130e6043002cb71cfcae3b338be1582"
+    },
+    {
+      "file": "Walls/Wall_AgedRock_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_AgedRock_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_AgedRock_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "547d3c717cd77ca11eaf0216aff22b793e50258cc60c107aadadf05e1171f15c"
+    },
+    {
+      "file": "Walls/Wall_Fractured_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_Fractured_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_Fractured_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "417799768ff3cf5108b465fe2657816dfd6eb51da3b0bbfc192a04bedf423bab"
+    },
+    {
+      "file": "Walls/Wall_NarrowStrip_16x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_NarrowStrip_16x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_NarrowStrip_16x64.png",
+      "size": [
+        16,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "66c57fd29a85ff887100732d050c98da53f4b99a327a8c9a2b65e91ad3e3cd26"
+    },
+    {
+      "file": "Walls/Wall_Protruding_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_Protruding_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_Protruding_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "d0413de5fe748c60ff99c4bff4e5dde82cd680ba6849bc5bac0ca15b016f581a"
+    },
+    {
+      "file": "Walls/Wall_RockMass_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_RockMass_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_RockMass_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "d0bd58ebce8f8af6909738388eba0595d10d7ebb8df7e7da51bcd31e3d3b9b3a"
+    },
+    {
+      "file": "Borders/CornerInner_NE_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerInner_NE_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_NE_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "3f6f1c234998d361cd403c31c528ec141f30b48c952fae6d3bfae6c086a6c981"
+    },
+    {
+      "file": "Borders/CornerInner_NW_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerInner_NW_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_NW_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "92a57b2a5b63c1f169109279ba16f0fecb4aee7cd0b5ee1bb4e97cdf4b755988"
+    },
+    {
+      "file": "Borders/CornerInner_SE_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerInner_SE_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_SE_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "8ae546ef81ae5882f48016fe3c8f9ff19d532a5cc2fab6988bd00479e07ea65c"
+    },
+    {
+      "file": "Borders/CornerInner_SW_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerInner_SW_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_SW_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "099be890fcc2190b0f3417bbba88e38519d0db13ae8204e0d088f6c7beafed8f"
+    },
+    {
+      "file": "Borders/CornerOuter_NE_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerOuter_NE_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_NE_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "6812eef0e35cacb2c911bca6e998fe9da82348e91cdc74577c8c132cef6673d7"
+    },
+    {
+      "file": "Borders/CornerOuter_NW_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerOuter_NW_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_NW_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "e51cbc6040c8ac72d151ca071e77fabcbc735ad9c2fffaaae040c80a5139bdce"
+    },
+    {
+      "file": "Borders/CornerOuter_SE_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerOuter_SE_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_SE_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "bfbe1ff6f05b622bc1fa8758528b4a9796fdf376b61004483c4b8d7a77d7e363"
+    },
+    {
+      "file": "Borders/CornerOuter_SW_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerOuter_SW_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_SW_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "2ba51d01516cad5b3e75a733c143d5dd6f8b91cda7db00833afe11a50952de07"
+    },
+    {
+      "file": "Borders/RockEndCap_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockEndCap_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockEndCap_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "7c646c3558a19d7efa9da48120403197d5ef8af911b720d5db97d5c52a009f6f"
+    },
+    {
+      "file": "Borders/RockRim_East_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockRim_East_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_East_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "b19fd985264bf3bc40fd2988f7758469430733d607b98c63611305d5529336ce"
+    },
+    {
+      "file": "Borders/RockRim_North_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockRim_North_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_North_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "129d297fadb60793c2e492232ad7c6da08a7f01316fdc7de6641b6e6d4c9e9b5"
+    },
+    {
+      "file": "Borders/RockRim_South_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockRim_South_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_South_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "4c7dcadefb0292c3d0ee63ee8ff0e35b728b38eff52db810e760b0e37ed7a5c7"
+    },
+    {
+      "file": "Borders/RockRim_West_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockRim_West_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_West_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "26958a662492317dd55d991cebd1b46a0d582f1173843a586e30e0c2009fcfef"
+    },
+    {
+      "file": "Borders/WallFoot_Shadow_32x16.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\WallFoot_Shadow_32x16.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\WallFoot_Shadow_32x16.png",
+      "size": [
+        32,
+        16
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        110
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "7f47fede81e7e164e10e4d3ac986b4fea5b4ccf3fd0b4650de01df7f47ca6bb6"
+    },
+    {
+      "file": "Ores/OreLump_Coal_24x24.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\OreLump_Coal_24x24.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Coal_24x24.png",
+      "size": [
+        24,
+        24
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "4e426d8d5d88556c58ec3e4eb6f8b9e8ddcabf82c03ade471657d1e7d7bac553"
+    },
+    {
+      "file": "Ores/OreLump_Crystal_24x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\OreLump_Crystal_24x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Crystal_24x32.png",
+      "size": [
+        24,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "27175f1ecb1ea2da52be40fa5888f8bffd7243b8d12acc708376611b05e1b9e6"
+    },
+    {
+      "file": "Ores/OreLump_Iron_24x24.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\OreLump_Iron_24x24.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Iron_24x24.png",
+      "size": [
+        24,
+        24
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "d22e318776816a8c52d779f8cf0fd82ffc26190602165baa72d1e1b1535ff097"
+    },
+    {
+      "file": "Ores/OreLump_Magnetite_24x24.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\OreLump_Magnetite_24x24.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Magnetite_24x24.png",
+      "size": [
+        24,
+        24
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "cfe8d0751bdcf1226459bc31c0fe5b983b54b09e2ac1b7eebe603e9ad18d200f"
+    },
+    {
+      "file": "Ores/WallVein_Coal_64x48.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\WallVein_Coal_64x48.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\WallVein_Coal_64x48.png",
+      "size": [
+        64,
+        48
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "f3282fe6974b7ab631695b5f7e3e6e39d545460a1c31442b81796a791cff5321"
+    },
+    {
+      "file": "Ores/WallVein_Crystal_64x48.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\WallVein_Crystal_64x48.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\WallVein_Crystal_64x48.png",
+      "size": [
+        64,
+        48
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "f0358d8b999863c89e6a075632186f49a25f1a2f69d589482ac6550330a0ac47"
+    },
+    {
+      "file": "Ores/WallVein_Iron_64x48.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\WallVein_Iron_64x48.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\WallVein_Iron_64x48.png",
+      "size": [
+        64,
+        48
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "9eee153b483ea3b9c17c02c4e3bd5729df5fb5fbe941d5ff4027b48e051c5db5"
+    },
+    {
+      "file": "WoodenStructures/LoosePlanks_48x24.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\LoosePlanks_48x24.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\LoosePlanks_48x24.png",
+      "size": [
+        48,
+        24
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "5cc792c8eb1c99893f8923246d00182d7fb3f68080bd53768923c8b38828d821"
+    },
+    {
+      "file": "WoodenStructures/TimberBeam_Horizontal_64x24.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\TimberBeam_Horizontal_64x24.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\TimberBeam_Horizontal_64x24.png",
+      "size": [
+        64,
+        24
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "f038f1d3521fae956cea78d7b5775173ffeb78e6cc2f4bc6954473e8277f2616"
+    },
+    {
+      "file": "WoodenStructures/TimberBrace_Broken_64x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\TimberBrace_Broken_64x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\TimberBrace_Broken_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "39928c5f4d2c7ad9a3d45ea507c8fc9c7d3efb89ca188078d5ac5f88a26c1ec0"
+    },
+    {
+      "file": "WoodenStructures/TimberSupport_Vertical_32x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\TimberSupport_Vertical_32x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\TimberSupport_Vertical_32x64.png",
+      "size": [
+        32,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "3e835b75ac3fc12e6c80b456426c78a3c352d1cf1fe6a7aec8804d6014130ca0"
+    },
+    {
+      "file": "WoodenStructures/WoodDebris_48x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\WoodDebris_48x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\WoodDebris_48x32.png",
+      "size": [
+        48,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "a13cadafadf7326a80d9a670fecf9aea233657647e117ebbe1a73ed8464c4944"
+    },
+    {
+      "file": "Rubble/EmbeddedGravel_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Rubble\\EmbeddedGravel_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\EmbeddedGravel_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "d577c11bac6ff8ebcde85dfcfab3b6e1656a85d4ed7d68f5b455b2faaa32645f"
+    },
+    {
+      "file": "Rubble/Pebbles_Small_24x24.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Rubble\\Pebbles_Small_24x24.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\Pebbles_Small_24x24.png",
+      "size": [
+        24,
+        24
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "2f5e6782ec25858b9d7ffaadde9fab379f0efa764dd8a11ba3e170690c1a0190"
+    },
+    {
+      "file": "Rubble/RockShards_Broken_32x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Rubble\\RockShards_Broken_32x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\RockShards_Broken_32x32.png",
+      "size": [
+        32,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "0e617e7593b8e1b6098de777ca1e314920be6adc4a18ee9a052ed851d2ccb22d"
+    },
+    {
+      "file": "Rubble/RubblePile_Medium_48x48.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Rubble\\RubblePile_Medium_48x48.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\RubblePile_Medium_48x48.png",
+      "size": [
+        48,
+        48
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "e5a06fb0a4bb75492505a05f13ce777fbd22145621a8123675f88a09a33f81b9"
+    },
+    {
+      "file": "Props/Crate_48x48.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Props\\Crate_48x48.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Props\\Crate_48x48.png",
+      "size": [
+        48,
+        48
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "fb8c41377d25f641b417c167193531767357d3c546da6a216d6950a81b09e0ca"
+    },
+    {
+      "file": "Props/MineLantern_16x32.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Props\\MineLantern_16x32.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Props\\MineLantern_16x32.png",
+      "size": [
+        16,
+        32
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": true,
+      "source_imported_SHA256_equal": true,
+      "sha256": "8e68a3351bf3ff79c86eaeb2f38bd0038647620d9fdb8992b340c3f65cd8344c"
+    },
+    {
+      "file": "BossRoom/Boss_AncientBrokenRock_96x64.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_AncientBrokenRock_96x64.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_AncientBrokenRock_96x64.png",
+      "size": [
+        96,
+        64
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "396830eae884518184385a8a754b670435b75ceb9b4afce8627286cd95798ee2"
+    },
+    {
+      "file": "BossRoom/Boss_EntranceScuff_128x96.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_EntranceScuff_128x96.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_EntranceScuff_128x96.png",
+      "size": [
+        128,
+        96
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        100
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "940064d4457fdf5bc4c243fb9c15add6561b677a679c346a42bb38f0786050d1"
+    },
+    {
+      "file": "BossRoom/Boss_WallCrack_Large_96x96.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_WallCrack_Large_96x96.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_WallCrack_Large_96x96.png",
+      "size": [
+        96,
+        96
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "af047ac48c47ada1ae62e2382fcf63be7ad287ddf422ddcfc6ea4643f9138c96"
+    },
+    {
+      "file": "BossRoom/Boss_WallVein_Crystal_128x96.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_WallVein_Crystal_128x96.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_WallVein_Crystal_128x96.png",
+      "size": [
+        128,
+        96
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "7ef76ec7ac7cd23cb7bebfe0e36b72f8972d49d900b979b5cca3e155cb1a9775"
+    },
+    {
+      "file": "BossRoom/Boss_WallVein_Iron_128x96.png",
+      "source": "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_WallVein_Iron_128x96.png",
+      "unity_path": "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_WallVein_Iron_128x96.png",
+      "size": [
+        128,
+        96
+      ],
+      "RGBA": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "PPU": 64.0,
+      "filterMode": 0,
+      "mipmap": false,
+      "in_Map01_current_render_use": false,
+      "source_imported_SHA256_equal": true,
+      "sha256": "4088f313bb8aa359015b85bfee79e715d5577cb1ace271fff075f207976ec2fa"
+    }
+  ],
+  "layout_counts": {
+    "floor_rects": 14,
+    "rock_rects": 230
+  },
+  "trial_placements": [
+    {
+      "source": "Walls/Wall_Protruding_64x64.png",
+      "x": 6.25,
+      "y": 18.5,
+      "PPU": 64,
+      "opacity_trial": 0.75,
+      "clip_to": "wall",
+      "role": "break interior texture repetition; opaque tile MUST be clipped"
+    },
+    {
+      "source": "Walls/Wall_AgedRock_64x64.png",
+      "x": 6.1,
+      "y": 22.1,
+      "PPU": 64,
+      "opacity_trial": 0.75,
+      "clip_to": "wall",
+      "role": "break interior texture repetition; opaque tile MUST be clipped"
+    },
+    {
+      "source": "Walls/Wall_Fractured_64x64.png",
+      "x": 21.9,
+      "y": 19.5,
+      "PPU": 64,
+      "opacity_trial": 0.75,
+      "clip_to": "wall",
+      "role": "break interior texture repetition; opaque tile MUST be clipped"
+    },
+    {
+      "source": "Walls/Wall_Protruding_64x64.png",
+      "x": 22.2,
+      "y": 22.5,
+      "PPU": 64,
+      "opacity_trial": 0.75,
+      "clip_to": "wall",
+      "role": "break interior texture repetition; opaque tile MUST be clipped"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 6.6,
+      "y": 18.0,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 6.6,
+      "y": 19.1,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 6.25,
+      "y": 20.75,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 6.5,
+      "y": 22.1,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 7.25,
+      "y": 23.15,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 21.25,
+      "y": 18.3,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 21.3,
+      "y": 19.6,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 21.4,
+      "y": 20.75,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 21.35,
+      "y": 22.2,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/RockEndCap_32x32.png",
+      "x": 20.8,
+      "y": 23.1,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "irregular edge cluster; source unchanged"
+    },
+    {
+      "source": "Borders/CornerInner_SE_32x32.png",
+      "x": 7.0,
+      "y": 23.0,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "whole32px inner corner, wall-union clipping"
+    },
+    {
+      "source": "Borders/CornerInner_SW_32x32.png",
+      "x": 21.0,
+      "y": 23.0,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "whole32px inner corner, wall-union clipping"
+    },
+    {
+      "source": "Borders/CornerInner_SE_32x32.png",
+      "x": 6.5,
+      "y": 22.0,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "whole32px inner corner, wall-union clipping"
+    },
+    {
+      "source": "Borders/CornerInner_SW_32x32.png",
+      "x": 21.5,
+      "y": 20.5,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "whole32px inner corner, wall-union clipping"
+    },
+    {
+      "source": "Borders/CornerInner_NE_32x32.png",
+      "x": 6.5,
+      "y": 20.0,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "whole32px inner corner, wall-union clipping"
+    },
+    {
+      "source": "Borders/CornerInner_NW_32x32.png",
+      "x": 21.5,
+      "y": 19.0,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "whole32px inner corner, wall-union clipping"
+    },
+    {
+      "source": "Borders/CornerInner_NE_32x32.png",
+      "x": 7.0,
+      "y": 18.0,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "whole32px inner corner, wall-union clipping"
+    },
+    {
+      "source": "Borders/CornerInner_NW_32x32.png",
+      "x": 21.0,
+      "y": 18.0,
+      "PPU": 64,
+      "opacity_trial": 0.9,
+      "clip_to": "wall",
+      "role": "whole32px inner corner, wall-union clipping"
+    },
+    {
+      "source": "Rubble/Pebbles_Small_24x24.png",
+      "x": 7.2,
+      "y": 18.55,
+      "PPU": 64,
+      "opacity_trial": 0.48,
+      "clip_to": "floor",
+      "role": "small wall-adjacent visual debris, no collider"
+    },
+    {
+      "source": "Rubble/Pebbles_Small_24x24.png",
+      "x": 7.15,
+      "y": 22.4,
+      "PPU": 64,
+      "opacity_trial": 0.48,
+      "clip_to": "floor",
+      "role": "small wall-adjacent visual debris, no collider"
+    },
+    {
+      "source": "Rubble/Pebbles_Small_24x24.png",
+      "x": 20.75,
+      "y": 19.2,
+      "PPU": 64,
+      "opacity_trial": 0.48,
+      "clip_to": "floor",
+      "role": "small wall-adjacent visual debris, no collider"
+    },
+    {
+      "source": "Rubble/Pebbles_Small_24x24.png",
+      "x": 20.75,
+      "y": 22.7,
+      "PPU": 64,
+      "opacity_trial": 0.48,
+      "clip_to": "floor",
+      "role": "small wall-adjacent visual debris, no collider"
+    }
+  ],
+  "inner_corner_trial_count": 8,
+  "geometry_mask_unchanged": true,
+  "offline_preview_pixel_scale": 64,
+  "preview_limitations": [
+    "not a Unity before/after screenshot pair",
+    "uniform-repeat study is not an exact reconstruction of current14meshes; current outer-corner pieces are not fully reproduced",
+    "offline reconstruction omits actors/UI/props and precise floor feather colors",
+    "Rim phase and opacity are render proposals, not sourcePNG edits",
+    "source actual Game capture dated2026-10-26; no new liveMap01 capture"
+  ],
+  "source_capture": "Library/Map01RefinementVerification/tone-100.png",
+  "live_Play": false,
+  "source_hashes_unchanged": {
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Decal_FloorCrack_64x64.png": "ff732d0d22df52c0b5f90f5162602229e69d89b75a5db3037bc2b638bde26d72",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Decal_FloorCrack_64x64.png": "ff732d0d22df52c0b5f90f5162602229e69d89b75a5db3037bc2b638bde26d72",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Decal_FloorCrack_64x64.png.meta": "d307176ef47a2be95c91f4bf96ddd7f31e4c7407cfb2bf92542ca6e34185dae8",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Decal_MiningScratches_48x48.png": "416040b5ff604e9af61271c6964f3a95506938b80e5e50503e4493c16fef5296",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Decal_MiningScratches_48x48.png": "416040b5ff604e9af61271c6964f3a95506938b80e5e50503e4493c16fef5296",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Decal_MiningScratches_48x48.png.meta": "5a9a4c58e7223bbdbbff676b70a80834fdf39305fb74d6d48c22c0a6053896d5",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Decal_WornPatch_64x48.png": "5a04a9af29f9506746d1a05490f6a2d1ff8580ac66e0b626aa7e304b52acf437",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Decal_WornPatch_64x48.png": "5a04a9af29f9506746d1a05490f6a2d1ff8580ac66e0b626aa7e304b52acf437",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Decal_WornPatch_64x48.png.meta": "743ca31e7d28039174035e0b8da4615ceb3f11a62a7c05f27953a923eeeb77c3",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Floor_CoolStone_64x64.png": "4265d0069c9812b95d540aa32bd83764a821d6f31dbd0d45bb37515a467f442c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_CoolStone_64x64.png": "4265d0069c9812b95d540aa32bd83764a821d6f31dbd0d45bb37515a467f442c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_CoolStone_64x64.png.meta": "bf1540927137800f57c9abd70135253e93782e6cf2d41b144a5d9af851b934e1",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Floor_ExposedEarth_64x64.png": "5b28d08a9d900b150f382f87e69010d7b1f9aecc90e5d165da13c674f0bdf5f0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_ExposedEarth_64x64.png": "5b28d08a9d900b150f382f87e69010d7b1f9aecc90e5d165da13c674f0bdf5f0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_ExposedEarth_64x64.png.meta": "02b6ea9be556d2488fc58f47adc71d3904c659926ebb704b9bacfd47ac5600ee",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Floor_RockGray_64x64.png": "b188850c281aa908a6b1390fad776272dff9ab79f2f892210657d9266c570837",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_RockGray_64x64.png": "b188850c281aa908a6b1390fad776272dff9ab79f2f892210657d9266c570837",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_RockGray_64x64.png.meta": "601b3d692298b5636ec0074a02765821b3890feaa4861d78c10e8d3d76782c91",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Floors\\Floor_WornStone_64x64.png": "cd57d83c067036fc880f229a94482dadc77fd203bc1f5147dda255d6ba73ca1b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_WornStone_64x64.png": "cd57d83c067036fc880f229a94482dadc77fd203bc1f5147dda255d6ba73ca1b",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Floors\\Floor_WornStone_64x64.png.meta": "1878c263dd6afea743b09b46d0bfb9b0cc379ed77278bee288beeb00fbff7c12",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\RockSpine_Narrow_16x64.png": "95c82e43486d9426fda2cdf2a320112dd130e6043002cb71cfcae3b338be1582",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\RockSpine_Narrow_16x64.png": "95c82e43486d9426fda2cdf2a320112dd130e6043002cb71cfcae3b338be1582",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\RockSpine_Narrow_16x64.png.meta": "3c8eee54ae74b80d5b4f32202c10f485f1c8a1a9defe3f16aeba4909ba13b583",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_AgedRock_64x64.png": "547d3c717cd77ca11eaf0216aff22b793e50258cc60c107aadadf05e1171f15c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_AgedRock_64x64.png": "547d3c717cd77ca11eaf0216aff22b793e50258cc60c107aadadf05e1171f15c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_AgedRock_64x64.png.meta": "318b337b7ceae3f77b5ff7d97da2404401eaa87ea2bd288512738c87286fcdda",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_Fractured_64x64.png": "417799768ff3cf5108b465fe2657816dfd6eb51da3b0bbfc192a04bedf423bab",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_Fractured_64x64.png": "417799768ff3cf5108b465fe2657816dfd6eb51da3b0bbfc192a04bedf423bab",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_Fractured_64x64.png.meta": "31a215d4a5caf2bf982b1add5e04761fc26b458ee61ce117e3c113671e9ea317",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_NarrowStrip_16x64.png": "66c57fd29a85ff887100732d050c98da53f4b99a327a8c9a2b65e91ad3e3cd26",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_NarrowStrip_16x64.png": "66c57fd29a85ff887100732d050c98da53f4b99a327a8c9a2b65e91ad3e3cd26",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_NarrowStrip_16x64.png.meta": "fd449370e21facb6f3c208da8656c9a9fc60dace3fba333c178a370976aafa3d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_Protruding_64x64.png": "d0413de5fe748c60ff99c4bff4e5dde82cd680ba6849bc5bac0ca15b016f581a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_Protruding_64x64.png": "d0413de5fe748c60ff99c4bff4e5dde82cd680ba6849bc5bac0ca15b016f581a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_Protruding_64x64.png.meta": "06e40225ff60501b56a7c197ae516b101b92d45e35bc206abcd2ae9a95e86ec1",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Walls\\Wall_RockMass_64x64.png": "d0bd58ebce8f8af6909738388eba0595d10d7ebb8df7e7da51bcd31e3d3b9b3a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_RockMass_64x64.png": "d0bd58ebce8f8af6909738388eba0595d10d7ebb8df7e7da51bcd31e3d3b9b3a",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Walls\\Wall_RockMass_64x64.png.meta": "a7ae7d681465feca88b676972860370158f5e0a09b822cc106910eb98a01d65e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerInner_NE_32x32.png": "3f6f1c234998d361cd403c31c528ec141f30b48c952fae6d3bfae6c086a6c981",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_NE_32x32.png": "3f6f1c234998d361cd403c31c528ec141f30b48c952fae6d3bfae6c086a6c981",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_NE_32x32.png.meta": "6c9e164d223304fa7d1b9b130f4bec5b2f1b106d2bfc7343736ed3a92d7793ac",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerInner_NW_32x32.png": "92a57b2a5b63c1f169109279ba16f0fecb4aee7cd0b5ee1bb4e97cdf4b755988",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_NW_32x32.png": "92a57b2a5b63c1f169109279ba16f0fecb4aee7cd0b5ee1bb4e97cdf4b755988",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_NW_32x32.png.meta": "7ccc15ea85e19b75f2b3d20154d0bdd9173146bcbf4751922dda003f2ba1c04a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerInner_SE_32x32.png": "8ae546ef81ae5882f48016fe3c8f9ff19d532a5cc2fab6988bd00479e07ea65c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_SE_32x32.png": "8ae546ef81ae5882f48016fe3c8f9ff19d532a5cc2fab6988bd00479e07ea65c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_SE_32x32.png.meta": "29abc0f312e528b691c6e1cf2527a814cd5994bb7184f3e4567fd83dca974020",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerInner_SW_32x32.png": "099be890fcc2190b0f3417bbba88e38519d0db13ae8204e0d088f6c7beafed8f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_SW_32x32.png": "099be890fcc2190b0f3417bbba88e38519d0db13ae8204e0d088f6c7beafed8f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerInner_SW_32x32.png.meta": "d59a083d1c4a50534a0a0c4833ff42411a6570b7accdb3458e6071b474d258c4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerOuter_NE_32x32.png": "6812eef0e35cacb2c911bca6e998fe9da82348e91cdc74577c8c132cef6673d7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_NE_32x32.png": "6812eef0e35cacb2c911bca6e998fe9da82348e91cdc74577c8c132cef6673d7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_NE_32x32.png.meta": "7d2aa8c8e9c75b632dca0bc8357c0be6c4c11874585aeda41fce6a433c2c72c0",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerOuter_NW_32x32.png": "e51cbc6040c8ac72d151ca071e77fabcbc735ad9c2fffaaae040c80a5139bdce",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_NW_32x32.png": "e51cbc6040c8ac72d151ca071e77fabcbc735ad9c2fffaaae040c80a5139bdce",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_NW_32x32.png.meta": "3827b5b080caa87c3a34176be59d9f40c26c31c0880c159a729089b455c41c68",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerOuter_SE_32x32.png": "bfbe1ff6f05b622bc1fa8758528b4a9796fdf376b61004483c4b8d7a77d7e363",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_SE_32x32.png": "bfbe1ff6f05b622bc1fa8758528b4a9796fdf376b61004483c4b8d7a77d7e363",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_SE_32x32.png.meta": "24c5a04069a077e82b00764a4bbac991ca25064e802cd5475eb77fa5b6a8753a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\CornerOuter_SW_32x32.png": "2ba51d01516cad5b3e75a733c143d5dd6f8b91cda7db00833afe11a50952de07",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_SW_32x32.png": "2ba51d01516cad5b3e75a733c143d5dd6f8b91cda7db00833afe11a50952de07",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\CornerOuter_SW_32x32.png.meta": "1f5ec1e5abb410799dcbc5923c785d5cf370b1f0965c5f7388f32fa47b6ef6bb",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockEndCap_32x32.png": "7c646c3558a19d7efa9da48120403197d5ef8af911b720d5db97d5c52a009f6f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockEndCap_32x32.png": "7c646c3558a19d7efa9da48120403197d5ef8af911b720d5db97d5c52a009f6f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockEndCap_32x32.png.meta": "c10163a92659e5e58a21c1f00e4b49ee96bf756ea0f6381adf77a0409e1af1ee",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockRim_East_32x32.png": "b19fd985264bf3bc40fd2988f7758469430733d607b98c63611305d5529336ce",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_East_32x32.png": "b19fd985264bf3bc40fd2988f7758469430733d607b98c63611305d5529336ce",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_East_32x32.png.meta": "b05e995586448dd6f30fdfc666eaaa23efea82e83c2879b8c713553561ba2344",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockRim_North_32x32.png": "129d297fadb60793c2e492232ad7c6da08a7f01316fdc7de6641b6e6d4c9e9b5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_North_32x32.png": "129d297fadb60793c2e492232ad7c6da08a7f01316fdc7de6641b6e6d4c9e9b5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_North_32x32.png.meta": "36604efecc4a5117654260e6bacb0482c11ae15fbd47c46f80b380c5bc0c96a2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockRim_South_32x32.png": "4c7dcadefb0292c3d0ee63ee8ff0e35b728b38eff52db810e760b0e37ed7a5c7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_South_32x32.png": "4c7dcadefb0292c3d0ee63ee8ff0e35b728b38eff52db810e760b0e37ed7a5c7",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_South_32x32.png.meta": "f862be5524080e855c37c97cc7ec3adcac0056aaa8f0bfe80140f723d79e4aaa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\RockRim_West_32x32.png": "26958a662492317dd55d991cebd1b46a0d582f1173843a586e30e0c2009fcfef",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_West_32x32.png": "26958a662492317dd55d991cebd1b46a0d582f1173843a586e30e0c2009fcfef",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\RockRim_West_32x32.png.meta": "eacfb2becc551019fb076a8299a03686171f42733a8cde291177007398fa2565",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Borders\\WallFoot_Shadow_32x16.png": "7f47fede81e7e164e10e4d3ac986b4fea5b4ccf3fd0b4650de01df7f47ca6bb6",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\WallFoot_Shadow_32x16.png": "7f47fede81e7e164e10e4d3ac986b4fea5b4ccf3fd0b4650de01df7f47ca6bb6",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Borders\\WallFoot_Shadow_32x16.png.meta": "79cae299d18aedb5b0667db6688e9e4d528f54abbf08949d31931f39eea500cd",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\OreLump_Coal_24x24.png": "4e426d8d5d88556c58ec3e4eb6f8b9e8ddcabf82c03ade471657d1e7d7bac553",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Coal_24x24.png": "4e426d8d5d88556c58ec3e4eb6f8b9e8ddcabf82c03ade471657d1e7d7bac553",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Coal_24x24.png.meta": "a7232992d6baeae5465c38f09a9bfe63ca5251fc7c6202fbd358b756daa230c0",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\OreLump_Crystal_24x32.png": "27175f1ecb1ea2da52be40fa5888f8bffd7243b8d12acc708376611b05e1b9e6",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Crystal_24x32.png": "27175f1ecb1ea2da52be40fa5888f8bffd7243b8d12acc708376611b05e1b9e6",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Crystal_24x32.png.meta": "e3fdd65ea7db180218736b62eaa02a9199112ca0a19314a9fa9e05ad9396960f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\OreLump_Iron_24x24.png": "d22e318776816a8c52d779f8cf0fd82ffc26190602165baa72d1e1b1535ff097",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Iron_24x24.png": "d22e318776816a8c52d779f8cf0fd82ffc26190602165baa72d1e1b1535ff097",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Iron_24x24.png.meta": "7cb8d5b0793ea5e69f4a82a18f606c222fee4258986f7cc26417e10aca5c2369",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\OreLump_Magnetite_24x24.png": "cfe8d0751bdcf1226459bc31c0fe5b983b54b09e2ac1b7eebe603e9ad18d200f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Magnetite_24x24.png": "cfe8d0751bdcf1226459bc31c0fe5b983b54b09e2ac1b7eebe603e9ad18d200f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\OreLump_Magnetite_24x24.png.meta": "aaea1c316b31f741904adb50d3bffb89c4e8c0c5a324afafd3f9fdd4ea0774b5",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\WallVein_Coal_64x48.png": "f3282fe6974b7ab631695b5f7e3e6e39d545460a1c31442b81796a791cff5321",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\WallVein_Coal_64x48.png": "f3282fe6974b7ab631695b5f7e3e6e39d545460a1c31442b81796a791cff5321",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\WallVein_Coal_64x48.png.meta": "36e2dd5b5f7f83fb9dd5dfb0a7d58ae2b1ef9077b6c799b355dea1031a3627e6",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\WallVein_Crystal_64x48.png": "f0358d8b999863c89e6a075632186f49a25f1a2f69d589482ac6550330a0ac47",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\WallVein_Crystal_64x48.png": "f0358d8b999863c89e6a075632186f49a25f1a2f69d589482ac6550330a0ac47",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\WallVein_Crystal_64x48.png.meta": "b84bdf31d56118821208c9b9af5f039006ce12075152f5882ef019a49adbedbd",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Ores\\WallVein_Iron_64x48.png": "9eee153b483ea3b9c17c02c4e3bd5729df5fb5fbe941d5ff4027b48e051c5db5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\WallVein_Iron_64x48.png": "9eee153b483ea3b9c17c02c4e3bd5729df5fb5fbe941d5ff4027b48e051c5db5",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Ores\\WallVein_Iron_64x48.png.meta": "02304134ed37284a2401c58e1b07c5f6be2e4b7ab967268bfdeb6e67c8326478",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\LoosePlanks_48x24.png": "5cc792c8eb1c99893f8923246d00182d7fb3f68080bd53768923c8b38828d821",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\LoosePlanks_48x24.png": "5cc792c8eb1c99893f8923246d00182d7fb3f68080bd53768923c8b38828d821",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\LoosePlanks_48x24.png.meta": "6800278210b37860d839629980d575a30de0b0cee2c099419b289aa88d3301cf",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\TimberBeam_Horizontal_64x24.png": "f038f1d3521fae956cea78d7b5775173ffeb78e6cc2f4bc6954473e8277f2616",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\TimberBeam_Horizontal_64x24.png": "f038f1d3521fae956cea78d7b5775173ffeb78e6cc2f4bc6954473e8277f2616",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\TimberBeam_Horizontal_64x24.png.meta": "7a28648c4c9f3563775cff38e910da9a8b646e5516bb7c16d1f624109ccef755",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\TimberBrace_Broken_64x64.png": "39928c5f4d2c7ad9a3d45ea507c8fc9c7d3efb89ca188078d5ac5f88a26c1ec0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\TimberBrace_Broken_64x64.png": "39928c5f4d2c7ad9a3d45ea507c8fc9c7d3efb89ca188078d5ac5f88a26c1ec0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\TimberBrace_Broken_64x64.png.meta": "336f3cd8e2feaa62658e3608135182b3e002ea3d3233a57c2f1d82e53e479b71",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\TimberSupport_Vertical_32x64.png": "3e835b75ac3fc12e6c80b456426c78a3c352d1cf1fe6a7aec8804d6014130ca0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\TimberSupport_Vertical_32x64.png": "3e835b75ac3fc12e6c80b456426c78a3c352d1cf1fe6a7aec8804d6014130ca0",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\TimberSupport_Vertical_32x64.png.meta": "3f783e77e16b9395f6a91d0ad2a461a1a8a84551027b77c62e155271a887e559",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\WoodenStructures\\WoodDebris_48x32.png": "a13cadafadf7326a80d9a670fecf9aea233657647e117ebbe1a73ed8464c4944",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\WoodDebris_48x32.png": "a13cadafadf7326a80d9a670fecf9aea233657647e117ebbe1a73ed8464c4944",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\WoodenStructures\\WoodDebris_48x32.png.meta": "661e12783d1d4c711a18937b2c7206508c330dd48556caaf0340f804fb874ebd",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Rubble\\EmbeddedGravel_32x32.png": "d577c11bac6ff8ebcde85dfcfab3b6e1656a85d4ed7d68f5b455b2faaa32645f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\EmbeddedGravel_32x32.png": "d577c11bac6ff8ebcde85dfcfab3b6e1656a85d4ed7d68f5b455b2faaa32645f",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\EmbeddedGravel_32x32.png.meta": "ce4d31bbef7c4050d6f6ed7b97e3a0c6ac928028b046e137ef88e498c8515789",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Rubble\\Pebbles_Small_24x24.png": "2f5e6782ec25858b9d7ffaadde9fab379f0efa764dd8a11ba3e170690c1a0190",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\Pebbles_Small_24x24.png": "2f5e6782ec25858b9d7ffaadde9fab379f0efa764dd8a11ba3e170690c1a0190",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\Pebbles_Small_24x24.png.meta": "064d9f3285ae43e45661cfad1199cb877ee020b0216b00d5d4a533ff5c9cac51",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Rubble\\RockShards_Broken_32x32.png": "0e617e7593b8e1b6098de777ca1e314920be6adc4a18ee9a052ed851d2ccb22d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\RockShards_Broken_32x32.png": "0e617e7593b8e1b6098de777ca1e314920be6adc4a18ee9a052ed851d2ccb22d",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\RockShards_Broken_32x32.png.meta": "945e27b3fe9e4f5b932dca6e7add344ca97460a4dae9c76c9b89a3fb2a4b060d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Rubble\\RubblePile_Medium_48x48.png": "e5a06fb0a4bb75492505a05f13ce777fbd22145621a8123675f88a09a33f81b9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\RubblePile_Medium_48x48.png": "e5a06fb0a4bb75492505a05f13ce777fbd22145621a8123675f88a09a33f81b9",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Rubble\\RubblePile_Medium_48x48.png.meta": "603f7dfe59fbdba2ec5cad0454ce3d2ac1afa38a85394de19cbae1f481d976de",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Props\\Crate_48x48.png": "fb8c41377d25f641b417c167193531767357d3c546da6a216d6950a81b09e0ca",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Props\\Crate_48x48.png": "fb8c41377d25f641b417c167193531767357d3c546da6a216d6950a81b09e0ca",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Props\\Crate_48x48.png.meta": "9649e37c604de35acea47a7383c881a83f04f43c190a256d04a39d220f5ffa0e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\Props\\MineLantern_16x32.png": "8e68a3351bf3ff79c86eaeb2f38bd0038647620d9fdb8992b340c3f65cd8344c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Props\\MineLantern_16x32.png": "8e68a3351bf3ff79c86eaeb2f38bd0038647620d9fdb8992b340c3f65cd8344c",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\Props\\MineLantern_16x32.png.meta": "57b9b3c00a31b5821857743776c82c705e5ff207b84347223db3bc4c76defeaa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_AncientBrokenRock_96x64.png": "396830eae884518184385a8a754b670435b75ceb9b4afce8627286cd95798ee2",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_AncientBrokenRock_96x64.png": "396830eae884518184385a8a754b670435b75ceb9b4afce8627286cd95798ee2",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_AncientBrokenRock_96x64.png.meta": "9d1ad411182ca3a4dc1bdbbb25a6454535bb52ececed4ef2ee96322df111debb",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_EntranceScuff_128x96.png": "940064d4457fdf5bc4c243fb9c15add6561b677a679c346a42bb38f0786050d1",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_EntranceScuff_128x96.png": "940064d4457fdf5bc4c243fb9c15add6561b677a679c346a42bb38f0786050d1",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_EntranceScuff_128x96.png.meta": "2e8974ec6f781e2de512f42afc830f589eefad17b13f839b84839273043d8990",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_WallCrack_Large_96x96.png": "af047ac48c47ada1ae62e2382fcf63be7ad287ddf422ddcfc6ea4643f9138c96",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_WallCrack_Large_96x96.png": "af047ac48c47ada1ae62e2382fcf63be7ad287ddf422ddcfc6ea4643f9138c96",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_WallCrack_Large_96x96.png.meta": "476dd39d1d1ff98d4dae085da4f82320fd14b919ebfae68d2b732cf72138dfca",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_WallVein_Crystal_128x96.png": "7ef76ec7ac7cd23cb7bebfe0e36b72f8972d49d900b979b5cca3e155cb1a9775",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_WallVein_Crystal_128x96.png": "7ef76ec7ac7cd23cb7bebfe0e36b72f8972d49d900b979b5cca3e155cb1a9775",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_WallVein_Crystal_128x96.png.meta": "28f479e816a90174c6c5b566b0f8172685c06678c81366c8cf7c2a32370dc14a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\MineEnvironment_v1\\BossRoom\\Boss_WallVein_Iron_128x96.png": "4088f313bb8aa359015b85bfee79e715d5577cb1ace271fff075f207976ec2fa",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_WallVein_Iron_128x96.png": "4088f313bb8aa359015b85bfee79e715d5577cb1ace271fff075f207976ec2fa",
+    "D:\\Git\\MineDungeon2\\Assets\\Art\\Environment\\MineEnvironment\\BossRoom\\Boss_WallVein_Iron_128x96.png.meta": "65f043cbb31fd8367e2b3b24f1b2dfee9f435d9c7d3b3df38ce7ba3e14cc573b",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_01.prefab": "62b7e47eb91afd8ff4dc3ef5ce7369a048ddcdb20077fad782dd0896833615b7",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\Rooms\\RegularCaves\\Map_01.prefab.meta": "53601ac580ae330504445747cb1a2def0e8c9eec4250cf645d696d5e78602243",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\MapSystem.md": "b02e104bc20b3334444a98a01a486cc2ce6e8c7d04af996b2a40f45ece0e1031",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\ArtDirection.md": "263dcc78190e6bcded99fd8fa387a2bfd9cea84c4a553700fd3836420f160c99",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\RoomWalkableLayout.cs": "e3deeb330bfebad3def720f30111ce98c5b9dc29088d904cfb4fc5263e45764f",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\Map01EnvironmentToneTrial.cs": "3eed5d61a65c04910aebd4d1704c87268b5c9bc1100b0a00540f78f022ff8bc8",
+    "D:\\Git\\MineDungeon2\\Library\\Map01RefinementVerification\\tone-100.png": "cdd9ad6edb81a10b4274c5bb24f1bac239fd47a57def2c85394a69d5d5de7b79"
+  }
+}

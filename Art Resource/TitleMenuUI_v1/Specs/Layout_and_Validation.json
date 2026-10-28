@@ -1,0 +1,308 @@
+{
+  "assets": [
+    {
+      "file": "Logos/TitleLogo_A_720x240_v1.png",
+      "size": [
+        720,
+        240
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "role": "logo proposal A",
+      "text_korean": "광산던전",
+      "text_english": "MINE DUNGEON"
+    },
+    {
+      "file": "Logos/TitleLogo_B_720x240_v1.png",
+      "size": [
+        720,
+        240
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "role": "logo proposal B",
+      "text_korean": "광산던전",
+      "text_english": "MINE DUNGEON"
+    },
+    {
+      "file": "Logos/TitleLogo_FinalCandidate_A_720x240_v1.png",
+      "size": [
+        720,
+        240
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "role": "recommended candidate; identical A; pending user decision"
+    },
+    {
+      "file": "Buttons/TitleMenu_Button_Normal_360x80_v1.png",
+      "size": [
+        360,
+        80
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "role": "shared text-free button state Normal",
+      "border_LBRT": [
+        28,
+        20,
+        28,
+        20
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "safe_label_rect": [
+        30,
+        20,
+        300,
+        40
+      ]
+    },
+    {
+      "file": "Buttons/TitleMenu_Button_Hover_360x80_v1.png",
+      "size": [
+        360,
+        80
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "role": "shared text-free button state Hover",
+      "border_LBRT": [
+        28,
+        20,
+        28,
+        20
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "safe_label_rect": [
+        30,
+        20,
+        300,
+        40
+      ]
+    },
+    {
+      "file": "Buttons/TitleMenu_Button_Pressed_360x80_v1.png",
+      "size": [
+        360,
+        80
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "role": "shared text-free button state Pressed",
+      "border_LBRT": [
+        28,
+        20,
+        28,
+        20
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "safe_label_rect": [
+        30,
+        20,
+        300,
+        40
+      ]
+    }
+  ],
+  "layout": {
+    "canvas": [
+      1920,
+      1080
+    ],
+    "logo_rect": [
+      120,
+      120,
+      720,
+      240
+    ],
+    "buttons": [
+      {
+        "label": "게임 시작",
+        "rect": [
+          300,
+          500,
+          360,
+          80
+        ]
+      },
+      {
+        "label": "설정",
+        "rect": [
+          300,
+          604,
+          360,
+          80
+        ]
+      },
+      {
+        "label": "게임 종료",
+        "rect": [
+          300,
+          708,
+          360,
+          80
+        ]
+      }
+    ],
+    "button_font_preview_only": {
+      "font": "Windows Malgun Gothic Bold (not included, not a replacement font)",
+      "size": 28,
+      "normal_color_RGBA": [
+        228,
+        221,
+        200,
+        255
+      ],
+      "pressed_preview_text_dy": 1
+    },
+    "background_fit": {
+      "scale": 0.6976744186046512,
+      "display_size": [
+        1920,
+        1072
+      ],
+      "offset": [
+        0,
+        4
+      ]
+    },
+    "right_scene_protected_rect": [
+      960,
+      0,
+      960,
+      1080
+    ]
+  },
+  "candidate": "A recommended, user final decision pending",
+  "button_shared_assets": {
+    "게임 시작": "common3states",
+    "설정": "common3states",
+    "게임 종료": "common3states"
+  },
+  "button_runtime_text_baked": false,
+  "logo_text_baked": {
+    "ko": "광산던전",
+    "en": "MINE DUNGEON"
+  },
+  "checks": {
+    "PNG_RGBA_dimensions_pixels_readback": true,
+    "alpha_binary_transparent_background": true,
+    "button_outer_alpha_mask_identical_3states": true,
+    "nine_slice_4corners_pixel_equal": true,
+    "right_half_scene_identical_to_reference": true,
+    "source_assets_docs_hash_unchanged": true,
+    "Hangul_English_visual_proof": "both exported logos visually compared with plain-font proof: 광/산/던/전 and MINE DUNGEON; manual static inspection, not OCR",
+    "button_states_text_free_visual_review": true,
+    "full1920_static_layout_review": true,
+    "Unity_import_Play": "not performed / out of scope"
+  },
+  "source_scene": "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\Title_Placement_A_2752x1536.png",
+  "source_SHA256": {
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\README_KO.md": "e60ab63880624537113b6c0b6d23d3e5c6d2e88c25568bad5a2fee0899e1a9f1",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\TitleLantern_Barrel_Flame_6f_24x32_v1.png": "c724cdd7978864e87e524a2d958c793b9ab8b4d4bac8032a7dad6949853b1fec",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\TitleLantern_Hanging_Flame_6f_32x48_v1.png": "4e24d24331e7a90f2d23ddb7cd4e8f8392988a06f615142ca338cb000437e188",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Glass\\TitleLantern_Barrel_GlassLight_v1.png": "bf0a87af5b6c06096cd05809755ac3ddbb1653ba63d4f91093dc1d853d938822",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Glass\\TitleLantern_Hanging_GlassLight_v1.png": "1529a8ad28765e8471266c2050c00361824f1cb2a8e0997be9fbe9352c2099c4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Glow\\TitleLantern_WarmHalo_384x384_v1.png": "3773363ef640fc7017c6e73c70bbb8f6941e2e6bb650eb5271120c148f266fd9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Barrel_Flame_6f_4x.gif": "635744d07269c0b38fbf2fc695d51d82b4ec2a970ff82e0bf5770ca4dbf16a22",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Barrel_Glass_Alignment_2x.png": "5c50e24f312b19eba81ff18661933975d8039202bf045e0613c1dcf2c8b86841",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Barrel_LightAndFlame_Closeup.gif": "459d03bba74ac03b41b05a807b81516e2d700f24fc2721451e81d4c8d0e10353",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Hanging_Flame_6f_4x.gif": "86c857ec3cc10d93b28de4f97307056bc7a3e6d9989871d2fbba42d66c55f588",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Hanging_Glass_Alignment_2x.png": "393a738171cc5be8629298f935fc5ff306d7fb72d6d7dad3fb8bf63d77394454",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Hanging_LightAndFlame_Closeup.gif": "4378e4acd2693f2a6cb7febc1d99ef588807dd023abba9965bf5e44bc8e9dc52",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Title_Lanterns_Lit_5p2s_Preview.gif": "2e0393df4ad87389bfcf5b1b9b79ec63a143a34aa3ac690a0bfc314bde2b1511",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Title_Lanterns_OFF_Reference.png": "f9dc29db52770d1fd6cdfd8b76171c5f52b867b26fc3332c18024f7b5e9abbc4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Title_Lanterns_ON_FullResolution.png": "00eb678c626f46a211e0e5b1d71769f7fc2a31a5bfac173079e4f41fd5efc8d9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Previews\\Title_OFF_ON_Comparison.png": "0fb92df2dc7d5a014c5b26aab4846767d1087c615e337841d4af1aa6b7e0899f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Sources\\build_title_lantern_v1.py": "43afd6c254f8c3bb4e47beeed31a8d61174dde72b5890b30d0f68b7584daf947",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Sources\\Flames_Generated_Source.png": "517384c283154cff607387f2d0a51118e95b05413c8c6f28fa5bdf9a325c4e6c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Sources\\GenerationPrompts.md": "dbde86197508a9df781b0fb682c1c32f04c70e82232491bc749a023ce5cbb942",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Sources\\Halo_Generated_Source.png": "131ad924dac0fced1f3050b71c9bd79d99250cfecfa88b32279d9bdaa7c1b450",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Specs\\Placement_and_Validation.json": "5ce5ab14b5c53313c97ee559dce4b9cb1ded2d6bbde25fc22bd5fb8eb7a8f18d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\SurfaceLighting\\TitleLantern_Barrel_Floor_Light_v1.png": "dda39007c28b1f5b4360051f35c7c11d35ea19e70f658e5465c893228a3a54f8",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\SurfaceLighting\\TitleLantern_Barrel_Rock_Light_v1.png": "8d187d35bab742d3bc98d7e2b97d904eb24018476d19328946135f3a900f77bc",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\SurfaceLighting\\TitleLantern_Barrel_SurfaceLight_Combined_v1.png": "9d2fa6bc922a04b214d77d16b92c09677661d6c20e993eda1f9c5c2c8dacc13c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\SurfaceLighting\\TitleLantern_Barrel_Wood_Light_v1.png": "4c4ef7932db609d3272d2d3a6acdd00d7be61e5fd7ac5ce9d383c5ce1a2bf510",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\SurfaceLighting\\TitleLantern_Hanging_Floor_Light_v1.png": "038fdddf11fdb97b3fea5e8f7ecc54a16929f6781525cee3e93684728da10934",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\SurfaceLighting\\TitleLantern_Hanging_Rock_Light_v1.png": "187fb9037d0a22c48d099d922c5f4b6f1b202749c9cdee942696c2edad2d2173",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\SurfaceLighting\\TitleLantern_Hanging_SurfaceLight_Combined_v1.png": "0db6f390e3ead1a0f747650c8fb88c1ba2523a6fb74291baaa93727e64225681",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\SurfaceLighting\\TitleLantern_Hanging_Wood_Light_v1.png": "c29327d5861cd50a9783322130aadb7d21730a1ff69e2d47b338bf24cb142317",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Barrel\\Flame_F01.png": "783849e04c0304512a71aa438c5694d756aaca27a3df04ab03123d0ddd861844",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Barrel\\Flame_F02.png": "44830be2c9e3afb8be36b88747aec23660b3605bb4568f7d155f9ef2ebf37974",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Barrel\\Flame_F03.png": "53c751a02ddeea506fa5ab07b1ff37bbc29701d177de64ccdcb05c5d52cf6eb2",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Barrel\\Flame_F04.png": "d15df744104ac6bc4f503bf24242470a04c5dd199cb04f89b7704ddfbd243ecf",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Barrel\\Flame_F05.png": "bfb74a3a2200e8d229218ca42afa12b0dbc7e6cb236e9b2ed518301cfd046fd7",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Barrel\\Flame_F06.png": "c599576ed37d2f15fa3f85b2ac51e299fc9f71caabc20d708fdf64c979cea277",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Hanging\\Flame_F01.png": "517e7013670c8b685bdb1e1713a2d4adc6be79e978fae6fb329faade3d4fe9ef",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Hanging\\Flame_F02.png": "e064172e7a338cb81cab3ff2822c21a56d3c4bc7578b98dcc7eb97431dcfa89e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Hanging\\Flame_F03.png": "afc0bf17060bb7407b131c55293e2889bd8dd6b8cc39e2d9caff04804fe7b77f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Hanging\\Flame_F04.png": "a6777431a912ae152aa3a6a208bf8b6f9b7c86365bcd262603ec080560281c40",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Hanging\\Flame_F05.png": "b096e3c33cb26845f34e72b95c64a5f554369e638afa66c72b8bf63a86caf154",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleLantern_v1\\Flames\\Frames_Hanging\\Flame_F06.png": "2bdf683eea57b9f2cde2ea5825cd4c81ddd3a45536075d1eb557088809012225",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\README_KO.md": "a3607b009d89057f1c4b0116d627b340441a630a7c5ddfcdf9f0383fb9d6815e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Frames\\TitleMinerSlime_Idle_F01.png": "d5c93537edcac1f3424bf10434095d9adf7f691d4b0333fdb3e9d05b26f6550d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Frames\\TitleMinerSlime_Idle_F02.png": "d5ac485f56036e62070bf3806ccde0fec3d4ddb98aabb635b5efe62b37f61e0e",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Frames\\TitleMinerSlime_Idle_F03.png": "78417dbc7828613208e1e7c0d9e76726bdb526b873d6a81a96237c80d909f666",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Frames\\TitleMinerSlime_Idle_F04.png": "1351624d7be4339ab3735868b5901a1a7b3565a6bb6219be905443e3b293f2fe",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Frames\\TitleMinerSlime_Idle_F05.png": "91da687bcbe1e01b8e89c2c2daae40ca53159f7e8ff5fdb21f0e0e37f94c822c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Frames\\TitleMinerSlime_Idle_F06.png": "7b13e4e1c9a482e046376ab2aca6198c182f4c467cf918d98a717afb4559a9e4",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Layers\\TitleMinerSlime_BodyOnly_Idle_6f_128x128_v1.png": "979baf1a548d82c10b455ba2dedc5bebb1548362039e48904edcc27948210919",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Layers\\TitleMinerSlime_ContactShadow_64x16_v1.png": "f2cf15475f3f67495248ab67a13dcfdb2edafe573260034c8caf598d9469eefb",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Layers\\TitleMinerSlime_ToolAndSocket_Idle_6f_128x128_v1.png": "9e67fc1ef5d3d0d14847d1b3d94f8860e8d9a575f861d4bcc94b52db1e49255c",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\Gameplay_Title_Design_Comparison_3x.png": "be10750f1d7fc18edc869d5b9c4a6932942f2cf6ddaa659a8e396af6cdb81ff9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\Idle_AllFrames_4x.png": "914657ee62d80398257b5610ba19de6b040c2f59b28e7268d3e23a37849c69fd",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\Idle_AllFrames_Native.png": "2df118387ca9a64c5ea0a0e9332dd721af2a7ae8e441ae4a81fa244bf7e77bbc",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\Three_Placements_Comparison.png": "6b9f25d7160c288ff29385fa4ebe2bf1008ae0ced65f84ecf248e8c68d2afdfa",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\TitleMinerSlime_Idle_4x.gif": "1951a76389ea15bd7491702d97497b5504963ab2a818d3089a88d2cd7ff2fba9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\TitleMinerSlime_Idle_Native128.gif": "7b15a53e0510163a2b1facf6de018431bb3d5aa69212029f5b33033a3b9e0854",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\Title_Placement_A_2752x1536.png": "154c654e268cf83816ad3ac0c7beca660dd23fc708fc247f51831040e06d7986",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\Title_Placement_A_Idle_1p44s.gif": "d11357fb5c44412cdb82bf5f353fb932d3b1a9f38a9a18dd5d2ad005886b1de1",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\Title_Placement_B_2752x1536.png": "11ba71d0cd7cd3abe0f3152b9bc57f1d42ed010b9bdb91371feba329c8062e1d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Previews\\Title_Placement_C_2752x1536.png": "a1bb09c6aa89a9561884621240997bdaed953d67603f02e15381f6a055836bc1",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Sources\\build_title_miner_v1.py": "e295d39bad30a35481b26db625647365c8a1ec1e69e3b349b1711fcbc2f6fe7a",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Sources\\GenerationPrompts.md": "e3828ed45d1946ca2e6a89acb48f615752d90b1045c975edb268e243f3d6cb26",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Sources\\Reference_Gameplay_Idle_F1_64x64.png": "4d5aae3536114f358470781e4d995019e0168e0bf15529a2513325a272ed208f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Sources\\Reference_JellySocket_8x8.png": "ba0bbb5dbad77bd38d4d7bf3c29421f8cccfb9c6888538983a24654fde79eb08",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Sources\\Reference_Pickaxe_Basic_v1.png": "100524ccbc09dda83f1f10c519684cd8cfa54408e0c000116d69beb83b63a903",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Sources\\TitleMinerSlime_GeneratedBody_Source.png": "04e1a9228da7bffd8614a8533a6a977b8abb7cfdf6b3a40152b21499c3062f7f",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Sources\\TitleMinerSlime_RearBody_Working_64x64.png": "812a0e90317c0809b349288cf797ff33609012365681a68ec07b5aca4e47acf9",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Specs\\Placement_and_Validation.json": "86f920257d66d3286965959e1711c8d2226dda06457b5acb3652614b98d0d632",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Sprites\\TitleMinerSlime_Base_128x128_v1.png": "d5c93537edcac1f3424bf10434095d9adf7f691d4b0333fdb3e9d05b26f6550d",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMinerSlime_v1\\Sprites\\TitleMinerSlime_Idle_6f_128x128_v1.png": "5dfa96ebb384d4e04ae3c162d9cf7fecf2e11bec3c6767f6c5f978338ced06d0",
+    "C:\\Users\\User\\Downloads\\TitleScene_background.png": "7e8cc8e61be0408d359ed514f11cbd1ae96d1b54b68dfa1ebd6ac5b24b09715b",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\ArtDirection.md": "263dcc78190e6bcded99fd8fa387a2bfd9cea84c4a553700fd3836420f160c99",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\UISystem.md": "f0e2d0a4b1687247e0a271b08a56b45f5362a29c523459176e8a831a88810f3d"
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "source_files": {
+      "Logo_A": "C:\\Users\\User\\.codex\\generated_images\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\exec-89031362-8315-4e63-bd54-d705750e3b05.png",
+      "Logo_B": "C:\\Users\\User\\.codex\\generated_images\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\exec-4d89ad64-ec35-4023-8181-10f04c8a64ea.png",
+      "Normal": "C:\\Users\\User\\.codex\\generated_images\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\exec-35d8771d-a13b-4954-9617-0a5b9acfefa1.png",
+      "Hover": "C:\\Users\\User\\.codex\\generated_images\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\exec-8bceb910-37c0-4d7e-89a3-640e4b31d61c.png",
+      "Pressed": "C:\\Users\\User\\.codex\\generated_images\\01a16344-f87e-7b93-9d18-cb1d88939ccf\\exec-aabc56a7-d01b-4336-a869-35f700b081b8.png"
+    },
+    "export": "trim empty margins, nearest exact-size export, limited palette, binary alpha, common button alpha footprint; no labels in buttons"
+  }
+}

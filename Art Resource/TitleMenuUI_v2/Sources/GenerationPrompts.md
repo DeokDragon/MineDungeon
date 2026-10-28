@@ -1,0 +1,15 @@
+# OREPLUME logo — built-in image_gen
+
+## Shared prompt (reference: existing TitleMenuUI_v1 stone A PNG)
+Create a standalone transparent RGBA game title logo, derived from this exact approved reference's rock-and-copper PIXEL ART style. REPLACE ALL existing Korean and subtitle lettering. Only exact text: OREPLUME (eight uppercase letters O R E P L U M E, in this order, ONE WORD, ONE HORIZONTAL LINE). NO Korean, NO MINE DUNGEON, NO PICK & DEEP, NO ampersand, NO subtitle, NO extra lettering. Warm grey stone carved block letters, pale sandstone top bevels, charcoal dark stone extrusion and solid dark outline, fine muted copper seams, crisp stepped pixel clusters. Clear counters in O,R,P; E must have three horizontal arms; U distinguishable from V; M distinguishable from N. Consistent optical letter spacing, no joined letters or obscured strokes. Transparent inside counters and outside logo, no backplate or scene. Intended final960x240 wide4:1 art, fitting screen top-left at720px wide on a dark mine title. Entire logo safely inside canvas. Restrained no magic glow, no flames, no giant decorative weapons.
+
+## A suffix
+Variant A: maximum legibility and faithful reuse of reference A material, broad squared monolithic capitals, quiet shallow angular rock facets, a few fine copper seams not crossing critical apertures. Letters themselves are the entire mark, no separate ornament.
+
+## B suffix
+Variant B: slightly more upright compact stone capitals, stronger chiseled depth, restrained copper base-edge trim, one tiny copper/grey faceted mineral-chip emblem centered BELOW the word with two very short copper ticks flanking it. Ornament much smaller than a letter and outside all strokes; word remains dominant. Same existing A stone colors, not all-gold metal letters.
+
+## Final B correction (target: B generated logo)
+Precise lettering legibility correction of this same transparent stone/copper logo. Exact word OREPLUME, eight uppercase letters O R E P L U M E. Keep the current word, same style, stone colors, dark extrusion and small copper ore emblem underneath. Critical correction: first letter must be a completely unmistakable O, never Q: remove the diagonal copper seam from the FIRST LETTER O entirely and give O a clean continuous rounded/octagonal ring, clear centered enclosed counter and no diagonal leg/tail/crossbar inside or outside. Keep copper seams in other letters. Increase consistent small transparent spacing between ALL letters, so adjacent letters' main strokes never merge; do not insert spaces into the word or change alignment. Especially P-L and L-U and U-M need a little optical breathing room. Single horizontal word, no subtitle, no other words, no Korean, no ampersand. Entire isolated mark on true transparent RGBA, crisp clustered pixel art, no blurry antialiasing, no extra ornaments.
+
+Final export uses720x240 to retain existing UI slot. Generated aspect is fitted uniformly inside704x224, no glyph distortion. Nearest sampling,80-color palette, binary alpha160 threshold. Raw sources remain alongside these prompts; preview labels are not baked into runtime logos.

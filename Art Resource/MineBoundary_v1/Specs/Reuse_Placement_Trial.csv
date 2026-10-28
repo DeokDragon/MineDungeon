@@ -1,0 +1,27 @@
+﻿source,x,y,PPU,opacity_trial,clip_to,role
+Walls/Wall_Protruding_64x64.png,6.25,18.5,64,0.75,wall,break interior texture repetition; opaque tile MUST be clipped
+Walls/Wall_AgedRock_64x64.png,6.1,22.1,64,0.75,wall,break interior texture repetition; opaque tile MUST be clipped
+Walls/Wall_Fractured_64x64.png,21.9,19.5,64,0.75,wall,break interior texture repetition; opaque tile MUST be clipped
+Walls/Wall_Protruding_64x64.png,22.2,22.5,64,0.75,wall,break interior texture repetition; opaque tile MUST be clipped
+Borders/RockEndCap_32x32.png,6.6,18.0,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/RockEndCap_32x32.png,6.6,19.1,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/RockEndCap_32x32.png,6.25,20.75,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/RockEndCap_32x32.png,6.5,22.1,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/RockEndCap_32x32.png,7.25,23.15,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/RockEndCap_32x32.png,21.25,18.3,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/RockEndCap_32x32.png,21.3,19.6,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/RockEndCap_32x32.png,21.4,20.75,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/RockEndCap_32x32.png,21.35,22.2,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/RockEndCap_32x32.png,20.8,23.1,64,0.9,wall,irregular edge cluster; source unchanged
+Borders/CornerInner_SE_32x32.png,7.0,23.0,64,0.9,wall,"whole32px inner corner, wall-union clipping"
+Borders/CornerInner_SW_32x32.png,21.0,23.0,64,0.9,wall,"whole32px inner corner, wall-union clipping"
+Borders/CornerInner_SE_32x32.png,6.5,22.0,64,0.9,wall,"whole32px inner corner, wall-union clipping"
+Borders/CornerInner_SW_32x32.png,21.5,20.5,64,0.9,wall,"whole32px inner corner, wall-union clipping"
+Borders/CornerInner_NE_32x32.png,6.5,20.0,64,0.9,wall,"whole32px inner corner, wall-union clipping"
+Borders/CornerInner_NW_32x32.png,21.5,19.0,64,0.9,wall,"whole32px inner corner, wall-union clipping"
+Borders/CornerInner_NE_32x32.png,7.0,18.0,64,0.9,wall,"whole32px inner corner, wall-union clipping"
+Borders/CornerInner_NW_32x32.png,21.0,18.0,64,0.9,wall,"whole32px inner corner, wall-union clipping"
+Rubble/Pebbles_Small_24x24.png,7.2,18.55,64,0.48,floor,"small wall-adjacent visual debris, no collider"
+Rubble/Pebbles_Small_24x24.png,7.15,22.4,64,0.48,floor,"small wall-adjacent visual debris, no collider"
+Rubble/Pebbles_Small_24x24.png,20.75,19.2,64,0.48,floor,"small wall-adjacent visual debris, no collider"
+Rubble/Pebbles_Small_24x24.png,20.75,22.7,64,0.48,floor,"small wall-adjacent visual debris, no collider"
