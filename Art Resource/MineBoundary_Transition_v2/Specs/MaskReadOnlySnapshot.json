@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "message": "Code executed successfully.",
+  "error": null,
+  "data": {
+    "result": [
+      {
+        "name": "Clip_00",
+        "parent": "BoundaryCornerStraightFix",
+        "cx": 15.9375,
+        "cy": 15.5,
+        "sx": 0.75000006,
+        "sy": 1.00000012,
+        "front": -35,
+        "back": -36
+      },
+      {
+        "name": "Clip_01",
+        "parent": "BoundaryCornerStraightFix",
+        "cx": 20.6875,
+        "cy": 18.5,
+        "sx": 0.75000006,
+        "sy": 1.00000012,
+        "front": -35,
+        "back": -36
+      },
+      {
+        "name": "Clip_02",
+        "parent": "BoundaryCornerStraightFix",
+        "cx": 21.1875,
+        "cy": 19.75,
+        "sx": 0.7500001,
+        "sy": 1.50000012,
+        "front": -35,
+        "back": -36
+      },
+      {
+        "name": "Clip_03",
+        "parent": "BoundaryCornerStraightFix",
+        "cx": 20.5,
+        "cy": 18.3125,
+        "sx": 1.00000024,
+        "sy": 0.750000238,
+        "front": -35,
+        "back": -36
+      },
+      {
+        "name": "Clip_04",
+        "parent": "BoundaryCornerStraightFix",
+        "cx": 21.25,
+        "cy": 19.3125,
+        "sx": 0.5000001,
+        "sy": 0.7500002,
+        "front": -35,
+        "back": -36
+      },
+      {
+        "name": "Clip_05",
+        "parent": "BoundaryCornerStraightFix",
+        "cx": 21.25,
+        "cy": 20.1875,
+        "sx": 0.5000001,
+        "sy": 0.7500002,
+        "front": -35,
+        "back": -36
+      }
+    ],
+    "compiler": "codedom"
+  },
+  "hint": null
+}

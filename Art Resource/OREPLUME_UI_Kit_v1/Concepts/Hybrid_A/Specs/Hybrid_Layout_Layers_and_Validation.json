@@ -1,0 +1,1004 @@
+{
+  "concept_only": true,
+  "new_image_generation": false,
+  "reused_A_B_sources": true,
+  "final_game_asset_set": false,
+  "protected_file_count": 100,
+  "protected_unchanged": true,
+  "layouts": {
+    "Entry": {
+      "size": [
+        1440,
+        810
+      ],
+      "text_records": [
+        {
+          "xy": [
+            34,
+            24
+          ],
+          "text": "광산 입장"
+        },
+        {
+          "xy": [
+            761,
+            39
+          ],
+          "text": "1층 · 암석 갱도 — 쉬움"
+        },
+        {
+          "xy": [
+            1379,
+            25
+          ],
+          "text": "×"
+        },
+        {
+          "xy": [
+            170,
+            171
+          ],
+          "text": "1층 · 암석 갱도"
+        },
+        {
+          "xy": [
+            175,
+            201
+          ],
+          "text": "최소 입장 Lv.1"
+        },
+        {
+          "xy": [
+            170,
+            352
+          ],
+          "text": "2층 · 추가 갱도"
+        },
+        {
+          "xy": [
+            175,
+            382
+          ],
+          "text": "최소 입장 Lv.2"
+        },
+        {
+          "xy": [
+            536,
+            334
+          ],
+          "text": "기존 대표 이미지 영역 · 배치 예시"
+        },
+        {
+          "xy": [
+            789,
+            371
+          ],
+          "text": "입장 필요 레벨: Lv.1 (테스트 설정)"
+        },
+        {
+          "xy": [
+            598,
+            427
+          ],
+          "text": "쉬움"
+        },
+        {
+          "xy": [
+            822,
+            427
+          ],
+          "text": "보통"
+        },
+        {
+          "xy": [
+            1033,
+            427
+          ],
+          "text": "어려움"
+        },
+        {
+          "xy": [
+            1268,
+            427
+          ],
+          "text": "악몽"
+        },
+        {
+          "xy": [
+            520,
+            474
+          ],
+          "text": "클리어 보상"
+        },
+        {
+          "xy": [
+            520,
+            515
+          ],
+          "text": "테스트 보상표 · 클리어 1회 기준 · 항목별 독립 추첨"
+        },
+        {
+          "xy": [
+            589,
+            557
+          ],
+          "text": "10%"
+        },
+        {
+          "xy": [
+            602,
+            593
+          ],
+          "text": "I"
+        },
+        {
+          "xy": [
+            563,
+            665
+          ],
+          "text": "대지 분쇄"
+        },
+        {
+          "xy": [
+            761,
+            557
+          ],
+          "text": "100%"
+        },
+        {
+          "xy": [
+            776,
+            593
+          ],
+          "text": "*"
+        },
+        {
+          "xy": [
+            750,
+            665
+          ],
+          "text": "돌 조각"
+        },
+        {
+          "xy": [
+            637,
+            748
+          ],
+          "text": "현재 Lv.1 / 필요 Lv.1"
+        },
+        {
+          "xy": [
+            1186,
+            742
+          ],
+          "text": "입장하기"
+        }
+      ],
+      "wood_buttons": [
+        {
+          "rect": [
+            1080,
+            725,
+            317,
+            65
+          ],
+          "label": "입장하기",
+          "state": "selected"
+        }
+      ],
+      "art_file": "Studies_ArtOnly/Hybrid_Entry_ArtStudy.png",
+      "content_file": "Preview_ContentOnly/Hybrid_Entry_Content.png"
+    },
+    "Clear": {
+      "size": [
+        1440,
+        810
+      ],
+      "text_records": [
+        {
+          "xy": [
+            626,
+            7
+          ],
+          "text": "CHAMBER CONQUERED"
+        },
+        {
+          "xy": [
+            581,
+            41
+          ],
+          "text": "던전 클리어"
+        },
+        {
+          "xy": [
+            630,
+            109
+          ],
+          "text": "DUNGEON CLEAR"
+        },
+        {
+          "xy": [
+            581,
+            142
+          ],
+          "text": "◆ 1층 · 암석 갱도 [쉬움] ◆"
+        },
+        {
+          "xy": [
+            1394,
+            14
+          ],
+          "text": "×"
+        },
+        {
+          "xy": [
+            73,
+            237
+          ],
+          "text": "획득 보상"
+        },
+        {
+          "xy": [
+            73,
+            285
+          ],
+          "text": "획득 아이템 · 1종"
+        },
+        {
+          "xy": [
+            138,
+            350
+          ],
+          "text": "*"
+        },
+        {
+          "xy": [
+            116,
+            410
+          ],
+          "text": "돌 조각"
+        },
+        {
+          "xy": [
+            179,
+            391
+          ],
+          "text": "×7"
+        },
+        {
+          "xy": [
+            73,
+            610
+          ],
+          "text": "획득 골드  +50 G"
+        },
+        {
+          "xy": [
+            73,
+            662
+          ],
+          "text": "획득 경험치  +45 EXP"
+        },
+        {
+          "xy": [
+            73,
+            712
+          ],
+          "text": "Lv.1 · EXP 45.0% (45 / 100)"
+        },
+        {
+          "xy": [
+            773,
+            237
+          ],
+          "text": "전투 기록"
+        },
+        {
+          "xy": [
+            785,
+            312
+          ],
+          "text": "01"
+        },
+        {
+          "xy": [
+            832,
+            312
+          ],
+          "text": "클리어 시간 / CLEAR TIME"
+        },
+        {
+          "xy": [
+            1349,
+            307
+          ],
+          "text": "04:32"
+        },
+        {
+          "xy": [
+            785,
+            369
+          ],
+          "text": "02"
+        },
+        {
+          "xy": [
+            832,
+            369
+          ],
+          "text": "가한 피해량 / DAMAGE DEALT"
+        },
+        {
+          "xy": [
+            1349,
+            364
+          ],
+          "text": "8,450"
+        },
+        {
+          "xy": [
+            785,
+            426
+          ],
+          "text": "03"
+        },
+        {
+          "xy": [
+            832,
+            426
+          ],
+          "text": "받은 피해량 / DAMAGE TAKEN"
+        },
+        {
+          "xy": [
+            1349,
+            421
+          ],
+          "text": "120"
+        },
+        {
+          "xy": [
+            785,
+            483
+          ],
+          "text": "04"
+        },
+        {
+          "xy": [
+            832,
+            483
+          ],
+          "text": "회복량 / HP HEALED"
+        },
+        {
+          "xy": [
+            1349,
+            478
+          ],
+          "text": "100"
+        },
+        {
+          "xy": [
+            785,
+            540
+          ],
+          "text": "05"
+        },
+        {
+          "xy": [
+            832,
+            540
+          ],
+          "text": "처치한 몬스터"
+        },
+        {
+          "xy": [
+            1349,
+            535
+          ],
+          "text": "24 마리"
+        },
+        {
+          "xy": [
+            785,
+            597
+          ],
+          "text": "06"
+        },
+        {
+          "xy": [
+            832,
+            597
+          ],
+          "text": "사용한 부활"
+        },
+        {
+          "xy": [
+            1349,
+            592
+          ],
+          "text": "0 / 2"
+        },
+        {
+          "xy": [
+            942,
+            646
+          ],
+          "text": "◆ 다음 행동을 선택하세요 ◆"
+        },
+        {
+          "xy": [
+            868,
+            689
+          ],
+          "text": "다시 시작"
+        },
+        {
+          "xy": [
+            886,
+            716
+          ],
+          "text": "RETRY"
+        },
+        {
+          "xy": [
+            1167,
+            690
+          ],
+          "text": "로비로 이동"
+        },
+        {
+          "xy": [
+            1132,
+            716
+          ],
+          "text": "RETURN TO LOBBY"
+        },
+        {
+          "xy": [
+            949,
+            760
+          ],
+          "text": "저장 완료"
+        }
+      ],
+      "wood_buttons": [
+        {
+          "rect": [
+            773,
+            682,
+            287,
+            68
+          ],
+          "label": "다시 시작\nRETRY",
+          "state": "normal"
+        },
+        {
+          "rect": [
+            1080,
+            682,
+            287,
+            68
+          ],
+          "label": "로비로 이동\nRETURN TO LOBBY",
+          "state": "selected"
+        }
+      ],
+      "art_file": "Studies_ArtOnly/Hybrid_Clear_ArtStudy.png",
+      "content_file": "Preview_ContentOnly/Hybrid_Clear_Content.png"
+    },
+    "Failure": {
+      "size": [
+        1440,
+        810
+      ],
+      "text_records": [
+        {
+          "xy": [
+            642,
+            7
+          ],
+          "text": "EXPEDITION ENDED"
+        },
+        {
+          "xy": [
+            607,
+            41
+          ],
+          "text": "던전 실패"
+        },
+        {
+          "xy": [
+            627,
+            109
+          ],
+          "text": "DUNGEON FAILED"
+        },
+        {
+          "xy": [
+            581,
+            142
+          ],
+          "text": "◆ 1층 · 암석 갱도 [쉬움] ◆"
+        },
+        {
+          "xy": [
+            553,
+            170
+          ],
+          "text": "이번 탐험에서 획득한 보상은 유지됩니다."
+        },
+        {
+          "xy": [
+            1394,
+            14
+          ],
+          "text": "×"
+        },
+        {
+          "xy": [
+            73,
+            237
+          ],
+          "text": "획득 보상"
+        },
+        {
+          "xy": [
+            73,
+            285
+          ],
+          "text": "획득 아이템 · 1종"
+        },
+        {
+          "xy": [
+            138,
+            350
+          ],
+          "text": "*"
+        },
+        {
+          "xy": [
+            116,
+            410
+          ],
+          "text": "돌 조각"
+        },
+        {
+          "xy": [
+            179,
+            391
+          ],
+          "text": "×7"
+        },
+        {
+          "xy": [
+            73,
+            610
+          ],
+          "text": "획득 골드  +50 G"
+        },
+        {
+          "xy": [
+            73,
+            662
+          ],
+          "text": "획득 경험치  +45 EXP"
+        },
+        {
+          "xy": [
+            73,
+            712
+          ],
+          "text": "Lv.1 · EXP 45.0% (45 / 100)"
+        },
+        {
+          "xy": [
+            773,
+            237
+          ],
+          "text": "전투 기록"
+        },
+        {
+          "xy": [
+            785,
+            312
+          ],
+          "text": "01"
+        },
+        {
+          "xy": [
+            832,
+            312
+          ],
+          "text": "진행 시간 / TIME SURVIVED"
+        },
+        {
+          "xy": [
+            1349,
+            307
+          ],
+          "text": "04:32"
+        },
+        {
+          "xy": [
+            785,
+            369
+          ],
+          "text": "02"
+        },
+        {
+          "xy": [
+            832,
+            369
+          ],
+          "text": "가한 피해량 / DAMAGE DEALT"
+        },
+        {
+          "xy": [
+            1349,
+            364
+          ],
+          "text": "8,450"
+        },
+        {
+          "xy": [
+            785,
+            426
+          ],
+          "text": "03"
+        },
+        {
+          "xy": [
+            832,
+            426
+          ],
+          "text": "받은 피해량 / DAMAGE TAKEN"
+        },
+        {
+          "xy": [
+            1349,
+            421
+          ],
+          "text": "120"
+        },
+        {
+          "xy": [
+            785,
+            483
+          ],
+          "text": "04"
+        },
+        {
+          "xy": [
+            832,
+            483
+          ],
+          "text": "회복량 / HP HEALED"
+        },
+        {
+          "xy": [
+            1349,
+            478
+          ],
+          "text": "100"
+        },
+        {
+          "xy": [
+            785,
+            540
+          ],
+          "text": "05"
+        },
+        {
+          "xy": [
+            832,
+            540
+          ],
+          "text": "처치한 몬스터"
+        },
+        {
+          "xy": [
+            1349,
+            535
+          ],
+          "text": "24 마리"
+        },
+        {
+          "xy": [
+            785,
+            597
+          ],
+          "text": "06"
+        },
+        {
+          "xy": [
+            832,
+            597
+          ],
+          "text": "사용한 부활"
+        },
+        {
+          "xy": [
+            1349,
+            592
+          ],
+          "text": "2 / 2"
+        },
+        {
+          "xy": [
+            942,
+            646
+          ],
+          "text": "◆ 다음 행동을 선택하세요 ◆"
+        },
+        {
+          "xy": [
+            868,
+            689
+          ],
+          "text": "다시 시작"
+        },
+        {
+          "xy": [
+            886,
+            716
+          ],
+          "text": "RETRY"
+        },
+        {
+          "xy": [
+            1167,
+            690
+          ],
+          "text": "로비로 이동"
+        },
+        {
+          "xy": [
+            1132,
+            716
+          ],
+          "text": "RETURN TO LOBBY"
+        },
+        {
+          "xy": [
+            949,
+            760
+          ],
+          "text": "저장 완료"
+        }
+      ],
+      "wood_buttons": [
+        {
+          "rect": [
+            773,
+            682,
+            287,
+            68
+          ],
+          "label": "다시 시작\nRETRY",
+          "state": "normal"
+        },
+        {
+          "rect": [
+            1080,
+            682,
+            287,
+            68
+          ],
+          "label": "로비로 이동\nRETURN TO LOBBY",
+          "state": "selected"
+        }
+      ],
+      "art_file": "Studies_ArtOnly/Hybrid_Failure_ArtStudy.png",
+      "content_file": "Preview_ContentOnly/Hybrid_Failure_Content.png"
+    },
+    "Pause": {
+      "size": [
+        620,
+        600
+      ],
+      "text_records": [
+        {
+          "xy": [
+            234,
+            51
+          ],
+          "text": "일시정지"
+        },
+        {
+          "xy": [
+            253,
+            164
+          ],
+          "text": "계속하기"
+        },
+        {
+          "xy": [
+            281,
+            266
+          ],
+          "text": "설정"
+        },
+        {
+          "xy": [
+            201,
+            368
+          ],
+          "text": "광산 밖으로 귀환"
+        },
+        {
+          "xy": [
+            248,
+            470
+          ],
+          "text": "게임 종료"
+        }
+      ],
+      "wood_buttons": [
+        {
+          "rect": [
+            74,
+            144,
+            471,
+            72
+          ],
+          "label": "계속하기",
+          "state": "normal"
+        },
+        {
+          "rect": [
+            74,
+            246,
+            471,
+            72
+          ],
+          "label": "설정",
+          "state": "normal"
+        },
+        {
+          "rect": [
+            74,
+            348,
+            471,
+            72
+          ],
+          "label": "광산 밖으로 귀환",
+          "state": "normal"
+        },
+        {
+          "rect": [
+            74,
+            450,
+            471,
+            72
+          ],
+          "label": "게임 종료",
+          "state": "normal"
+        }
+      ],
+      "art_file": "Studies_ArtOnly/Hybrid_Pause_ArtStudy.png",
+      "content_file": "Preview_ContentOnly/Hybrid_Pause_Content.png"
+    },
+    "HUD": {
+      "size": [
+        300,
+        142
+      ],
+      "text_records": [
+        {
+          "xy": [
+            105,
+            13
+          ],
+          "text": "Lv. 1"
+        },
+        {
+          "xy": [
+            110,
+            51
+          ],
+          "text": "100 / 100"
+        },
+        {
+          "xy": [
+            114,
+            85
+          ],
+          "text": "EXP 41 / 100"
+        }
+      ],
+      "wood_buttons": [],
+      "art_file": "Studies_ArtOnly/Hybrid_HUD_ArtStudy.png",
+      "content_file": "Preview_ContentOnly/Hybrid_HUD_Content.png"
+    },
+    "BossHP": {
+      "size": [
+        864,
+        62
+      ],
+      "text_records": [
+        {
+          "xy": [
+            390,
+            4
+          ],
+          "text": "돌 골렘"
+        }
+      ],
+      "wood_buttons": [],
+      "art_file": "Studies_ArtOnly/Hybrid_BossHP_ArtStudy.png",
+      "content_file": "Preview_ContentOnly/Hybrid_BossHP_Content.png"
+    },
+    "Slots": {
+      "size": [
+        232,
+        72
+      ],
+      "individual_slots": [
+        72,
+        72
+      ],
+      "inner_icon_rect": [
+        6,
+        6,
+        60,
+        60
+      ],
+      "key_rect": [
+        4,
+        4,
+        24,
+        24
+      ],
+      "count_rect": [
+        40,
+        44,
+        28,
+        26
+      ]
+    }
+  },
+  "all_seven_art_and_content_layers_separate": true,
+  "HUD_rects_1920_top_left": {
+    "status": [
+      24,
+      24,
+      300,
+      142
+    ],
+    "Q": [
+      24,
+      984,
+      72,
+      72
+    ],
+    "E": [
+      1744,
+      984,
+      72,
+      72
+    ],
+    "R": [
+      1824,
+      984,
+      72,
+      72
+    ],
+    "boss": [
+      528,
+      24,
+      864,
+      62
+    ]
+  },
+  "button_states": [
+    "normal",
+    "hover",
+    "pressed",
+    "selected",
+    "disabled"
+  ],
+  "Unity_Play": false,
+  "reopen_layout_changed": false,
+  "pause_runtime_mismatch": "prior snapshot1440x810; requested/preparation620x600 retained as concept; no new runtime query"
+}

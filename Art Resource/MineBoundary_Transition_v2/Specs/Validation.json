@@ -1,0 +1,839 @@
+{
+  "asset_count": 29,
+  "original_motifs": 6,
+  "straight_variations": 2,
+  "ppu": 64,
+  "palette_rgb_count": 31,
+  "old_A_count": 65,
+  "old_B_count": 4,
+  "colliders_snapshot": 231,
+  "rim_new_overlap_pixels": 0,
+  "existing_A_new_dust_overlap_pixels": 0,
+  "actual_capture_outside_overlay_changes": 0,
+  "mask_clip_tests": [
+    {
+      "length_px": 32,
+      "length_units": 0.5,
+      "outside_mask_nonzero": 0
+    },
+    {
+      "length_px": 64,
+      "length_units": 1.0,
+      "outside_mask_nonzero": 0
+    },
+    {
+      "length_px": 96,
+      "length_units": 1.5,
+      "outside_mask_nonzero": 0
+    }
+  ],
+  "unity_applied": false,
+  "unity_spritemask_tested": false,
+  "play_tested": false,
+  "files": [
+    {
+      "file": "Textures/Corners/CornerConvex_WallSW_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        8,
+        23,
+        40,
+        60
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "2d7e6fa2ce548e8d87d9ecf4b53d0c62eb67e4941dd43b8542e09f8cf455b314"
+    },
+    {
+      "file": "Textures/Corners/CornerConvex_WallSE_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        23,
+        24,
+        60,
+        56
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "203daf4f9f5819229d77d0334c9826d9b799f93a8d2c2d73b9b02f3947655ea5"
+    },
+    {
+      "file": "Textures/Corners/CornerConvex_WallNE_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        24,
+        4,
+        56,
+        41
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "91e588ed4e0f229802a2c24d140a271a53fb38e9cd6480c92e8373098b0b3e67"
+    },
+    {
+      "file": "Textures/Corners/CornerConvex_WallNW_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        4,
+        8,
+        41,
+        40
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "e9572f21ce7b6571f817790b58a1fe4482a796294426ff704be965172daa4383"
+    },
+    {
+      "file": "Textures/Corners/CornerConcave_FloorNE_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        29,
+        3,
+        56,
+        36
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "4d421c584656d0e4166dbf5d627d0743d0a44268b1d04b86356e15cdc356b4dc"
+    },
+    {
+      "file": "Textures/Corners/CornerConcave_FloorNW_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        3,
+        8,
+        36,
+        35
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "737f1caf42e762bacaf09c76f19139cd057e31aa0fedc676525465a305482c6d"
+    },
+    {
+      "file": "Textures/Corners/CornerConcave_FloorSW_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        8,
+        28,
+        35,
+        61
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "2267da541089ccad60e932bf4221db208a1f4c087c4045dbde61d72cf820e7fc"
+    },
+    {
+      "file": "Textures/Corners/CornerConcave_FloorSE_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        28,
+        29,
+        61,
+        56
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "799538837f93954cf968672974730417d46906aadf79410eea6a1e125294db70"
+    },
+    {
+      "file": "Textures/EndCaps/EndCap_WallW_Up_48x64.png",
+      "size": [
+        48,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        13,
+        11,
+        24,
+        59
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "a70e52f82c84c2e3d9f1290c5b762b89366cd5862e2ae465b052b89f5983a58a"
+    },
+    {
+      "file": "Textures/EndCaps/EndCap_WallW_Down_48x64.png",
+      "size": [
+        48,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        13,
+        5,
+        24,
+        53
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "9cda42bfe401b48141409f8b8383fab4406b255bb5c493c89c9b7f9a2524b615"
+    },
+    {
+      "file": "Textures/EndCaps/EndCap_WallE_Up_48x64.png",
+      "size": [
+        48,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        24,
+        11,
+        35,
+        59
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "11279c37db4c8b679e794f8796b0195394db215e054266506568c89f7a8700d6"
+    },
+    {
+      "file": "Textures/EndCaps/EndCap_WallE_Down_48x64.png",
+      "size": [
+        48,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        24,
+        5,
+        35,
+        53
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "5df8813407fc501f8d74e4479322177effe985e577d3dfe4b10f2135739fec3c"
+    },
+    {
+      "file": "Textures/EndCaps/EndCap_ShortJoin_WallW_48x32.png",
+      "size": [
+        48,
+        32
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        13,
+        11,
+        24,
+        30
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        120,
+        168,
+        192
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "534b09eb712e01131a43afea6f00c22634ea1f8a63bd0aad9d878506379d1395"
+    },
+    {
+      "file": "Textures/Straights/Straight_ContactVar01_48x128.png",
+      "size": [
+        48,
+        128
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        4,
+        6,
+        27,
+        117
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "f8fe695a3ecd82768a4c095da1113e460fe4bf2b88f36aab578da4a3ef25f262"
+    },
+    {
+      "file": "Textures/Straights/Straight_ContactVar02_48x128.png",
+      "size": [
+        48,
+        128
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        4,
+        6,
+        21,
+        122
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "2eb81a30fa751a52c5e82b3962d4e3b234754d23d7a1c2d46a1a6dc40f563f9f"
+    },
+    {
+      "file": "Textures/WallRoots/WallRoot_FacetBlend_48x96.png",
+      "size": [
+        48,
+        96
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        5,
+        4,
+        29,
+        92
+      ],
+      "alpha_levels": [
+        0,
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "653606554d5bece92c824780ca63a3e2b1c909089a5bb767675eed1ae0200f75"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_J00_LeftTip_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        8,
+        23,
+        40,
+        57
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "9a572bfeababfe5ae5c7e0504b5a55cea78336c85c534013f9cdec2cd4718018"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_J01_MiddleLower_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        25,
+        6,
+        56,
+        41
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "2664b9656e4a29be512f3056405d900d7b86c7d91155d2e14c64635e6381a5da"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_J02_MiddleUpper_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        23,
+        24,
+        57,
+        56
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "043eba7dc20e68ba971743636bc6fc9d2449f66f4d597d695f2d520029882e55"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_J03_StepLowerA_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        23,
+        25,
+        58,
+        56
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "4e5b52453e15b4a26cd5b1ad9c7deb57eefbe49592539f9bee5a5e024b4b75b4"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_J04_StepLowerB_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        3,
+        8,
+        36,
+        35
+      ],
+      "alpha_levels": [
+        0,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "05fbf431e6e3e2a423a11a9a1063ab251732ae7d9999ce74b36e02a373255c17"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_J05_StepInnerA_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        23,
+        26,
+        59,
+        56
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "cecc8c33ed10e3e899a26dd23e4c38159f3f3bd17b38caa6252e39696229db2f"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_J06_StepOuterA_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        15,
+        8,
+        36,
+        35
+      ],
+      "alpha_levels": [
+        0,
+        120,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "4106336b1b95ee406058df65d757d4cedb0dd597259491f698e9307e339dee04"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_J07_StepInnerB_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        24,
+        7,
+        56,
+        41
+      ],
+      "alpha_levels": [
+        0,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "94b680960fd0af7e746fda60c9cfdb9972f1e6195f7309483e2450f38a1467a9"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_J08_StepOuterB_64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        12,
+        28,
+        35,
+        61
+      ],
+      "alpha_levels": [
+        0,
+        96,
+        120,
+        144,
+        192,
+        216
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "3cb9ac48950c4c1c8c06bd55f81cae1762fbd257e83a0fc536c6e37cb47c1cd2"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_R00_LeftTipWall_48x96.png",
+      "size": [
+        48,
+        96
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        5,
+        19,
+        29,
+        91
+      ],
+      "alpha_levels": [
+        0,
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "299d371614096f17925a9eb409358319706b5ff1c396397c9e466e366180e8a4"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_R01_MiddleWall_48x96.png",
+      "size": [
+        48,
+        96
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        19,
+        16,
+        43,
+        80
+      ],
+      "alpha_levels": [
+        0,
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "3ca241616737e55126ff354e9c1e86194980f9560afe9bbd5fb75d22372ef780"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_R02_LongWall_48x96.png",
+      "size": [
+        48,
+        96
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        19,
+        4,
+        43,
+        91
+      ],
+      "alpha_levels": [
+        0,
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "fd4ea78bd8cca97b39648e0fbb83fcb6cf51524fd9e2503ec00a98c7639b1400"
+    },
+    {
+      "file": "Textures/Map01Fits/Map01_R03_StepWall_48x96.png",
+      "size": [
+        48,
+        96
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        19,
+        4,
+        43,
+        91
+      ],
+      "alpha_levels": [
+        0,
+        24,
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192
+      ],
+      "alpha_step_24": true,
+      "palette_subset": true,
+      "outer_edge_transparent": true,
+      "sha256": "46ae141c742f1c9f6e234594f5c9c36e3274489357e24ef8d5547e19e5ca6225"
+    }
+  ],
+  "existing_B_new_overlay_overlap_pixels": 0,
+  "protected_files_checked": 97,
+  "protected_changed": []
+}

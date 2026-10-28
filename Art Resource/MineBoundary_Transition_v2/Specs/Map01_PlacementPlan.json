@@ -1,0 +1,392 @@
+[
+  {
+    "id": 0,
+    "label": "LeftTip",
+    "vertex": [
+      11.75,
+      16
+    ],
+    "sprite": "Map01_J00_LeftTip_64x64",
+    "base_sprite": "CornerConvex_WallSW_64x64",
+    "position": [
+      11.75,
+      16,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "removed_overlap_pixels": 85,
+    "floor_quadrants": [
+      "NE",
+      "NW",
+      "SE"
+    ]
+  },
+  {
+    "id": 1,
+    "label": "MiddleLower",
+    "vertex": [
+      16.25,
+      15
+    ],
+    "sprite": "Map01_J01_MiddleLower_64x64",
+    "base_sprite": "CornerConvex_WallNE_64x64",
+    "position": [
+      16.25,
+      15,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "removed_overlap_pixels": 49,
+    "floor_quadrants": [
+      "NW",
+      "SW",
+      "SE"
+    ]
+  },
+  {
+    "id": 2,
+    "label": "MiddleUpper",
+    "vertex": [
+      16.25,
+      16
+    ],
+    "sprite": "Map01_J02_MiddleUpper_64x64",
+    "base_sprite": "CornerConvex_WallSE_64x64",
+    "position": [
+      16.25,
+      16,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "removed_overlap_pixels": 77,
+    "floor_quadrants": [
+      "NE",
+      "NW",
+      "SW"
+    ]
+  },
+  {
+    "id": 3,
+    "label": "StepLowerA",
+    "vertex": [
+      20,
+      18
+    ],
+    "sprite": "Map01_J03_StepLowerA_64x64",
+    "base_sprite": "CornerConvex_WallSE_64x64",
+    "position": [
+      20,
+      18,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "removed_overlap_pixels": 52,
+    "floor_quadrants": [
+      "NE",
+      "NW",
+      "SW"
+    ]
+  },
+  {
+    "id": 4,
+    "label": "StepLowerB",
+    "vertex": [
+      21,
+      18
+    ],
+    "sprite": "Map01_J04_StepLowerB_64x64",
+    "base_sprite": "CornerConcave_FloorNW_64x64",
+    "position": [
+      21,
+      18,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "removed_overlap_pixels": 72,
+    "floor_quadrants": [
+      "NW"
+    ]
+  },
+  {
+    "id": 5,
+    "label": "StepInnerA",
+    "vertex": [
+      21,
+      19
+    ],
+    "sprite": "Map01_J05_StepInnerA_64x64",
+    "base_sprite": "CornerConvex_WallSE_64x64",
+    "position": [
+      21,
+      19,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "removed_overlap_pixels": 90,
+    "floor_quadrants": [
+      "NE",
+      "NW",
+      "SW"
+    ]
+  },
+  {
+    "id": 6,
+    "label": "StepOuterA",
+    "vertex": [
+      21.5,
+      19
+    ],
+    "sprite": "Map01_J06_StepOuterA_64x64",
+    "base_sprite": "CornerConcave_FloorNW_64x64",
+    "position": [
+      21.5,
+      19,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "removed_overlap_pixels": 119,
+    "floor_quadrants": [
+      "NW"
+    ]
+  },
+  {
+    "id": 7,
+    "label": "StepInnerB",
+    "vertex": [
+      21,
+      20.5
+    ],
+    "sprite": "Map01_J07_StepInnerB_64x64",
+    "base_sprite": "CornerConvex_WallNE_64x64",
+    "position": [
+      21,
+      20.5,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "removed_overlap_pixels": 82,
+    "floor_quadrants": [
+      "NW",
+      "SW",
+      "SE"
+    ]
+  },
+  {
+    "id": 8,
+    "label": "StepOuterB",
+    "vertex": [
+      21.5,
+      20.5
+    ],
+    "sprite": "Map01_J08_StepOuterB_64x64",
+    "base_sprite": "CornerConcave_FloorSW_64x64",
+    "position": [
+      21.5,
+      20.5,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "removed_overlap_pixels": 97,
+    "floor_quadrants": [
+      "SW"
+    ]
+  },
+  {
+    "id": 9,
+    "label": "LeftTipWall",
+    "vertex": [
+      11.75,
+      15.55
+    ],
+    "sprite": "Map01_R00_LeftTipWall_48x96",
+    "base_sprite": "WallRoot_FacetBlend_48x96",
+    "position": [
+      11.75,
+      15.55,
+      0
+    ],
+    "pivot": [
+      0.6666666666666666,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "wall_side": "W"
+  },
+  {
+    "id": 10,
+    "label": "MiddleWall",
+    "vertex": [
+      16.25,
+      15.5
+    ],
+    "sprite": "Map01_R01_MiddleWall_48x96",
+    "base_sprite": "WallRoot_FacetBlend_48x96",
+    "position": [
+      16.25,
+      15.5,
+      0
+    ],
+    "pivot": [
+      0.3333333333333333,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "wall_side": "E"
+  },
+  {
+    "id": 11,
+    "label": "LongWall",
+    "vertex": [
+      21,
+      21.55
+    ],
+    "sprite": "Map01_R02_LongWall_48x96",
+    "base_sprite": "WallRoot_FacetBlend_48x96",
+    "position": [
+      21,
+      21.55,
+      0
+    ],
+    "pivot": [
+      0.3333333333333333,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "wall_side": "E"
+  },
+  {
+    "id": 12,
+    "label": "StepWall",
+    "vertex": [
+      21.5,
+      19.75
+    ],
+    "sprite": "Map01_R03_StepWall_48x96",
+    "base_sprite": "WallRoot_FacetBlend_48x96",
+    "position": [
+      21.5,
+      19.75,
+      0
+    ],
+    "pivot": [
+      0.3333333333333333,
+      0.5
+    ],
+    "rotation_z": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "sorting_order": -25,
+    "wall_side": "E"
+  }
+]

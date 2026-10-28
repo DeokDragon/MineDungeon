@@ -1,0 +1,727 @@
+[
+  {
+    "file": "Textures/Corners/CornerConvex_WallSW_64x64.png",
+    "name": "CornerConvex_WallSW_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "볼록 코너. Wall 뒤 방향은 암벽이 차지하는 사분면",
+    "source": "Generated_convex"
+  },
+  {
+    "file": "Textures/Corners/CornerConvex_WallSE_64x64.png",
+    "name": "CornerConvex_WallSE_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "볼록 코너. Wall 뒤 방향은 암벽이 차지하는 사분면",
+    "source": "Generated_convex"
+  },
+  {
+    "file": "Textures/Corners/CornerConvex_WallNE_64x64.png",
+    "name": "CornerConvex_WallNE_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "볼록 코너. Wall 뒤 방향은 암벽이 차지하는 사분면",
+    "source": "Generated_convex"
+  },
+  {
+    "file": "Textures/Corners/CornerConvex_WallNW_64x64.png",
+    "name": "CornerConvex_WallNW_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "볼록 코너. Wall 뒤 방향은 암벽이 차지하는 사분면",
+    "source": "Generated_convex"
+  },
+  {
+    "file": "Textures/Corners/CornerConcave_FloorNE_64x64.png",
+    "name": "CornerConcave_FloorNE_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "오목 코너. Floor 뒤 방향은 바닥이 차지하는 사분면",
+    "source": "Generated_concave"
+  },
+  {
+    "file": "Textures/Corners/CornerConcave_FloorNW_64x64.png",
+    "name": "CornerConcave_FloorNW_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "오목 코너. Floor 뒤 방향은 바닥이 차지하는 사분면",
+    "source": "Generated_concave"
+  },
+  {
+    "file": "Textures/Corners/CornerConcave_FloorSW_64x64.png",
+    "name": "CornerConcave_FloorSW_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "오목 코너. Floor 뒤 방향은 바닥이 차지하는 사분면",
+    "source": "Generated_concave"
+  },
+  {
+    "file": "Textures/Corners/CornerConcave_FloorSE_64x64.png",
+    "name": "CornerConcave_FloorSE_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "오목 코너. Floor 뒤 방향은 바닥이 차지하는 사분면",
+    "source": "Generated_concave"
+  },
+  {
+    "file": "Textures/EndCaps/EndCap_WallW_Up_48x64.png",
+    "name": "EndCap_WallW_Up_48x64",
+    "width": 48,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      16,
+      12
+    ],
+    "pivot": [
+      0.3333333333333333,
+      0.8125
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "암벽 서쪽/바닥 동쪽인 세로 구간의 위 끝",
+    "source": "Generated_cap"
+  },
+  {
+    "file": "Textures/EndCaps/EndCap_WallW_Down_48x64.png",
+    "name": "EndCap_WallW_Down_48x64",
+    "width": 48,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      16,
+      52
+    ],
+    "pivot": [
+      0.3333333333333333,
+      0.1875
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "암벽 서쪽/바닥 동쪽인 세로 구간의 아래 끝",
+    "source": "Generated_cap reflected"
+  },
+  {
+    "file": "Textures/EndCaps/EndCap_WallE_Up_48x64.png",
+    "name": "EndCap_WallE_Up_48x64",
+    "width": 48,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      12
+    ],
+    "pivot": [
+      0.6666666666666666,
+      0.8125
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "암벽 동쪽/바닥 서쪽 세로 구간의 위 끝",
+    "source": "Generated_cap reflected"
+  },
+  {
+    "file": "Textures/EndCaps/EndCap_WallE_Down_48x64.png",
+    "name": "EndCap_WallE_Down_48x64",
+    "width": 48,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      52
+    ],
+    "pivot": [
+      0.6666666666666666,
+      0.1875
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "암벽 동쪽/바닥 서쪽 세로 구간의 아래 끝",
+    "source": "Generated_cap rotated"
+  },
+  {
+    "file": "Textures/EndCaps/EndCap_ShortJoin_WallW_48x32.png",
+    "name": "EndCap_ShortJoin_WallW_48x32",
+    "width": 48,
+    "height": 32,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      16,
+      12
+    ],
+    "pivot": [
+      0.3333333333333333,
+      0.625
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "짧은 0.5유닛 끝 연결. 별도 사각 벽 아님",
+    "source": "Generated_cap native crop"
+  },
+  {
+    "file": "Textures/Straights/Straight_ContactVar01_48x128.png",
+    "name": "Straight_ContactVar01_48x128",
+    "width": 48,
+    "height": 128,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      4,
+      64
+    ],
+    "pivot": [
+      0.08333333333333333,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "긴 직선의 보조 변형. A를 교체하거나 같은 자리에 중첩 금지",
+    "source": "Generated_straight1"
+  },
+  {
+    "file": "Textures/Straights/Straight_ContactVar02_48x128.png",
+    "name": "Straight_ContactVar02_48x128",
+    "width": 48,
+    "height": 128,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      4,
+      64
+    ],
+    "pivot": [
+      0.08333333333333333,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "긴 직선의 보조 변형. A를 교체하거나 같은 자리에 중첩 금지",
+    "source": "Generated_straight2"
+  },
+  {
+    "file": "Textures/WallRoots/WallRoot_FacetBlend_48x96.png",
+    "name": "WallRoot_FacetBlend_48x96",
+    "width": 48,
+    "height": 96,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      48
+    ],
+    "pivot": [
+      0.6666666666666666,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "벽 안쪽 대형 암석 면을 잇는 국소 패치. 연속 띠 배치 금지",
+    "source": "Generated_root"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_J00_LeftTip_64x64.png",
+    "name": "Map01_J00_LeftTip_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 정확한 현 배치 전용. A/Rim 중복부를 신규 PNG에서만 제외",
+    "source": "CornerConvex_WallSW_64x64"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_J01_MiddleLower_64x64.png",
+    "name": "Map01_J01_MiddleLower_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 정확한 현 배치 전용. A/Rim 중복부를 신규 PNG에서만 제외",
+    "source": "CornerConvex_WallNE_64x64"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_J02_MiddleUpper_64x64.png",
+    "name": "Map01_J02_MiddleUpper_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 정확한 현 배치 전용. A/Rim 중복부를 신규 PNG에서만 제외",
+    "source": "CornerConvex_WallSE_64x64"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_J03_StepLowerA_64x64.png",
+    "name": "Map01_J03_StepLowerA_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 정확한 현 배치 전용. A/Rim 중복부를 신규 PNG에서만 제외",
+    "source": "CornerConvex_WallSE_64x64"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_J04_StepLowerB_64x64.png",
+    "name": "Map01_J04_StepLowerB_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 정확한 현 배치 전용. A/Rim 중복부를 신규 PNG에서만 제외",
+    "source": "CornerConcave_FloorNW_64x64"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_J05_StepInnerA_64x64.png",
+    "name": "Map01_J05_StepInnerA_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 정확한 현 배치 전용. A/Rim 중복부를 신규 PNG에서만 제외",
+    "source": "CornerConvex_WallSE_64x64"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_J06_StepOuterA_64x64.png",
+    "name": "Map01_J06_StepOuterA_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 정확한 현 배치 전용. A/Rim 중복부를 신규 PNG에서만 제외",
+    "source": "CornerConcave_FloorNW_64x64"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_J07_StepInnerB_64x64.png",
+    "name": "Map01_J07_StepInnerB_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 정확한 현 배치 전용. A/Rim 중복부를 신규 PNG에서만 제외",
+    "source": "CornerConvex_WallNE_64x64"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_J08_StepOuterB_64x64.png",
+    "name": "Map01_J08_StepOuterB_64x64",
+    "width": 64,
+    "height": 64,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      32
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 정확한 현 배치 전용. A/Rim 중복부를 신규 PNG에서만 제외",
+    "source": "CornerConcave_FloorSW_64x64"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_R00_LeftTipWall_48x96.png",
+    "name": "Map01_R00_LeftTipWall_48x96",
+    "width": 48,
+    "height": 96,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      32,
+      48
+    ],
+    "pivot": [
+      0.6666666666666666,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 국소 벽 안쪽 결합. 실제 벽/Rim/B 영역에 맞춘 전용본",
+    "source": "WallRoot_FacetBlend_48x96"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_R01_MiddleWall_48x96.png",
+    "name": "Map01_R01_MiddleWall_48x96",
+    "width": 48,
+    "height": 96,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      16,
+      48
+    ],
+    "pivot": [
+      0.3333333333333333,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 국소 벽 안쪽 결합. 실제 벽/Rim/B 영역에 맞춘 전용본",
+    "source": "WallRoot_FacetBlend_48x96"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_R02_LongWall_48x96.png",
+    "name": "Map01_R02_LongWall_48x96",
+    "width": 48,
+    "height": 96,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      16,
+      48
+    ],
+    "pivot": [
+      0.3333333333333333,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 국소 벽 안쪽 결합. 실제 벽/Rim/B 영역에 맞춘 전용본",
+    "source": "WallRoot_FacetBlend_48x96"
+  },
+  {
+    "file": "Textures/Map01Fits/Map01_R03_StepWall_48x96.png",
+    "name": "Map01_R03_StepWall_48x96",
+    "width": 48,
+    "height": 96,
+    "ppu": 64,
+    "anchor_top_left_px": [
+      16,
+      48
+    ],
+    "pivot": [
+      0.3333333333333333,
+      0.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_z": 0,
+    "sorting_layer": "Default (existing)",
+    "sorting_order": -25,
+    "role_ko": "Map01 국소 벽 안쪽 결합. 실제 벽/Rim/B 영역에 맞춘 전용본",
+    "source": "WallRoot_FacetBlend_48x96"
+  }
+]
