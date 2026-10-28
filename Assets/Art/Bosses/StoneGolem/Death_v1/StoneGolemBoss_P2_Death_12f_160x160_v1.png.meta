@@ -1,0 +1,497 @@
+fileFormatVersion: 2
+guid: 22f004a993b946143858693de9b7a7ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7206255813713584387
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_0
+  - first:
+      213: -724102923327493272
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_1
+  - first:
+      213: -2980942154142588821
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_2
+  - first:
+      213: -2577712200105179581
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_3
+  - first:
+      213: -4730195010695837612
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_4
+  - first:
+      213: 1950487957730924881
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_5
+  - first:
+      213: 3295682281736619590
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_6
+  - first:
+      213: 1802859895355936791
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_7
+  - first:
+      213: -7891144466730274677
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_8
+  - first:
+      213: 5888927585681422335
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_9
+  - first:
+      213: 7331150634485266367
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_10
+  - first:
+      213: -7270591969292955173
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_11
+  - first:
+      213: -8233193215305743578
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_12
+  - first:
+      213: 3966254885155147530
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_13
+  - first:
+      213: -1413054782856175632
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_14
+  - first:
+      213: -7489706268141646223
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_15
+  - first:
+      213: -7469591901537728060
+    second: StoneGolemBoss_P2_Death_12f_160x160_v1_16
+  - first:
+      213: -3957350652194932456
+    second: StoneGolemBoss_P2_Death_00
+  - first:
+      213: 1521917781432299149
+    second: StoneGolemBoss_P2_Death_01
+  - first:
+      213: -4838956201354622106
+    second: StoneGolemBoss_P2_Death_02
+  - first:
+      213: 4573003625921131247
+    second: StoneGolemBoss_P2_Death_03
+  - first:
+      213: -3393527471941153564
+    second: StoneGolemBoss_P2_Death_04
+  - first:
+      213: -1230394816632635661
+    second: StoneGolemBoss_P2_Death_05
+  - first:
+      213: -2398136734587532953
+    second: StoneGolemBoss_P2_Death_06
+  - first:
+      213: 3617091389980887863
+    second: StoneGolemBoss_P2_Death_07
+  - first:
+      213: -8892215111190699314
+    second: StoneGolemBoss_P2_Death_08
+  - first:
+      213: 5478250184666983098
+    second: StoneGolemBoss_P2_Death_09
+  - first:
+      213: -8337549081410836878
+    second: StoneGolemBoss_P2_Death_10
+  - first:
+      213: -5497803344378959156
+    second: StoneGolemBoss_P2_Death_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819b24c7c8aa419c0800000000000000
+      internalID: -3957350652194932456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_01
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e6f93a820fe1510800000000000000
+      internalID: 1521917781432299149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_02
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b859609f298dcb0800000000000000
+      internalID: -4838956201354622106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_03
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe23a97a192967f30800000000000000
+      internalID: 4573003625921131247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_04
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec0b637eb4c7e0d0800000000000000
+      internalID: -3393527471941153564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_05
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe3125ee62cceee0800000000000000
+      internalID: -1230394816632635661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_06
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7694814885b18bed0800000000000000
+      internalID: -2398136734587532953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_07
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b4feb747d723230800000000000000
+      internalID: 3617091389980887863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_08
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec22e172871889480800000000000000
+      internalID: -8892215111190699314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_09
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba2bc79487a60c40800000000000000
+      internalID: 5478250184666983098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2766f11e8431b4c80800000000000000
+      internalID: -8337549081410836878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolemBoss_P2_Death_11
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cca6655acf0e3b3b0800000000000000
+      internalID: -5497803344378959156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StoneGolemBoss_P2_Death_00: -3957350652194932456
+      StoneGolemBoss_P2_Death_01: 1521917781432299149
+      StoneGolemBoss_P2_Death_02: -4838956201354622106
+      StoneGolemBoss_P2_Death_03: 4573003625921131247
+      StoneGolemBoss_P2_Death_04: -3393527471941153564
+      StoneGolemBoss_P2_Death_05: -1230394816632635661
+      StoneGolemBoss_P2_Death_06: -2398136734587532953
+      StoneGolemBoss_P2_Death_07: 3617091389980887863
+      StoneGolemBoss_P2_Death_08: -8892215111190699314
+      StoneGolemBoss_P2_Death_09: 5478250184666983098
+      StoneGolemBoss_P2_Death_10: -8337549081410836878
+      StoneGolemBoss_P2_Death_11: -5497803344378959156
+      StoneGolemBoss_P2_Death_12f_160x160_v1_0: -7206255813713584387
+      StoneGolemBoss_P2_Death_12f_160x160_v1_1: -724102923327493272
+      StoneGolemBoss_P2_Death_12f_160x160_v1_10: 7331150634485266367
+      StoneGolemBoss_P2_Death_12f_160x160_v1_11: -7270591969292955173
+      StoneGolemBoss_P2_Death_12f_160x160_v1_12: -8233193215305743578
+      StoneGolemBoss_P2_Death_12f_160x160_v1_13: 3966254885155147530
+      StoneGolemBoss_P2_Death_12f_160x160_v1_14: -1413054782856175632
+      StoneGolemBoss_P2_Death_12f_160x160_v1_15: -7489706268141646223
+      StoneGolemBoss_P2_Death_12f_160x160_v1_16: -7469591901537728060
+      StoneGolemBoss_P2_Death_12f_160x160_v1_2: -2980942154142588821
+      StoneGolemBoss_P2_Death_12f_160x160_v1_3: -2577712200105179581
+      StoneGolemBoss_P2_Death_12f_160x160_v1_4: -4730195010695837612
+      StoneGolemBoss_P2_Death_12f_160x160_v1_5: 1950487957730924881
+      StoneGolemBoss_P2_Death_12f_160x160_v1_6: 3295682281736619590
+      StoneGolemBoss_P2_Death_12f_160x160_v1_7: 1802859895355936791
+      StoneGolemBoss_P2_Death_12f_160x160_v1_8: -7891144466730274677
+      StoneGolemBoss_P2_Death_12f_160x160_v1_9: 5888927585681422335
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

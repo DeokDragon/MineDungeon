@@ -43,6 +43,7 @@ public partial class StoneGolemBossAI
     private void OnBossHealthChanged(EnemyHealth _) => ReservePhaseTransition();
     private void ReservePhaseTransition()
     {
+        if (health.IsDead) { transitionPending = false; return; }
         if (!health.IsDead && Phase == 1 && health.CurrentHealth <= health.MaxHealth * .5f)
             transitionPending = true;
     }

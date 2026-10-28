@@ -20,7 +20,6 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField, Min(0)] private float noticeHold = 1.5f, noticeFade = .3f;
     private DungeonRunManager run;
     private PlayerProgression growth;
-    private PlayerPotion potion;
     private float noticeElapsed;
     private int noticeFrom, noticeTo, noticePoints;
     private bool showingNotice;
@@ -29,7 +28,7 @@ public class PlayerHUD : MonoBehaviour
     {
         run = DungeonRunManager.Instance;
         growth = run != null ? run.GetComponent<PlayerProgression>() : null;
-        potion = playerHealth != null ? playerHealth.GetComponent<PlayerPotion>() : null;
+        if (potionText != null) { potionText.outlineColor = Color.black; potionText.outlineWidth = .18f; }
         if (healthBar != null) { healthBar.interactable = false; healthBar.minValue = 0; }
         if (reviveText != null) reviveText.gameObject.SetActive(false);
         if (run != null) { run.ResourcesChanged += RefreshUI; run.RunEnded += ClearNotice; }
@@ -51,7 +50,7 @@ public class PlayerHUD : MonoBehaviour
         if (playerHealth == null) return;
         if (healthBar != null) { healthBar.maxValue = Mathf.Max(1, playerHealth.MaxHealth); healthBar.value = playerHealth.CurrentHealth; }
         if (healthText != null) healthText.text = $"{playerHealth.CurrentHealth} / {playerHealth.MaxHealth}";
-        if (potionText != null) potionText.text = run == null ? "—" : $"{run.RemainingPotions} / {run.MaxPotions}" + (potion != null && potion.IsUsing ? " · 사용 중" : "");
+        if (potionText != null) potionText.text = run == null ? "—" : run.RemainingPotions.ToString();
         if (statusText != null) statusText.text = playerHealth.IsDead && run != null && !run.IsRunFailed ? "부활 대기 중" : "";
         if (lifeTalismans != null) for (int i = 0; i < lifeTalismans.Length; i++)
             if (lifeTalismans[i] != null) lifeTalismans[i].color = run != null && i < run.RemainingLives ? activeLife : spentLife;

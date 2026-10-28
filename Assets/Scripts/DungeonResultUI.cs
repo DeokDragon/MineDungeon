@@ -15,11 +15,13 @@ public sealed class DungeonResultUI : MonoBehaviour
     private DungeonResultRecord record;
     private readonly List<ResultItemCard> cards=new List<ResultItemCard>();
     private bool animating, moving;
+    private bool waitingForDeath, presented;
+    private StoneMonsterSpriteEffect deathVisual;
     private float elapsed;
     private int escapeFrame=-1;
     private static DungeonResultUI active;
     public bool IsShowing { get; private set; }
-    public static bool BlocksPause => active!=null && (active.IsShowing || active.escapeFrame==Time.frameCount);
+    public static bool BlocksPause => active!=null && (active.IsShowing || active.waitingForDeath || active.escapeFrame==Time.frameCount);
     public event System.Action Shown;
     private void Start()
     {
@@ -35,6 +37,37 @@ public sealed class DungeonResultUI : MonoBehaviour
     {
         if(record!=null)return;record=run.Result;if(record==null)return;
         pauseMenu.EnterResultState();inventory.Close();rooms.StopRoomCombat();StoneCombatBurst.ClearNonFinale();
+        // Settlement has already completed. Only the result's visual entrance waits.
+        if (record.cleared && rooms.CurrentRoom != null)
+        {
+            foreach (var effect in rooms.CurrentRoom.GetComponentsInChildren<StoneMonsterSpriteEffect>(true))
+            {
+                if (!effect.DelaysClearResult || effect.IsFinished || !effect.isActiveAndEnabled) continue;
+                deathVisual = effect;
+                waitingForDeath = true;
+                deathVisual.Finished += OnDeathVisualFinished;
+                return;
+            }
+        }
+        PresentResult();
+    }
+    private void OnDeathVisualFinished(StoneMonsterSpriteEffect effect)
+    {
+        if (effect != deathVisual) return;
+        StopWaitingForDeath();
+        PresentResult();
+    }
+    private void StopWaitingForDeath()
+    {
+        if (deathVisual != null) deathVisual.Finished -= OnDeathVisualFinished;
+        deathVisual = null;
+        waitingForDeath = false;
+    }
+    private void PresentResult()
+    {
+        if (presented || record == null || !isActiveAndEnabled || view == null || run.IsRestarting) return;
+        StopWaitingForDeath();
+        presented = true;
         view.eyebrow.text=record.cleared?"CHAMBER CONQUERED":"THE MINE CLAIMS ANOTHER";
         view.title.text=record.cleared?"던전 클리어":"던전 실패";
         view.title.color=record.cleared?new Color(1,.82f,.4f):new Color(.95f,.3f,.35f);
@@ -56,10 +89,18 @@ public sealed class DungeonResultUI : MonoBehaviour
     }
     private void Open(){IsShowing=true;view.overlay.SetActive(true);view.reopen.SetActive(false);view.transform.SetAsLastSibling();}
     public void Close(){if(!IsShowing)return;animating=false;elapsed=2.1f;IsShowing=false;view.overlay.SetActive(false);view.reopen.SetActive(true);inventory.HideTooltip();escapeFrame=Time.frameCount;}
-    public void Reopen(){if(record==null||pauseMenu.IsPaused)return;animating=false;elapsed=2.1f;Open();RenderAnimation();}
+    public void Reopen(){if(record==null||!presented||waitingForDeath||pauseMenu.IsPaused)return;animating=false;elapsed=2.1f;Open();RenderAnimation();}
     private void Update()
     {
         if(record==null)return;
+        if (waitingForDeath)
+        {
+            // Disposal, room disable and failed playback must never leave a permanent wait.
+            if (deathVisual == null || deathVisual.IsFinished || !deathVisual.isActiveAndEnabled)
+            { StopWaitingForDeath(); PresentResult(); }
+            return;
+        }
+        if (!presented) { PresentResult(); if (!presented) return; }
         Fit();
         if(IsShowing && Keyboard.current!=null && Keyboard.current.escapeKey.wasPressedThisFrame){Close();return;}
         if(animating){elapsed=Mathf.Min(2.1f,elapsed+Time.unscaledDeltaTime);if(elapsed>=2.1f)animating=false;RenderAnimation();}
@@ -103,5 +144,5 @@ public sealed class DungeonResultUI : MonoBehaviour
     }
     public void Retry(){if(!IsShowing||!view.retryButton.interactable)return;moving=run.RetryDungeon();}
     public void ReturnToLobby(){if(!IsShowing||!view.lobbyButton.interactable)return;moving=run.ReturnToMain();}
-    private void OnDestroy(){if(run!=null)run.RunEnded-=ShowResult;if(active==this)active=null;inventory?.HideTooltip();}
+    private void OnDestroy(){StopWaitingForDeath();if(run!=null)run.RunEnded-=ShowResult;if(active==this)active=null;inventory?.HideTooltip();}
 }

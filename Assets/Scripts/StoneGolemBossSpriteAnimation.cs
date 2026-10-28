@@ -33,6 +33,10 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
     private CameraFollow presentationCamera;
     private float presentationStartedAt;
     private bool showingAttack;
+    [Header("Death visual only - initial timing trial")]
+    [SerializeField] private Sprite[] phase1Death, phase2Death;
+    [SerializeField, Min(.01f)] private float deathDuration = 1.6f;
+    private bool deathStarted;
 
     private StoneGolemBossAI ai;
     private EnemyHealth health;
@@ -52,6 +56,7 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
 
     private void OnEnable()
     {
+        deathStarted = false;
         ai.PresentationStarted -= OnPresentationStarted;
         ai.PresentationEnded -= OnPresentationEnded;
         ai.PresentationStarted += OnPresentationStarted;
@@ -156,6 +161,23 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
         Show(frames, 0);
     }
 
+    public bool PlayDeath()
+    {
+        if (deathStarted) return true;
+        if (!body || health == null || !health.IsDead || ai == null) return false;
+        var frames = ai.Phase == 2 ? phase2Death : phase1Death;
+        if (frames == null || frames.Length != 12) return false;
+        var effect = StoneMonsterSpriteEffect.Play("Golem Death", frames, deathDuration,
+            body.transform.position, body, GetComponentInParent<DungeonRoom>()?.transform,
+            body.transform.lossyScale, body.sortingOrder, DeathTiming, true);
+        if (!effect) return false;
+        effect.name = "StoneGolem P" + ai.Phase + " Death";
+        effect.transform.rotation = body.transform.rotation;
+        deathStarted = true;
+        body.enabled = false;
+        return true;
+    }
+
     private void OnPresentationEnded(StoneGolemBossAI source, bool transformation)
     {
         if (source == ai) ClearPresentationVisual(true);
@@ -215,6 +237,7 @@ public sealed class StoneGolemBossSpriteAnimation : MonoBehaviour
     }
 
     private static readonly float[] IntroTiming = {180, 180, 200, 200, 220, 220, 200, 200, 200, 200},
+        DeathTiming = {80, 90, 110, 130, 150, 160, 160, 160, 150, 150, 140, 120},
         IntroV2Timing = {220, 200, 220, 240, 240, 260, 240, 220, 200, 200, 160, 140, 120, 160, 180, 200, 220, 180},
         TransformTiming = {160, 170, 170, 180, 180, 180, 190, 190, 190, 190, 180, 180, 180, 160},
         ChipsTiming = {180, 190, 190, 190, 190, 180, 180, 180};

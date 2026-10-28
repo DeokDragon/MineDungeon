@@ -26,7 +26,8 @@ public sealed class StoneCombatBurst : MonoBehaviour
     public float Age => age;
     public static int ActiveCount => live.Count;
 
-    public void Initialize(DungeonRoom room, Vector2 point, Vector2 direction, SpriteRenderer body, bool death, bool boss)
+    public void Initialize(DungeonRoom room, Vector2 point, Vector2 direction, SpriteRenderer body, bool death, bool boss,
+        bool showBreakingBody = true)
     {
         while (live.Count >= 24) live[0].Clear();
         live.Add(this);
@@ -51,8 +52,11 @@ public sealed class StoneCombatBurst : MonoBehaviour
         }
         if (death)
         {
-            var ghost = Add("Breaking body", body.sprite, body.bounds.size, new Color(1f, .97f, .85f, body.color.a), .05f, body.sortingOrder);
-            ghost.sprite.transform.rotation = body.transform.rotation;
+            if (showBreakingBody)
+            {
+                var ghost = Add("Breaking body", body.sprite, body.bounds.size, new Color(1f, .97f, .85f, body.color.a), .05f, body.sortingOrder);
+                ghost.sprite.transform.rotation = body.transform.rotation;
+            }
             for (int i = 0; i < 3; i++)
             {
                 var dust = Add("Dust", dustSprite, Vector2.one * (boss ? .8f : .4f), new Color(.35f, .31f, .25f, .20f), duration, -1);

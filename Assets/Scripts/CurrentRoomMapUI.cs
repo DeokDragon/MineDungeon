@@ -26,14 +26,21 @@ public sealed class CurrentRoomMapUI : MonoBehaviour
         panel = Rect("CurrentRoomMap", transform, new Vector2(560, 400), Vector2.zero);
         var group = panel.gameObject.AddComponent<CanvasGroup>();
         group.blocksRaycasts = false; group.interactable = false;
-        var background = panel.gameObject.AddComponent<Image>();
-        background.color = new Color(.035f, .045f, .055f, .8f);
+        var background = panel.gameObject.AddComponent<CurrentRoomMapBackground>();
+        background.sprite = Resources.Load<Sprite>("TabMapUI_v1/Background/TabMap_Background_560x400_A80");
+        // The authored background already contains alpha 204 (80%).
+        background.color = background.sprite ? Color.white : new Color(.035f, .045f, .055f, .8f);
         background.raycastTarget = false;
         Label("현재 방  ·  TAB", new Vector2(0, 174), 21, Color.white);
         Label("▲ 플레이어   ◆ 적/보스   ■ 출구: 잠김 / 개방", new Vector2(0, -176), 15, new Color(.85f,.87f,.89f));
         var area = Rect("TerrainAndMarkers", panel, new Vector2(512, 310), Vector2.zero);
         map = area.gameObject.AddComponent<CurrentRoomMapGraphic>();
         map.raycastTarget = false;
+        var frame = Rect("MapFrame", panel, new Vector2(560, 400), Vector2.zero).gameObject.AddComponent<Image>();
+        frame.sprite = Resources.Load<Sprite>("TabMapUI_v1/Frame/TabMap_Frame_560x400_v1");
+        frame.type = Image.Type.Sliced; frame.fillCenter = false; frame.raycastTarget = false;
+        frame.enabled = frame.sprite != null;
+        foreach (var label in panel.GetComponentsInChildren<TextMeshProUGUI>()) label.transform.SetAsLastSibling();
         panel.gameObject.SetActive(false);
     }
     static RectTransform Rect(string name, Transform parent, Vector2 size, Vector2 position)

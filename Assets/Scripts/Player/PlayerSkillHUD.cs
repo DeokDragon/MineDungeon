@@ -11,6 +11,16 @@ public sealed class PlayerSkillHUD : MonoBehaviour
     }
     [SerializeField] private PlayerSkills player;
     [SerializeField] private Slot eSlot, rSlot;
+    private void Awake()
+    {
+        foreach (var slot in new[] { eSlot, rSlot })
+        {
+            // TMP instantiates the text material; the shared font asset is preserved.
+            slot.remainingText.color = Color.white;
+            slot.remainingText.outlineColor = Color.black;
+            slot.remainingText.outlineWidth = .18f;
+        }
+    }
     private void LateUpdate()
     {
         Draw(eSlot, 0, "E"); Draw(rSlot, 1, "R");
@@ -30,7 +40,17 @@ public sealed class PlayerSkillHUD : MonoBehaviour
         float remaining = player.CooldownRemaining(slot);
         float applied = player.AppliedCooldown(slot);
         view.cooldownOverlay.gameObject.SetActive(remaining > 0f);
-        view.cooldownOverlay.rectTransform.anchorMax = new Vector2(1, data != null && applied > 0 ? Mathf.Clamp01(remaining / applied) : 0);
-        view.remainingText.text = remaining > 0f ? remaining.ToString("0.0") : "";
+        // Bottom-anchored height leaves the icon visible from the top as time elapses.
+        float fraction = applied > 0f ? Mathf.Clamp01(remaining / applied) : 1f;
+        view.cooldownOverlay.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
+            view.icon.rectTransform.rect.height * fraction);
+        view.remainingText.text = FormatRemaining(remaining);
+    }
+
+    internal static string FormatRemaining(float remaining)
+    {
+        if (remaining <= 0f) return "";
+        return remaining >= 10f ? Mathf.Ceil(remaining).ToString("0")
+            : (Mathf.Ceil(remaining * 10f) / 10f).ToString("0.0");
     }
 }

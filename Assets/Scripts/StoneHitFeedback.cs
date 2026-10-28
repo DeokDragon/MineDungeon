@@ -19,6 +19,7 @@ public sealed class StoneHitFeedback : MonoBehaviour
     private CrystalMonsterSpriteAnimation crystalAnimation;
     private CoalMonsterSpriteAnimation coalAnimation;
     private MagnetMonsterSpriteAnimation magnetAnimation;
+    private StoneGolemBossSpriteAnimation golemAnimation;
     public bool IsBoss => boss;
 
     private void Awake()
@@ -28,6 +29,7 @@ public sealed class StoneHitFeedback : MonoBehaviour
         crystalAnimation = GetComponent<CrystalMonsterSpriteAnimation>();
         coalAnimation = GetComponent<CoalMonsterSpriteAnimation>();
         magnetAnimation = GetComponent<MagnetMonsterSpriteAnimation>();
+        golemAnimation = GetComponent<StoneGolemBossSpriteAnimation>();
         restPosition = body.transform.localPosition;
         restScale = body.transform.localScale;
         restColor = body.color;
@@ -47,8 +49,11 @@ public sealed class StoneHitFeedback : MonoBehaviour
 
     public void Break(Vector2 incoming)
     {
+        // Snapshot the boss visual before Restore / AI cancellation resets its jump pivot.
+        bool golemDeath = golemAnimation && golemAnimation.PlayDeath();
         Restore();
-        if (!(spriteAnimation && spriteAnimation.PlayDeath()) &&
+        if (golemDeath) Spawn(body.transform.position, incoming, true, false);
+        else if (!(spriteAnimation && spriteAnimation.PlayDeath()) &&
             !(ironAnimation && ironAnimation.PlayDeath()) &&
             !(crystalAnimation && crystalAnimation.PlayDeath()) &&
             !(coalAnimation && coalAnimation.PlayDeath()) &&
@@ -57,12 +62,12 @@ public sealed class StoneHitFeedback : MonoBehaviour
             camera.Shake(boss ? .10f : .04f, boss ? .20f : .10f, boss);
     }
 
-    private void Spawn(Vector2 point, Vector2 incoming, bool death)
+    private void Spawn(Vector2 point, Vector2 incoming, bool death, bool showBreakingBody = true)
     {
         if (burstPrefab == null) return;
         var burst = Instantiate(burstPrefab);
         UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(burst.gameObject, gameObject.scene);
-        burst.Initialize(GetComponentInParent<DungeonRoom>(), point, incoming, body, death, boss);
+        burst.Initialize(GetComponentInParent<DungeonRoom>(), point, incoming, body, death, boss, showBreakingBody);
     }
 
     private void LateUpdate()
