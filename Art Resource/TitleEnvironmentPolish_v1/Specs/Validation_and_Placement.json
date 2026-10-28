@@ -1,0 +1,253 @@
+{
+  "background_size": [
+    2752,
+    1536
+  ],
+  "mark_changed_bbox": [
+    2586,
+    1370,
+    2694,
+    1478
+  ],
+  "changed_pixels": 5177,
+  "all_background_pixels_outside_repair_unchanged": true,
+  "unity_bg_equals_source": true,
+  "protected_file_count": 162,
+  "protected_files_unchanged": true,
+  "reused_files_identical": [
+    "Flames/TitleLantern_Barrel_Flame_6f_24x32_v1.png",
+    "Flames/TitleLantern_Hanging_Flame_6f_32x48_v1.png",
+    "Flames/Frames_Barrel/Flame_F01.png",
+    "Flames/Frames_Barrel/Flame_F02.png",
+    "Flames/Frames_Barrel/Flame_F03.png",
+    "Flames/Frames_Barrel/Flame_F04.png",
+    "Flames/Frames_Barrel/Flame_F05.png",
+    "Flames/Frames_Barrel/Flame_F06.png",
+    "Flames/Frames_Hanging/Flame_F01.png",
+    "Flames/Frames_Hanging/Flame_F02.png",
+    "Flames/Frames_Hanging/Flame_F03.png",
+    "Flames/Frames_Hanging/Flame_F04.png",
+    "Flames/Frames_Hanging/Flame_F05.png",
+    "Flames/Frames_Hanging/Flame_F06.png",
+    "Glass/TitleLantern_Barrel_GlassLight_v1.png",
+    "Glass/TitleLantern_Hanging_GlassLight_v1.png"
+  ],
+  "new_light_assets": [
+    {
+      "file": "SurfaceLighting/TitleLantern_Hanging_Wood_Light_polish_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_max": 35,
+      "origin": [
+        1728,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Hanging_Rock_Light_polish_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_max": 4,
+      "origin": [
+        1728,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Hanging_Floor_Light_polish_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_max": 10,
+      "origin": [
+        1728,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Barrel_Wood_Light_polish_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_max": 33,
+      "origin": [
+        1728,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Barrel_Rock_Light_polish_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_max": 11,
+      "origin": [
+        1728,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "SurfaceLighting/TitleLantern_Barrel_Floor_Light_polish_v1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_max": 15,
+      "origin": [
+        1728,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "Glow/TitleLantern_WarmHalo_384x384_polish_v1.png",
+      "size": [
+        384,
+        384
+      ],
+      "mode": "RGBA",
+      "alpha_max": 29,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "surface_metrics": [
+    {
+      "lamp": "Hanging",
+      "material": "Wood",
+      "before_max": 55,
+      "after_max": 35,
+      "before_nonzero": 121204,
+      "after_nonzero": 79804
+    },
+    {
+      "lamp": "Hanging",
+      "material": "Rock",
+      "before_max": 24,
+      "after_max": 4,
+      "before_nonzero": 133704,
+      "after_nonzero": 29360
+    },
+    {
+      "lamp": "Hanging",
+      "material": "Floor",
+      "before_max": 20,
+      "after_max": 10,
+      "before_nonzero": 151340,
+      "after_nonzero": 60672
+    },
+    {
+      "lamp": "Barrel",
+      "material": "Wood",
+      "before_max": 63,
+      "after_max": 33,
+      "before_nonzero": 94647,
+      "after_nonzero": 57468
+    },
+    {
+      "lamp": "Barrel",
+      "material": "Rock",
+      "before_max": 34,
+      "after_max": 11,
+      "before_nonzero": 109350,
+      "after_nonzero": 38432
+    },
+    {
+      "lamp": "Barrel",
+      "material": "Floor",
+      "before_max": 28,
+      "after_max": 15,
+      "before_nonzero": 101686,
+      "after_nonzero": 49424
+    }
+  ],
+  "surface_32px_borders_all_zero": [
+    "TitleLantern_Barrel_Floor_Light_polish_v1.png",
+    "TitleLantern_Barrel_Rock_Light_polish_v1.png",
+    "TitleLantern_Barrel_Wood_Light_polish_v1.png",
+    "TitleLantern_Hanging_Floor_Light_polish_v1.png",
+    "TitleLantern_Hanging_Rock_Light_polish_v1.png",
+    "TitleLantern_Hanging_Wood_Light_polish_v1.png"
+  ],
+  "frame_light_energy_multiplier": {
+    "Hanging": [
+      0.96,
+      1.0026913306845568,
+      1.04,
+      1.0090171302025663,
+      0.9756060704748257,
+      1.0298860157623917
+    ],
+    "Barrel": [
+      0.96,
+      0.9622276446103057,
+      0.9666829338309172,
+      0.9978584756710205,
+      0.9601607578584757,
+      1.04
+    ]
+  },
+  "preview_model": "sRGB textures decoded to linear -> straight-alpha blend, surface 0.35 as current TitleScreen.cs -> sRGB encode; not Unity screenshot",
+  "Unity_Play": false,
+  "realtime_GIF_observed": false,
+  "GIF": {
+    "frames": 24,
+    "duration_ms": 2880
+  },
+  "placements": {
+    "surface_top_left": [
+      1728,
+      512
+    ],
+    "surface_center": [
+      2240,
+      1024
+    ],
+    "Hanging_center": [
+      2344,
+      800
+    ],
+    "Barrel_center": [
+      2476,
+      1078
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "concept_only": true,
+  "final_runtime_assets": 0,
+  "Unity_modified": false,
+  "protected_file_count": 69,
+  "all_protected_unchanged": true,
+  "sizes": {
+    "Entry": [
+      1440,
+      810
+    ],
+    "Clear": [
+      1440,
+      810
+    ],
+    "Failure": [
+      1440,
+      810
+    ],
+    "Pause": [
+      620,
+      600
+    ],
+    "HUD": [
+      300,
+      142
+    ],
+    "Slots": [
+      232,
+      72
+    ],
+    "BossHP": [
+      864,
+      62
+    ]
+  },
+  "HUD_screen_rects_top_left": {
+    "Status": [
+      24,
+      24,
+      300,
+      142
+    ],
+    "Q": [
+      24,
+      984,
+      72,
+      72
+    ],
+    "E": [
+      1744,
+      984,
+      72,
+      72
+    ],
+    "R": [
+      1824,
+      984,
+      72,
+      72
+    ],
+    "BossHP": [
+      528,
+      24,
+      864,
+      62
+    ]
+  },
+  "result_panels_content_local": {
+    "Rewards": [
+      40,
+      220,
+      660,
+      570
+    ],
+    "Records": [
+      740,
+      220,
+      660,
+      570
+    ]
+  },
+  "pause_size_note": "requested620x600 and CharacterSaveSetup620x600; first MCP runtime snapshot PauseCard1440x810, discrepancy not fixed",
+  "text_rendering": "preview only; fonts/data/gauges/icons remain independent TMP/Image in future runtime",
+  "references": [
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\UISystem.md",
+    "D:\\Git\\MineDungeon2\\Docs\\Systems\\ArtDirection.md",
+    "D:\\Git\\MineDungeon2\\Assets\\Scenes\\Main.unity",
+    "D:\\Git\\MineDungeon2\\Assets\\Prefabs\\UI\\DungeonResultView.prefab",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\README_KO.md",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Background\\TabMap_BackgroundTile_64x64_A80.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Background\\TabMap_Background_560x400_A80.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Frame\\TabMap_Frame_560x400_v1.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Icons\\TabMap_BossHornedSkull_24x24.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Icons\\TabMap_ExitLocked_24x24.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Icons\\TabMap_ExitOpen_24x24.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Icons\\TabMap_MonsterSkull_24x24.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Icons\\TabMap_PlayerArrow_24x24.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\BossRoom24x22_560x400.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\BossRoom24x22_560x400_2x.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\Boss_1920x1080_Centered_ArtComposite.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\CodeBefore_ArtAfter_SameMap01.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\CurrentCode_Reconstruction_560x400.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\CurrentCode_Reconstruction_560x400_2x.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\Frame_9Slice_720x480_CornerTest.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\Icons_Terrain_Native_2x_4x_QA.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\Reference_Improved_Comparison.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\Regular_1920x1080_Centered_ArtComposite.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\Regular_Map01_560x400.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Previews\\Regular_Map01_560x400_2x.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Sources\\build_tabmap_v1.py",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Sources\\Frame_Generated_Source.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Sources\\GenerationPrompts.md",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Sources\\Reference_TabMap_Screenshot.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Specs\\AssetManifest_and_Validation.json",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Terrain\\TabMap_Boundary_East_32x32.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Terrain\\TabMap_Boundary_North_32x32.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Terrain\\TabMap_Boundary_South_32x32.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Terrain\\TabMap_Boundary_West_32x32.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Terrain\\TabMap_Floor_32x32.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Terrain\\TabMap_Unwalkable_32x32.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TabMapUI_v1\\Terrain\\TabMap_WallRock_32x32.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\README_KO.md",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Buttons\\TitleMenu_Button_Hover_360x80_v1.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Buttons\\TitleMenu_Button_Normal_360x80_v1.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Buttons\\TitleMenu_Button_Pressed_360x80_v1.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Logos\\TitleLogo_A_720x240_v1.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Logos\\TitleLogo_B_720x240_v1.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Logos\\TitleLogo_FinalCandidate_A_720x240_v1.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Previews\\Button_9Slice_480x96_Test.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Previews\\Button_States_TextFree_and_LabelDemo.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Previews\\Logo_A_B_Comparison_Native.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Previews\\TitleMenu_A_1920x1080.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Previews\\TitleMenu_A_B_FullScene_Comparison.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Previews\\TitleMenu_A_Layout_Guide.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Previews\\TitleMenu_A_StartHovered_1920x1080.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Previews\\TitleMenu_A_StartPressed_1920x1080.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Previews\\TitleMenu_B_1920x1080.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Sources\\build_title_menu_v1.py",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Sources\\Generated_Hover_Source.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Sources\\Generated_Logo_A_Source.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Sources\\Generated_Logo_B_Source.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Sources\\Generated_Normal_Source.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Sources\\Generated_Pressed_Source.png",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Sources\\GenerationPrompts.md",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Specs\\Button_Bindings.json",
+    "D:\\Git\\MineDungeon2\\Art Resource\\TitleMenuUI_v1\\Specs\\Layout_and_Validation.json",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\MineEntranceUI.cs",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\DungeonResultUI.cs",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\DungeonResultView.cs",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\PauseMenu.cs",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\PlayerHUD.cs",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\BossHealthHUD.cs",
+    "D:\\Git\\MineDungeon2\\Assets\\Scripts\\Player\\PlayerSkillHUD.cs"
+  ]
+}
