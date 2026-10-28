@@ -177,6 +177,7 @@ public static class TitleScreenSetup
             p.FindPropertyRelative("frameOffset").floatValue = l == 0 ? 0 : .32f;
             p.FindPropertyRelative("lightSeconds").floatValue = l == 0 ? 2.6f : 2.9f;
             p.FindPropertyRelative("lightPhase").floatValue = l == 0 ? 0 : 1.1f;
+            p.FindPropertyRelative("surfaceOpacity").floatValue = .35f;
         }
         so.ApplyModifiedPropertiesWithoutUndo();
         EditorSceneManager.SaveScene(scene, ScenePath);

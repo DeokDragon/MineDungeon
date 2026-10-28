@@ -15,6 +15,7 @@ public sealed class TitleScreen : MonoBehaviour
         public Sprite[] frames;
         public Image[] lights;
         public float frameSeconds, frameOffset, lightSeconds, lightPhase;
+        [Range(0, 1)] public float surfaceOpacity = .35f;
 
         public void Animate(double elapsed)
         {
@@ -23,7 +24,10 @@ public sealed class TitleScreen : MonoBehaviour
             float brightness = .94f + .06f * (float)Math.Sin(elapsed * (2 * Math.PI / lightSeconds) + lightPhase);
             // The source art uses straight alpha. Keep flame alpha intact and couple its RGB to the light.
             flame.color = new Color(brightness, brightness, brightness, 1);
-            foreach (var light in lights) light.color = new Color(1, 1, 1, brightness);
+            // Trial compensation for the project's Linear alpha compositing versus the sRGB art preview.
+            // Only reflected surface light is reduced; the README's 0.88..1.00 flicker remains unchanged.
+            for (int i = 0; i < lights.Length; i++)
+                lights[i].color = new Color(1, 1, 1, brightness * (i < 3 ? surfaceOpacity : 1));
         }
     }
 
