@@ -1,0 +1,20 @@
+﻿ID,File,Width,Height,BorderLeft,BorderBottom,BorderRight,BorderTop,ImageType,Usage,Notes
+LargeFrame,PNG/Panels/UI_Panel_Large_Frame_1440x810.png,1440,810,28,28,28,28,Sliced,입장 패널; 결과 좌우패널은660x570으로9-Slice. 결과 전체 외곽 추가 금지,
+MediumFrame,PNG/Panels/UI_Panel_Medium_Frame_620x600.png,620,600,28,28,28,28,Sliced,퍼즈/기존 확인창의 공통 프레임,
+SlateBackground,PNG/Panels/UI_Slate_Background_664x349_A80.png,664,349,0,0,0,0,Simple,큰 패널 프레임의 내부 사각영역만 채우는 공통바탕,"알파204, Image.alpha1; 배경 반복용 타일 아님"
+StatusHUD,PNG/HUD/UI_PlayerStatus_300x142.png,300,142,8,8,8,8,Sliced,상태HUD 배경+얇은프레임; 고정300x142. 정보 없음,
+InsetBackground,PNG/Panels/UI_Inset_Background_64x64_A80.png,64,64,0,0,0,0,Simple,보상카드/통계행의 저대비 공통배경,A HUD의 원래 낮은대비 재질 재사용; 알파204
+InsetFrame,PNG/Panels/UI_Inset_Frame_96x96.png,96,96,8,8,8,8,Sliced,보상Viewport/카드/정보행; 내부배경은공통Slate 사용,
+SlotNormal,PNG/Slots/UI_Slot_Normal_72x72.png,72,72,6,6,6,6,Sliced,"Q/E/R 공통; 아이콘은(6,6,60,60); 프레임은아이콘뒤",
+SlotReady,PNG/Slots/UI_Slot_Ready_72x72.png,72,72,6,6,6,6,Sliced,"선택적사용가능강조; 외형만밝은구리선, 기능판정없음",
+BossFrame,PNG/HUD/UI_BossHP_Frame_864x62.png,864,62,8,4,8,4,Sliced,보스 외곽; 이름/현재HP/지연피해/트랙 제외,기존 게이지 영역 x2..861 y42..60 완전투명
+WoodNormal,PNG/Buttons/Wood/UI_Button_Wood_Normal_360x72.png,360,72,8,8,8,8,Sliced,주요행동버튼 Normal,목재와테두리만; 레이블TMP별도; 모든상태같은규격
+WoodHover,PNG/Buttons/Wood/UI_Button_Wood_Hover_360x72.png,360,72,8,8,8,8,Sliced,주요행동버튼 Hover,목재와테두리만; 레이블TMP별도; 모든상태같은규격
+WoodPressed,PNG/Buttons/Wood/UI_Button_Wood_Pressed_360x72.png,360,72,8,8,8,8,Sliced,주요행동버튼 Pressed,목재와테두리만; 레이블TMP별도; 모든상태같은규격
+WoodSelected,PNG/Buttons/Wood/UI_Button_Wood_Selected_360x72.png,360,72,8,8,8,8,Sliced,주요행동버튼 Selected,목재와테두리만; 레이블TMP별도; 모든상태같은규격
+WoodDisabled,PNG/Buttons/Wood/UI_Button_Wood_Disabled_360x72.png,360,72,8,8,8,8,Sliced,주요행동버튼 Disabled,목재와테두리만; 레이블TMP별도; 모든상태같은규격
+StoneNormal,PNG/Buttons/Stone/UI_Button_Stone_Normal_128x64.png,128,64,8,8,8,8,Sliced,층·난이도·닫기 및기타작은선택버튼 Normal,동일Hybrid A 암석팔레트. 주요행동버튼은목재사용
+StoneHover,PNG/Buttons/Stone/UI_Button_Stone_Hover_128x64.png,128,64,8,8,8,8,Sliced,층·난이도·닫기 및기타작은선택버튼 Hover,동일Hybrid A 암석팔레트. 주요행동버튼은목재사용
+StonePressed,PNG/Buttons/Stone/UI_Button_Stone_Pressed_128x64.png,128,64,8,8,8,8,Sliced,층·난이도·닫기 및기타작은선택버튼 Pressed,동일Hybrid A 암석팔레트. 주요행동버튼은목재사용
+StoneSelected,PNG/Buttons/Stone/UI_Button_Stone_Selected_128x64.png,128,64,8,8,8,8,Sliced,층·난이도·닫기 및기타작은선택버튼 Selected,동일Hybrid A 암석팔레트. 주요행동버튼은목재사용
+StoneDisabled,PNG/Buttons/Stone/UI_Button_Stone_Disabled_128x64.png,128,64,8,8,8,8,Sliced,층·난이도·닫기 및기타작은선택버튼 Disabled,동일Hybrid A 암석팔레트. 주요행동버튼은목재사용

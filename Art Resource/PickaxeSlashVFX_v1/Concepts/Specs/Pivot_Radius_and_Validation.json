@@ -1,0 +1,357 @@
+{
+  "configs": {
+    "1": {
+      "cell": [
+        192,
+        192
+      ],
+      "pivot_top_left": [
+        96,
+        96
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "radius_native_px": 88,
+      "half_angle_degrees": 60,
+      "PPU_candidate": 64,
+      "range_initial_world": 1.5,
+      "world_scale_base": 1.0909090909090908,
+      "world_scale_Physical20": 1.2545454545454544,
+      "candidate_full_frames": 6,
+      "duration_s": 0.25,
+      "source_alignment_center": [
+        345.0294683164839,
+        363.71346242666743
+      ]
+    },
+    "2": {
+      "cell": [
+        192,
+        192
+      ],
+      "pivot_top_left": [
+        96,
+        96
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "radius_native_px": 88,
+      "half_angle_degrees": 60,
+      "PPU_candidate": 64,
+      "range_initial_world": 1.5,
+      "world_scale_base": 1.0909090909090908,
+      "world_scale_Physical20": 1.2545454545454544,
+      "candidate_full_frames": 6,
+      "duration_s": 0.25,
+      "source_alignment_center": [
+        359.39947636798996,
+        367.41758553829266
+      ]
+    },
+    "3": {
+      "cell": [
+        256,
+        256
+      ],
+      "pivot_top_left": [
+        128,
+        128
+      ],
+      "pivot_unity": [
+        0.5,
+        0.5
+      ],
+      "radius_native_px": 112,
+      "half_angle_degrees": 45,
+      "PPU_candidate": 64,
+      "range_initial_world": 1.7,
+      "world_scale_base": 0.9714285714285714,
+      "world_scale_Physical20": 1.117142857142857,
+      "candidate_full_frames": 8,
+      "duration_s": 0.32,
+      "source_alignment_center": [
+        128.0,
+        362.0
+      ]
+    }
+  },
+  "keyframes": [
+    {
+      "attack": 1,
+      "phase": "Form",
+      "file": "Keyframes/Attack1_Form_192x192.png",
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        121,
+        47,
+        165,
+        93
+      ],
+      "measured_max_radius_px": 69.3000721500346,
+      "angle_min_png_y_down": -59.62087398863166,
+      "angle_max_png_y_down": -3.154842864791977,
+      "nonzero_pixels": 345,
+      "alpha_levels": [
+        0,
+        32,
+        64,
+        96,
+        128,
+        160,
+        192,
+        224
+      ]
+    },
+    {
+      "attack": 1,
+      "phase": "Impact50",
+      "file": "Keyframes/Attack1_Impact50_192x192.png",
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        128,
+        28,
+        184,
+        166
+      ],
+      "measured_max_radius_px": 87.82084035125148,
+      "angle_min_png_y_down": -59.82647997035567,
+      "angle_max_png_y_down": 59.82647997035567,
+      "nonzero_pixels": 2684,
+      "alpha_levels": [
+        0,
+        32,
+        64,
+        96,
+        128,
+        160,
+        192,
+        224,
+        255
+      ]
+    },
+    {
+      "attack": 1,
+      "phase": "Dissipate",
+      "file": "Keyframes/Attack1_Dissipate_192x192.png",
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        128,
+        78,
+        175,
+        158
+      ],
+      "measured_max_radius_px": 83.00903565275289,
+      "angle_min_png_y_down": -18.76806006684338,
+      "angle_max_png_y_down": 59.47029410006589,
+      "nonzero_pixels": 482,
+      "alpha_levels": [
+        0,
+        32,
+        64,
+        96,
+        128
+      ]
+    },
+    {
+      "attack": 2,
+      "phase": "Form",
+      "file": "Keyframes/Attack2_Form_192x192.png",
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        118,
+        80,
+        158,
+        149
+      ],
+      "measured_max_radius_px": 68.93837828089663,
+      "angle_min_png_y_down": -15.08635400846512,
+      "angle_max_png_y_down": 59.62087398863166,
+      "nonzero_pixels": 704,
+      "alpha_levels": [
+        0,
+        32,
+        64,
+        96,
+        128,
+        160,
+        192,
+        224
+      ]
+    },
+    {
+      "attack": 2,
+      "phase": "Impact50",
+      "file": "Keyframes/Attack2_Impact50_192x192.png",
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        120,
+        27,
+        182,
+        171
+      ],
+      "measured_max_radius_px": 87.7866732482784,
+      "angle_min_png_y_down": -59.82647997035567,
+      "angle_max_png_y_down": 59.82647997035567,
+      "nonzero_pixels": 3435,
+      "alpha_levels": [
+        0,
+        32,
+        64,
+        96,
+        128,
+        160,
+        192,
+        224,
+        255
+      ]
+    },
+    {
+      "attack": 2,
+      "phase": "Dissipate",
+      "file": "Keyframes/Attack2_Dissipate_192x192.png",
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        128,
+        32,
+        175,
+        155
+      ],
+      "measured_max_radius_px": 83.44159634139318,
+      "angle_min_png_y_down": -59.596575525494174,
+      "angle_max_png_y_down": 47.1409013663231,
+      "nonzero_pixels": 637,
+      "alpha_levels": [
+        0,
+        32,
+        64,
+        96,
+        128
+      ]
+    },
+    {
+      "attack": 3,
+      "phase": "Form",
+      "file": "Keyframes/Attack3_Form_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        162,
+        99,
+        217,
+        152
+      ],
+      "measured_max_radius_px": 88.50141241810776,
+      "angle_min_png_y_down": -38.558399900664966,
+      "angle_max_png_y_down": 28.55962047831983,
+      "nonzero_pixels": 786,
+      "alpha_levels": [
+        0,
+        32,
+        64,
+        96,
+        128,
+        160,
+        192,
+        224
+      ]
+    },
+    {
+      "attack": 3,
+      "phase": "Impact50",
+      "file": "Keyframes/Attack3_Impact50_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        153,
+        77,
+        240,
+        180
+      ],
+      "measured_max_radius_px": 111.55491921022578,
+      "angle_min_png_y_down": -44.43829466743345,
+      "angle_max_png_y_down": 44.44909602078143,
+      "nonzero_pixels": 3346,
+      "alpha_levels": [
+        0,
+        32,
+        64,
+        96,
+        128,
+        160,
+        192,
+        224,
+        255
+      ]
+    },
+    {
+      "attack": 3,
+      "phase": "Dissipate",
+      "file": "Keyframes/Attack3_Dissipate_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        158,
+        90,
+        235,
+        170
+      ],
+      "measured_max_radius_px": 106.59502802663921,
+      "angle_min_png_y_down": -44.24615166692923,
+      "angle_max_png_y_down": 44.181544538311385,
+      "nonzero_pixels": 1298,
+      "alpha_levels": [
+        0,
+        32,
+        64,
+        96,
+        128
+      ]
+    }
+  ],
+  "capture_reference_files": [
+    "D:\\Git\\MineDungeon2\\Library\\PlayerSlimeVerification\\idle.png",
+    "D:\\Git\\MineDungeon2\\Library\\PlayerAttackVfxVerification\\air-step1-aim0.png",
+    "D:\\Git\\MineDungeon2\\Library\\PlayerAttackVfxVerification\\air-step2-aim0.png",
+    "D:\\Git\\MineDungeon2\\Library\\PlayerAttackVfxVerification\\air-step3-aim0.png",
+    "D:\\Git\\MineDungeon2\\Library\\PlayerAttackVfxVerification\\air-step1-aim45.png"
+  ],
+  "protected_files_unchanged": 55,
+  "capture_composite_origin_screen_estimate": [
+    960,
+    540
+  ],
+  "capture_composite_pixels_per_unit_estimate": 120,
+  "capture_composite_calibrated": false,
+  "world_diagram_coordinates_precise": true,
+  "continuous_animation_verified": false,
+  "Unity_modified": false,
+  "full_sprite_sheets_created": false
+}

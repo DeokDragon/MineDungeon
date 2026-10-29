@@ -1,0 +1,600 @@
+[
+  {
+    "id": "LargeFrame",
+    "file": "PNG/Panels/UI_Panel_Large_Frame_1440x810.png",
+    "width": 1440,
+    "height": 810,
+    "RGBA": true,
+    "border_LBRT": [
+      28,
+      28,
+      28,
+      28
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "입장 패널; 결과 좌우패널은660x570으로9-Slice. 결과 전체 외곽 추가 금지",
+    "notes": ""
+  },
+  {
+    "id": "MediumFrame",
+    "file": "PNG/Panels/UI_Panel_Medium_Frame_620x600.png",
+    "width": 620,
+    "height": 600,
+    "RGBA": true,
+    "border_LBRT": [
+      28,
+      28,
+      28,
+      28
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "퍼즈/기존 확인창의 공통 프레임",
+    "notes": ""
+  },
+  {
+    "id": "SlateBackground",
+    "file": "PNG/Panels/UI_Slate_Background_664x349_A80.png",
+    "width": 664,
+    "height": 349,
+    "RGBA": true,
+    "border_LBRT": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Simple",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      204
+    ],
+    "usage": "큰 패널 프레임의 내부 사각영역만 채우는 공통바탕",
+    "notes": "알파204, Image.alpha1; 배경 반복용 타일 아님"
+  },
+  {
+    "id": "StatusHUD",
+    "file": "PNG/HUD/UI_PlayerStatus_300x142.png",
+    "width": 300,
+    "height": 142,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "상태HUD 배경+얇은프레임; 고정300x142. 정보 없음",
+    "notes": ""
+  },
+  {
+    "id": "InsetBackground",
+    "file": "PNG/Panels/UI_Inset_Background_64x64_A80.png",
+    "width": 64,
+    "height": 64,
+    "RGBA": true,
+    "border_LBRT": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Simple",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      204
+    ],
+    "usage": "보상카드/통계행의 저대비 공통배경",
+    "notes": "A HUD의 원래 낮은대비 재질 재사용; 알파204"
+  },
+  {
+    "id": "InsetFrame",
+    "file": "PNG/Panels/UI_Inset_Frame_96x96.png",
+    "width": 96,
+    "height": 96,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "보상Viewport/카드/정보행; 내부배경은공통Slate 사용",
+    "notes": ""
+  },
+  {
+    "id": "SlotNormal",
+    "file": "PNG/Slots/UI_Slot_Normal_72x72.png",
+    "width": 72,
+    "height": 72,
+    "RGBA": true,
+    "border_LBRT": [
+      6,
+      6,
+      6,
+      6
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "Q/E/R 공통; 아이콘은(6,6,60,60); 프레임은아이콘뒤",
+    "notes": ""
+  },
+  {
+    "id": "SlotReady",
+    "file": "PNG/Slots/UI_Slot_Ready_72x72.png",
+    "width": 72,
+    "height": 72,
+    "RGBA": true,
+    "border_LBRT": [
+      6,
+      6,
+      6,
+      6
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "선택적사용가능강조; 외형만밝은구리선, 기능판정없음",
+    "notes": ""
+  },
+  {
+    "id": "BossFrame",
+    "file": "PNG/HUD/UI_BossHP_Frame_864x62.png",
+    "width": 864,
+    "height": 62,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      4,
+      8,
+      4
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      255
+    ],
+    "usage": "보스 외곽; 이름/현재HP/지연피해/트랙 제외",
+    "notes": "기존 게이지 영역 x2..861 y42..60 완전투명"
+  },
+  {
+    "id": "WoodNormal",
+    "file": "PNG/Buttons/Wood/UI_Button_Wood_Normal_360x72.png",
+    "width": 360,
+    "height": 72,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      255
+    ],
+    "usage": "주요행동버튼 Normal",
+    "notes": "목재와테두리만; 레이블TMP별도; 모든상태같은규격"
+  },
+  {
+    "id": "WoodHover",
+    "file": "PNG/Buttons/Wood/UI_Button_Wood_Hover_360x72.png",
+    "width": 360,
+    "height": 72,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      255
+    ],
+    "usage": "주요행동버튼 Hover",
+    "notes": "목재와테두리만; 레이블TMP별도; 모든상태같은규격"
+  },
+  {
+    "id": "WoodPressed",
+    "file": "PNG/Buttons/Wood/UI_Button_Wood_Pressed_360x72.png",
+    "width": 360,
+    "height": 72,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      255
+    ],
+    "usage": "주요행동버튼 Pressed",
+    "notes": "목재와테두리만; 레이블TMP별도; 모든상태같은규격"
+  },
+  {
+    "id": "WoodSelected",
+    "file": "PNG/Buttons/Wood/UI_Button_Wood_Selected_360x72.png",
+    "width": 360,
+    "height": 72,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      255
+    ],
+    "usage": "주요행동버튼 Selected",
+    "notes": "목재와테두리만; 레이블TMP별도; 모든상태같은규격"
+  },
+  {
+    "id": "WoodDisabled",
+    "file": "PNG/Buttons/Wood/UI_Button_Wood_Disabled_360x72.png",
+    "width": 360,
+    "height": 72,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      255
+    ],
+    "usage": "주요행동버튼 Disabled",
+    "notes": "목재와테두리만; 레이블TMP별도; 모든상태같은규격"
+  },
+  {
+    "id": "StoneNormal",
+    "file": "PNG/Buttons/Stone/UI_Button_Stone_Normal_128x64.png",
+    "width": 128,
+    "height": 64,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "층·난이도·닫기 및기타작은선택버튼 Normal",
+    "notes": "동일Hybrid A 암석팔레트. 주요행동버튼은목재사용"
+  },
+  {
+    "id": "StoneHover",
+    "file": "PNG/Buttons/Stone/UI_Button_Stone_Hover_128x64.png",
+    "width": 128,
+    "height": 64,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "층·난이도·닫기 및기타작은선택버튼 Hover",
+    "notes": "동일Hybrid A 암석팔레트. 주요행동버튼은목재사용"
+  },
+  {
+    "id": "StonePressed",
+    "file": "PNG/Buttons/Stone/UI_Button_Stone_Pressed_128x64.png",
+    "width": 128,
+    "height": 64,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "층·난이도·닫기 및기타작은선택버튼 Pressed",
+    "notes": "동일Hybrid A 암석팔레트. 주요행동버튼은목재사용"
+  },
+  {
+    "id": "StoneSelected",
+    "file": "PNG/Buttons/Stone/UI_Button_Stone_Selected_128x64.png",
+    "width": 128,
+    "height": 64,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "층·난이도·닫기 및기타작은선택버튼 Selected",
+    "notes": "동일Hybrid A 암석팔레트. 주요행동버튼은목재사용"
+  },
+  {
+    "id": "StoneDisabled",
+    "file": "PNG/Buttons/Stone/UI_Button_Stone_Disabled_128x64.png",
+    "width": 128,
+    "height": 64,
+    "RGBA": true,
+    "border_LBRT": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "PPU_UI_trial": 100,
+    "image_type": "Sliced",
+    "Image_color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "alpha_values": [
+      0,
+      204,
+      255
+    ],
+    "usage": "층·난이도·닫기 및기타작은선택버튼 Disabled",
+    "notes": "동일Hybrid A 암석팔레트. 주요행동버튼은목재사용"
+  }
+]

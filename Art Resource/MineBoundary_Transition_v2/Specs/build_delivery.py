@@ -67,13 +67,15 @@ for n in [1,2]:
  native=finish(colorize(native),lambda x,y:False,kind='straight')
  # Hairline wall-facing contact is kept at x=4; faded ends are independent of the original A.
  export(f'Straight_ContactVar0{n}_48x128',native,(4,64),'긴 직선의 보조 변형. A를 교체하거나 같은 자리에 중첩 금지',f'Generated_straight{n}','Straights')
-im=Image.open(SRC/'Generated_root.png').convert('RGBA');bb=im.getchannel('A').point(lambda a:255 if a>=100 else 0).getbbox();im=im.crop(bb)
-scale=min(28/im.width,88/im.height);im=im.resize((round(im.width*scale),round(im.height*scale)),NN)
-root=Image.new('RGBA',(48,96));root.alpha_composite(im,(5,4));root=colorize(root)
+im=Image.open(SRC/'Generated_root.png').convert('RGBA').crop((225,95,661,1030))
+scale=min(36/im.width,88/im.height);im=im.resize((round(im.width*scale),round(im.height*scale)),NN)
+root=Image.new('RGBA',(48,96));root.alpha_composite(im,(-2,8));root=colorize(root)
 for y in range(96):
  for x in range(48):
   p=root.getpixel((x,y));fade=min(1,max(0,(x-3)/7),max(0,(34-x)/7),max(0,(y-2)/6),max(0,(93-y)/6))
-  a=qalpha(p[3]/255*192*fade,192) if p[3]>=90 and x<32 else 0
+  # Do not add a second pebble outline: retain broad facet colors, suppress dark perimeter ink.
+  luminance=.2126*p[0]+.7152*p[1]+.0722*p[2]
+  a=qalpha(p[3]/255*96*fade,96) if p[3]>=90 and x<32 and luminance>=50 else 0
   root.putpixel((x,y),p[:3]+(a,) if a else (0,0,0,0))
 export('WallRoot_FacetBlend_48x96',root,(32,48),'벽 안쪽 대형 암석 면을 잇는 국소 패치. 연속 띠 배치 금지','Generated_root','WallRoots')
 
@@ -257,6 +259,27 @@ for k,length in enumerate([32,64,96]):
  md.text((k*360+15,35),f'{length/64:g} unit / crop only / scale 1',font=font,fill='white')
 mp.save(PRE/'SpriteMask_ClipSimulation.png')
 
+# Nonoverlapping cap/body ownership, with the attachment line held fixed at x=32.
+jp=Image.new('RGBA',(960,640),(25,29,31,255));jd=ImageDraw.Draw(jp)
+jd.text((12,10),'ENDCAP + A PROFILE / ISOLATED COMPATIBILITY TEST / CPU SIMULATION',font=titlefont,fill='white')
+joint_tests=[]
+for k,length in enumerate([32,64,96]):
+ bg=checkboard((96,180));top=36;bottom=top+length
+ layers=[]
+ for name,pos,ymin,ymax in [
+  ('EndCap_WallW_Up_48x64',(16,top-12),0,top+16),
+  ('EXISTING_A_REFERENCE',(28,(top+bottom)//2-64),top+16,bottom-16),
+  ('EndCap_WallW_Down_48x64',(16,bottom-52),bottom-16,180)]:
+  layer=Image.new('RGBA',bg.size);layer.alpha_composite(A if name=='EXISTING_A_REFERENCE' else byname[name],pos)
+  for y in range(180):
+   if y<ymin or y>=ymax:
+    for x in range(96):layer.putpixel((x,y),(0,0,0,0))
+  layers.append(layer);bg.alpha_composite(layer)
+ overlap=sum(1 for px in zip(*(im.getchannel('A').get_flattened_data() for im in layers)) if sum(a>0 for a in px)>1)
+ joint_tests.append(dict(length_units=length/64,body_endcap_overlap_pixels=overlap))
+ jp.alpha_composite(bg.resize((288,540),NN),(k*320+16,75));jd.text((k*320+16,42),f'{length/64:g} unit / cap-body-cap',font=font,fill='white')
+jp.save(PRE/'EndCap_ShortBody_JoinSimulation.png')
+
 # Direction and anchor card. The cross marks vertex, not collider placement.
 card=Image.new('RGBA',(1024,560),(25,29,31,255));cd=ImageDraw.Draw(card)
 cd.text((12,10),'DIRECTIONS / WALL quadrant for CONVEX, FLOOR quadrant for CONCAVE',font=titlefont,fill='white')
@@ -273,6 +296,7 @@ audit=dict(asset_count=len(manifest),original_motifs=6,straight_variations=2,ppu
  existing_A_new_dust_overlap_pixels=dust_overlap,actual_capture_outside_overlay_changes=outside_changes,mask_clip_tests=masktests,
  unity_applied=False,unity_spritemask_tested=False,play_tested=False,files=[])
 audit['existing_B_new_overlay_overlap_pixels']=sum(1 for p,q in zip(combined.getchannel('A').get_flattened_data(),old_b.get_flattened_data()) if p and q)
+audit['exclusive_endcap_body_tests']=joint_tests
 for a in manifest:
  p=ROOT/a['file'];im=Image.open(p);pixels=list(im.get_flattened_data());levels=sorted(set(p[3] for p in pixels));border=[]
  for x in range(im.width):border.extend([im.getpixel((x,0)),im.getpixel((x,im.height-1))])

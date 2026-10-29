@@ -1,0 +1,235 @@
+{
+  "runtime_PNG_count": 19,
+  "checks": [
+    {
+      "id": "LargeFrame",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          620,
+          600
+        ],
+        [
+          660,
+          570
+        ],
+        [
+          1440,
+          810
+        ]
+      ]
+    },
+    {
+      "id": "MediumFrame",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          400,
+          300
+        ],
+        [
+          620,
+          600
+        ]
+      ]
+    },
+    {
+      "id": "SlateBackground",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": []
+    },
+    {
+      "id": "StatusHUD",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": []
+    },
+    {
+      "id": "InsetBackground",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": []
+    },
+    {
+      "id": "InsetFrame",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          132,
+          110
+        ],
+        [
+          594,
+          54
+        ]
+      ]
+    },
+    {
+      "id": "SlotNormal",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": []
+    },
+    {
+      "id": "SlotReady",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": []
+    },
+    {
+      "id": "BossFrame",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": []
+    },
+    {
+      "id": "WoodNormal",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          287,
+          68
+        ],
+        [
+          471,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "WoodHover",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          287,
+          68
+        ],
+        [
+          471,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "WoodPressed",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          287,
+          68
+        ],
+        [
+          471,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "WoodSelected",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          287,
+          68
+        ],
+        [
+          471,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "WoodDisabled",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          287,
+          68
+        ],
+        [
+          471,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "StoneNormal",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          72,
+          61
+        ],
+        [
+          209,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "StoneHover",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          72,
+          61
+        ],
+        [
+          209,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "StonePressed",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          72,
+          61
+        ],
+        [
+          209,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "StoneSelected",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          72,
+          61
+        ],
+        [
+          209,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "StoneDisabled",
+      "readback_RGBA": true,
+      "nine_slice_corner_preserved_test_sizes": [
+        [
+          72,
+          61
+        ],
+        [
+          209,
+          57
+        ]
+      ]
+    }
+  ],
+  "style_checks": {
+    "wood_5_states_inner_RGB_matches_approved": true,
+    "HUD_inner_RGB_matches_approved": true,
+    "Ready_slot_icon_area_unchanged": true,
+    "Clear_Failure_art_identical": true
+  },
+  "all_originals_unchanged": true,
+  "protected_count": 152,
+  "boss_gauge_window_alpha_zero": true,
+  "states_5_unique_each": true,
+  "content_from_approved_hybrid_layers": true,
+  "Unity_imported": false,
+  "Unity_Play": false,
+  "source_style": "existing Hybrid A only; no image generation"
+}
